@@ -46,14 +46,4 @@
     </tags>
   </tutorial>
 
-  <tutorial title="Hello WorldPlugin" ref='hello_world_plugin'>
-    <markdown version="1.9-">hello_world_plugin/tutorial.md</markdown>
-    <description>Introduction to WorldPlugin's.</description>
-    <skill>beginner</skill>
-    <tags>
-      <tag>plugin</tag>
-      <tag>WorldPlugin</tag>
-    </tags>
-  </tutorial>
-
 </tutorials>
