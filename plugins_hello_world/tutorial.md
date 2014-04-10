@@ -1,4 +1,4 @@
-#Tutorial: Overview of Gazebo Plugins#
+#Tutorial: Plugins 101#
 
 ### Overview of Gazebo Plugins
 
@@ -154,7 +154,7 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
 
 Once you have a plugin compiled as a shared library (see above),
 you can attach it to a world or model in an SDF file
-(see [[sdf_format | SDF]] for more info).
+(see [SDF documentation](http://gazebosim.org/sdf.html) for more info).
 On startup, Gazebo parses the SDF file, locates the plugin, and loads the code.
 It is important that Gazebo is capable of finding the plugin.
 Either the full path to the plugin is specified, or the plugin exists in
