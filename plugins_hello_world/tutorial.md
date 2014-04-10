@@ -128,7 +128,7 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
 Once you have a plugin compiled as a shared library (see above), you can attach it to a world or model in an SDF file (see [[sdf_format | SDF]] for more info). On startup, Gazebo parses the SDF file, locates the plugin, and loads the code. It is important that Gazebo is capable of finding the plugin. Either the full path to the plugin is specified, or the plugin exists in one of the paths in the GAZEBO_PLUGIN_PATH environment variable.
 
 Example world file also found in [https://bitbucket.org/osrf/gazebo/src/99f8cb806e88/examples/plugins/hello_world/hello.world?at=gazebo_1.5 examples/plugins/hello_world/hello.world].
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello.world' />
+<include from="/string_to_find/" to="/string_to_find/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
 
