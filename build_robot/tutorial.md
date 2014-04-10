@@ -511,7 +511,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
-  ![simple robot driving](http://gazebosim.org/w/images/4/48/Simple-robot-driving.png =640x480)
+  <img src="http://gazebosim.org/w/images/4/48/Simple-robot-driving.png" width="640px" height="480px" />
 
 1. Congrats, you now have a basic mobile robot.
 
