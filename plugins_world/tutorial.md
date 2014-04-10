@@ -1,13 +1,11 @@
 #Tutorial: Inserting models using a world plugin#
+## Prerequisites:
 
-## Prerequisites: ##
+   [Model Manipulation](http://gazebosim.org/wiki/tutorials/2.2/plugins/ModelPush) Plugin Tutorial
 
-  [[tutorials/2.2/plugins/ModelPush | Model Manipulation]] Plugin Tutorial
+## Code:
 
-## Code: ##
-
-Source: `[https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory gazebo/examples/plugins/factory]`
-Location: `<gazebo_sources>/examples/plugins/factory`
+Source code: [gazebo/examples/plugins/factory](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory)
 
 It can be useful to control what models exist in a running simulation, and when they should be inserted. This tutorial demonstrates how to insert predefined and custom models into Gazebo.
 
@@ -26,7 +24,7 @@ gedit factory.cc
 Copy the following code into the `factory.cc` file:
 <include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
-### The Code Explained ###
+### The Code Explained
 
 The first part of the code creates a world plugin.
 
