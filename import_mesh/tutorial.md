@@ -25,7 +25,7 @@ Once the mesh has been properly prepared, export it as a Collada file. This form
 
 The easiest way to test a mesh is to create a simple world file `my_mesh.world` that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
 
-~~~
+<pre><code><verbatim>
 <?xml version="1.0"?>
 <sdf version="1.4">
   <world name="default">
@@ -48,7 +48,7 @@ The easiest way to test a mesh is to create a simple world file `my_mesh.world` 
     </model>
   </world>
 </sdf>
-~~~
+</verbatim></code></pre>
 
 Then just launch Gazebo in the directory where is the file:
 
