@@ -1,5 +1,15 @@
-<tutorial name="Quick Start">
-  <markdown>quick_start/tutorial.md</markdown>
-  <description>Simple and fast introduction to Gazebo.</description>
-  <gazebo_version>1.9+</gazebo_version>
-</tutorial>
+<?xml version='1.0'?>
+<tutorials>
+  <tutorial title="Quick Start" ref='quick_start'>
+    <markdown>quick_start/tutorial.md</markdown>
+    <description>Simple and fast introduction to Gazebo.</description>
+    <gazebo_version>1.9+</gazebo_version>
+  </tutorial>
+
+  <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
+    <markdown>tutorial_contrib/tutorial.md</markdown>
+    <description>How to add or modify tutorials.</description>
+    <gazebo_version>1.9+</gazebo_version>
+  </tutorial>
+
+</tutorials>
