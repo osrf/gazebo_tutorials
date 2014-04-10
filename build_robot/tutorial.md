@@ -69,11 +69,9 @@ It is important to start simple, and build up a model in steps. The first step i
     <sdf version='1.4'>
       <model name="my_robot">
 ~~~
-
-    ~~~
+~~~
         <static>true</static>
-    ~~~
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -87,7 +85,7 @@ It is important to start simple, and build up a model in steps. The first step i
         <model name="my_robot">
         <static>true</static>
 ~~~
-
+~~~
           <link name='chassis'>
             <pose>0 0 .1 0 0 0</pose>
 
@@ -107,7 +105,7 @@ It is important to start simple, and build up a model in steps. The first step i
               </geometry>
             </visual>
           </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -149,7 +147,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </visual>
 ~~~
 
-
+~~~
           <collision name='caster_collision'>
             <pose>-0.15 0 -0.05 0 0 0</pose>
             <geometry>
@@ -178,7 +176,7 @@ It is important to start simple, and build up a model in steps. The first step i
             </sphere>
           </geometry>
         </visual>
-
+~~~
 
 ~~~
       </link>
@@ -245,7 +243,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <link name="left_wheel">
         <pose>0.1 0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -265,7 +263,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -350,7 +348,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <link name="right_wheel">
         <pose>0.1 -0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -370,7 +368,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -387,9 +385,9 @@ It is important to start simple, and build up a model in steps. The first step i
     <sdf version='1.4'>
       <model name="my_robot">
 ~~~
-
+~~~
     <static>false</static>
-
+~~~
 ~~~
         <link name='chassis'>
           <pose>0 0 .1 0 0 0</pose>
@@ -478,7 +476,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <joint type="revolute" name="left_wheel_hinge">
         <pose>0 0 -0.03 0 0 0</pose>
         <child>left_wheel</child>
@@ -496,7 +494,7 @@ It is important to start simple, and build up a model in steps. The first step i
           <xyz>0 1 0</xyz>
         </axis>
       </joint>
-
+~~~
 ~~~
       </model>
     </sdf>
