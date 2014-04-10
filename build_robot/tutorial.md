@@ -69,11 +69,9 @@ It is important to start simple, and build up a model in steps. The first step i
     <sdf version='1.4'>
       <model name="my_robot">
 ~~~
-
-    ~~~
+~~~
         <static>true</static>
-    ~~~
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -87,7 +85,7 @@ It is important to start simple, and build up a model in steps. The first step i
         <model name="my_robot">
         <static>true</static>
 ~~~
-
+~~~
           <link name='chassis'>
             <pose>0 0 .1 0 0 0</pose>
 
@@ -107,7 +105,7 @@ It is important to start simple, and build up a model in steps. The first step i
               </geometry>
             </visual>
           </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -121,7 +119,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
   You should see a white box floating .1 meters above the ground plane.
 
-  [[file:my_robot_box.png | 640px]]
+  <img src="http://gazebosim.org/w/images/8/8c/My_robot_box.png" width="640px"/>
 
 1.  Now we can add a caster to the robot. The caster is a sphere with no friction. This kind of caster is better than adding a wheel with a joint since it places fewer constraints on the physics engine.
 
@@ -149,7 +147,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </visual>
 ~~~
 
-
+~~~
           <collision name='caster_collision'>
             <pose>-0.15 0 -0.05 0 0 0</pose>
             <geometry>
@@ -178,7 +176,7 @@ It is important to start simple, and build up a model in steps. The first step i
             </sphere>
           </geometry>
         </visual>
-
+~~~
 
 ~~~
       </link>
@@ -188,9 +186,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
   Try out your model to make sure the caster appears at the end of the robot.  Spawn it in gazebo to see (you don't need to restart Gazebo; it will reload your modified model from disk each time you insert it):
 
-  [[file:my_robot_caster.png | 640px]]
-
-
+  <img src="http://gazebosim.org/w/images/f/f1/My_robot_caster.png" width="640px"/>
 
 1.  Now let's add a left wheel. Modify the `~/.gazebo/models/my_robot/model.sdf` file to be the following:
 
@@ -247,7 +243,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <link name="left_wheel">
         <pose>0.1 0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -267,7 +263,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -275,7 +271,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
   Run Gazebo, insert your robot model and make sure the wheel has appeared and is in the correct location.
 
-  [[file:my_robot_caster_left_wheel.png | 640px]]
+  <img src="http://gazebosim.org/w/images/6/67/My_robot_caster_left_wheel.png" width="640px"/>
 
 
 1.  We can make a right wheel by copying the left wheel, and adjusting the wheel link's pose:
@@ -352,7 +348,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <link name="right_wheel">
         <pose>0.1 -0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -372,7 +368,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -380,8 +376,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
   At this point the robot should have a chassis with a caster and two wheels.
 
-  [[file:my_robot_caster_wheels.png | 640px]]
-
+  <img src="http://gazebosim.org/w/images/1/16/My_robot_caster_wheels.png" width="640px"/>
 
 1. Make the model dynamic by setting `<static>` to false, and add two hinge joints for the left and right wheels.
 
@@ -390,9 +385,9 @@ It is important to start simple, and build up a model in steps. The first step i
     <sdf version='1.4'>
       <model name="my_robot">
 ~~~
-
+~~~
     <static>false</static>
-
+~~~
 ~~~
         <link name='chassis'>
           <pose>0 0 .1 0 0 0</pose>
@@ -481,7 +476,7 @@ It is important to start simple, and build up a model in steps. The first step i
         </visual>
       </link>
 ~~~
-
+~~~
       <joint type="revolute" name="left_wheel_hinge">
         <pose>0 0 -0.03 0 0 0</pose>
         <child>left_wheel</child>
@@ -499,7 +494,7 @@ It is important to start simple, and build up a model in steps. The first step i
           <xyz>0 1 0</xyz>
         </axis>
       </joint>
-
+~~~
 ~~~
       </model>
     </sdf>
@@ -513,7 +508,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
-  [[file:simple-robot-driving.png | 640px]]
+  <img src="http://gazebosim.org/w/images/4/48/Simple-robot-driving.png" width="640px"/>
 
 1. Congrats, you now have a basic mobile robot.
 
@@ -527,4 +522,4 @@ It is important to start simple, and build up a model in steps. The first step i
     Idea: A six wheeled vehicle with a scoop front loading mechanism.
 
 ## Next ##
-[[Tutorials/1.9/build_robot/attach_meshes | Next: Attach Meshes]]
+[Next: Attach Meshes](http://gazebosim.org/tutorials/?tut=attach_mesh)
