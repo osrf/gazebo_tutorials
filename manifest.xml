@@ -29,10 +29,16 @@
     <description>Modify world properties, such as ambient color and the physics time step.</description>
     <skill>beginner</skill>
   </tutorial>
-  
+
   <tutorial title="Import Meshes" ref='import_mesh'>
     <markdown version="1.9-">import_mesh/tutorial.md</markdown>
     <description>Import 3D meshes into Gazebo</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Build Robot" ref='build_robot'>
+    <markdown version="1.9-">build_robot/tutorial.md</markdown>
+    <description>Build a mobile robot</description>
     <skill>beginner</skill>
   </tutorial>
 
