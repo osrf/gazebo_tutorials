@@ -31,3 +31,5 @@ These world files are located in versioned system directory, such as `/usr/share
 ~~~
 ls /usr/share/gazebo-3.0/worlds
 ~~~
+
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
