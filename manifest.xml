@@ -3,13 +3,15 @@
   <tutorial title="Quick Start" ref='quick_start'>
     <markdown>quick_start/tutorial.md</markdown>
     <description>Simple and fast introduction to Gazebo.</description>
-    <gazebo_version>1.9+</gazebo_version>
+    <gazebo_version>1.9-</gazebo_version>
+    <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown>tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
-    <gazebo_version>1.9+</gazebo_version>
+    <gazebo_version>1.9-</gazebo_version>
+    <skill>beginner</skill>
   </tutorial>
 
 </tutorials>
