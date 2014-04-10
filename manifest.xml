@@ -12,6 +12,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Model plugins" ref='plugins_model'>
+    <markdown version="1.9-">plugins_model/tutorial.md</markdown>
+    <description>Manipulate a model using a model plugin.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
