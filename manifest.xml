@@ -10,6 +10,9 @@
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
     <skill>beginner</skill>
+    <tags>
+      <tag>contribute</tag>
+    </tags>
   </tutorial>
 
 </tutorials>
