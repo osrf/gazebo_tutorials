@@ -1,4 +1,4 @@
-#Tutorial: Hello WorldPlugin# 
+#Tutorial: Overview of Gazebo Plugins#
 
 ### Overview of Gazebo Plugins
 
@@ -19,10 +19,10 @@ include in their simulations.
 You should use a plugin when:
 
 *  you want to programmaticaly alter a simulation
-   
+
    Ex: move models, respond to events, insert new models given a set of preconditions
 *  you want a fast interface to gazebo, without the overhead of the transport layer
-   
+
    Ex: No serialization and deserialization of messages.
 *  you have some code that could benefit others and want to share it
 
@@ -33,8 +33,8 @@ There are currently 5 types of plugins
 1.  World
 1.  Model
 1.  Sensor
-1.  System. 
-1.  Visual. 
+1.  System.
+1.  Visual.
 
 Each plugin type is managed by a different component of Gazebo.
 For example, a Model plugin is attached to and controls a specific model in Gazebo.
@@ -83,7 +83,7 @@ All plugins must be in the `gazebo` namespace.
 ~~~
   class WorldPluginTutorial : public WorldPlugin
   {
-    public: WorldPluginTutorial() : WorldPlugin() 
+    public: WorldPluginTutorial() : WorldPlugin()
             {
               printf("Hello World!\n");
             }
@@ -169,8 +169,8 @@ Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
 If you don't have the build directory in your `GAZEBO_PLUGIN_PATH`,
 then you must run the Gazebo server from your build directory:
 
-~~~    
-cd build  
+~~~
+cd build
 gzserver ../hello.world
 ~~~
 
@@ -185,4 +185,3 @@ Msg Waiting for master
 Msg Connected to gazebo master @ http://localhost:11345
 Hello World!
 ~~~
-
