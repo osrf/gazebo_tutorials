@@ -59,10 +59,9 @@ gedit hello_world.cc
 ~~~
 
 Copy the following into hello_world.cc:
-```
-#!c++
+<pre><code>
 <include from="/string_to_find/" to="/string_to_find/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
-```
+</code></pre>
 
 The above code is also located in the Gazebo sources:
 [examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
