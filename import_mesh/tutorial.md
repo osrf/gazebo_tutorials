@@ -25,8 +25,7 @@ Once the mesh has been properly prepared, export it as a Collada file. This form
 
 The easiest way to test a mesh is to create a simple world file `my_mesh.world` that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
 
-<pre>
-<code>
+~~~
 <?xml version="1.0"?>
 <sdf version="1.4">
   <world name="default">
@@ -49,8 +48,7 @@ The easiest way to test a mesh is to create a simple world file `my_mesh.world` 
     </model>
   </world>
 </sdf>
-</code>
-</pre>
+~~~
 
 Then just launch Gazebo in the directory where is the file:
 
@@ -59,15 +57,14 @@ Then just launch Gazebo in the directory where is the file:
 ### Test Mesh ###
 
 You can use these [http://www.c3dl.org/wp-content/2.0Release/Resources/duck.dae duck.dae] and [http://www.c3dl.org/wp-content/2.0Release/Resources/duck.png duck.png]mesh files. Put them together in the model directory, or in the same directory as the world file. Since the duck mesh is defined with the y-axis as up, you can put a rotation in the sdf so that it displays upright:
-<pre>
-<code>
+
+~~~
 <visual name="visual">
   <pose>0 0 0  1.5708 0 0</pose>
   <geometry>
     <mesh><uri>file://duck.dae</uri></mesh>
   </geometry>
 </visual>
-</code>
-</pre>
+~~~
 
 [[File:TutorialMeshDuck.png]]
