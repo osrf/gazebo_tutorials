@@ -18,7 +18,9 @@ feature on the [Bitbucket](https://bitbucket.org/osrf/gazebo_tutorials) site.
 
 Follow these steps to change an existing tutorial.
 
-1. Open the tutorial file on bitbucket ([like this tutorial](https://bitbucket.org/osrf/gazebo_tutorials/src/default/tutorial_contrib/tutorial.md) for example)
+1. Click the Edit button located at the top-right of the tutorial you want to modify.
+
+1. This will bring you to the tutorial source on Bitbucket.
 
 1. Click the Edit button on the file (see [bitbucket help page](https://confluence.atlassian.com/display/BITBUCKET/Edit+online)).
 
