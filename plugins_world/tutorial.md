@@ -5,7 +5,7 @@
 
 ## Code:
 
-Source [code](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory gazebo/examples/plugins/factory)
+Source code: [gazebo/examples/plugins/factory](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory)
 
 It can be useful to control what models exist in a running simulation, and when they should be inserted. This tutorial demonstrates how to insert predefined and custom models into Gazebo.
 
