@@ -6,6 +6,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Plugins 101" ref='plugins_hello_world'>
+    <markdown version="1.9-">plugins_hello_world/tutorial.md</markdown>
+    <description>Overview of Gazebo plugins.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
