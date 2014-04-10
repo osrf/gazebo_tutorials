@@ -2,13 +2,13 @@
 
 ##Prerequisites
 
-  [[tutorials/2.2/plugins/HelloWorld | Overview / HelloWorld]] Plugin Tutorial
+  [Overview / HelloWorld](http://gazebosim.org/tutorials?tut=plugins_hello_world) Plugin Tutorial
 
 > Note: If you're continuing from the previous tutorial, make sure you put in the proper `#include` lines for this tutorial that are listed below.
 
 ##Code
 
-Source: `[https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/model_push gazebo/examples/plugins/model_push]`
+Source: [ gazebo/examples/plugins/model_push](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/model_push)
 
 Plugins allow complete access to the physical properties of models and their underlying elements (links, joints, collision objects). The following plugin will apply a linear velocity to its parent model.
 
