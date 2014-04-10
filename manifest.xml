@@ -12,10 +12,4 @@
     <gazebo_version>1.9+</gazebo_version>
   </tutorial>
 
-  <tutorial title="Test" ref='tutorial_contrib'>
-    <markdown>tutorial_contrib/tutorial.md</markdown>
-    <description>How to add or modify tutorials.</description>
-    <gazebo_version>1.9+</gazebo_version>
-  </tutorial>
-
 </tutorials>
