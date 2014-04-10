@@ -24,6 +24,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Import Meshes" ref='import_mesh'>
+    <markdown version="1.9-">import_mesh/tutorial.md</markdown>
+    <description>Import 3D meshes into Gazebo</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
