@@ -6,7 +6,7 @@ The tutorial demonstrates Gazebo's basic model management, and exercises familia
 
 ## Setup your model directory ##
 
-Read through the [http://gazebosim.org/user_guide/started__models__database.html Model Database documentation]. You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [http://gazebosim.org/sdf/1.4.html SDF 1.4 reference].
+Read through the [Model Database documentation](http://gazebosim.org/user_guide/started__models__database.html). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
 
 1.  Create a model directory:
 
@@ -64,29 +64,29 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1.  Make the model static by adding a `<static>true</static>` element to the `~/.gazebo/models/my_robot/model.sdf` file:
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
     <sdf version='1.4'>
       <model name="my_robot">
-    </pre>
+~~~
 
     ~~~
         <static>true</static>
     ~~~
 
-    <pre id="no_copy">
+~~~
       </model>
     </sdf>
-    </pre>
+~~~
 
 1.  Add the rectangular base by editing the `~/.gazebo/models/my_robot/model.sdf` file:
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
       <sdf version='1.4'>
         <model name="my_robot">
         <static>true</static>
-    </pre>
+~~~
 
     ~~~
           <link name='chassis'>
@@ -110,10 +110,10 @@ It is important to start simple, and build up a model in steps. The first step i
           </link>
     ~~~
 
-    <pre id="no_copy">
+~~~
       </model>
     </sdf>
-    </pre>
+~~~
 
   Here we have created a `box` with a size of `0.4 x 0.2 x 0.1` meters. The `collision` element specifies the shape used by the collision detection engine. The `visual` element specifies the shape used by the rendering engine. For most use cases the `collision` and `visual` elements are the same. The most common use for different `collision` and `visual` elements is to have a simplified `collision` element paired with a `visual` element that uses a complex mesh. This will help improve performance.
 
@@ -127,7 +127,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1.  Now we can add a caster to the robot. The caster is a sphere with no friction. This kind of caster is better than adding a wheel with a joint since it places fewer constraints on the physics engine.
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
       <sdf version='1.4'>
       <model name="my_robot">
@@ -149,7 +149,7 @@ It is important to start simple, and build up a model in steps. The first step i
               </box>
             </geometry>
           </visual>
-    </pre>
+~~~
 
 
     ~~~
@@ -184,11 +184,11 @@ It is important to start simple, and build up a model in steps. The first step i
     ~~~
 
 
-    <pre id="no_copy">
+~~~
       </link>
     </model>
     </sdf>
-    </pre>
+~~~
 
   Try out your model to make sure the caster appears at the end of the robot.  Spawn it in gazebo to see (you don't need to restart Gazebo; it will reload your modified model from disk each time you insert it):
 
@@ -198,7 +198,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1.  Now let's add a left wheel. Modify the `~/.gazebo/models/my_robot/model.sdf` file to be the following:
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
     <sdf version='1.4'>
       <model name="my_robot">
@@ -250,7 +250,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-    </pre>
+~~~
 
     ~~~
       <link name="left_wheel">
@@ -274,10 +274,10 @@ It is important to start simple, and build up a model in steps. The first step i
       </link>
     ~~~
 
-    <pre id="no_copy">
+~~~
       </model>
     </sdf>
-    </pre>
+~~~
 
   Run Gazebo, insert your robot model and make sure the wheel has appeared and is in the correct location.
 
@@ -286,7 +286,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1.  We can make a right wheel by copying the left wheel, and adjusting the wheel link's pose:
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
     <sdf version='1.4'>
       <model name="my_robot">
@@ -357,7 +357,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-    </pre>
+~~~
 
     ~~~
       <link name="right_wheel">
@@ -381,10 +381,10 @@ It is important to start simple, and build up a model in steps. The first step i
       </link>
     ~~~
 
-    <pre id="no_copy">
+~~~
       </model>
     </sdf>
-    </pre>
+~~~
 
   At this point the robot should have a chassis with a caster and two wheels.
 
@@ -393,15 +393,15 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Make the model dynamic by setting `<static>` to false, and add two hinge joints for the left and right wheels.
 
-    <pre id="no_copy">
+~~~
     <?xml version='1.0'?>
     <sdf version='1.4'>
       <model name="my_robot">
-    </pre>
+~~~
     ~~~
     <static>false</static>
     ~~~
-    <pre id="no_copy">
+~~~
         <link name='chassis'>
           <pose>0 0 .1 0 0 0</pose>
           <collision name='collision'>
@@ -488,7 +488,7 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-    </pre>
+~~~
 
     ~~~
       <joint type="revolute" name="left_wheel_hinge">
@@ -510,10 +510,10 @@ It is important to start simple, and build up a model in steps. The first step i
       </joint>
     ~~~
 
-    <pre id="no_copy">
+~~~
       </model>
     </sdf>
-    </pre>
+~~~
 
   The two joints rotate about the y axis `<xyz>0 1 0</xyz>`, and connect each wheel to the chassis.
 1. Start gazebo, and insert your model. Click on the three white rectangles to the right of the screen and drag them to the left.
