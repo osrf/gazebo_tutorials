@@ -67,4 +67,4 @@ You can use these [duck.dae](http://www.c3dl.org/wp-content/2.0Release/Resources
 </visual>
 ~~~
 
-[[File:TutorialMeshDuck.png]]
+[duck.dae mesh in Gazebo](http://gazebosim.org/w/images/c/cb/TutorialMeshDuck.png)

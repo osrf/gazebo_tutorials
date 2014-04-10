@@ -88,7 +88,6 @@ It is important to start simple, and build up a model in steps. The first step i
         <static>true</static>
 ~~~
 
-    ~~~
           <link name='chassis'>
             <pose>0 0 .1 0 0 0</pose>
 
@@ -108,7 +107,6 @@ It is important to start simple, and build up a model in steps. The first step i
               </geometry>
             </visual>
           </link>
-    ~~~
 
 ~~~
       </model>
@@ -152,7 +150,6 @@ It is important to start simple, and build up a model in steps. The first step i
 ~~~
 
 
-    ~~~
           <collision name='caster_collision'>
             <pose>-0.15 0 -0.05 0 0 0</pose>
             <geometry>
@@ -181,7 +178,6 @@ It is important to start simple, and build up a model in steps. The first step i
             </sphere>
           </geometry>
         </visual>
-    ~~~
 
 
 ~~~
@@ -252,7 +248,6 @@ It is important to start simple, and build up a model in steps. The first step i
       </link>
 ~~~
 
-    ~~~
       <link name="left_wheel">
         <pose>0.1 0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -272,7 +267,6 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-    ~~~
 
 ~~~
       </model>
@@ -359,7 +353,6 @@ It is important to start simple, and build up a model in steps. The first step i
       </link>
 ~~~
 
-    ~~~
       <link name="right_wheel">
         <pose>0.1 -0.13 0.1 0 1.5707 1.5707</pose>
         <collision name="collision">
@@ -379,7 +372,6 @@ It is important to start simple, and build up a model in steps. The first step i
           </geometry>
         </visual>
       </link>
-    ~~~
 
 ~~~
       </model>
@@ -398,9 +390,9 @@ It is important to start simple, and build up a model in steps. The first step i
     <sdf version='1.4'>
       <model name="my_robot">
 ~~~
-    ~~~
+
     <static>false</static>
-    ~~~
+
 ~~~
         <link name='chassis'>
           <pose>0 0 .1 0 0 0</pose>
@@ -490,7 +482,6 @@ It is important to start simple, and build up a model in steps. The first step i
       </link>
 ~~~
 
-    ~~~
       <joint type="revolute" name="left_wheel_hinge">
         <pose>0 0 -0.03 0 0 0</pose>
         <child>left_wheel</child>
@@ -508,7 +499,6 @@ It is important to start simple, and build up a model in steps. The first step i
           <xyz>0 1 0</xyz>
         </axis>
       </joint>
-    ~~~
 
 ~~~
       </model>
@@ -516,8 +506,11 @@ It is important to start simple, and build up a model in steps. The first step i
 ~~~
 
   The two joints rotate about the y axis `<xyz>0 1 0</xyz>`, and connect each wheel to the chassis.
+
 1. Start gazebo, and insert your model. Click on the three white rectangles to the right of the screen and drag them to the left.
+
 1. A new window should appear that contains various controllers for each joint. ('''Note''' Make sure the model you want to control is selected)
+
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
   [[file:simple-robot-driving.png | 640px]]
