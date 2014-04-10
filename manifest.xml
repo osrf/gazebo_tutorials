@@ -1,0 +1,5 @@
+<tutorial name="Quick Start">
+  <markdown>quick_start/tutorial.md</markdown>
+  <description>Simple and fast introduction to Gazebo.</description>
+  <gazebo_version>1.9+</gazebo_version>
+</tutorial>
