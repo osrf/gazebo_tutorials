@@ -10,21 +10,23 @@ All tutorials exist in a Bitbucket repository:
 This repository contains a `manifest.xml` that holds meta-information about
 the tutorials, and a set of directories that hold the tutorial contents.
 
-All changes to the set of tutorials will use the [pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new) feature on the [Bitbucket](https://bitbucket.org/osrf/gazebo_tutorials) site.
+All changes to the set of tutorials will use the
+[pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new)
+feature on the [Bitbucket](https://bitbucket.org/osrf/gazebo_tutorials) site.
 
 ### Modify a tutorial
 
 Follow these steps to change an existing tutorial.
 
-1. [Fork](https://bitbucket.org/osrf/gazebo_tutorials/fork) the gazebo_tutorials repository.
+1. Open the tutorial file on bitbucket ([like this tutorial](https://bitbucket.org/osrf/gazebo_tutorials/src/default/tutorial_contrib/tutorial.md) for example)
 
-1. Edit your fork to include the necessary modifications.
+1. Click the Edit button on the file (see [bitbucket help page](https://confluence.atlassian.com/display/BITBUCKET/Edit+online)).
 
-1. Create a [pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new) back to the gazebo_tutorials repository.
+1. Make your changes to the file using Markdown syntax.
 
-1. Your pull-request will be reviewed, during which time you may be asked to make changes.
+1. Clock Commit at the bottom-right of the screen.
 
-1. Once accepted, your pull-request will be merged into the repository. Your changes should appear on the main gazebo website in a few minutes.
+1. Type a commit message to describe your changes and click commit and make a pull request.
 
 ### Create a new tutorial
 
