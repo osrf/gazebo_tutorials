@@ -42,13 +42,16 @@ The steps for creating a new tutorial are similar to those for modifying a tutor
 
     1. The `<description>` should be very short.
 
-    1. Set the minimum and maximum version of gazebo for which the tutorial is applicable.
+    1. Set the minimum and maximum version of gazebo for which the specified markdown file is applicable. For example:
 
-        1. `<gazebo_version>1.9</gazebo_version>`: Only version 1.9
+        1. `<markdown version="1.9">...`: Only version 1.9
 
-        1. `<gazebo_version>1.9-</gazebo_version>`: All versions 1.9 and above
+        1. `<markdown version="1.9-">...`: All versions 1.9 and above
 
-        1. `<gazebo_version>1.9-2.0</gazebo_version>`: All versions between 1.9 and 2.0, inclusive.
+        1. `<markdown version="1.9-2.0">...`: All versions between 1.9 and 2.0, inclusive.
+
+    1. It is possible to have multiple markdown files for different versions of Gazebo. Just add multiple `<markdown>` tags that reference different markdown files.
+      
 
 1. Create a [pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new) back to the gazebo_tutorials repository.
 
