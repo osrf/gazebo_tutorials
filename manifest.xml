@@ -6,10 +6,41 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Plugins 101" ref='plugins_hello_world'>
+    <markdown version="1.9-">plugins_hello_world/tutorial.md</markdown>
+    <description>Overview of Gazebo plugins.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Model plugins" ref='plugins_model'>
+    <markdown version="1.9-">plugins_model/tutorial.md</markdown>
+    <description>Manipulate a model using a model plugin.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="World plugins" ref='plugins_world'>
+    <markdown version="1.9-">plugins_world/tutorial.md</markdown>
+    <description>Inserting models using a world plugin.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="World plugins for modifying world properties" ref='plugins_world_properties'>
+    <markdown version="1.9-">plugins_world_properties/tutorial.md</markdown>
+    <description>Modify world properties, such as ambient color and the physics time step.</description>
+    <skill>beginner</skill>
+  </tutorial>
+  
+  <tutorial title="Import Meshes" ref='import_mesh'>
+    <markdown version="1.9-">import_mesh/tutorial.md</markdown>
+    <description>Import 3D meshes into Gazebo</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
-    <skill>beginner</skill>
+    <skill>intermediate</skill>
     <tags>
       <tag>contribute</tag>
     </tags>
