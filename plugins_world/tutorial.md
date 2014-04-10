@@ -2,12 +2,11 @@
 
 ## Prerequisites: ##
 
-  [[tutorials/2.2/plugins/ModelPush | Model Manipulation]] Plugin Tutorial
+   [Model Manipulation](tutorials/2.2/plugins/ModelPush) Plugin Tutorial
 
 ## Code: ##
 
-Source: `[https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory gazebo/examples/plugins/factory]`
-Location: `<gazebo_sources>/examples/plugins/factory`
+[Source code](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/factory gazebo/examples/plugins/factory)`
 
 It can be useful to control what models exist in a running simulation, and when they should be inserted. This tutorial demonstrates how to insert predefined and custom models into Gazebo.
 
