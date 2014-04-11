@@ -43,7 +43,7 @@
   </tutorial>
 
   <tutorial title="Attach Meshes" ref='attach_meshes'>
-    <markdown version="1.9-">build_robot/tutorial.md</markdown>
+    <markdown version="1.9-">attach_meshes/tutorial.md</markdown>
     <description> Improve model visual appearance by attaching Collada meshes</description>
     <skill>beginner</skill>
   </tutorial>
