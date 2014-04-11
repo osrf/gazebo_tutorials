@@ -43,7 +43,7 @@ The second method uses a World method to load a model based on string data.
 
 The third method uses the message passing mechanism to insert a model. This method is most useful for stand along applications that communicate with Gazebo over a network connection.
 
-<include from="/Option 3:/" to="/factoryPub.*Publish/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="!Option 3:!" to="/factoryPub.*Publish/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 
 ### Compile ###
