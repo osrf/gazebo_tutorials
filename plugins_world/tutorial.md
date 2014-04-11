@@ -39,11 +39,11 @@ The first method uses a World method to load a model based on a file in the reso
 
 The second method uses a World method to load a model based on string data.
 
-<include from="/...Option 2:/" to="/InsertModelSDF/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/...Option 2:/" to="/sphereSDF\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 The third method uses the message passing mechanism to insert a model. This method is most useful for stand along applications that communicate with Gazebo over a network connection.
 
-<include from="!// Option 3:!" to="/factoryPub.*Publish/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="!// Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 
 ### Compile ###
