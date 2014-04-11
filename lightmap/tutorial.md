@@ -97,7 +97,7 @@ Paste the following:
 ~~~
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="table_marble">
+  <model name="my_lightmap_table">
     <static>true</static>
     <pose>0 0 0.648 0 0 0</pose>
     <link name="link">
@@ -135,6 +135,7 @@ Run gazebo:
 
 Insert the `Lightmap Table` model into the scene
 
+[[file:http://gazebosim.org/w/images/c/c9/Table_no_lightmap.png | 640px]]
 
 
 ### Apply Lightmap
@@ -155,14 +156,18 @@ Locate the material SDF element in the model.sdf and set `lighting` to be `false
             <uri>model://my_lightmap_table/materials/scripts</uri>
             <uri>model://my_lightmap_table/materials/textures</uri>
             <name>Table/Marble_Lightmap</name>
+          </script>
 %%%
 ~~~
             <lighting>false</lighting>
 ~~~
 %%%
-          </script>
         </material>
 %%%
+
+If you insert `my_lightmap_table` into the scene again, you should notice that the model now only has a texture but is no longer shaded.
+
+[[http://gazebosim.org/w/images/0/0d/Table_no_lighting.png | 640px]]
 
 Then tell the material script to blend the lightmap with the existing texture.
 
@@ -195,3 +200,7 @@ material Table/Marble_Lightmap
   }
 }
 %%%
+
+Finally, relaunch Gazebo and insert the table model:
+
+[[http://gazebosim.org/w/images/e/ee/Table_lightmap.png | 640px]]
