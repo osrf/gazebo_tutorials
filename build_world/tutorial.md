@@ -33,12 +33,12 @@ Gazebo provides two mechanisms for adding objects to Gazebo.
 
 1.  The first is a set of simple shapes, located above the render window.
 
-		<a href="http://gazebosim.org/w/images/7/7d/Empty_world_simple_shapes_highlighted.png" class="image"><img alt="Empty world simple shapes highlighted.png" src="http://gazebosim.org/w/images/7/7d/Empty_world_simple_shapes_highlighted.png" width="640" height="360"></a>
+	<a href="http://gazebosim.org/w/images/7/7d/Empty_world_simple_shapes_highlighted.png" class="image"><img alt="Empty world simple shapes highlighted.png" src="http://gazebosim.org/w/images/7/7d/Empty_world_simple_shapes_highlighted.png" width="640" height="360"></a>
     [[File:Empty_world_simple_shapes_highlighted.png|640px]]
 
 1.  The second is via the [[model_database |model database]], which is accessible by selecting the `Insert` tab in the upper left corner.
 
-		<a href="http://gazebosim.org/w/images/5/51/Empty_world_insert_highlighted.png" class="image"><img alt="Empty world insert highlighted.png" src="http://gazebosim.org/w/images/5/51/Empty_world_insert_highlighted.png" width="640" height="360"></a>
+	<a href="http://gazebosim.org/w/images/5/51/Empty_world_insert_highlighted.png" class="image"><img alt="Empty world insert highlighted.png" src="http://gazebosim.org/w/images/5/51/Empty_world_insert_highlighted.png" width="640" height="360"></a>
     [[File:Empty_world_insert_highlighted.png|640px]]
 
 ### Adding Simple Shapes
