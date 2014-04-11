@@ -110,7 +110,7 @@
   <tutorial title="Digital Elevation Models" ref='dem'>
     <markdown version="3.0-">dem/tutorial.md</markdown>
     <description>How to use DEMs in Gazebo.</description>
-    <skill>intermediate</skill>
+    <skill>advanced</skill>
   </tutorial>
 
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
