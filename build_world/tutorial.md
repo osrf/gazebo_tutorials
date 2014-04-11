@@ -10,7 +10,7 @@ This tutorial describes the process of creating a world with both static and dyn
 
 ## Setup
 
-1.  Make sure Gazebo is [[install |installed]].
+1.  Make sure Gazebo is [installed](http://gazebosim.org/#download).
 
 1.  Create a working directory for this tutorial:
 
