@@ -1,7 +1,7 @@
 #Tutorial: Inserting models using a world plugin#
 ## Prerequisites:
 
-   [Model Manipulation](http://gazebosim.org/wiki/tutorials/2.2/plugins/ModelPush) Plugin Tutorial
+   [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) Plugin Tutorial
 
 ## Code:
 
@@ -22,7 +22,7 @@ gedit factory.cc
 ~~~
 
 Copy the following code into the `factory.cc` file:
-<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 ### The Code Explained
 
