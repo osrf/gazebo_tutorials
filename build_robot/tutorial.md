@@ -14,13 +14,13 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Create a model config file:
 
-    ~~~
+~~~
     gedit ~/.gazebo/models/my_robot/model.config
-    ~~~
+~~~
 
 1.  Paste in the following contents:
 
-    ~~~
+~~~
     <?xml version="1.0"?>
     <model>
       <name>My Robot</name>
@@ -36,23 +36,23 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
         My awesome robot.
       </description>
     </model>
-    ~~~
+~~~
 
 1.  Create a `~/.gazebo/models/my_robot/model.sdf` file.
 
-    ~~~
+~~~
     gedit ~/.gazebo/models/my_robot/model.sdf
-    ~~~
+~~~
 
 1. Paste in the following.
 
-    ~~~
+~~~
     <?xml version='1.0'?>
     <sdf version='1.4'>
       <model name="my_robot">
       </model>
     </sdf>
-    ~~~
+~~~
 
 At this point we have the basic contents for a model. The `model.config` file describes the robot with some extra meta data. The `model.sdf` file contains the necessary tags to instantiate a model named `my_robot` using Gazebo linked against SDF version 1.4.
 
@@ -125,7 +125,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 ~~~
     <?xml version='1.0'?>
-      <sdf version='1.4'>
+    <sdf version='1.4'>
       <model name="my_robot">
         <static>true</static>
         <link name='chassis'>
@@ -151,36 +151,36 @@ It is important to start simple, and build up a model in steps. The first step i
           <collision name='caster_collision'>
             <pose>-0.15 0 -0.05 0 0 0</pose>
             <geometry>
+                <sphere>
+                <radius>.05</radius>
+              </sphere>
+            </geometry>
+
+            <surface>
+              <friction>
+                <ode>
+                  <mu>0</mu>
+                  <mu2>0</mu2>
+                  <slip1>1.0</slip1>
+                  <slip2>1.0</slip2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+
+          <visual name='caster_visual'>
+            <pose>-0.15 0 -0.05 0 0 0</pose>
+            <geometry>
               <sphere>
-              <radius>.05</radius>
-            </sphere>
-          </geometry>
-
-          <surface>
-            <friction>
-              <ode>
-                <mu>0</mu>
-                <mu2>0</mu2>
-                <slip1>1.0</slip1>
-                <slip2>1.0</slip2>
-              </ode>
-            </friction>
-          </surface>
-        </collision>
-
-        <visual name='caster_visual'>
-          <pose>-0.15 0 -0.05 0 0 0</pose>
-          <geometry>
-            <sphere>
-              <radius>.05</radius>
-            </sphere>
-          </geometry>
-        </visual>
+                <radius>.05</radius>
+              </sphere>
+            </geometry>
+          </visual>
 ~~~
 
 ~~~
-      </link>
-    </model>
+        </link>
+      </model>
     </sdf>
 ~~~
 
