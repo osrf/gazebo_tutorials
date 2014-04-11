@@ -22,7 +22,7 @@ sudo apt-get install gdal-bin libgdal-dev libgdal1 python-gdal
 sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 ~~~
 
-'''Note:''' gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
+**Note:** gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
 
 #### DEM file and the definition into SDF format
 
@@ -33,7 +33,7 @@ unzip ~/Downloads/mtsthelens_after.zip -d /tmp
 mv /tmp/10.2.1.1043901.dem /tmp/mtsthelens.dem
 ~~~
 
-Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo media/dem/ directory.
+Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo `media/dem/` directory.
 
 ~~~
 mkdir -p /tmp/media/dem/
