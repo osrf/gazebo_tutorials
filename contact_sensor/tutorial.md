@@ -124,7 +124,7 @@ Between the </contact> and </sensor> tags in order to get output on the terminal
 
 It is also possible to create a plugin for the contact sensor. This plugin can get the collision data, manipulate it, and output it to an arbitrary destination (for example a ROS topic).
 
-'''Note''' This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed. If you install Gazebo from source then you should already have the necessary files. If you install the Gazebo binary deb version, then you'll need to install a couple of additional packages.
+  **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed. If you install Gazebo from source then you should already have the necessary files. If you install the Gazebo binary deb version, then you'll need to install a couple of additional packages.
 
 ~~~
 sudo apt-get install libgazebo-dev libsdformat2-dev
