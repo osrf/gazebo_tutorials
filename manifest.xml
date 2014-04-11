@@ -78,6 +78,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Random numbers" ref='random_numbers'>
+    <markdown version="1.9-">random_numbers/tutorial.md</markdown>
+    <description>How to set the random number seed.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
