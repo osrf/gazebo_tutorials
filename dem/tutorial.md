@@ -6,9 +6,7 @@ The term DEM is just a generic denomination,  not a specific format. In fact, th
 
 The main motivation to support DEMs in Gazebo is to be able to simulate a realistic terrain. Rescue or agriculture applications might be interested in testing their robot behaviors using a simulated terrain that matches the real world.
 
-### Using DEMs in Gazebo ###
-
-#### Bring DEM support to Gazebo ####
+### Bring DEM support to Gazebo ###
 
 In order to work with DEM files you should install GDAL libraries.
 
@@ -24,7 +22,7 @@ sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 
 **Note:** gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
 
-#### DEM file and the definition into SDF format
+### DEM file and the definition into SDF format
 
 There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it `mtsthelens.dem`.
 
