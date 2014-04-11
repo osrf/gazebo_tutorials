@@ -59,7 +59,7 @@ material Table/Marble_Lightmap
 }
 ~~~
 
-Create a `model config` file:
+Create a `model.config` file:
 
 ~~~
 gedit ~/.gazebo/models/my_lightmap_table/model.config
@@ -133,9 +133,9 @@ Run gazebo:
 
         gazebo
 
-Insert the `Lightmap Table` model into the scene
+Insert the `Lightmap Table` model into the scene:
 
-[[file:http://gazebosim.org/w/images/c/c9/Table_no_lightmap.png | 640px]]
+[[file:Table_no_lightmap.png | 640px]]
 
 
 ### Apply Lightmap
@@ -167,7 +167,7 @@ Locate the material SDF element in the model.sdf and set `lighting` to be `false
 
 If you insert `my_lightmap_table` into the scene again, you should notice that the model now only has a texture but is no longer shaded.
 
-[[http://gazebosim.org/w/images/0/0d/Table_no_lighting.png | 640px]]
+[[file:Table_no_lighting.png | 640px]]
 
 Then tell the material script to blend the lightmap with the existing texture.
 
@@ -203,4 +203,4 @@ material Table/Marble_Lightmap
 
 Finally, relaunch Gazebo and insert the table model:
 
-[[http://gazebosim.org/w/images/e/ee/Table_lightmap.png | 640px]]
+[[file:Table_lightmap.png | 640px]]
