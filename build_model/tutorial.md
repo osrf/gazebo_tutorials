@@ -47,7 +47,7 @@ Create the model file:
 </pre>
 
 Copy the following contents into box.sdf:
-<pre>
+~~~
 <?xml version='1.0'?>
 <sdf version="1.4">
 <model name="my_model">
@@ -82,7 +82,7 @@ Copy the following contents into box.sdf:
     </link>
   </model>
 </sdf>
-</pre>
+~~~
 
 Note that the origin of the Box-geometry is at the geometric center of the box, so in order to have the bottom of the box flush with the ground plane, an origin of `<pose>0 0 0.5 0 0 0</pose>` is added to raise the box above the ground plane.
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.
