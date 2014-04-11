@@ -63,7 +63,7 @@ It is important to start simple, and build up a model in steps. The first step i
 %%%
 <?xml version='1.0'?>
 <sdf version='1.4'>
-  <model name="my_robot">
+  <model name="myrobot">
 %%%
 
     ~~~
