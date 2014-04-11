@@ -1,8 +1,7 @@
 <?xml version='1.0'?>
 <tutorials>
   <tutorial title="Quick Start" ref='quick_start'>
-    <markdown version="1.9">quick_start/tutorial_1-9.md</markdown>
-    <markdown version="2.0-">quick_start/tutorial_2-0.md</markdown>
+    <markdown version="1.9-">quick_start/tutorial.md</markdown>
     <description>Simple and fast introduction to Gazebo.</description>
     <skill>beginner</skill>
   </tutorial>
@@ -26,7 +25,8 @@
   </tutorial>
 
   <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
-    <markdown version="1.9-">plugins_world_properties/tutorial.md</markdown>
+    <markdown version="2.2-">plugins_world_properties/tutorial.md</markdown>
+    <markdown version="1.9">plugins_world_properties_1.9/tutorial.md</markdown>
     <description>Modify world properties, such as ambient color and the physics time step.</description>
     <skill>beginner</skill>
     <tags>
