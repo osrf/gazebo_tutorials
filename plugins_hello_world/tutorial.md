@@ -117,7 +117,6 @@ The following section contains instructions on how to compile this plugin.
 
 Please make sure that gazebo has been properly [installed](http://gazebosim.org/#download).
 
-
 To compile the above plugin, create `~/gazebo_plugin_tutorial/CMakeLists.txt`:
 
 ~~~
