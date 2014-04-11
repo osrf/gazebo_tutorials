@@ -43,7 +43,7 @@ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 
 A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file ''volcano.world'' and copy the next content. Save the file anywhere you want, for example, in /tmp.
 
-<pre>
+~~~
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
@@ -103,9 +103,9 @@ A DEM file in Gazebo is loaded in the same way that you load a heightmap image. 
 
   </world>
 </sdf>
-</pre>
+~~~
 
-The ''<use_true_size>'' element in the code above, tells Gazebo whether to load the DEM with the original dimensions or to scale it. In case you prefer to scale the DEM, the ''<size>'' element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in ''<size>''). ''<size>'' will be ignored if you set <use_true_size> to true. In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
+The ~~~<use_true_size>~~~ element in the code above, tells Gazebo whether to load the DEM with the original dimensions or to scale it. In case you prefer to scale the DEM, the ''<size>'' element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in ''<size>''). ''<size>'' will be ignored if you set <use_true_size> to true. In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
 
 Launch Gazebo with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
 
