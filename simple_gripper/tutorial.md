@@ -17,7 +17,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
         gedit ~/simple_gripper_tutorial/gripper.world
 
-Copy the following SDF into `gripper.world`:
+    Copy the following SDF into `gripper.world`:
 
 ~~~
   <?xml version="1.0"?>
@@ -280,7 +280,7 @@ Copy the following SDF into `gripper.world`:
 
         gazebo ~/simple_gripper_tutorial/gripper.world
 
-You should see something like this:
+    You should see something like this:
 
 <img src="http://gazebosim.org/w/images/6/66/Simple-gripper-1.png" width="640px"/>
 
@@ -368,7 +368,7 @@ And make the model non-static:
 
 1. You can also control the forces on each joint using the Joint Control widget.  Click on the gripper model.  Then expand this widget by clicking on the vertical handle on the right side of the GUI and dragging it to the left. The widget displays a list of sliders, one for each joint. Select the Force tab and use the sliders to apply forces to each joint, and you should see the gripper move.  E.g., set the force on `palm_riser` to 10 (Newtons), and you should see something like:
 
-<img src="http://gazebosim.org/w/images/a/af/Simple_gripper_joint_control_1_4.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/a/af/Simple_gripper_joint_control_1_4.png" width="640px"/>
 
 1. Optional:
 
