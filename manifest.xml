@@ -66,6 +66,18 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Sensor Noise Model" ref='sensor_noise'>
+    <markdown version="1.9-">sensor_noise/tutorial.md</markdown>
+    <description>How to add noise to sensors</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Make a model" ref='build_model'>
+    <markdown version="1.9-">build_model/tutorial.md</markdown>
+    <description>Describes models, and how to create custom models.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
