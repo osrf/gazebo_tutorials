@@ -39,8 +39,7 @@ Add the following content to it:
 
 We create a new node pointer, and initialize it to using the world name.
 The world name allows the node to communicate with one specific world.
-<include from="/^.Create a publisher/" to="/Advertise.*$/"
-  src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
+<include from="/^.Create a publisher/" to="/Advertise.*$/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
 
 A publisher is created for sending physics messages on the "~/physics" topic.
 <include from="/^.*physicsMsg/" to="/physicsPub.*Publish.*$/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
