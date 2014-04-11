@@ -14,6 +14,7 @@ In the `World` tab, select the `scene` item. A list of scene properties will be 
 
 <a href="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" class="image"><img alt="TutorialSceneTab.png" src="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" width="268" height="687"></a>
 [[File:TutorialSceneTab.png]] [[File:TutorialSceneTabExpanded.png]]
+<a href="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" class="image"><img alt="TutorialSceneTabExpanded.png" src="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" width="265" height="708"></a>
 
 These properties allow you to change the ambient light. Note: The background color will not change if the Sky is enabled.
 
