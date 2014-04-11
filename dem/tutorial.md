@@ -118,6 +118,7 @@ GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/tmp" gazebo /tmp/volcano.world
 <a href="http://gazebosim.org/w/images/5/5f/Gazebo_sthelens.png" class="image">
   <img alt="Gazebo sthelens.png" src="http://gazebosim.org/w/images/5/5f/Gazebo_sthelens.png" width="640" height="307">
 </a>
+[[File:gazebo_sthelens.png|640px]]
 
 ### How do I get a DEM file of my region of interest? ###
 
@@ -125,7 +126,9 @@ Next, we are going to describe one method for obtaining a DEM file of a specific
 
 [Global Land Cover Facility](http://glcf.umd.edu/) maintains a high-resolution digital topographic database of Earth. Go to its [Search and Preview tool](http://glcfapp.glcf.umd.edu:8080/esdi/index.jsp) and you will see something similar to the image below. Every terrain patch has a unique path and row that you should know before using the tool. We'll use QGIS to discover the path/row of our region of interest.
 
-
+<a href="http://gazebosim.org/w/images/e/e8/Glcf_search_tool.png" class="image">
+  <img alt="Glcf search tool.png" src="http://gazebosim.org/w/images/e/e8/Glcf_search_tool.png" width="640" height="578">
+</a>
 [[File:glcf_search_tool.png|640px]]
 
 
@@ -133,10 +136,16 @@ Next, we are going to describe one method for obtaining a DEM file of a specific
 
 Open up QGIS, click on the left column icon labeled `WMS/WMTS layer`, click on `Add default servers`, select `Lizardtech server`, and then, press the `connect` button. Select the `MODIS` value and press `Add`. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [this shapefile](http://landsat.usgs.gov/documents/wrs2_descending.zip) and decompress it in any folder. Go back to QGIS and press `Add Vector Layer` (left column icon). Press `Browse`, and select your previously uncompressed wrs2_descending.shp file. Press OK in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
 
+<a href="http://gazebosim.org/w/images/0/0b/Qgis.png" class="image">
+  <img alt="Qgis.png" src="http://gazebosim.org/w/images/0/0b/Qgis.png" width="640" height="364">
+</a>
 [[File:qgis.png|640px]]
 
 Use the scroll and left button to navigate to your region of interest. Then click on the icon labeled `Identify Features` on the top bar. Click on your region of interest and all the terrain patches around the area will be highlighted. A new pop up window will show the path/row values for each highlighted patch. In the image below you can see the path and row of the DEM patch containing Las Palmas, one of the heavenly places of the Canary Islands, Spain.
 
+<a href="http://gazebosim.org/w/images/a/a8/Qgis_las_palmas.png" class="image">
+  <img alt="Qgis las palmas.png" src="http://gazebosim.org/w/images/a/a8/Qgis_las_palmas.png" width="640" height="365">
+</a>
 [[File:qgis_las_palmas.png|640px]]
 
 
@@ -164,4 +173,5 @@ gdal_merge.py *.tif -o dem_merged.tif
 
 Now, you can just use `dem_merged.tif` in your world file and Gazebo will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
 
+<a href="http://gazebosim.org/w/images/4/4c/Gazebo_dem_merged.png" class="image"><img alt="Gazebo dem merged.png" src="http://gazebosim.org/w/images/4/4c/Gazebo_dem_merged.png" width="640" height="362"></a>
 [[File:gazebo_dem_merged.png|640px]]
