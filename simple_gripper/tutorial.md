@@ -20,26 +20,26 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
     Copy the following SDF into `gripper.world`:
 
     ~~~
-  <?xml version="1.0"?>
-  <sdf version="1.4">
-    <world name="default">
+      <?xml version="1.0"?>
+      <sdf version="1.4">
+        <world name="default">
 
-    <!-- A ground plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
+        <!-- A ground plane -->
+        <include>
+          <uri>model://ground_plane</uri>
+        </include>
 
-    <!-- A global light source -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
+        <!-- A global light source -->
+        <include>
+          <uri>model://sun</uri>
+        </include>
 
-    <include>
-      <uri>model://my_gripper</uri>
-    </include>
+        <include>
+          <uri>model://my_gripper</uri>
+        </include>
 
-    </world>
-  </sdf>
+        </world>
+      </sdf>
     ~~~
 
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
@@ -55,24 +55,24 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Fill `model.config` with the following contents:
 
-~~~~
-    <?xml version="1.0"?>
+    ~~~~
+        <?xml version="1.0"?>
 
-    <model>
-      <name>My Gripper</name>
-      <version>1.0</version>
-      <sdf version='1.4'>simple_gripper.sdf</sdf>
+        <model>
+          <name>My Gripper</name>
+          <version>1.0</version>
+          <sdf version='1.4'>simple_gripper.sdf</sdf>
 
-      <author>
-        <name>My Name</name>
-        <email>me@my.email</email>
-      </author>
+          <author>
+            <name>My Name</name>
+            <email>me@my.email</email>
+          </author>
 
-      <description>
-        My awesome robot.
-      </description>
-    </model>
-~~~~
+          <description>
+            My awesome robot.
+          </description>
+        </model>
+    ~~~~
 
 1. Make a new file for the model:
 
@@ -80,201 +80,201 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Copy the following code in the `simple_gripper.sdf` file.
 
-~~~
-<?xml version="1.0"?>
-<sdf version="1.4">
-    <model name="simple_gripper">
-        <link name="riser">
-            <pose>-0.15 0.0 0.5 0 0 0</pose>
-            <inertial>
-                <pose>0 0 -0.5 0 0 0</pose>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>10.0</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.2 0.2 1.0</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.2 0.2 1.0</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>Gazebo/Purple</script>
-                </material>
-            </visual>
-        </link>
-        <link name="palm">
-            <pose>0.0 0.0 0.05 0 0 0</pose>
-            <inertial>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>0.5</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>Gazebo/Red</script>
-                </material>
-            </visual>
-        </link>
-        <link name="left_finger">
-            <pose>0.1 0.2 0.05 0 0 -0.78539</pose>
-            <inertial>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>0.1</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.1 0.3 0.1</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.1 0.3 0.1</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>Gazebo/Blue</script>
-                </material>
-            </visual>
-        </link>
-        <link name="left_finger_tip">
-            <pose>0.336 0.3 0.05 0 0 1.5707</pose>
-            <inertial>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>0.1</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
-                </geometry>
-                <material>
-                    <script>Gazebo/Blue</script>
-                </material>
-            </visual>
-        </link>
-        <link name="right_finger">
-            <pose>0.1 -0.2 0.05 0 0 .78539</pose>
-            <inertial>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>0.1</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.1 0.3 0.1</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.1 0.3 0.1</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>Gazebo/Green</script>
-                </material>
-            </visual>
-        </link>
-        <link name="right_finger_tip">
-            <pose>0.336 -0.3 0.05 0 0 1.5707</pose>
-            <inertial>
-                <inertia>
-                    <ixx>0.01</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>0.01</iyy>
-                    <iyz>0</iyz>
-                    <izz>0.01</izz>
-                </inertia>
-                <mass>0.1</mass>
-            </inertial>
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>
-                </geometry>
-            </collision>
-            <visual name="visual">
-                <geometry>
-                    <box>
-                        <size>0.1 0.2 0.1</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>Gazebo/Green</script>
-                </material>
-            </visual>
-        </link>
-        <static>true</static>
-    </model>
-</sdf>
-~~~
+    ~~~
+    <?xml version="1.0"?>
+    <sdf version="1.4">
+        <model name="simple_gripper">
+            <link name="riser">
+                <pose>-0.15 0.0 0.5 0 0 0</pose>
+                <inertial>
+                    <pose>0 0 -0.5 0 0 0</pose>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>10.0</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.2 0.2 1.0</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.2 0.2 1.0</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Purple</script>
+                    </material>
+                </visual>
+            </link>
+            <link name="palm">
+                <pose>0.0 0.0 0.05 0 0 0</pose>
+                <inertial>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>0.5</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Red</script>
+                    </material>
+                </visual>
+            </link>
+            <link name="left_finger">
+                <pose>0.1 0.2 0.05 0 0 -0.78539</pose>
+                <inertial>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>0.1</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.3 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.3 0.1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Blue</script>
+                    </material>
+                </visual>
+            </link>
+            <link name="left_finger_tip">
+                <pose>0.336 0.3 0.05 0 0 1.5707</pose>
+                <inertial>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>0.1</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Blue</script>
+                    </material>
+                </visual>
+            </link>
+            <link name="right_finger">
+                <pose>0.1 -0.2 0.05 0 0 .78539</pose>
+                <inertial>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>0.1</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.3 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.3 0.1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Green</script>
+                    </material>
+                </visual>
+            </link>
+            <link name="right_finger_tip">
+                <pose>0.336 -0.3 0.05 0 0 1.5707</pose>
+                <inertial>
+                    <inertia>
+                        <ixx>0.01</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.01</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.01</izz>
+                    </inertia>
+                    <mass>0.1</mass>
+                </inertial>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.2 0.1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>Gazebo/Green</script>
+                    </material>
+                </visual>
+            </link>
+            <static>true</static>
+        </model>
+    </sdf>
+    ~~~
 
 1. Run the world file to visualize what we have created up to this point.
 
@@ -288,75 +288,75 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
         gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
 
+    ~~~
+            <joint name="palm_left_finger" type="revolute">
+                <pose>0 -0.15 0 0 0 0</pose>
+                <child>left_finger</child>
+                <parent>palm</parent>
+                <axis>
+                    <limit>
+                        <lower>-0.4</lower>
+                        <upper>0.4</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+            <joint name="left_finger_tip" type="revolute">
+                <pose>0 0.1 0 0 0 0</pose>
+                <child>left_finger_tip</child>
+                <parent>left_finger</parent>
+                <axis>
+                    <limit>
+                        <lower>-0.4</lower>
+                        <upper>0.4</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+            <joint name="palm_right_finger" type="revolute">
+                <pose>0 0.15 0 0 0 0</pose>
+                <child>right_finger</child>
+                <parent>palm</parent>
+                <axis>
+                    <limit>
+                        <lower>-0.4</lower>
+                        <upper>0.4</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+            <joint name="right_finger_tip" type="revolute">
+                <pose>0 0.1 0 0 0 0</pose>
+                <child>right_finger_tip</child>
+                <parent>right_finger</parent>
+                <axis>
+                    <limit>
+                        <lower>-0.4</lower>
+                        <upper>0.4</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+            <joint name="palm_riser" type="prismatic">
+                <child>palm</child>
+                <parent>riser</parent>
+                <axis>
+                    <limit>
+                        <lower>0</lower>
+                        <upper>0.9</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+    ~~~
 
-~~~
-        <joint name="palm_left_finger" type="revolute">
-            <pose>0 -0.15 0 0 0 0</pose>
-            <child>left_finger</child>
-            <parent>palm</parent>
-            <axis>
-                <limit>
-                    <lower>-0.4</lower>
-                    <upper>0.4</upper>
-                </limit>
-                <xyz>0 0 1</xyz>
-            </axis>
-        </joint>
-        <joint name="left_finger_tip" type="revolute">
-            <pose>0 0.1 0 0 0 0</pose>
-            <child>left_finger_tip</child>
-            <parent>left_finger</parent>
-            <axis>
-                <limit>
-                    <lower>-0.4</lower>
-                    <upper>0.4</upper>
-                </limit>
-                <xyz>0 0 1</xyz>
-            </axis>
-        </joint>
-        <joint name="palm_right_finger" type="revolute">
-            <pose>0 0.15 0 0 0 0</pose>
-            <child>right_finger</child>
-            <parent>palm</parent>
-            <axis>
-                <limit>
-                    <lower>-0.4</lower>
-                    <upper>0.4</upper>
-                </limit>
-                <xyz>0 0 1</xyz>
-            </axis>
-        </joint>
-        <joint name="right_finger_tip" type="revolute">
-            <pose>0 0.1 0 0 0 0</pose>
-            <child>right_finger_tip</child>
-            <parent>right_finger</parent>
-            <axis>
-                <limit>
-                    <lower>-0.4</lower>
-                    <upper>0.4</upper>
-                </limit>
-                <xyz>0 0 1</xyz>
-            </axis>
-        </joint>
-        <joint name="palm_riser" type="prismatic">
-            <child>palm</child>
-            <parent>riser</parent>
-            <axis>
-                <limit>
-                    <lower>0</lower>
-                    <upper>0.9</upper>
-                </limit>
-                <xyz>0 0 1</xyz>
-            </axis>
-        </joint>
-~~~
-And make the model non-static:
+    And make the model non-static:
 
-~~~
-        ...
-        <static>false</static>
-        ...
-~~~
+    ~~~
+            ...
+            <static>false</static>
+            ...
+    ~~~
 
 1. Start Gazebo again:
 
