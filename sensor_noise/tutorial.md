@@ -119,13 +119,11 @@ To test the ray noise model:
 
 As you can see, the scan is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`, where the units are meters:
 
-    ~~~
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
-    ~~~
 
 These are reasonable values for Hokuyo lasers.
 
@@ -229,13 +227,11 @@ To test the camera noise model:
 
 If you look closely, you can see that the image is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`.  These are unitless values; the noise will be added to each color channel within the range [0.0,1.0].
 
-    ~~~
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
           <stddev>0.07</stddev>
         </noise>
-    ~~~
 
 These are reasonable values for decent digital cameras.
 
@@ -361,6 +357,5 @@ To adjust the noise, simply play with the mean and standard deviation values in 
             <bias_stddev>0.001</bias_stddev>
           </accel>
         </noise>
-
 
 These are reasonable values for a high-quality IMU.
