@@ -4,7 +4,7 @@ Gazebo communicates on TCP/IP sockets, which allows separate programs to interfa
 
 The easiest way to communicate with Gazebo over TCP/IP sockets is to link against the Gazebo libraries, and use the provided functions.
 
-The Gazebo transport system is documented [here](http://gazebosim.org/api/1.9.0/group__gazebo__msgs.html) and the protobuf message types are documented [here](http://gazebosim.org/msgs/1.9.0/classes.html).
+The Gazebo transport system is documented [here](http://gazebosim.org/api/1.9.1/group__gazebo__transport.html) and the protobuf message types are documented [here](http://gazebosim.org/api/1.9.1/group__gazebo__msgs.html).
 
 A list of all the topics in use on a running system can be found with the following command (make sure Gazebo is running first):
 
