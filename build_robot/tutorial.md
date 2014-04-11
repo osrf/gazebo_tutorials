@@ -1,7 +1,5 @@
 # Tutorial: Make a Mobile Robot#
 
-**Prerequisites:** [[model_database | Model Database]]
-
 The tutorial demonstrates Gazebo's basic model management, and exercises familiarity with basic model representation inside the model database by taking the user through the process of creating a two wheeled mobile robot that uses a differential drive mechanism for movement.
 
 ## Setup your model directory ##

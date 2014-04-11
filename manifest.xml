@@ -32,13 +32,19 @@
 
   <tutorial title="Import Meshes" ref='import_mesh'>
     <markdown version="1.9-">import_mesh/tutorial.md</markdown>
-    <description>Import 3D meshes into Gazebo</description>
+    <description>How to import 3D meshes into Gazebo for use as visual and collision entities</description>
     <skill>beginner</skill>
   </tutorial>
 
-  <tutorial title="Build Robot" ref='build_robot'>
+  <tutorial title="Make a Mobile Robot" ref='build_robot'>
     <markdown version="1.9-">build_robot/tutorial.md</markdown>
-    <description>Build a mobile robot</description>
+    <description>How to make a 2-wheeled mobile robot</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Attach Meshes" ref='attach_meshes'>
+    <markdown version="1.9-">build_robot/tutorial.md</markdown>
+    <description> Improve model visual appearance by attaching Collada meshes</description>
     <skill>beginner</skill>
   </tutorial>
 
