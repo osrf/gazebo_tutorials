@@ -13,6 +13,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
         cd ~/.gazebo/models/my_robot
 
 1.  Open `model.sdf` in your favorite editor.
+
 1.  Add the following lines directly before the `</model>` tag near the end of the file.
 
 ~~~
@@ -33,9 +34,9 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
     </joint>
 ~~~
 
-    The `<include>` block tells Gazebo to find a model, and insert it at a given `<pose>` relative to the parent model. In this case we place the hokuyo laser forward and above the robot.  The `<uri>` block tells gazebo where to find the model inside its model database (note, you can see a listing of the model database uri used by these tutorials at [here](http://gazebosim.org/models/), and the corresponding [mercurial repository](https://bitbucket.org/osrf/gazebo_models).
+The `<include>` block tells Gazebo to find a model, and insert it at a given `<pose>` relative to the parent model. In this case we place the hokuyo laser forward and above the robot.  The `<uri>` block tells gazebo where to find the model inside its model database (note, you can see a listing of the model database uri used by these tutorials at [here](http://gazebosim.org/models/), and the corresponding [mercurial repository](https://bitbucket.org/osrf/gazebo_models).
 
-    The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint has and `<upper>` and `<lower>` limit of zero to prevent it from moving.
+The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint has and `<upper>` and `<lower>` limit of zero to prevent it from moving.
 
     The `<child>` name in the joint is derived from the [hokuyo model's SDF](https://bitbucket.org/osrf/gazebo_models/src/6cd587c0a30e/hokuyo/model.sdf?at=default), which begins with:
 
