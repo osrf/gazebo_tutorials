@@ -13,14 +13,14 @@ The main motivation to support DEMs in Gazebo is to be able to simulate a realis
 In order to work with DEM files you should install GDAL libraries.
 
 **On Ubuntu Saucy, Raring or Quantal:**
-<pre>
+~~~
 sudo apt-get install gdal-bin libgdal-dev libgdal1 python-gdal
-</pre>
+~~~
 
 **On Ubuntu Precise:**
-<pre>
+~~~
 sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
-</pre>
+~~~
 
 '''Note:''' gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
 
@@ -28,17 +28,17 @@ sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 
 There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it `mtsthelens.dem`.
 
-<pre>
+~~~
 unzip ~/Downloads/mtsthelens_after.zip -d /tmp
 mv /tmp/10.2.1.1043901.dem /tmp/mtsthelens.dem
-</pre>
+~~~
 
 Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo media/dem/ directory.
 
-<pre>
+~~~
 mkdir -p /tmp/media/dem/
 gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
-</pre>
+~~~
 
 
 A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
@@ -109,11 +109,11 @@ The `<use_true_size>` element in the code above, tells Gazebo whether to load th
 
 Launch Gazebo with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
 
-<pre>
+~~~
 # Be sure of sourcing gazebo setup.sh in your own installation path
 . /usr/share/gazebo/setup.sh
 GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/tmp" gazebo /tmp/volcano.world
-</pre>
+~~~
 
 [[File:gazebo_sthelens.png|640px]]
 
@@ -144,9 +144,9 @@ Go back to your browser with the GLCF search tool and write the path/row values 
 
 DEM data is usually created at very high resolution. Use *gdalwarp* to reduce the resolution of the terrain to a more manageable size before using it in Gazebo.
 
-<pre>
+~~~
 gdalwarp -ts <width> <height> <srcDEM> <targetDEM>
-</pre>
+~~~
 
 DEM data often contain "holes" or "void" areas. These sections correspond to areas where data could not be collected while the DEM was created. In the case of a data "hole", the hole will be assigned the minimum or maximum value of the data type that is used in that DEM.
 
@@ -156,9 +156,9 @@ Always try to download "finished" versions of DEM data sets, where the holes hav
 
 Although Gazebo does not directly support multiple DEMs, GDAL has a set of utilities for merging a set of DEMs into a single one. The first step is to download the set of DEMs that you want to merge. Note that the patches can even overlap with one another; GDAL will merge them seamlessly. Assuming that your current directory contains a set of Geotiff files ready to be merged, run the next command.
 
-<pre>
+~~~
 gdal_merge.py *.tif -o dem_merged.tif
-</pre>
+~~~
 
 Now, you can just use `dem_merged.tif` in your world file and Gazebo will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
 
