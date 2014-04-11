@@ -47,7 +47,7 @@ gedit model_push.world
 
 The hook to attach a plugin to a model is specified at the end of the model element block using:
 
-+++<plugin name="model_push" filename="libmodel_push.so"/>+++
+```plugin name="model_push" filename="libmodel_push.so"/>```
 
 To start simulation, run
 
