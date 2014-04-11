@@ -244,7 +244,7 @@ Noise is additive, sampled from a Gaussian distribution.  You can set the mean a
 
 Bias is also additive, but it is sampled once, at the start of simulation. You can set the mean and the standard deviation of the Gaussian distributions (one for rates and one for accels) from which bias values will be sampled.   Bias will be sampled according to the provided parameters, then with equal probability negated; the assumption is that the provided mean indicates the magnitude of the bias and that it's equal likely to be biased in either direction.  Thereafter, bias is a fixed value, added to each component (X,Y,Z) of each sample.
 
-'''Note:''' depending on the system being simulated and the configuration of the physics engine, it can happen that the simulated IMU data is already quite noisy because the system is not being solved all the way to convergence.  So it may not be necessary to add noise, depending on your application.
+**Note:** depending on the system being simulated and the configuration of the physics engine, it can happen that the simulated IMU data is already quite noisy because the system is not being solved all the way to convergence.  So it may not be necessary to add noise, depending on your application.
 
 To test the IMU noise model:
 
