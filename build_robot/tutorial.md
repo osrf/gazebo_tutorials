@@ -64,6 +64,10 @@ It is important to start simple, and build up a model in steps. The first step i
 <sdf version="1.4"><model name="myrobot">
 %%%
 
+
+1. test
+
+
     ~~~
             <static>true</static>
     ~~~
