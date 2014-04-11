@@ -28,7 +28,7 @@ Copy the following code into the `factory.cc` file:
 
 The first part of the code creates a world plugin.
 
-<include from="/#include/" to="/!)/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/#include/" to="/_sdf\*\/\)/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 Within the `Load` function are three different methods for model insertion.
 
