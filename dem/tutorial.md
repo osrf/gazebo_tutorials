@@ -115,7 +115,9 @@ Launch Gazebo with the world containing your DEM file and you should see the vol
 GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/tmp" gazebo /tmp/volcano.world
 ~~~
 
-[[File:gazebo_sthelens.png|640px]]
+<a href="http://gazebosim.org/w/images/5/5f/Gazebo_sthelens.png" class="image">
+  <img alt="Gazebo sthelens.png" src="http://gazebosim.org/w/images/5/5f/Gazebo_sthelens.png" width="640" height="307">
+</a>
 
 ### How do I get a DEM file of my region of interest? ###
 
