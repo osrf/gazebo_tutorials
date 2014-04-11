@@ -117,4 +117,4 @@ The filename must be in the current working directory, or you must specify the c
 
 ## Next
 
-Next: [Next: Modifying a world tutorial](http://gazebosim.org/tutorials/?tut=gui_modify_world)
+Next: [Next: Modifying a world tutorial](http://gazebosim.org/tutorials/?tut=modifying_world)

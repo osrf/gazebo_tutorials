@@ -119,6 +119,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Modifying a world" ref='modifying_world'>
+    <markdown version="1.9-">modifying_world/tutorial.md</markdown>
+    <description>How to change scene and physics parameters of a world using the GUI.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
