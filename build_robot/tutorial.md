@@ -17,23 +17,23 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Paste in the following contents:
 
-~~~
-    <?xml version="1.0"?>
-    <model>
-      <name>My Robot</name>
-      <version>1.0</version>
-      <sdf version='1.4'>model.sdf</sdf>
+    ~~~
+        <?xml version="1.0"?>
+        <model>
+          <name>My Robot</name>
+          <version>1.0</version>
+          <sdf version='1.4'>model.sdf</sdf>
 
-      <author>
-       <name>My Name</name>
-       <email>me@my.email</email>
-      </author>
+          <author>
+           <name>My Name</name>
+           <email>me@my.email</email>
+          </author>
 
-      <description>
-        My awesome robot.
-      </description>
-    </model>
-~~~
+          <description>
+            My awesome robot.
+          </description>
+        </model>
+    ~~~
 
 1.  Create a `~/.gazebo/models/my_robot/model.sdf` file.
 
@@ -60,14 +60,16 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1.  Make the model static by adding a `<static>true</static>` element to the `~/.gazebo/models/my_robot/model.sdf` file:
 
-    %%%
+%%%
         <?xml version='1.0'?>
         <sdf version='1.4'>
           <model name="my_robot">
-    %%%
+%%%
+
     ~~~
             <static>true</static>
     ~~~
+
     %%%
           </model>
         </sdf>
