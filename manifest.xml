@@ -110,7 +110,19 @@
   <tutorial title="Digital Elevation Models" ref='dem'>
     <markdown version="3.0-">dem/tutorial.md</markdown>
     <description>How to use DEMs in Gazebo.</description>
-    <skill>intermediate</skill>
+    <skill>advanced</skill>
+  </tutorial>
+
+  <tutorial title="Building a world" ref='build_world'>
+    <markdown version="1.9-">build_world/tutorial.md</markdown>
+    <description>How to populate a simulated world with simulated objects.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Modifying a world" ref='modifying_world'>
+    <markdown version="1.9-">modifying_world/tutorial.md</markdown>
+    <description>How to change scene and physics parameters of a world using the GUI.</description>
+    <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Visual Lightmap" ref='lightmap'>

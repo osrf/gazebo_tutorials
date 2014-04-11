@@ -1,5 +1,7 @@
 #Tutorial: Quick Start 2.0
 
+[[file:pic.png|thumb|center|500px|Some label]]
+
 ### Run an empty world
 
 First make sure Gazebo is [installed](http://gazebosim.org/#download).

@@ -22,7 +22,7 @@ sudo apt-get install gdal-bin libgdal-dev libgdal1 python-gdal
 sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 ~~~
 
-'''Note:''' gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
+**Note:** gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
 
 #### DEM file and the definition into SDF format
 
@@ -33,7 +33,7 @@ unzip ~/Downloads/mtsthelens_after.zip -d /tmp
 mv /tmp/10.2.1.1043901.dem /tmp/mtsthelens.dem
 ~~~
 
-Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo media/dem/ directory.
+Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo `media/dem/` directory.
 
 ~~~
 mkdir -p /tmp/media/dem/
@@ -105,7 +105,7 @@ A DEM file in Gazebo is loaded in the same way that you load a heightmap image. 
 </sdf>
 ~~~
 
-The `<use_true_size>` element in the code above, tells Gazebo whether to load the DEM with the original dimensions or to scale it. In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). `<size>` will be ignored if you set <use_true_size> to true. In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
+The `<heightmap><size>` element in the code above, tells Gazebo whether to load the DEM with the original dimensions (when `<size>` is not present) or to scale it (when `<size>` is present). In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
 
 Launch Gazebo with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
 
