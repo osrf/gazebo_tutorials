@@ -282,7 +282,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
     You should see something like this:
 
-<img src="http://gazebosim.org/w/images/6/66/Simple-gripper-1.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/6/66/Simple-gripper-1.png" width="640px"/>
 
 1. Once we are happy with the layout of the links, we can add in the joints, by copying the following code into the `simple_gripper.sdf` file before the `</model>` line.
 
