@@ -24,7 +24,7 @@ Models can range from simple shapes to complex robots. It refers to the `<model>
 
 This step involves gathering all the necessary 3D mesh files that are required to build your model. Gazebo provides a set of simple shapes: box, sphere, and cylinder. If your model needs something more complex, then continue reading.
 
-Meshes come from a number of places. Google's 3D [http://sketchup.google.com/3dwarehouse/ warehouse] is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [http://blender.org Blender] or [http://sketchup.google.com Sketchup]
+Meshes come from a number of places. Google's 3D [http://sketchup.google.com/3dwarehouse/ warehouse] is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [Blender](http://blender.org) or [Sketchup](http://sketchup.google.com)
 
 Gazebo requires that mesh files be formatted as STL or Collada, with Collada being the preferred format.
 
@@ -47,7 +47,7 @@ Create the model file:
 </pre>
 
 Copy the following contents into box.sdf:
-<pre>
+~~~
 <?xml version='1.0'?>
 <sdf version="1.4">
 <model name="my_model">
@@ -82,7 +82,7 @@ Copy the following contents into box.sdf:
     </link>
   </model>
 </sdf>
-</pre>
+~~~
 
 Note that the origin of the Box-geometry is at the geometric center of the box, so in order to have the bottom of the box flush with the ground plane, an origin of `<pose>0 0 0.5 0 0 0</pose>` is added to raise the box above the ground plane.
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.
