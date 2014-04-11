@@ -1,7 +1,5 @@
 #Tutorial: Components#
 
-'''Migration in progress'''
-
 This page describes each of the item involved in running a Gazebo simulation.
 
 ### World Description File ###
