@@ -22,7 +22,7 @@ A number of models are provided in the (online model database)[http://gazebosim.
 
 ### Environment Variables ###
 
-Gazebo uses a number of (variables)[http://gazebosim.org/user_guide/started__components__env.html environment] to locate files, and setup communications between the server and clients.
+Gazebo uses a number of (environment variables)[http://gazebosim.org/user_guide/started__components__env.html] to locate files, and setup communications between the server and clients.
 
 Starting with Gazebo 1.9.0, default values that work for most cases are compiled in, so that if you don't need to set any variables.  These defaults are also included in a shell script:
 
