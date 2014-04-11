@@ -18,11 +18,11 @@ A model file uses the same [SDF](http://gazebosim.org/wiki/sdf_format) format as
 <include filename="model_file_name"/>
 ~~~
 
-A number of models are provided in the (online model database)[http://gazebosim.org/user_guide/started__models__database.html] (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
+A number of models are provided in the [online model database](http://gazebosim.org/user_guide/started__models__database.html) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
 
 ### Environment Variables ###
 
-Gazebo uses a number of (environment variables)[http://gazebosim.org/user_guide/started__components__env.html] to locate files, and setup communications between the server and clients.
+Gazebo uses a number of [environment variables](http://gazebosim.org/user_guide/started__components__env.html) to locate files, and setup communications between the server and clients.
 
 Starting with Gazebo 1.9.0, default values that work for most cases are compiled in, so that if you don't need to set any variables.  These defaults are also included in a shell script:
 
