@@ -29,6 +29,7 @@ In the `World` tab, select the `physics` item. A list of physics properties will
 * The `max step size` specifies the time duration in seconds of each physics update step.
 
 In the gravity block:
+
 * The `x`, `y` and `z` parameters set the global gravity vector components in m/s^2.
 
 In the solver block:
