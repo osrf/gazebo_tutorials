@@ -1,8 +1,8 @@
 #Tutorial: Using Digital Elevation Models#
 
-A Digital Elevation Model (DEM) is a 3D representation of a terrain's surface that does not include any objects like buildings or vegetation. DEMs are frequently created by using a combination of sensors, such as LIDAR, radar, or cameras. The terrain elevations for ground positions are sampled at regularly-spaced horizontal intervals. [http://en.wikipedia.org/wiki/Digital_elevation_model Wikipedia] is a good resource for getting more details about DEMs.
+A Digital Elevation Model (DEM) is a 3D representation of a terrain's surface that does not include any objects like buildings or vegetation. DEMs are frequently created by using a combination of sensors, such as LIDAR, radar, or cameras. The terrain elevations for ground positions are sampled at regularly-spaced horizontal intervals. [Wikipedia](http://en.wikipedia.org/wiki/Digital_elevation_model) is a good resource for getting more details about DEMs.
 
-The term DEM is just a generic denomination,  not a specific format. In fact, the DEMs can be represented as a grid of elevations (raster) or as a vector-based triangular irregular network (TIN). Currently, Gazebo only supports raster data in the supported formats available in [http://www.gdal.org/ GDAL].
+The term DEM is just a generic denomination,  not a specific format. In fact, the DEMs can be represented as a grid of elevations (raster) or as a vector-based triangular irregular network (TIN). Currently, Gazebo only supports raster data in the supported formats available in [GDAL](http://www.gdal.org/).
 
 The main motivation to support DEMs in Gazebo is to be able to simulate a realistic terrain. Rescue or agriculture applications might be interested in testing their robot behaviors using a simulated terrain that matches the real world.
 
@@ -26,7 +26,7 @@ sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 
 #### DEM file and the definition into SDF format
 
-There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip before] or [http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip after] its eruption back in the '80s. Unzip the file and rename it ''mtsthelens.dem''.
+There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it ''mtsthelens.dem''.
 
 <pre>
 unzip ~/Downloads/mtsthelens_after.zip -d /tmp
@@ -121,13 +121,13 @@ GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/tmp" gazebo /tmp/volcano.world
 
 Next, we are going to describe one method for obtaining a DEM file of a specific region of interest.
 
-[http://glcf.umd.edu/ Global Land Cover Facility] maintains a high-resolution digital topographic database of Earth. Go to its [http://glcfapp.glcf.umd.edu:8080/esdi/index.jsp Search and Preview tool] and you will see something similar to the image below. Every terrain patch has a unique path and row that you should know before using the tool. We'll use QGIS to discover the path/row of our region of interest.
+[Global Land Cover Facility](http://glcf.umd.edu/) maintains a high-resolution digital topographic database of Earth. Go to its [Search and Preview tool](http://glcfapp.glcf.umd.edu:8080/esdi/index.jsp) and you will see something similar to the image below. Every terrain patch has a unique path and row that you should know before using the tool. We'll use QGIS to discover the path/row of our region of interest.
 
 
 [[File:glcf_search_tool.png|640px]]
 
 
-[http://www.qgis.org/ QGIS] is a cross-platform open source geographic information system program that provides data viewing, editing, and analysis capabilities. Download QGIS following the [http://www.qgis.org/en/site/forusers/download.html instructions detailed on the QGIS website].
+[QGIS](http://www.qgis.org/) is a cross-platform open source geographic information system program that provides data viewing, editing, and analysis capabilities. Download QGIS following the [instructions detailed on the QGIS website](http://www.qgis.org/en/site/forusers/download.html).
 
 Open up QGIS, click on the left column icon labeled ''WMS/WMTS layer'', click on ''Add default servers'', select ''Lizardtech server'', and then, press the ''connect'' button. Select the ''MODIS'' value and press ''Add''. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [http://landsat.usgs.gov/documents/wrs2_descending.zip this shapefile] and decompress it in any folder. Go back to QGIS and press ''Add Vector Layer'' (left column icon). Press ''Browse'', and select your previously uncompressed wrs2_descending.shp file. Press OK in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
 
