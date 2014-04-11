@@ -12,11 +12,10 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
         mkdir -p ~/.gazebo/models/my_robot
 
+
 1.  Create a model config file:
 
-~~~
-    gedit ~/.gazebo/models/my_robot/model.config
-~~~
+        gedit ~/.gazebo/models/my_robot/model.config
 
 1.  Paste in the following contents:
 
@@ -40,9 +39,8 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Create a `~/.gazebo/models/my_robot/model.sdf` file.
 
-~~~
-    gedit ~/.gazebo/models/my_robot/model.sdf
-~~~
+        gedit ~/.gazebo/models/my_robot/model.sdf
+
 
 1. Paste in the following.
 
@@ -386,7 +384,7 @@ It is important to start simple, and build up a model in steps. The first step i
       <model name="my_robot">
 ~~~
 ~~~
-    <static>false</static>
+        <static>false</static>
 ~~~
 ~~~
         <link name='chassis'>
