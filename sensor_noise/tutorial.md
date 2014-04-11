@@ -201,7 +201,7 @@ To test the camera noise model:
               <noise>
                 <type>gaussian</type>
                 <mean>0.0</mean>
-                <stddev>0.007</stddev>
+                <stddev>0.07</stddev>
               </noise>
             </camera>
             <always_on>1</always_on>
@@ -227,10 +227,12 @@ To test the camera noise model:
 
 If you look closely, you can see that the image is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`.  These are unitless values; the noise will be added to each color channel within the range [0.0,1.0].
 
+The example above has a very high `<stddev>`. Try reducing this value:
+
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
-          <stddev>0.07</stddev>
+          <stddev>0.007</stddev>
         </noise>
 
 These are reasonable values for decent digital cameras.
