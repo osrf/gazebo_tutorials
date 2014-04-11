@@ -26,7 +26,7 @@ sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
 
 #### DEM file and the definition into SDF format
 
-There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it ''mtsthelens.dem''.
+There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it `mtsthelens.dem`.
 
 <pre>
 unzip ~/Downloads/mtsthelens_after.zip -d /tmp
@@ -41,7 +41,7 @@ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 </pre>
 
 
-A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file ''volcano.world'' and copy the next content. Save the file anywhere you want, for example, in /tmp.
+A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
 
 ~~~
 <?xml version="1.0" ?>
@@ -105,7 +105,7 @@ A DEM file in Gazebo is loaded in the same way that you load a heightmap image. 
 </sdf>
 ~~~
 
-The ~~~<use_true_size>~~~ element in the code above, tells Gazebo whether to load the DEM with the original dimensions or to scale it. In case you prefer to scale the DEM, the ''<size>'' element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in ''<size>''). ''<size>'' will be ignored if you set <use_true_size> to true. In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
+The ~~~<use_true_size>~~~ element in the code above, tells Gazebo whether to load the DEM with the original dimensions or to scale it. In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). `<size>` will be ignored if you set <use_true_size> to true. In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
 
 Launch Gazebo with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
 
@@ -129,16 +129,16 @@ Next, we are going to describe one method for obtaining a DEM file of a specific
 
 [QGIS](http://www.qgis.org/) is a cross-platform open source geographic information system program that provides data viewing, editing, and analysis capabilities. Download QGIS following the [instructions detailed on the QGIS website](http://www.qgis.org/en/site/forusers/download.html).
 
-Open up QGIS, click on the left column icon labeled ''WMS/WMTS layer'', click on ''Add default servers'', select ''Lizardtech server'', and then, press the ''connect'' button. Select the ''MODIS'' value and press ''Add''. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [http://landsat.usgs.gov/documents/wrs2_descending.zip this shapefile] and decompress it in any folder. Go back to QGIS and press ''Add Vector Layer'' (left column icon). Press ''Browse'', and select your previously uncompressed wrs2_descending.shp file. Press OK in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
+Open up QGIS, click on the left column icon labeled `WMS/WMTS layer``, click on `Add default servers`, select `Lizardtech server`, and then, press the `connect` button. Select the `MODIS` value and press `Add`. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [this shapefile](http://landsat.usgs.gov/documents/wrs2_descending.zip) and decompress it in any folder. Go back to QGIS and press `Add Vector Layer` (left column icon). Press `Browse`, and select your previously uncompressed wrs2_descending.shp file. Press OK in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
 
 [[File:qgis.png|640px]]
 
-Use the scroll and left button to navigate to your region of interest. Then click on the icon labeled ''Identify Features'' on the top bar. Click on your region of interest and all the terrain patches around the area will be highlighted. A new pop up window will show the path/row values for each highlighted patch. In the image below you can see the path and row of the DEM patch containing Las Palmas, one of the heavenly places of the Canary Islands, Spain.
+Use the scroll and left button to navigate to your region of interest. Then click on the icon labeled `Identify Features` on the top bar. Click on your region of interest and all the terrain patches around the area will be highlighted. A new pop up window will show the path/row values for each highlighted patch. In the image below you can see the path and row of the DEM patch containing Las Palmas, one of the heavenly places of the Canary Islands, Spain.
 
 [[File:qgis_las_palmas.png|640px]]
 
 
-Go back to your browser with the GLCF search tool and write the path/row values in the columns labeled ''Start Path'' and ''Start Row''. Then click in ''Submit Query''; press ''Preview and Download'' to see your results. Choose your terrain file and press ''Download''. Finally, select your file with extension .gz, and decompress it in your favorite folder. Global Land Cover Facility files are in GeoTiff format, one of the most common format of DEM files available.
+Go back to your browser with the GLCF search tool and write the path/row values in the columns labeled `Start Path` and `Start Row`. Then click in `Submit Query`; press `Preview and Download` to see your results. Choose your terrain file and press `Download`. Finally, select your file with extension .gz, and decompress it in your favorite folder. Global Land Cover Facility files are in GeoTiff format, one of the most common format of DEM files available.
 
 ### Preparing DEM data for use in Gazebo ###
 
@@ -160,6 +160,6 @@ Although Gazebo does not directly support multiple DEMs, GDAL has a set of utili
 gdal_merge.py *.tif -o dem_merged.tif
 </pre>
 
-Now, you can just use ''dem_merged.tif'' in your world file and Gazebo will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
+Now, you can just use `dem_merged.tif` in your world file and Gazebo will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
 
 [[File:gazebo_dem_merged.png|640px]]
