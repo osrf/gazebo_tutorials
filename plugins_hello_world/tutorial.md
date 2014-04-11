@@ -124,7 +124,7 @@ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 ~~~
 
 Copy the following in CMakeLists.txt:
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/CMakeLists.txt' />
 
 Create the build directory
 ~~~
