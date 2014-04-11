@@ -61,9 +61,9 @@ It is important to start simple, and build up a model in steps. The first step i
 1.  Make the model static by adding a `<static>true</static>` element to the `~/.gazebo/models/my_robot/model.sdf` file:
 
 %%%
-        <?xml version='1.0'?>
-        <sdf version='1.4'>
-          <model name="my_robot">
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="my_robot">
 %%%
 
     ~~~
