@@ -126,6 +126,13 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Visual Lightmap" ref='lightmap'>
+    <markdown version="3.0-">lightmap/tutorial.md</markdown>
+    <description>How to apply lightmaps to a model visual.</description>
+    <skill>intermediate</skill>
+  </tutorial>
+
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
