@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <tutorials>
   <tutorial title="Quick Start" ref='quick_start'>
-    <markdown version="1.9-">quick_start/tutorial.md</markdown>
+    <markdown version="1.9">quick_start/tutorial_1-9.md</markdown>
+    <markdown version="2.0-">quick_start/tutorial_2-0.md</markdown>
     <description>Simple and fast introduction to Gazebo.</description>
     <skill>beginner</skill>
   </tutorial>
@@ -75,6 +76,18 @@
   <tutorial title="Make a model" ref='build_model'>
     <markdown version="1.9-">build_model/tutorial.md</markdown>
     <description>Describes models, and how to create custom models.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Random numbers" ref='random_numbers'>
+    <markdown version="1.9-">random_numbers/tutorial.md</markdown>
+    <description>How to set the random number seed.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Topics subscription" ref='topics_subscribed'>
+    <markdown version="1.9-">topics_subscribe/tutorial.md</markdown>
+    <description>How to subscribe to gazebo topics.</description>
     <skill>beginner</skill>
   </tutorial>
 
