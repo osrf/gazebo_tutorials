@@ -84,6 +84,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Topics subscription" ref='topics_subscribed'>
+    <markdown version="1.9-">topics_subscribe/tutorial.md</markdown>
+    <description>How to subscribe to gazebo topics.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
