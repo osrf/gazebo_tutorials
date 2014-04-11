@@ -24,7 +24,7 @@
     <skill>beginner</skill>
   </tutorial>
 
-  <tutorial title="World plugins for modifying world properties" ref='plugins_world_properties'>
+  <tutorial title="Plugins for modifying world properties" ref='plugins_world_properties'>
     <markdown version="1.9-">plugins_world_properties/tutorial.md</markdown>
     <description>Modify world properties, such as ambient color and the physics time step.</description>
     <skill>beginner</skill>
