@@ -19,7 +19,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
     Copy the following SDF into `gripper.world`:
 
-~~~
+    ~~~
   <?xml version="1.0"?>
   <sdf version="1.4">
     <world name="default">
@@ -40,7 +40,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
     </world>
   </sdf>
-~~~
+    ~~~
 
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
 
