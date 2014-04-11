@@ -12,4 +12,4 @@ gazebo --seed <integer>
 
 ## Message
 
-Gazebo listens to the `~/world_control` topic, which requires messages of type [http://gazebosim.org/msgs/1.5.0/world__control_8proto.html msgs::WorldControl]. The world control message may contain a random number seed.
+Gazebo listens to the `~/world_control` topic, which requires messages of type [msgs::WorldControl](http://gazebosim.org/msgs/1.5.0/world__control_8proto.html). The world control message may contain a random number seed.
