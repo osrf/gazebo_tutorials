@@ -83,6 +83,12 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="Contact Sensor" ref='contact_sensor'>
+    <markdown version="1.9-">contact_sensor/tutorial.md</markdown>
+    <description>How to create and get data from contact sensors.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Random numbers" ref='random_numbers'>
     <markdown version="1.9-">random_numbers/tutorial.md</markdown>
     <description>How to set the random number seed.</description>
