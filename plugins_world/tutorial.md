@@ -1,7 +1,7 @@
 #Tutorial: Inserting models using a world plugin#
 ## Prerequisites:
 
-   [Model Manipulation](http://gazebosim.org/wiki/tutorials/2.2/plugins/ModelPush) Plugin Tutorial
+   [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) Plugin Tutorial
 
 ## Code:
 

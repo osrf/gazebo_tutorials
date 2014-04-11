@@ -49,7 +49,6 @@ The hook to attach a plugin to a model is specified at the end of the model elem
 
 +++<plugin name="model_push" filename="libmodel_push.so"/>+++
 
-
 To start simulation, run
 
 ~~~
