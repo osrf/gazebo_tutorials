@@ -67,7 +67,7 @@ Gazebo's model database is a repository of all types of models including robots,
 1.  Try adding various models to the world. Be patient when downloading models, as some may be large.
 1.  You should end up with something similar to the following, depending on the models you decided to add:
 
-		<a href="http://gazebosim.org/w/images/a/aa/Added_models_to_empty_world.png" class="image"><img alt="Added models to empty world.png" src="http://gazebosim.org/w/images/a/aa/Added_models_to_empty_world.png" width="640" height="360"></a>
+	<a href="http://gazebosim.org/w/images/a/aa/Added_models_to_empty_world.png" class="image"><img alt="Added models to empty world.png" src="http://gazebosim.org/w/images/a/aa/Added_models_to_empty_world.png" width="640" height="360"></a>
     [[File:Added_models_to_empty_world.png|640px]]
 
 ## Position Models
