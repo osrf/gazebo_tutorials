@@ -518,4 +518,4 @@ It is important to start simple, and build up a model in steps. The first step i
     Idea: A six wheeled vehicle with a scoop front loading mechanism.
 
 ## Next ##
-[Next: Attach Meshes](http://gazebosim.org/tutorials/?tut=attach_mesh)
+[Next: Attach Meshes](http://gazebosim.org/tutorials/?tut=attach_meshes)
