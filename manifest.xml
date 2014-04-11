@@ -44,7 +44,13 @@
 
   <tutorial title="Attach Meshes" ref='attach_meshes'>
     <markdown version="1.9-">attach_meshes/tutorial.md</markdown>
-    <description> Improve model visual appearance by attaching Collada meshes</description>
+    <description>Improve model visual appearance by attaching Collada meshes</description>
+    <skill>beginner</skill>
+  </tutorial>
+
+  <tutorial title="Add a Sensor to a Robot" ref='add_laser'>
+    <markdown version="1.9-">add_laser/tutorial.md</markdown>
+    <description>How to add a laser sensor to a robot</description>
     <skill>beginner</skill>
   </tutorial>
 
