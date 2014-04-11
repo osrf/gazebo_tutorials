@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <tutorials>
   <tutorial title="Quick Start" ref='quick_start'>
-    <markdown version="1.9-">quick_start/tutorial.md</markdown>
+    <markdown version="1.9">quick_start/tutorial_1-9.md</markdown>
+    <markdown version="2.0-">quick_start/tutorial_2-0.md</markdown>
     <description>Simple and fast introduction to Gazebo.</description>
     <skill>beginner</skill>
   </tutorial>
