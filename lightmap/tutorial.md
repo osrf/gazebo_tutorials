@@ -135,7 +135,7 @@ Run gazebo:
 
 Insert the `Lightmap Table` model into the scene:
 
-[[file:Table_no_lightmap.png]]
+[[file:Table_no_lightmap.png|640px]]
 
 
 ### Apply Lightmap
