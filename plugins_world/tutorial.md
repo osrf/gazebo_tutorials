@@ -22,13 +22,13 @@ gedit factory.cc
 ~~~
 
 Copy the following code into the `factory.cc` file:
-<include from="/#include/" to="sdf::ElementPtr /*_sdf*/)" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 ### The Code Explained
 
 The first part of the code creates a world plugin.
 
-<include from="/#include/" to="/void Load.*$/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/#include/" to="/sdf::ElementPtr/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 Within the `Load` function are three different methods for model insertion.
 
