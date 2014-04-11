@@ -35,13 +35,13 @@ In the gravity block:
 In the solver block:
 
 * The `iterations` parameter specifies the number of iterations to use for iterative LCP solvers (used by ODE and bullet).
-* The `SOR` parameter stands for [[wikipedia:Successive_over-relaxation | successive over-relaxation]], which can be used to try to speed the convergence of the iterative method.
+* The `SOR` parameter stands for [successive over-relaxation](http://en.wikipedia.org/wiki/Successive_over-relaxation), which can be used to try to speed the convergence of the iterative method.
 
 The constraints block contains several parameters related to solving constraints:
 
-* The `CFM` and `ERP` parameters stands for [http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Constraint_Force_Mixing_.28CFM.29 Constraint Force Mixing] and [http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Joint_error_and_the_Error_Reduction_Parameter_.28ERP.29 Error Reduction Parameter] and are used by ODE and bullet. The CFM and ERP parameters [http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#How_To_Use_ERP_and_CFM can be related to linear stiffness and damping coefficients]. The `max velocity` and `surface layer` parameters are used to resolve contacts with a split impulse method. Any contacts with that penetrate deeper than a depth specified by `surface layer` and have a normal velocity less than `max velocity` will not bounce.
+* The `CFM` and `ERP` parameters stands for [Constraint Force Mixing](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Constraint_Force_Mixing_.28CFM.29) and [Error Reduction Parameter](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Joint_error_and_the_Error_Reduction_Parameter_.28ERP.29) and are used by ODE and bullet. The CFM and ERP parameters [can be related to linear stiffness and damping coefficients](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#How_To_Use_ERP_and_CFM). The `max velocity` and `surface layer` parameters are used to resolve contacts with a split impulse method. Any contacts with that penetrate deeper than a depth specified by `surface layer` and have a normal velocity less than `max velocity` will not bounce.
 
-See the [http://gazebosim.org/sdf/dev.html#physics sdf physics documentation] for a description of these parameters.
+See the [sdf physics documentation](http://gazebosim.org/sdf/dev.html#physics) for a description of these parameters.
 
 <a href="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" class="image"><img alt="TutorialPhysicsTab.png" src="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" width="330" height="782"></a>
 [[File:TutorialPhysicsTab.png]]
