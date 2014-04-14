@@ -22,7 +22,7 @@ Plugin Code:
 
 ### Compiling the Plugin ###
 
-Assuming the reader has gone through the [[tutorials/2.2/plugins/HelloWorld|Hello WorldPlugin tutorial]], all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the (Hello WorldPlugin tutorial)[http://gazebosim.org/tutorials?tut=plugins_hello_world], all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/CMakeLists.txt' />
 
