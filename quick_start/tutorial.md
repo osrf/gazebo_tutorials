@@ -22,7 +22,7 @@ At a terminal prompt, enter the following command.
 gazebo worlds/pioneer2d.world
 ~~~
 
-### Where are the worlds located?
+#### Where are the worlds located?
 
 You may have noticed the mysterious `worlds/pioneer2dx.world` argument in the above command.
 This instructs gazebo to find the `pioneer2dx.world` file, and load it on start.
@@ -38,4 +38,31 @@ For a Gazebo 3.0 installation on OS X using homebrew, type the following to see 
 
 ~~~
 ls /usr/local/share/gazebo-3.0/worlds
+~~~
+
+### Seperate server and client
+
+The `gazebo` command actually run two different executables for you. The
+first is called `gzserver`, and the second `gzclient.
+
+The `gzserver` executable runs the physics update-loop and sensor data
+generation. This is core of Gazebo, and can be use indepedent of any
+graphical interface. You may see the phrase "run headless" thrown about in
+the forums. This essentially means running only `gzserver`. An example use
+case would involve running `gzserver` on a cloud computer.
+
+The `gzclient` executable runs the [QT](http://qt-project.org) based user
+interface. This application provides a nice visualization of simulation, and
+convenient controls over various simulation properties.
+
+Try running each of these executables. Open a terminal and run the server:
+
+~~~
+gzserver
+~~~
+
+Open another terminal and run the graphical client:
+
+~~~
+gzclient
 ~~~
