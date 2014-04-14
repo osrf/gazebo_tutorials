@@ -2,7 +2,7 @@
 
 This page describes each of the items involved in running a Gazebo simulation.
 
-### World Description File ###
+### World Files ###
 
 The world description file contains all the elements in a simulation, including robots, lights, sensors, and static objects. This file is formatted using [SDF (Simulation Description Format)](http://gazebosim.org/wiki/sdf_format), and typically has a `.world` extension.
 
