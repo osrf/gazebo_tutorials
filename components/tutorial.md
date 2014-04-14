@@ -1,6 +1,6 @@
 #Tutorial: Components#
 
-This page describes each of the item involved in running a Gazebo simulation.
+This page describes each of the items involved in running a Gazebo simulation.
 
 ### World Description File ###
 
