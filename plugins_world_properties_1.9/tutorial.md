@@ -2,7 +2,9 @@
 
 This plugin example programmatically modifies the gravity.
 
-**Prerequisite**: See the [[tutorials/1.9/plugins/overview | Plugin]] tutorial.
+##Prerequisites: 
+
+ * [Plugin overview tutorial](tutorials/1.9/plugins/overview).
 
 ## Setup
 
