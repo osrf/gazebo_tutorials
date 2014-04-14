@@ -1,7 +1,8 @@
 #Tutorial: Inserting models using a world plugin#
 ## Prerequisites:
 
-   [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) Plugin Tutorial
+ * [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) 
+ * [Plugin Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world)
 
 ## Code:
 
@@ -48,7 +49,7 @@ The third method uses the message passing mechanism to insert a model. This meth
 
 ### Compile ###
 
-Assuming the reader has gone through the [[tutorials/1.5/plugins/overview|Plugin Overview Tutorial]], all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/CMakeLists.txt' />
 
