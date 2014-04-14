@@ -60,36 +60,36 @@ The most common use case for a mesh is to create a realistic looking visual.
 
 1.  Modify the visual to have a scaling factor.
 
-    ~~~
+    %%%
         <visual name='visual'>
           <geometry>
             <mesh>
               <uri>model://pioneer2dx/meshes/chassis.dae</uri>
-    ~~~
+    %%%
 
     ~~~
               <scale>0.9 0.5 0.5</scale>
     ~~~
 
-    ~~~
+    %%%
             </mesh>
           </geometry>
         </visual>
-    ~~~
+    %%%
 
     <img src="http://gazebosim.org/w/images/a/a5/Mobile_robot_chassis_2.png" width="640px"/>
 
 1.  The visual is also a little too low (along the z-axis). Let's raise it up a little by specifying a pose for the visual:
 
-    ~~~
+    %%%
         <visual name='visual'>
-    ~~~
+    %%%
 
     ~~~
           <pose>0 0 0.05 0 0 0</pose>
     ~~~
 
-    ~~~
+    %%%
           <geometry>
             <mesh>
               <uri>model://pioneer2dx/meshes/chassis.dae</uri>
@@ -97,7 +97,7 @@ The most common use case for a mesh is to create a realistic looking visual.
             </mesh>
           </geometry>
         </visual>
-    ~~~
+    %%%
 
     <img src="http://gazebosim.org/w/images/2/27/Mobile_robot_chassis_3.png" width="640px"/>
 

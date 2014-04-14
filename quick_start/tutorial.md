@@ -1,4 +1,4 @@
-#Tutorial: Quick Start
+#Tutorial: Quick Start 2.0
 
 ### Run an empty world
 

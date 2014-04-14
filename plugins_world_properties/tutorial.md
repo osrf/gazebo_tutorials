@@ -1,6 +1,6 @@
 #Tutorial: Programmatic World Control#
 
-This plugin example programmatically modifies the gravity.
+This plugin example programmatically modifies gravity.
 
 **Prerequisite**: See the [Plugins Overview](http://gazebosim.org/tutorials/?tut=plugins_hello_world) tutorial.
 
@@ -35,14 +35,14 @@ Add the following content to it:
 <include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
 
 ### The Code Explained ###
-<include from="/Create a new transport node/" to="/node.*Init/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
+<include from="@  * // Create a new transport node@" to="/node.*Init.*/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
 
 We create a new node pointer, and initialize it to using the world name.
 The world name allows the node to communicate with one specific world.
-<include from="/Create a publisher/" to="/Advertise/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
+<include from="@  *// Create a publisher@" to="/Advertise.*/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
 
-A publishers is created for sending physics messages on the "~/physics" topic.
-<include from="/physicsMsg/" to="/physicsPub.*Publish/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
+A publisher is created for sending physics messages on the "~/physics" topic.
+<include from="/  * msgs::Physics physicsMsg/" to="/physicsPub.*Publish.*/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc' />
 
 A physics message is created, and the step time and gravity are altered.
 This message is then published to the "~/physics" topic.
@@ -80,10 +80,10 @@ $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/world_edit/build/
 
 Then in a terminal
 
-<pre>
+~~~
 cd ~/world_edit/build
 gazebo ../world_edit.world
-</pre>
+~~~
 
 You should see an empty world.
 
