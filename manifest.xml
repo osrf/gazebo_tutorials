@@ -25,8 +25,8 @@
   </tutorial>
 
   <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
-    <markdown version="2.2-">plugins_world_properties/tutorial.md</markdown>
     <markdown version="1.9">plugins_world_properties_1.9/tutorial.md</markdown>
+    <markdown version="2.2-">plugins_world_properties/tutorial.md</markdown>
     <description>Modify world properties, such as ambient color and the physics time step.</description>
     <skill>beginner</skill>
     <tags>
