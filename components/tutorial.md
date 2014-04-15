@@ -81,7 +81,7 @@ gzserver -p <plugin_filename> <world_file>
 The same mechanism is used by the graphical client:
 
 ~~~
-gzclient -p <plugin_filename>
+gzclient -g <plugin_filename>
 ~~~
 
 For more information refer to the [plugins overview](http://gazebosim.org/wiki/tutorials/1.5/plugins/overview) page.
