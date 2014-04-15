@@ -75,7 +75,7 @@ Plugins provide a simple and convenient mechanism to interface with Gazebo. Plug
 Example of loading a plugin on the command line:
 
 ~~~
-gzserver -p <plugin_filename> <world_file>
+gzserver -s <plugin_filename> <world_file>
 ~~~
 
 The same mechanism is used by the graphical client:
