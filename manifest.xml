@@ -6,6 +6,13 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial tittle="Gazebo Components" ref="components">
+    <markdown version="1.9-">components/tutorial.md</markdown>
+    <markdown version="3.0-">components/tutorial.md</markdown>
+    <description>Overview of the basic components in a Gazebo simulation.</description>
+    <skill>beginner</skill>
+  </tutorial>
+
   <tutorial title="Plugins 101" ref='plugins_hello_world'>
     <markdown version="1.9-">plugins_hello_world/tutorial.md</markdown>
     <description>Overview of Gazebo plugins.</description>
