@@ -8,7 +8,6 @@
 
   <tutorial tittle="Gazebo Components" ref="components">
     <markdown version="1.9-">components/tutorial.md</markdown>
-    <markdown version="3.0-">components/tutorial.md</markdown>
     <description>Overview of the basic components in a Gazebo simulation.</description>
     <skill>beginner</skill>
   </tutorial>
