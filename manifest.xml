@@ -1,32 +1,32 @@
 <?xml version='1.0'?>
 <tutorials>
   <tutorial title="Quick Start" ref='quick_start'>
-    <markdown version="1.9-">quick_start/tutorial.md</markdown>
+    <markdown version="1.9+">quick_start/tutorial.md</markdown>
     <description>Simple and fast introduction to Gazebo.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Plugins 101" ref='plugins_hello_world'>
-    <markdown version="1.9-">plugins_hello_world/tutorial.md</markdown>
+    <markdown version="1.9+">plugins_hello_world/tutorial.md</markdown>
     <description>Overview of Gazebo plugins.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Model plugins" ref='plugins_model'>
-    <markdown version="1.9-">plugins_model/tutorial.md</markdown>
+    <markdown version="1.9+">plugins_model/tutorial.md</markdown>
     <description>Manipulate a model using a model plugin.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="World plugins" ref='plugins_world'>
-    <markdown version="1.9-">plugins_world/tutorial.md</markdown>
+    <markdown version="1.9+">plugins_world/tutorial.md</markdown>
     <description>Inserting models using a world plugin.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
     <markdown version="1.9">plugins_world_properties_1.9/tutorial.md</markdown>
-    <markdown version="2.2-">plugins_world_properties/tutorial.md</markdown>
+    <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
     <description>Modify world properties, such as ambient color and the physics time step.</description>
     <skill>beginner</skill>
     <tags>
@@ -36,115 +36,115 @@
   </tutorial>
 
   <tutorial title="Import Meshes" ref='import_mesh'>
-    <markdown version="1.9-">import_mesh/tutorial.md</markdown>
+    <markdown version="1.9+">import_mesh/tutorial.md</markdown>
     <description>How to import 3D meshes into Gazebo for use as visual and collision entities</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Make a Mobile Robot" ref='build_robot'>
-    <markdown version="1.9-">build_robot/tutorial.md</markdown>
+    <markdown version="1.9+">build_robot/tutorial.md</markdown>
     <description>How to make a 2-wheeled mobile robot</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Attach Meshes" ref='attach_meshes'>
-    <markdown version="1.9-">attach_meshes/tutorial.md</markdown>
+    <markdown version="1.9+">attach_meshes/tutorial.md</markdown>
     <description>Improve model visual appearance by attaching Collada meshes</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Add a Sensor to a Robot" ref='add_laser'>
-    <markdown version="1.9-">add_laser/tutorial.md</markdown>
+    <markdown version="1.9+">add_laser/tutorial.md</markdown>
     <description>How to add a laser sensor to a robot</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Make a Simple Gripper" ref='simple_gripper'>
-    <markdown version="1.9-">simple_gripper/tutorial.md</markdown>
+    <markdown version="1.9+">simple_gripper/tutorial.md</markdown>
     <description>Build a simple pinching gripper</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Attach Gripper to Robot" ref='attach_gripper'>
-    <markdown version="1.9-">attach_gripper/tutorial.md</markdown>
+    <markdown version="1.9+">attach_gripper/tutorial.md</markdown>
     <description>Connect the simple gripper to the mobile robot</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Sensor Noise Model" ref='sensor_noise'>
-    <markdown version="1.9-">sensor_noise/tutorial.md</markdown>
+    <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
     <description>How to add noise to sensors</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Make a model" ref='build_model'>
-    <markdown version="1.9-">build_model/tutorial.md</markdown>
+    <markdown version="1.9+">build_model/tutorial.md</markdown>
     <description>Describes models, and how to create custom models.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Contact Sensor" ref='contact_sensor'>
-    <markdown version="1.9-">contact_sensor/tutorial.md</markdown>
+    <markdown version="1.9+">contact_sensor/tutorial.md</markdown>
     <description>How to create and get data from contact sensors.</description>
     <skill>intermediate</skill>
   </tutorial>
 
   <tutorial title="Random numbers" ref='random_numbers'>
-    <markdown version="1.9-">random_numbers/tutorial.md</markdown>
+    <markdown version="1.9+">random_numbers/tutorial.md</markdown>
     <description>How to set the random number seed.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Topics subscription" ref='topics_subscribed'>
-    <markdown version="1.9-">topics_subscribe/tutorial.md</markdown>
+    <markdown version="1.9+">topics_subscribe/tutorial.md</markdown>
     <description>How to subscribe to gazebo topics.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Friction" ref='friction'>
-    <markdown version="1.9-">friction/tutorial.md</markdown>
+    <markdown version="1.9+">friction/tutorial.md</markdown>
     <description>How to setup friction properties.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Digital Elevation Models" ref='dem'>
-    <markdown version="3.0-">dem/tutorial.md</markdown>
+    <markdown version="3.0+">dem/tutorial.md</markdown>
     <description>How to use DEMs in Gazebo.</description>
     <skill>advanced</skill>
   </tutorial>
 
   <tutorial title="Building a world" ref='build_world'>
-    <markdown version="1.9-">build_world/tutorial.md</markdown>
+    <markdown version="1.9+">build_world/tutorial.md</markdown>
     <description>How to populate a simulated world with simulated objects.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Modifying a world" ref='modifying_world'>
-    <markdown version="1.9-">modifying_world/tutorial.md</markdown>
+    <markdown version="1.9+">modifying_world/tutorial.md</markdown>
     <description>How to change scene and physics parameters of a world using the GUI.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="Visual Lightmap" ref='lightmap'>
-    <markdown version="3.0-">lightmap/tutorial.md</markdown>
+    <markdown version="3.0+">lightmap/tutorial.md</markdown>
     <description>How to apply lightmaps to a model visual.</description>
     <skill>intermediate</skill>
   </tutorial>
 
   <tutorial title="Log filtering" ref='log_filtering'>
-    <markdown version="1.9-">log_filtering/tutorial.md</markdown>
+    <markdown version="1.9+">log_filtering/tutorial.md</markdown>
     <description>How to filter a recorded state log file.</description>
     <skill>beginner</skill>
   </tutorial>
 
   <tutorial title="ROS overview" ref='ros_overview'>
-    <markdown version="1.9-">ros_overview/tutorial.md</markdown>
+    <markdown version="1.9+">ros_overview/tutorial.md</markdown>
     <description>Overview of ROS integration.</description>
     <skill>intermediate</skill>
   </tutorial>
 
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
-    <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
+    <markdown version="1.9+">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
     <skill>beginner</skill>
     <tags>
