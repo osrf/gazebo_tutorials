@@ -28,8 +28,8 @@ Your previous packages for interfacing with Gazebo with the old <tt>simulator_ga
 
 Some changes are required in previously created roslaunch files for starting Gazebo. The best way to update these packages is to review the [Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/wiki/Tutorials/1.9/Using_roslaunch_Files_to_Spawn_Models) tutorial. In a nutshell:
 
-- Within roslaunch files, <tt>pkg="gazebo"</tt> needs to be now renamed to <tt>pkg="gazebo'''_ros'''"</tt>
-- <tt>gazebo_worlds</tt> package has been removed. Most of the world files were rarely used and were not maintained with changes in SDF XML formats. Thus, all worlds have been centralized within the Gazebo project itself, including <tt>empty.world</tt>.
+- Within roslaunch files, `pkg="gazebo"` needs to be now renamed to `pkg="gazebo_ros"`
+- `gazebo_worlds` package has been removed. Most of the world files were rarely used and were not maintained with changes in SDF XML formats. Thus, all worlds have been centralized within the Gazebo project itself, including `empty.world`.
 - The best way to use Gazebo launch files is to simply inherent/include the master "empty world" launch file located in the <tt>gazebo_ros</tt> package.
 
 ### CMakeLists.txt
@@ -66,10 +66,10 @@ catkin_package(
 This is the replacement for the rosbuild "manifest.xml":
 
 - Add dependency on the new <tt>gazebo_ros</tt> package:
-<pre>
+~~~
 <build_depend>gazebo_ros</build_depend>
 <run_depend>gazebo_ros</run_depend>
-</pre>
+~~~
 
 ### Running Gazebo
 
@@ -94,7 +94,7 @@ These nodes are better documented in the tutorial [ Using roslaunch files to spa
 
 ### More
 
-''Add your upgrade issues here, please''
+<tt>Add your upgrade issues here, please</tt>
 
 ## Tutorials
 
