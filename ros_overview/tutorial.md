@@ -14,7 +14,7 @@ To achieve ROS integration with stand-alone Gazebo, a new set of ROS packages na
 
 An overview of the new interface is in the following diagram:
 
-[[File:figs/775px-Gazebo_ros_api.png|775px]]
+[[file:figs/775px-Gazebo_ros_api.png|775px]]
 
 ## Upgrading from simulator_gazebo
 
