@@ -1,7 +1,8 @@
 #Tutorial: Inserting models using a world plugin#
 ## Prerequisites:
 
-   [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) Plugin Tutorial
+ * [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) 
+ * [Plugin Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world)
 
 ## Code:
 
@@ -28,27 +29,27 @@ Copy the following code into the `factory.cc` file:
 
 The first part of the code creates a world plugin.
 
-<include from="/#include/" to="/void Load/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/#include/" to="/_sdf\*\/\)/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 Within the `Load` function are three different methods for model insertion.
 
 
 The first method uses a World method to load a model based on a file in the resource path defined by the GAZEBO_MODEL_PATH environment variable.
 
-<include from="/Option 1:/" to="/InsertModelFile/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/...Option 1:/" to="/\/\/box"\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 The second method uses a World method to load a model based on string data.
 
-<include from="/Option 2:/" to="/InsertModelSDF/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="/...Option 2:/" to="/sphereSDF\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 The third method uses the message passing mechanism to insert a model. This method is most useful for stand along applications that communicate with Gazebo over a network connection.
 
-<include from="/Option 3:/" to="/factoryPub.*Publish/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
+<include from="!// Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
 
 ### Compile ###
 
-Assuming the reader has gone through the [[tutorials/1.5/plugins/overview|Plugin Overview Tutorial]], all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/CMakeLists.txt' />
 
