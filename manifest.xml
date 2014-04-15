@@ -137,6 +137,11 @@
     <skill>beginner</skill>
   </tutorial>
 
+  <tutorial title="ROS overview" ref='ros_overview'>
+    <markdown version="1.9-">ros_overview/tutorial.md</markdown>
+    <description>Overview of ROS integration.</description>
+    <skill>intermediate</skill>
+  </tutorial>
 
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
