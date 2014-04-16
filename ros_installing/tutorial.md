@@ -269,7 +269,9 @@ You should see within the list services such as:
 
 There are several <tt>rosrun</tt> commands for starting Gazebo:
 
-; rosrun gazebo_ros gazebo : Launched both the server and client together
+'''rosrun gazebo_ros gazebo :'''
+
+   Launched both the server and client together
 
 ; rosrun gazebo_ros gzserver : Launches the Gazebo server only
 
