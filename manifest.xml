@@ -143,6 +143,12 @@
     <skill>intermediate</skill>
   </tutorial>
 
+  <tutorial title="Installing gazebo_ros_pkgs" ref='ros_installing'>
+    <markdown version="1.9-">ros_installing/tutorial.md</markdown>
+    <description>Installing gazebo_ros_pkgs.</description>
+    <skill>intermediate</skill>
+  </tutorial>
+
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
     <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
     <description>How to add or modify tutorials.</description>
