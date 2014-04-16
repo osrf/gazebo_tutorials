@@ -273,11 +273,17 @@ There are several <tt>rosrun</tt> commands for starting Gazebo:
 
 > Launched both the server and client together
 
-; rosrun gazebo_ros gzserver : Launches the Gazebo server only
+**rosrun gazebo_ros gzserver**
 
-; rosrun gazebo_ros gzclient : Launches the Gazebo client only
+> Launches the Gazebo server only
 
-; rosrun gazebo_ros debug : Launches the Gazebo server only, in debug mode using GDB
+**rosrun gazebo_ros gzclient**
+
+> Launches the Gazebo client only
+
+**rosrun gazebo_ros debug**
+
+> Launches the Gazebo server only, in debug mode using GDB
 
 Additionally, you can start Gazebo using <tt>roslaunch</tt>
 
