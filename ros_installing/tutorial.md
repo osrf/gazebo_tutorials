@@ -1,6 +1,6 @@
 # Tutorial: Installing gazebo_ros_pkgs
 
-The set of ROS packages for interfacing with Gazebo are contained within a new meta package (catkin's version of stacks) named <tt>gazebo_ros_pkgs</tt>. See [http://gazebosim.org/tutorials/?tut=ros_overview](Overview of new ROS integration) for background information before continuing here.
+The set of ROS packages for interfacing with Gazebo are contained within a new meta package (catkin's version of stacks) named <tt>gazebo_ros_pkgs</tt>. See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview) for background information before continuing here.
 
 These instructions are for using the latest stand-alone version of Gazebo (version 1.9) with ROS [Hydro](http://www.ros.org/wiki/hydro) using [catkin](http://www.ros.org/wiki/catkin). ROS [Groovy](http://www.ros.org/wiki/groovy) is somewhat compatible with gazebo_ros_pkgs but requires more of the components be installed from source and is not an official target of gazebo_ros_pkgs.
 
