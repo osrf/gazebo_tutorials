@@ -134,7 +134,7 @@ You can automatically install the missing dependencies using rosdep via debian i
 rosdep install --from-paths . --ignore-src --rosdistro hydro -y
 </pre>
 
-Now jump to the [[#Build_the_gazebo_ros_pkgs|build step]].
+Now jump to the **Build_the_gazebo_ros_pkgs** section.
 
 ##### ROS Groovy
 
@@ -289,4 +289,4 @@ Additionally, you can start Gazebo using <tt>roslaunch</tt>
 
 ## Next Steps
 
-You are now ready to launch robot models (URDFs) into Gazebo demo worlds in the tutorial [[Tutorials/1.9/Using_roslaunch_Files_to_Spawn_Models |Using <tt>roslaunch</tt> Files to Spawn Models]].
+You are now ready to launch robot models (URDFs) into Gazebo demo worlds in the tutorial [Using <tt>roslaunch</tt> Files to Spawn Models](http://gazebosim.org/tutorials/?tut=ros_roslaunch).
