@@ -158,4 +158,13 @@
     </tags>
   </tutorial>
 
+  <tutorial title="Animated Box" ref='tutorial_contrib'>
+    <markdown version="4.0+">animate_box/tutorial.md</markdown>
+    <description>Animate the pose of box.</description>
+    <skill>intermediate</skill>
+    <tags>
+      <tag>animation</tag>
+    </tags>
+  </tutorial>
+
 </tutorials>
