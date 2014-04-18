@@ -12,13 +12,13 @@
 
 # Gazebo/ROS integration
 
-With the release of gazebo 2.0 version (as gazebo_current package) there are some [[Install/Gazebo_and_ROS|important aspects of gazebo integration into ROS]] that '''must be read before continue'''. 
+With the release of gazebo 2.0 version (as gazebo_current package) there are some [important aspects of gazebo integration into ROS](http://gazebosim.org/wiki/Install/Gazebo_and_ROS) that must be read before continue. 
 
 # Pre-compiled binaries
 
 ### Ubuntu Debians
 
-1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide] for instructions on doing this.  (Note: These are enabled by default In Ubuntu 9.04 (Jaunty) and later.) 
+1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [Ubuntu guide](https://help.ubuntu.com/community/Repositories/Ubuntu) for instructions on doing this.  (Note: These are enabled by default In Ubuntu 9.04 (Jaunty) and later.) 
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
@@ -51,17 +51,17 @@ With the release of gazebo 2.0 version (as gazebo_current package) there are som
 
         gzserver
 
-   ''Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.''
+   **Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.**
 
 1. The first time `gzserver` is executed requires the download of some models and it could take some time, please be patient. Wait until you see a message like `Publicized address: ...` and then execute a `gazebo client`:
 
         gzclient
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
-# Compiling From Source (Ubuntu) #
+# Compiling From Source (Ubuntu)
 
-## Prerequisites ##
+## Prerequisites
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source
 
@@ -77,12 +77,12 @@ As a side note, default install locations:
 ; Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
 ; Default source install : /usr/local/bin/gazebo
 
-## ROS Users ##
+## ROS Users
 
 When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
 
 
-## Install Dependencies ##
+## Install Dependencies
 
 1. Install prerequisites.  A clean Ubuntu system will need:
 
@@ -127,7 +127,7 @@ To install from source, you should first install the SDFormat package, then buil
         make -j4
         sudo make install
 
-## Build And Install Gazebo ##
+## Build And Install Gazebo
 
 1. Clone the repository into a directory in your home folder:
 
@@ -206,9 +206,9 @@ To install from source, you should first install the SDFormat package, then buil
         echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
         sudo ldconfig
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see (Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
-## Uninstalling Source-based Install ##
+## Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
 
@@ -217,7 +217,7 @@ If you need to uninstall Gazebo or switch back to a debian-based install of Gaze
         cd ~/gazebo_source/sdformat/build
         sudo make uninstall
 
-# Compiling From Source (Mac OS X) #
+# Compiling From Source (Mac OS X)
 
 Coming soon...
 
