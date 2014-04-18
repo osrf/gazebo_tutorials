@@ -90,6 +90,8 @@ Continuing with our examination of the <tt>mud_world.launch</tt> file, we will n
           <pose>-2.0 0 0 0 0 0</pose>
         </include>
         ...
+      </world>
+    </sdf>
     ~~~
 **See the section below to view this full world file on your computer.**
 
