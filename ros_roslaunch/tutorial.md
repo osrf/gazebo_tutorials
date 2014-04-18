@@ -57,9 +57,9 @@ Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The 
 
 ~~~
 <launch>
-  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="worlds/mud.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="world_name" value="worlds/mud.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
