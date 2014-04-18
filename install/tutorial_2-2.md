@@ -6,7 +6,7 @@
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-'''Note: '''there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
+***Note: ***there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
 
   **Ubuntu Linux 12.04 (precise)**
 
@@ -35,14 +35,14 @@
         sudo apt-get install gazebo-current
         # B) Ubuntu saucy and trusty (gazebo2) 
         sudo apt-get install gazebo2
-    ''There is available the old gazebo version 1 under the package name of: gazebo''
+    **There is available the old gazebo version 1 under the package name of: gazebo**
 
 
 1. Check your installation
 
         gzserver
 
-   ''Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.''
+   **Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.**
 
 1. The first time `gzserver` is executed requires the download of some models and it could take some time, please be patient. Wait until you see a message like `Publicized address: ...` and then execute a `gazebo client`:
 
@@ -87,7 +87,7 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
 
-   '''Bullet Support''' [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [[1.9/install#Ubuntu_Debians |Ubuntu Debians section above]] to configure your computer to accept software from packages.osrfoundation.org
+   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         
@@ -97,12 +97,12 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         # for bullet 2.82:
         sudo apt-get install libbullet2.82-dev
 
-   '''Simbody Support''' [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [[1.9/install#Ubuntu_Debians |Ubuntu Debians section above]] to configure your computer to accept software from packages.osrfoundation.org
+   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
 
-   '''DART Support''' Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://bitbucket.org/osrf/gazebo/pull-request/850/dart-physics-engine-support/diff)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://bitbucket.org/osrf/gazebo/pull-request/850/dart-physics-engine-support/diff)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
@@ -112,15 +112,15 @@ Gazebo supports multiple physics engines in addition to the modified version of 
 
 ## Optional Dependencies ##
 
-   '''GUI test Support''' (Optional) To correctly parse the results of GUI regression tests, the xsltproc package is needed.
+   ***GUI test Support*** (Optional) To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
         sudo apt-get install xsltproc
 
-   '''Man Page Support''' (Optional) To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
+   ***Man Page Support*** (Optional) To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
 
         sudo apt-get install ruby-ronn
 
-   '''Player Support''' (Optional) To use Player/Stage:
+   ***Player Support*** (Optional) To use Player/Stage:
 
         sudo apt-get install libplayer*
 
@@ -139,7 +139,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd sdformat
         hg up sdf_1.4
 
-   ''Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability''
+   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability**
 
 1. Create a build directory and go there
 
@@ -164,7 +164,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd gazebo
         hg up gazebo_2.0
 
-   ''Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability''
+   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
 
 1. Create a build directory and go there
 
@@ -203,11 +203,11 @@ To install from source, you should first install the SDFormat package, then buil
 
         sudo make install
 
-   ''Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.''
+   **Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.**
 
 1. Setup environment variables
 
-  '''Local Install''': If you decide to install gazebo in a local directory you'll need to modify some of your PATHs
+  ***Local Install***: If you decide to install gazebo in a local directory you'll need to modify some of your PATHs
 
         echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
         echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
@@ -218,7 +218,7 @@ To install from source, you should first install the SDFormat package, then buil
 
         gazebo
 
-  '''If Gazebo runs successfully, you're done!.''' If Gazebo was installed to `/usr/local/` and running gazebo throws an error similar to:
+  ***If Gazebo runs successfully, you're done!.*** If Gazebo was installed to `/usr/local/` and running gazebo throws an error similar to:
 
         gazebo: error while loading shared libraries: libgazebo_common.so.1: cannot open shared object file: No such file or directory
 
