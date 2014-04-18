@@ -156,15 +156,15 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 * Within this package, create a <tt>launch</tt> folder
 * Within the <tt>launch</tt> folder create a YOUROBOT.launch file with the following contents (default arguments excluded):
 
-~~~
-<launch>
-  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
-    <!-- more default parameters can be changed here -->
-  </include>
-</launch>
-~~~
+    ~~~
+    <launch>
+      <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+      <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
+        <!-- more default parameters can be changed here -->
+      </include>
+    </launch>
+    ~~~
 
 * Within the same package, create a <tt>worlds</tt> folder, and create a MYROBOT.world file with the following contents:
 
