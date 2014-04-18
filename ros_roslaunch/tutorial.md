@@ -57,7 +57,7 @@ Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The 
 
 ~~~
 <launch>
-
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
 
 </launch>
 ~~~
