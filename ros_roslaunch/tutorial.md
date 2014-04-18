@@ -55,7 +55,17 @@ roslaunch gazebo_ros rubble_world.launch
 
 Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The launch file for <tt>mud_world.launch</tt> contains the following:
 
-
+  <launch>
+    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="worlds/mud.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+    </include>
+  </launch>
 
 In this launch file we inherit most of the necessary functionality from empty_world.launch. The only parameter we need to change is the <tt>world_name</tt> parameter, substituting the <tt>empty.world</tt> world file with the <tt>mud.world</tt> file. The other arguments are simply set to their default values.
 
@@ -63,22 +73,22 @@ In this launch file we inherit most of the necessary functionality from empty_wo
 
 Continuing with our examination of the <tt>mud_world.launch</tt> file, we will now look at the contents of the <tt>mud.world</tt> file. The first several components of the mud world is shown below:
 
-    <sdf version="1.4">
-      <world name="default">
-        <include>
-          <uri>model://sun</uri>
-        </include>
-        <include>
-          <uri>model://ground_plane</uri>
-        </include>
-        <include>
-          <uri>model://double_pendulum_with_base</uri>
-          <name>pendulum_thick_mud</name>
-          <pose>-2.0 0 0 0 0 0</pose>
-        </include>
-        ...
-      </world>
-    </sdf>
+  <sdf version="1.4">
+    <world name="default">
+      <include>
+        <uri>model://sun</uri>
+      </include>
+      <include>
+        <uri>model://ground_plane</uri>
+      </include>
+      <include>
+        <uri>model://double_pendulum_with_base</uri>
+        <name>pendulum_thick_mud</name>
+        <pose>-2.0 0 0 0 0 0</pose>
+      </include>
+      ...
+    </world>
+  </sdf>
 
 **See the section below to view this full world file on your computer.**
 
@@ -193,8 +203,15 @@ You can insert additional models into your robot's world file and use the <tt>Fi
 ## Using <tt>roslaunch</tt> to Spawn URDF Robots
 
 There are two ways to launch your URDF-based robot into Gazebo using <tt>roslaunch</tt>:
-; ROS Service Call Spawn Method : The first method keeps your robot's ROS packages more portable between computers and repository check outs. It allows you to keep your robot's location relative to a ROS package path, but also requires you to make a ROS service call using a small (python) script.
-; Model Database Method : The second method allows you to include your robot within the <tt>.world</tt> file, which seems cleaner and more convenient but requires you to add your robot to the Gazebo model database by setting an environment variable.
+
+**ROS Service Call Spawn Method**
+
+  > The first method keeps your robot's ROS packages more portable between computers and repository check outs. It allows you to keep your robot's location relative to a ROS package path, but also requires you to make a ROS service call using a small (python) script.
+
+
+**Model Database Method**
+
+  > The second method allows you to include your robot within the <tt>.world</tt> file, which seems cleaner and more convenient but requires you to add your robot to the Gazebo model database by setting an environment variable.
 
 We will go over both methods. Overall our recommended method is using the '''ROS Service Call Spawn Method'''
 
@@ -228,38 +245,40 @@ rosrun gazebo_ros spawn_model -file `rospack find baxter_description`/urdf/baxte
 
 You should then see something similar to:
 
-[[file:figs/gas_baxter.png|800px]]
+[[file:figs/Gas_baxter.png|800px]]
 
 To integrate this directly into a ROS launch file, reopen the file <tt>MYROBOT_gazebo/launch/YOUROBOT.launch</tt> and add the following before the <tt></launch></tt> tag:
-<pre><nowiki>
+
+~~~
 <!-- Spawn a robot into Gazebo -->
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find baxter_description)/urdf/baxter.urdf -urdf -z 1 -model baxter" />
-</nowiki></pre>
+~~~
 
 Launching this file, you should see the same results as when using <tt>rosrun</tt>.
 
 #### XACRO Example with PR2
 If your URDF is not in XML format but rather in [XACRO](http://ros.org/wiki/xacro) format, you can make a similar modification to your launch file. You can run this PR2 example by installing this package:
 
-'''ROS Groovy:''' - ''Note: PR2 in Groovy is currently broken until this [pull request](https://github.com/PR2/pr2_common/pull/222) is merged and released to public debians''
+**ROS Groovy:** - Note: PR2 in Groovy is currently broken until this [pull request](https://github.com/PR2/pr2_common/pull/222) is merged and released to public debians
+
 <pre>
 sudo apt-get install ros-groovy-pr2-common
 </pre>
 
-'''ROS Hydro:'''
+**ROS Hydro:**
 <pre>
 sudo apt-get install ros-hydro-pr2-common
 </pre>
 
 Then adding this to your launch file created previously in this tutorial:
 
-<pre><nowiki>
+~~~
 <!-- Convert an xacro and put on parameter server -->
 <param name="robot_description" command="$(find xacro)/xacro.py $(find pr2_description)/robots/pr2.urdf.xacro" />
 
 <!-- Spawn a robot into Gazebo -->
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model pr2" />
-</nowiki></pre>
+~~~
 
 Launching this file, you should see the PR2 in the gas station as pictured:
 
@@ -274,7 +293,7 @@ Note: at this writing there are still a lot of errors and warnings from the cons
 
 The second method of spawning robots into Gazebo allows you to include your robot within the <tt>.world</tt> file, which seems cleaner and more convenient but also requires you to add your robot to the Gazebo model database by setting an environment variable. This environment variable is required because of the separation of ROS dependencies from Gazebo; URDF package paths cannot be used directly inside <tt>.world</tt> files because Gazebo does not have a notion of ROS packages.
 
-To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [http://gazebosim.org/user_guide/started__models__database.html Gazebo Model Database] documentation to understand why these steps are required.
+To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation to understand why these steps are required.
 
 We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a <tt>model.config</tt> file is addded to your <tt>MYROBOT_description</tt> package like so:
 
@@ -296,11 +315,12 @@ We will assume your ROS workspace file hierarchy is setup as described in the ab
 </pre>
 
 This hierarchy is specially adapted for use as a Gazebo model database by means of the following folders/files:
-* '''/home/user/catkin_workspace/src''' - this is treated as the location of a Gazebo Model Database
-* '''/MYROBOT_description''' - this directory is treated as a single Gazebo model folder
-* '''model.config''' - this is a required configuration file for Gazebo to find this model in its database
-* '''MYROBOT.urdf''' - this is your robot description file, also used by Rviz, MoveIt!, etc
-* '''/meshes''' - put your .stl or .dae files in here, just as you would with regular URDFs
+
+* **/home/user/catkin_workspace/src - this is treated as the location of a Gazebo Model Database
+* **/MYROBOT_description** - this directory is treated as a single Gazebo model folder
+* **model.config** - this is a required configuration file for Gazebo to find this model in its database
+* **MYROBOT.urdf** - this is your robot description file, also used by Rviz, MoveIt!, etc
+* **/meshes** - put your .stl or .dae files in here, just as you would with regular URDFs
 
 #### model.config
 
@@ -338,10 +358,11 @@ And clicking the "Insert" tab on the left. You will probably see several differe
 
 #### Viewing In Gazebo - <tt>roslaunch</tt> with the Model Database
 
-The advantage of the model database method is that now you can include your robot directly within your world files, without using a ROS package path. We'll use the same setup from the section [[Tutorials/1.9/Using_roslaunch_Files_to_Spawn_Models#Creating_a_World_File |Creating A World File]] but modify the world file:
+The advantage of the model database method is that now you can include your robot directly within your world files, without using a ROS package path. We'll use the same setup from the section "Creating a world file" but modify the world file:
 
 * Within the same <tt>MYROBOT_description/launch</tt> folder, edit the MYROBOT.world file with the following contents:
-<pre><nowiki>
+
+~~~
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
@@ -361,7 +382,8 @@ The advantage of the model database method is that now you can include your robo
     </include>
   </world>
 </sdf>
-</nowiki></pre>
+~~~
+
 * You should now be able to launch your custom world with both the gas station and robot into Gazebo using the following command:
 <pre>
 roslaunch MYROBOT_gazebo MYROBOT.launch
