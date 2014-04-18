@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <tutorials>
   <tutorial title="Install" ref='install'>
-    <markdown version="1.9">quick_start/tutorial_1-9.md</markdown>
-    <markdown version="2.2">quick_start/tutorial_2-2.md</markdown>
-    <markdown version="3.0">quick_start/tutorial_3-0.md</markdown>
+    <markdown version="1.9">install/tutorial_1-9.md</markdown>
+    <markdown version="2.2">install/tutorial_2-2.md</markdown>
+    <markdown version="3.0">install/tutorial_3-0.md</markdown>
     <description>Installation instruction.</description>
     <tags>
       <tag>install</tag>
