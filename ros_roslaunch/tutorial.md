@@ -55,17 +55,19 @@ roslaunch gazebo_ros rubble_world.launch
 
 Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The launch file for <tt>mud_world.launch</tt> contains the following:
 
-  <launch>
-    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="worlds/mud.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
-      <arg name="paused" value="false"/>
-      <arg name="use_sim_time" value="true"/>
-      <arg name="gui" value="true"/>
-      <arg name="headless" value="false"/>
-      <arg name="debug" value="false"/>
-    </include>
-  </launch>
+~~~
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/mud.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+</launch>
+~~~
 
 In this launch file we inherit most of the necessary functionality from empty_world.launch. The only parameter we need to change is the <tt>world_name</tt> parameter, substituting the <tt>empty.world</tt> world file with the <tt>mud.world</tt> file. The other arguments are simply set to their default values.
 
@@ -316,7 +318,7 @@ We will assume your ROS workspace file hierarchy is setup as described in the ab
 
 This hierarchy is specially adapted for use as a Gazebo model database by means of the following folders/files:
 
-* **/home/user/catkin_workspace/src - this is treated as the location of a Gazebo Model Database
+* **/home/user/catkin_workspace/src** - this is treated as the location of a Gazebo Model Database
 * **/MYROBOT_description** - this directory is treated as a single Gazebo model folder
 * **model.config** - this is a required configuration file for Gazebo to find this model in its database
 * **MYROBOT.urdf** - this is your robot description file, also used by Rviz, MoveIt!, etc
