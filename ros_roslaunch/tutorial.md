@@ -68,6 +68,7 @@ In this launch file we inherit most of the necessary functionality from empty_wo
 
 Continuing with our examination of the <tt>mud_world.launch</tt> file, we will now look at the contents of the <tt>mud.world</tt> file. The first several components of the mud world is shown below:
 
+~~~
   <sdf version="1.4">
     <world name="default">
       <include>
@@ -84,6 +85,7 @@ Continuing with our examination of the <tt>mud_world.launch</tt> file, we will n
       ...
     </world>
   </sdf>
+~~~
 
 **See the section below to view this full world file on your computer.**
 
