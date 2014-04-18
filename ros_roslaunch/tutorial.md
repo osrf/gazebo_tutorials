@@ -397,4 +397,4 @@ The disadvantage of this method is that your packaged MYROBOT_description and MY
 
 ## Next Steps
 
-Now that you know how to create <tt>roslaunch</tt> files that open Gazebo, world files and URDF models, you are now ready to create your own Gazebo-ready URDF model in the tutorial [[Tutorials/1.9/Using_A_URDF_In_Gazebo|Using A URDF In Gazebo]]
+Now that you know how to create <tt>roslaunch</tt> files that open Gazebo, world files and URDF models, you are now ready to create your own Gazebo-ready URDF model in the tutorial [Using A URDF In Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf)
