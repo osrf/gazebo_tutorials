@@ -1,8 +1,8 @@
 #Download and Install Gazebo
 
-### Important Notes ###
+### Important Notes
 
-'''New in Gazebo 1.9:''' the parsers for the Simulated Description Format (SDF) and the Universal Robotic Description Format (URDF) have been moved into a seperate package named SDFormat.
+**New in Gazebo 1.9:** the parsers for the Simulated Description Format (SDF) and the Universal Robotic Description Format (URDF) have been moved into a seperate package named SDFormat.
 
 1. ROS Users:
  1. Only install Gazebo from here, and only follow tutorials from this website. Documentation on ros.org for Gazebo is old and not actively maintained.
@@ -10,13 +10,13 @@
 1. If you are new to Gazebo or just want to use Gazebo as a stand-alone application in Ubuntu, select the [[#Pre-compiled binaries | Pre-compiled binaries]] instructions below.
 1. If you're still reading, select [[#Compiling From Source | Compiling From Source]]
 
-# Gazebo/ROS integration #
+# Gazebo/ROS integration
 
 With the release of gazebo 2.0 version (as gazebo_current package) there are some [[Install/Gazebo_and_ROS|important aspects of gazebo integration into ROS]] that '''must be read before continue'''. 
 
-# Pre-compiled binaries #
+# Pre-compiled binaries
 
-### Ubuntu Debians ###
+### Ubuntu Debians
 
 1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide] for instructions on doing this.  (Note: These are enabled by default In Ubuntu 9.04 (Jaunty) and later.) 
 
