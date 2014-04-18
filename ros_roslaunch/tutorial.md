@@ -13,11 +13,25 @@ roslaunch gazebo_ros empty_world.launch
 ### <tt>roslaunch</tt> Arguments
 
 You can append the following arguments to the launch files to change the behavior of Gazebo:
-; paused : Start Gazebo in a paused state (default false)
-; use_sim_time : Tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock (default true)
-; gui : Launch the user interface window of Gazebo (default true)
-; headless : Disable any function calls to simulator rendering (Ogre) components. Does not work with gui:=true (default false)
-; debug : Start gzserver (Gazebo Server) in debug mode using gdb (default false)
+**paused**
+
+  > Start Gazebo in a paused state (default false)
+
+**use_sim_time**
+
+  > Tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock (default true)
+
+**gui**
+
+  > Launch the user interface window of Gazebo (default true)
+
+**headless**
+
+  > Disable any function calls to simulator rendering (Ogre) components. Does not work with gui:=true (default false)
+
+**debug**
+
+  > Start gzserver (Gazebo Server) in debug mode using gdb (default false)
 
 ### Example <tt>roslaunch</tt> command
 
@@ -40,7 +54,7 @@ roslaunch gazebo_ros rubble_world.launch
 
 Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The launch file for <tt>mud_world.launch</tt> contains the following:
 
-<pre><nowiki>
+~~~
 <launch>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -52,7 +66,7 @@ Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The 
     <arg name="debug" value="false"/>
   </include>
 </launch>
-</nowiki></pre>
+~~~
 
 In this launch file we inherit most of the necessary functionality from empty_world.launch. The only parameter we need to change is the <tt>world_name</tt> parameter, substituting the <tt>empty.world</tt> world file with the <tt>mud.world</tt> file. The other arguments are simply set to their default values.
 
@@ -60,7 +74,7 @@ In this launch file we inherit most of the necessary functionality from empty_wo
 
 Continuing with our examination of the <tt>mud_world.launch</tt> file, we will now look at the contents of the <tt>mud.world</tt> file. The first several components of the mud world is shown below:
 
-<pre><nowiki>
+~~~
 <sdf version="1.4">
   <world name="default">
     <include>
@@ -75,7 +89,7 @@ Continuing with our examination of the <tt>mud_world.launch</tt> file, we will n
       <pose>-2.0 0 0 0 0 0</pose>
     </include>
     ...
-</nowiki></pre>
+~~~
 ''See the section below to view this full world file on your computer.''
 
 In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
