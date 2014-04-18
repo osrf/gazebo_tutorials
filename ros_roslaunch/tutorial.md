@@ -75,22 +75,22 @@ In this launch file we inherit most of the necessary functionality from empty_wo
 
 Continuing with our examination of the <tt>mud_world.launch</tt> file, we will now look at the contents of the <tt>mud.world</tt> file. The first several components of the mud world is shown below:
 
-~~~
-<sdf version="1.4">
-  <world name="default">
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-    <include>
-      <uri>model://double_pendulum_with_base</uri>
-      <name>pendulum_thick_mud</name>
-      <pose>-2.0 0 0 0 0 0</pose>
-    </include>
-    ...
-~~~
+    ~~~
+    <sdf version="1.4">
+      <world name="default">
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <include>
+          <uri>model://ground_plane</uri>
+        </include>
+        <include>
+          <uri>model://double_pendulum_with_base</uri>
+          <name>pendulum_thick_mud</name>
+          <pose>-2.0 0 0 0 0 0</pose>
+        </include>
+        ...
+    ~~~
 **See the section below to view this full world file on your computer.**
 
 In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
@@ -156,15 +156,15 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 * Within this package, create a <tt>launch</tt> folder
 * Within the <tt>launch</tt> folder create a YOUROBOT.launch file with the following contents (default arguments excluded):
 
-~~~
-<launch>
-  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
-    <!-- more default parameters can be changed here -->
-  </include>
-</launch>
-~~~
+    ~~~
+    <launch>
+      <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+      <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
+        <!-- more default parameters can be changed here -->
+      </include>
+    </launch>
+    ~~~
 
 * Within the same package, create a <tt>worlds</tt> folder, and create a MYROBOT.world file with the following contents:
 
