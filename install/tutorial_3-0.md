@@ -1,4 +1,12 @@
 ## Gazebo in different deb packages
+~~~
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include><uri>test</uri></include>
+
+</launch>
+~~~
+
 
 Gazebo 3.0 version is the first one that ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
 
