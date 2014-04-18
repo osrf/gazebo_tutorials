@@ -7,7 +7,7 @@ Gazebo 3.0 version is the first one that ships different Ubuntu debian packages 
 
 ## Gazebo3 in ROS ##
 
-Gazebo3 will be use by ROS-J (gazebo2 is the one used in ROS Indigo). All the details are in the [[Install/Gazebo_and_ROS|Gazebo/ROS integration page]].
+Gazebo3 will be use by ROS-J (gazebo2 is the one used in ROS Indigo). All the details are in the [Gazebo/ROS integration page](http://gazebosim.org/wiki/Install/Gazebo_and_ROS).
 
 ## Gazebo3 multi physics engines support ##
 
@@ -58,11 +58,11 @@ Gazebo3 is able to use different physics engines to perform the simulation. ODE 
 
         gzclient
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
-# Compiling From Source (Ubuntu) #
+# Compiling From Source (Ubuntu)
 
-## Prerequisites ##
+## Prerequisites
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source
 
@@ -78,11 +78,11 @@ As a side note, default install locations:
 ; Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
 ; Default source install : /usr/local/bin/gazebo
 
-## ROS Users ##
+## ROS Users
 
 When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
 
-## Install Required Dependencies ##
+## Install Required Dependencies
 
 Install prerequisites.  A clean Ubuntu system will need:
 <!-- Ogre doesn't install on Ubuntu 13.10, so use ogre-1.8 which does -->
@@ -93,7 +93,7 @@ Install prerequisites.  A clean Ubuntu system will need:
                      libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev \
                      playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
-## Optional Physics Engines ##
+## Optional Physics Engines
 
 ''Release Note: in order to use a physics engine different than ODE, a full compilation of gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE physics engine.''
 
@@ -234,7 +234,7 @@ To install from source, you should first install the SDFormat package, then buil
         echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
         sudo ldconfig
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
 ## Uninstalling Source-based Install ##
 
