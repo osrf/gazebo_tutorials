@@ -90,12 +90,12 @@ When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh<
                              libprotobuf-dev protobuf-compiler libboost-all-dev freeglut3-dev cmake libogre-dev libtar-dev \
                              libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev mercurial
 
-   '''Bullet Support''' (Optional) Bullet version 2.81 is needed for this. In an Ubuntu system (precise or quantal) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [[1.9/install#Ubuntu_Debians |Ubuntu Debians section above]] to configure your computer to accept software from packages.osrfoundation.org
+   **Bullet Support** (Optional) Bullet version 2.81 is needed for this. In an Ubuntu system (precise or quantal) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [[1.9/install#Ubuntu_Debians |Ubuntu Debians section above]] to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libbullet-dev
 
-   '''GUI test Support''' (Optional) To correctly parse the results of GUI regression tests, the xsltproc package is needed.
+   **GUI test Support** (Optional) To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
         sudo apt-get install xsltproc
 
@@ -114,7 +114,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd sdformat
         hg up sdf_1.4
 
-   ''Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability''
+   *Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability*
 
 1. Create a build directory and go there
 
@@ -139,7 +139,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd gazebo
         hg up gazebo_1.9
 
-   ''Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.9 branch if you desire more stability''
+   *Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.9 branch if you desire more stability*
 
 1. Create a build directory and go there
 
@@ -182,11 +182,11 @@ To install from source, you should first install the SDFormat package, then buil
 
         sudo make install
 
-   ''Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.''
+   *Note: As of Gazebo 1.9 you no longer need to setup your .bashrc to always source Gazebo's setup.sh to export necessary paths.*
 
 1. Setup environment variables
 
-  '''Local Install''': If you decide to install gazebo in a local directory you'll need to modify some of your PATHs
+  **Local Install**: If you decide to install gazebo in a local directory you'll need to modify some of your PATHs
 
         echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
         echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
@@ -197,7 +197,7 @@ To install from source, you should first install the SDFormat package, then buil
 
         gazebo
 
-  '''If Gazebo runs successfully, you're done!.''' If Gazebo was installed to `/usr/local/` and running gazebo throws an error similar to:
+  **If Gazebo runs successfully, you're done!.** If Gazebo was installed to `/usr/local/` and running gazebo throws an error similar to:
 
         gazebo: error while loading shared libraries: libgazebo_common.so.1: cannot open shared object file: No such file or directory
 
