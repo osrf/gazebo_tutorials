@@ -57,6 +57,7 @@ Notice in <tt>mud_world.launch</tt> a simple jointed mechanism is launched. The 
 
 ~~~
 <launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="worlds/mud.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
     <arg name="paused" value="false"/>
@@ -154,7 +155,8 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 * Create a ROS package with the convention MYROBOT_gazebo
 * Within this package, create a <tt>launch</tt> folder
 * Within the <tt>launch</tt> folder create a YOUROBOT.launch file with the following contents (default arguments excluded):
-<pre><nowiki>
+
+~~~
 <launch>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -162,26 +164,29 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
     <!-- more default parameters can be changed here -->
   </include>
 </launch>
-</nowiki></pre>
+~~~
+
 * Within the same package, create a <tt>worlds</tt> folder, and create a MYROBOT.world file with the following contents:
-<pre><nowiki>
-<?xml version="1.0" ?>
-<sdf version="1.4">
-  <world name="default">
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <include>
-      <uri>model://gas_station</uri>
-      <name>gas_station</name>
-      <pose>-2.0 7.0 0 0 0 0</pose>
-    </include>
-  </world>
-</sdf>
-</nowiki></pre>
+
+    ~~~
+    <?xml version="1.0" ?>
+    <sdf version="1.4">
+      <world name="default">
+        <include>
+          <uri>model://ground_plane</uri>
+        </include>
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <include>
+          <uri>model://gas_station</uri>
+          <name>gas_station</name>
+          <pose>-2.0 7.0 0 0 0 0</pose>
+        </include>
+      </world>
+    </sdf>
+    ~~~
+
 * You should now be able to launch your custom world (with a gas station) into Gazebo using the following command:
 <pre>
 . ~/catkin_ws/devel/setup.bash
