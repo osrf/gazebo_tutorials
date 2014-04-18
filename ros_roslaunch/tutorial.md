@@ -152,36 +152,36 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 * Within this package, create a <tt>launch</tt> folder
 * Within the <tt>launch</tt> folder create a YOUROBOT.launch file with the following contents (default arguments excluded):
 
-    ~~~
-    <launch>
-      <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-      <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
-        <!-- more default parameters can be changed here -->
-      </include>
-    </launch>
-    ~~~
+~~~
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find MYROBOT_gazebo)/worlds/MYROBOT.world"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+</launch>
+~~~
 
 * Within the same package, create a <tt>worlds</tt> folder, and create a MYROBOT.world file with the following contents:
 
-    ~~~
-    <?xml version="1.0" ?>
-    <sdf version="1.4">
-      <world name="default">
-        <include>
-          <uri>model://ground_plane</uri>
-        </include>
-        <include>
-          <uri>model://sun</uri>
-        </include>
-        <include>
-          <uri>model://gas_station</uri>
-          <name>gas_station</name>
-          <pose>-2.0 7.0 0 0 0 0</pose>
-        </include>
-      </world>
-    </sdf>
-    ~~~
+~~~
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://gas_station</uri>
+      <name>gas_station</name>
+      <pose>-2.0 7.0 0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
+~~~
 
 * You should now be able to launch your custom world (with a gas station) into Gazebo using the following command:
 <pre>
