@@ -21,7 +21,7 @@ Gazebo3 is able to use different physics engines to perform the simulation. ODE 
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-***Note: ***there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
+***Note:*** there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
 
   **Ubuntu Linux 12.04 (precise)**
 
