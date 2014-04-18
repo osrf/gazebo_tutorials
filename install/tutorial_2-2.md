@@ -1,8 +1,8 @@
 #Download and Install Gazebo
 
-### Ubuntu Debians ###
+### Ubuntu Debians
 
-1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide] for instructions on doing this.
+1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [Ubuntu guide](https://help.ubuntu.com/community/Repositories/Ubuntu) for instructions on doing this.
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
@@ -48,11 +48,11 @@
 
         gzclient
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
-# Compiling From Source (Ubuntu) #
+# Compiling From Source (Ubuntu)
 
-## Prerequisites ##
+## Prerequisites
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source
 
@@ -227,7 +227,7 @@ To install from source, you should first install the SDFormat package, then buil
         echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
         sudo ldconfig
 
-1. If you are interested in using Gazebo with [http://www.ros.org ROS], see [[Tutorials/1.9/Installing_gazebo_ros_Packages|Installing gazebo_ros_pkgs]].
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
 ## Uninstalling Source-based Install ##
 
