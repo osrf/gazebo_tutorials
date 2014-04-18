@@ -75,22 +75,22 @@ In this launch file we inherit most of the necessary functionality from empty_wo
 
 Continuing with our examination of the <tt>mud_world.launch</tt> file, we will now look at the contents of the <tt>mud.world</tt> file. The first several components of the mud world is shown below:
 
-~~~
-<sdf version="1.4">
-  <world name="default">
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-    <include>
-      <uri>model://double_pendulum_with_base</uri>
-      <name>pendulum_thick_mud</name>
-      <pose>-2.0 0 0 0 0 0</pose>
-    </include>
-    ...
-~~~
+    ~~~
+    <sdf version="1.4">
+      <world name="default">
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <include>
+          <uri>model://ground_plane</uri>
+        </include>
+        <include>
+          <uri>model://double_pendulum_with_base</uri>
+          <name>pendulum_thick_mud</name>
+          <pose>-2.0 0 0 0 0 0</pose>
+        </include>
+        ...
+    ~~~
 **See the section below to view this full world file on your computer.**
 
 In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
