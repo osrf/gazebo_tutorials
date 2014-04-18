@@ -152,9 +152,11 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
     <!-- more default parameters can be changed here -->
   </include>
 </launch>
-</nowiki></pre>
+~~~
+
 * Within the same package, create a <tt>worlds</tt> folder, and create a MYROBOT.world file with the following contents:
-<pre><nowiki>
+
+~~~
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
