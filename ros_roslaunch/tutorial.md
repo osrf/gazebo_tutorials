@@ -143,7 +143,8 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 * Create a ROS package with the convention MYROBOT_gazebo
 * Within this package, create a <tt>launch</tt> folder
 * Within the <tt>launch</tt> folder create a YOUROBOT.launch file with the following contents (default arguments excluded):
-<pre><nowiki>
+
+~~~
 <launch>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -170,8 +171,10 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
     </include>
   </world>
 </sdf>
-</nowiki></pre>
+~~~
+
 * You should now be able to launch your custom world (with a gas station) into Gazebo using the following command:
+
 <pre>
 . ~/catkin_ws/devel/setup.bash
 roslaunch MYROBOT_gazebo MYROBOT.launch
