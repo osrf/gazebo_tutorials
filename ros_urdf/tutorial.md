@@ -238,9 +238,9 @@ For more advanced or custom materials, you can create your own OGRE colors or te
 
 Like in Rviz, Gazebo can use both [STL](http://en.wikipedia.org/wiki/STL_(file_format)) and [Collada](http://en.wikipedia.org/wiki/Collada) files. It is generally recommended you use Collada (.dae) files because they support colors and textures, whereas with STL files you can only have a solidly colored link.
 
-### <inertial> Element
+### `<inertial>` Element
 
-For the Gazebo physics engine to work properly, the <inertial> element must be provided as documented on the [URDF link element](http://www.ros.org/wiki/urdf/XML/link) page. For links to not be ignored in Gazebo, their mass must be greater than zero. Additionally, links with zero principal moment of inertia (ixx, iyy, izz) could lead to infinite acceleration under any finite torque application.
+For the Gazebo physics engine to work properly, the `<inertial>` element must be provided as documented on the [URDF link element](http://www.ros.org/wiki/urdf/XML/link) page. For links to not be ignored in Gazebo, their mass must be greater than zero. Additionally, links with zero principal moment of inertia (ixx, iyy, izz) could lead to infinite acceleration under any finite torque application.
 
 Determining the correct values for each link is required to get accurate physics approximations in Gazebo. This can be performed by conducting various measurements of the robots parts, or by using CAD software like Solidworks that includes features for approximating these values. For beginners, you can also just make the values up.
 
@@ -261,7 +261,7 @@ The origin tag represents the center of mass of this link. By setting the center
 
 In this example robot, both the mass and inertia matrix are made up values since this robot has no real-world counterpart.
 
-### <gazebo> Elements For Links
+### `<gazebo>` Elements For Links
 
 List of elements that are individually parsed:
 
@@ -336,11 +336,11 @@ List of elements that are individually parsed:
 </tr>
 </table>
 
-Similar to <gazebo> elements for <robot>, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding <link> element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
+Similar to `<gazebo>` elements for `<robot>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<link>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
 
 ### RRBot Example of <gazebo> element
 
-In the RRBot, the friction coefficients of the two non-fixed linked were specified so that if a collision occurred more accurate contact interactions were simulated. The following is an example link's <gazebo> tag:
+In the RRBot, the friction coefficients of the two non-fixed linked were specified so that if a collision occurred more accurate contact interactions were simulated. The following is an example link's `<gazebo>` tag:
 
 ~~~
   <gazebo reference="link2">
@@ -354,10 +354,10 @@ In the RRBot, the friction coefficients of the two non-fixed linked were specifi
 
 Make sure you are familiar with the [URDF joint documentation](http://www.ros.org/wiki/urdf/XML/joint). However, not all of the elements documented for URDF joints are applicable to Gazebo:
 
-* The <origin>, <parent> and <child> are required
-* <calibration> and <safety_controller> are ignored
-* In the <dynamics> tag, only the <tt>damping</tt> property is used
-* All of properties in the <limit> tag are optional
+* The `<origin>`, `<parent>` and `<child>` are required
+* `<calibration>` and `<safety_controller>` are ignored
+* In the `<dynamics>` tag, only the <tt>damping</tt> property is used
+* All of properties in the `<limit>` tag are optional
 
 ### RRBot Example
 
@@ -377,7 +377,7 @@ Notice the dynamics element with a viscous damping coefficient of 0.7 N*m*s/rad,
 
 The value of 0.7 N*m*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
 
-### <gazebo> Elements For Joints
+### `<gazebo>` Elements For Joints
 
 <table border="1">
 <tr>
@@ -422,7 +422,7 @@ The value of 0.7 N*m*s/rad was decided on by testing different amounts of dampin
 </tr>
 </table>
 
-Again, similar to <gazebo> elements for <robot> and <link>, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding <joint> element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
+Again, similar to `<gazebo>` elements for `<robot>` and `<link>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<joint>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
 
 ## Verifying the Gazebo Model Works
 
@@ -451,7 +451,7 @@ This should launch both the Gazebo server and GUI client with your robot automat
 
 ## Tweaking your model
 
-If your robot model behaves unexpectedly within Gazebo, it is likely because your URDF needs further tuning to accurately represent its physics in Gazebo. See the [SDF user guide](http://gazebosim.org/sdf.html) for more info on various properties available in Gazebo, which are also available in the URDF via the <gazebo> tag.
+If your robot model behaves unexpectedly within Gazebo, it is likely because your URDF needs further tuning to accurately represent its physics in Gazebo. See the [SDF user guide](http://gazebosim.org/sdf.html) for more info on various properties available in Gazebo, which are also available in the URDF via the `<gazebo>` tag.
 
 ## Sharing your robot with the world
 
