@@ -388,12 +388,12 @@ The value of 0.7 N*m*s/rad was decided on by testing different amounts of dampin
 <tr>
 <td>kp</td>
 <td>double</td>
-<td>Contact stiffness k_p for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses cfm)</td>
+<td>Contact stiffness k_p for rigid body contacts as defined by ODE (ODE uses cfm)</td>
 </tr>
 <tr>
 <td>kd</td>
 <td>double</td>
-<td>Contact damping k_d for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses erp)</td>
+<td>Contact damping k_d for rigid body contacts as defined by ODE (ODE uses erp)</td>
 </tr>
 <tr>
 <td>stopCfm</td>
