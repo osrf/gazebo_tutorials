@@ -106,23 +106,23 @@ Eventually the arm should come to a complete stop. We encourage you to tweak and
 
 There have been many API changes in Gazebo and the required URDF format, one of which that Gazebo xml-schema namespaces are no longer needed. If your URDF has something like:
 
-<pre>
+~~~
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="pr2" >
-</pre>
+~~~
 
 You can remove them. All you need in your root element tag is the name of the robot and optionally the xml namespace for xacro if you are using that:
 
-<pre>
+~~~
 <robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-</pre>
+~~~
 
-### <gazebo> element for the <robot> tag
+### `<gazebo>` element for the <robot> tag
 
-If a <gazebo> element is used without a <tt>reference=""</tt> property, it is assumed the <gazebo> element is for the whole robot model. The elements for a <robot> inside the <gazebo> tag are listed in the following table:
+If a `<gazebo>` element is used without a <tt>reference=""</tt> property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
 
 <table border="1">
 <tr>
