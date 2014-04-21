@@ -18,23 +18,23 @@ There are several steps to get a URDF robot properly working in Gazebo. The foll
 
 ### Required
 
-- An <inertia> element within each <link> element must be properly specified and configured.
+- An `<inertia>` element within each `<link>` element must be properly specified and configured.
 
 ### Optional
 
-- Add a <gazebo> element for every <link>
+- Add a `<gazebo>` element for every `<link>`
  - Convert visual colors to Gazebo format
  - Convert stl files to dae files for better textures
  - Add sensor plugins
-- Add a <gazebo> element for every <joint>
+- Add a `<gazebo>` element for every `<joint>`
  - Set proper damping dynamics
  - Add actuator control plugins
-- Add a <gazebo> element for the <robot> element
-- Add a <link name="world"/> link if the robot should be rigidly attached to the world/base_link
+- Add a `<gazebo>` element for the `<robot>` element
+- Add a `<link name="world"/>` link if the robot should be rigidly attached to the world/base_link
 
-## The <gazebo> Element
+## The `<gazebo>` Element
 
-The <gazebo> element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo. It allows you to specify the properties found in the SDF format that are not by default in the URDF format. None of the elements within a <gazebo> element are required because default values will be automatically included. There are three different types of <gazebo> elements - one for the <robot> tag, one for <link> tags, and one for <joint> tags.  We will discuss the attributes and elements within each type of <gazebo> element throughout this tutorial.
+The `<gazebo>` element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo. It allows you to specify the properties found in the SDF format that are not by default in the URDF format. None of the elements within a `<gazebo>` element are required because default values will be automatically included. There are three different types of `<gazebo>` elements - one for the `<robot>` tag, one for `<link>` tags, and one for `<joint>` tags.  We will discuss the attributes and elements within each type of `<gazebo>` element throughout this tutorial.
 
 ## Prerequisites
 
