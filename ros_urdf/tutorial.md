@@ -193,9 +193,9 @@ The following is an example link from RRBot:
 
 As per ROS [REP 103: Standard Units of measure and Coordinate Conventions](http://www.ros.org/reps/rep-0103.html), units in Gazebo should be specified in meters and kilograms. Gazebo could possibly be used with imperial units if the constants such as gravity were changed manually, but by default gravity is 9.81 m/s^2. When specifying mass, use units of kilograms.
 
-### <collision> and <visual> elements
+### `<collision>` and `<visual>` elements
 
-These tags work essentially the same in Gazebo as in Rviz. Its important that you specify both though, because unlike some ROS applications, Gazebo will not use your <visual> elements as <collision> elements if you do not explicitly specify a <collision> element. Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
+These tags work essentially the same in Gazebo as in Rviz. Its important that you specify both though, because unlike some ROS applications, Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a <collision> element. Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
 
 #### Simplify collision model
 
@@ -219,11 +219,11 @@ With the color orange defined separately such as in the file <tt>materials.xacro
 
 Unfortunately, this method of specifying link colors does not work in Gazebo as it adopts OGRE's material scripts for coloring and texturing links. Instead, a Gazebo material tag must be specified for each link, such as:
 
-<pre><nowiki>
+~~~
   <gazebo reference="link1">
     <material>Gazebo/Orange</material>
   </gazebo>
-</nowiki></pre>
+~~~
 
 As mentioned earlier, in the RRBot example we have chosen to include all Gazebo-specific tag in a secondary file called <tt>rrbot.gazebo</tt>. You can find the <link> and <material> elements there.
 
