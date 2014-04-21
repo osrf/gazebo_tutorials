@@ -38,7 +38,7 @@ The `<gazebo>` element is an extension to the URDF used for specifying additiona
 
 ## Prerequisites
 
-The first step to getting your robot working in Gazebo is to have a working URDF file from the corresponding [Tutorials](http://www.ros.org/wiki/urdf/Tutorials ROS URDF). Test your URDF by viewing it in [Rviz](http://www.ros.org/wiki/rviz) before proceeding to configure your robot with Gazebo. In this tutorial, we'll use a simple demo robot named RRBot. Feel free to follow along with this robot or your own bot.
+The first step to getting your robot working in Gazebo is to have a working URDF file from the corresponding [ROS URDF Tutorials](http://www.ros.org/wiki/urdf/Tutorials). Test your URDF by viewing it in [Rviz](http://www.ros.org/wiki/rviz) before proceeding to configure your robot with Gazebo. In this tutorial, we'll use a simple demo robot named RRBot. Feel free to follow along with this robot or your own bot.
 
 ### Getting RRBot
 
