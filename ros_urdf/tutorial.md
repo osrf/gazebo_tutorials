@@ -64,7 +64,7 @@ roslaunch rrbot_description rrbot_rviz.launch
 
 And you should see our little bot like so:
 
-[[file:Rrbot_rviz.png|700px]]
+[[file:figs/Rrbot_rviz.png|700px]]
 
 If you do not get this, try killing all old roscore processes with <tt>killall roscore</tt> and relaunching RViz.
 
@@ -98,7 +98,7 @@ roslaunch rrbot_gazebo rrbot_world.launch
 
 In the launched Gazebo window you should see the robot standing straight up. Despite there being no intentional disturbances in the physics simulator by default, numerical errors should start to build up and cause the double inverted pendulum to fall after a few seconds. The following is a mid-swing screenshot of the RRBot:
 
-[[file:Swinging_Arm.png|700px]]
+[[file:figs/Swinging_Arm.png|700px]]
 
 Eventually the arm should come to a complete stop. We encourage you to tweak and test various aspects of the URDF during the following tutorials to help you learn more about simulating URDF robots.
 
