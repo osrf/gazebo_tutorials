@@ -137,7 +137,7 @@ If a `<gazebo>` element is used without a <tt>reference=""</tt> property, it is 
 </tr>
 </table>
 
-Elements within a <gazebo> tag that are not in the above table are directly inserted into the SDF <model> tag for the generated SDF. This is particularly useful for plugins, as discussed in the [[Tutorials/1.9/ROS_Motor_and_Sensor_Plugins |ROS Motor and Sensor Plugins]] tutorial.
+Elements within a `<gazebo>` tag that are not in the above table are directly inserted into the SDF `<model>` tag for the generated SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
 
 ## Rigidly Fixing A Model to the World
 If you would like your URDF model to be permanently attached to the world frame (the ground plane), you must create a "world" link and a joint that fixes it to the base of your model. RRBot accomplishes this with the following:
