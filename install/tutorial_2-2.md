@@ -251,21 +251,18 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 4. Run the following commands:
 
         brew tap osrf/simulation
-        brew install gazebo
+        brew install gazebo2
         gazebo
 
 ## Optional dependencies ##
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-        brew install gazebo --with-bullet --with-simbody
+        brew install gazebo2 --with-bullet --with-simbody
 
 ## Versions ##
-The formula currently installs version 2.2.0 of gazebo. Version 1.9 can be installed using the `brew versions` command. To install the latest version of gazebo's default branch:
+The gazebo2 formula currently installs version 2.2.2 of gazebo.
+Version 1.9 can be installed using the gazebo formula or version 3.0 using the gazebo3 formula.
+To install the latest version of gazebo's default branch:
 
-        brew install gazebo --HEAD
-
-## Notes on 10.9 (Mavericks) support ##
-Note that the latest release of qt4 is broken on Mavericks, so you will have to install qt4 from source, which may take an hour or more.
-
-        brew install qt --HEAD
+        brew install gazebo3 --HEAD
 

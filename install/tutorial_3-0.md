@@ -1,11 +1,4 @@
 ## Gazebo in different deb packages
-~~~
-<launch>
-  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-  <include><uri>test</uri></include>
-
-</launch>
-~~~
 
 
 Gazebo 3.0 version is the first one that ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
@@ -266,21 +259,18 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 4. Run the following commands:
 
         brew tap osrf/simulation
-        brew install gazebo
+        brew install gazebo3
         gazebo
 
 ## Optional dependencies ##
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-        brew install gazebo --with-bullet --with-simbody
+        brew install gazebo3 --with-bullet --with-simbody
 
 ## Versions ##
-The formula currently installs version 2.2.0 of gazebo. Version 1.9 can be installed using the `brew versions` command. To install the latest version of gazebo's default branch:
+The formula currently installs version 3.0 of gazebo.
+Version 1.9 can be installed using the gazebo formula, or gazebo 2.2 using gazebo2.
+To install the latest version of gazebo's default branch:
 
-        brew install gazebo --HEAD
-
-## Notes on 10.9 (Mavericks) support ##
-Note that the latest release of qt4 is broken on Mavericks, so you will have to install qt4 from source, which may take an hour or more.
-
-        brew install qt --HEAD
+        brew install gazebo3 --HEAD
 
