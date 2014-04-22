@@ -9,11 +9,11 @@ Make sure you have the RRBot setup as described in the [previous tutorial on URD
 
 ## Adding Plugins
 
-Plugins can be added to any of the main elements of a URDF - a <tt><robot></tt>, <tt><link></tt>, or <tt><joint></tt> depending on what the scope and purpose of the plugin is. To accomplish adding a plugin to a particular element in your URDF, you must wrap your <tt><plugin></tt> tag within a <tt><gazebo></tt> element.
+Plugins can be added to any of the main elements of a URDF - a `<robot>`, `<link>`, or `<joint>` depending on what the scope and purpose of the plugin is. To accomplish adding a plugin to a particular element in your URDF, you must wrap your `<plugin>` tag within a `<gazebo>` element.
 
 ### Adding a plugin to the `<robot>` element
 
-The following is an example of a plugin for a <tt><robot></tt> element in a URDF:
+The following is an example of a plugin for a `<robot>` element in a URDF:
 
     <gazebo>
       <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
@@ -21,11 +21,11 @@ The following is an example of a plugin for a <tt><robot></tt> element in a URDF
       </plugin>
     </gazebo>
 
-In the above example the plugin was added to the <tt><robot></tt> element because, similar to other <tt><gazebo></tt> elements and properties, if no <tt>reference="x"</tt> is specified it is assumes the reference is the entire <tt><robot></tt>. In [http://gazebosim.org/sdf/ SDF] terminology, it assumes the reference is the <tt><model></tt>.
+In the above example the plugin was added to the `<robot>` element because, similar to other `<gazebo>` elements and properties, if no `reference="x"` is specified it is assumes the reference is the entire `<robot>`. In [SDF](http://gazebosim.org/sdf/) terminology, it assumes the reference is the `<model>`.
 
 **SDF Note:**
 
-''Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the <tt><gazebo></tt> tags which are not in the element table described in the [[Tutorials/1.9/Using_A_URDF_In_Gazebo |previous tutorial on URDFs]] are directly inserted into the <tt><model></tt> tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:''
+''Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the `<gazebo>` tags which are not in the element table described in the [[Tutorials/1.9/Using_A_URDF_In_Gazebo |previous tutorial on URDFs]] are directly inserted into the `<model>` tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:''
 
     <model name="your_robot_model">
       <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
@@ -37,7 +37,7 @@ In the above example the plugin was added to the <tt><robot></tt> element becaus
 
 ### Adding a plugin to the `<link>` element
 
-Similar to <tt><plugin></tt> elements for <tt><robot></tt>, you can add a <tt><plugin></tt> element to a link by passing a <tt>reference="your_link_name"</tt> value.
+Similar to `<plugin>` elements for`<robot>`, you can add a `<plugin>` element to a link by passing a `reference="your_link_name"` value.
 
     <gazebo reference="your_link_name">
       <plugin name="your_link_laser_controller" filename="libgazebo_ros_laser.so">
@@ -47,13 +47,13 @@ Similar to <tt><plugin></tt> elements for <tt><robot></tt>, you can add a <tt><p
 
 ### Adding a plugin to the `<joint>` element
 
-This is accomplished in the same way as a <tt><link></tt> except the reference name is a joint name.
+This is accomplished in the same way as a `<link>` except the reference name is a joint name.
 
 # Plugins available in gazebo_plugins
 
-The following sections document all of the plugins available in the <tt>gazebo_plugins</tt>. We suggest you review them in order because more detail is covered in the first couple of plugins and you can learn some of the concepts from the various plugins' documentation.
+The following sections document all of the plugins available in the `gazebo_plugins`. We suggest you review them in order because more detail is covered in the first couple of plugins and you can learn some of the concepts from the various plugins' documentation.
 
-The names of each section is derived from the plugin class name. For example, "Block Laser" is from the <tt>GazeboRosBlockLaser</tt> class and can be found in the file <tt>gazebo_plugins/src/gazebo_ros_block_laser.cpp</tt>.
+The names of each section is derived from the plugin class name. For example, "Block Laser" is from the `GazeboRosBlockLaser` class and can be found in the file `gazebo_plugins/src/gazebo_ros_block_laser.cpp`.
 
 ''If there are some sections blank, it means that this author got tired of documenting every plugin and you should fill in the area with your experience should you have knowledge and examples of how to use the particular plugin.''
 
@@ -63,7 +63,7 @@ The names of each section is derived from the plugin class name. For example, "B
 
 ### RRBot Example
 
-In this section, we will review a simple RGB camera attached to the end of the RRBot pendulum arm. You can look inside <tt>rrbot.xacro</tt> to follow the explanation. The first elements of this block are an extra link and joint added to the URDF file that represents the camera. We are just using a simple red box to represent the camera, though typically you could use a mesh file for a better representation.
+In this section, we will review a simple RGB camera attached to the end of the RRBot pendulum arm. You can look inside `rrbot.xacro` to follow the explanation. The first elements of this block are an extra link and joint added to the URDF file that represents the camera. We are just using a simple red box to represent the camera, though typically you could use a mesh file for a better representation.
 
 ~~~
   <joint name="camera_joint" type="fixed">
@@ -106,7 +106,7 @@ A Xacro property is also defined:
 
 You should be able to launch the RRBot and see a red box attached to the end of the arm.
 
-Next we will review the Gazebo plugin that gives us the camera functionality and publishes the image to a ROS message. In the RRBot we have been following the convention of putting Gazebo elements in the <tt>rrbot.gazebo</tt> file:
+Next we will review the Gazebo plugin that gives us the camera functionality and publishes the image to a ROS message. In the RRBot we have been following the convention of putting Gazebo elements in the `rrbot.gazebo` file:
 
 ~~~
   <!-- camera -->
