@@ -25,7 +25,7 @@ In the above example the plugin was added to the `<robot>` element because, simi
 
 **SDF Note:**
 
-''Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the `<gazebo>` tags which are not in the element table described in the [[Tutorials/1.9/Using_A_URDF_In_Gazebo |previous tutorial on URDFs]] are directly inserted into the `<model>` tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:''
+Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the `<gazebo>` tags which are not in the element table described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf) are directly inserted into the `<model>` tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:
 
     <model name="your_robot_model">
       <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
@@ -33,7 +33,7 @@ In the above example the plugin was added to the `<robot>` element because, simi
       </plugin>
     </model>
 
-''Refer to the SDF documentation for more information on how this feature can be used.''
+Refer to the SDF documentation for more information on how this feature can be used.
 
 ### Adding a plugin to the `<link>` element
 
@@ -55,11 +55,11 @@ The following sections document all of the plugins available in the `gazebo_plug
 
 The names of each section is derived from the plugin class name. For example, "Block Laser" is from the `GazeboRosBlockLaser` class and can be found in the file `gazebo_plugins/src/gazebo_ros_block_laser.cpp`.
 
-''If there are some sections blank, it means that this author got tired of documenting every plugin and you should fill in the area with your experience should you have knowledge and examples of how to use the particular plugin.''
+If there are some sections blank, it means that this author got tired of documenting every plugin and you should fill in the area with your experience should you have knowledge and examples of how to use the particular plugin.
 
 ## Camera
 
-'''Description:''' provides ROS interface for simulating cameras such as wge100_camera by publishing the CameraInfo and Image ROS messages as described in sensor_msgs.
+**Description:** provides ROS interface for simulating cameras such as wge100_camera by publishing the CameraInfo and Image ROS messages as described in sensor_msgs.
 
 ### RRBot Example
 
