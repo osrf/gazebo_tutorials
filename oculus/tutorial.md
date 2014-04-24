@@ -39,13 +39,13 @@ x=0
 y=0
 
 [oculus]
-x=<REPLACE_BY_YOUR_VERTICAL_RESOLUTION>
+x=<REPLACE_BY_YOUR_HORIZONTAL_RESOLUTION>
 y=0
 visual=<REPLACE_BY_THE_VISUAL_LINK_ATTACHED_TO_OCULUS>
 autolaunch=0
 ~~~
 
-Do not forget to replace `x` with the value of the vertical resolution of your monitor, and `visual` with the name of the visual link that you want to use with Oculus Rift. Gazebo will create a new window in the (x,y) coordinates, that should be rendered in the Oculus headset.
+Do not forget to replace `x` with the value of the horizontal resolution of your monitor, and `visual` with the name of the visual link that you want to use with Oculus Rift. Gazebo will create a new window in the (x,y) coordinates, that should be rendered in the Oculus headset.
 
 As an example, this is the content of our `gui.ini` file:
 
