@@ -14,7 +14,7 @@ cd build
 cmake ..
 make
 sudo make install
-sudo cp LibOVR/90-oculus.rules /etc/udev/rules.d/
+sudo cp ../LibOVR/90-oculus.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 ~~~
 
