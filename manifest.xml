@@ -181,7 +181,7 @@
   <tutorial title="Oculus Rift" ref='oculus'>
     <markdown version="3.0+">oculus/tutorial.md</markdown>
     <description>Using the Oculus Rift VR headset</description>
-    <skill>advanced</skill>
+    <skill>intermediate</skill>
   </tutorial>
 
   <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
