@@ -22,7 +22,7 @@ sudo udevadm control --reload-rules
 
 Once Oculus VR SDK is installed, you should be able to compile Gazebo from source with Oculus Rift support.
 
-Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compile Gazebo. During the executing of the `cmake` command, you should see this message confirming that the Oculus SDK is found:
+Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compile Gazebo. During the execution of the `cmake` command, you should see this message confirming that the Oculus SDK is found:
 
 ~~~
 -- checking for module 'OculusVR'
