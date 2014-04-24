@@ -68,3 +68,9 @@ gazebo worlds/camera.world
 ~~~
 
 Once Gazebo is up and running, click on Window->Oculus Rift and you should be able to see the world from your Oculus headset.
+
+It is also possible to enable the Oculus window by default when starting Gazebo. Modify the `gui.ini` file and set `autolaunch=1`. Now, start gazebo and your Oculus Rift should be working without any intervention:
+
+~~~
+gazebo worlds/camera.world
+~~~
