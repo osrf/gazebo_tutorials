@@ -39,10 +39,7 @@ Using Hydra in Gazebo requires two steps. The first step is to load the Hydra pl
 
 ~~~
 <!-- Load the plugin for Razer Hydra -->
-<plugin name="hydra" filename="libHydraPlugin.so">
-  <pivot>0.04 0 0</pivot>
-  <grab>0.12 0 0</grab>
-</plugin>
+<plugin name="hydra" filename="libHydraPlugin.so"></plugin>
 ~~~
 
 This plugin will automatically publish messages on the topic `~/hydra`.
@@ -164,8 +161,7 @@ Here is the complete world file of the tutorial (also available under
         </visual>
       </link>
 
-      <plugin name='sphere_controller' filename='libHydraDemoPlugin.so'>
-      </plugin>
+      <plugin name='sphere_ctroller' filename='libHydraDemoPlugin.so'></plugin>
 
     </model>
 
