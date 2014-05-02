@@ -37,12 +37,13 @@ Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compi
 
 Using Hydra in Gazebo requires two steps. The first step is to load the Hydra plugin in your world file.
 
-```
+~~~
+<!-- Load the plugin for Razer Hydra -->
 <plugin name="hydra" filename="libHydraPlugin.so">
   <pivot>0.04 0 0</pivot>
   <grab>0.12 0 0</grab>
 </plugin>
-```
+~~~
 
 This plugin will automatically publish messages on the topic `~/hydra`.
 
@@ -173,7 +174,7 @@ Here is the complete world file of the tutorial (also available under
 ~~~
 
 It is time to run Gazebo and use the Hydra's right joystick to move the sphere.
-Do not forget to plug your Hydra and them:
+Do not forget to plug your Hydra, and then:
 
 ~~~
 gazebo worlds/hydra_demo.world
