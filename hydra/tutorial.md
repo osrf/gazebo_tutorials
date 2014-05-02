@@ -38,7 +38,6 @@ Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compi
 Using Hydra in Gazebo requires two steps. The first step is to load the Hydra plugin in your world file.
 
 ```
-<!-- Load the plugin for Razer Hydra -->
 <plugin name="hydra" filename="libHydraPlugin.so">
   <pivot>0.04 0 0</pivot>
   <grab>0.12 0 0</grab>
