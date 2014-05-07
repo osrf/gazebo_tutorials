@@ -20,29 +20,17 @@ mkdir ~/gazebo_animatebox_tutorial
 cd ~/gazebo_animatebox_tutorial
 ~~~
 
-## Animate box plugin
+## Animate box code
 
-Start by creating the plugin.
-
-~~~
-cd ~/gazebo_animatebox_tutorial
-gedit animate_box.cc
-~~~
-
-Copy and paste the following into [animate_box.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc):
-
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc' />
-
-
-Create a CMakeLists.txt file that will build the plugin.
+Copy [animate_box.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/integrated_main.cc), and [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt) into the current directory.
 
 ~~~
-gedit CMakeLists.txt
+wget http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc
+wget http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/independent_listener.cc
+wget http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/integrated_main.cc
+wget http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt
+wget http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.world
 ~~~
-
-Copy an past the following into [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt):
-
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt' />
 
 Build the plugin
 
@@ -51,60 +39,51 @@ mkdir build
 cd build
 cmake ../
 make 
+~~~
+
+Make sure Gazebo can load the plugins later
+
+~~~
 export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
 ~~~
 
 
-
-
-
-
-To build on platforms with make run:
-
-    mkdir build
-    cd build
-
-    cmake ..
-    make -j4
-        
-    # make sure gazebo can load the plugins later
-    export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
-    
-    cd ..
-
-
-
 ## Simulate with gazebo
+
 This example demonstrates how use the normal 
 gazebo executable with a plugin.
 
 Run using gazebo itself with:
 
-      gazebo path/to/animated_box.world
+~~~
+cd ~/gazebo_animatebox_tutorial
+gazebo animated_box.world
+~~~
 
-Make sure to keep gazebo running in the background.
+In another terminal, use "gz topic" user interface to view the pose:
 
-To use "gztopic" user interface to view the pose, run the command:
+~~~
+gz topic -v /gazebo/animated_box_world/pose/local/info
+~~~
 
-      gztopic view /gazebo/animated_box_world/pose/local/info
-  
-So that as the simulation is running you can see a 
-printout of the lcoation and timestamp.
-
+You should see a graphical interface that display the pose of the box.
 
 ## Connect to a simulation with your own executable
 
-Run the simulation with gazebo (split off on a separate bash script thread)
-as above, then run the independent listener executable that
-connects to the simulation, receives the location and timestamp,
-and prints it out.
- 
-    gazebo path/to/animated_box.world &
-      
-    ./build/independent_listener
+Make sure Gazebo is not running.
 
+We will Gazebo as above, and then run the independent listener
+executable that connects to Gazebo. The indepdent listener receives
+the location and timestamp of the box and prints it out.
+
+~~~
+cd ~/gazebo_animatebox_tutorial
+gazebo animated_box.world & ./build/independent_listener
+~~~
 
 ## Run the simulation and connect with your own executable
+
+Make sure Gazebo is not running.
 
 The integrated_main example demonstrates the folowing:
 
@@ -113,18 +92,21 @@ The integrated_main example demonstrates the folowing:
 3. The listner gets the timestamp and pose, then prints each out.
 
 Run integrated_main:
-   
-    ./build/integrated_main
 
+~~~
+cd ~/gazebo_animatebox_tutorial
+./build/integrated_main animated_box.world
+~~~
 
 To view the simulation run the command:
 
-    gzclient
-
+~~~
+gzclient
+~~~
 
 ## SOURCE CODE
 
-### listener.cc
+### independent_listener.cc
 
   executable that will connect to a running simulation and receive + print position output
   
