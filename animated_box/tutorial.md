@@ -1,6 +1,5 @@
 
-Animated Box Simulation Demo
-==============================
+==Animated Box Simulation Demo
 
 This demo creates a simulation world
 with a simple box in it that is animated
@@ -31,8 +30,7 @@ To build on platforms with make run:
 
 
 
-Simulate with gazebo
---------------------
+--Simulate with gazebo
 This example demonstrates how use the normal 
 gazebo executable with a plugin.
 
@@ -50,8 +48,7 @@ So that as the simulation is running you can see a
 printout of the lcoation and timestamp.
 
 
-Connect to a simulation with your own executable
----------------------------------------
+--Connect to a simulation with your own executable
 
 Run the simulation with gazebo (split off on a separate bash script thread)
 as above, then run the independent listener executable that
@@ -63,8 +60,7 @@ and prints it out.
     ./build/independent_listener
 
 
-Run the simulation and connect with your own executable
----------------------------------------
+--Run the simulation and connect with your own executable
 
 The integrated_main example demonstrates the folowing:
 
@@ -82,32 +78,25 @@ To view the simulation run the command:
     gzclient
 
 
-## SOURCE CODE
-==============
+==SOURCE CODE
 
-listener.cc
------------
+--listener.cc
 
   executable that will connect to a running simulation and receive + print position output
   
-integrated_main.cc
---------------
+--integrated_main.cc
 
   executable that will create a simulation and receive + print position output
 
-animated_box.cc
-----------------
+--animated_box.cc
 
   shared library plugin that defines the animation component of the simulation, moving the box that is in the world.
   
 
-animated_box.world
-------------------
+--animated_box.world
 
   XML file that defines the simulation physical world space and the single box that is in it.
 
-CMakeLists.txt
---------------
+--CMakeLists.txt
   
   CMake build script
-
