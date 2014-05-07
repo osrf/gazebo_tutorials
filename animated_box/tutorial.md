@@ -1,17 +1,61 @@
 # Animated Box Simulation Demo
 
-This demo creates a simulation world
-with a simple box in it that is animated
-in a 10 second repeating loop where it slides 
-around on the ground.
+This tutorial creates a simulation world with a simple box that is animated
+in a 10 second repeating loop where it slides around on the ground.
 
-It also demonstrates several different ways of viewing,
-accessing, and interacting with the simulation using
-the gazebo executable or your own custom executable.
+This tutorial also demonstrates several different ways of viewing,
+accessing, and interacting with simulation using the Gazebo executable
+or your own custom executable.
 
-This box also broadcasts its pose (by default),
+The simulated box broadcasts its pose,
 and a callback is created to receive the pose
 and print out the location and timestamp of the box.
+
+## Setup
+
+Create a working directory.
+
+~~~
+mkdir ~/gazebo_animatebox_tutorial
+cd ~/gazebo_animatebox_tutorial
+~~~
+
+## Animate box plugin
+
+Start by creating the plugin.
+
+~~~
+cd ~/gazebo_animatebox_tutorial
+gedit animate_box.cc
+~~~
+
+Copy and paste the following into `animate_box.cc`:
+
+<include from='/include' src='https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc' />
+
+The above code is also located in the Gazebo sources:
+[examples/stand_alone/animated_box/animated_box.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc)
+
+
+Create a CMakeLists.txt file that will build the plugin.
+
+~~~
+gedit CMakeLists.txt
+~~~
+
+Copy an past the following into `CMakeLists.txt`:
+
+<include from='/include' src='https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt' />
+
+The above file is also located in the Gazebo sources:
+[examples/stand_alone/animated_box/CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt)
+
+
+
+
+
+
+
 
 
 To build on platforms with make run:
