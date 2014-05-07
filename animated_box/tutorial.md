@@ -106,22 +106,22 @@ gzclient
 
 ## SOURCE CODE
 
-### independent_listener.cc
+#### independent_listener.cc
 
   executable that will connect to a running simulation and receive + print position output
   
-### integrated_main.cc
+#### integrated_main.cc
 
   executable that will create a simulation and receive + print position output
 
-### animated_box.cc
+#### animated_box.cc
 
   shared library plugin that defines the animation component of the simulation, moving the box that is in the world.
   
-### animated_box.world
+#### animated_box.world
 
   XML file that defines the simulation physical world space and the single box that is in it.
 
-### CMakeLists.txt
+#### CMakeLists.txt
   
   CMake build script
