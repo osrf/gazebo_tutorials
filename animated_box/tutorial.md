@@ -1,5 +1,4 @@
-
-==Animated Box Simulation Demo
+== Animated Box Simulation Demo
 
 This demo creates a simulation world
 with a simple box in it that is animated
@@ -30,7 +29,7 @@ To build on platforms with make run:
 
 
 
---Simulate with gazebo
+-- Simulate with gazebo
 This example demonstrates how use the normal 
 gazebo executable with a plugin.
 
