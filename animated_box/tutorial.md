@@ -29,11 +29,9 @@ cd ~/gazebo_animatebox_tutorial
 gedit animate_box.cc
 ~~~
 
-Copy and paste the following into `animate_box.cc`:
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc' />
+Copy and paste the following into [animate_box.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc):
 
-The above code is also located in the Gazebo sources:
-[examples/stand_alone/animated_box/animated_box.cc](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc)
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/animated_box.cc' />
 
 
 Create a CMakeLists.txt file that will build the plugin.
@@ -42,15 +40,19 @@ Create a CMakeLists.txt file that will build the plugin.
 gedit CMakeLists.txt
 ~~~
 
-Copy an past the following into `CMakeLists.txt`:
+Copy an past the following into [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt):
 
-<include from='/include' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt' />
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt' />
 
-The above file is also located in the Gazebo sources:
-[examples/stand_alone/animated_box/CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/issue_1114_animate_pose/examples/stand_alone/animated_box/CMakeLists.txt)
+Build the plugin
 
-
-
+~~~
+mkdir build
+cd build
+cmake ../
+make 
+export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
+~~~
 
 
 
