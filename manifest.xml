@@ -213,29 +213,37 @@
   <categories>
     <category title="Get Started" skill="beginner" ref="get_started">
       <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each use case to the left presents a collection of relevant tutorials.</description>
-      <tutorial>install</tutorial>
-      <tutorial>quick_start</tutorial>
+      <tutorials>
+        <tutorial>install</tutorial>
+        <tutorial>quick_start</tutorial>
+      </tutorials>
     </category>
 
     <category title="Build a Robot" skill="beginner" ref="build_robot">
       <description>Build a robot tutorials.</description>
-      <tutorial>build_robot</tutorial>
-      <tutorial>attach_meshes</tutorial>
-      <tutorial>plugins_model</tutorial>
+      <tutorials>
+        <tutorial>build_robot</tutorial>
+        <tutorial>attach_meshes</tutorial>
+        <tutorial>plugins_model</tutorial>
+      </tutorials>
     </category>
 
     <category title="Write a plugin" skill="intermediate" ref="write_plugin">
       <description>How to write a plugin.</description>
-      <tutorial>build_robot</tutorial>
-      <tutorial>attach_meshes</tutorial>
-      <tutorial>plugins_model</tutorial>
+      <tutorials>
+        <tutorial>build_robot</tutorial>
+        <tutorial>attach_meshes</tutorial>
+        <tutorial>plugins_model</tutorial>
+      </tutorials>
     </category>
 
     <category title="Connect to ROS" skill="advanced" ref="connect_ros">
       <description>Connect to ROS</description>
-      <tutorial>build_robot</tutorial>
-      <tutorial>attach_meshes</tutorial>
-      <tutorial>plugins_model</tutorial>
+      <tutorials>
+        <tutorial>build_robot</tutorial>
+        <tutorial>attach_meshes</tutorial>
+        <tutorial>plugins_model</tutorial>
+      </tutorials>
     </category>
 
   </categories>
