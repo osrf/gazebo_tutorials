@@ -207,12 +207,12 @@
       <tag>animation</tag>
     </tags>
   </tutorial>
-</tutorials>
 
-<categories>
-  <category title="Get Started">
-    <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each use case to the left presents a collection of relevant tutorials.</description>
-    <tutorial>install</tutorial>
-    <tutorial>quick_start</tutorial>
-  </category>
-</categories>
+  <categories>
+    <category title="Get Started">
+      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each use case to the left presents a collection of relevant tutorials.</description>
+      <tutorial>install</tutorial>
+      <tutorial>quick_start</tutorial>
+    </category>
+  </categories>
+</tutorials>
