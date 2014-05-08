@@ -216,6 +216,28 @@
       <tutorial>install</tutorial>
       <tutorial>quick_start</tutorial>
     </category>
+
+    <category title="Build a Robot">
+      <description>Build a robot tutorials.</description>
+      <tutorial>build_robot</tutorial>
+      <tutorial>attach_meshes</tutorial>
+      <tutorial>plugins_model</tutorial>
+    </category>
+
+    <category title="Write a plugin">
+      <description>How to write a plugin.</description>
+      <tutorial>build_robot</tutorial>
+      <tutorial>attach_meshes</tutorial>
+      <tutorial>plugins_model</tutorial>
+    </category>
+
+    <category title="Connect to ROS">
+      <description>Connect to ROS</description>
+      <tutorial>build_robot</tutorial>
+      <tutorial>attach_meshes</tutorial>
+      <tutorial>plugins_model</tutorial>
+    </category>
+
   </categories>
 
 </content>
