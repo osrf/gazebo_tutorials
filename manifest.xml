@@ -247,6 +247,13 @@
       </tutorials>
     </category>
 
+    <category title="Tools and utilities" skill="beginner" ref="tools_utilities">
+      <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
+      <tutorials>
+        <tutorial>log_filtering</tutorial>
+      </tutorials>
+    </category>
+
     <category title="Write a plugin" skill="intermediate" ref="write_plugin">
       <description>Plugins allow you to control models, sensors, world properties, and even the way Gazebo runs. The following tutorials describe how to create and load plugins for various purposes.</description>
       <tutorials>
@@ -265,6 +272,20 @@
       </tutorials>
     </category>
 
+    <category title="Using Math" skill="intermediate" ref="math">
+      <description>Gazebo has a custom math library. These tutorials describe how to use these math functions.</description>
+      <tutorials>
+        <tutorial>random_numbers</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="User input" skill="intermediate" ref="user_input">
+      <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
+      <tutorials>
+        <tutorial>hydra</tutorial>
+      </tutorials>
+    </category>
+
     <category title="Connect to ROS" skill="advanced" ref="connect_ros">
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
@@ -276,14 +297,7 @@
       </tutorials>
     </category>
 
-    <category title="Using Math" skill="beginner" ref="math">
-      <description>Gazebo has a custom math library. These tutorials describe how to use these math functions.</description>
-      <tutorials>
-        <tutorial>random_numbers</tutorial>
-      </tutorials>
-    </category>
-
-    <category title="Transport Library" skill="beginner" ref="transport">
+    <category title="Transport Library" skill="advanced" ref="transport">
       <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
       <tutorials>
         <tutorial>topics_subscribed</tutorial>
@@ -305,27 +319,12 @@
       </tutorials>
     </category>
 
-    <category title="User input" skill="advanced" ref="user_input">
-      <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
-      <tutorials>
-        <tutorial>hydra</tutorial>
-      </tutorials>
-    </category>
-
-    <category title="Tools and utilities" skill="advanced" ref="tools_utilities">
-      <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
-      <tutorials>
-        <tutorial>log_filtering</tutorial>
-      </tutorials>
-    </category>
-
     <category title="Development" skill="advanced" ref="development">
       <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and online support. These tutorials describe how to contribute your modifications back to Gazebo.</description>
       <tutorials>
         <tutorial>tutorial_contrib</tutorial>
       </tutorials>
     </category>
-
 
   </categories>
 
