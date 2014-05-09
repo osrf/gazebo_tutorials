@@ -12,7 +12,7 @@ hg clone https://bitbucket.org/osrf/oculussdk
 cd oculussdk
 mkdir build
 cd build
-cmake ..
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 sudo cp ../LibOVR/90-oculus.rules /etc/udev/rules.d/
