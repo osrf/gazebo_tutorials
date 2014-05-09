@@ -217,7 +217,7 @@
 
   <categories>
     <category title="Get Started" skill="beginner" ref="get_started">
-      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each use case to the left presents a collection of relevant tutorials.</description>
+      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each category to the left presents a collection of relevant tutorials.</description>
       <tutorials>
         <tutorial>install</tutorial>
         <tutorial>quick_start</tutorial>
@@ -225,7 +225,7 @@
     </category>
 
     <category title="Build a Robot" skill="beginner" ref="build_robot">
-      <description>Build a robot tutorials.</description>
+      <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
       <tutorials>
         <tutorial>build_model</tutorial>
         <tutorial>build_robot</tutorial>
@@ -239,7 +239,7 @@
     </category>
 
     <category title="Build a World" skill="beginner" ref="build_world">
-      <description>Build a robot tutorials.</description>
+      <description>These tutorials describe how to create an environment in which robots can be simulated.</description>
       <tutorials>
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
@@ -248,7 +248,7 @@
     </category>
 
     <category title="Write a plugin" skill="intermediate" ref="write_plugin">
-      <description>How to write a plugin.</description>
+      <description>Plugins allow you to control models, sensors, world properties, and even the way Gazebo runs. The following tutorials describe how to create and load plugins for various purposes.</description>
       <tutorials>
         <tutorial>plugins_hello_world</tutorial>
         <tutorial>plugins_model</tutorial>
@@ -258,7 +258,7 @@
     </category>
 
     <category title="Sensors" skill="intermediate" ref="sensors">
-      <description>How to use sensors.</description>
+      <description>A simulated sensor analyzes the environment and produces a data stream that closely matches the sensor's physical counterpart. These tutorials describe how to use and modify sensors.</description>
       <tutorials>
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
@@ -266,7 +266,7 @@
     </category>
 
     <category title="Connect to ROS" skill="advanced" ref="connect_ros">
-      <description>Connect to ROS</description>
+      <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
         <tutorial>ros_installing</tutorial>
@@ -277,28 +277,28 @@
     </category>
 
     <category title="Using Math" skill="beginner" ref="math">
-      <description>Using Gazebo's math library.</description>
+      <description>Gazebo has a custom math library. These tutorials describe how to use these math functions.</description>
       <tutorials>
         <tutorial>random_numbers</tutorial>
       </tutorials>
     </category>
 
     <category title="Transport Library" skill="beginner" ref="transport">
-      <description>Using Gazebo's transport library.</description>
+      <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
       <tutorials>
         <tutorial>topics_subscribed</tutorial>
       </tutorials>
     </category>
 
     <category title="Physics Library" skill="advanced" ref="physics">
-      <description>Using Gazebo's physics library.</description>
+      <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
       </tutorials>
     </category>
 
     <category title="Rendering Library" skill="advanced" ref="rendering">
-      <description>Using Gazebo's rendering library.</description>
+      <description>Gazebo's rendering library is used to generate sensor data and provide user feedback by rendering the environment state.</description>
       <tutorials>
         <tutorial>lightmap</tutorial>
         <tutorial>oculus</tutorial>
@@ -306,21 +306,21 @@
     </category>
 
     <category title="User input" skill="advanced" ref="user_input">
-      <description>User input devices.</description>
+      <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
       <tutorials>
         <tutorial>hydra</tutorial>
       </tutorials>
     </category>
 
     <category title="Tools and utilities" skill="advanced" ref="tools_utilities">
-      <description>Tools and utilities provided by Gazebo.</description>
+      <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
       <tutorials>
         <tutorial>log_filtering</tutorial>
       </tutorials>
     </category>
 
     <category title="Development" skill="advanced" ref="development">
-      <description>Developing for Gazebo.</description>
+      <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and online support. These tutorials describe how to contribute your modifications back to Gazebo.</description>
       <tutorials>
         <tutorial>tutorial_contrib</tutorial>
       </tutorials>
