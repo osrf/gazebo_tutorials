@@ -38,13 +38,13 @@ In addition to the transmission tags, a Gazebo plugin needs to be added to your 
 
 The default plugin XML should be added to your URDF:
 
-<pre><nowiki>
+~~~
 <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <robotNamespace>/MYROBOT</robotNamespace>
   </plugin>
 </gazebo>
-</nowiki></pre>
+~~~
 
 The gazebo_ros_control <plugin> tag also has the following optional child elements:
 
@@ -71,20 +71,20 @@ These plugins must inherit gazebo_ros_control::RobotHWSim which implements a sim
 
 The respective RobotHWSim sub-class is specified in a URDF model and is loaded when the robot model is loaded. For example, the following XML will load the default plugin (same behavior as when using no <robotSimType> tag):
 
-<pre><nowiki>
+~~~
 <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <robotNamespace>/MYROBOT</robotNamespace>
     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
   </plugin>
 </gazebo>
-</nowiki></pre>
+~~~
 
 ## RRBot Example
 
 We add a <transmission> block similar to the following for every joint that we wish to have Gazebo actuate. Open your <tt>rrbot.xacro</tt> file and at the bottom of the file you should see:
 
-<pre><nowiki>
+~~~
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1"/>
@@ -102,18 +102,17 @@ We add a <transmission> block similar to the following for every joint that we w
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-</nowiki></pre>
-
+~~~
 
 You'll also see the gazebo_ros_control plugin in <tt>rrbot.gazebo</tt> that reads in all the <transmission> tags:
 
-<pre><nowiki>
+~~~
 <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <robotNamespace>/rrbot</robotNamespace>
   </plugin>
 </gazebo>
-</nowiki></pre>
+~~~
 
 ## Create a ros_controls package
 
@@ -121,19 +120,19 @@ We'll next need to create a configuration file and launch file for our ros_contr
 
 ### Create new package
 
-<pre>
+~~~
 cd ~/catkin_ws
 catkin_create_pkg MYROBOT_control ros_control ros_controllers
 cd MYROBOT_control
 mkdir config
 mkdir launch
-</pre>
+~~~
 
 ### Create a .yaml config file
 
 The PID gains and controller settings must be saved in a yaml file that gets loaded to the param server via the roslaunch file. In the config folder of your <tt>MYROBOT_control</tt> package, adapt the following RRBot example to your robot:
 
-<pre><nowiki>
+~~~
 rrbot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
@@ -149,7 +148,7 @@ rrbot:
     type: effort_controllers/JointPositionController
     joint: joint2
     pid: {p: 100.0, i: 0.01, d: 10.0}
-</nowiki></pre>
+~~~
 
 See the next section for more details about these controllers.
 
@@ -157,7 +156,7 @@ See the next section for more details about these controllers.
 
 Create a roslaunch file for starting the ros_control controllers. Within the launch folder create a <tt>MYROBOT_control.launch</tt> file and adapt the following RRBot example to your robot:
 
-<pre><nowiki>
+~~~
 <launch>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
@@ -174,7 +173,7 @@ Create a roslaunch file for starting the ros_control controllers. Within the lau
   </node>
 
 </launch>
-</nowiki></pre>
+~~~
 
 #### Explanation
 
@@ -189,43 +188,48 @@ The final line starts a robot_state_publisher node that simply listens to /joint
 Test the RRBot controlled by ros_control by running the following:
 
 Start the RRBot simulation:
-<pre>
+
+~~~
 roslaunch rrbot_gazebo rrbot_world.launch
-</pre>
+~~~
 
 Load the controllers for the two joints by running the second launch file:
-<pre>
+
+~~~
 roslaunch rrbot_control rrbot_control.launch 
-</pre>
+~~~
 
 ### Using service calls manually
 
 If you first load the rrbot_control.yaml files to the parameter server, you could load the controllers manually through service requests. We'll include them here for reference though we usually prefer roslaunch:
 
 Load the controllers:
-<pre>
+
+~~~
 rosservice call /rrbot/controller_manager/load_controller "name: 'joint1_position_controller'"
 rosservice call /rrbot/controller_manager/load_controller "name: 'joint2_position_controller'"
-</pre>
+~~~
 
 Start the controllers:
-<pre>
+
+~~~
 rosservice call /rrbot/controller_manager/switch_controller "{start_controllers: ['joint1_position_controller','joint2_position_controller'], stop_controllers: [], strictness: 2}"
-</pre>
+~~~
 
 Stop the controllers:
-<pre>
+
+~~~
 rosservice call /rrbot/controller_manager/switch_controller "{start_controllers: [], stop_controllers: ['joint1_position_controller','joint2_position_controller'], strictness: 2}"
-</pre>
+~~~
 
 ## Manually send example commands
 
 Send example joint commands to them for testing:
 
-<pre>
+~~~
 rostopic pub -1 /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 1.5"
 rostopic pub -1 /rrbot/joint2_position_controller/command std_msgs/Float64 "data: 1.0"
-</pre>
+~~~
 
 ## Use RQT To Send Commands
 
@@ -233,17 +237,17 @@ In this section we'll go over tools to help you visualize the performance of you
 
 Start RQT:
 
-<pre>
+~~~
 rosrun rqt_gui rqt_gui
-</pre>
+~~~
 
 ### Add a Command Publisher
 
 Add the 'Publisher' plugin then choose the topic from the drop down box that commands any particular controller that you want to publish to. For the RRBot, add the controller:
 
-<pre>
+~~~
 /rrbot/joint1_position_controller/command
-</pre>
+~~~
 
 Then press the green plus sign button at the top right.
 
@@ -252,15 +256,16 @@ Enable the topic publisher by checking the check box on the left of the topic na
 Next, expand the topic so that you see the "data" row. In the expression column, on the data row, try different radian values between joint1's joint limits - in RRBot's case there are no limits because the joints are continuous, so any value works. You should be able to get the RRBot to swing around if you are doing this tutorial with that robot.
 
 Next, in that same expression box we'll have it automatically change values using a sine wave. Add the following:
-<pre>
+
+~~~
 sin(i/100)
-</pre>
+~~~
 
 For more advanced control, you can configure it to publish a sine wave to your robot's exact joint limits:
 
-<pre>
+~~~
 sin(i/rate*speed)*diff + offset
-</pre>
+~~~
 
 An explanation of variables:
 
@@ -274,17 +279,18 @@ An explanation of variables:
 ### Visualize the controller's performance
 
 Add a Plot plugin to RQT and add the same topic as the one you chose above for the topic publisher:
-<pre>
+
+~~~
 /rrbot/joint1_position_controller/command/data
-</pre>
+~~~
 
 Click the green add button. You should now see a sine wave being plotted on the screen.
 
 Add another topic to the Plot plugin that tracks the error between the commanded position and actual position of the actuator being controlled. For the RRBot:
 
-<pre>
+~~~
 /rrbot/joint1_position_controller/state/error
-</pre>
+~~~
 
 You screen should look something like this:
 
@@ -304,9 +310,9 @@ Add the 'Dynamic Reconfigure' plugin to RQT and click 'Expand All' to see the su
 
 A pre-configured RQT perspective for the rrbot can be easily launched with the following command:
 
-<pre>
+~~~
 roslaunch rrbot_control rrbot_rqt.launch
-</pre>
+~~~
 
 You can use that as a template for doing this with your own robot.
 
@@ -316,9 +322,9 @@ Now that you are using ros_control to send commands to your robot in simulation,
 
 Assuming you are already starting a joint_state_controller as documented above in your rosparam and roslaunch files, your next step is to start Rviz:
 
-<pre>
+~~~
 rosrun rviz rviz
-</pre>
+~~~
 
 Under "Global Options" change your "Fixed Frame" to "world" to resolve any errors it might be giving you.
 
