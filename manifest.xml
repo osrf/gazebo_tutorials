@@ -151,7 +151,25 @@
       <description>Overview of ROS integration.</description>
       <skill>intermediate</skill>
     </tutorial>
-  
+
+    <tutorial title="ROS control" ref='ros_control'>
+      <markdown version="1.9+">ros_control/tutorial.md</markdown>
+      <description>Using actuators, controllers, and ros_control with Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS communication" ref='ros_comm'>
+      <markdown version="1.9+">ros_comm/tutorial.md</markdown>
+      <description>ROS communication with Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS plugin" ref='ros_plugins'>
+      <markdown version="1.9+">ros_plugins/tutorial.md</markdown>
+      <description>Create ROS for Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Installing gazebo_ros_pkgs" ref='ros_installing'>
       <markdown version="1.9+">ros_installing/tutorial.md</markdown>
       <description>Installing gazebo_ros_pkgs.</description>
@@ -218,7 +236,13 @@
       <description>Using the Oculus Rift VR headset</description>
       <skill>advanced</skill>
     </tutorial>
- 
+
+    <tutorial title="Advanced ROS Integration" ref='ros_advanced'>
+      <markdown version="1.9+">ros_advanced/tutorial.md</markdown>
+      <description>Miscellaneous Gazebo-ROS tricks and tips.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
       <markdown version="1.9+">tutorial_contrib/tutorial.md</markdown>
       <description>How to add or modify tutorials.</description>
@@ -309,6 +333,10 @@
         <tutorial>ros_roslaunch</tutorial>
         <tutorial>ros_urdf</tutorial>
         <tutorial>ros_gzplugins</tutorial>
+        <tutorial>ros_control</tutorial>
+        <tutorial>ros_comm</tutorial>
+        <tutorial>ros_plugins</tutorial>
+        <tutorial>ros_advanced</tutorial>
       </tutorials>
     </category>
 
