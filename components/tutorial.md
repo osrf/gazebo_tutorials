@@ -4,7 +4,7 @@ This page describes each of the items involved in running a Gazebo simulation.
 
 ### World Files ###
 
-The world description file contains all the elements in a simulation, including robots, lights, sensors, and static objects. This file is formatted using [SDF (Simulation Description Format)](http://gazebosim.org/wiki/sdf_format), and typically has a `.world` extension.
+The world description file contains all the elements in a simulation, including robots, lights, sensors, and static objects. This file is formatted using [SDF (Simulation Description Format)](http://gazebosim.org/sdf.html), and typically has a `.world` extension.
 
 The Gazebo server (`gzserver`) reads this file to generate and populate a world.
 
@@ -12,7 +12,7 @@ A number of example worlds are shipped with Gazebo. These worlds are located in 
 
 ### Model Files ###
 
-A model file uses the same [SDF](http://gazebosim.org/wiki/sdf_format) format as world files, but should only contain a single `<model> ... </model>`. The purpose of these files is to facilitate model reuse, and simplify world files. Once a model file is created, it can be included in a world file using the following SDF syntax:
+A model file uses the same [SDF](http://gazebosim.org/sdf.html) format as world files, but should only contain a single `<model> ... </model>`. The purpose of these files is to facilitate model reuse, and simplify world files. Once a model file is created, it can be included in a world file using the following SDF syntax:
 
 ~~~
 <include filename="model_file_name"/>
@@ -70,7 +70,7 @@ gazebo worlds/empty.world
 
 ### Plugins ###
 
-Plugins provide a simple and convenient mechanism to interface with Gazebo. Plugins can either be loaded on the command line, or specified in a world/model file (see the [SDF](http://gazebosim.org/wiki/sdf_format ) format). Plugins specified on the command line are loaded first, then plugins specified in the world/model files are loaded. Most plugins are loaded by the server; however, plugins can also be loaded by the graphical client to facilitate custom GUI generation.
+Plugins provide a simple and convenient mechanism to interface with Gazebo. Plugins can either be loaded on the command line, or specified in a world/model file (see the [SDF](http://gazebosim.org/sdf.html ) format). Plugins specified on the command line are loaded first, then plugins specified in the world/model files are loaded. Most plugins are loaded by the server; however, plugins can also be loaded by the graphical client to facilitate custom GUI generation.
 
 Example of loading a plugin on the command line:
 
