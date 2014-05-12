@@ -50,12 +50,13 @@ The steps for creating a new tutorial are similar to those for modifying a tutor
 
         1. `<markdown version="1.9">...`: Only version 1.9
 
-        1. `<markdown version="1.9-">...`: All versions 1.9 and above
+        1. `<markdown version="1.9+">...`: All versions 1.9 and above
 
         1. `<markdown version="1.9-2.0">...`: All versions between 1.9 and 2.0, inclusive.
 
     1. It is possible to have multiple markdown files for different versions of Gazebo. Just add multiple `<markdown>` tags that reference different markdown files.
-      
+     
+1. Add the new tutorial to an existing `<category>`, located toward the bottom of the `manifest.xml` file. Create a new category if you tutorial does not belong in an existing category. 
 
 1. Create a [pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new) back to the gazebo_tutorials repository.
 

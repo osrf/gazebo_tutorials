@@ -1,150 +1,374 @@
 <?xml version='1.0'?>
-<tutorials>
-  <tutorial title="Quick Start" ref='quick_start'>
-    <markdown version="1.9-">quick_start/tutorial.md</markdown>
-    <description>Simple and fast introduction to Gazebo.</description>
-    <skill>beginner</skill>
-  </tutorial>
+<content>
+  <tutorials>
 
-  <tutorial tittle="Gazebo Components" ref="components">
-    <markdown version="1.9-">components/tutorial.md</markdown>
-    <description>Overview of the basic components in a Gazebo simulation.</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <!-- ****************** -->
+    <!-- Beginner tutorials -->
 
-  <tutorial title="Plugins 101" ref='plugins_hello_world'>
-    <markdown version="1.9-">plugins_hello_world/tutorial.md</markdown>
-    <description>Overview of Gazebo plugins.</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Install" ref='install'>
+      <markdown version="1.9">install/tutorial_1-9.md</markdown>
+      <markdown version="2.2">install/tutorial_2-2.md</markdown>
+      <markdown version="3.0">install/tutorial_3-0.md</markdown>
+      <description>Installation instruction.</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Quick Start" ref='quick_start'>
+      <markdown version="1.9+">quick_start/tutorial.md</markdown>
+      <description>Simple and fast introduction to Gazebo.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Plugins 101" ref='plugins_hello_world'>
+      <markdown version="1.9+">plugins_hello_world/tutorial.md</markdown>
+      <description>Overview of Gazebo plugins.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Model plugins" ref='plugins_model'>
+      <markdown version="1.9+">plugins_model/tutorial.md</markdown>
+      <description>Manipulate a model using a model plugin.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="World plugins" ref='plugins_world'>
+      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <description>Inserting models using a world plugin.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
+      <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
+      <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
+      <description>Modify world properties, such as ambient color and the physics time step.</description>
+      <tags>
+        <tag>plugin</tag>
+        <tag>WorldPlugin</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Model plugins" ref='plugins_model'>
-    <markdown version="1.9-">plugins_model/tutorial.md</markdown>
-    <description>Manipulate a model using a model plugin.</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Make a Mobile Robot" ref='build_robot'>
+      <markdown version="1.9+">build_robot/tutorial.md</markdown>
+      <description>How to make a 2-wheeled mobile robot</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="World plugins" ref='plugins_world'>
-    <markdown version="1.9-">plugins_world/tutorial.md</markdown>
-    <description>Inserting models using a world plugin.</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Import Meshes" ref='import_mesh'>
+      <markdown version="1.9+">import_mesh/tutorial.md</markdown>
+      <description>How to import 3D meshes into Gazebo for use as visual and collision entities</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Attach Meshes" ref='attach_meshes'>
+      <markdown version="1.9+">attach_meshes/tutorial.md</markdown>
+      <description>Improve model visual appearance by attaching Collada meshes</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Add a Sensor to a Robot" ref='add_laser'>
+      <markdown version="1.9+">add_laser/tutorial.md</markdown>
+      <description>How to add a laser sensor to a robot</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Make a Simple Gripper" ref='simple_gripper'>
+      <markdown version="1.9+">simple_gripper/tutorial.md</markdown>
+      <description>Build a simple pinching gripper</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Attach Gripper to Robot" ref='attach_gripper'>
+      <markdown version="1.9+">attach_gripper/tutorial.md</markdown>
+      <description>Connect the simple gripper to the mobile robot</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
-    <markdown version="2.2-">plugins_world_properties/tutorial.md</markdown>
-    <markdown version="1.9">plugins_world_properties_1.9/tutorial.md</markdown>
-    <description>Modify world properties, such as ambient color and the physics time step.</description>
-    <skill>beginner</skill>
-    <tags>
-      <tag>plugin</tag>
-      <tag>WorldPlugin</tag>
-    </tags>
-  </tutorial>
+     <tutorial title="Make a model" ref='build_model'>
+      <markdown version="1.9+">build_model/tutorial.md</markdown>
+      <description>Describes models, and how to create custom models.</description>
+      <skill>beginner</skill>
+    </tutorial>
+ 
+    <tutorial title="Sensor Noise Model" ref='sensor_noise'>
+      <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
+      <description>How to add noise to sensors</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Import Meshes" ref='import_mesh'>
-    <markdown version="1.9-">import_mesh/tutorial.md</markdown>
-    <description>How to import 3D meshes into Gazebo for use as visual and collision entities</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Building a world" ref='build_world'>
+      <markdown version="1.9+">build_world/tutorial.md</markdown>
+      <description>How to populate a simulated world with simulated objects.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Make a Mobile Robot" ref='build_robot'>
-    <markdown version="1.9-">build_robot/tutorial.md</markdown>
-    <description>How to make a 2-wheeled mobile robot</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Modifying a world" ref='modifying_world'>
+      <markdown version="1.9+">modifying_world/tutorial.md</markdown>
+      <description>How to change scene and physics parameters of a world using the GUI.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Attach Meshes" ref='attach_meshes'>
-    <markdown version="1.9-">attach_meshes/tutorial.md</markdown>
-    <description>Improve model visual appearance by attaching Collada meshes</description>
-    <skill>beginner</skill>
-  </tutorial>
+    <tutorial title="Random numbers" ref='random_numbers'>
+      <markdown version="1.9+">random_numbers/tutorial.md</markdown>
+      <description>How to set the random number seed.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Topics subscription" ref='topics_subscribed'>
+      <markdown version="1.9+">topics_subscribe/tutorial.md</markdown>
+      <description>How to subscribe to gazebo topics.</description>
+      <skill>beginner</skill>
+    </tutorial>
+  
+    <tutorial title="Friction" ref='friction'>
+      <markdown version="1.9+">friction/tutorial.md</markdown>
+      <description>How to setup friction properties.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
-  <tutorial title="Add a Sensor to a Robot" ref='add_laser'>
-    <markdown version="1.9-">add_laser/tutorial.md</markdown>
-    <description>How to add a laser sensor to a robot</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Make a Simple Gripper" ref='simple_gripper'>
-    <markdown version="1.9-">simple_gripper/tutorial.md</markdown>
-    <description>Build a simple pinching gripper</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Attach Gripper to Robot" ref='attach_gripper'>
-    <markdown version="1.9-">attach_gripper/tutorial.md</markdown>
-    <description>Connect the simple gripper to the mobile robot</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Sensor Noise Model" ref='sensor_noise'>
-    <markdown version="1.9-">sensor_noise/tutorial.md</markdown>
-    <description>How to add noise to sensors</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Make a model" ref='build_model'>
-    <markdown version="1.9-">build_model/tutorial.md</markdown>
-    <description>Describes models, and how to create custom models.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Contact Sensor" ref='contact_sensor'>
-    <markdown version="1.9-">contact_sensor/tutorial.md</markdown>
-    <description>How to create and get data from contact sensors.</description>
-    <skill>intermediate</skill>
-  </tutorial>
-
-  <tutorial title="Random numbers" ref='random_numbers'>
-    <markdown version="1.9-">random_numbers/tutorial.md</markdown>
-    <description>How to set the random number seed.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Topics subscription" ref='topics_subscribed'>
-    <markdown version="1.9-">topics_subscribe/tutorial.md</markdown>
-    <description>How to subscribe to gazebo topics.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Friction" ref='friction'>
-    <markdown version="1.9-">friction/tutorial.md</markdown>
-    <description>How to setup friction properties.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Digital Elevation Models" ref='dem'>
-    <markdown version="3.0-">dem/tutorial.md</markdown>
-    <description>How to use DEMs in Gazebo.</description>
-    <skill>advanced</skill>
-  </tutorial>
-
-  <tutorial title="Building a world" ref='build_world'>
-    <markdown version="1.9-">build_world/tutorial.md</markdown>
-    <description>How to populate a simulated world with simulated objects.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Modifying a world" ref='modifying_world'>
-    <markdown version="1.9-">modifying_world/tutorial.md</markdown>
-    <description>How to change scene and physics parameters of a world using the GUI.</description>
-    <skill>beginner</skill>
-  </tutorial>
-
-  <tutorial title="Visual Lightmap" ref='lightmap'>
-    <markdown version="3.0-">lightmap/tutorial.md</markdown>
-    <description>How to apply lightmaps to a model visual.</description>
-    <skill>intermediate</skill>
-  </tutorial>
+    <tutorial title="Log filtering" ref='log_filtering'>
+      <markdown version="1.9+">log_filtering/tutorial.md</markdown>
+      <description>How to filter a recorded state log file.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
 
-  <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
-    <markdown version="1.9-">tutorial_contrib/tutorial.md</markdown>
-    <description>How to add or modify tutorials.</description>
-    <skill>beginner</skill>
-    <tags>
-      <tag>contribute</tag>
-    </tags>
-  </tutorial>
 
-</tutorials>
+    <!-- ********************** -->
+    <!-- Intermediate tutorials -->
+
+    <tutorial title="Contact Sensor" ref='contact_sensor'>
+      <markdown version="1.9+">contact_sensor/tutorial.md</markdown>
+      <description>How to create and get data from contact sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS overview" ref='ros_overview'>
+      <markdown version="1.9+">ros_overview/tutorial.md</markdown>
+      <description>Overview of ROS integration.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS control" ref='ros_control'>
+      <markdown version="1.9+">ros_control/tutorial.md</markdown>
+      <description>Using actuators, controllers, and ros_control with Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS communication" ref='ros_comm'>
+      <markdown version="1.9+">ros_comm/tutorial.md</markdown>
+      <description>ROS communication with Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS plugin" ref='ros_plugins'>
+      <markdown version="1.9+">ros_plugins/tutorial.md</markdown>
+      <description>Create ROS for Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Installing gazebo_ros_pkgs" ref='ros_installing'>
+      <markdown version="1.9+">ros_installing/tutorial.md</markdown>
+      <description>Installing gazebo_ros_pkgs.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+  
+    <tutorial title="Using roslaunch" ref='ros_roslaunch'>
+      <markdown version="1.9+">ros_roslaunch/tutorial.md</markdown>
+      <description>Using roslaunch to start Gazebo, world files and URDF models.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="URDF in Gazebo" ref='ros_urdf'>
+      <markdown version="1.9+">ros_urdf/tutorial.md</markdown>
+      <description>Using a URDF in Gazebo</description>
+      <skill>intermediate</skill>
+    </tutorial>
+  
+    <tutorial title="Gazebo plugins in ROS" ref='ros_gzplugins'>
+      <markdown version="1.9+">ros_gzplugins/tutorial.md</markdown>
+      <description>Using Gazebo plugins with ROS</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Animated Box" ref='animated_box'>
+      <markdown version="4.0+">animated_box/tutorial.md</markdown>
+      <description>Animate the pose of box.</description>
+      <skill>intermediate</skill>
+      <tags>
+        <tag>animation</tag>
+      </tags>
+    </tutorial>
+
+    <tutorial title="Visual Lightmap" ref='lightmap'>
+      <markdown version="3.0+">lightmap/tutorial.md</markdown>
+      <description>How to apply lightmaps to a model visual.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Razer Hydra" ref='hydra'>
+      <markdown version="3.0+">hydra/tutorial.md</markdown>
+      <description>Using the Razer Hydra</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="System Plugin" ref='system_plugin'>
+      <markdown version="3.0+">system_plugin/tutorial.md</markdown>
+      <description>Describes the process of making a system plugin that is loaded by the GUI</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+
+    <!-- ****************** -->
+    <!-- Advanced tutorials -->
+
+    <tutorial title="Digital Elevation Models" ref='dem'>
+      <markdown version="3.0+">dem/tutorial.md</markdown>
+      <description>How to use DEMs in Gazebo.</description>
+      <skill>advanced</skill>
+    </tutorial>
+ 
+    <tutorial title="Oculus Rift" ref='oculus'>
+      <markdown version="3.0+">oculus/tutorial.md</markdown>
+      <description>Using the Oculus Rift VR headset</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="Advanced ROS Integration" ref='ros_advanced'>
+      <markdown version="1.9+">ros_advanced/tutorial.md</markdown>
+      <description>Miscellaneous Gazebo-ROS tricks and tips.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="Add/Modify Tutorials" ref='tutorial_contrib'>
+      <markdown version="1.9+">tutorial_contrib/tutorial.md</markdown>
+      <description>How to add or modify tutorials.</description>
+      <skill>advanced</skill>
+      <tags>
+        <tag>contribute</tag>
+      </tags>
+    </tutorial>
+  </tutorials>
+
+  <categories>
+    <category title="Get Started" skill="beginner" ref="get_started">
+      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each category to the left presents a collection of relevant tutorials.</description>
+      <tutorials>
+        <tutorial>install</tutorial>
+        <tutorial>quick_start</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Build a Robot" skill="beginner" ref="build_robot">
+      <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
+      <tutorials>
+        <tutorial>build_model</tutorial>
+        <tutorial>build_robot</tutorial>
+        <tutorial>import_mesh</tutorial>
+        <tutorial>attach_meshes</tutorial>
+        <tutorial>add_laser</tutorial>
+        <tutorial>simple_gripper</tutorial>
+        <tutorial>attach_gripper</tutorial>
+        <tutorial>animated_box</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Build a World" skill="beginner" ref="build_world">
+      <description>These tutorials describe how to create an environment in which robots can be simulated.</description>
+      <tutorials>
+        <tutorial>build_world</tutorial>
+        <tutorial>modifying_world</tutorial>
+        <tutorial>dem</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Tools and utilities" skill="beginner" ref="tools_utilities">
+      <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
+      <tutorials>
+        <tutorial>log_filtering</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Write a plugin" skill="intermediate" ref="write_plugin">
+      <description>Plugins allow you to control models, sensors, world properties, and even the way Gazebo runs. The following tutorials describe how to create and load plugins for various purposes.</description>
+      <tutorials>
+        <tutorial>plugins_hello_world</tutorial>
+        <tutorial>plugins_model</tutorial>
+        <tutorial>plugins_world</tutorial>
+        <tutorial>plugins_world_properties</tutorial>
+        <tutorial>system_plugin</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Sensors" skill="intermediate" ref="sensors">
+      <description>A simulated sensor analyzes the environment and produces a data stream that closely matches the sensor's physical counterpart. These tutorials describe how to use and modify sensors.</description>
+      <tutorials>
+        <tutorial>sensor_noise</tutorial>
+        <tutorial>contact_sensor</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Using Math" skill="intermediate" ref="math">
+      <description>Gazebo has a custom math library. These tutorials describe how to use these math functions.</description>
+      <tutorials>
+        <tutorial>random_numbers</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="User input" skill="intermediate" ref="user_input">
+      <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
+      <tutorials>
+        <tutorial>hydra</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Connect to ROS" skill="advanced" ref="connect_ros">
+      <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
+      <tutorials>
+        <tutorial>ros_overview</tutorial>
+        <tutorial>ros_installing</tutorial>
+        <tutorial>ros_roslaunch</tutorial>
+        <tutorial>ros_urdf</tutorial>
+        <tutorial>ros_gzplugins</tutorial>
+        <tutorial>ros_control</tutorial>
+        <tutorial>ros_comm</tutorial>
+        <tutorial>ros_plugins</tutorial>
+        <tutorial>ros_advanced</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Transport Library" skill="advanced" ref="transport">
+      <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
+      <tutorials>
+        <tutorial>topics_subscribed</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Physics Library" skill="advanced" ref="physics">
+      <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
+      <tutorials>
+        <tutorial>friction</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Rendering Library" skill="advanced" ref="rendering">
+      <description>Gazebo's rendering library is used to generate sensor data and provide user feedback by rendering the environment state.</description>
+      <tutorials>
+        <tutorial>lightmap</tutorial>
+        <tutorial>oculus</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Development" skill="advanced" ref="development">
+      <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and online support. These tutorials describe how to contribute your modifications back to Gazebo.</description>
+      <tutorials>
+        <tutorial>tutorial_contrib</tutorial>
+      </tutorials>
+    </category>
+
+  </categories>
+
+</content>
