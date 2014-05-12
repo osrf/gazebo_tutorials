@@ -6,16 +6,16 @@ In this tutorial we'll walk through creating a very basic Gazebo plugin that is 
 
 Create a new ROS package in your catkin workspace:
 
-<pre>
+~~~
 cd ~/catkin_ws
 catkin_create-pkg gazebo_tutorials gazebo_ros roscpp
-</pre>
+~~~
 
 ## Create the Plugin
 
 Create a very simple plugin as described [http://gazebosim.org/wiki/Tutorials/1.9/plugins/overview here] and save the file as <tt>gazebo_tutorials/src/simple_world_plugin.cpp</tt>:
 
-<pre><nowiki>
+~~~
 #include <gazebo/common/Plugin.hh>
 #include <ros/ros.h>
 
@@ -44,13 +44,13 @@ public:
 };
 GZ_REGISTER_WORLD_PLUGIN(WorldPluginTutorial)
 }
-</nowiki></pre>
+~~~
 
 ## Update CMakeLists.txt
 
 Open <tt>gazebo_tutorials/CMakeLists.txt</tt> and replace it with the following:
 
-<pre><nowiki>
+~~~
 cmake_minimum_required(VERSION 2.8.3)
 project(gazebo_tutorials)
 
@@ -74,30 +74,30 @@ catkin_package(
     roscpp 
     gazebo_ros 
 )
-</nowiki></pre>
+~~~
 
 ## Update package.xml
 
 Update <tt>gazebo_tutorials/package.xml</tt> by adding the following line within the <tt><export></export></tt> tags (or add the <tt><export></export></tt> tags also).
 
-<pre><nowiki>
+~~~
   <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
-</nowiki></pre>
+~~~
 
 ## Compiling the Plugin
 
 Build the plugin by going to the base of your work space and running catkin:
 
-<pre><nowiki>
+~~~
 cd ~/catkin_ws
 catkin_make
-</nowiki></pre>
+~~~
 
 ## Creating a World file
 
 Save the following file as <tt>gazebo_tutorials/worlds/hello.world</tt>:
 
-<pre><nowiki>
+~~~
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
@@ -113,14 +113,14 @@ Save the following file as <tt>gazebo_tutorials/worlds/hello.world</tt>:
     <plugin name="gazebo_tutorials" filename="libgazebo_tutorials.so"/>
   </world>
 </sdf>
-</nowiki></pre>
+~~~
 
 
 ## Create a Launch File
 
 Create the following launch file gazebo_tutorials/launch/hello.launch:
 
-<pre><nowiki>
+~~~
 <launch>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -128,18 +128,19 @@ Create the following launch file gazebo_tutorials/launch/hello.launch:
     <!-- more default parameters can be changed here -->
   </include>
 </launch>
-</nowiki></pre>
+~~~
 
 ## Run the Plugin
 
-<pre><nowiki>
+~~~
 roslaunch gazebo_tutorials hello.launch
-</nowiki></pre>
+~~~
 
 An empty Gazebo should open and in the terminal you should see it print out something like:
-<pre>
+
+~~~
  INFO ros.gazebo_tutorials: Hello World!
-</pre>
+~~~
 
 ## Starting from a Template
 
