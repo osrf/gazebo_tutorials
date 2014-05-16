@@ -56,13 +56,14 @@ Copy the following contents into box.sdf:
     <link name="link">
       <inertial>
         <mass>1.0</mass>
-        <inertia>
-          <ixx>1.0</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>1.0</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0</izz>
+        <inertia> <!-- interias are tricky to compute -->
+          <!-- http://answers.gazebosim.org/question/4372/the-inertia-matrix-explained/ -->
+          <ixx>0.083</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+          <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
+          <iyy>0.083</ixx>       <!-- for a box: iyy = 0.083 * mass * (y*y + z*z) -->
+          <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
+          <izz>0.083</izz>       <!-- for a box: izz = 0.083 * mass * (y*y + z*z) -->
         </inertia>
       </inertial>
       <collision name="collision">
