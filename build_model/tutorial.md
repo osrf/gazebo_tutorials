@@ -61,7 +61,7 @@ Copy the following contents into box.sdf:
           <ixx>0.083</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
           <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
           <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
-          <iyy>0.083</ixx>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+          <iyy>0.083</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
           <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
           <izz>0.083</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
         </inertia>
