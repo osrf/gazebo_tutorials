@@ -119,4 +119,4 @@ Note: Materials (texture files such with extension like .png or .jpg), should be
 
 ##Next##
 
-[Next: Add a Sensor to a Robot](http://gazebosim.org/tutorials/?tut=add_sensor)
+[Next: Add a Sensor to a Robot](http://gazebosim.org/tutorials/?tut=add_laser)
