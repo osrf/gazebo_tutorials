@@ -94,6 +94,8 @@ Install prerequisites.  A clean Ubuntu system will need:
                      libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev \
                      playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
+**Note: ** in Precise replace libogre-1.8-dev by libogre-dev
+
 ## Optional Physics Engines
 
 **Release Note: in order to use a physics engine different than ODE, a full compilation of gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE physics engine.**
