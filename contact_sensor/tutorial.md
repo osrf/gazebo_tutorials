@@ -254,7 +254,7 @@ The following code from the `Load` function gets pointer to the contact sensor t
 ~~~
   // Get the parent sensor.
   this->parentSensor =
-    boost::shared_dynamic_cast<sensors::ContactSensor>(_sensor);
+    boost::dynamic_pointer_cast<sensors::ContactSensor>(_sensor);
 
   // Make sure the parent sensor is valid.
   if (!this->parentSensor)
