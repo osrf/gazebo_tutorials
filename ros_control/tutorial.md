@@ -16,7 +16,7 @@ Simulating a robot's controllers in Gazebo can be accomplished using ros_control
 
 This tutorial builds off of many of the concepts in the previous tutorials. We will again be using the RRBot that was setup in the [Using URDF in Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf) tutorial, as an example for the plugins covered here.
 
-Make sure you have already installed <tt>ros_control</tt>, <tt>ros_controllers</tt>, and their dependencies as described in the [http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages installation instructions].
+Make sure you have already installed <tt>ros_control</tt>, <tt>ros_controllers</tt>, and their dependencies as described in the [installation instructions](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
 
 # Usage
 
