@@ -263,6 +263,7 @@
       <tutorials>
         <tutorial>install</tutorial>
         <tutorial>quick_start</tutorial>
+        <tutorial>components</tutorial>
       </tutorials>
     </category>
 

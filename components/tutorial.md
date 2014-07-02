@@ -15,7 +15,9 @@ A number of example worlds are shipped with Gazebo. These worlds are located in 
 A model file uses the same [SDF](http://gazebosim.org/sdf.html) format as world files, but should only contain a single `<model> ... </model>`. The purpose of these files is to facilitate model reuse, and simplify world files. Once a model file is created, it can be included in a world file using the following SDF syntax:
 
 ~~~
-<include filename="model_file_name"/>
+<include>
+  <uri>model://model_file_name</uri>
+</include>
 ~~~
 
 A number of models are provided in the [online model database](http://gazebosim.org/user_guide/started__models__database.html) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
