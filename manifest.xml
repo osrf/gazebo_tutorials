@@ -135,7 +135,7 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial tittle="Gazebo Components" ref="components">
+    <tutorial title="Gazebo Components" ref="components">
       <markdown version="1.9+">components/tutorial.md</markdown>
       <description>Overview of the basic components in a Gazebo simulation.</description>
       <skill>beginner</skill>
