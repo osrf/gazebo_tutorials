@@ -7,7 +7,7 @@ Gazebo supports the [Oculus Rift VR headset](http://www.oculusvr.com/). You will
 Follow the next instructions to install the Oculus SDK version that we prepared for Gazebo.
 
 ~~~
-sudo apt-get install libusb-dev
+sudo apt-get install libusb-dev libudev-dev libxinerama-dev
 hg clone https://bitbucket.org/osrf/oculussdk
 cd oculussdk
 mkdir build
