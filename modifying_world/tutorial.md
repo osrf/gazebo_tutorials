@@ -48,4 +48,4 @@ See the [sdf physics documentation](http://gazebosim.org/sdf/dev.html#physics) f
 
 ## Next
 
-Next: [Next: Manipulate a world through a plugin](http://gazebosim.org/tutorials/?tut=plugin_world)
+[Next: How to use DEMs in Gazebo](http://gazebosim.org/tutorials/?tut=dem)
