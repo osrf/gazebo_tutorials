@@ -25,30 +25,7 @@ Once the mesh has been properly prepared, export it as a Collada file. This form
 
 The easiest way to test a mesh is to create a simple world file `my_mesh.world` that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
 
-~~~
-<?xml version="1.0"?>
-<sdf version="1.4">
-  <world name="default">
-    <include>
-        <uri>model://ground_plane</uri>
-    </include>
-    <include>
-        <uri>model://sun</uri>
-    </include>
-    <model name="my_mesh">
-       <pose>0 0 0  0 0 0</pose>
-      <static>true</static>
-      <link name="body">
-        <visual name="visual">
-          <geometry>
-            <mesh><uri>file://my_mesh.dae</uri></mesh>
-          </geometry>
-        </visual>
-      </link>
-    </model>
-  </world>
-</sdf>
-~~~
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/import_mesh/files/my_mesh.world' />
 
 Then just launch Gazebo in the directory where is the file:
 
