@@ -61,7 +61,7 @@ The example program ''listener'' should be built in the build directory. When yo
 
 ### Explanation of the code ###
 
-Load gazebo and run the transport system
+Load gazebo and run the transport system.
 
         gazebo::setupClient(_argc, _argv);
 
@@ -86,6 +86,6 @@ At this point you'll have to create a wait loop while messages come in, or do so
         while (true)
           gazebo::common::Time::MSleep(10);
 
-Once you're done, finalize the transport system
+Once you're done, finalize the transport system.
 
         gazebo::shutdown();
