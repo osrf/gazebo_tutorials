@@ -500,7 +500,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Start gazebo, and insert your model. Click on the three white rectangles to the right of the screen and drag them to the left.
 
-1. A new window should appear that contains various controllers for each joint. ('''Note''' Make sure the model you want to control is selected)
+1. A new window should appear that contains various controllers for each joint. (**Note** Make sure the model you want to control is selected)
 
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
