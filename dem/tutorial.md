@@ -41,67 +41,7 @@ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 
 A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
 
-~~~
-<?xml version="1.0" ?>
-<sdf version="1.4">
-  <world name="default">
-    <!-- A global light source -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
-    <model name="heightmap">
-      <static>true</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <heightmap>
-              <uri>file://media/dem/mtsthelens_129.dem</uri>
-              <size>150 150 50</size>
-              <pos>0 0 0</pos>
-            </heightmap>
-          </geometry>
-        </collision>
-
-        <visual name="visual_abcedf">
-          <geometry>
-            <heightmap>
-              <texture>
-                <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
-                <normal>file://media/materials/textures/flat_normal.png</normal>
-                <size>1</size>
-              </texture>
-              <texture>
-                <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
-                <normal>file://media/materials/textures/flat_normal.png</normal>
-                <size>1</size>
-              </texture>
-              <texture>
-                <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
-                <normal>file://media/materials/textures/flat_normal.png</normal>
-                <size>1</size>
-              </texture>
-              <blend>
-                <min_height>2</min_height>
-                <fade_dist>5</fade_dist>
-              </blend>
-              <blend>
-                <min_height>4</min_height>
-                <fade_dist>5</fade_dist>
-              </blend>
-              <uri>file://media/dem/mtsthelens_129.dem</uri>
-              <size>150 150 50</size>
-              <pos>0 0 0</pos>
-            </heightmap>
-          </geometry>
-        </visual>
-
-      </link>
-    </model>
-
-  </world>
-</sdf>
-~~~
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/dem/files/volcano.world' />
 
 The `<heightmap><size>` element in the code above, tells Gazebo whether to load the DEM with the original dimensions (when `<size>` is not present) or to scale it (when `<size>` is present). In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
 
