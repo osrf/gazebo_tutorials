@@ -46,7 +46,7 @@ Create the model file:
   vim box.sdf
 </pre>
 
-Copy the following contents into box.sdf:
+Copy the following contents into [box.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/build_model/files/box.sdf):
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/build_model/files/box.sdf' />
 
 Note that the origin of the Box-geometry is at the geometric center of the box, so in order to have the bottom of the box flush with the ground plane, an origin of `<pose>0 0 0.5 0 0 0</pose>` is added to raise the box above the ground plane.
