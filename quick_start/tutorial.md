@@ -19,7 +19,7 @@ Let's simulate something a bit more interesting by loading a world with a pionee
 At a terminal prompt, enter the following command.
 
 ~~~
-gazebo worlds/pioneer2d.world
+gazebo worlds/pioneer2dx.world
 ~~~
 
 #### Where are the worlds located?
