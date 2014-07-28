@@ -16,15 +16,15 @@
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu saucy main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
-    **Ubuntu 13.04 (trusty)**
+    **Ubuntu 14.04 (trusty)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu trusty main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
-1. Retrieve and install the keys for the Gazebo repositories.
+1. Setup keys
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-1. Update apt-get and install Gazebo.
+1. Install Gazebo.
 
         sudo apt-get update
         sudo apt-get install gazebo4
@@ -49,13 +49,15 @@ Make sure you have removed the Ubuntu pre-compiled binaries before installing fr
 
 We also recommend ROS users remove older ROS versions of Gazebo:
 
-    sudo apt-get remove ros-fuerte-simulator-gazebo ros-groovy-simulator-gazebo
+    sudo apt-get remove ros-fuerte-simulator-gazebo ros-groovy-simulator-gazebo ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
 
 If you have previously installed from source, be sure you are installing to the same path location or that you have removed the previous installation from source version manually.
 
 As a side note, default install locations:
-; Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
-; Default source install : /usr/local/bin/gazebo
+
+    1. Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
+
+    2. Default source install : /usr/local/bin/gazebo
 
 ## ROS Users
 
