@@ -55,9 +55,9 @@ If you have previously installed from source, be sure you are installing to the 
 
 As a side note, default install locations:
 
-    1. Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
+  1. Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
 
-    2. Default source install : /usr/local/bin/gazebo
+  2. Default source install : /usr/local/bin/gazebo
 
 ## ROS Users
 
@@ -68,10 +68,12 @@ When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh<
 Install prerequisites.  A clean Ubuntu system will need:
 <!-- Ogre doesn't install on Ubuntu 13.10, so use ogre-1.8 which does -->
 
-    **Precise**
+  **Precise**
+
         sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
-    **Trusty**
+  **Trusty**
+
         sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
 
