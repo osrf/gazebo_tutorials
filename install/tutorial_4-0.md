@@ -1,22 +1,22 @@
 #Download and Install Gazebo
 
-### Ubuntu Debians
+## Ubuntu
 
-1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide] for instructions on doing this.
+1. Configure to allow "restricted," "universe," and "multiverse." by following these [instructions](https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide).
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
+    
+    ***Note:*** there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
 
-***Note:*** there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
-
-  **Ubuntu Linux 12.04 (precise)**
+    **Ubuntu 12.04 (precise)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu precise main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
-  **Ubuntu Linux 13.10 (saucy)**
+    **Ubuntu 13.10 (saucy)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu saucy main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
-  **Ubuntu Linux 13.04 (trusty)**
+    **Ubuntu 13.04 (trusty)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu trusty main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
