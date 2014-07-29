@@ -37,6 +37,14 @@
 
         gazebo
 
+## Mac OSX
+
+You must install from source using Homebrew. Seen the instructions below titled Compiling From Source(MacOSX).
+
+## Windows
+
+Windows support is under development.
+
 # Compiling From Source (Ubuntu)
 
 ## Prerequisites
