@@ -75,7 +75,7 @@ cmake ../; make
 First you need to add the folder to the `GAZEBO_PLUGIN_PATH` environment variable:
 
 ~~~
-$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/world_edit/build/
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/world_edit/build/
 ~~~
 
 Then in a terminal

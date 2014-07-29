@@ -8,12 +8,12 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Create a model directory:
 
-        $ mkdir -p ~/.gazebo/models/my_robot
+        mkdir -p ~/.gazebo/models/my_robot
 
 
 1.  Create a model config file:
 
-        $ gedit ~/.gazebo/models/my_robot/model.config
+        gedit ~/.gazebo/models/my_robot/model.config
 
 1.  Paste in the following contents:
 
@@ -37,7 +37,7 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Create a `~/.gazebo/models/my_robot/model.sdf` file.
 
-        $ gedit ~/.gazebo/models/my_robot/model.sdf
+        gedit ~/.gazebo/models/my_robot/model.sdf
 
 
 1. Paste in the following.

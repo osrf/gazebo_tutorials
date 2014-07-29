@@ -42,7 +42,7 @@ Here is a very rudimentary minimum box model file with just a unit sized box sha
 Create the `box.sdf` model file
 
 ~~~
-$ gedit box.sdf
+gedit box.sdf
 ~~~
 
 Copy the following contents into [box.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/build_model/files/box.sdf):

@@ -9,7 +9,7 @@ The Gazebo transport system is documented [here](http://gazebosim.org/api/1.9.1/
 A list of all the topics in use on a running system can be found with the following command (make sure Gazebo is running first):
 
 ~~~
-$ gz topic -l
+gz topic -l
 ~~~
 
 # Example
@@ -19,21 +19,21 @@ This example subscribes to a [WorldStatistics message](http://gazebosim.org/msgs
 Download listener.cc and CMakeLists.txt from the above link and put them into to a folder called listener at your home directory. Compile the example:
 
 ~~~
-$ mkdir ~/listener
-$ cd ~/listener
-$ wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
-$ wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
+mkdir ~/listener
+cd ~/listener
+wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
+wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
+mkdir build
+cd build
+cmake ..
+make
 ~~~
 
 Run the listener program when an instance of Gazebo is already running.
 
 ~~~
-$ cd ~/listener/build
-$ ./listener
+cd ~/listener/build
+./listener
 ~~~
 
 The output should be similar to

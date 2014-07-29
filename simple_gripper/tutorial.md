@@ -10,12 +10,12 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Create a directory for the world file.
 
-        $ mkdir ~/simple_gripper_tutorial; cd ~/simple_gripper_tutorial
+        mkdir ~/simple_gripper_tutorial; cd ~/simple_gripper_tutorial
 
 
 1.  We will begin with a simple empty world.  Create a world file:
 
-        $ gedit ~/simple_gripper_tutorial/gripper.world
+        gedit ~/simple_gripper_tutorial/gripper.world
 
     Copy the following SDF into `gripper.world`:
 
@@ -24,13 +24,13 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
 
-        $ mkdir -p ~/.gazebo/models/my_gripper
+        mkdir -p ~/.gazebo/models/my_gripper
 
 1. Let's layout the basic structure of our gripper. The easiest way to accomplish this is to make a `static` model and add in the links one at a time. A static model means the links will not move when the simulator starts. This will allow you to start the simulator, and visually inspect the link placement before adding joints.
 
 1. Create a `model.config` file
 
-        $ gedit ~/.gazebo/models/my_gripper/model.config
+        gedit ~/.gazebo/models/my_gripper/model.config
 
 1. Fill `model.config` with the following contents:
 
@@ -38,7 +38,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Make a new file for the model:
 
-        $ gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+        gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
 
 1. Copy the following code in the `simple_gripper.sdf` file.
 
@@ -46,7 +46,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Run the world file to visualize what we have created up to this point.
 
-        $ gazebo ~/simple_gripper_tutorial/gripper.world
+        gazebo ~/simple_gripper_tutorial/gripper.world
 
     You should see something like this:
 
@@ -54,7 +54,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Once we are happy with the layout of the links, we can add in the joints, by copying the following code into the `simple_gripper.sdf` file before the `</model>` line.
 
-        $ gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+        gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
 
     ~~~
             <joint name="palm_left_finger" type="revolute">

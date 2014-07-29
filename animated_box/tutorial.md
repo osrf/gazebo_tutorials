@@ -16,8 +16,8 @@ and print out the location and timestamp of the box.
 Create a working directory.
 
 ~~~
-$ mkdir ~/gazebo_animatebox_tutorial
-$ cd ~/gazebo_animatebox_tutorial
+mkdir ~/gazebo_animatebox_tutorial
+cd ~/gazebo_animatebox_tutorial
 ~~~
 
 # Animate box code
@@ -25,26 +25,26 @@ $ cd ~/gazebo_animatebox_tutorial
 Copy [animate_box.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world)into the current directory.
 
 ~~~
-$ wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc
-$ wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc
-$ wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc
-$ wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt
-$ wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world
 ~~~
 
 Build the plugin
 
 ~~~
-$ mkdir build
-$ cd build
-$ cmake ../
-$ make
+mkdir build
+cd build
+cmake ../
+make
 ~~~
 
 Make sure Gazebo can load the plugins later
 
 ~~~
-$ export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
+export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
 ~~~
 
 # Simulate with gazebo
@@ -55,14 +55,14 @@ gazebo executable with a plugin.
 Run using gazebo itself with:
 
 ~~~
-$ cd ~/gazebo_animatebox_tutorial
-$ gazebo animated_box.world
+cd ~/gazebo_animatebox_tutorial
+gazebo animated_box.world
 ~~~
 
 In another terminal, use "gz topic" user interface to view the pose:
 
 ~~~
-$ gz topic -v /gazebo/animated_box_world/pose/local/info
+gz topic -v /gazebo/animated_box_world/pose/local/info
 ~~~
 
 You should see a graphical interface that displays the pose of the box.
@@ -76,8 +76,8 @@ executable that connects to Gazebo. The independent listener receives
 the location and timestamp of the box and prints it out.
 
 ~~~
-$ cd ~/gazebo_animatebox_tutorial
-$ gazebo animated_box.world & ./build/independent_listener
+cd ~/gazebo_animatebox_tutorial
+gazebo animated_box.world & ./build/independent_listener
 ~~~
 
 # Run the simulation and connect with your own executable
@@ -93,14 +93,14 @@ The integrated_main example demonstrates the following:
 Run integrated_main:
 
 ~~~
-$ cd ~/gazebo_animatebox_tutorial
-$ ./build/integrated_main animated_box.world
+cd ~/gazebo_animatebox_tutorial
+./build/integrated_main animated_box.world
 ~~~
 
 To view the simulation run the command:
 
 ~~~
-$ gzclient
+gzclient
 ~~~
 
 # SOURCE CODE

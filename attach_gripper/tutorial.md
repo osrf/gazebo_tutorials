@@ -20,7 +20,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. For this exercise, modify `~/.gazebo/models/my_robot/model.sdf` to make the model larger so it can accommodate the gripper we are about to append to it:
 
-        $ gedit ~/.gazebo/models/my_robot/model.sdf
+        gedit ~/.gazebo/models/my_robot/model.sdf
 
     update the contents to make the model body larger and re-position the wheels accordingly:
 
@@ -32,11 +32,11 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. To create a mobile robot with a simple gripper attached, create a new models directory
 
-        $ mkdir ~/.gazebo/models/simple_mobile_manipulator
+        mkdir ~/.gazebo/models/simple_mobile_manipulator
 
     And edit the model config file:
 
-        $ gedit ~/.gazebo/models/simple_mobile_manipulator/model.config
+        gedit ~/.gazebo/models/simple_mobile_manipulator/model.config
 
     populate it with the following contents:
 
@@ -44,7 +44,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. Next, create the model SDF file:
 
-        $ gedit ~/.gazebo/models/simple_mobile_manipulator/manipulator.sdf
+        gedit ~/.gazebo/models/simple_mobile_manipulator/manipulator.sdf
 
     and populate with following contents:
 

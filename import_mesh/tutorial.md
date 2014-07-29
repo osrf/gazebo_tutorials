@@ -29,7 +29,7 @@ The easiest way to test a mesh is to create a simple world file [my_mesh.world](
 Then just launch Gazebo in the directory where is the file:
 
 ~~~
-$ gazebo my_mesh.world
+gazebo my_mesh.world
 ~~~
 
 # Test Mesh ###
