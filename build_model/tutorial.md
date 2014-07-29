@@ -1,8 +1,6 @@
-#Tutorial: Make a Model#
+Models can range from simple shapes to complex robots. It refers to the `<model>` [SDF](http://gazebosim.org/sdf.html) tag, and is essentially a collection of links, joints, collision objects, visuals, and plugins. Generating a model file can be difficult depending on the complexity of the desired model. This page will offer some tips on how to build your models.
 
-Models can range from simple shapes to complex robots. It refers to the `<model>` [[sdf_format | SDF]] tag, and is essentially a collection of links, joints, collision objects, visuals, and plugins. Generating a model file can be difficult depending on the complexity of the desired model. This page will offer some tips on how to build your models.
-
-### Components of Models ###
+# Components of Models
 
 > **Links:** A link contains the physical properties of one body of the model. This can be a wheel, or a link in a joint chain. Each link may contain many collision and visual elements. Try to reduce the number of links in your models in order to improve performance and stability. For example, a table model could consist of 5 links (4 for the legs and 1 for the top) connected via joints. However, this is overly complex, especially since the joints will never move. Instead, create the table with 1 link and 5 collision elements.
 
@@ -18,9 +16,9 @@ Models can range from simple shapes to complex robots. It refers to the `<model>
 
 > **Plugins:** A plugin is a shared library created by a third party to control a model.
 
-### Building a Model ###
+# Building a Model
 
-**Step 1: Collect your meshes**
+###Step 1: Collect your meshes
 
 This step involves gathering all the necessary 3D mesh files that are required to build your model. Gazebo provides a set of simple shapes: box, sphere, and cylinder. If your model needs something more complex, then continue reading.
 
@@ -35,16 +33,17 @@ Gazebo requires that mesh files be formatted as STL or Collada, with Collada bei
 > **Tip:** Keep meshes simple. This is especially true if you plan on using the mesh as a collision element. A common practice is to use a low polygon mesh for a collision element, and higher polygon mesh for the visual. An even better practice is to use one of the built-in shapes (box, sphere, cylinder) as the collision element.
 
 
-**Step 2: Make your model SDF file**
+###Step 2: Make your model SDF file
 
 Start by creating an extremely simple model file, or copy an existing model file. The key here is to start with something that you know works, or can debug very easily.
 
 Here is a very rudimentary minimum box model file with just a unit sized box shape as a collision geometry and the same unit box visual with unit inertias:
 
-Create the model file:
-<pre>
-  vim box.sdf
-</pre>
+Create the `box.sdf` model file
+
+~~~
+$ gedit box.sdf
+~~~
 
 Copy the following contents into [box.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/build_model/files/box.sdf):
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/build_model/files/box.sdf' />
@@ -53,7 +52,7 @@ Note that the origin of the Box-geometry is at the geometric center of the box, 
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.
 
 
-**Step 3: Add to the model SDF file**
+###Step 3: Add to the model SDF file
 
 With a working `.sdf` file, slowly start adding in more complexity. With each new addition, load the model using the graphical client to make sure your model is correct.
 
