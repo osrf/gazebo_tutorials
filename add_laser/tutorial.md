@@ -1,4 +1,4 @@
-#Tutorial: Add a Sensor to a Robot#
+# Overview
 
 **Prerequisites:** [Attach a Mesh as Visual](http://gazebosim.org/tutorials/?tut=attach_meshes)
 
