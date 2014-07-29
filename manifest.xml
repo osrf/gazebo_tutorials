@@ -131,7 +131,8 @@
     </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
-      <markdown version="1.9+">log_filtering/tutorial.md</markdown>
+      <markdown version="1.9">log_filtering/tutorial.md</markdown>
+      <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
       <description>How to filter a recorded state log file.</description>
       <skill>beginner</skill>
     </tutorial>
