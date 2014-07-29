@@ -32,7 +32,7 @@ World files are located in a versioned system directory, for example `/usr/share
 ls /usr/share/gazebo-4.0/worlds
 ~~~
 
-For a Gazebo 4.0 installation on OS X using homebrew, type the following to see a complete list of worlds.
+For a Gazebo 4.0 installation on OS X using Homebrew, type the following to see a complete list of worlds.
 
 ~~~
 ls /usr/local/share/gazebo-4.0/worlds
