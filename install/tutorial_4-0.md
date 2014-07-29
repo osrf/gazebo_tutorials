@@ -41,7 +41,7 @@
 
 ## Prerequisites
 
-Make sure you have removed the Ubuntu pre-compiled binaries before installing from source
+Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
 
     sudo apt-get remove 'gazebo-*' 'sdformat-*'
 
@@ -131,19 +131,19 @@ To install from source, you should first install the SDFormat package, then buil
 
         cd ~; hg clone https://bitbucket.org/osrf/sdformat
 
-1. Change directory into the sdformat repository and switch to the 2.0 branch
+1. Change directory into the sdformat repository and switch to the 2.0 branch:
 
         cd ~sdformat
         hg up sdf_2.0
 
      **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability
 
-1. Create a build directory and go there
+1. Create a build directory and go there:
 
         mkdir build
         cd build
 
-1. Build and install
+1. Build and install:
 
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
         make -j4
@@ -155,19 +155,19 @@ To install from source, you should first install the SDFormat package, then buil
 
         cd ~; hg clone https://bitbucket.org/osrf/gazebo
 
-1. Change directory in the Gazebo repository and switch to the 3.0 branch
+1. Change directory in the Gazebo repository and switch to the 4.0 branch
 
         cd ~/gazebo
         hg up gazebo_4.0
 
-     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 3.0 branch if you desire more stability
+     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 4.0 branch if you desire more stability
 
-1. Create a build directory and go there
+1. Create a build directory and go there:
 
         mkdir build
         cd build
 
-1. Configure Gazebo (choose either method `a` or `b` below)
+1. Configure Gazebo (choose either method `a` or `b` below):
    
     > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
   
@@ -191,11 +191,11 @@ To install from source, you should first install the SDFormat package, then buil
 
           -- Install path: /home/$USER/local     
 
-1. Build Gazebo
+1. Build Gazebo:
 
         make -j4
 
-1. Install Gazebo
+1. Install Gazebo:
 
         sudo make install
 
@@ -203,7 +203,7 @@ To install from source, you should first install the SDFormat package, then buil
 
 ### Local Install
 
-If you decide to install gazebo in a local directory you'll need to modify some of your PATHs
+If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
 
     echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
     echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
