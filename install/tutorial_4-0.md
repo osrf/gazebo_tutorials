@@ -6,7 +6,7 @@
 
 1. Install
 
-        wget -O /tmp/gazebo4_install.run http://gazebosim.org/assets/distributions/gazebo4_install.run; sudo sh /tmp/gazebo4_install.run
+        wget -O /tmp/gazebo4_install.sh http://gazebosim.org/assets/distributions/gazebo4_install.sh; sudo sh /tmp/gazebo4_install.sh
 
 2. Run
 
