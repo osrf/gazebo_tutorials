@@ -77,7 +77,7 @@ gazebo contact.world
 In a separate terminal list the topics published by Gazebo
 
 ~~~
-gztopic list
+gz topic -l
 ~~~
 
 The output should look like:
@@ -112,16 +112,18 @@ The topic we are interested in is called `/gazebo/default/box/link/my_contact`. 
 Print the value of the contact sensors to the screen:
 
 ~~~
-gztopic echo /gazebo/default/box/link/my_contact
+gz topic -e /gazebo/default/box/link/my_contact
 ~~~
 
 The above command will dump the all the contacts to the terminal. You can stop this at anytime using `ctrl-c`.
 
 NOTE: If this doesn't work, you may need to add
+
 ~~~
 <update_rate> 5 </update_rate>
 ~~~
-Between the </contact> and </sensor> tags in order to get output on the terminal. The rate "5" can be changed to a different frequency if desired.
+
+Between the `</contact>` and `</sensor>` tags in order to get output on the terminal. The rate "5" can be changed to a different frequency if desired.
 
 # Contact Sensor Plugin
 
@@ -130,11 +132,15 @@ It is also possible to create a plugin for the contact sensor. This plugin can g
 *    **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed. If you install Gazebo from source then you should already have the necessary files. If you install the Gazebo binary deb version, then you'll need to install a couple of additional packages.
 
     ~~~
-    sudo apt-get install libgazebo-dev libsdformat2-dev
+    sudo apt-get install libgazebo4-dev libsdformat2-dev
     ~~~
 
 
 Start by modifying the `contact.world` SDF file. Add the following line directly below `<sensor name='my_contact' type='contact'>`:
+
+~~~
+gedit contact.world
+~~~
 
 ~~~
 <plugin name="my_plugin" filename="libcontact.so"/>
@@ -142,7 +148,13 @@ Start by modifying the `contact.world` SDF file. Add the following line directly
 
 This line tells Gazebo to load the `libcontact.so` sensor plugin. Which we will now define.
 
-Create a header file for the plugin, call it `ContactPlugin.hh` with the following contents:
+Create a header file for the plugin, call it `ContactPlugin.hh`:
+
+~~~
+gedit ContactPlugin.hh
+~~~
+
+and paste in the following content:
 
 ~~~
 #ifndef _GAZEBO_CONTACT_PLUGIN_HH_
@@ -183,7 +195,13 @@ namespace gazebo
 #endif
 ~~~
 
-Create a source file called `ContactPlugin.cc` with the following contents:
+Create a source file called `ContactPlugin.cc`:
+
+~~~
+gedit ContactPlugin.cc
+~~~
+
+and paste in the  following content:
 
 ~~~
 #include "ContactPlugin.hh"
@@ -250,7 +268,7 @@ void ContactPlugin::OnUpdate()
 }
 ~~~
 
-## The Code Explained
+### The Code Explained
 
 The following code from the `Load` function gets pointer to the contact sensor through the `_sensor` parameter. We then test to make sure the pointer is valid, and create a connection to the contact sensor's `updated` event. The last line guarantees that the sensor is initialized.
 

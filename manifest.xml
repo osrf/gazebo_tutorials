@@ -147,7 +147,8 @@
     <!-- Intermediate tutorials -->
 
     <tutorial title="Contact Sensor" ref='contact_sensor'>
-      <markdown version="1.9+">contact_sensor/tutorial.md</markdown>
+      <markdown version="1.9">contact_sensor/tutorial.md</markdown>
+      <markdown version="4.0+">contact_sensor/tutorial_4-0.md</markdown>
       <description>How to create and get data from contact sensors.</description>
       <skill>intermediate</skill>
     </tutorial>
