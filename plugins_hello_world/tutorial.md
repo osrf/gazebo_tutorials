@@ -1,6 +1,4 @@
-#Tutorial: Plugins 101#
-
-### Overview of Gazebo Plugins
+# Overview of Gazebo Plugins
 
 A plugin is a chunk of code that is compiled as a shared library and inserted into the simulation.
 The plugin has direct access to all the functionality of Gazebo through the standard C++ classes.
@@ -26,7 +24,7 @@ You should use a plugin when:
    Ex: No serialization and deserialization of messages.
 *  you have some code that could benefit others and want to share it
 
-### Plugin Types
+# Plugin Types
 
 There are currently 5 types of plugins
 
@@ -47,15 +45,15 @@ Use a World plugin to control world properties, such as the physics engine, ambi
 Use a Model plugin to control joints, and state of a model.
 Use a Sensor plugin to acquire sensor information and control sensor properties.
 
-## Hello WorldPlugin!
+# Hello WorldPlugin!
 
 Plugins are designed to be simple.
 A bare bones world plugin contains a class with a few member functions:
 
 ~~~
-mkdir ~/gazebo_plugin_tutorial
-cd ~/gazebo_plugin_tutorial
-gedit hello_world.cc
+$ mkdir ~/gazebo_plugin_tutorial
+$ cd ~/gazebo_plugin_tutorial
+$ gedit hello_world.cc
 ~~~
 
 Copy the following into hello_world.cc:
@@ -65,7 +63,7 @@ The above code is also located in the Gazebo sources:
 [examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
-### Code Explained
+## Code Explained
 
 ~~~
 #include <gazebo/gazebo.hh>
@@ -120,7 +118,7 @@ Please make sure that gazebo has been properly [installed](http://gazebosim.org/
 To compile the above plugin, create `~/gazebo_plugin_tutorial/CMakeLists.txt`:
 
 ~~~
-gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
+$ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 ~~~
 
 Copy the following in CMakeLists.txt:
@@ -128,15 +126,15 @@ Copy the following in CMakeLists.txt:
 
 Create the build directory
 ~~~
-mkdir ~/gazebo_plugin_tutorial/build
-cd ~/gazebo_plugin_tutorial/build
+$ mkdir ~/gazebo_plugin_tutorial/build
+$ cd ~/gazebo_plugin_tutorial/build
 ~~~
 
 Compile the code.
 
 ~~~
-cmake ../
-make
+$ cmake ../
+$ make
 ~~~
 
 Compiling will result in a shared library,
@@ -146,10 +144,10 @@ that can be inserted in a Gazebo simulation.
 Lastly, add your library path to the `GAZEBO_PLUGIN_PATH`:
 
 ~~~
-export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
+$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
 ~~~
 
-### Using a Plugin
+# Using a Plugin
 
 Once you have a plugin compiled as a shared library (see above),
 you can attach it to a world or model in an SDF file
@@ -169,8 +167,8 @@ If you don't have the build directory in your `GAZEBO_PLUGIN_PATH`,
 then you must run the Gazebo server from your build directory:
 
 ~~~
-cd build
-gzserver ../hello.world
+$ cd build
+$ gzserver ../hello.world --verbose
 ~~~
 
 You should see output similar to:

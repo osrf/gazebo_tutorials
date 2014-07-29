@@ -1,7 +1,9 @@
-# System Plugin Tutorial
+#Overview
 
 This tutorial will create a source file that is a system plugin designed to save images into the director `/tmp/gazebo_frames`. 
 
+# Source code
+#
 We'll start with the source file. Create a file called `system_gui.cc` with the following contents:
 
 ~~~
@@ -58,7 +60,7 @@ In our `Init` function, we get a pointer to the user camera (the camera used in 
 
         this->userCam->SetSaveFramePathname("/tmp/gazebo_frames");
 
-## Compiling Camera Plugin
+# Compiling Camera Plugin
 
 Create a CMakeLists.txt file with the following:
 
@@ -105,7 +107,7 @@ cd build
 export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
 ~~~
 
-## Running Plugin
+# Running Plugin
 
 First start gzserver in the background:
 
