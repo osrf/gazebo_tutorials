@@ -16,7 +16,7 @@ This tutorial describes the process of creating a world with both static and dyn
     $ mkdir ~/build_world_tutorial; cd ~/build_world_tutorial
     ~~~
 
-1.  Start up gazebo, and you should a world with just a ground plane.
+1.  Start up gazebo, and you should see a world with just a ground plane.
 
     ~~~
     $ gazebo
