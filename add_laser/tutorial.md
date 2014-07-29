@@ -58,7 +58,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
         ls ~/.gazebo/models/camera/
 
 
-    For reference, the Gazebo documentation can be found [here](http://gazebosim.org/sdf/), click on "all" to expand all items.
+    For reference, the SDF documentation can be found [here](http://gazebosim.org/sdf/), click on "all" to expand all items.
 
 ## Next
 
