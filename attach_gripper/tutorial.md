@@ -1,4 +1,4 @@
-#Tutorial: Attach Gripper to Robot#
+# Overview
 
 **Prerequisites:**
 
@@ -8,11 +8,11 @@
 
 This tutorial explains how to create a composite robot from existing robot parts, i.e. mobile base, simple arm and simple gripper.
 
-## Robot Components
+# Robot Components
 
 Start up gazebo and make sure you can load the models from the two previous tutorials.
 
-### Mobile Base
+## Mobile Base
 
 1. Per instructions in [Make a Mobile Robot](http://gazebosim.org/tutorials/?tut=build_robot) tutorial, you should have a mobile base robot at your disposal:
 
@@ -20,36 +20,35 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. For this exercise, modify `~/.gazebo/models/my_robot/model.sdf` to make the model larger so it can accommodate the gripper we are about to append to it:
 
-        gedit ~/.gazebo/models/my_robot/model.sdf
+        $ gedit ~/.gazebo/models/my_robot/model.sdf
 
     update the contents to make the model body larger and re-position the wheels accordingly:
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/model.sdf' />
+    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/attach_gripper/files/model.sdf' />
 
     <img src="http://gazebosim.org/w/images/0/00/Mobile_base_large.png" width="640px"/>
 
-### Assembling a Composite Robot
+## Assembling a Composite Robot
 
 1. To create a mobile robot with a simple gripper attached, create a new models directory
 
-        mkdir ~/.gazebo/models/simple_mobile_manipulator
-        cd ~/.gazebo/models/simple_mobile_manipulator
+        $ mkdir ~/.gazebo/models/simple_mobile_manipulator
 
     And edit the model config file:
 
-        gedit ~/.gazebo/models/simple_mobile_manipulator/model.config
+        $ gedit ~/.gazebo/models/simple_mobile_manipulator/model.config
 
     populate it with the following contents:
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/model.config' />
+    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/attach_gripper/files/model.config' />
 
 1. Next, create the model SDF file:
 
-        gedit ~/.gazebo/models/simple_mobile_manipulator/manipulator.sdf
+        $ gedit ~/.gazebo/models/simple_mobile_manipulator/manipulator.sdf
 
     and populate with following contents:
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/manipulator.sdf' />
+    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/attach_gripper/files/manipulator.sdf' />
 
 1. Make sure the `model.config` and `manipulator.sdf` files above are saved, start Gazebo and spawn the model above by using the **insert** tab and choosing **Simple Mobile Manipulator** model.  You should see something similar to:
 
