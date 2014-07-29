@@ -1,4 +1,4 @@
-#Tutorial: Attach Meshes#
+# Overview
 
 **Prerequisites:** [Make a mobile robot](http://gazebosim.org/tutorials/?tut=build_robot)
 
