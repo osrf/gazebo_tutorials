@@ -1,4 +1,4 @@
-# Tutorial: Make a Mobile Robot#
+# Overview
 
 The tutorial demonstrates Gazebo's basic model management, and exercises familiarity with basic model representation inside the model database by taking the user through the process of creating a two wheeled mobile robot that uses a differential drive mechanism for movement.
 
@@ -8,46 +8,46 @@ Read through the [Model Database documentation](http://gazebosim.org/user_guide/
 
 1.  Create a model directory:
 
-        mkdir -p ~/.gazebo/models/my_robot
+        $ mkdir -p ~/.gazebo/models/my_robot
 
 
 1.  Create a model config file:
 
-        gedit ~/.gazebo/models/my_robot/model.config
+        $ gedit ~/.gazebo/models/my_robot/model.config
 
 1.  Paste in the following contents:
 
     ~~~
-        <?xml version="1.0"?>
-        <model>
-          <name>My Robot</name>
-          <version>1.0</version>
-          <sdf version='1.4'>model.sdf</sdf>
+    <?xml version="1.0"?>
+    <model>
+      <name>My Robot</name>
+      <version>1.0</version>
+      <sdf version='1.4'>model.sdf</sdf>
 
-          <author>
-           <name>My Name</name>
-           <email>me@my.email</email>
-          </author>
+      <author>
+       <name>My Name</name>
+       <email>me@my.email</email>
+      </author>
 
-          <description>
-            My awesome robot.
-          </description>
-        </model>
+      <description>
+        My awesome robot.
+      </description>
+    </model>
     ~~~
 
 1.  Create a `~/.gazebo/models/my_robot/model.sdf` file.
 
-        gedit ~/.gazebo/models/my_robot/model.sdf
+        $ gedit ~/.gazebo/models/my_robot/model.sdf
 
 
 1. Paste in the following.
 
     ~~~
-        <?xml version='1.0'?>
-        <sdf version='1.4'>
-          <model name="my_robot">
-          </model>
-        </sdf>
+    <?xml version='1.0'?>
+    <sdf version='1.4'>
+      <model name="my_robot">
+      </model>
+    </sdf>
     ~~~
 
 At this point we have the basic contents for a model. The `model.config` file describes the robot with some extra meta data. The `model.sdf` file contains the necessary tags to instantiate a model named `my_robot` using Gazebo linked against SDF version 1.4.
@@ -107,15 +107,15 @@ It is important to start simple, and build up a model in steps. The first step i
         </sdf>
     %%%
 
-  Here we have created a `box` with a size of `0.4 x 0.2 x 0.1` meters. The `collision` element specifies the shape used by the collision detection engine. The `visual` element specifies the shape used by the rendering engine. For most use cases the `collision` and `visual` elements are the same. The most common use for different `collision` and `visual` elements is to have a simplified `collision` element paired with a `visual` element that uses a complex mesh. This will help improve performance.
+    Here we have created a `box` with a size of `0.4 x 0.2 x 0.1` meters. The `collision` element specifies the shape used by the collision detection engine. The `visual` element specifies the shape used by the rendering engine. For most use cases the `collision` and `visual` elements are the same. The most common use for different `collision` and `visual` elements is to have a simplified `collision` element paired with a `visual` element that uses a complex mesh. This will help improve performance.
 
 1.  Try out your model by running gazebo, and importing your model through the [[insert_model_gui | Insert Model]] interface on the GUI.
 
         gazebo
 
-  You should see a white box floating .1 meters above the ground plane.
+    You should see a white box floating .1 meters above the ground plane.
 
-  <img src="http://gazebosim.org/w/images/8/8c/My_robot_box.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/8/8c/My_robot_box.png" width="640px"/>
 
 1.  Now we can add a caster to the robot. The caster is a sphere with no friction. This kind of caster is better than adding a wheel with a joint since it places fewer constraints on the physics engine.
 
@@ -180,9 +180,9 @@ It is important to start simple, and build up a model in steps. The first step i
         </sdf>
     %%%
 
-  Try out your model to make sure the caster appears at the end of the robot.  Spawn it in gazebo to see (you don't need to restart Gazebo; it will reload your modified model from disk each time you insert it):
+    Try out your model to make sure the caster appears at the end of the robot.  Spawn it in gazebo to see (you don't need to restart Gazebo; it will reload your modified model from disk each time you insert it):
 
-  <img src="http://gazebosim.org/w/images/f/f1/My_robot_caster.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/f/f1/My_robot_caster.png" width="640px"/>
 
 1.  Now let's add a left wheel. Modify the `~/.gazebo/models/my_robot/model.sdf` file to be the following:
 
@@ -265,9 +265,9 @@ It is important to start simple, and build up a model in steps. The first step i
         </sdf>
     %%%
 
-  Run Gazebo, insert your robot model and make sure the wheel has appeared and is in the correct location.
+    Run Gazebo, insert your robot model and make sure the wheel has appeared and is in the correct location.
 
-  <img src="http://gazebosim.org/w/images/6/67/My_robot_caster_left_wheel.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/6/67/My_robot_caster_left_wheel.png" width="640px"/>
 
 
 1.  We can make a right wheel by copying the left wheel, and adjusting the wheel link's pose:
@@ -370,9 +370,9 @@ It is important to start simple, and build up a model in steps. The first step i
         </sdf>
     %%%
 
-  At this point the robot should have a chassis with a caster and two wheels.
+    At this point the robot should have a chassis with a caster and two wheels.
 
-  <img src="http://gazebosim.org/w/images/1/16/My_robot_caster_wheels.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/1/16/My_robot_caster_wheels.png" width="640px"/>
 
 1. Make the model dynamic by setting `<static>` to false, and add two hinge joints for the left and right wheels.
 
@@ -504,7 +504,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
-  <img src="http://gazebosim.org/w/images/4/48/Simple-robot-driving.png" width="640px"/>
+    <img src="http://gazebosim.org/w/images/4/48/Simple-robot-driving.png" width="640px"/>
 
 1. Congrats, you now have a basic mobile robot.
 
