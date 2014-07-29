@@ -1,25 +1,22 @@
-#Tutorial: Modifying a World#
-
 This tutorial describes how to modify global properties including scene and physics properties.
 
 Start gazebo:
 
 ~~~
-gazebo
+$ gazebo
 ~~~
 
-##Scene Properties##
+#Scene Properties
 
 In the `World` tab, select the `scene` item. A list of scene properties will be displayed in the list box below. Click the triangle to expand the properties.
 
 <a href="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" class="image"><img alt="TutorialSceneTab.png" src="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" width="268" height="687"></a>
-[[File:TutorialSceneTab.png]] [[File:TutorialSceneTabExpanded.png]]<a href="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" class="image"><img alt="TutorialSceneTabExpanded.png" src="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" width="265" height="708"></a>
+<a href="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" class="image"><img alt="TutorialSceneTabExpanded.png" src="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" width="268" height="687"></a>
 
 These properties allow you to change the ambient light. Note: The background color will not change if the Sky is enabled.
 
 
-
-##Physics Properties##
+#Physics Properties
 
 
 In the `World` tab, select the `physics` item. A list of physics properties will be displayed in the list box below.
@@ -44,8 +41,7 @@ The constraints block contains several parameters related to solving constraints
 See the [sdf physics documentation](http://gazebosim.org/sdf/dev.html#physics) for a description of these parameters.
 
 <a href="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" class="image"><img alt="TutorialPhysicsTab.png" src="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" width="330" height="782"></a>
-[[File:TutorialPhysicsTab.png]]
 
-## Next
+# Next
 
 [Next: How to use DEMs in Gazebo](http://gazebosim.org/tutorials/?tut=dem)
