@@ -118,7 +118,8 @@
     </tutorial>
 
     <tutorial title="Topics subscription" ref='topics_subscribed'>
-      <markdown version="1.9+">topics_subscribe/tutorial.md</markdown>
+      <markdown version="1.9">topics_subscribe/tutorial.md</markdown>
+      <markdown version="2.2+">topics_subscribe/tutorial_2-2.md</markdown>
       <description>How to subscribe to gazebo topics.</description>
       <skill>beginner</skill>
     </tutorial>
