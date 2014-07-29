@@ -1,284 +1,52 @@
-#Tutorial: Make a Simple Gripper#
+# Overview
 
 This tutorial describes how to make a simple two-bar pinching gripper.
 
-## Setup your model directory
+# Setup your model directory
 
 Reference [Model Database documentation](http://gazebosim.org/user_guide/started__models__database.html) and [SDF](http://gazebosim.org/sdf) documentation for this tutorial.
 
-## Make the model
+# Make the model
 
 1. Create a directory for the world file.
 
-        mkdir ~/simple_gripper_tutorial; cd ~/simple_gripper_tutorial
+        $ mkdir ~/simple_gripper_tutorial; cd ~/simple_gripper_tutorial
 
 
 1.  We will begin with a simple empty world.  Create a world file:
 
-        gedit ~/simple_gripper_tutorial/gripper.world
+        $ gedit ~/simple_gripper_tutorial/gripper.world
 
     Copy the following SDF into `gripper.world`:
 
-    ~~~
-      <?xml version="1.0"?>
-      <sdf version="1.4">
-        <world name="default">
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/gripper.world' />
 
-        <!-- A ground plane -->
-        <include>
-          <uri>model://ground_plane</uri>
-        </include>
-
-        <!-- A global light source -->
-        <include>
-          <uri>model://sun</uri>
-        </include>
-
-        <include>
-          <uri>model://my_gripper</uri>
-        </include>
-
-        </world>
-      </sdf>
-    ~~~
 
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
 
-        mkdir -p ~/.gazebo/models/my_gripper
-        cd ~/.gazebo/models/my_gripper
+        $ mkdir -p ~/.gazebo/models/my_gripper
 
 1. Let's layout the basic structure of our gripper. The easiest way to accomplish this is to make a `static` model and add in the links one at a time. A static model means the links will not move when the simulator starts. This will allow you to start the simulator, and visually inspect the link placement before adding joints.
 
 1. Create a `model.config` file
 
-        gedit ~/.gazebo/models/my_gripper/model.config
+        $ gedit ~/.gazebo/models/my_gripper/model.config
 
 1. Fill `model.config` with the following contents:
 
-    ~~~~
-        <?xml version="1.0"?>
-
-        <model>
-          <name>My Gripper</name>
-          <version>1.0</version>
-          <sdf version='1.4'>simple_gripper.sdf</sdf>
-
-          <author>
-            <name>My Name</name>
-            <email>me@my.email</email>
-          </author>
-
-          <description>
-            My awesome robot.
-          </description>
-        </model>
-    ~~~~
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/model.config' />
 
 1. Make a new file for the model:
 
-        gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+        $ gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
 
 1. Copy the following code in the `simple_gripper.sdf` file.
 
-    ~~~
-    <?xml version="1.0"?>
-    <sdf version="1.4">
-        <model name="simple_gripper">
-            <link name="riser">
-                <pose>-0.15 0.0 0.5 0 0 0</pose>
-                <inertial>
-                    <pose>0 0 -0.5 0 0 0</pose>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>10.0</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.2 0.2 1.0</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.2 0.2 1.0</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Purple</script>
-                    </material>
-                </visual>
-            </link>
-            <link name="palm">
-                <pose>0.0 0.0 0.05 0 0 0</pose>
-                <inertial>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>0.5</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Red</script>
-                    </material>
-                </visual>
-            </link>
-            <link name="left_finger">
-                <pose>0.1 0.2 0.05 0 0 -0.78539</pose>
-                <inertial>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>0.1</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.3 0.1</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.3 0.1</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Blue</script>
-                    </material>
-                </visual>
-            </link>
-            <link name="left_finger_tip">
-                <pose>0.336 0.3 0.05 0 0 1.5707</pose>
-                <inertial>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>0.1</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Blue</script>
-                    </material>
-                </visual>
-            </link>
-            <link name="right_finger">
-                <pose>0.1 -0.2 0.05 0 0 .78539</pose>
-                <inertial>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>0.1</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.3 0.1</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.3 0.1</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Green</script>
-                    </material>
-                </visual>
-            </link>
-            <link name="right_finger_tip">
-                <pose>0.336 -0.3 0.05 0 0 1.5707</pose>
-                <inertial>
-                    <inertia>
-                        <ixx>0.01</ixx>
-                        <ixy>0</ixy>
-                        <ixz>0</ixz>
-                        <iyy>0.01</iyy>
-                        <iyz>0</iyz>
-                        <izz>0.01</izz>
-                    </inertia>
-                    <mass>0.1</mass>
-                </inertial>
-                <collision name="collision">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="visual">
-                    <geometry>
-                        <box>
-                            <size>0.1 0.2 0.1</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <script>Gazebo/Green</script>
-                    </material>
-                </visual>
-            </link>
-            <static>true</static>
-        </model>
-    </sdf>
-    ~~~
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/simple_gripper.sdf' />
 
 1. Run the world file to visualize what we have created up to this point.
 
-        gazebo ~/simple_gripper_tutorial/gripper.world
+        $ gazebo ~/simple_gripper_tutorial/gripper.world
 
     You should see something like this:
 
@@ -286,7 +54,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Once we are happy with the layout of the links, we can add in the joints, by copying the following code into the `simple_gripper.sdf` file before the `</model>` line.
 
-        gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+        $ gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
 
     ~~~
             <joint name="palm_left_finger" type="revolute">
@@ -377,6 +145,6 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
     Tip: You may need to adjust reasonable inertia to the object.
 
-## Next
+# Next
 
 [Next: Attach Gripper to Robot](http://gazebosim.org/tutorials/?tut=attach_gripper)
