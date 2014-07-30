@@ -1,8 +1,10 @@
-# Tutorial: Using the Oculus Rift VR headset
+# Introduction
 
-Gazebo supports the [Oculus Rift VR headset](http://www.oculusvr.com/). You will be able to attach a virtual Oculus Camera to one of the visual links of your model.
+Gazebo supports the [Oculus Rift VR headset](http://www.oculusvr.com/). You
+will be able to attach a virtual Oculus Camera to one of the visual links of
+your model.
 
-## OculusVR SDK installation.
+# OculusVR SDK installation.
 
 Follow the next instructions to install the Oculus SDK version that we prepared for Gazebo.
 
@@ -19,7 +21,7 @@ sudo cp ../LibOVR/90-oculus.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 ~~~
 
-## Gazebo compilation with OculusVR support.
+# Gazebo compilation with OculusVR support.
 
 Once Oculus VR SDK is installed, you should be able to compile Gazebo from source with Oculus Rift support.
 
@@ -30,7 +32,7 @@ Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compi
 --   found OculusVR, version 0.2.5
 ~~~
 
-## Configuring and running Gazebo with Oculus Rift support.
+# Configuring and running Gazebo with Oculus Rift support.
 
 Before starting Gazebo, open up your favourite editor and edit the file `~/.gazebo/gui.ini` file with the following content:
 
