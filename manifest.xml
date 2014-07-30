@@ -276,6 +276,15 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Development process" ref='process'>
+      <markdown version="1.9+">process/tutorial.md</markdown>
+      <description>Description of the Gazebo development process.</description>
+      <skill>advanced</skill>
+      <tags>
+        <tag>contribute</tag>
+      </tags>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -396,6 +405,7 @@
       <tutorials>
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
+        <tutorial>process</tutorial>
       </tutorials>
     </category>
 
