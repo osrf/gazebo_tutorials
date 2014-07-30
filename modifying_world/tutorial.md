@@ -10,8 +10,8 @@ $ gazebo
 
 In the `World` tab, select the `scene` item. A list of scene properties will be displayed in the list box below. Click the triangle to expand the properties.
 
-<a href="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" class="image"><img alt="TutorialSceneTab.png" src="http://gazebosim.org/w/images/3/38/TutorialSceneTab.png" width="268" height="687"></a>
-<a href="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" class="image"><img alt="TutorialSceneTabExpanded.png" src="http://gazebosim.org/w/images/d/d5/TutorialSceneTabExpanded.png" width="268" height="687"></a>
+[[file:files/tutorialSceneTab.png|268px]]
+[[file:files/tutorialSceneTabExpanded.png|268px]]
 
 These properties allow you to change the ambient light. Note: The background color will not change if the Sky is enabled.
 
@@ -40,7 +40,7 @@ The constraints block contains several parameters related to solving constraints
 
 See the [sdf physics documentation](http://gazebosim.org/sdf/dev.html#physics) for a description of these parameters.
 
-<a href="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" class="image"><img alt="TutorialPhysicsTab.png" src="http://gazebosim.org/w/images/a/ad/TutorialPhysicsTab.png" width="330" height="782"></a>
+[[file:files/tutorialPhysicsTab.png|330px]]
 
 # Next
 
