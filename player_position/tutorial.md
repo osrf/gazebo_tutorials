@@ -1,6 +1,6 @@
 # Introduction
 
-[Player](http://playerstage.sourceforge.net] is a robot control framework,
+[Player](http://playerstage.sourceforge.net) is a robot control framework,
 please visit their [webiste](http://playerstage.sourceforge.net) for more
 infomartion.
 
