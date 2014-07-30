@@ -256,6 +256,16 @@
         <tag>contribute</tag>
       </tags>
     </tutorial>
+
+    <tutorial title="Contribute Code" ref='contrib_code'>
+      <markdown version="1.9+">contrib_code/tutorial.md</markdown>
+      <description>How to create new code for inclusion into Gazebo.</description>
+      <skill>advanced</skill>
+      <tags>
+        <tag>contribute</tag>
+      </tags>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -372,6 +382,7 @@
       <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and online support. These tutorials describe how to contribute your modifications back to Gazebo.</description>
       <tutorials>
         <tutorial>tutorial_contrib</tutorial>
+        <tutorial>contrib_code</tutorial>
       </tutorials>
     </category>
 
