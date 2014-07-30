@@ -13,7 +13,7 @@ catkin_create-pkg gazebo_tutorials gazebo_ros roscpp
 
 ## Create the Plugin
 
-Create a very simple plugin as described [http://gazebosim.org/wiki/Tutorials/1.9/plugins/overview here] and save the file as <tt>gazebo_tutorials/src/simple_world_plugin.cpp</tt>:
+Create a very simple plugin as described [here](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) and save the file as <tt>gazebo_tutorials/src/simple_world_plugin.cpp</tt>:
 
 ~~~
 #include <gazebo/common/Plugin.hh>

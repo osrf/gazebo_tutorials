@@ -26,7 +26,7 @@ Your previous packages for interfacing with Gazebo with the old <tt>simulator_ga
 
 ### Launch Files
 
-Some changes are required in previously created roslaunch files for starting Gazebo. The best way to update these packages is to review the [Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/wiki/Tutorials/1.9/Using_roslaunch_Files_to_Spawn_Models) tutorial. In a nutshell:
+Some changes are required in previously created roslaunch files for starting Gazebo. The best way to update these packages is to review the [Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/tutorials?tut=ros_roslaunch&cat=connect_ros) tutorial. In a nutshell:
 
 - Within roslaunch files, `pkg="gazebo"` needs to be now renamed to `pkg="gazebo_ros"`
 - `gazebo_worlds` package has been removed. Most of the world files were rarely used and were not maintained with changes in SDF XML formats. Thus, all worlds have been centralized within the Gazebo project itself, including `empty.world`.
@@ -90,7 +90,7 @@ rosrun gazebo_ros perf
 rosrun gazebo_ros debug
 </pre>
 
-These nodes are better documented in the tutorial [ Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/wiki/Tutorials/1.9/Using_roslaunch_Files_to_Spawn_Models).
+These nodes are better documented in the tutorial [ Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/tutorials?tut=ros_roslaunch&cat=connect_ros).
 
 ### More
 
@@ -100,4 +100,4 @@ These nodes are better documented in the tutorial [ Using roslaunch files to spa
 
 Tutorials from ros.org have been almost entirely removed and re-written from scratch on this website to reflect the many changes that have occured over the course of Gazebo's history. We've done our best to thoroughly document how to get your URDF-based robot running smoothly in Gazebo. If you have any question please see [answers.ros.org](http://answers.ros.org/).
 
-Continue to [Installing gazebo_ros Packages](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+Continue to [Installing gazebo_ros Packages](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros).

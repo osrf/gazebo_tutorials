@@ -12,7 +12,7 @@
 
 # Gazebo/ROS integration
 
-With the release of gazebo 2.0 version (as gazebo_current package) there are some [important aspects of gazebo integration into ROS](http://gazebosim.org/wiki/Install/Gazebo_and_ROS) that must be read before continue. 
+With the release of gazebo 2.0 version (as gazebo_current package) there are some [important aspects of gazebo integration into ROS](http://gazebosim.org/tutorials?cat=connect_ros) that must be read before continue. 
 
 # Pre-compiled binaries
 
@@ -57,7 +57,7 @@ With the release of gazebo 2.0 version (as gazebo_current package) there are som
 
         gzclient
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 # Compiling From Source (Ubuntu)
 
@@ -206,7 +206,7 @@ To install from source, you should first install the SDFormat package, then buil
         echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
         sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see (Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see (Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 ## Uninstalling Source-based Install
 

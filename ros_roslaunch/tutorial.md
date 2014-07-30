@@ -98,7 +98,7 @@ Continuing with our examination of the <tt>mud_world.launch</tt> file, we will n
 
 In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
 
-You can learn more about world files in the [Build A World](http://gazebosim.org/wiki/Tutorials/1.5/beginner/build_world) tutorial.
+You can learn more about world files in the [Build A World](http://gazebosim.org/tutorials?cat=build_world) tutorial.
 
 #### Finding World Files On Your Computer
 World files are found within the <tt>/worlds</tt> directory of your Gazebo resource path. The location of this path depends on how you installed Gazebo and the type of system your are on. To find the location of your Gazebo resources, use the following command:

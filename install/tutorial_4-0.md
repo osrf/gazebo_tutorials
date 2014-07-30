@@ -17,7 +17,7 @@
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
     
-    ***Note:*** there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
+    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
@@ -251,7 +251,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
     sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 ## Uninstalling Source-based Install
 

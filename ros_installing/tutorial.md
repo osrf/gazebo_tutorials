@@ -26,7 +26,7 @@ sudo apt-get remove ros-fuerte-simulator-gazebo ros-groovy-simulator-gazebo
 
 You can install Gazebo either from source or from pre-build Ubuntu debians.
 
-See [Install Gazebo 1.9](http://gazebosim.org/wiki/1.9/install). If installing from source, be sure to build the '''gazebo_1.9''' branch.
+See [Install Gazebo 1.9](http://gazebosim.org/tutorials?tut=install&ver=1.9&cat=get_started). If installing from source, be sure to build the '''gazebo_1.9''' branch.
 
 ## Test that stand-alone Gazebo works
 

@@ -1,3 +1,4 @@
+<a id="Ubuntu"></a>
 #Download and Install Gazebo
 
 ### Ubuntu Debians
@@ -6,7 +7,7 @@
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-***Note: ***there is a list of [available mirrors](http://gazebosim.org/wiki/GazeboMirrors) for this repository which could improve the download speed.
+***Note: ***there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
   **Ubuntu Linux 12.04 (precise)**
 
@@ -48,7 +49,7 @@
 
         gzclient
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 # Compiling From Source (Ubuntu)
 
@@ -87,7 +88,7 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
 
-   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
+   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         
@@ -97,7 +98,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         # for bullet 2.82:
         sudo apt-get install libbullet2.82-dev
 
-   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
+   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
@@ -227,7 +228,7 @@ To install from source, you should first install the SDFormat package, then buil
         echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
         sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 ## Uninstalling Source-based Install ##
 

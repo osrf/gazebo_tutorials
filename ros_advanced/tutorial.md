@@ -2,7 +2,7 @@
 
 ## Dynamic Reconfigure
 
-Some of the physics properties can be adjusted within Gazebo as we described in the [http://gazebosim.org/wiki/Tutorials/1.9/make_world ''modifying a world tutorial'']. In addition, we can modify this properties using ROS's dynamic reconfigure mechanism.
+Some of the physics properties can be adjusted within Gazebo as we described in the [modifying a world tutorial](http://gazebosim.org/tutorials?tut=modifying_world&cat=build_world). In addition, we can modify this properties using ROS's dynamic reconfigure mechanism.
 
 As an example, we'll invert the gravity in the simulation. Make sure you have the following installed for groovy:
 
