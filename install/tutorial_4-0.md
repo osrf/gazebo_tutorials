@@ -1,5 +1,6 @@
 #Download and Install Gazebo
 
+<a id="Ubuntu"></a>
 ## Ubuntu
 
 ### One-line install
@@ -107,14 +108,14 @@ Gazebo supports multiple physics engines in addition to the modified version of 
 
   ***Bullet Support***
   
-  [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
+  [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update        
         sudo apt-get install libbullet2.82-dev
 
    ***Simbody Support***
    
-   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/wiki/1.9/install#Ubuntu_Debians) to configure your computer to accept software from packages.osrfoundation.org
+   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
@@ -283,8 +284,8 @@ The gazebo formula has two optional dependencies: the [Bullet](https://code.goog
         brew install gazebo4 --with-bullet --with-simbody
 
 ## Versions ##
-The formula currently installs version 3.0 of gazebo.
-Version 1.9 can be installed using the gazebo formula, or gazebo 2.2 using gazebo2.
+The formula currently installs version 4.0 of gazebo.
+Version 1.9 can be installed using the gazebo formula, gazebo 2.2 using gazebo2, and gazebo 3 using gazebo3.
 To install the latest version of gazebo's default branch:
 
         brew install gazebo4 --HEAD
