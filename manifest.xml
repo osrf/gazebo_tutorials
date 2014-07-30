@@ -144,6 +144,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Gazebo Architecture" ref="architecture">
+      <markdown version="1.9+">architecture/tutorial.md</markdown>
+      <description>Overview of Gazebo's code structure.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -279,6 +285,7 @@
         <tutorial>install</tutorial>
         <tutorial>quick_start</tutorial>
         <tutorial>components</tutorial>
+        <tutorial>architecture</tutorial>
       </tutorials>
     </category>
 
