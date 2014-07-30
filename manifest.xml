@@ -285,6 +285,15 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Capture screenshot" ref='capture_screenshot'>
+      <markdown version="1.9+">screenshot/tutorial.md</markdown>
+      <description>Shows how to capture a screen shot of Gazebo's render window.</description>
+      <skill>beginner</skill>
+      <tags>
+        <tag>gui</tag>
+      </tags>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -295,6 +304,7 @@
         <tutorial>quick_start</tutorial>
         <tutorial>components</tutorial>
         <tutorial>architecture</tutorial>
+        <tutorial>capture_screenshot</tutorial>
       </tutorials>
     </category>
 
