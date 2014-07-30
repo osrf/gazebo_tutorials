@@ -125,6 +125,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Custom messages" ref='custom_messages'>
+      <markdown version="1.9+">custom_messages/tutorial.md</markdown>
+      <description>How to create custom messages</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+
     <tutorial title="Friction" ref='friction'>
       <markdown version="1.9+">friction/tutorial.md</markdown>
       <description>How to setup friction properties.</description>
@@ -392,6 +399,7 @@
       <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
       <tutorials>
         <tutorial>topics_subscribed</tutorial>
+        <tutorial>custom_messages</tutorial>
       </tutorials>
     </category>
 
