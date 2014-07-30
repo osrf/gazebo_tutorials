@@ -1,52 +1,24 @@
-# System Plugin Tutorial
+# Overview
 
-This tutorial will create a source file that is a system plugin designed to save images into the director `/tmp/gazebo_frames`. 
+This tutorial will create a source file that is a system plugin designed to save images into the director `/tmp/gazebo_frames`.
+
+# Source code
 
 We'll start with the source file. Create a file called `system_gui.cc` with the following contents:
 
 ~~~
-#include "gazebo/gui/GuiIface.hh"
-#include "gazebo/rendering/rendering.hh"
-#include "gazebo/gazebo.hh"
-
-namespace gazebo
-{
-  class SystemGUI : public SystemPlugin
-  {
-    public: virtual ~SystemGUI()
-    {
-      if (this->userCam)
-        this->userCam->EnableSaveFrame(false);
-    }
-
-    public: virtual void Load(int /*_argc*/, char ** /*_argv*/)
-    {
-    }
-
-    private: virtual void Init()
-    {
-      // Get a pointer to the active user camera
-      this->userCam = gui::get_active_camera();
-
-      // Enable saving frames
-      this->userCam->EnableSaveFrame(true);
-
-      // Specify the path to save frames into
-      this->userCam->SetSaveFramePathname("/tmp/gazebo_frames");
-    }
-
-    private: rendering::UserCameraPtr userCam;
-    private: std::vector<event::ConnectionPtr> connections;
-  };
-
-  // Register this plugin with the simulator
-  GZ_REGISTER_SYSTEM_PLUGIN(SystemGUI)
-}
+$ mkdir ~/system_plugin
+$ cd ~/system_plugin
+$ gedit system_gui.cc
 ~~~
 
-Both the `Load` and `Init` functions must not block. The `Load` function is called at startup, before Gazebo is loaded. The `Init` function is called after Gazebo has been loaded.
+Copy the following into `system_gui.cc`
 
-In our `Init` function, we get a pointer to the user camera (the camera used in the graphical interface) and enable saving of frames.
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/plugins/system_gui_plugin/system_gui.cc' />
+
+Both the `Load` and `Init` functions must not block. The `Load` and `Init` functions are called at startup, before Gazebo is loaded.
+
+On the first `Update`, we get a pointer to the user camera (the camera used in the graphical interface) and enable saving of frames.
 
 1.  Get the user camera
 
@@ -60,28 +32,28 @@ In our `Init` function, we get a pointer to the user camera (the camera used in 
 
 ## Compiling Camera Plugin
 
-Create a CMakeLists.txt file with the following:
+Create a CMakeLists.txt 
+
+~~~
+$ gedit CMakeLists.txt 
+~~~
+
+and copy the following into the file:
 
 ~~~
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-              
+
 include (FindPkgConfig)
 if (PKG_CONFIG_FOUND)
   pkg_check_modules(GAZEBO gazebo)
   pkg_check_modules(OGRE OGRE)
-endif()   
-include_directories(${GAZEBO_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS})
+  pkg_check_modules(OGRE-Terrain OGRE-Terrain)
+endif()
+include_directories(${GAZEBO_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS} ${OGRE-Terrain_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS} ${OGRE_LIBRARY_DIRS})
-  
+
 add_library(system_gui SHARED system_gui.cc)
 target_link_libraries(system_gui ${GAZEBO_libraries} ${OGRE_LIBRARIES})
-~~~
-
-Note for Gazebo 1.10 and later, you will need to depend on `OGRE-Terrain` as well by adding these lines to you `CMakeLists.txt`:
-
-~~~
-pkg_check_modules(OGRE-Terrain OGRE-Terrain)
-include_directories(${OGRE-Terrain_INCLUDE_DIRS})
 ~~~
 
 Make a build directory, run cmake, and compile. You should end up with a libsystem_gui.so library.
@@ -89,20 +61,19 @@ Make a build directory, run cmake, and compile. You should end up with a libsyst
 Create a `build` directory
 
 ~~~
-mkdir build; cd build
+$ mkdir build; cd build
 ~~~
 
 Compile the plugin
 
 ~~~
-cmake ../; make
+$ cmake ../; make
 ~~~
 
-Make sure the location of the plugin is in your $GAZEBO_PLUGIN_PATH
+Make sure the location of the plugin is in your `$GAZEBO_PLUGIN_PATH`
 
 ~~~
-cd build
-export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
+$ export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
 ~~~
 
 ## Running Plugin
@@ -110,13 +81,13 @@ export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
 First start gzserver in the background:
 
 ~~~
-gzserver &
+$ gzserver &
 ~~~
 
 Run the client with plugin:
 
 ~~~
-gzclient -g libsystem_gui.so
+$ gzclient -g libsystem_gui.so
 ~~~
 
 Inside `/tmp/gazebo_frames` you should see many saved images from the current plugin.
