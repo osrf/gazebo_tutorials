@@ -9,6 +9,7 @@
       <markdown version="1.9">install/tutorial_1-9.md</markdown>
       <markdown version="2.2">install/tutorial_2-2.md</markdown>
       <markdown version="3.0">install/tutorial_3-0.md</markdown>
+      <markdown version="4.0">install/tutorial_4-0.md</markdown>
       <description>Installation instruction.</description>
       <tags>
         <tag>install</tag>
@@ -118,7 +119,8 @@
     </tutorial>
 
     <tutorial title="Topics subscription" ref='topics_subscribed'>
-      <markdown version="1.9+">topics_subscribe/tutorial.md</markdown>
+      <markdown version="1.9">topics_subscribe/tutorial.md</markdown>
+      <markdown version="2.2+">topics_subscribe/tutorial_2-2.md</markdown>
       <description>How to subscribe to gazebo topics.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -130,7 +132,8 @@
     </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
-      <markdown version="1.9+">log_filtering/tutorial.md</markdown>
+      <markdown version="1.9">log_filtering/tutorial.md</markdown>
+      <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
       <description>How to filter a recorded state log file.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -145,7 +148,8 @@
     <!-- Intermediate tutorials -->
 
     <tutorial title="Contact Sensor" ref='contact_sensor'>
-      <markdown version="1.9+">contact_sensor/tutorial.md</markdown>
+      <markdown version="1.9">contact_sensor/tutorial.md</markdown>
+      <markdown version="4.0+">contact_sensor/tutorial_4-0.md</markdown>
       <description>How to create and get data from contact sensors.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -357,6 +361,8 @@
     </category>
 
     <category title="Transport Library" skill="advanced" ref="transport">
+      <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
+      <markdown version="1.9-2.1">plugins_world_properties/tutorial.md</markdown>
       <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
       <tutorials>
         <tutorial>topics_subscribed</tutorial>

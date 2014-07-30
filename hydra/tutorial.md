@@ -1,23 +1,26 @@
-# Tutorial: Using the Razer Hydra
+# Introduction
 
-Gazebo supports the [Razer Hydra controller](http://en.wikipedia.org/wiki/Razer_Hydra). You will be able to use this motion and orientation detection controller to interact with your models in Gazebo.
+Gazebo supports the [Razer Hydra
+controller](http://en.wikipedia.org/wiki/Razer_Hydra). You will be able to
+use this motion and orientation detection controller to interact with your
+models in Gazebo.
 
-## Razer Hydra configuration.
+# Razer Hydra configuration.
 
-Create a file called `90-hydra.rules` with the following content:
+Create a file called `90-hydra.rules`:
 
 ~~~
-ATTRS{idProduct}=="0300",ATTRS{idVendor}=="1532",ATTR{bInterfaceNumber}=="00",TAG="hydra-tracker"
-SUBSYSTEM=="hidraw",TAGS=="hydra-tracker", MODE="0666", SYMLINK+="hydra"
+echo -e "ATTRS{idProduct}=='0300',ATTRS{idVendor}=='1532',ATTR{bInterfaceNumber}=='00',TAG='hydra-tracker'\nSUBSYSTEM=='hidraw',TAGS=='hydra-tracker', MODE='0666', SYMLINK+='hydra'" >> 90-hydra.rules
 ~~~
 
 We need to be able to access to the controller without root access.
+
 ~~~
 sudo cp 90-hydra.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 ~~~
 
-## Gazebo compilation with Razer Hydra support.
+# Gazebo compilation with Razer Hydra support.
 
 We need to install the optional `libusb` dependency.
 
@@ -33,7 +36,7 @@ Follow [this](http://gazebosim.org/tutorials/?tut=install) instructions to compi
 -- Looking for libusb-1.0 - found. Razer Hydra support enabled.
 ~~~
 
-## Using Hydra within Gazebo.
+# Using Hydra within Gazebo.
 
 Using Hydra in Gazebo requires two steps. The first step is to load the Hydra plugin in your world file.
 
@@ -48,6 +51,7 @@ The second step is to write a plugin that subscribes to the hydra topic and make
 tutorial, we are going to move a sphere by using the right joystick of Hydra. A `HydraDemoPlugin` is available in Gazebo in the `plugins/` directory.
 
 Plugin code:
+
 ~~~
 #include <boost/bind.hpp>
 #include <gazebo/gazebo.hh>

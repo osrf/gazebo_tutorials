@@ -1,4 +1,4 @@
-#Tutorial: Add a Sensor to a Robot#
+# Overview
 
 **Prerequisites:** [Attach a Mesh as Visual](http://gazebosim.org/tutorials/?tut=attach_meshes)
 
@@ -58,7 +58,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
         ls ~/.gazebo/models/camera/
 
 
-    For reference, the Gazebo SDF 1.4 documentation can be found [here](http://gazebosim.org/sdf/1.4.html), click on "all" to expand all items.
+    For reference, the SDF documentation can be found [here](http://gazebosim.org/sdf/).
 
 ## Next
 

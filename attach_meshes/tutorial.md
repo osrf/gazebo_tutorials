@@ -1,4 +1,4 @@
-#Tutorial: Attach Meshes#
+# Overview
 
 **Prerequisites:** [Make a mobile robot](http://gazebosim.org/tutorials/?tut=build_robot)
 
@@ -105,7 +105,7 @@ The most common use case for a mesh is to create a realistic looking visual.
 
 ##Further Reading##
 
-When creating a new robot, you'll likely want to use your own mesh file. The [[Tutorials/1.9/beginner/mesh import | import a mesh]] tutorial describes how to go about importing a mesh into a format suitable for Gazebo.
+When creating a new robot, you'll likely want to use your own mesh file. The [import a mesh tutorial](http://gazebosim.org/tutorials/?tut=import_mesh) describes how to go about importing a mesh into a format suitable for Gazebo.
 
 ## Try for yourself ##
 

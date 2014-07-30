@@ -1,10 +1,14 @@
-#Tutorial: Setup friction properties#
+# Introduction
 
-Each physics engine in Gazebo (for example ODE, Bullet, Simbody, DART) has different friction models. Please refer to the [SDF parameters](http://gazebosim.org/sdf/1.4.html#friction159) for a complete listing of available friction parameters.
+Each physics engine in Gazebo (for example ODE, Bullet, Simbody, DART) has
+different friction models. Please refer to the [SDF
+parameters](http://gazebosim.org/sdf/1.4.html#friction159) for a complete
+listing of available friction parameters.
 
-The rest of this tutorial will assume you are using ODE, the default physics engine.
+The rest of this tutorial will assume you are using ODE, the default physics
+engine.
 
-## How friction works
+# How friction works
 
 When two object collide, such as a ball rolling on a plane, a friction term is generated. In ODE this is composed of two parts, '''mu''' and '''mu2''', where:
 
