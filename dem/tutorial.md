@@ -20,12 +20,6 @@ In order to work with DEM files you should install GDAL libraries.
 $ sudo apt-get install gdal-bin libgdal-dev libgdal1h python-gdal
 ~~~
 
-**On Ubuntu Quantal, Raring, Saucy:**
-
-~~~
-$ sudo apt-get install gdal-bin libgdal-dev libgdal1 python-gdal
-~~~
-
 **On Ubuntu Precise:**
 
 ~~~

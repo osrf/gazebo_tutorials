@@ -70,7 +70,7 @@ Compile the plugin
 $ cmake ../; make
 ~~~
 
-Make sure the location of the plugin is in your $GAZEBO_PLUGIN_PATH
+Make sure the location of the plugin is in your `$GAZEBO_PLUGIN_PATH`
 
 ~~~
 $ export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
