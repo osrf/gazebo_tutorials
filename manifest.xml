@@ -301,6 +301,12 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Player Position, Laser, and Camera" ref='player_position'>
+      <markdown version="1.9+">player_position/tutorial.md</markdown>
+      <description>Covers connecting the position2d, laser, and camera Player interfaces to Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -375,6 +381,13 @@
       <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
       <tutorials>
         <tutorial>hydra</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Connect to Player" skill="advanced" ref="connect_player">
+      <description>Player is a robot control framework. These tutorials describe how to interface Gazebo and Player.</description>
+      <tutorials>
+        <tutorial>player_position</tutorial>
       </tutorials>
     </category>
 
