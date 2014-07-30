@@ -4,7 +4,7 @@ A screenshot capture feature has been added to the gzclient graphical user inter
 
 Find and click on the camera icon on the toolbar above the render window.
 
-[[file:files/screenshot_icon_gzclient.png]]
+[[file:files/screenshot_icon_gzclient.png|640px]]
 
 # Screenshot save location
 
