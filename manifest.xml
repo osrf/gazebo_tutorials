@@ -157,6 +157,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model population" ref="model_population">
+      <markdown version="5+">model_population/tutorial.md</markdown>
+      <description>Automatic model population</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 

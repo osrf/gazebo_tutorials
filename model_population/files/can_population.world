@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Testing the automatic population of objects -->
+    <population name="can_population1">
+      <model name="can1">
+        <include>
+          <static>true</static>
+          <uri>model://coke_can</uri>
+        </include>
+      </model>
+      <region>
+        <box>
+          <min>-1 -1 0</min>
+          <max>1 1 0.001</max>
+        </box>
+      </region>
+      <model_count>10</model_count>
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+
+  </world>
+</sdf>
