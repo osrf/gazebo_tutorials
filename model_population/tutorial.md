@@ -76,3 +76,5 @@ For a more advanced example you can check the [population.world](http://bitbucke
 And of course, you can test it by typing:
 
         gazebo population.world
+
+<img src="https://bitbucket.org/repo/jgXqbo/images/98514253-gazebo_population.png" width="640px"/>
