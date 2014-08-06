@@ -1,4 +1,4 @@
-#Tutorial: Add or modify a tutorial# 
+# Introduction
 
 This tutorial describes how to modify an existing tutorial or add a new tutorial.
 
@@ -64,3 +64,16 @@ The steps for creating a new tutorial are similar to those for modifying a tutor
 
 1. Once accepted, your pull-request will be merged into the repository. Your changes should appear on the main gazebo website in a few minutes.
 
+### View a tutorial branch
+
+During development of new tutorials, or when modifying existing tutorials,
+it is often desirable to visualize the tutorial before submitting
+a pull-request. Tutorials from a specific branch of the
+`gazebo_tutorials` repository may be visualized on
+`http://gazebosim.org/tutorials` using the `branch=<branch_name>`
+URL parameter. 
+
+For example, let us suppose you have made modification to the install
+tutorial in a branch called `my_install`. Once this branch has been pushed
+to bitbucket, you may visualize your work with
+`http://gazebosim.org/tutorials?tut=install&branch=my_install`.
