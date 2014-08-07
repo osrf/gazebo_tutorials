@@ -97,7 +97,7 @@ Install prerequisites.  A clean Ubuntu system will need:
         sudo apt-add-repository ppa:fcl-debs
         sudo apt-add-repository ppa:dartsim
         sudo apt-get update
-        sudo apt-get install libdart-core4.1-dev
+        sudo apt-get install libdart-core4-dev
 
 
 ### Precise 
@@ -128,7 +128,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         sudo apt-add-repository ppa:fcl-debs
         sudo apt-add-repository ppa:dartsim
         sudo apt-get update
-        sudo apt-get install libdart-core4.1-dev
+        sudo apt-get install libdart-core4-dev
 
 ## Optional Dependencies ##
 
