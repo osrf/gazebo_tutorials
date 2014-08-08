@@ -115,7 +115,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
     You should see a white box floating .1 meters above the ground plane.
 
-    <img src="http://gazebosim.org/w/images/8/8c/My_robot_box.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/My_robot_box.png" width="640px"/>
 
 1.  Now we can add a caster to the robot. The caster is a sphere with no friction. This kind of caster is better than adding a wheel with a joint since it places fewer constraints on the physics engine.
 
@@ -182,7 +182,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
     Try out your model to make sure the caster appears at the end of the robot.  Spawn it in gazebo to see (you don't need to restart Gazebo; it will reload your modified model from disk each time you insert it):
 
-    <img src="http://gazebosim.org/w/images/f/f1/My_robot_caster.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/My_robot_caster.png" width="640px"/>
 
 1.  Now let's add a left wheel. Modify the `~/.gazebo/models/my_robot/model.sdf` file to be the following:
 
@@ -267,7 +267,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
     Run Gazebo, insert your robot model and make sure the wheel has appeared and is in the correct location.
 
-    <img src="http://gazebosim.org/w/images/6/67/My_robot_caster_left_wheel.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/My_robot_caster_left_wheel.png" width="640px"/>
 
 
 1.  We can make a right wheel by copying the left wheel, and adjusting the wheel link's pose:
@@ -372,7 +372,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
     At this point the robot should have a chassis with a caster and two wheels.
 
-    <img src="http://gazebosim.org/w/images/1/16/My_robot_caster_wheels.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/My_robot_caster_wheels.png" width="640px"/>
 
 1. Make the model dynamic by setting `<static>` to false, and add two hinge joints for the left and right wheels.
 
@@ -504,7 +504,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
 1. Under the `Force` tab, increase the force applied to each joint to about 0.1N-m. The robot should move around:
 
-    <img src="http://gazebosim.org/w/images/4/48/Simple-robot-driving.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/Simple-robot-driving.png" width="640px"/>
 
 1. Congrats, you now have a basic mobile robot.
 
