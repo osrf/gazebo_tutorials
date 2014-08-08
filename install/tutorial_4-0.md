@@ -85,12 +85,12 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 ## Optional Physics Engines
 
-### Trusty 
+### Trusty
 
 **Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
    ***DART Support***
-   
+ 
    Support for [DART](http://dartsim.github.io/) version 4.1 is integrated into Gazebo 4.0. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
@@ -100,14 +100,14 @@ Install prerequisites.  A clean Ubuntu system will need:
         sudo apt-get install libdart-core4.1-dev
 
 
-### Precise 
+### Precise
 
-**Release Note:** in order to use a physics engine different than ODE, a full compilation of gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE physics engine.
+**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
 Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
 
   ***Bullet Support***
-  
+
   [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update        
