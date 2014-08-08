@@ -51,7 +51,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
 
 1.  Now start gazebo, and add the robot to the simulation using the Insert tab on the GUI. You should see the robot with a laser attached.
 
-    <img src="http://gazebosim.org/w/images/f/fd/Add_laser_pioneer.png" width="640px"/>
+    <img src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/add_laser/files/Add_laser_pioneer.png" width="640px"/>
 
 1.  (Optional)  Try adding a camera to the robot. The camera's model URI is `model://camera`, it should have been locally caches for you in:
 
