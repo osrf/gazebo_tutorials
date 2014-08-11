@@ -45,4 +45,4 @@ You can use these [duck.dae](http://www.c3dl.org/wp-content/2.0Release/Resources
 </visual>
 ~~~
 
-![duck.dae mesh in Gazebo](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/import_mesh/files/TutorialMeshDuck.png)
+[[file:files/TutorialMeshDuck.png|640px]]
