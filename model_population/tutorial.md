@@ -42,7 +42,7 @@ Let's go further and understand what are the different elements of the `can_popu
 
 In this snippet we can see how we can specify a population element by using the `<population> tag. Every population should have a unique name, and this is specified by the `name` attribute. Within the `population` tag, you can see how to select a model by using the `<model>` tag. Each element of the population will be inserted into the simulation with a unique name that will be created by appending to the model name the suffix `_clone_i`, where `i` is the ith element of the population. You can see the list of models spawned in the Gazebo scene here:
 
-[[file:files/model_list.png:640px]]
+[[file:files/model_list.png|640px]]
 
 The most common type of population to create consists of inanimate objects
 such as trees, rocks, and buildings. We recommend to use the `<population` tag for static models, and exclude mobile entities, such as robots, which often require more precise placement and are fewer in number.
@@ -77,4 +77,4 @@ And of course, you can test it by typing:
 
         gazebo population.world
 
-[[file:files/gazebo_population.png:640px]]
+[[file:files/gazebo_population.png|640px]]
