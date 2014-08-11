@@ -15,7 +15,7 @@ Adding a model population, is a matter of specifying the following parameters:
 
 1. Distribution used to locate the objects within the region. E.g.: random, grid.
 
-For reference, check the [SDF API](http://gazebosim.org/sdf/dev.html) for a complete specification of the `<population` tag and its parameters.
+For reference, check the [SDF API](http://gazebosim.org/sdf.html) for a complete specification of the `<population` tag and its parameters.
 
 # Creating an object population.
 
@@ -49,7 +49,7 @@ such as trees, rocks, and buildings. We recommend to use the `<population` tag f
 
 <include from='/<region>/' to='</region>' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
-In this section of the population tag you can see how the `<region>` element is used. This element specifies the region in which the objects will be placed. In this case, all the objects are spawned within a 3D bounding box where two vertices `<min>` and `<max>` are defined in world coordinates. As an alternative to `<box>`, a `<cylinder>` region is also allowed by specifying the center of the base, its radius, and height. Check out the [SDF specification]((http://gazebosim.org/sdf/dev.html)) for a full description of the `<cylinder>` parameters.
+In this section of the population tag you can see how the `<region>` element is used. This element specifies the region in which the objects will be placed. In this case, all the objects are spawned within a 3D bounding box where two vertices `<min>` and `<max>` are defined in world coordinates. As an alternative to `<box>`, a `<cylinder>` region is also allowed by specifying the center of the base, its radius, and height. Check out the [SDF specification]((http://gazebosim.org/sdf.html)) for a full description of the `<cylinder>` parameters.
 
 <include from='/<model_count>/' to='</model_count>' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
