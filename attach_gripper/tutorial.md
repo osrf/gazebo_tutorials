@@ -26,7 +26,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/attach_gripper/files/model.sdf' />
 
-    [[file:files/files/Mobile_base_large.png|640px]]
+    [[file:files/Mobile_base_large.png|640px]]
 
 ## Assembling a Composite Robot
 
