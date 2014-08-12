@@ -54,7 +54,7 @@ The most common use case for a mesh is to create a realistic looking visual.
 
 1.  In Gazebo, drag the `My Robot` model in the world. The visual for the chassis will look like a pioneer2dx.
 
-    <img src="http://gazebosim.org/w/images/e/ec/Mobile_robot_chassis_1.png" width="640px"/>
+    [[file:files/Mobile_robot_chassis_1.png|640px]]
 
 1.  The chassis is obviously too big for our robot, so we need to scale the visual.
 
@@ -77,7 +77,7 @@ The most common use case for a mesh is to create a realistic looking visual.
         </visual>
     %%%
 
-    <img src="http://gazebosim.org/w/images/a/a5/Mobile_robot_chassis_2.png" width="640px"/>
+    [[file:files/Mobile_robot_chassis_2.png|640px]]
 
 1.  The visual is also a little too low (along the z-axis). Let's raise it up a little by specifying a pose for the visual:
 
@@ -99,7 +99,7 @@ The most common use case for a mesh is to create a realistic looking visual.
         </visual>
     %%%
 
-    <img src="http://gazebosim.org/w/images/2/27/Mobile_robot_chassis_3.png" width="640px"/>
+    [[file:files/Mobile_robot_chassis_3.png|640px]]
 
     Note that at this point we have simply modified the `<visual>` elements of the robot, so the robot will look like a scaled down version of the Pioneer 2DX model through the GUI and to GPU based sensors such as camera, depth camera and GPU Lasers.  Since we did not modify the `<collision>` elements in this model, the box geometry will still be used by the physics engine for collision dynamics and by CPU based ray sensors.
 
