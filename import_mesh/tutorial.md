@@ -22,7 +22,7 @@ Once the mesh has been properly prepared, export it as a Collada file. This form
 
 # Test the Mesh ###
 
-The easiest way to test a mesh is to create a simple world file [my_mesh.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/import_mesh/files/my_mesh.world) that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
+The easiest way to test a mesh is to create a simple world file [my_mesh.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/import_mesh/files/my_mesh.world) that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/import_mesh/files/my_mesh.world' />
 
@@ -45,4 +45,4 @@ You can use these [duck.dae](http://www.c3dl.org/wp-content/2.0Release/Resources
 </visual>
 ~~~
 
-![duck.dae mesh in Gazebo](http://gazebosim.org/w/images/c/cb/TutorialMeshDuck.png)
+[[file:files/TutorialMeshDuck.png|640px]]
