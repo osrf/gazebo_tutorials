@@ -159,7 +159,7 @@
 
     <tutorial title="Model population" ref="model_population">
       <markdown version="5+">model_population/tutorial.md</markdown>
-      <description>Automatic model population</description>
+      <description>Population a world with a set of models according to a parameterized distribution.</description>
       <skill>beginner</skill>
     </tutorial>
 
