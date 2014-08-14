@@ -1,4 +1,4 @@
-# DRC Simulator Installation
+# Overview
 
 This page explains how to install the DRC Simulator.
 
@@ -99,7 +99,7 @@ Also, at the time of writing, the simulation will start with the robot "pinned" 
 
 Please help us by contributing patches and configuration to build packages on your favorite platform!
 
-Compiling from source
+## Compiling from source
 -
 ### Prerequisite: Install Gazebo
 There are several ways of getting a working gazebo installation to use with drcsim from source installation:
@@ -524,3 +524,7 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 ### Other platforms (TODO)
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
+
+## Next
+
+[Next: Visualize and log sensor data](http://gazebosim.org/tutorials/?tut=drcsim_visualization)
