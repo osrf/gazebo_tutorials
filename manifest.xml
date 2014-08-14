@@ -307,6 +307,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -437,6 +443,13 @@
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
         <tutorial>process</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>drcsim_install</tutorial>
       </tutorials>
     </category>
 
