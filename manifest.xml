@@ -307,10 +307,9 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Modify a simulated world" ref='drcsim_modify_world'>
-      <markdown version="3.1+">drcsim_modify_world/tutorial.md</markdown>
-      <markdown version="1.3-3.0">drcsim_modify_world/tutorial.md</markdown>
-      <description>How to modify the simulated Atlas's environment, such as adding objects to the world.</description>
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -451,6 +450,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
       </tutorials>
     </category>
 
