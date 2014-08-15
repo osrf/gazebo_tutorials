@@ -307,6 +307,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+      <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
+      <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -437,6 +443,14 @@
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
         <tutorial>process</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_vehicle_atlas</tutorial>
       </tutorials>
     </category>
 
