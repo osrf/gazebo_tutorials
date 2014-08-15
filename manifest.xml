@@ -307,9 +307,9 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
-      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
-      <description>How to visualize and log sensor data.</description>
+    <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
+      <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
+      <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
       <skill>intermediate</skill>
     </tutorial>
 
