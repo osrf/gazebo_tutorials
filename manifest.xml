@@ -450,6 +450,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_visualization</tutorial>
       </tutorials>
     </category>
 
