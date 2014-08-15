@@ -307,6 +307,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Atlas MultiSense SL head" ref='drcsim_multisense'>
+      <markdown version="1.9">drcsim_multisense/tutorial.md</markdown>
+      <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -437,6 +443,14 @@
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
         <tutorial>process</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_multisense</tutorial>
       </tutorials>
     </category>
 
