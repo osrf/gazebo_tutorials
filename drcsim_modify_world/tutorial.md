@@ -33,6 +33,9 @@ The DRC Simulator includes a simulation environment that puts the Atlas Robot in
 
     roslaunch drcsim_gazebo atlas.launch
 
+**For drcsim < 3.1.0**: The package and launch file had a different name:
+
+    roslaunch atlas_utils atlas.launch
 
 You'll see the robot on its own, with just ground and sky:
 

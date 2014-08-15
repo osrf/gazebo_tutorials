@@ -307,9 +307,9 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
-      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
-      <description>How to visualize and log sensor data.</description>
+    <tutorial title="Modify environment" ref='drcsim_modify_world'>
+      <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
+      <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
       <skill>intermediate</skill>
     </tutorial>
 
