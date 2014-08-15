@@ -307,6 +307,13 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Modify a simulated world" ref='drcsim_modify_world'>
+      <markdown version="3.1+">drcsim_modify_world/tutorial.md</markdown>
+      <markdown version="1.3-3.0">drcsim_modify_world/tutorial.md</markdown>
+      <description>How to modify the simulated Atlas's environment, such as adding objects to the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -437,6 +444,13 @@
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
         <tutorial>process</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>drcsim_install</tutorial>
       </tutorials>
     </category>
 
