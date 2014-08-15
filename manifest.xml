@@ -307,9 +307,9 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Fake walking teleoperation" ref='drcsim_fakewalking'>
-      <markdown version="2.0+">drcsim_fakewalking/tutorial.md</markdown>
-      <description>How to drive Atlas around as if it were a wheeled robot.</description>
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -450,6 +450,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_fakewalking</tutorial>
       </tutorials>
     </category>
 
