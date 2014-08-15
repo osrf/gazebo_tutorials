@@ -2,17 +2,21 @@
 
 This tutorial will demonstrate how to automatically place the Atlas robot in the driver's seat of the DRC Vehicle using ROS topics provided by the VRC Plugin. Note that this is a development aid provided for testing and will not be available during the competition. In the course of this tutorial, we're going to automatically cause Atlas to enter and exit the DRC Vehicle, which can be used to test perception while driving and manipulation of the vehicle controls.
 
-## Install DRC Simulator ##
+## Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-3.1.
+[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install) for installing the DRC simulator and associated utilities.
 
-## Launch the DRC Simulator ##
+## Launch the DRC Simulator
 
 Launch the simulator using the `atlas_drc_vehicle_fire_hose.launch`
 
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas_drc_vehicle_fire_hose.launch
 
-## Place the Atlas robot near the vehicle ##
+**For drcsim < 3.1.0**: The package and launch file had a different name:
+
+    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_drc_vehicle_fire_hose.launch
+
+## Place the Atlas robot near the vehicle
 
 The VRC plugin exposes ROS topics for entering and exiting the vehicle. Currently, these topics can be invoked from anywhere in the world, but that is subject to change in future versions of drcsim. These topics are named:
 
@@ -30,7 +34,7 @@ To place the robot on the passenger's side of the DRC Vehicle facing the vehicle
 
 Be careful to wait several seconds between the publishing of the robot_exit_car messages, or the simulated joints used to teleport the robot may not have time to deactivate, causing strange behavior.
 
-## Place the Atlas robot in the vehicle ##
+## Place the Atlas robot in the vehicle
 
 Place Atlas in the driver's seat with the robot_enter_car topic and the identity pose:
 
@@ -42,7 +46,7 @@ Place Atlas in the passenger's seat by specifying a pose offset:
 
 Please note that the VRC plugin uses a fixed joint to place Atlas in the car. If you Reset Model Poses or use the Move or Translate tools on either model, while the joint is in place, the joint constraint will be violated and cause strange things to happen. You will likely have to restart the simulation.
 
-## Test perception with Atlas in the vehicle ##
+## Test perception with Atlas in the vehicle
 
 With Atlas placed in the vehicle, you can use the methods described in [another tutorial](http://gazebosim.org/tutorials/?tut=drcsim_vehicle) to drive the vehicle using open-loop commands. This will allow testing of Atlas's perception systems while driving in the vehicle.
 
@@ -60,10 +64,10 @@ Press the gas pedal:
 
 Now the DRC Vehicle should be driving with Atlas in the passenger's seat. **There is currently a bug in the vehicle simulation that causes the vehicle to stop periodically when making driving in circles, but a fix is being investigated (see [gazebo issue 103](https://bitbucket.org/osrf/drcsim/issue/103))**. As described a [tutorial on using rviz](http://gazebosim.org/tutorials/?tut=drcsim_visualization) and a [tutorial on the MultiSense head](http://gazebosim.org/tutorials/?tut=drcsim_multisense), you can use rviz to view the camera or laser scan data while driving.
 
-## Use Atlas robot's foot to press gas pedal ##
+## Use Atlas robot's foot to press gas pedal
 
 This section is under construction.
 
-## Next ##
+## Next
 
 [Next:  Sending Joint Position Commands to Atlas Joint Controller over ROS Topic](http://gazebosim.org/tutorials/?tut=drcsim_commands_ros)
