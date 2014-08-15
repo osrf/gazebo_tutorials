@@ -307,13 +307,6 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="DRC vehicle tele-operation with Atlas" ref='drcsim_vehicle_atlas'>
-      <markdown version="3.1+">drcsim_vehicle_atlas/tutorial.md</markdown>
-      <markdown version="1.3">drcsim_vehicle_atlas/tutorial_1.3.md</markdown>
-      <description>How to automatically place the Atlas robot in the driver's seat of the DRC vehicle using ROS topics provided by the VRC plugin.</description>
-      <skill>intermediate</skill>
-    </tutorial>
-
   </tutorials>
 
   <categories>
@@ -444,14 +437,6 @@
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
         <tutorial>process</tutorial>
-      </tutorials>
-    </category>
-
-    <category title="DRCSim" skill="advanced" ref="drcsim">
-      <description>DARPA Robotics Challenge specific tutorials.</description>
-      <tutorials>
-        <tutorial>drcsim_install</tutorial>
-        <tutorial>drcsim_vehicle_atlas</tutorial>
       </tutorials>
     </category>
 
