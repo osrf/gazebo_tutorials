@@ -307,8 +307,8 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='control_sync'>
-      <markdown version="1.9+">control_sync/tutorial.md</markdown>
+    <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='drcsim_control_sync'>
+      <markdown version="1.9+">drcsim_control_sync/tutorial.md</markdown>
       <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
       <skill>advance</skill>
     </tutorial>
@@ -448,7 +448,7 @@
     <category title="DRCSim" skill="advanced" ref="drcsim">
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
-        <tutorial>control_sync</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
       </tutorials>
     </category>
   </categories>
