@@ -307,6 +307,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="How to use the Atlas Sim Interface" ref='atlas_siminterface'>
+      <markdown version="1.9+">atlas_siminterface/tutorial.md</markdown>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <skill>advance</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -440,6 +446,12 @@
       </tutorials>
     </category>
 
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>atlas_siminterface</tutorial>
+      </tutorials>
+    </category>
   </categories>
 
 </content>
