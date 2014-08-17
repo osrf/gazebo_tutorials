@@ -307,8 +307,8 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Changing Viscous Damping Coefficients Over ROS Service" ref='set_joint_damping'>
-      <markdown version="1.9+">set_joint_damping/tutorial.md</markdown>
+    <tutorial title="Changing Viscous Damping Coefficients Over ROS Service" ref='drcsim_set_joint_damping'>
+      <markdown version="1.9+">drcsim_set_joint_damping/tutorial.md</markdown>
       <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service</description>
       <skill>advance</skill>
     </tutorial>
@@ -448,7 +448,7 @@
     <category title="DRCSim" skill="advanced" ref="drcsim">
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
-        <tutorial>set_joint_damping</tutorial>
+        <tutorial>drcsim_set_joint_damping</tutorial>
       </tutorials>
     </category>
   </categories>
