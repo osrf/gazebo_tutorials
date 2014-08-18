@@ -1,4 +1,4 @@
-#  Introduction
+# Introduction
 
 This tutorial describes how to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.
 
@@ -26,15 +26,15 @@ But remember to remove them from your **.bashrc** file when they are not needed 
 If you haven't already, create a ros directory in your home directory and add it to your $ROS\_PACKAGE\_PATH. From the command line
 
 ~~~
-    mkdir ~/ros
-    export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
+mkdir ~/ros
+export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
 ~~~
 
 Use [roscreate-pkg]( http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on **rospy** and **atlas_msgs**:
 
 ~~~
-    cd ~/ros
-    roscreate-pkg atlas_sim_interface_tutorial rospy atlas_msgs
+cd ~/ros
+roscreate-pkg atlas_sim_interface_tutorial rospy atlas_msgs
 ~~~
 
 ### Create a ROS Node
@@ -81,7 +81,7 @@ class AtlasWalk():
     def asi_state_cb(self, state):
         try:
             x = self.robot_position.x
-        except AttributeError:            
+        except AttributeError:
             self.robot_position = Point()
             self.robot_position.x = state.pos_est.position.x
             self.robot_position.y = state.pos_est.position.y
@@ -270,13 +270,13 @@ class AtlasWalk():
 
 This is the atlas_sim_interface_state callback. It provides a lot of useful information. We can get the robot's current position (as estimated by the BDI controller). This position is what is needed to transform a local step coordinate to a global step coordinate.
 
-~~~        
+~~~
     # /atlas/atlas_sim_interface_state callback. Before publishing a walk command, we need
     # the current robot position
     def asi_state_cb(self, state):
         try:
             x = self.robot_position.x
-        except AttributeError:            
+        except AttributeError:   
             self.robot_position = Point()
             self.robot_position.x = state.pos_est.position.x
             self.robot_position.y = state.pos_est.position.y
@@ -451,7 +451,7 @@ chmod +x ~/ros/atlas_sim_interface_tutorial/scripts/walk.py
 Start up simulation
 
 ~~~
-roslaunch atlas_utils atlas_sandia_hands.launch
+roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
 Rosrun the executable, specifying static if desired
