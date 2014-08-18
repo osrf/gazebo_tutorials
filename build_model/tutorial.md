@@ -1,3 +1,5 @@
+# Overview
+
 Models can range from simple shapes to complex robots. It refers to the `<model>` [SDF](http://gazebosim.org/sdf.html) tag, and is essentially a collection of links, joints, collision objects, visuals, and plugins. Generating a model file can be difficult depending on the complexity of the desired model. This page will offer some tips on how to build your models.
 
 # Components of Models
@@ -18,7 +20,7 @@ Models can range from simple shapes to complex robots. It refers to the `<model>
 
 # Building a Model
 
-###Step 1: Collect your meshes
+### Step 1: Collect your meshes
 
 This step involves gathering all the necessary 3D mesh files that are required to build your model. Gazebo provides a set of simple shapes: box, sphere, and cylinder. If your model needs something more complex, then continue reading.
 
@@ -33,7 +35,7 @@ Gazebo requires that mesh files be formatted as STL or Collada, with Collada bei
 > **Tip:** Keep meshes simple. This is especially true if you plan on using the mesh as a collision element. A common practice is to use a low polygon mesh for a collision element, and higher polygon mesh for the visual. An even better practice is to use one of the built-in shapes (box, sphere, cylinder) as the collision element.
 
 
-###Step 2: Make your model SDF file
+### Step 2: Make your model SDF file
 
 Start by creating an extremely simple model file, or copy an existing model file. The key here is to start with something that you know works, or can debug very easily.
 
@@ -52,7 +54,7 @@ Note that the origin of the Box-geometry is at the geometric center of the box, 
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.
 
 
-###Step 3: Add to the model SDF file
+### Step 3: Add to the model SDF file
 
 With a working `.sdf` file, slowly start adding in more complexity. With each new addition, load the model using the graphical client to make sure your model is correct.
 
@@ -65,3 +67,7 @@ Here is a good order in which to add features:
 1. Go to #1 until all links have been added.
 1. Add all joints (if any).
 1. Add all plugins (if any).
+
+
+## Next
+[Next: How to make a two-wheeled mobile robot](http://gazebosim.org/tutorials/?tut=build_robot)
