@@ -23,7 +23,7 @@ You should always begin and end BDI-mode control in the **stand** mode.  We'll c
 
 There aren't special requirements beyond running drcsim >= 2.5.x with gazebo >= 1.7.y.  Be sure to start with the usual shell setup: `source /usr/share/drcsim/setup.sh`.  Let's bring the robot up in a world with some stuff in it:
 
-    roslaunch atlas_utils qual_task_1.launch
+    roslaunch drcsim_gazebo qual_task_1.launch
 
 ## The demo 
 
