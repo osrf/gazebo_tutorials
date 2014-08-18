@@ -56,7 +56,7 @@ Pressing `M` and `.` turns the robot around on a point
 
 This is an image of Atlas walking in a 2 meter circle.
 
-[Atlas Keyboard Teleop](http://gazebosim.org/wiki/file:Atlas_keyboard_teleop.png|800px)
+[[file:files/Atlas_keyboard_teleop.png|800px]]
 
 ### Changing parameters
 
