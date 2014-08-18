@@ -7,7 +7,7 @@ DRCSim v2.4 introduces an example interface to the Atlas Sim Interface and BDI C
 Launch the simulator (be sure to first `source /usr/share/drcsim/setup.sh` as usual):
 
 ~~~
-    roslaunch drcsim_gazebo atlas_sandia_hands.launch
+roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
 ## Teleop
