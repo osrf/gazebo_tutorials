@@ -307,6 +307,11 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_switch_modes'>
+      <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
+      <description>Using the interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a switch_modes python ROS node</description>
+      <skill>advance</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -440,6 +445,12 @@
       </tutorials>
     </category>
 
+    <category title="DRCSim" skill="advanced" ref="drcsim">
+      <description>DARPA Robotics Challenge specific tutorials.</description>
+      <tutorials>
+        <tutorial>drcsim_switch_modes</tutorial>
+      </tutorials>
+    </category>
   </categories>
 
 </content>
