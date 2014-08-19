@@ -1,8 +1,8 @@
-# Tutorial: Installing gazebo_ros_pkgs
+# Tutorial: Installing gazebo\_ros\_pkgs
 
-The set of ROS packages for interfacing with Gazebo are contained within a new meta package (catkin's version of stacks) named <tt>gazebo_ros_pkgs</tt>. See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview) for background information before continuing here.
+The set of ROS packages for interfacing with Gazebo are contained within a new meta package (catkin's version of stacks) named <tt>gazebo\_ros\_pkgs</tt>. See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview) for background information before continuing here.
 
-These instructions are for using the latest stand-alone version of Gazebo (version 1.9) with ROS [Hydro](http://www.ros.org/wiki/hydro) using [catkin](http://www.ros.org/wiki/catkin). ROS [Groovy](http://www.ros.org/wiki/groovy) is somewhat compatible with gazebo_ros_pkgs but requires more of the components be installed from source and is not an official target of gazebo_ros_pkgs.
+These instructions are for using the latest stand-alone version of Gazebo (version 1.9) with ROS [Hydro](http://www.ros.org/wiki/hydro) using [catkin](http://www.ros.org/wiki/catkin). ROS [Groovy](http://www.ros.org/wiki/groovy) is somewhat compatible with gazebo\_ros\_pkgs but requires more of the components be installed from source and is not an official target of gazebo\_ros\_pkgs.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ See [Install Gazebo 1.9](http://gazebosim.org/tutorials?tut=install&ver=1.9&cat=
 
 ## Test that stand-alone Gazebo works
 
-Before attempting to install the gazebo_ros_pkgs, make sure the stand-alone Gazebo works by running in terminal:
+Before attempting to install the gazebo\_ros\_pkgs, make sure the stand-alone Gazebo works by running in terminal:
 
 <pre>
 gazebo
@@ -59,13 +59,13 @@ If you installed from debian it should say:
 /usr/bin/gzclient
 </pre>
 
-## Install gazebo_ros_pkgs
+## Install gazebo\_ros\_pkgs
 
 Choose the method you would prefer. Installing from source means you can more easily debug and submit bug patches ;-)
 
 ### Install Pre-Built Debians
 
-The gazebo_ros_pkgs are available in [ROS Hydro](http://ros.org/wiki/hydro) as debians for Ubuntu. To install, first ensure you have ROS Hydro properly [setup](http://ros.org/wiki/hydro/Installation) with ROS's package repository and key. Then:
+The gazebo\_ros\_pkgs are available in [ROS Hydro](http://ros.org/wiki/hydro) as debians for Ubuntu. To install, first ensure you have ROS Hydro properly [setup](http://ros.org/wiki/hydro/Installation) with ROS's package repository and key. Then:
 
 <pre>
 sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
@@ -75,7 +75,7 @@ If this installation method worked for you, jump to [[#Testing_Gazebo_with_ROS_I
 
 ### Install from Source (on Ubuntu)
 
-If you are running an earlier version of ROS (Groovy, Fuerte, Electric) you will need to install gazebo_ros_pkgs from source. Installing from source is also useful if you want to develop new plugins or submit patches.
+If you are running an earlier version of ROS (Groovy, Fuerte, Electric) you will need to install gazebo\_ros\_pkgs from source. Installing from source is also useful if you want to develop new plugins or submit patches.
 
 #### Setup A Catkin Workspace
 
@@ -134,7 +134,7 @@ You can automatically install the missing dependencies using rosdep via debian i
 rosdep install --from-paths . --ignore-src --rosdistro hydro -y
 </pre>
 
-Now jump to the **Build_the_gazebo_ros_pkgs** section.
+Now jump to the **Build_the_gazebo\_ros\_pkgs** section.
 
 ##### ROS Groovy
 
@@ -170,7 +170,7 @@ You can automatically install the missing dependencies using rosdep via debian i
 rosdep install --from-paths . --ignore-src --rosdistro groovy -y
 </pre>
 
-#### Build the gazebo_ros_pkgs
+#### Build the gazebo\_ros\_pkgs
 
 To build the Gazebo ROS integration packages, run the following commands:
 
