@@ -20,12 +20,10 @@
           <uri>model://coke_can</uri>
         </include>
       </model>
-      <region>
-        <box>
-          <min>-1 -1 0</min>
-          <max>1 1 0.001</max>
-        </box>
-      </region>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>2 2 0.01</size>
+      </box>
       <model_count>10</model_count>
       <distribution>
         <type>random</type>
