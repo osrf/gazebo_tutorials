@@ -4,6 +4,7 @@ The package allows the simulation of fluids in Gazebo. The fluid particle intera
 using the [Fluidix](http://onezero.ca/documentation/) library (if a nvidia GPU is not available the simulation will run in CPU mode).
 
 **Prerequisites:**
+
  * Get the package from [bitbucket](https://bitbucket.org/ahaidu/gz_fluid).
  * Install [CUDA](https://developer.nvidia.com/cuda-downloads) (recommended 6.0).
  * Install [Fluidix](http://onezero.ca/documentation/).
@@ -13,6 +14,7 @@ using the [Fluidix](http://onezero.ca/documentation/) library (if a nvidia GPU i
 # How the package works
 
 The fluid simulation runs as a separate physics engine which interacts with the rigid body physics engine of Gazebo through an interface (`include/FluidEngine.hh`). 
+
 The interaction includes:
  * collision detection
  * forces / torques application on the rigid objects
@@ -24,30 +26,29 @@ The package contains two plugins, one world plugin for updating the fluid and it
 
 ## Build instructions
 
- * in a terminal go to the downloaded `gz_fluid` folder and run the following commands
- * $ mkdir build
- * $ cd build
- * $ cmake ..
- * $ make 
+In a terminal go to the downloaded `gz_fluid` folder and run the following commands:
+
+~~~
+mkdir build
+cd build
+cmake ..
+make
+~~~
 
 ## Running the plugin:
 
- * set the gazebo plugin paths
- * add the plugin to your world file (e.g worlds/fluid.world), or use one of the world examples from the package
- * run gazebo server with the world plugin:
-  * $ gzserver worlds/fluid.world
- * run gazebo client with the system plugin:
-  * $ gzclient -g build/libFluidVisPlugin.so
-
-
-## How to specify fluid parameters
-
- * change fluid plugin parameters from the sdf tags:
-  * `<world_position>` and `<world_size>` set the fluid worlds center position and its size
-  * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
-  * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
-  
+ * Set the gazebo plugin and model paths
 ~~~
+echo "export GAZEBO_PLUGIN_PATH=<install_path>/gz_fluid/build:${GAZEBO_PLUGIN_PATH}" >> ~/.bashrc
+echo "export GAZEBO_MODEL_PATH=<path>/gz_fluid/models:${GAZEBO_MODEL_PATH}" >> ~/.bashrc
+source ~/.bashrc
+~~~
+ * Add the plugin to your custom world file, or use one of the examples from the package
+~~~
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="fluid_world">
+    ...
     <plugin name="FluidWorldPlugin" filename="libFluidWorldPlugin.so">
 		<world_position>0 0 5.01</world_position>
 		<world_size>1.5 1 10</world_size>
@@ -55,29 +56,42 @@ The package contains two plugins, one world plugin for updating the fluid and it
 		<fluid_volume>0.4 0.95 0.5</fluid_volume>
 		<particle_nr>0</particle_nr>
 	</plugin>
+
+  </world>
+</sdf>
 ~~~
+  * `<world_position>` and `<world_size>` set the fluid world center position and its size
+  * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
+  * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
 
- * by changing the source code from FluidWorldPlugin.cc
 
+ * Run gazebo server with the world plugin:
+~~~
+gzserver worlds/fluid.world
+~~~
+ * Run gazebo client with the system plugin:
+~~~
+gzclient -g build/libFluidVisPlugin.so
+~~~
 
 
 # To know:
 
 ### Collisions meshes
 
- * in order for the fluid simulation to detect collisions gazebo needs to use `.stl` files for collision.
+In order for the fluid simulation to detect collisions gazebo needs to use `.stl` files for collision meshes.
 
 
 ### Possible issues:
 
- * in CMakeLists.txt, the cuda compiler might need graphics card specific flags:
+In CMakeLists.txt, the cuda compiler might need graphics card specific flags:
 
   `SET(CUDA_NVCC_FLAGS "-arch;sm_30 -use_fast_math -lm -ldl -lrt -Xcompiler \"-fPIC\"")`
   
 ### Some code explanation:
 
  * The world plugin `FluidWorldPlugin.cc`:
- 
+
   * in the constructor the fluid engine is initialized
   * in `FluidWorldPlugin::Load` the sdf parameters are loaded, the fluid world is created, fluid is added, the objects from the environment are recreated in the fluid environment (when possible)
   * in `FluidWorldPlugin::Init` the publishers of the objects and fluids particles positions are initialized
@@ -96,8 +110,8 @@ The package contains two plugins, one world plugin for updating the fluid and it
 # Unfinished parts, TODOs:
 If somebody is interested in further contributing to the package, many features still need work:
 
- * implementing a newer SPH: [PCISPH](https://sph-sjtu-f06.googlecode.com/files/a40-solenthaler.pdf) or [IISPH](http://cg.informatik.uni-freiburg.de/publications/2013_TVCG_IISPH.pdf) for faster simulation and no compression of the fluid. This can be done in the `src/FluidEngine.cu` file by changing the algorithm.
+ * Implementing a newer SPH: [PCISPH](https://sph-sjtu-f06.googlecode.com/files/a40-solenthaler.pdf) or [IISPH](http://cg.informatik.uni-freiburg.de/publications/2013_TVCG_IISPH.pdf) for faster simulation and no compression of the fluid. This can be done in the `src/FluidEngine.cu` file by changing the algorithm.
 
- * currently the simulation only has the box implemented as a standard shape, see `FluidEngine::AddMovableBox` from `src/FluidEngine.cu`, it is implemented similarly to this [example](http://onezero.ca/sample/?id=init_manual). Using the same idea the rest of the collision types can be implemented as well: cylinder, sphere, plane. After implementation these need to be added in the `FluidWorldPlugin::CreateFluidCollision` method, similarly to the `box` type.
+ * Currently the simulation only has the box implemented as a standard shape, see `FluidEngine::AddMovableBox` from `src/FluidEngine.cu`, it is implemented similarly to this [example](http://onezero.ca/sample/?id=init_manual). Using the same idea the rest of the collision types can be implemented as well: cylinder, sphere, plane. After implementation these need to be added in the `FluidWorldPlugin::CreateFluidCollision` method, similarly to the `box` type.
 
- * the force and torque interaction is done via the particles surface collisions, pressure force from the liquid is not taken into account. A fancier algorithm would greatly increase realism.
+ * The force and torque interaction is done via the particles surface collisions, pressure force from the liquid is not taken into account. A fancier algorithm would greatly increase realism.
