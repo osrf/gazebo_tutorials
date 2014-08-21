@@ -60,6 +60,7 @@ source ~/.bashrc
   </world>
 </sdf>
 ~~~
+Where:
   * `<world_position>` and `<world_size>` set the fluid world center position and its size
   * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
   * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
