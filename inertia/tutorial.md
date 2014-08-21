@@ -1,3 +1,5 @@
+# Overview
+
 For physically plausible behavior of the model you need to correctly set up the inertia matrix, the center of mass and the weight of all links. This tutorial will guide you through the process of obtaining and filling in these information if you don't have them (and you have 3D models of the links).
 
 This tutorial shows how to obtain inertial data using the free software MeshLab (assuming homogeneous bodies). You can also use the commercial product SolidWorks to compute these information. For a guide on using SolidWorks, plese refer to [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)   
@@ -115,13 +117,14 @@ To check if everything is done correctly, you can use Gazebo's GUI client. We'll
 
     roslaunch gazebo_ros empty_world.launch
 
-Then spawn your robot (SDF model):
+Then spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobot` with your robot's package/name): 
 
-    rosrun gazebo_ros spawn_model -sdf -file `rospack find nifti_robot_description`/urdf/nifti_robot.sdf -model NIFTi
+SDF model:
 
-or (URDF model):
+    rosrun gazebo_ros spawn_model -sdf -file `rospack find my_robot_description`/urdf/my_robot.sdf -model MyRobot
+URDF model:
 
-    rosrun gazebo_ros spawn_model -urdf -file `rospack find nifti_robot_description`/urdf/nifti_robot.urdf -model NIFTi
+    rosrun gazebo_ros spawn_model -urdf -file `rospack find my_robot_description`/urdf/my_robot.urdf -model MyRobot
 
 and as soon as it loads, pause the world and delete the ground_plane (this is not needed, but it usually makes debugging easier).
 
