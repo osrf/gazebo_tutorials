@@ -89,6 +89,10 @@ In CMakeLists.txt, the cuda compiler might need graphics card specific flags:
 
   `SET(CUDA_NVCC_FLAGS "-arch;sm_30 -use_fast_math -lm -ldl -lrt -Xcompiler \"-fPIC\"")`
   
+### Fluidix CMake include path
+
+For a default install the fluidix headers are located in `/opt/fluidix/include`, if the paths differ make sure to change them accordingly in the `src/CMakeLists.txt` file.
+  
 ### Some code explanation:
 
  * The world plugin `FluidWorldPlugin.cc`:
