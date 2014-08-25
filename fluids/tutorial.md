@@ -92,17 +92,15 @@ In CMakeLists.txt, the cuda compiler might need graphics card specific flags:
 ### Some code explanation:
 
  * The world plugin `FluidWorldPlugin.cc`:
-
-  * in the constructor the fluid engine is initialized
-  * in `FluidWorldPlugin::Load` the sdf parameters are loaded, the fluid world is created, fluid is added, the objects from the environment are recreated in the fluid environment (when possible)
-  * in `FluidWorldPlugin::Init` the publishers of the objects and fluids particles positions are initialized
-  * `FluidWorldPlugin::OnUpdate` is called every world update event, there the fluid engine is updated one timestamp, a msg is sent for the rendering plugin with all the new particles position, and computed forces and torques are applied on the rigid objects.
+    * in the constructor the fluid engine is initialized
+    * in `FluidWorldPlugin::Load` the sdf parameters are loaded, the fluid world is created, fluid is added, the objects from the environment are recreated in the fluid environment (when possible)
+    * in `FluidWorldPlugin::Init` the publishers of the objects and fluids particles positions are initialized
+    * `FluidWorldPlugin::OnUpdate` is called every world update event, there the fluid engine is updated one timestamp, a msg is sent for the rendering plugin with all the new particles position, and computed forces and torques are applied on the rigid objects.
 
  * The system plugin `FluidVisPlugin.cc`, used for rendering the fluid:
- 
-  * in `FluidVisPlugin::Load` the arguments (if given) are loaded for the type of rendering, `sphere` or default `point`. When sphere is selected the rendering gets slower if many particles are loaded.
-  * in `FluidVisPlugin::Init` the subscribes for the fluid particle positions are loaded.
-  * in `FluidVisPlugin::RenderAsPointsUpdate` or `FluidVisPlugin::RenderAsSpheresUpdate`, (depending on the rendering type) if a new message with the particle positions is available, these will be rendered.
+    * in `FluidVisPlugin::Load` the arguments (if given) are loaded for the type of rendering, `sphere` or default `point`. When sphere is selected the rendering gets slower if many particles are loaded.
+    * in `FluidVisPlugin::Init` the subscribes for the fluid particle positions are loaded.
+    * in `FluidVisPlugin::RenderAsPointsUpdate` or `FluidVisPlugin::RenderAsSpheresUpdate`, (depending on the rendering type) if a new message with the particle positions is available, these will be rendered.
 
  * The fluid simulation engine `FluidEngine.cu` is similar to the SPH example from Fluidix.
 
