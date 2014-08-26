@@ -18,7 +18,7 @@ In this tutorial, we'll construct a basic ROS node that listens to robot state (
 ROS topics are inherently asynchronous; however, with the addition of a built-in simulation delay mechanism, controller synchronization simulating real-time control can be achieved.  Synchronization is achieved with potential cost in reduced overall simulation performance, but the trade off can be tuned via exposed ROS parameters.  The synchronization mechanism has the following ROS parameters for controlling amount of delay to inject into simulation when expected controller command does not arrive on time:
 
 * [`AtlasCommand/desired_controller_period_ms`](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/atlas_msgs/msg/AtlasCommand.msg?at=default#cl-36): This `uint8` parameter tells the simulated Atlas driver interface to expect a command at least once every N-milliseconds of simulation time.  If it's set to 0, no delay is enforced.  For example, if the controller update is expected to run at 200Hz, `desired_controller_period_ms` should be set to 5.
-* ROS Parameter `/atlas/delay_window_size`: paging window size defined in real-time seconds. This parameter will allow `delay_max_per_window`-seconds of delay with a single window.  Upon window paging, internally accumulated total delay per window period is reset to 0.  The default value for this parameter is 5 seconds real-time.
+* ROS Parameter `/atlas/delay_window_size`: paging window size defined in real-time seconds. This parameter will allow `delay_max_per_window` seconds of delay with a single window.  Upon window paging, internally accumulated total delay per window period is reset to 0.  The default value for this parameter is 5 seconds real-time.
 * ROS Parameter `/atlas/delay_max_per_window`: total cumulative delay in seconds allotted per `delay_window_size`.  The default value for this parameter is 250ms real-time.
 * ROS Parameter `/atlas/delay_max_per_step`: maximum delay per simulation time step.   The default value for this parameter is 25ms real-time.
 
@@ -27,7 +27,7 @@ The default values for above parameters are chosen such that for near real-time 
 ## Simulation Setup
 
 ### Creating ROS environment to launch demo
-For running the demo script a minimal ROS setup is needed. Use a directory under ROS_PACKAGE_PATH and follow the instructions to create a package there:
+For running the demo script a minimal ROS setup is needed. Use a directory under `ROS_PACKAGE_PATH` and follow the instructions to create a package there:
 
 ~~~
 . /usr/share/drcsim/setup.sh
