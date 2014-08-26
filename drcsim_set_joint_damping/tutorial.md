@@ -1,4 +1,4 @@
-# Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service
+# Overview
 
 This tutorial will explain how to change Atlas robot and Sandia hand joint viscous damping coefficients.
 
