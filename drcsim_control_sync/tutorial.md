@@ -4,7 +4,7 @@ This tutorial will explain how to setup synchronized controller updates over ROS
 
 ## Background
 
-As stated in [DRCSim](http://gazebosim.org/wiki/DRC/UserGuide), joint level control of the Atlas robot can be performed using following ROS topics:
+As stated in [DRCSim](https://bitbucket.org/osrf/drcsim/wiki/DRC/UserGuide), joint level control of the Atlas robot can be performed using following ROS topics:
 
 * Receive joint, imu and force torque sensor states from the robot.
  * ROS topic: `/atlas/atlas_state`
