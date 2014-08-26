@@ -1,4 +1,4 @@
-# Atlas Controller Synchronization over ROS Topics
+# Overview
 
 This tutorial will explain how to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface [AtlasPlugin](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/drcsim_gazebo_ros_plugins/src/AtlasPlugin.cpp?at=default).
 
