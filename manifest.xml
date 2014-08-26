@@ -307,6 +307,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+     <tutorial title="Clone a simulation" ref='clone_simulation'>
+      <markdown version="5.0+">clone_simulation/tutorial.md</markdown>
+      <description>This tutorial describes how to clone the current simulation.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -420,6 +426,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>clone_simulation</tutorial>
       </tutorials>
     </category>
 
