@@ -8,7 +8,7 @@ As stated in [DRCSim](https://bitbucket.org/osrf/drcsim/wiki/DRC/UserGuide), joi
 
 * Receive joint, imu and force torque sensor states from the robot.
  * ROS topic: `/atlas/atlas_state`
- * message type: [atlas_msgs/AtlasState](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasState.msg?at=default) 
+ * message type: [atlas_msgs/AtlasState](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasState.msg?at=default)
 * Send setpoints and gains to the PID controllers that are running on each joint.
  * ROS topic: `/atlas/atlas_command`
  * message type: [atlas_msgs/AtlasCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg?at=default)
@@ -38,18 +38,14 @@ roscreate-pkg control_synchronization_tutorial drcsim_gazebo
 
 Copy the [launch file with control synchronization parameters](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch) into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
 
-~~~
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
-~~~
 
 ## Mock-Controller Node Setup
 
 
-Download [`my_atlas_controller.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp) into  ~/ros/control_synchronization_tutorial/my_atlas_controller.cpp. This file contains the following code:
+Download [`my_atlas_controller.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp) into  `~/ros/control_synchronization_tutorial/my_atlas_controller.cpp`. This file contains the following code:
 
-~~~
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
-~~~
 
 In this example, robot states are received by `SetAtlasState()` callback when new messages arrive over the wire (ROS topic `/atlas/atlas_state`).  A separate worker thread `Work()` is expected to independently update and publish [`AtlasCommand`](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg?at=default). The published command contains an arbitrarily defined joint trajectory with `desired_controller_period_ms` set to 5ms (to be enforced in simulation-time).  If executed successfully, the robot will thrash around on the ground, and the age of received joint command should never exceed 5ms (simulation-time) old.
 
@@ -124,18 +120,18 @@ The sub-plots (from top down) are:
 
   * Instantaneous age of AtlasCommand.
   * Average of AtlasCommand age taken over a moving window of 1 second simulation time.
-  * Instantaneous delay sleep needed to receive a new AtlasCommand within prescribed time period of 5ms simulation time.
+  * Instantaneous delay sleep needed to receive a new AtlasCommand within prescribed time period of 5 ms. simulation time.
   * Accumulated sleep used in every delay window.
   * Time until next delay window and delay budget reset.
 
 ### Important Note on Delay Budget
-As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a controller that takes roughly 2ms real-time to do its calculations will fit comfortably inside of the [existing synchronization delay budget](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). However, at 200Hz(sim time synchronization rate), if your controller takes more than 2ms(real-time) to update, due to synchronization overheads, you will exhaust the [existing delay budget quite quickly](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_utils/launch/atlas_sandia_hands.launch?at=default#cl-16).  Similar to the previous timing plot, below is what happens when a controller takes 3ms(real-time) to do its calculations:
+As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a controller that takes roughly 2 ms. real-time to do its calculations will fit comfortably inside of the [existing synchronization delay budget](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). However, at 200 Hz. (sim time synchronization rate), if your controller takes more than 2ms(real-time) to update, due to synchronization overheads, you will exhaust the [existing delay budget quite quickly](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_utils/launch/atlas_sandia_hands.launch?at=default#cl-16).  Similar to the previous timing plot, below is what happens when a controller takes 3 ms. (real-time) to do its calculations:
 
 [[file:files/sync_exhaust_stats.png|640px]]
 
 As shown in above figure, within each 5 second delay window, the delay budget is exhausted in about 1 second, and controller becomes unsynchronized.
 
-Along the same logic, attempt to synchronize at 500Hz(sim time rate) and stay within the existing delay budget, the controller needs to be able to complete its update within 0.5ms(real-time) (For a sample implementation, see [pub\_atlas\_command_fast.cpp](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/pub_atlas_command.cpp?at=default).
+Along the same logic, attempt to synchronize at 500 Hz. (sim time rate) and stay within the existing delay budget, the controller needs to be able to complete its update within 0.5 ms. (real-time) (For a sample implementation, see [pub\_atlas\_command_fast.cpp](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/pub_atlas_command.cpp?at=default).
 
 ## Known Issues
   * Pausing simulation has unexpected behaviors, given the delay budget control is done in real-time.
