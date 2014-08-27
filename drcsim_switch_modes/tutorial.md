@@ -10,7 +10,7 @@ The robot offers two gross modes of control:
 
 * BDI mode: send a high-level goal, such as **stand** or **walk**, to BDI's behavior library
  * ROS topic: `/atlas/atlas_sim_interface_command`
- * message type: [atlas/AtlasSimInterfaceCommand](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_msgs/msg/AtlasSimInterfaceCommand.msg?at=default)
+ * message type: [atlas/AtlasSimInterfaceCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasSimInterfaceCommand.msg)
 * user mode: send setpoints and gains to the PID controllers that are running on each joint.
  * ROS topic: `/atlas/atlas_command`
  * message type: [atlas/AtlasCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg)
