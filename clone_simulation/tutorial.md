@@ -39,7 +39,9 @@ confirming that the world has been cloned.
 
 ~~~
 cat ~/.gazebo/gzserver.log
+~~~
 
+%%%
 Gazebo multi-robot simulator, version 4.0.0
 Copyright (C) 2012-2014 Open Source Robotics Foundation.
 Released under the Apache 2 License.
@@ -48,7 +50,7 @@ http://gazebosim.org
 
 (1409088199 32370140) Cloning world [default]. Contact the server by typing:
   GAZEBO_MASTER_URI=http://localhost:11346 gzclient --gui-logfile gzclient.11346.log
-~~~
+%%%
 
 Open a new terminal and connect *gzclient* to your new server. If you did not use port 11346, be sure to replace "11346" with your port number:
 
@@ -114,9 +116,13 @@ Run the example:
 
 ~~~
 ./cloner
+~~~
+
+%%%
+./cloner
 
 Press [ENTER] to clone the current simulation
-~~~
+%%%
 
 The example will show a message telling you that the new server is running and that you should press `ENTER` to clone the current simulation. Before hitting
 `ENTER`, connect a gzclient to the current server, by typing in a new terminal:
@@ -130,7 +136,7 @@ Spawn a sphere using the upper toolbar.
 Go back to the terminal where your `cloner` is running and press `ENTER` to trigger
 the simulation cloning.
 
-~~~
+%%%
 Press [ENTER] to clone the current simulation
 
 
@@ -138,7 +144,7 @@ World cloned. You can connect a client by tiping
   GAZEBO_MASTER_URI=http://localhost:11346 gzclient
 
 Press [ENTER] to exit and kill all the servers.
-~~~
+%%%
 
 You should see a confirmation message with the location of the new server and
 instructions on how to connect a new gzclient to it. Open a new terminal and run gzclient:
