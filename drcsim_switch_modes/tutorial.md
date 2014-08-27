@@ -13,7 +13,7 @@ The robot offers two gross modes of control:
  * message type: [atlas/AtlasSimInterfaceCommand](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_msgs/msg/AtlasSimInterfaceCommand.msg?at=default)
 * user mode: send setpoints and gains to the PID controllers that are running on each joint.
  * ROS topic: `/atlas/atlas_command`
- * message type: [atlas/AtlasCommand](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_msgs/msg/AtlasCommand.msg?at=default)
+ * message type: [atlas/AtlasCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg)
 
 You can mix and match these modes on a per-joint basis.  Each message type has a `k_effort` array, with one element per joint.  To exert BDI-mode control for joint `i`, set `k_effort[i]` to 0; for user-mode control, set it to 255.  In this way, you can, for example, ask the BDI library to stand but then control the arms yourself.  Note that some (perhaps many) combinations don't make sense, e.g., asking the BDI library to walk but retaining user-mode control of one of the legs.
 
@@ -45,7 +45,7 @@ To summarize, this program shows how to go from full User mode to full BDI mode 
 
 ### Creating ROS environment to launch demo
 
-For running the demo script a minimal ROS setup is needed. Use a directory under ROS_PACKAGE_PATH and follow the instructions to create a package there:
+For running the demo script a minimal ROS setup is needed. Use a directory under `ROS_PACKAGE_PATH` and follow the instructions to create a package there:
 
 ~~~
 . /usr/share/drcsim/setup.sh
