@@ -138,6 +138,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Fluids" ref='fluids'>
+      <markdown version="3.0+">fluids/tutorial.md</markdown>
+      <description>Fluid simulation on the GPU using Fluidix library.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -313,6 +320,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
+      <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
+      <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Modify environment" ref='drcsim_modify_world'>
       <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
       <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
@@ -456,6 +469,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>fluids</tutorial>
       </tutorials>
     </category>
 
@@ -483,6 +497,7 @@
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
         <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
       </tutorials>
     </category>
