@@ -350,7 +350,7 @@
       <skill>intermediate</skill>
     </tutorial>
 
-	<tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
+    <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
       <markdown version="1.9+">drcsim_keyboard_teleop/tutorial.md</markdown>
       <description>DRCSim provides an interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial explains how to use the teleop.</description>
       <skill>advance</skill>
