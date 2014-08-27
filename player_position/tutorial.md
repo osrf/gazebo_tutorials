@@ -21,13 +21,19 @@ Copy the SDF code below into a file called `position.world`
 <gazebo version="1.0">
   <world name="default">
     <!-- Ground -->
-    <include filename="ground_plane.model"/>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
 
     <!-- Pioneer2dx model -->
-    <include filename="pioneer2dx.model"/>
+    <include>
+      <uri>model://pioneer2dx</uri>
+    </include>
 
     <!-- A global light source -->
-    <include filename="sun.light"/>
+    <include>
+      <uri>model://sun</uri>
+    </include>
   </world>
 </gazebo>
 ~~~
