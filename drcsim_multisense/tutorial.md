@@ -51,7 +51,3 @@ To set rotation speed commands to the LIDAR spindle, open a new terminal and typ
 Setting `Decay Time` under `LaserScan` in the rviz display panel to 5 (seconds), and change the laser scan data to green in rviz yields:
 
 [[file:files/Atlas_rviz_spindle.png|640px]]
-
-## Next ##
-
-[Next:  How to drive the DRC robot around as if it were a wheeled robot](http://gazebosim.org/tutorials/?tut=drcsim_fakewalking)
