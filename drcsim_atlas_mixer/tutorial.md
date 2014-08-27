@@ -129,7 +129,3 @@ The configuration file for `atlas_teleop.py` is written in [YAML](http://www.yam
 
 * The mixer produces events only when a slider (or knob, or button) is changed.  So joystick messages and the resulting robot/hand command messages are not published continuously, but rather only when you're moving the sliders.
 * After the `nanokontrol.py` driver starts, the initial position of each slider is not known until that slider is moved.  Unexpected things (e.g., sudden jumps) can occur on the first movement of a slider.
-
-## Next
-
-[Next:  How to make Atlas walk with keyboard commands](http://gazebosim.org/tutorials/?tut=drcsim_atlas_mixer_walk)
