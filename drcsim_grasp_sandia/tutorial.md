@@ -71,8 +71,3 @@ But remember to remove them from your `.bashrc` file when they are not needed an
 
 [[file:files/sandia_hand_open.png|300px]]
 [[file:files/sandia_hand_closed.png|300px]]
-
-
-## Next ##
-
-[Next: Running the Boston Dynamics Atlas Simulation Behavior Controller Library Demo](http://gazebosim.org/tutorials/?tut=drcsim_walking)
