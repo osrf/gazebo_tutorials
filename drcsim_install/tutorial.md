@@ -311,7 +311,3 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 ### Other platforms (TODO)
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
-
-## Next
-
-[Next: Visualize and log sensor data](http://gazebosim.org/tutorials/?tut=drcsim_visualization)
