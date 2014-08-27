@@ -316,11 +316,18 @@
     <tutorial title="DRC Simulator installation" ref='drcsim_install'>
       <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
       <description>Explains how to install the DRC Simulator.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Visualization and logging" ref='drcsim_visualization'>
       <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
       <description>How to visualize and log sensor data.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Atlas MultiSense SL head" ref='drcsim_multisense'>
+      <markdown version="1.9">drcsim_multisense/tutorial.md</markdown>
+      <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -463,6 +470,7 @@
       <tutorials>
         <tutorial>drcsim_install</tutorial>
         <tutorial>drcsim_visualization</tutorial>
+        <tutorial>drcsim_multisense</tutorial>
       </tutorials>
     </category>
 
