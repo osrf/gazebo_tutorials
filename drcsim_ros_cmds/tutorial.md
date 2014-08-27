@@ -171,8 +171,3 @@ Then rebuild and re-run the node:
 
         make
         rosrun drcsim_joint_commands_tutorial publish_joint_commands
-
-
-## Next ##
-
-[Next: Atlas control over ROS topics using python](http://gazebosim.org/tutorials/?tut=drcsim_ros_python)
