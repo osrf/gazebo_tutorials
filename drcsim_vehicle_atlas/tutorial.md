@@ -67,7 +67,3 @@ Now the DRC Vehicle should be driving with Atlas in the passenger's seat. **Ther
 ## Use Atlas robot's foot to press gas pedal
 
 This section is under construction.
-
-## Next
-
-[Next:  Sending Joint Position Commands to Atlas Joint Controller over ROS Topic](http://gazebosim.org/tutorials/?tut=drcsim_commands_ros)
