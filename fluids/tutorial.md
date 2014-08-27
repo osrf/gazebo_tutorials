@@ -1,19 +1,54 @@
 # Introduction
 
-The package allows the simulation of fluids in Gazebo. The fluid particle interactions are computed on the GPU 
-using the [Fluidix](http://onezero.ca/documentation/) library (if a nvidia GPU is not available the simulation will run in CPU mode).
+**IMPORTANT: This is experimental.**
+
+The package allows the simulation of fluids in Gazebo. The fluid particle
+interactions are computed on the GPU using the
+[Fluidix](http://onezero.ca/documentation/) library (if a nvidia GPU is not
+available the simulation will run in CPU mode).
 
 **Prerequisites:**
 
- * Get the package from [bitbucket](https://bitbucket.org/ahaidu/gz_fluid).
- * Install [CUDA](https://developer.nvidia.com/cuda-downloads) (recommended 6.0).
- * Install [Fluidix](http://onezero.ca/documentation/).
- * Go through the basic Gazebo tutorials, especially through [world plugins](http://gazebosim.org/tutorials?tut=plugins_world), [system plugins](http://gazebosim.org/tutorials?tut=system_plugin), [transport library](http://gazebosim.org/tutorials?cat=transport) examples.
+  * Nvidia graphics card
+  * Go through the basic Gazebo tutorials, especially through [world plugins](http://gazebosim.org/tutorials?tut=plugins_world), [system plugins](http://gazebosim.org/tutorials?tut=system_plugin), [transport library](http://gazebosim.org/tutorials?cat=transport) examples.
  * For deeper understanding of the particle simulation look through some [Fluidix examples](http://onezero.ca/sample/?id=general_basic).
+
+# Install
+
+1. Install [CUDA](https://developer.nvidia.com/cuda-downloads) (recommended 6.0)
+
+    ~~~
+    sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit
+    ~~~
+
+1. Install [Fluidix](http://onezero.ca/downloads/)
+
+    Use the online form to get links to Fluidix
+
+    ~~~
+    mkdir /tmp/fluidix
+    unzip ~/Downloads/Fluidix*.zip -d /tmp/fluidix
+    cd /tmp/fluidix
+    sudo ./install.sh
+    ~~~
+
+1. Install [gz_fluid]( https://bitbucket.org/ahaidu/gz_fluid)
+
+    ~~~
+    cd /tmp
+    git clone https://bitbucket.org/ahaidu/gz_fluid 
+    cd gz_fluid
+    mkdir build
+    cd build
+    cmake ../
+    make
+    ~~~
 
 # How the package works
 
-The fluid simulation runs as a separate physics engine which interacts with the rigid body physics engine of Gazebo through an interface (`include/FluidEngine.hh`). 
+The fluid simulation runs as a separate physics engine which interacts with
+the rigid body physics engine of Gazebo through an interface
+(`include/FluidEngine.hh`). 
 
 The interaction includes:
  * collision detection
@@ -24,57 +59,80 @@ The core of the fluid simulation is written in the `src/FluidEngine.cu` cuda fil
 
 The package contains two plugins, one world plugin for updating the fluid and its interactions (`FluidWorldPlugin.cc`). And one GUI system plugin for visualizing the fluid particles(`FluidVisPlugin.cc`).
 
-## Build instructions
-
-In a terminal go to the downloaded `gz_fluid` folder and run the following commands:
-
-~~~
-mkdir build
-cd build
-cmake ..
-make
-~~~
-
 ## Running the plugin:
 
- * Set the gazebo plugin and model paths
-~~~
-echo "export GAZEBO_PLUGIN_PATH=<install_path>/gz_fluid/build:${GAZEBO_PLUGIN_PATH}" >> ~/.bashrc
-echo "export GAZEBO_MODEL_PATH=<path>/gz_fluid/models:${GAZEBO_MODEL_PATH}" >> ~/.bashrc
-source ~/.bashrc
-~~~
- * Add the plugin to your custom world file, or use one of the examples from the package
-~~~
-<?xml version="1.0"?>
-<sdf version="1.5">
-  <world name="fluid_world">
-    ...
-    <plugin name="FluidWorldPlugin" filename="libFluidWorldPlugin.so">
-		<world_position>0 0 5.01</world_position>
-		<world_size>1.5 1 10</world_size>
-		<fluid_position>-0.5 0.0 0.8</fluid_position>
-		<fluid_volume>0.4 0.95 0.5</fluid_volume>
-		<particle_nr>0</particle_nr>
-	</plugin>
+1. Set the gazebo plugin and model paths
 
-  </world>
-</sdf>
-~~~
-Where:
-  * `<world_position>` and `<world_size>` set the fluid world center position and its size
-  * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
-  * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
+    ~~~
+    echo "export GAZEBO_PLUGIN_PATH=/tmp/gz_fluid/build:${GAZEBO_PLUGIN_PATH}" >> ~/.bashrc
+    echo "export GAZEBO_MODEL_PATH=/tmp/gz_fluid/models:${GAZEBO_MODEL_PATH}" >> ~/.bashrc
+    source ~/.bashrc
+    ~~~
 
+1. Add the plugin to your world file, or use one of the examples from the package.
 
- * Run gazebo server with the world plugin:
-~~~
-gzserver worlds/fluid.world
-~~~
- * Run gazebo client with the system plugin:
-~~~
-gzclient -g build/libFluidVisPlugin.so
-~~~
+    ~~~
+    gedit ~/fluid.world
+    ~~~
 
+    Copy the following into the open editor, save, and quit.
+
+    ~~~
+    <?xml version="1.0"?>
+    <sdf version="1.5">
+      <world name="fluid_world">
+    
+        <!-- A global light source -->
+        <include>
+          <uri>model://sun</uri>
+        </include>
+    
+        <!-- A box (plane + fluid is not supported) -->
+        <model name="box">
+          <static>true</static>
+          <pose>0 0 0 0 0 0</pose>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>20 20 0.1</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>20 20 0.1</size>
+                </box>
+              </geometry>
+            </visual>
+          </link>
+        </model>
+    
+    
+        <plugin name="FluidWorldPlugin" filename="libFluidWorldPlugin.so">
+          <world_position>0 0 1.01</world_position>
+          <world_size>1.5 1 10</world_size>
+          <fluid_position>-0.5 0.0 0.8</fluid_position>
+          <fluid_volume>0.4 0.95 0.5</fluid_volume>
+          <particle_nr>0</particle_nr>
+        </plugin>
+    
+      </world>
+    </sdf>
+    ~~~
+    
+    Where:
+      * `<world_position>` and `<world_size>` set the fluid world center position and its size
+      * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
+      * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
+    
+    
+1. Run gazebo client with the system plugin:
+
+    ~~~
+    gazebo ~/fluid.world -g /tmp/gz_fluid/build/libFluidVisPlugin.so
+    ~~~
 
 # To know:
 
