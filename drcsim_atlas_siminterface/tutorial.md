@@ -62,7 +62,7 @@ import rospy
 import sys
 ~~~
 
-Initializing the publishers and subscribers for this node. We publish to /atlas/atlas_sim_interface_command and /atlas/mode and listen to /atlas/atlas_sim_interface_state and /atlas/state.
+Initializing the publishers and subscribers for this node. We publish to `/atlas/atlas_sim_interface_command` and `/atlas/mode` and listen to `/atlas/atlas_sim_interface_state` and `/atlas/state`.
 
 ~~~
 class AtlasWalk():
