@@ -86,7 +86,7 @@ class AtlasWalk():
         
         # Publish this command every time we have a new state message
         self.asi_command.publish(command)
-       
+        # End of dynamic walk behavior
        
     # An example of commanding a static walk/step behavior.
     def static(self, state):
@@ -124,6 +124,7 @@ class AtlasWalk():
         
         # Publish a new step command every time a state message is received
         self.asi_command.publish(command)
+        # End of static walk behavior
         
     # This method is used to calculate a pose of step based on the step_index
     # The step poses just cause the robot to walk in a circle
