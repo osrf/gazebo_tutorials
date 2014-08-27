@@ -36,25 +36,10 @@ export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 roscreate-pkg control_synchronization_tutorial drcsim_gazebo
 ~~~
 
-Create a launch file with control synchronization parameters by saving the following content into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
+Copy the [launch file with control synchronization parameters](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch) into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
 
 ~~~
-<launch>
-  <!-- Control Synchronization Parameters -->
-  <!-- delay_window_size: paging window that will allow delay_max_per_window-seconds of delay. -->
-  <!-- delay_max_per_window: total cumulative delay in seconds allotted per delay_window_size. -->
-  <!-- delay_max_per_step: maximum delay per simulation time step. -->
-  <param name="/atlas/delay_window_size" type="double" value="25.0"/>
-  <param name="/atlas/delay_max_per_window" type="double" value="1.0"/>
-  <param name="/atlas/delay_max_per_step" type="double" value="0.1"/>
-
-  <arg name="gzname" default="gazebo"/>
-  <!-- default launch file for starting an Atlas robot -->
-  <include file="$(find drcsim_gazebo)/launch/atlas.launch">
-    <arg name="gzname" value="$(arg gzname)"/>
-    <arg name="gzworld" value="atlas.world"/>
-  </include>
-</launch>
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
 ~~~
 
 ## Mock-Controller Node Setup
