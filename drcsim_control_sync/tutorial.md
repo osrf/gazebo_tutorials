@@ -108,11 +108,11 @@ To view synchronization status, rxplot will be used. To install rxplot:
 
 ~~~
 # depending on your ROS version
-sudo apt-get install ros-fuerte-rx
-sudo apt-get install ros-groovy-rx
+sudo apt-get install ros-hydro-rx
+sudo apt-get install ros-indigo-rx
 ~~~
 
-Then open a third terminal (don't forget to source `setup.sh` and export `ROS\_PACKAGE\_PATH`), and type the following:
+Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PACKAGE_PATH`), and type the following:
 
 ~~~
 rxplot -p 5 -b 10 /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
