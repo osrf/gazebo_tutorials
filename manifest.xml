@@ -138,6 +138,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Fluids" ref='fluids'>
+      <markdown version="3.0+">fluids/tutorial.md</markdown>
+      <description>Fluid simulation on the GPU using Fluidix library.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -224,6 +231,12 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Find out inertial parameters" ref='inertia'>
+      <markdown version="1.9+">inertia/tutorial.md</markdown>
+      <description>Fill in the inertial parameters so that the model behaves plausibly.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
       <description>How to apply lightmaps to a model visual.</description>
@@ -307,6 +320,36 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
+      <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
+      <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Modify environment" ref='drcsim_modify_world'>
+      <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
+      <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="DRC Simulator installation" ref='drcsim_install'>
+      <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
+      <description>Explains how to install the DRC Simulator.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Atlas MultiSense SL head" ref='drcsim_multisense'>
+      <markdown version="1.9">drcsim_multisense/tutorial.md</markdown>
+      <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Teleoperate atlas with a music mixer" ref='drcsim_atlas_mixer'>
       <markdown version="1.9+">drcsim_atlas_mixer/tutorial.md</markdown>
       <description>How to use a music mixer, to teleoperate the Atlas model.</description>
@@ -338,6 +381,7 @@
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
         <tutorial>animated_box</tutorial>
+        <tutorial>inertia</tutorial>
       </tutorials>
     </category>
 
@@ -426,6 +470,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>fluids</tutorial>
       </tutorials>
     </category>
 
@@ -450,6 +495,10 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_visualization</tutorial>
+        <tutorial>drcsim_multisense</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
       </tutorials>
     </category>
