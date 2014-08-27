@@ -125,7 +125,7 @@ The sub-plots (from top down) are:
   * Time until next delay window and delay budget reset.
 
 ### Important Note on Delay Budget
-As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a controller that takes roughly 2 ms. real-time to do its calculations will fit comfortably inside of the [existing synchronization delay budget](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). However, at 200 Hz. (sim time synchronization rate), if your controller takes more than 2ms(real-time) to update, due to synchronization overheads, you will exhaust the [existing delay budget quite quickly](https://bitbucket.org/osrf/drcsim/src/default/ros/atlas_utils/launch/atlas_sandia_hands.launch?at=default#cl-16).  Similar to the previous timing plot, below is what happens when a controller takes 3 ms. (real-time) to do its calculations:
+As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a controller that takes roughly 2 ms. real-time to do its calculations will fit comfortably inside of the [existing synchronization delay budget](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). However, at 200 Hz. (sim time synchronization rate), if your controller takes more than 2ms(real-time) to update, due to synchronization overheads, you will exhaust the [existing delay budget quite quickly](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). Similar to the previous timing plot, below is what happens when a controller takes 3 ms. (real-time) to do its calculations:
 
 [[file:files/sync_exhaust_stats.png|640px]]
 
