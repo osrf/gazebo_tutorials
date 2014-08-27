@@ -1,15 +1,15 @@
 # Overview
 
-*Gzserver* allows you to load an environment, insert your models, and finally
+*Gzserver* allows you to load an environment, insert your models, and
 simulate the world. As you probably know, a robot simulator can be an
 invaluable tool for testing and tuning in advance the code or behaviour that you
-will run on a real robot. Some times, you might want to run multiple simulation
+will run on a real robot. You might want to run multiple simulation
 episodes to see how different parameters or approaches behave. Cloning a
-simulation might be useful for running different versions of your code in
+simulation is useful for running different versions of your code in
 parallel. This tutorial will guide you through the steps required to clone your
 current simulation.
 
-# Clone the simulation using the GUI.
+# Clone the simulation using the GUI
 
 Start Gazebo by typing the following command at the command prompt:
 
@@ -19,9 +19,9 @@ gazebo
 
 * Insert a simple sphere into the scene by using the upper toolbar.
 
-* Clone your current simulation by clicking on **File->Clone world**.
+* Clone your current simulation by clicking on **File-> Clone world**.
 
-You should see a dialog window similar to the window bellow.
+You should see a dialog window similar to the window below.
 
 [[file:files/gazebo_clone_sim.png|640px]]
 
@@ -50,38 +50,38 @@ http://gazebosim.org
   GAZEBO_MASTER_URI=http://localhost:11346 gzclient --gui-logfile gzclient.11346.log
 ~~~
 
-Open a new terminal and connect *gzclient* to your new server:
+Open a new terminal and connect *gzclient* to your new server. If you did not use port 11346, be sure to replace "11346" with your port number:
 
 ~~~
 GAZEBO_MASTER_URI=http://localhost:11346 gzclient --gui-logfile gzclient.11346.log
 ~~~
 
-It's important to modify the environment variable `GAZEBO_MASTER_URI` for
-pointing to the cloned server, otherwise you will be visualizing your original
+The above code modifies the environment variable `GAZEBO_MASTER_URI` to
+point to the cloned server. Otherwise, you would be visualizing your original
 world.
 
 Although your two gzclients are visualizing similar worlds, the simulations are
 running on different servers. Verify this by changing the gravity in one of the
-simulations to `0.001` (under the *world tab*, click on physics, and then,
-change the value of the propery *gravity*). You should only see one of your
+simulations to `0.003` (under the *world tab*, click on physics, and then
+change the z value of the property *gravity*). You should only see one of your
 spheres slowly flying. This proves that after cloning a simulation, each world
-can follow different routes.
+is independent.
 
 [[file:files/sidebyside.png|640px]]
 
 Once the new server is cloned, it's totally detached from the orginal one, so
-you should have to kill it manually:
+you will need to kill it manually:
 
 ~~~
 killall gzserver
 ~~~
 
-Note that the cloned server will be running on the same machine as the original
+Note that the cloned server will be running on the same machine on which the original
 server is located. Take this into account before cloning a simulation because
 you may need SSH access to the server machine (if your server is running
 remotely) in order to kill the new server after a cloning.
 
-# Clone the simulation programmatically.
+# Clone the simulation programmatically
 
 It's also possible to clone a simulation programmatically using the Gazebo
 transport system. As an example, we'll describe the example code shipped with
@@ -118,9 +118,8 @@ Run the example:
 Press [ENTER] to clone the current simulation
 ~~~
 
-The example will show a message telling you that new server is running and you
-can go ahead and press `ENTER` for cloning the current simulation. Before hit
-`ENTER` connect a gzclient to the current server, by typing on a new terminal:
+The example will show a message telling you that the new server is running and that you should press `ENTER` to clone the current simulation. Before hitting
+`ENTER`, connect a gzclient to the current server, by typing in a new terminal:
 
 ~~~
 gzclient
@@ -128,7 +127,7 @@ gzclient
 
 Spawn a sphere using the upper toolbar.
 
-Go back to terminal where your `cloner` is running and press `ENTER` to trigger
+Go back to the terminal where your `cloner` is running and press `ENTER` to trigger
 the simulation cloning.
 
 ~~~
@@ -142,25 +141,25 @@ Press [ENTER] to exit and kill all the servers.
 ~~~
 
 You should see a confirmation message with the location of the new server and
-how to connect a new gzclient to it. Open a new terminal and run gzclient:
+instructions on how to connect a new gzclient to it. Open a new terminal and run gzclient:
 
 ~~~
 GAZEBO_MASTER_URI=http://localhost:11346 gzclient
 ~~~
 
 Verify again that the two simulations are independent by changing the gravity in
-one of the simulations to `0.001`. As before, you should only see one of your
+one of the simulations to `0.003` (as noted above). As before, you should only see one of your
 spheres moving away.
 
 [[file:files/sidebyside.png|640px]]
 
-## The source code.
+## The source code
 
-Let's take a look at the source code of our example:
+Let's take a look at the source code for our example:
 
 <include src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
-## The code explained.
+## The code explained
 
 <include from='/int main/' to='/RunServer\);/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
@@ -171,24 +170,23 @@ This fragment of the code spawns a new thread and executes a new server.
 The simulation cloning is performed via the transport system. First, we have to
 initialize a transport node that will allow us to use the transport. We need a
 topic publisher to send a new message with our cloning request. The topic is
-`/gazebo/server/control`. In addition, we need a topic subscriber receiving
-messages on the topic `/gazebo/world/modify` for receiving the result of our
+`/gazebo/server/control`. In addition, we need a subscriber on the topic `/gazebo/world/modify` for receiving the result of our
 clone request.
 
 <include from='/  gazebo::msgs::ServerControl/' to='/  getchar();/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
-This is the part of the code where we prepare our `ServerControl` message with
-our cloning request. The field `save_world_name` specifies the world name that
+This is the part of the code where we prepare our `ServerControl` message for
+our cloning request. The field `save_world_name` specifies the name of the world that
 we want to clone. The empty string represents the *default* world. The field
-`clone` is set to `true` when requesting a simulation cloning. The field
-`new_port` sets the port that will use the new server for connections. This will
+`clone` is set to `true` when requesting a clone. The field
+`new_port` sets the port that the new server will use for connections. This will
 be the port that we will use to connect our future gzclient to display the new
 simulation. Finally, the message is sent by calling the `Publish()` method with
 our custom message.
 
 <include from='/void OnWorldModify/' to='/  }\n}/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
-When the server processes our cloning request, it sends us a response contained
+When the server processes our clone request, it sends us a response contained
 in a `WorldModify` message. This is the callback that we registered during the
 subscription and it will be triggered when the response from the server is
 received. The field `cloned` will be true when a new server has been cloned.
