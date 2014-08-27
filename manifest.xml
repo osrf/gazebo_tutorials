@@ -320,7 +320,7 @@
       <skill>intermediate</skill>
     </tutorial>
 
-	<tutorial title="Clone a simulation" ref='clone_simulation'>
+    <tutorial title="Clone a simulation" ref='clone_simulation'>
       <markdown version="5.0+">clone_simulation/tutorial.md</markdown>
       <description>This tutorial describes how to clone the current simulation.</description>
       <skill>intermediate</skill>
@@ -471,7 +471,7 @@
       <tutorials>
         <tutorial>friction</tutorial>
         <tutorial>fluids</tutorial>
-		<tutorial>clone_simulation</tutorial>
+        <tutorial>clone_simulation</tutorial>
       </tutorials>
     </category>
 
