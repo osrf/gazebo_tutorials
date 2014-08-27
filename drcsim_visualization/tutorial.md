@@ -6,7 +6,7 @@ See the documentation pages of [rviz](http://www.ros.org/wiki/rviz) and [rosbag]
 
 ## Setup
 
-We assume that you've already done the [installation step](/osrf/drcsim/wiki/tutorials/installDRC/).
+We assume that you've already done the [installation step](https://gazebosim.org/tutorials/).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -35,7 +35,7 @@ sudo apt-get install ros-hydro-visualization
   For ROS Indigo:
 
 ~~~
-sudo apt-get install ros-indigo-visualization
+sudo apt-get install ros-indigo-viz
 ~~~
 
 Bring up the Atlas robot in Gazebo
@@ -88,11 +88,11 @@ To navigate using a wheeled mouse:
 
 ### Visualizing Sensor Information
 
-Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rviz > Camera'. Under the Camera item in the displays window, click the empty space to the right of 'Image Topic' and an empty field should appear. Select or type '/multisense_sl/camera/left/image_raw'. You should now see the camera video feed in a small frame. Note that rviz displays an overlay of the robot model on the camera image, which may cause circles to appear in the camera images. The overlays can be turned off by setting the Camera > Overlay Alpha to 1.0.
+Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rviz > Camera'. Under the Camera item in the displays window, click the empty space to the right of 'Image Topic' and an empty field should appear. Select or type `/multisense_sl/camera/left/image_raw`. You should now see the camera video feed in a small frame. Note that rviz displays an overlay of the robot model on the camera image, which may cause circles to appear in the camera images. The overlays can be turned off by setting the Camera > Overlay Alpha to 1.0.
 
 [[file:files/Rviz_atlas_with_camera_2.7.png|640px]]
 
-Now add a LaserScan using a similar method as the camera, and change the 'Topic' to '/multisense_sl/laser/scan'. You should now see a visualization of the laser scan in rviz.
+Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. You should now see a visualization of the laser scan in rviz.
 
 Poke around in rviz and add different sensors or robot information. TF visualizes the joint transformations, Map visualizes a 2D collision map, PointCloud(2) visualizes depth information from sensors like a Microsoft Kinect.
 
