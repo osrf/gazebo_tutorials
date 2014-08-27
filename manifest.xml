@@ -224,6 +224,12 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Find out inertial parameters" ref='inertia'>
+      <markdown version="1.9+">inertia/tutorial.md</markdown>
+      <description>Fill in the inertial parameters so that the model behaves plausibly.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
       <description>How to apply lightmaps to a model visual.</description>
@@ -313,6 +319,30 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Modify environment" ref='drcsim_modify_world'>
+      <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
+      <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="DRC Simulator installation" ref='drcsim_install'>
+      <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
+      <description>Explains how to install the DRC Simulator.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Atlas MultiSense SL head" ref='drcsim_multisense'>
+      <markdown version="1.9">drcsim_multisense/tutorial.md</markdown>
+      <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -338,6 +368,7 @@
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
         <tutorial>animated_box</tutorial>
+        <tutorial>inertia</tutorial>
       </tutorials>
     </category>
 
@@ -450,6 +481,9 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_visualization</tutorial>
+        <tutorial>drcsim_multisense</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
       </tutorials>
     </category>
