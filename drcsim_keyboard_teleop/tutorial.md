@@ -1,4 +1,4 @@
-# Keyboard Teleoperation
+# Overview
 
 DRCSim v2.4 introduces an example interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial explains how to use the teleop.
 
@@ -21,25 +21,24 @@ roslaunch drcsim_gazebo keyboard_teleop.launch
 You will see a screen like below:
 
 ~~~
-        Keyboard Teleop for AtlasSimInterface 1.0.5
-        Copyright (C) 2013 Open Source Robotics Foundation
-        Released under the Apache 2 License
-        --------------------------------------------------
-        Linear movement:
+Keyboard Teleop for AtlasSimInterface 1.0.5
+Copyright (C) 2013 Open Source Robotics Foundation
+Released under the Apache 2 License
+--------------------------------------------------
+Linear movement:
 
-                i    
-           j         l
-                ,    
-                
-        Turn movements:
-        o/u Turn around a point
-        m/. Turn in place
-        
-        1-9: Change the length of step trajectory
-        E: View and Edit Parameters
-        R: Reset robot to standing pose
-        Q: Quit
+	i    
+   j         l
+	,    
+	
+Turn movements:
+o/u Turn around a point
+m/. Turn in place
 
+1-9: Change the length of step trajectory
+E: View and Edit Parameters
+R: Reset robot to standing pose
+Q: Quit
 ~~~
 
 ### Initializing/Resetting the robot
@@ -82,7 +81,7 @@ Enter a number of the param you to change, in this case we can increase the forw
 New value for Forward Stride Length [min: 0, max: 1, type: float]?
 ~~~
 
-Type in 0.3 and press enter to increase the stride length. Then type x and press  Enter` to exit the screen.
+Type in 0.3 and press enter to increase the stride length. Then type x and press `Enter` to exit the screen.
 
 Press `i` and the robot will walk forward a total of 1.5 meters.
 
