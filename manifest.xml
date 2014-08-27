@@ -313,6 +313,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Modify environment" ref='drcsim_modify_world'>
+      <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
+      <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="DRC Simulator installation" ref='drcsim_install'>
       <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
       <description>Explains how to install the DRC Simulator.</description>
@@ -471,6 +477,7 @@
         <tutorial>drcsim_install</tutorial>
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
       </tutorials>
     </category>
 
