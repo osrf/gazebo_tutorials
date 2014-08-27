@@ -316,6 +316,11 @@
     <tutorial title="DRC Simulator installation" ref='drcsim_install'>
       <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
       <description>Explains how to install the DRC Simulator.</description>
+    </tutorial>
+
+    <tutorial title="Visualization and logging" ref='drcsim_visualization'>
+      <markdown version="2.0+">drcsim_visualization/tutorial.md</markdown>
+      <description>How to visualize and log sensor data.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -463,6 +468,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
       </tutorials>
     </category>
