@@ -9,33 +9,44 @@ This tutorial will explain how to modify the simulated Atlas's environment, such
 
 ## Setup ##
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install).
+We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
-    echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
-    source ~/.bashrc
+~~~
+echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
 
-    mkdir -p ~/ros
-    echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
-    source ~/.bashrc
+~~~
+mkdir -p ~/ros
+echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 Use [roscreate-pkg](http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on `drcsim_gazebo`:
 
-    cd ~/ros
-    roscreate-pkg world_modification_tutorial drcsim_gazebo
+~~~
+cd ~/ros
+roscreate-pkg world_modification_tutorial drcsim_gazebo
+~~~
 
 ## The code ##
 
 The DRC Simulator includes a simulation environment that puts the Atlas Robot in an empty world.  You can launch this simulation configuration like so:
 
-    roslaunch drcsim_gazebo atlas.launch
+~~~
+roslaunch drcsim_gazebo atlas.launch
+~~~
 
-**For drcsim < 3.1.0**: The package and launch file had a different name:
 
-    roslaunch atlas_utils atlas.launch
+> **For drcsim < 3.1.0**: The package and launch file had a different name:
+
+>~~~
+roslaunch atlas_utils atlas.launch
+>~~~
 
 You'll see the robot on its own, with just ground and sky:
 
@@ -68,7 +79,7 @@ cp launch/atlas_no_controllers.launch ~/ros/world_modification_tutorial/launch/
 ~~~
 
 ~~~
-cp ../../worlds/atlas.world ~/ros/world_modification_tutorial/worlds/
+cp ../drcsim_model_resources/worlds/atlas.world ~/ros/world_modification_tutorial/worlds/
 ~~~
 
 ~~~
