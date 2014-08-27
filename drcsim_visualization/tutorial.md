@@ -98,7 +98,7 @@ Poke around in rviz and add different sensors or robot information. TF visualize
 
 **Bonus: actuate the laser.**  The laser on the robot's head is mounted on a spindle that rotates.  To start it rotating:
 
-        rostopic pub /multisense_sl/set_spindle_speed std_msgs/Float64 '{ data: 6.0 } '
+        rostopic pub `/multisense_sl/set_spindle_speed std_msgs/Float64` '{ data: 6.0 } '
 
 The data value is a desired angular velocity, in radians per second.  You should see the laser scan in rviz rotating around.  To build a poor-man's 3-D model of the environment, click in the "Decay Time" field of the "LaserScan" display and increase the time to something non-zero (it's a value in seconds).  You should see scans accumulate in rviz.
 
@@ -129,7 +129,7 @@ rostopic list
 We will record the joint states, cameras, laser and [tf](http://www.ros.org/wiki/tf) (transform data) from a robot into a file called ROS.bag
 
 ~~~
-rosbag record -O /tmp/ROS.bag /tf /atlas/joint_states /multisense_sl/camera/left/image_raw /multisense_sl/camera/left/camera_info /multisense_sl/laser/scan
+rosbag record -O `/tmp/ROS.bag /tf /atlas/joint_states /multisense_sl/camera/left/image_raw /multisense_sl/camera/left/camera_info /multisense_sl/laser/scan`
 ~~~
 
 After a while, stop the rosbag recording by pressing Control + C in its terminal.
