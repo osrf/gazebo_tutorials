@@ -8,22 +8,28 @@ We assume that you've already done the [installation step](http://gazebosim.org/
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
-    echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
-    source ~/.bashrc
+~~~
+echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
 
-    mkdir ~/ros
-    echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
-    source ~/.bashrc
+~~~
+mkdir ~/ros
+echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 Use [roscreate-pkg](http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on `roscpp` and `trajectory_msgs`:
 
-    cd ~/ros
-    roscreate-pkg joint_animation_tutorial roscpp trajectory_msgs
-    cd joint_animation_tutorial
-    mkdir scripts
-    cd scripts
+~~~
+cd ~/ros
+roscreate-pkg joint_animation_tutorial roscpp trajectory_msgs
+cd joint_animation_tutorial
+mkdir scripts
+cd scripts
+~~~
 
 ## Model Plugin Controller
 
@@ -33,12 +39,13 @@ A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578
 
 Create a python ROS node that publishes joint trajectory messages `~/ros/joint_animation_tutorial/nodes/joint_animation.py`:
 
-
-    gedit joint_animation.py
+~~~
+gedit joint_animation.py
+~~~
 
 Paste the following content into it:
 
-<pre>
+~~~
 #!/usr/bin/env python
 
 import roslib; roslib.load_manifest('joint_animation_tutorial')
@@ -140,7 +147,7 @@ if __name__ == '__main__':
     try:
         jointTrajectoryCommand()
     except rospy.ROSInterruptException: pass
-</pre>
+~~~
 
 
 Make the file executable
@@ -149,37 +156,41 @@ Make the file executable
 
 ### The Code explained ###
 
-<pre>
+~~~
 #!/usr/bin/env python
 
 import roslib; roslib.load_manifest('joint_animation_tutorial')
-</pre>
+~~~
+
 Standard for every rospy node. This imports roslib and then loads the manifest.xml included in the package so those packages are importable as well.
 
-<pre>
+~~~
 import rospy, math
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-</pre>
+~~~
+
 Import more modules, and import the message file for JointTrajectory and JointTrajectoryPoint.
 
-<pre>
+~~~
 def jointTrajectoryCommand():
     # Initialize the node
     rospy.init_node('joint_control')
 
     pub = rospy.Publisher('/joint_trajectory', JointTrajectory)
-</pre>
+~~~
+
 This initializes the node and creates a publisher for the /joint_trajectory topic.
 
-<pre>
+~~~
     jt = JointTrajectory()
 
     jt.header.stamp = rospy.Time.now()
     jt.header.frame_id = "atlas::pelvis"
-</pre>
+~~~
+
 Create an instantiation of a JointTrajectory message and add the time stamp and frame_id to the header.
 
-<pre>
+~~~
     jt.joint_names.append("atlas::back_lbz" )
     jt.joint_names.append("atlas::back_mby" )
     jt.joint_names.append("atlas::back_ubx" )
@@ -208,10 +219,11 @@ Create an instantiation of a JointTrajectory message and add the time stamp and 
     jt.joint_names.append("atlas::r_arm_shx")
     jt.joint_names.append("atlas::r_arm_usy")
     jt.joint_names.append("atlas::r_arm_uwy")
-</pre>
+~~~
+
 Create the list of names of joints that will be controlled.
 
-<pre>
+~~~
     n = 1500
     dt = 0.01
     rps = 0.05
@@ -220,10 +232,11 @@ Create the list of names of joints that will be controlled.
         theta = rps*2.0*math.pi*i*dt
         x1 = -0.5*math.sin(2*theta)
         x2 =  0.5*math.sin(1*theta)
-</pre>
+~~~
+
 Setup a for loop that runs for n=1500 times. It calculates joint angles at two different positions x1 and x2. There should be a position for each joint added above.
 
-<pre>
+~~~
         p.positions.append(x1)
         p.positions.append(x2)
         p.positions.append(x2)
@@ -252,46 +265,54 @@ Setup a for loop that runs for n=1500 times. It calculates joint angles at two d
         p.positions.append(x2)
         p.positions.append(x1)
         p.positions.append(x1)
-</pre>
+~~~
+
 Create a list of positions that the JointTrajectoryPoint will follow.
 
-<pre>
+~~~
         jt.points.append(p)
-</pre>
+~~~
+
 Add the JointTrajectoryPoint to the JointTrajectory and proceed to the next point.
 
-<pre>
+~~~
         # set duration
         jt.points[i].time_from_start = rospy.Duration.from_sec(dt)
         rospy.loginfo("test: angles[%d][%f, %f]",n,x1,x2)
-</pre>
+~~~
+
 Log the point that was created.
 
-<pre>
+~~~
     pub.publish(jt)
     rospy.spin()
-</pre>
+~~~
+
 This will publish the single JointTrajectory message, which the robot will execute. The node will then spin, which allows the node to continue running without blocking the CPU.
 
 
-<pre>
+~~~
 if __name__ == '__main__':
     try:
         jointTrajectoryCommand()
     except rospy.ROSInterruptException: pass
-</pre>
-The main method of the rospy node. It prevents the node from executing code if the thread has been shutdown.
+~~~
 
+The main method of the rospy node. It prevents the node from executing code if the thread has been shutdown.
 
 ## Running the Simulation
 
-1. In terminal, start the DRC robot simulation (use the launch file **without active mechanism controllers** so they do not conflict with the joint animation):
+1. In terminal, start the DRC robot simulation:
 
-        VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas_no_controllers.launch
-
-    **For drcsim < 3.1.0**: The package and launch file had a different name:
-
-        VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_no_controllers.launch
+    ~~~
+    VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch
+    ~~~
+    
+    >**For drcsim < 3.1.0**: The package and launch file had a different name:
+    
+    >~~~
+    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_no_controllers.launch
+    >~~~
 
 1. To prevent the robot from falling over (it's not running any controllers), disable gravity by clicking on World->Physics->gravity->z and setting the value to 0.0.
 
@@ -301,10 +322,8 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 1. In a separate terminal:
 
-        rosrun joint_animation_tutorial joint_animation.py
-
+    ~~~
+    rosrun joint_animation_tutorial joint_animation.py
+    ~~~
+    
     The DRC robot should move according to the published ROS JointTrajectory message.
-
-## Next
-
-[Using the VRC Plugin with the DRC Vehicle](http://gazebosim.org/tutorials/?tut=drcsim_vehicle)
