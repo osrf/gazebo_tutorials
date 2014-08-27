@@ -54,7 +54,3 @@ The basic sequence includes:
   1.  `nominal`:  Instructs the `VRCPlugin` to release the robot from its inertial tether.  Atlas will fall the the ground.
   1.  `stand`:  Instructs the controller within `AtlasPlugin` to begin its active balancing stand-behavior.
   1.  `walk`:  Instructs the controller within `AtlasPlugin` to begin its 5 step walking behavior.
-
-## Next
-
-[Next: Move Atlas' arms and hands using a music mixer board](http://gazebosim.org/tutorials/?tut=drcsim_atlas_mixer)
