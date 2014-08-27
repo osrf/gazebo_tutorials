@@ -91,7 +91,7 @@ class AtlasWalk():
 
 ~~~
 
-This is the atlas_sim_interface_state callback. It provides a lot of useful information. We can get the robot's current position (as estimated by the BDI controller). This position is what is needed to transform a local step coordinate to a global step coordinate.
+This is the `atlas_sim_interface_state` callback. It provides a lot of useful information. We can get the robot's current position (as estimated by the BDI controller). This position is what is needed to transform a local step coordinate to a global step coordinate.
 
 ~~~
     # /atlas/atlas_sim_interface_state callback. Before publishing a walk command, we need
@@ -126,7 +126,7 @@ If the robot is rotated to the world frame, the orientation may need to be accou
         roll, pitch, yaw = euler_from_quaternion([state.orientation.x, state.orientation.y, state.orientation.z, state.orientation.w])
 ~~~   
 
-This function walks the robot dynamically in a circle. It is necessary to publish 4 steps at any time, starting with the next_step_index_needed. This helps the walking controller plan for a stable walking trajectory. Some message fields aren't used or implemented in this walking behavior. Dynamic walking behavior is best for flat surfaces with no obstructions.
+This function walks the robot dynamically in a circle. It is necessary to publish 4 steps at any time, starting with the `next_step_index_needed`. This helps the walking controller plan for a stable walking trajectory. Some message fields aren't used or implemented in this walking behavior. Dynamic walking behavior is best for flat surfaces with no obstructions.
 
 ~~~
     # An example of commanding a dynamic walk behavior.     
