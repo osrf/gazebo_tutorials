@@ -51,7 +51,7 @@ Download [`my_atlas_controller.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
 ~~~
 
-In this example, robot states are received by `SetAtlasState()`-callback when new messages arrive over the wire (ROS topic `/atlas/atlas_state`).  A separate worker thread `Work()` is expected to independently update and publish [`AtlasCommand`](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/atlas_msgs/msg/AtlasCommand.msg?at=default). The published command contains an arbitrarily defined joint trajectory with `desired_controller_period_ms` set to 5ms (to be enforced in simulation-time).  If executed successfully, the robot will thrash around on the ground, and the age of received joint command should never exceed 5ms (simulation-time) old.
+In this example, robot states are received by `SetAtlasState()` callback when new messages arrive over the wire (ROS topic `/atlas/atlas_state`).  A separate worker thread `Work()` is expected to independently update and publish [`AtlasCommand`](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/atlas_msgs/msg/AtlasCommand.msg?at=default). The published command contains an arbitrarily defined joint trajectory with `desired_controller_period_ms` set to 5ms (to be enforced in simulation-time).  If executed successfully, the robot will thrash around on the ground, and the age of received joint command should never exceed 5ms (simulation-time) old.
 
 ### Compiling the Tutorial
 Edit `CMakeLists.txt` by typing:
