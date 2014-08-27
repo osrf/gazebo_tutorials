@@ -40,7 +40,7 @@ roscreate-pkg atlas_sim_interface_tutorial rospy atlas_msgs
 ### Create a ROS Node
 Download [`walk.py`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_interface/files/walk.py) into **`~/ros/atlas_sim_interface_tutorial/scripts/walk.py`**. This file contains the following code:
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_interface/files/walk.py' />
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_interface/files/walk.py' />
 
 ## The code explained
 
