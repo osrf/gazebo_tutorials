@@ -1,54 +1,3 @@
-# Introduction
-
-This tutorial describes how to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.
-
-## Setup
-
-We assume that you've already done the [DRCSim installation step](http://gazebosim.org/tutorials?tut=drcsim_install).
-
-If you haven't done so, make sure to source the environment setup.sh files with every new terminal you open:
-
-~~~
-source /usr/share/drcsim/setup.sh
-~~~
-
-To save on typing, you can add this script to your **.bashrc** files, so it's automatically sourced every time you start a new terminal.
-
-~~~
-echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
-source ~/.bashrc
-~~~
-
-But remember to remove them from your **.bashrc** file when they are not needed any more.
-
-### Create a ROS Package Workspace
-
-If you haven't already, create a ros directory in your home directory and add it to your $ROS\_PACKAGE\_PATH. From the command line
-
-~~~
-mkdir ~/ros
-export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
-~~~
-
-Use [roscreate-pkg]( http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on **rospy** and **atlas_msgs**:
-
-~~~
-cd ~/ros
-roscreate-pkg atlas_sim_interface_tutorial rospy atlas_msgs
-~~~
-
-### Create a ROS Node
-Download [`walk.py`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_interface/files/walk.py) into **~/ros/atlas_sim_interface_tutorial/scripts/walk.py**. This file contains the following code:
-
-~~~
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_interface/files/walk.py' />
-~~~
-
-## The code explained
-
-This node needs the following imports. 
-
-~~~
 #! /usr/bin/env python
 import roslib; roslib.load_manifest('atlas_sim_interface_tutorial')
 
@@ -60,14 +9,9 @@ from tf.transformations import quaternion_from_euler, euler_from_quaternion
 import math
 import rospy
 import sys
-~~~
 
-Initializing the publishers and subscribers for this node. We publish to /atlas/atlas_sim_interface_command and /atlas/mode and listen to /atlas/atlas_sim_interface_state and /atlas/state.
-
-~~~
 class AtlasWalk():
     
-
     def walk(self):
         # Initialize atlas mode and atlas_sim_interface_command publishers        
         self.mode = rospy.Publisher('/atlas/mode', String, None, False, \
@@ -88,47 +32,29 @@ class AtlasWalk():
         while not rospy.is_shutdown():
             rospy.spin()
         print("Shutting down")
-
-~~~
-
-This is the atlas_sim_interface_state callback. It provides a lot of useful information. We can get the robot's current position (as estimated by the BDI controller). This position is what is needed to transform a local step coordinate to a global step coordinate.
-
-~~~
+        
     # /atlas/atlas_sim_interface_state callback. Before publishing a walk command, we need
     # the current robot position
     def asi_state_cb(self, state):
         try:
             x = self.robot_position.x
-        except AttributeError:   
+        except AttributeError:
             self.robot_position = Point()
             self.robot_position.x = state.pos_est.position.x
             self.robot_position.y = state.pos_est.position.y
             self.robot_position.z = state.pos_est.position.z
-
-~~~
-
-There are two types of walking behavior, static and dynamic. Dynamic is much faster, but foot placement is not as precise. Also, it is much easier to give bad walking commands that cause the atlas robot to fall. Static, is stable throughout the entire step trajectory.
-
-~~~
+        
         if self.is_static:
             self.static(state)
         else:
             self.dynamic(state)
-~~~
-
-If the robot is rotated to the world frame, the orientation may need to be accounted for in positioning the steps. This is how you can do that. However, this node does not make use of orientation.
-
-~~~
+    
     # /atlas/atlas_state callback. This message provides the orientation of the robot from the torso IMU
     # This will be important if you need to transform your step commands from the robot's local frame to world frame
     def atlas_state_cb(self, state):
         # If you don't reset to harnessed, then you need to get the current orientation
         roll, pitch, yaw = euler_from_quaternion([state.orientation.x, state.orientation.y, state.orientation.z, state.orientation.w])
-~~~   
-
-This function walks the robot dynamically in a circle. It is necessary to publish 4 steps at any time, starting with the next_step_index_needed. This helps the walking controller plan for a stable walking trajectory. Some message fields aren't used or implemented in this walking behavior. Dynamic walking behavior is best for flat surfaces with no obstructions.
-
-~~~
+        
     # An example of commanding a dynamic walk behavior.     
     def dynamic(self, state):                
         command = AtlasSimInterfaceCommand()
@@ -160,11 +86,8 @@ This function walks the robot dynamically in a circle. It is necessary to publis
         
         # Publish this command every time we have a new state message
         self.asi_command.publish(command)
-~~~       
        
-This is an example of static walking/step behavior. You only specify one step at a time, and you have to check the step_feedback field in the state message to determine when you can send the next step command. It is statically stable throughout the entire step trajectory. If you need to step over objects, or step onto steps this behavior is necessary.
-
-~~~
+       
     # An example of commanding a static walk/step behavior.
     def static(self, state):
         
@@ -189,7 +112,7 @@ This is an example of static walking/step behavior. You only specify one step at
         command.step_params.desired_step.foot_index = is_right_foot
         
         # duration has far as I can tell is not observed
-        command.step_params.desired_step.duration * [Atlas Sim Interface](http://gazebosim.org/wiki/Tutorials/drcsim/2.5/atlas_sim_interface ) How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.= 0.63
+        command.step_params.desired_step.duration = 0.63
         
         # swing_height is not observed
         command.step_params.desired_step.swing_height = 0.1
@@ -201,11 +124,7 @@ This is an example of static walking/step behavior. You only specify one step at
         
         # Publish a new step command every time a state message is received
         self.asi_command.publish(command)
-~~~
-
-This method calculates the pose of a step around a circle, based on the current step_index
-
-~~~
+        
     # This method is used to calculate a pose of step based on the step_index
     # The step poses just cause the robot to walk in a circle
     def calculate_pose(self, step_index):
@@ -248,11 +167,7 @@ This method calculates the pose of a step around a circle, based on the current 
         pose.orientation.w = Q[3]
 
         return pose
-~~~
- 
-Main method to run walk. It checks if static is specified or not.
-
-~~~
+       
 if __name__ == '__main__':
     rospy.init_node('walking_tutorial')
     walk = AtlasWalk()
@@ -261,38 +176,3 @@ if __name__ == '__main__':
     else:
         walk.is_static = False
     walk.walk()
-~~~
-
-# Running
-
-Ensure that the above python file is executable
-
-~~~
-chmod +x ~/ros/atlas_sim_interface_tutorial/scripts/walk.py
-~~~
-
-Start up simulation
-
-~~~
-roslaunch drcsim_gazebo atlas_sandia_hands.launch
-~~~
-
-Rosrun the executable, specifying static if desired
-
-Dynamic
-
-~~~
-rosrun atlas_sim_interface_tutorial walk.py
-~~~
-
-Static
-
-~~~
-rosrun atlas_sim_interface_tutorial walk.py static
-~~~
-
-## What you should see
-
-Atlas should begin walking in a circle. Swiftly if it is dynamic behavior, or slowly if static behavior like the image below.
-
-[[file:files/Asi_walk.png|800px]]
