@@ -316,6 +316,7 @@
     <tutorial title="DRC Simulator installation" ref='drcsim_install'>
       <markdown version="1.9+">drcsim_install/tutorial.md</markdown>
       <description>Explains how to install the DRC Simulator.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Visualization and logging" ref='drcsim_visualization'>

@@ -6,7 +6,7 @@ See the documentation pages of [rviz](http://www.ros.org/wiki/rviz) and [rosbag]
 
 ## Setup
 
-We assume that you've already done the [installation step](https://gazebosim.org/tutorials/).
+We assume that you've already done the [installation step](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
