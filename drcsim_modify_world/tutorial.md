@@ -122,7 +122,3 @@ Next, stop the simulation (via Control-C in the terminal where you ran `roslaunc
 You should see the modified world, as it was when you saved it.
 
 From here, you're ready to modify the robot's environment any way you like.  Have a look at [SDF documentation](http://gazebosim.org/sdf) and edit `~/ros/world_modification_tutorial/worlds/atlas.world` however you like.
-
-## Next
-
-[Next: Moving the DRC robot joints by animation](http://gazebosim.org/tutorials/?tut=drcsim_animate_joints)
