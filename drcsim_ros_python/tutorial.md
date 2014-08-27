@@ -105,7 +105,3 @@ Set up the joint command publisher.
 Read in each line from the yaml file as a trajectory command, and the current joint states from the ROS topic. Publish trajectory commands that interpolate between the initial state and the desired position to generate a smooth motion.
 
 <include from='/  # for each trajectory/' to='/dt \/ float\(n\)\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_ros_python/files/traj_yaml.py' />
-
-## Next
-
-[Next: Using grasp controllers for the Sandia Hands](http://gazebosim.org/tutorials/?tut=drcsim_grasp_sandia)
