@@ -67,7 +67,3 @@ Here is a good order in which to add features:
 1. Go to #1 until all links have been added.
 1. Add all joints (if any).
 1. Add all plugins (if any).
-
-
-## Next
-[Next: How to make a two-wheeled mobile robot](http://gazebosim.org/tutorials/?tut=build_robot)
