@@ -337,6 +337,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="How to use the Atlas Sim Interface" ref='drcsim_atlas_siminterface'>
+      <markdown version="1.9+">drcsim_atlas_siminterface/tutorial.md</markdown>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <skill>advance</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -478,6 +484,7 @@
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
         <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
       </tutorials>
     </category>
 
