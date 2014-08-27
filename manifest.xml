@@ -343,9 +343,9 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_switch_modes'>
+    <tutorial title="Atlas switching control modes" ref='drcsim_switch_modes'>
       <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
-      <description>Using the interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a switch_modes python ROS node</description>
+      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
       <skill>advance</skill>
     </tutorial>
 
