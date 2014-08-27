@@ -1,4 +1,4 @@
-# DRC Tutorial: Switching control modes
+# Overview
 
 ***Note: In recent versions of DRCSim, the demo program provided in this tutorial will cause the robot to fall over when trying to walk.  Patches to fix that problem are most welcome!***
 
