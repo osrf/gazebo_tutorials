@@ -63,8 +63,3 @@ but the vehicle's not moving! The hand brake is engaged by default. Let's diseng
 The vehicle will start driving in circles. Send the following command to turn the engine off:
 
     rostopic pub --once /drc_vehicle/key/cmd std_msgs/Int8 '{ data : 0 }'
-
-
-## Next
-
-[Next:  Using the VRC plugin with the DRC Vehicle and Atlas](http://gazebosim.org/tutorials/?tut=drcsim_vehicle_atlas)
