@@ -361,6 +361,12 @@
       <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
       <skill>advance</skill>
     </tutorial>
+
+    <tutorial title="How to use the Atlas Sim Interface" ref='drcsim_atlas_siminterface'>
+      <markdown version="1.9+">drcsim_atlas_siminterface/tutorial.md</markdown>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <skill>advance</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -506,6 +512,7 @@
         <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_switch_modes</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
       </tutorials>
     </category>
 
