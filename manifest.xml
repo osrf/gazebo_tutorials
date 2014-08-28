@@ -361,7 +361,6 @@
       <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
       <skill>advance</skill>
     </tutorial>
-
   </tutorials>
 
   <categories>
