@@ -356,6 +356,11 @@
       <skill>advance</skill>
     </tutorial>
 
+    <tutorial title="Atlas switching control modes" ref='drcsim_switch_modes'>
+      <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
+      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
+      <skill>advance</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -500,6 +505,7 @@
         <tutorial>drcsim_modify_world</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
+        <tutorial>drcsim_switch_modes</tutorial>
       </tutorials>
     </category>
 
