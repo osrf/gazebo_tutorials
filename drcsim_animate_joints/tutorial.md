@@ -314,11 +314,11 @@ The main method of the rospy node. It prevents the node from executing code if t
     VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_no_controllers.launch
     >~~~
 
-1. To prevent the robot from falling over (it's not running any controllers), disable gravity by clicking on World->Physics->gravity->z and setting the value to 0.0.
+1. To prevent the robot from falling over (it's not running any controllers), disable gravity by clicking on `World->Physics->gravity->z` and setting the value to `0.0`.
 
-1. To prevent the robot from bouncing off the ground and flying into space (there's no gravity), remove the ground by clicking on World->Models, then right-clicking on `ground_plane` and clicking Delete.
+1. To prevent the robot from bouncing off the ground and flying into space (there's no gravity), remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-1. With gravity off and ground plane deleted, reset the world by clicking Edit->Reset World.  The robot should now be in its default pose, "standing" at the origin with arms outstretched.
+1. With gravity off and ground plane deleted, reset the world by clicking `Edit->Reset` World.  The robot should now be in its default pose, "standing" at the origin with arms outstretched.
 
 1. In a separate terminal:
 
