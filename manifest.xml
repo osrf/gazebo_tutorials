@@ -367,6 +367,12 @@
       <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
       <skill>advance</skill>
     </tutorial>
+
+    <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='drcsim_control_sync'>
+      <markdown version="1.9+">drcsim_control_sync/tutorial.md</markdown>
+      <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
+      <skill>advance</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -513,6 +519,7 @@
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_switch_modes</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
       </tutorials>
     </category>
 
