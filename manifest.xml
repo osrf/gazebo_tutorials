@@ -157,9 +157,9 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Model population" ref="model_population">
+    <tutorial title="Population of models" ref="model_population">
       <markdown version="5+">model_population/tutorial.md</markdown>
-      <description>Population a world with a set of models according to a parameterized distribution.</description>
+      <description>Populate a world with a set of models according to a parameterized distribution.</description>
       <skill>intermediate</skill>
     </tutorial>
 
