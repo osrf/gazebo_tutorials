@@ -164,6 +164,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Population of models" ref="model_population">
+      <markdown version="5+">model_population/tutorial.md</markdown>
+      <description>Automatically create a collection of identical models.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -350,12 +356,35 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
+      <markdown version="1.9+">drcsim_keyboard_teleop/tutorial.md</markdown>
+      <description>DRCSim provides an interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial explains how to use the teleop.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="Atlas switching control modes" ref='drcsim_switch_modes'>
+      <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
+      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="How to use the Atlas Sim Interface" ref='drcsim_atlas_siminterface'>
+      <markdown version="1.9+">drcsim_atlas_siminterface/tutorial.md</markdown>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='drcsim_control_sync'>
+      <markdown version="1.9+">drcsim_control_sync/tutorial.md</markdown>
+      <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
+      <skill>advance</skill>
+    </tutorial>
+
     <tutorial title="Atlas control over ROS with python" ref='drcsim_ros_python'>
       <markdown version="1.9+">drcsim_ros_python/tutorial.md</markdown>
       <description>How to control the Atlas robot with a python joint trajectory controller.</description>
       <skill>intermediate</skill>
     </tutorial>
-
   </tutorials>
 
   <categories>
@@ -391,6 +420,7 @@
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
+        <tutorial>model_population</tutorial>
       </tutorials>
     </category>
 
@@ -499,6 +529,10 @@
         <tutorial>drcsim_multisense</tutorial>
         <tutorial>drcsim_modify_world</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
+        <tutorial>drcsim_keyboard_teleop</tutorial>
+        <tutorial>drcsim_switch_modes</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_ros_python</tutorial>
       </tutorials>
     </category>
