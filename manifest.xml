@@ -164,6 +164,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Population of models" ref="model_population">
+      <markdown version="5+">model_population/tutorial.md</markdown>
+      <description>Automatically create a collection of identical models.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -374,7 +380,13 @@
       <skill>advance</skill>
     </tutorial>
 
-    <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+    <tutorial title="Atlas control over ROS with python" ref='drcsim_ros_python'>
+      <markdown version="1.9+">drcsim_ros_python/tutorial.md</markdown>
+      <description>How to control the Atlas robot with a python joint trajectory controller.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
       <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
       <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
@@ -414,6 +426,7 @@
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
+        <tutorial>model_population</tutorial>
       </tutorials>
     </category>
 
@@ -526,6 +539,7 @@
         <tutorial>drcsim_switch_modes</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_control_sync</tutorial>
+        <tutorial>drcsim_ros_python</tutorial>
         <tutorial>drcsim_ros_cmds</tutorial>
       </tutorials>
     </category>
