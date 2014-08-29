@@ -14,20 +14,26 @@ We're using the ROS topics demonstrated in the [previous tutorial that used C++]
 
 If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
 
-    mkdir ~/ros
-    echo "export ROS_PACKAGE_PATH=~/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
-    source ~/.bashrc
+~~~
+mkdir ~/ros
+echo "export ROS_PACKAGE_PATH=~/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 Use [roscreate-pkg](http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on a ROS package called `osrf_msgs`:
 
-    cd ~/ros
-    roscreate-pkg tutorial_atlas_control osrf_msgs
+~~~
+cd ~/ros
+roscreate-pkg tutorial_atlas_control osrf_msgs
+~~~
 
 ## The Code
 
 Move to the directory `tutorial_atlas_control`
 
-    roscd tutorial_atlas_control
+~~~
+roscd tutorial_atlas_control
+~~~
 
 Copy the file [`traj_yaml.py`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py) into it:
 
@@ -39,32 +45,38 @@ Then download the [Traj_data2.yaml](http://bitbucket.org/osrf/gazebo_tutorials/r
 
 If you haven't brought down your previous instance of the DRC simulator, kill the process by pressing Control + C in it's terminal. Now launch the robot
 
-    roslaunch drcsim_gazebo atlas.launch
-
-**For drcsim < 3.1.0**: The package and launch file had a different name:
-
-    roslaunch atlas_utils atlas.launch
+~~~
+roslaunch drcsim_gazebo atlas.launch
+~~~
 
 You should see the Atlas standing in an empty world.  It will likely sway back and forth; that's an artifact of the controllers holding position on the joints.
 
 In a separate terminal, put Atlas in User mode:
 
-    rostopic pub /atlas/control_mode std_msgs/String --  "User"
+~~~
+rostopic pub /atlas/control_mode std_msgs/String --  "User"
+~~~
 
 In a separate terminal, run the node that you just built:
 
-    roscd tutorial_atlas_control
-    python traj_yaml.py Traj_data2.yaml step_and_fall
+~~~
+roscd tutorial_atlas_control
+python traj_yaml.py Traj_data2.yaml step_and_fall
+~~~
 
 You should see the robot try to take a step with its right leg and then fall down.
 
 Here is another trajectory, since it's football season:
 
-    python traj_yaml.py Traj_data2.yaml touchdown
+~~~
+python traj_yaml.py Traj_data2.yaml touchdown
+~~~
 
 Then, just for fun:
 
-    python traj_yaml.py Traj_data2.yaml touchdown_exhausted
+~~~
+python traj_yaml.py Traj_data2.yaml touchdown_exhausted
+~~~
 
 ### Restarting
 
