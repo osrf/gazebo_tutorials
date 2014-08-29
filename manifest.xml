@@ -391,6 +391,12 @@
       <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="DRC vehicle tele-operation" ref='drcsim_vehicle'>
+      <markdown version="1.9+">drcsim_vehicle/tutorial.md</markdown>
+      <description>How to control the DRC Vehicle using ROS topics provided by the VRC plugin.</description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -541,6 +547,7 @@
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_ros_python</tutorial>
         <tutorial>drcsim_ros_cmds</tutorial>
+        <tutorial>drcsim_vehicle</tutorial>
       </tutorials>
     </category>
 
