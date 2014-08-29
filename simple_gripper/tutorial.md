@@ -19,7 +19,7 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
     Copy the following SDF into [gripper.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/box.sdf):
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/gripper.world' />
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/gripper.world' />
 
 
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
@@ -30,11 +30,11 @@ Reference [Model Database documentation](http://gazebosim.org/user_guide/started
 
 1. Create a [model.config](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config) file with the following contents:
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/model.config' />
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config' />
 
 1. Copy the following code in the [simple_gripper.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf) file.
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/simple_gripper/files/simple_gripper.sdf' />
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf' />
 
 1. Run the world file to visualize what we have created up to this point.
 
