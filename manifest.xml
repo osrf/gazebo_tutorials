@@ -164,6 +164,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Population of models" ref="model_population">
+      <markdown version="5+">model_population/tutorial.md</markdown>
+      <description>Automatically create a collection of identical models.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -350,7 +356,55 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Teleoperate atlas with a music mixer" ref='drcsim_atlas_mixer'>
+    <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
+      <markdown version="1.9+">drcsim_keyboard_teleop/tutorial.md</markdown>
+      <description>DRCSim provides an interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial explains how to use the teleop.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="Atlas switching control modes" ref='drcsim_switch_modes'>
+      <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
+      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="How to use the Atlas Sim Interface" ref='drcsim_atlas_siminterface'>
+      <markdown version="1.9+">drcsim_atlas_siminterface/tutorial.md</markdown>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='drcsim_control_sync'>
+      <markdown version="1.9+">drcsim_control_sync/tutorial.md</markdown>
+      <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
+      <skill>advance</skill>
+    </tutorial>
+
+    <tutorial title="Atlas control over ROS with python" ref='drcsim_ros_python'>
+      <markdown version="1.9+">drcsim_ros_python/tutorial.md</markdown>
+      <description>How to control the Atlas robot with a python joint trajectory controller.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+      <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
+      <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="DRC vehicle tele-operation" ref='drcsim_vehicle'>
+      <markdown version="1.9+">drcsim_vehicle/tutorial.md</markdown>
+      <description>How to control the DRC Vehicle using ROS topics provided by the VRC plugin.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="DRC vehicle tele-operation with Atlas" ref='drcsim_vehicle_atlas'>
+      <markdown version="1.9+">drcsim_vehicle_atlas/tutorial.md</markdown>
+      <description>How to automatically place the Atlas robot in the driver's seat of the DRC vehicle using ROS topics provided by the VRC plugin. Note that this is a development aid provided for testing.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+	<tutorial title="Teleoperate atlas with a music mixer" ref='drcsim_atlas_mixer'>
       <markdown version="1.9+">drcsim_atlas_mixer/tutorial.md</markdown>
       <description>How to use a music mixer, to teleoperate the Atlas model.</description>
       <skill>intermediate</skill>
@@ -391,6 +445,7 @@
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
+        <tutorial>model_population</tutorial>
       </tutorials>
     </category>
 
@@ -499,6 +554,14 @@
         <tutorial>drcsim_multisense</tutorial>
         <tutorial>drcsim_modify_world</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
+        <tutorial>drcsim_keyboard_teleop</tutorial>
+        <tutorial>drcsim_switch_modes</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
+        <tutorial>drcsim_ros_python</tutorial>
+        <tutorial>drcsim_ros_cmds</tutorial>
+        <tutorial>drcsim_vehicle</tutorial>
+        <tutorial>drcsim_vehicle_atlas</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
       </tutorials>
     </category>
