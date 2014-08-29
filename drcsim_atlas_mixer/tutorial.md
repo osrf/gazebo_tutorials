@@ -18,23 +18,11 @@ This version of the device has been discontinued by the manufacturer, but can st
 
          sudo apt-get install python-pygame
 
-    **Note:** older versions of this package were broken.  To check whether your version works, run this command to try to import pygame:
-
-        python -c 'import pygame.pypm'
-
-    You should see nothing in response; if you instead get an error (probably about an unresolved symbol), then try to get a newer version:
-
-        sudo apt-get update
-        sudo apt-get install python-pygame
-
 ## Simulation setup
+
 Let's start simulation with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
 
     roslaunch drcsim_gazebo qual_task_2.launch
-
-**For drcsim < 3.1.0**: The package and launch file had a different name:
-
-    roslaunch atlas_utils qual_task_2.launch
 
 You'll see the robot at a table with a drill on it:
 
@@ -50,13 +38,13 @@ You'll see the robot at a table with a drill on it:
         roscreate-pkg atlas_teleop osrf_msgs rospy
         roscd atlas_teleop
 
-1. Download the [nanoKONTROL driver](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/Nanokontrol.py) in your `atlas_teleop` package, and make it executable:
+1. Download the [nanoKONTROL driver](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py) in your `atlas_teleop` package, and make it executable:
 
         chmod a+x nanokontrol.py
 
     This driver receives events from the mixer and publishes ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic.  I.e., it makes the mixer look like a big joystick, with many axes and many buttons.
 
-1. Download the Atlas teleop controller, [`atlas_teleop.py`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/atlas_teleop.py) in your `atlas_teleop` package, and make it executable:
+1. Download the Atlas teleop controller, [`atlas_teleop.py`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py) in your `atlas_teleop` package, and make it executable:
 
         chmod a+x atlas_teleop.py
 
@@ -95,7 +83,7 @@ You'll see the robot at a table with a drill on it:
 
 The `atlas_teleop.py` controller is configured with a YAML file.  Here's an example:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_atlas_mixer/files/drill.yaml' />
+<include src='https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/drill.yaml' />
 
 Download [`drill.yaml`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml.py).  We'll explain the format below. First, let's try it:
 
