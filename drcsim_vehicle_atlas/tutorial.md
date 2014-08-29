@@ -12,10 +12,6 @@ Launch the simulator using the `atlas_drc_vehicle_fire_hose.launch`
 
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas_drc_vehicle_fire_hose.launch
 
-**For drcsim < 3.1.0**: The package and launch file had a different name:
-
-    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_drc_vehicle_fire_hose.launch
-
 ## Place the Atlas robot near the vehicle
 
 The VRC plugin exposes ROS topics for entering and exiting the vehicle. Currently, these topics can be invoked from anywhere in the world, but that is subject to change in future versions of drcsim. These topics are named:
@@ -62,7 +58,7 @@ Press the gas pedal:
 
     rostopic pub --once /drc_vehicle/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
 
-Now the DRC Vehicle should be driving with Atlas in the passenger's seat. **There is currently a bug in the vehicle simulation that causes the vehicle to stop periodically when making driving in circles, but a fix is being investigated (see [gazebo issue 103](https://bitbucket.org/osrf/drcsim/issue/103))**. As described a [tutorial on using rviz](http://gazebosim.org/tutorials/?tut=drcsim_visualization) and a [tutorial on the MultiSense head](http://gazebosim.org/tutorials/?tut=drcsim_multisense), you can use rviz to view the camera or laser scan data while driving.
+Now the DRC Vehicle should be driving with Atlas in the passenger's seat. As described a [tutorial on using rviz](http://gazebosim.org/tutorials/?tut=drcsim_visualization) and a [tutorial on the MultiSense head](http://gazebosim.org/tutorials/?tut=drcsim_multisense), you can use rviz to view the camera or laser scan data while driving.
 
 ## Use Atlas robot's foot to press gas pedal
 
