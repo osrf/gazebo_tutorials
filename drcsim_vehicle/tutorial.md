@@ -12,10 +12,6 @@ Launch the simulator using the `atlas_drc_vehicle_fire_hose.launch` and with the
 
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas_drc_vehicle_fire_hose.launch
 
-**For drcsim < 3.1.0**: The package and launch file had a different name:
-
-    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_drc_vehicle_fire_hose.launch
-
 ## Read the DRC Vehicle interface states
 
 The VRC plugin exposes ROS topics for the DRC Vehicle interface elements. In addition to the steering wheel, hand brake, and pedals, the DRC Vehicle also has a key switch and a 3-way direction switch (Forward / Neutral / Reverse). The current state of each interface element can be read on the following ROS topics, which broadcast at 1 Hz:
