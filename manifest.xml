@@ -379,6 +379,12 @@
       <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
       <skill>advance</skill>
     </tutorial>
+
+    <tutorial title="Atlas control over ROS with python" ref='drcsim_ros_python'>
+      <markdown version="1.9+">drcsim_ros_python/tutorial.md</markdown>
+      <description>How to control the Atlas robot with a python joint trajectory controller.</description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -527,6 +533,7 @@
         <tutorial>drcsim_switch_modes</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_control_sync</tutorial>
+        <tutorial>drcsim_ros_python</tutorial>
       </tutorials>
     </category>
 
