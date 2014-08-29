@@ -30,7 +30,7 @@ For reference, check the [SDF API](http://gazebosim.org/sdf.html) for a complete
 
 1. Download this file: `can_population.world`:
 
-    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/model_population/files/can_population.world' />
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
 The above code is also located [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world).
 
