@@ -45,7 +45,7 @@ roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
 ~~~
 
 ### Create a ROS Node
-Copy and paste the following code as file [`~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cc) with any text editor (e.g. gedit, vi, emacs):
+Copy and paste the following code as file [`~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp) with any text editor (e.g. gedit, vi, emacs):
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
