@@ -28,11 +28,9 @@ For reference, check the [SDF API](http://gazebosim.org/sdf.html) for a complete
     cd ~/tutorial_model_population
     ~~~
 
-1. Download this file: `can_population.world`:
+1. Download this file: [`can_population.world`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world) into the current directory:
 
     <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
-
-The above code is also located [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world).
 
 Start gazebo:
 
@@ -44,7 +42,7 @@ You should see a population of soda cans randomly located around the world's ori
 
 Let's go further and understand the different elements of the `can_population.world`.
 
-<include from='/    <population name/' to='/</model>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/model_population/files/can_population.world' />
+<include from='/    <population name/' to='/</model>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
 In this snippet we can see how to specify a population element by using the `<population>` tag. Every population should have a unique name, and this is specified by the `name` attribute. Within the `population` tag, you can see how to select a model by using the `<model>` tag. Each element of the population will be inserted into the simulation with a unique name that will be created by appending to the model name the suffix `_clone_i`, where `i` is the ith element of the population. You can see the list of models spawned in the Gazebo scene here:
 
@@ -53,15 +51,15 @@ In this snippet we can see how to specify a population element by using the `<po
 The most common type of population consists of inanimate objects
 such as trees, rocks, and buildings. We recommend you use the `<population>` tag for static models, and exclude mobile entities, such as robots, which often require more precise placement and are fewer in number.
 
-<include from='/      <pose>/' to='/<\/box>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/model_population/files/can_population.world' />
+<include from='/      <pose>/' to='/<\/box>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
 The above block of code specifies the region in which the objects will be placed. In this case, all the objects are spawned within a 3D bounding box with sides `2 2 0.01`, centered at (0, 0, 0) with orientation (0, 0, 0). As an alternative to `<box>`, a `<cylinder>` region is also allowed by specifying its radius, and length. Check out the [SDF specification]((http://gazebosim.org/sdf.html)) for a full description of the `<cylinder>` parameters. The `<pose>` element sets the reference frame of the population's region.
 
-<include from='/      <model_count>/' to='/</model_count>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/model_population/files/can_population.world' />
+<include from='/      <model_count>/' to='/</model_count>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
 Above you can see how the number of models in the population is determined. Any positive number is allowed, but take into consideration that the higher the number, the more impacted the performance may be.
 
-<include from='/      <distribution>/' to='/</distribution>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/model_population/files/can_population.world' />
+<include from='/      <distribution>/' to='/</distribution>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
 The `<distribution>` element sets how the objects are placed within the region.
 
