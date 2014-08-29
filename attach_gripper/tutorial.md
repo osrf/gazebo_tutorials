@@ -16,7 +16,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. Per instructions in [Make a Mobile Robot](http://gazebosim.org/tutorials/?tut=build_robot) tutorial, you should have a mobile base robot at your disposal:
 
-    [[file:files/Mobile_base.png|640px]]
+[[file:files/Mobile_base.png|640px]]
 
 1. For this exercise, modify `~/.gazebo/models/my_robot/model.sdf` to make the model larger so it can accommodate the gripper we are about to append to it:
 
@@ -26,7 +26,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/model.sdf' />
 
-    [[file:files/Mobile_base_large.png|640px]]
+[[file:files/Mobile_base_large.png|640px]]
 
 ## Assembling a Composite Robot
 
@@ -52,4 +52,4 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 1. Make sure the `model.config` and `manipulator.sdf` files above are saved, start Gazebo and spawn the model above by using the **insert** tab and choosing **Simple Mobile Manipulator** model.  You should see something similar to:
 
-    [[file:files/Simple_mobile_manipulator.png|640px]]
+[[file:files/Simple_mobile_manipulator.png|640px]]
