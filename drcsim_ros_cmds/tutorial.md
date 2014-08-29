@@ -15,12 +15,16 @@ We assume that you've already done the [installation step](http://gazebosim.org/
 
 If you haven't done so, make sure to source the environment setup.sh files with every new terminal you open:
 
-    source /usr/share/drcsim/setup.sh
+~~~
+source /usr/share/drcsim/setup.sh
+~~~
 
 To save on typing, you can add this script to your `.bashrc` files, so it's automatically sourced every time you start a new terminal.
 
-    echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
-    source ~/.bashrc
+~~~
+echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
+source ~/.bashrc
+~~~
 
 But remember to remove them from your `.bashrc` file when they are not needed any more.
 
@@ -28,13 +32,17 @@ But remember to remove them from your `.bashrc` file when they are not needed an
 
 If you haven't already, create a ros directory in your home directory and add it to your $ROS_PACKAGE_PATH. From the command line
 
-    mkdir ~/ros
-    export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
+~~~
+mkdir ~/ros
+export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
+~~~
 
 Use [roscreate-pkg](http://ros.org/wiki/roscreate) to create a ROS package for this tutorial, depending on `roscpp`, `sensor_msgs` and `osrf_msgs`:
 
-    cd ~/ros
-    roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
+~~~
+cd ~/ros
+roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
+~~~
 
 ### Create a ROS Node
 Copy and paste the following code as file [`~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cc) with any text editor (e.g. gedit, vi, emacs):
@@ -50,13 +58,17 @@ Edit [`~/ros/drcsim_joint_commands_tutorial/CMakeLists.txt`](http://bitbucket.or
 
 To compile, type below in a terminal:
 
-    roscd drcsim_joint_commands_tutorial
-    make
+~~~
+roscd drcsim_joint_commands_tutorial
+make
+~~~
 
 If you have gazebo installed in a non-standard location (such as a local install), you must set the PKG_CONFIG_PATH appropriately. For example, use the following if you have installed into ~/local:
 
-    roscd drcsim_joint_commands_tutorial
-    PKG_CONFIG_PATH=~/local/lib/pkgconfig make
+~~~
+roscd drcsim_joint_commands_tutorial
+PKG_CONFIG_PATH=~/local/lib/pkgconfig make
+~~~
 
 
 ## The code explained
@@ -112,7 +124,7 @@ Set target velocities and efforts to zero.
 
 <include from='/for \(unsigned int i = 0; i < n/' to='/jointcommands.kp_velocity\[i\]  = 0;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
-### Subscribe to `/atlas/joint\_states` Message
+### Subscribe to `/atlas/joint_states` Message
 
 Subscribe to the JointState message, but also set the subscriber option to use
 unreliable transport (i.e. UDP connection).
@@ -135,20 +147,22 @@ to process messages in the ROS callback queue
 
 1. In terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
-        roslaunch drcsim_gazebo atlas_sandia_hands.launch
-
-    **For drcsim < 3.1.0**: The package and launch file had a different name:
-
-        roslaunch atlas_utils atlas_sandia_hands.launch
+~~~
+roslaunch drcsim_gazebo atlas_sandia_hands.launch
+~~~
 
 1. In a separate terminal, put Atlas in User mode:
 
+~~~
         rostopic pub /atlas/control_mode std_msgs/String --  "User"
+~~~
 
 1. In a separate terminal, run the node constructed above:
 
-        export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
-        rosrun drcsim_joint_commands_tutorial publish_joint_commands
+~~~
+export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
+rosrun drcsim_joint_commands_tutorial publish_joint_commands
+~~~
 
 ## Altering the code
 
@@ -157,17 +171,19 @@ The reference trajectories for each joint position is a set of sinusoids. Since 
 To add a reference velocity, alter the for loop in the SetJointStates function to match the following **(Note this only works if kp_velocity is non-zero)**:
 
 ~~~
-    // assign sinusoidal joint angle and velocity targets
-    for (unsigned int i = 0; i < jointcommands.name.size(); i++)
-    {
-      jointcommands.position[i] =
-        3.2* sin((ros::Time::now() - startTime).toSec());
-      jointcommands.velocity[i] =
-        3.2* cos((ros::Time::now() - startTime).toSec());
-    }
+// assign sinusoidal joint angle and velocity targets
+for (unsigned int i = 0; i < jointcommands.name.size(); i++)
+{
+  jointcommands.position[i] =
+    3.2* sin((ros::Time::now() - startTime).toSec());
+  jointcommands.velocity[i] =
+    3.2* cos((ros::Time::now() - startTime).toSec());
+}
 ~~~
 
 Then rebuild and re-run the node:
 
-        make
-        rosrun drcsim_joint_commands_tutorial publish_joint_commands
+~~~
+make
+rosrun drcsim_joint_commands_tutorial publish_joint_commands
+~~~
