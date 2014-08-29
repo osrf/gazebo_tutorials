@@ -164,6 +164,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Creating a population of models" ref="model_population">
+      <markdown version="5+">model_population/tutorial.md</markdown>
+      <description>Automatically create a collection of identical models.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -408,6 +414,7 @@
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
+        <tutorial>model_population</tutorial>
       </tutorials>
     </category>
 
