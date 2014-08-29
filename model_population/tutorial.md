@@ -53,7 +53,7 @@ such as trees, rocks, and buildings. We recommend you use the `<population>` tag
 
 <include from='/      <pose>/' to='/<\/box>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
-The above block of code specifies the region in which the objects will be placed. In this case, all the objects are spawned within a 3D bounding box with sides `2 2 0.01`, centered at (0, 0, 0) with orientation (0, 0, 0). As an alternative to `<box>`, a `<cylinder>` region is also allowed by specifying its radius, and length. Check out the [SDF specification]((http://gazebosim.org/sdf.html)) for a full description of the `<cylinder>` parameters. The `<pose>` element sets the reference frame of the population's region.
+The above block of code specifies the region in which the objects will be placed. In this case, all the objects are spawned within a 3D bounding box with sides `2 2 0.01`, centered at (0, 0, 0) with orientation (0, 0, 0). As an alternative to `<box>`, a `<cylinder>` region is also allowed by specifying its radius, and length. Check out the [SDF specification](http://gazebosim.org/sdf.html) for a full description of the `<cylinder>` parameters. The `<pose>` element sets the reference frame of the population's region.
 
 <include from='/      <model_count>/' to='/</model_count>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/model_population/files/can_population.world' />
 
