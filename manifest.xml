@@ -385,6 +385,12 @@
       <description>How to control the Atlas robot with a python joint trajectory controller.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+      <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
+      <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -534,6 +540,7 @@
         <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_ros_python</tutorial>
+        <tutorial>drcsim_ros_cmds</tutorial>
       </tutorials>
     </category>
 
