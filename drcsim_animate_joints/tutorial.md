@@ -37,266 +37,60 @@ A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578
 
 ### Create a ROS Publisher
 
-Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/files/joint_animation.py'):
+Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/drcsim_animate_joints/files/joint_animation.py'):
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/files/joint_animation.py
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py
 ~~~
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/files/joint_animation.py' />
-
-~~~
-#!/usr/bin/env python
-
-import roslib; roslib.load_manifest('joint_animation_tutorial')
-import rospy, math, time
-
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-
-def jointTrajectoryCommand():
-    # Initialize the node
-    rospy.init_node('joint_control')
-
-    print rospy.get_rostime().to_sec()
-    while rospy.get_rostime().to_sec() == 0.0:
-        time.sleep(0.1)
-        print rospy.get_rostime().to_sec()
-
-    pub = rospy.Publisher('/joint_trajectory', JointTrajectory)
-    jt = JointTrajectory()
-
-    jt.header.stamp = rospy.Time.now()
-    jt.header.frame_id = "atlas::pelvis"
-
-    jt.joint_names.append("atlas::back_lbz" )
-    jt.joint_names.append("atlas::back_mby" )
-    jt.joint_names.append("atlas::back_ubx" )
-    jt.joint_names.append("atlas::neck_ay"  )
-    jt.joint_names.append("atlas::l_leg_uhz")
-    jt.joint_names.append("atlas::l_leg_mhx")
-    jt.joint_names.append("atlas::l_leg_lhy")
-    jt.joint_names.append("atlas::l_leg_kny")
-    jt.joint_names.append("atlas::l_leg_uay")
-    jt.joint_names.append("atlas::l_leg_lax")
-    jt.joint_names.append("atlas::r_leg_lax")
-    jt.joint_names.append("atlas::r_leg_uay")
-    jt.joint_names.append("atlas::r_leg_kny")
-    jt.joint_names.append("atlas::r_leg_lhy")
-    jt.joint_names.append("atlas::r_leg_mhx")
-    jt.joint_names.append("atlas::r_leg_uhz")
-    jt.joint_names.append("atlas::l_arm_elx")
-    jt.joint_names.append("atlas::l_arm_ely")
-    jt.joint_names.append("atlas::l_arm_mwx")
-    jt.joint_names.append("atlas::l_arm_shx")
-    jt.joint_names.append("atlas::l_arm_usy")
-    jt.joint_names.append("atlas::l_arm_uwy")
-    jt.joint_names.append("atlas::r_arm_elx")
-    jt.joint_names.append("atlas::r_arm_ely")
-    jt.joint_names.append("atlas::r_arm_mwx")
-    jt.joint_names.append("atlas::r_arm_shx")
-    jt.joint_names.append("atlas::r_arm_usy")
-    jt.joint_names.append("atlas::r_arm_uwy")
-
-    n = 1500
-    dt = 0.01
-    rps = 0.05
-    for i in range (n):
-        p = JointTrajectoryPoint()
-        theta = rps*2.0*math.pi*i*dt
-        x1 = -0.5*math.sin(2*theta)
-        x2 =  0.5*math.sin(1*theta)
-
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        jt.points.append(p)
-
-        # set duration
-        jt.points[i].time_from_start = rospy.Duration.from_sec(dt)
-        rospy.loginfo("test: angles[%d][%f, %f]",n,x1,x2)
-
-    pub.publish(jt)
-    rospy.spin()
-
-if __name__ == '__main__':
-    try:
-        jointTrajectoryCommand()
-    except rospy.ROSInterruptException: pass
-~~~
-
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Make the file executable
 
-    chmod +x joint_animation.py
-
-### The Code explained ###
-
 ~~~
-#!/usr/bin/env python
-
-import roslib; roslib.load_manifest('joint_animation_tutorial')
+chmod +x joint_animation.py
 ~~~
+
+### The Code explained
+
+<include to='/tutorial.\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Standard for every rospy node. This imports roslib and then loads the manifest.xml included in the package so those packages are importable as well.
 
-~~~
-import rospy, math
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-~~~
+<include from='/import rospy/' to='/JointTrajectoryPoint/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Import more modules, and import the message file for JointTrajectory and JointTrajectoryPoint.
 
-~~~
-def jointTrajectoryCommand():
-    # Initialize the node
-    rospy.init_node('joint_control')
-
-    pub = rospy.Publisher('/joint_trajectory', JointTrajectory)
-~~~
+<include from='/def jointTrajectoryCommand/' to='/JointTrajectory\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 This initializes the node and creates a publisher for the /joint_trajectory topic.
 
-~~~
-    jt = JointTrajectory()
-
-    jt.header.stamp = rospy.Time.now()
-    jt.header.frame_id = "atlas::pelvis"
-~~~
+<include from='/    jt =/' to='/atlas::pelvis"/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Create an instantiation of a JointTrajectory message and add the time stamp and frame_id to the header.
 
-~~~
-    jt.joint_names.append("atlas::back_lbz" )
-    jt.joint_names.append("atlas::back_mby" )
-    jt.joint_names.append("atlas::back_ubx" )
-    jt.joint_names.append("atlas::neck_ay"  )
-    jt.joint_names.append("atlas::l_leg_uhz")
-    jt.joint_names.append("atlas::l_leg_mhx")
-    jt.joint_names.append("atlas::l_leg_lhy")
-    jt.joint_names.append("atlas::l_leg_kny")
-    jt.joint_names.append("atlas::l_leg_uay")
-    jt.joint_names.append("atlas::l_leg_lax")
-    jt.joint_names.append("atlas::r_leg_lax")
-    jt.joint_names.append("atlas::r_leg_uay")
-    jt.joint_names.append("atlas::r_leg_kny")
-    jt.joint_names.append("atlas::r_leg_lhy")
-    jt.joint_names.append("atlas::r_leg_mhx")
-    jt.joint_names.append("atlas::r_leg_uhz")
-    jt.joint_names.append("atlas::l_arm_elx")
-    jt.joint_names.append("atlas::l_arm_ely")
-    jt.joint_names.append("atlas::l_arm_mwx")
-    jt.joint_names.append("atlas::l_arm_shx")
-    jt.joint_names.append("atlas::l_arm_usy")
-    jt.joint_names.append("atlas::l_arm_uwy")
-    jt.joint_names.append("atlas::r_arm_elx")
-    jt.joint_names.append("atlas::r_arm_ely")
-    jt.joint_names.append("atlas::r_arm_mwx")
-    jt.joint_names.append("atlas::r_arm_shx")
-    jt.joint_names.append("atlas::r_arm_usy")
-    jt.joint_names.append("atlas::r_arm_uwy")
-~~~
+<include from='/    jt\.joint/' to='/append\("atlas::r_arm_uwy"\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Create the list of names of joints that will be controlled.
 
-~~~
-    n = 1500
-    dt = 0.01
-    rps = 0.05
-    for i in range(n):
-        p = JointTrajectoryPoint()
-        theta = rps*2.0*math.pi*i*dt
-        x1 = -0.5*math.sin(2*theta)
-        x2 =  0.5*math.sin(1*theta)
-~~~
+<include from='/    n = 1500/' to='/1\*theta\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Setup a for loop that runs for n=1500 times. It calculates joint angles at two different positions x1 and x2. There should be a position for each joint added above.
 
-~~~
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-~~~
+<include from='/    p.positions.append\(x1\)/' to='/    jt.points.append\(p\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Create a list of positions that the JointTrajectoryPoint will follow.
+Next, add the JointTrajectoryPoint to the JointTrajectory and proceed to the next point.
 
-~~~
-        jt.points.append(p)
-~~~
-
-Add the JointTrajectoryPoint to the JointTrajectory and proceed to the next point.
-
-~~~
-        # set duration
-        jt.points[i].time_from_start = rospy.Duration.from_sec(dt)
-        rospy.loginfo("test: angles[%d][%f, %f]",n,x1,x2)
-~~~
+<include from='/        # set duration/' to='/n,x1,x2\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 Log the point that was created.
 
-~~~
-    pub.publish(jt)
-    rospy.spin()
-~~~
+<include from='/    pub.publish/' to='/spin\(\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 This will publish the single JointTrajectory message, which the robot will execute. The node will then spin, which allows the node to continue running without blocking the CPU.
 
-
-~~~
-if __name__ == '__main__':
-    try:
-        jointTrajectoryCommand()
-    except rospy.ROSInterruptException: pass
-~~~
+<include from='/if __/' to='/: pass/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 The main method of the rospy node. It prevents the node from executing code if the thread has been shutdown.
 
