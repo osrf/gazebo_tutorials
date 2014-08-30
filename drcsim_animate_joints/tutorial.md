@@ -37,13 +37,13 @@ A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578
 
 ### Create a ROS Publisher
 
-Create a python ROS node that publishes joint trajectory messages `~/ros/joint_animation_tutorial/nodes/joint_animation.py`:
+Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/files/joint_animation.py'):
 
 ~~~
-gedit joint_animation.py
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/files/joint_animation.py
 ~~~
 
-Paste the following content into it:
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/files/joint_animation.py' />
 
 ~~~
 #!/usr/bin/env python
@@ -307,12 +307,6 @@ The main method of the rospy node. It prevents the node from executing code if t
     ~~~
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch
     ~~~
-    
-    >**For drcsim < 3.1.0**: The package and launch file had a different name:
-    
-    >~~~
-    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas_no_controllers.launch
-    >~~~
 
 1. To prevent the robot from falling over (it's not running any controllers), disable gravity by clicking on `World->Physics->gravity->z` and setting the value to `0.0`.
 
@@ -325,5 +319,5 @@ The main method of the rospy node. It prevents the node from executing code if t
     ~~~
     rosrun joint_animation_tutorial joint_animation.py
     ~~~
-    
+
     The DRC robot should move according to the published ROS JointTrajectory message.
