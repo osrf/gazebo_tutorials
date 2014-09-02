@@ -38,7 +38,7 @@ The constraints block contains several parameters related to solving constraints
 
 * The `CFM` and `ERP` parameters stands for [Constraint Force Mixing](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Constraint_Force_Mixing_.28CFM.29) and [Error Reduction Parameter](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#Joint_error_and_the_Error_Reduction_Parameter_.28ERP.29) and are used by ODE and bullet. The CFM and ERP parameters [can be related to linear stiffness and damping coefficients](http://ode-wiki.org/wiki/index.php?title=Manual:\_Concepts#How_To_Use_ERP_and_CFM). The `max velocity` and `surface layer` parameters are used to resolve contacts with a split impulse method. Any contacts with that penetrate deeper than a depth specified by `surface layer` and have a normal velocity less than `max velocity` will not bounce.
 
-See the [sdf physics documentation](http://gazebosim.org/sdf/dev.html#physics) for a description of these parameters.
+See the [sdf physics documentation](http://osrf-distributions.s3.amazonaws.com/sdformat/api/dev.html#physics12) for a description of these parameters.
 
 [[file:files/tutorialPhysicsTab.png|330px]]
 
