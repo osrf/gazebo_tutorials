@@ -421,6 +421,13 @@
       <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service</description>
       <skill>advance</skill>
     </tutorial>
+
+    <tutorial title="Teleoperate atlas with a music mixer" ref='drcsim_atlas_mixer'>
+      <markdown version="1.9+">drcsim_atlas_mixer/tutorial.md</markdown>
+      <description>How to use a music mixer, to teleoperate the Atlas model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -576,6 +583,7 @@
         <tutorial>drcsim_vehicle_atlas</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_animate_joints</tutorial>
+        <tutorial>drcsim_atlas_mixer</tutorial>
       </tutorials>
     </category>
 
