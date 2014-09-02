@@ -154,7 +154,7 @@ roslaunch drcsim_gazebo atlas_sandia_hands.launch
 1. In a separate terminal, put Atlas in User mode:
 
 ~~~
-        rostopic pub /atlas/control_mode std_msgs/String --  "User"
+rostopic pub /atlas/control_mode std_msgs/String --  "User"
 ~~~
 
 1. In a separate terminal, run the node constructed above:
