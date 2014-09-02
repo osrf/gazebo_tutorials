@@ -4,7 +4,7 @@ This tutorial demonstrates how to start the 5-step behavior demo implemented in 
 
 # Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-2.7 or later.
+[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-2.7 or later.
 
 # Launch the DRC Simulator
 
@@ -36,14 +36,16 @@ The robot will execute a simple 5 step behavior.
 
 Examining [5steps.py](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2),
 
-    mode.publish("harnessed")
-    control_mode.publish("stand-prep")
-    rospy.sleep(5.0)
-    mode.publish("nominal")
-    rospy.sleep(0.3)
-    control_mode.publish("stand")
-    rospy.sleep(1.0)
-    control_mode.publish("walk")
+~~~
+mode.publish("harnessed")
+control_mode.publish("stand-prep")
+rospy.sleep(5.0)
+mode.publish("nominal")
+rospy.sleep(0.3)
+control_mode.publish("stand")
+rospy.sleep(1.0)
+control_mode.publish("walk")
+~~~
 
 The core of it simply publishes over ros topic a set of string topics to perform mode switching in [VRC simulation world plugin](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_msgs/VRCPlugin.cpp?at=drcsim_2.2#cl-157) and in [Atlas model plugin](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_msgs/AtlasPlugin.cpp?at=drcsim_2.2#cl-598).
 
