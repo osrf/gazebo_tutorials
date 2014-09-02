@@ -2,11 +2,11 @@
 
 This tutorial demonstrates how to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior Library.  Assuming DRCSim 2.7 or above was installed on your system, Atlas simulation behavior library documentations can be found locally, simply point your browser to `file:///usr/share/drcsim-2.7/AtlasSimInterface_1.1.1/doc/html/index.html`. See also the [Keyboard teleop walking](http://gazebosim.org/tutorials/?tut=drcsim_keyboard_teleop) tutorial.
 
-## Install DRC Simulator ##
+# Install DRC Simulator
 
 [Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-2.7 or later.
 
-## Launch the DRC Simulator ##
+# Launch the DRC Simulator
 
 Launch the simulator using the [atlas.launch](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas.launch)
 
@@ -32,7 +32,7 @@ The robot will execute a simple 5 step behavior.
 
 [[file:files/atlas_5steps.png|300px]]
 
-## 5steps.py Explained ##
+# 5steps.py Explained
 
 Examining [5steps.py](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2),
 

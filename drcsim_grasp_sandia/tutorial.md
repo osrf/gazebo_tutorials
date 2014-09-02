@@ -2,7 +2,7 @@
 
 In this tutorial, we'll send desired grasp pose to Sandia hands mounted on an Atlas robot in simulation through the use of a simple ROS topic publisher. Please note that this is a tremendously simplistic implementation of grasping, and is not in any way attempting to be a "reference" implementation of any sort. The controller is just a strawman to demonstrate motion of the hands into several canonical grasps.
 
-## Setup
+# Setup
 
 We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
 
@@ -21,7 +21,7 @@ source ~/.bashrc
 
 But remember to remove them from your `.bashrc` file when they are not needed any more.
 
-## Running the Simulation
+# Running the Simulation
 
 In terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
