@@ -4,7 +4,7 @@ This tutorial will explain how to use a music mixer, to teleoperate the Atlas mo
 
 **Note: This is a tutorial, not a polished teleoperation tool. It's meant to be a demo to get you started, nothing more.**
 
-## Hardware requirements
+# Hardware requirements
 
 The tools described in this tutorial assume the use of a KORG nanoKONTROL device. We have tested only with version 1 of this device, which looks like this:
 
@@ -12,13 +12,13 @@ The tools described in this tutorial assume the use of a KORG nanoKONTROL device
 
 This version of the device has been discontinued by the manufacturer, but can still be ordered online, e.g., via [Amazon](http://www.amazon.com/Korg-nanoKONTROL-USB-Controller-White/dp/B001H2P294).  Newer versions of the device can probably be made to work, but some modifications to the driver code (nanokontrol.py) might be required.
 
-### Driver installation
+## Driver installation
 
 1. Install the `pygame` library, which we'll use to access the mixer:
 
          sudo apt-get install python-pygame
 
-## Simulation setup
+# Simulation setup
 
 Let's start simulation with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
 
@@ -28,7 +28,7 @@ You'll see the robot at a table with a drill on it:
 
 [[file:files/Qual_2_start.png|800px|Robot with drill]]
 
-## Teleop package setup
+# Teleop package setup
 
 **Note: the ROS package being created here is also available in the drcsim 2.7.x source release, in the directory `tutorials/atlas_teleop`.**
 
@@ -50,7 +50,7 @@ You'll see the robot at a table with a drill on it:
 
  This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/raw/default/ros/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
 
-## Finding your mixer device
+# Finding your mixer device
 
 1. Plug your KORG nanoKONTROL device into a free USB port.  Depending on the details of your computer, the mixer might show up with any of a number of integer IDs.  You need to find it.  One way to do this is to walk through the possible IDs until it works, starting with:
 
@@ -79,7 +79,7 @@ You'll see the robot at a table with a drill on it:
 
  Repeat this procedure until you find the right ID.  Remember that ID.  For the rest of this tutorial, we'll assume that the correct ID is 3 (it seems to often be 3).
 
-## Pick up the drill
+# Pick up the drill
 
 The `atlas_teleop.py` controller is configured with a YAML file.  Here's an example:
 
@@ -97,7 +97,7 @@ With a bit of practice, you should be able to pick up the drill and drop it in t
 
 [Video](https://www.youtube.com/watch?v=ywacltEGnDA)
 
-## Configuration file format
+# Configuration file format
 
 The configuration file for `atlas_teleop.py` is written in [YAML](http://www.yaml.org/), with the following structure:
 
@@ -113,7 +113,7 @@ The configuration file for `atlas_teleop.py` is written in [YAML](http://www.yam
     * When a slider is between 0.0 and 1.0, it commands the pose that results from linearly interpolating between the origin and its target pose.
 * Slider commands are *added*  together.  As a result, you can easily blend different postures (blending doesn't always make sense, of course).
 
-## Known issues / caveats
+# Known issues / caveats
 
 * The mixer produces events only when a slider (or knob, or button) is changed.  So joystick messages and the resulting robot/hand command messages are not published continuously, but rather only when you're moving the sliders.
 * After the `nanokontrol.py` driver starts, the initial position of each slider is not known until that slider is moved.  Unexpected things (e.g., sudden jumps) can occur on the first movement of a slider.

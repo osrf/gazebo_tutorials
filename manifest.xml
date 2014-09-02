@@ -355,6 +355,12 @@
       <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="Animate joints" ref='drcsim_animate_joints'>
+      <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
+      <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
+      <skill>intermediate</skill>
+    </tutorial>
     
     <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
       <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
@@ -576,6 +582,7 @@
         <tutorial>drcsim_vehicle</tutorial>
         <tutorial>drcsim_vehicle_atlas</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
+        <tutorial>drcsim_animate_joints</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
       </tutorials>
     </category>
