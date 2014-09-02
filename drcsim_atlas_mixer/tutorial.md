@@ -14,15 +14,19 @@ This version of the device has been discontinued by the manufacturer, but can st
 
 ## Driver installation
 
-1. Install the `pygame` library, which we'll use to access the mixer:
+Install the `pygame` library, which we'll use to access the mixer:
 
-         sudo apt-get install python-pygame
+~~~
+sudo apt-get install python-pygame
+~~~
 
 # Simulation setup
 
-Let's start simulation with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
+Start Gazebo with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
 
-    roslaunch drcsim_gazebo qual_task_2.launch
+~~~
+roslaunch drcsim_gazebo qual_task_2.launch
+~~~
 
 You'll see the robot at a table with a drill on it:
 
@@ -34,30 +38,42 @@ You'll see the robot at a table with a drill on it:
 
 1. Create a ROS package to contain the code for this tutorial. You should do this somewhere in your `ROS_PACKAGE_PATH`.
 
-        cd ~/ros
-        roscreate-pkg atlas_teleop osrf_msgs rospy
-        roscd atlas_teleop
+    ~~~
+    cd ~/ros
+    roscreate-pkg atlas_teleop osrf_msgs rospy
+    roscd atlas_teleop
+    mkdir scripts
+    cd scripts
+    ~~~
 
 1. Download the [nanoKONTROL driver](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py) in your `atlas_teleop` package, and make it executable:
 
-        chmod a+x nanokontrol.py
+    ~~~
+    wget https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py
+    chmod a+x nanokontrol.py
+    ~~~
 
     This driver receives events from the mixer and publishes ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic.  I.e., it makes the mixer look like a big joystick, with many axes and many buttons.
 
 1. Download the Atlas teleop controller, [`atlas_teleop.py`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py) in your `atlas_teleop` package, and make it executable:
 
-        chmod a+x atlas_teleop.py
+    ~~~
+    wget https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py
+    chmod a+x atlas_teleop.py
+    ~~~
 
- This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/raw/default/ros/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
+    This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/raw/default/ros/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
 
 # Finding your mixer device
 
 1. Plug your KORG nanoKONTROL device into a free USB port.  Depending on the details of your computer, the mixer might show up with any of a number of integer IDs.  You need to find it.  One way to do this is to walk through the possible IDs until it works, starting with:
 
-        # Start a listener on the /joy topic, which the driver will publish to when it's working
-        rostopic echo /joy &
-        # Try the driver with ID 0
-        rosrun atlas_teleop nanokontrol.py 0
+    ~~~
+   # Start a listener on the /joy topic, which the driver will publish to when it's working
+    rostopic echo /joy &
+    # Try the driver with ID 0
+    rosrun atlas_teleop nanokontrol.py 0
+    ~~~
 
 1. Move the sliders around; you're looking for a stream of output from `rostopic` similar to:
 
@@ -85,17 +101,25 @@ The `atlas_teleop.py` controller is configured with a YAML file.  Here's an exam
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml' />
 
-Download [`drill.yaml`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml).  We'll explain the format below. First, let's try it:
+Download [`drill.yaml`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml).
 
-    # The integer argument should be the ID for your device, which you discovered earlier; it might not be 3
-    rosrun atlas_teleop nanokontrol.py 3 &
-    rosrun atlas_teleop atlas_teleop.py drill.yaml
+~~~
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml
+~~~
+
+We'll explain the format below. First, let's try it:
+
+~~~
+# The integer argument should be the ID for your device, which you discovered earlier; it might not be 3
+rosrun atlas_teleop nanokontrol.py 3 &
+rosrun atlas_teleop atlas_teleop.py drill.yaml
+~~~
 
 Now start moving the sliders around.  You'll notice that sliders 1-6 make the right arm do various things.  Sliders 7 and 8 make the right hand open and close in different ways.
 
 With a bit of practice, you should be able to pick up the drill and drop it in the bin:
 
-[Video](https://www.youtube.com/watch?v=ywacltEGnDA)
+<iframe width="420" height="315" src="//www.youtube.com/embed/ywacltEGnDA" frameborder="0" allowfullscreen></iframe>
 
 # Configuration file format
 
