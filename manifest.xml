@@ -409,6 +409,12 @@
       <description>How to automatically place the Atlas robot in the driver's seat of the DRC vehicle using ROS topics provided by the VRC plugin. Note that this is a development aid provided for testing.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="Changing Viscous Damping Coefficients Over ROS Service" ref='drcsim_set_joint_damping'>
+      <markdown version="1.9+">drcsim_set_joint_damping/tutorial.md</markdown>
+      <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service</description>
+      <skill>advance</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -562,6 +568,7 @@
         <tutorial>drcsim_ros_cmds</tutorial>
         <tutorial>drcsim_vehicle</tutorial>
         <tutorial>drcsim_vehicle_atlas</tutorial>
+        <tutorial>drcsim_set_joint_damping</tutorial>
       </tutorials>
     </category>
 
