@@ -355,6 +355,12 @@
       <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
       <skill>intermediate</skill>
     </tutorial>
+    
+    <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
+      <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
+      <description>How to send desired grasp pose to Sandia hands mounted on the Atlas robot through ROS.</description>
+      <skill>intermediate</skill>
+    </tutorial>
 
     <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
       <markdown version="1.9+">drcsim_keyboard_teleop/tutorial.md</markdown>
@@ -553,6 +559,7 @@
         <tutorial>drcsim_multisense</tutorial>
         <tutorial>drcsim_modify_world</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
+        <tutorial>drcsim_grasp_sandia</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_switch_modes</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
