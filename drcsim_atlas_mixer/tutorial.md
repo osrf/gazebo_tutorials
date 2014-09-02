@@ -126,7 +126,7 @@ With a bit of practice, you should be able to pick up the drill and drop it in t
 The configuration file for `atlas_teleop.py` is written in [YAML](http://www.yaml.org/), with the following structure:
 
 * Each line defines a robot pose:
-    * The first 28 numbers are joint values for the Atlas robot, given in the [usual order](https://bitbucket.org/osrf/drcsim/raw/default/ros/atlas_msgs/msg/AtlasState.msg).
+    * The first 28 numbers are joint values for the Atlas robot, given in the [usual order](https://bitbucket.org/osrf/drcsim/raw/default/atlas_msgs/msg/AtlasState.msg).
     * The next two elements specify a grasp posture for the left hand (the following two elements do the same for the right hand), in two parts:
         * The string specifies the grasp type, which should be one of: `cyl` (cylindrical) or `sph` (spherical).
         * The number specifies a grasp position between fully open (0.0) and fully closed (1.0).
