@@ -86,7 +86,7 @@ roslaunch control_synchronization_tutorial atlas_sync.launch
 
 You should see an Atlas robot standing in an empty world:
 
-[[file:fles/atlas_sync.png|640px]]
+[[file:fles/Atlas_sync.png|640px]]
 
 If running this in the cloud, make sure to set your `GAZEBO_IP` and `ROS_IP` in every open terminal, and roslaunch instead:
 
@@ -114,7 +114,7 @@ Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PA
 rxplot -p 5 -b 10 /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
 ~~~
 
-[[file:files/sync_stats.png|640px]]
+[[file:files/Sync_stats.png|640px]]
 
 The sub-plots (from top down) are:
 
@@ -127,7 +127,7 @@ The sub-plots (from top down) are:
 ### Important Note on Delay Budget
 As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a controller that takes roughly 2 ms. real-time to do its calculations will fit comfortably inside of the [existing synchronization delay budget](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). However, at 200 Hz. (sim time synchronization rate), if your controller takes more than 2ms(real-time) to update, due to synchronization overheads, you will exhaust the [existing delay budget quite quickly](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas_sandia_hands.launch?at=default#cl-20). Similar to the previous timing plot, below is what happens when a controller takes 3 ms. (real-time) to do its calculations:
 
-[[file:files/sync_exhaust_stats.png|640px]]
+[[file:files/Sync_exhaust_stats.png|640px]]
 
 As shown in above figure, within each 5 second delay window, the delay budget is exhausted in about 1 second, and controller becomes unsynchronized.
 
