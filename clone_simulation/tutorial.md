@@ -49,13 +49,16 @@ http://gazebosim.org
 
 
 (1409088199 32370140) Cloning world [default]. Contact the server by typing:
-  GAZEBO_MASTER_URI=http://localhost:11346 gzclient --gui-logfile gzclient.11346.log
+  GAZEBO_MASTER_URI=http://localhost:11346 gzclient
 %%%
+
+Your cloned server will store its log files in a directory named `~/.gazebo/server-<MASTER_PORT>`.
+E.g.: In our example, the log files for the cloned gzserver will be located under `/.gazebo/server-11346`.
 
 Open a new terminal and connect *gzclient* to your new server. If you did not use port 11346, be sure to replace "11346" with your port number:
 
 ~~~
-GAZEBO_MASTER_URI=http://localhost:11346 gzclient --gui-logfile gzclient.11346.log
+GAZEBO_MASTER_URI=http://localhost:11346 gzclient
 ~~~
 
 The above code modifies the environment variable `GAZEBO_MASTER_URI` to
