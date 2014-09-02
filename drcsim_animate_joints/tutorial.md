@@ -2,9 +2,9 @@
 
 In this tutorial, we'll move a robot in simulation without dynamics through the use of a model plugin that listens to the [trajectory_msgs::JointTrajectory message](http://ros.org/wiki/trajectory_msgs) over a [ROS topic](http://www.ros.org/wiki/Topics).
 
-## Setup
+# Setup
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install).
+We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -31,11 +31,11 @@ mkdir scripts
 cd scripts
 ~~~
 
-## Model Plugin Controller
+# Model Plugin Controller
 
 A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578a573/plugins/ros/gazebo_ros_joint_trajectory.h?at=default) has been embedded in the DRC robot. The plugin subscribes to a ROS topic containing [JointTrajectory messages](http://ros.org/wiki/trajectory_msgs), and plays back the joint trajectory on the robot. This is useful when you want to move the robot without worrying about the dynamics of the robot model. This plugin also disables physics updates while playing back the joint trajectory.
 
-### Create a ROS Publisher
+## Create a ROS Publisher
 
 Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/drcsim_animate_joints/files/joint_animation.py'):
 
@@ -51,7 +51,7 @@ Make the file executable
 chmod +x joint_animation.py
 ~~~
 
-### The Code explained
+## The Code explained
 
 <include to='/tutorial.\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
@@ -94,7 +94,7 @@ This will publish the single JointTrajectory message, which the robot will execu
 
 The main method of the rospy node. It prevents the node from executing code if the thread has been shutdown.
 
-## Running the Simulation
+# Running the Simulation
 
 1. In terminal, start the DRC robot simulation:
 
