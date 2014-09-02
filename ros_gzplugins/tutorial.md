@@ -512,7 +512,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Projector
 
-**Description:** projects a static texture from a source outwards, such as used with the PR2's original head camera sensor. See [API documentation](http://gazebosim.org/api/dev/classgazebo_1_1rendering_1_1Projector.html) for more information.
+**Description:** projects a static texture from a source outwards, such as used with the PR2's original head camera sensor. See [API documentation](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1rendering_1_1Projector.html) for more information.
 
 ## Prosilica Camera
 
