@@ -573,7 +573,6 @@
         <tutorial>drcsim_atlas_mixer</tutorial>
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
-        <tutorial>drcsim_bdi_examples</tutorial>
         <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_grasp_sandia</tutorial>
