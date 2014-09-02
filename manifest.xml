@@ -568,22 +568,23 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_animate_joints</tutorial>
+        <tutorial>drcsim_keyboard_teleop</tutorial>
+        <tutorial>drcsim_atlas_mixer</tutorial>
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
-        <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_bdi_examples</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_grasp_sandia</tutorial>
-        <tutorial>drcsim_keyboard_teleop</tutorial>
-        <tutorial>drcsim_switch_modes</tutorial>
-        <tutorial>drcsim_atlas_siminterface</tutorial>
-        <tutorial>drcsim_control_sync</tutorial>
-        <tutorial>drcsim_ros_python</tutorial>
-        <tutorial>drcsim_ros_cmds</tutorial>
         <tutorial>drcsim_vehicle</tutorial>
         <tutorial>drcsim_vehicle_atlas</tutorial>
+        <tutorial>drcsim_ros_cmds</tutorial>
+        <tutorial>drcsim_ros_python</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_switch_modes</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
-        <tutorial>drcsim_animate_joints</tutorial>
-        <tutorial>drcsim_atlas_mixer</tutorial>
       </tutorials>
     </category>
 
