@@ -322,10 +322,19 @@ Follow this following steps:
 
 1. Install DRCSim >= 4.0
 
-1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. For example, if you installed DRCSim from debian:
+1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim.
 
+    a. If you installed DRCSim from debian:
+    
     ~~~
-    cp libAtlasRobotInterface.so.2.10.2 /usr/lib/AtlasSimInterface_2.10.2/
+    cp libAtlasSimInterface.so.2.10.2 /usr/lib/AtlasSimInterface_2.10.2/
+    ~~~
+
+
+    b. If you installed DRCSim in a catkin workspace:
+    
+    ~~~
+    cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/AtlasSimInterface_2.10.2/
     ~~~
 
 1. Launch drcsim as usual
