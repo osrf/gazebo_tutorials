@@ -78,7 +78,7 @@ This method calculates the pose of a step around a circle, based on the current 
 
 Main method to run walk. It checks if static is specified or not.
 
-<include from="@if __name__ == '__main__':@" to='$' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_siminterface/files/walk.py' />
+<include from="/if __name__ == '__main__':/" src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_siminterface/files/walk.py' />
 
 # Running
 
