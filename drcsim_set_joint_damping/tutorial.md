@@ -26,7 +26,7 @@ Each service is described in detail below:
  * ROS service: `/atlas/set_joint_damping`
  * message type: [atlas_msgs/srv/SetJointDamping](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/atlas_msgs/srv/SetJointDamping.srv?at=default)
 * To get Sandia hand model's current joint damping coefficients,
- * ROS service: `/atlas/get_joint_damping`
+ * ROS service: `/sandia_hands/get_joint_damping`
  * message type: [atlas_msgs/srv/GetJointDamping](https://bitbucket.org/osrf/drcsim/src/f31ae4bfec80e40deb8936a0c335e8e62edc3fb3/atlas_msgs/srv/GetJointDamping.srv?at=default)
 * To set Sandia hand model's joint damping coefficients,
  * ROS service: `/sandia_hands/set_joint_damping`
