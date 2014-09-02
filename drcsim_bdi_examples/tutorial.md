@@ -8,7 +8,7 @@ This tutorial demonstrates how to start the 5-step behavior demo implemented in 
 
 ## Launch the DRC Simulator ##
 
-Launch the simulator using the [atlas.launch](https://bitbucket.org/osrf/drcsim/src/66af3c06fde1ad856f381cd07fd2a0bddfa80e86/ros/atlas_utils/launch/atlas.launch?at=drcsim_2.7)
+Launch the simulator using the [atlas.launch](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas.launch)
 
 ~~~
 source /usr/share/drcsim/setup.sh
