@@ -311,3 +311,25 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 ### Other platforms (TODO)
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
+
+# Atlas Simulation Interface 2.10.2
+
+This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 2.10.2 from BDI.
+
+DRCSim version 4.0 or greater is required.
+
+Follow this following steps:
+
+1. Install DRCSim >= 4.0
+
+1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. For example, if you installed DRCSim from debian:
+
+    ~~~
+    cp libAtlasRobotInterface.so.2.10.2 /usr/lib/AtlasSimInterface_2.10.2/
+    ~~~
+
+1. Launch drcsim as usual
+
+    ~~~
+    roslaunch drcmsim_gazebo atlas_v3.launch
+    ~~~
