@@ -22,7 +22,7 @@ This tutorial describes the process of creating a world with both static and dyn
     $ gazebo
     ~~~
 
-    [[file:files/empty_world.png|640px]]
+[[file:files/empty_world.png|640px]]
 
 # Adding Objects
 
@@ -30,11 +30,11 @@ Gazebo provides two mechanisms for adding objects to Gazebo.
 
 1.  The first is a set of simple shapes, located above the render window.
 
-    [[file:files/empty_world_simple_shapes_highlighted.png|640px]]
+[[file:files/empty_world_simple_shapes_highlighted.png|640px]]
 
 1.  The second is via the [model database](https://bitbucket.org/osrf/gazebo_models), which is accessible by selecting the `Insert` tab in the upper left corner.
 
-    [[file:files/empty_world_insert_highlighted.png|640px]]
+[[file:files/empty_world_insert_highlighted.png|640px]]
 
 ## Adding Simple Shapes
 
@@ -48,7 +48,7 @@ Select the box icon, and then move your mouse onto the render window. You will s
 
 Repeat the same procedure for the sphere and cylinder. You should end with a world similar to this:
 
-    [[file:files/simple_shapes.png|640px]]
+[[file:files/simple_shapes.png|640px]]
 
 ## Adding Model from the Model Database
 
@@ -62,13 +62,13 @@ Gazebo's model database is a repository of all types of models including robots,
 
 3.  You should end up with something similar to the following, depending on the models you decided to add:
 
-    [[file:files/added_models_to_empty_world.png|640px]]
+[[file:files/added_models_to_empty_world.png|640px]]
 
 # Position Models
 
 The pose of each model may be altered through the translate and rotate tools:
 
-    [[file:files/Empty_translate_rotate_highlighted.png|640px]]
+[[file:files/Empty_translate_rotate_highlighted.png|640px]]
 
 ## Translation
 The translate tools allows you to move the object along the x,y, and z axes. Select this tool now, and then move an object by left-pressing and dragging the object.
