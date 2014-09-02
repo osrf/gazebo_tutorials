@@ -4,7 +4,7 @@ Gazebo communicates on TCP/IP sockets, which allows separate programs to interfa
 
 The easiest way to communicate with Gazebo over TCP/IP sockets is to link against the Gazebo libraries, and use the provided functions.
 
-The Gazebo transport system is documented [here](http://gazebosim.org/api/1.9.1/group__gazebo__transport.html) and the protobuf message types are documented [here](http://gazebosim.org/api/1.9.1/group__gazebo__msgs.html).
+The Gazebo transport system is documented [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/group__gazebo__msgs.html).
 
 A list of all the topics in use on a running system can be found with the following command (make sure Gazebo is running first):
 
@@ -14,7 +14,7 @@ gz topic -l
 
 # Example
 
-This example subscribes to a [WorldStatistics message](http://gazebosim.org/msgs/1.9.0/world__stats_8proto.html) on topic ~/world_stats and prints it to the console. This message is output by Gazebo at 1 Hz and includes information about the simulation time and pause state. The example is included in the gazebo source distribution at [examples/stand_alone/listener/](https://bitbucket.org/osrf/gazebo/src/68186e57ea8e97d9dfb6b29bb8e50bf9f83d2e78/examples/stand_alone/listener/listener.cc?at=gazebo_4.0) and assumes that you can link against Gazebo.
+This example subscribes to a [WorldStatistics message](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/listener.cc?at=gazebo_4.0) and assumes that you can link against Gazebo.
 
 Download listener.cc and CMakeLists.txt from the above link and put them into to a folder called listener at your home directory. Compile the example:
 
