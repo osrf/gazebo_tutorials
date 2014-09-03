@@ -86,7 +86,7 @@ roslaunch control_synchronization_tutorial atlas_sync.launch
 
 You should see an Atlas robot standing in an empty world:
 
-[[file:fles/Atlas_sync.png|640px]]
+[[file:files/Atlas_sync.png|640px]]
 
 If running this in the cloud, make sure to set your `GAZEBO_IP` and `ROS_IP` in every open terminal, and roslaunch instead:
 
