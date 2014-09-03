@@ -361,6 +361,12 @@
       <description>How to visualize data streams from the simulated Atlas robot Multisense SL head.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="Animate joints" ref='drcsim_animate_joints'>
+      <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
+      <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
+      <skill>intermediate</skill>
+    </tutorial>
     
     <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
       <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
@@ -421,6 +427,13 @@
       <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service</description>
       <skill>advance</skill>
     </tutorial>
+
+    <tutorial title="Teleoperate atlas with a music mixer" ref='drcsim_atlas_mixer'>
+      <markdown version="1.9+">drcsim_atlas_mixer/tutorial.md</markdown>
+      <description>How to use a music mixer, to teleoperate the Atlas model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -562,19 +575,21 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_animate_joints</tutorial>
+        <tutorial>drcsim_keyboard_teleop</tutorial>
+        <tutorial>drcsim_atlas_mixer</tutorial>
         <tutorial>drcsim_visualization</tutorial>
         <tutorial>drcsim_multisense</tutorial>
-        <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_atlas_siminterface</tutorial>
         <tutorial>drcsim_fakewalking</tutorial>
         <tutorial>drcsim_grasp_sandia</tutorial>
-        <tutorial>drcsim_keyboard_teleop</tutorial>
-        <tutorial>drcsim_switch_modes</tutorial>
-        <tutorial>drcsim_atlas_siminterface</tutorial>
-        <tutorial>drcsim_control_sync</tutorial>
-        <tutorial>drcsim_ros_python</tutorial>
-        <tutorial>drcsim_ros_cmds</tutorial>
         <tutorial>drcsim_vehicle</tutorial>
         <tutorial>drcsim_vehicle_atlas</tutorial>
+        <tutorial>drcsim_ros_cmds</tutorial>
+        <tutorial>drcsim_ros_python</tutorial>
+        <tutorial>drcsim_modify_world</tutorial>
+        <tutorial>drcsim_switch_modes</tutorial>
+        <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
       </tutorials>
     </category>
