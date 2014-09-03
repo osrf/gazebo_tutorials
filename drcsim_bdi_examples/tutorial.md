@@ -47,7 +47,7 @@ rospy.sleep(1.0)
 control_mode.publish("walk")
 ~~~
 
-The core of it simply publishes over ros topic a set of string topics to perform mode switching in [VRC simulation world plugin](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_msgs/VRCPlugin.cpp?at=drcsim_2.2#cl-157) and in [Atlas model plugin](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_msgs/AtlasPlugin.cpp?at=drcsim_2.2#cl-598).
+The core of it simply publishes over ros topic a set of string topics to perform mode switching in [VRC simulation world plugin](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/VRCPlugin.cpp?at=default#cl-200) and in [Atlas model plugin](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/AtlasPlugin.cpp?at=default#cl-1664).
 
 The basic sequence includes:
 
