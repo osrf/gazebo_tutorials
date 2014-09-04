@@ -7,7 +7,7 @@ DRCSim v2.4 introduces an example interface to the Atlas Sim Interface and BDI C
 Launch the simulator (be sure to first `source /usr/share/drcsim/setup.sh` as usual):
 
 ~~~
-roslaunch drcsim_gazebo atlas_sandia_hands.launch
+VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
 ## Teleop
@@ -21,22 +21,35 @@ roslaunch drcsim_gazebo keyboard_teleop.launch
 You will see a screen like below:
 
 ~~~
-Keyboard Teleop for AtlasSimInterface 1.0.5
+Keyboard Teleop for AtlasSimInterface 1.1.0
 Copyright (C) 2013 Open Source Robotics Foundation
 Released under the Apache 2 License
 --------------------------------------------------
-Linear movement:
+Dynamic linear movement:
 
-	i    
+        i
    j         l
-	,    
-	
-Turn movements:
-o/u Turn around a point
-m/. Turn in place
+        ,
+
+Dynamic turn movements:
+u/o Turn left/right around a point
+m/. Turn left/right in place
+
+
+Static linear movement:
+
+        I
+   J         L
+        <
+
+Static turn movements:
+U/O Turn left/right around a point
+M/> Turn left/right in place
 
 1-9: Change the length of step trajectory
+'-'/'=': Increase/Decrease Stride Length
 E: View and Edit Parameters
+H: Print this menu
 R: Reset robot to standing pose
 Q: Quit
 ~~~
@@ -47,13 +60,15 @@ Press `R` to move the robot to a BDI-controlled standing position.  You should d
 
 ### Movements
 
-Press `i` to move forward, `,` to move backward. `J` sidesteps laterally to the left, and `L` sidesteps to the right.
+Press `i` to move forward, `,` to move backward. `j` sidesteps laterally to the left, and `l` sidesteps to the right.
 
 Pressing `O`, or `U` walks the atlas in a circle around a point to the left or right by 2 meters.
 
-Pressing `M` and `.` turns the robot around on a point
+Pressing `M` and `>` turns the robot around on a point
 
 This is an image of Atlas walking in a 2 meter circle.
+
+You can also use the stepping primitives for testing the Atlas static locomotion (press keys `I`, `<`, `J`, and `L` for stepping the robot forward, backwards, to the left and to right respectively.
 
 [[file:files/Atlas_keyboard_teleop.png|800px]]
 
@@ -72,7 +87,7 @@ You can change a number of parameters to experiment with the walking controller.
 7 : Swing Height          0.3
 8 : Turn Radius           2
 X : Exit
-Enter number of param you want to change: 
+Enter number of param you want to change:
 ~~~
 
 Enter a number of the param you to change, in this case we can increase the forward stride length by pressing `1` and `Enter`. It brings up the following:
