@@ -23,13 +23,13 @@ Install the ROS visualization tools if you do not yet have them. From the comman
   For ROS Groovy:
 
 ~~~
-sudo apt-get install ros-groovy-visualization
+sudo apt-get install ros-groovy-rviz
 ~~~
 
   For ROS Hydro:
 
 ~~~
-sudo apt-get install ros-hydro-visualization
+sudo apt-get install ros-hydro-rviz
 ~~~
 
   For ROS Indigo:
@@ -56,6 +56,7 @@ When it comes time to bring down this process, press Control + C in the same ter
 While your robot is running, start rviz from the command line
 
 ~~~
+source /usr/share/drcsim/setup.sh
 rosrun rviz rviz
 ~~~
 
@@ -63,13 +64,13 @@ rosrun rviz rviz
 
 ### Visualizing the Robot model
 
-Now instead of the black screen, we want to actually visualize information. At the bottom of the 'Displays' group, you'll find buttons 'Add', 'Remove', 'Rename' for adding items to visualize, removing items and renaming them. Let's first add the robot model, so click 'Add' and scroll to 'rviz > Robot Model' and click 'OK'. It should now look like the display below.
+Now instead of the black screen, we want to actually visualize information. At the bottom of the 'Displays' group, you'll find buttons 'Add', 'Remove', 'Rename' for adding items to visualize, removing items and renaming them. Let's first add the robot model, so click 'Add' and scroll to 'rviz > RobotModel' and click 'OK'. It should now look like the display below.
 
 
 [[file:files/robot_model_2.7.png|640px]]
 
 
-We now need to tell rviz which fixed frame we want to use. In the 'Displays' group, under the '.Global Options' item, click the frame label next to 'Fixed Frame'. Type in or select '/pelvis'. You should now see your robot model from a distance.
+We now need to tell rviz which fixed frame we want to use. In the 'Displays' group, under the 'Global Options' item, click the frame label next to 'Fixed Frame'. Type in or select '/pelvis'. You should now see your robot model from a distance.
 
 **TODO: imu_link is in error (no transform to pelvis)**
 
