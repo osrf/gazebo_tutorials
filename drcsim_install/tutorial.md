@@ -322,7 +322,7 @@ Follow this following steps:
 
 1. Install DRCSim >= 4.0
 
-1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim.
+1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.2.10.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.2.10.2`.
 
     a. If you installed DRCSim from debian:
     
