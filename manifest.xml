@@ -428,6 +428,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Running BDI controller demo" ref='drcsim_bdi_examples'>
+      <markdown version="1.9+">drcsim_bdi_examples/tutorial.md</markdown>
+      <description>How to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior library.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -584,6 +590,7 @@
         <tutorial>drcsim_switch_modes</tutorial>
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
+        <tutorial>drcsim_bdi_examples</tutorial>
       </tutorials>
     </category>
 
