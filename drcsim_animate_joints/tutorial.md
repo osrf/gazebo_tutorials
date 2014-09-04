@@ -45,7 +45,7 @@ wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joint
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
-Make the file executable
+Make the file executable:
 
 ~~~
 chmod +x joint_animation.py
@@ -106,7 +106,7 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 1. To prevent the robot from bouncing off the ground and flying into space (there's no gravity), remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-1. With gravity off and ground plane deleted, reset the world by clicking `Edit->Reset` World.  The robot should now be in its default pose, "standing" at the origin with arms outstretched.
+1. With gravity off and ground plane deleted, reset the world by clicking `Edit->Reset World`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
 
 1. In a separate terminal:
 
