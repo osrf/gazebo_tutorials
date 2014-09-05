@@ -262,6 +262,11 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Which combination of ROS/Gazebo versions to use" ref='ros_wrapper_versions'>
+      <markdown version="1.9+">ros_wrapper_versions/tutorial.md</markdown>
+      <description>Details the reasons to pick an specific ROS or Gazebo version and provide instructions about how to install the different options</description>
+      <skill>intermediate</skill>
+    </tutorial>
 
     <!-- ****************** -->
     <!-- Advanced tutorials -->
@@ -531,6 +536,7 @@
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
+	<tutorial>ros_wrapper_versions</tutorial>
         <tutorial>ros_installing</tutorial>
         <tutorial>ros_roslaunch</tutorial>
         <tutorial>ros_urdf</tutorial>
