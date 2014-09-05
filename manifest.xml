@@ -536,7 +536,7 @@
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
-	<tutorial>ros_wrapper_versions</tutorial>
+        <tutorial>ros_wrapper_versions</tutorial>
         <tutorial>ros_installing</tutorial>
         <tutorial>ros_roslaunch</tutorial>
         <tutorial>ros_urdf</tutorial>
