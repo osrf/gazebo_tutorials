@@ -1,14 +1,26 @@
 # Introduction 
 
-This document provides an overview about the options to use the different version of ROS in combination with the different versions of Gazebo. It is recommended to read it before installing the Gazebo ROS wrappers.
+This document provides an overview about the options to use different versions of ROS
+ in combination with different versions of Gazebo.
+It is recommended to read it before installing the Gazebo ROS wrappers.
 
 # Short version for quick decision
 
-If you are planning on using an specific version of ROS and really don't have a good argument to pick an specific Gazebo version, you can go ahead and proceed with the [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) tutorial.
+If you are planning on using an specific version of ROS and don't have a reason
+ to use an specific version of Gazebo version,
+ you can go ahead and proceed with the
+ [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+ tutorial.
 
 # Gazebo versions and ROS integration
 
-Since ROS Hydro, Gazebo is consider a system package instead of ROS package which means that one major version of gazebo (i.e. `gazebo2`) is selected at the beginning of the ROS release cycle and will be kept during the whole life of the ROS distribution. Gazebo development is independent from ROS, so new major version will appear before they are getting into a ROS distribution. The following sections cover how to use ROS with all kind of gazebo versions.
+Since ROS Hydro, Gazebo is considered a system package instead of ROS package,
+ which means that one major version of gazebo (for example `gazebo2` for ROS Indigo)
+ is selected at the beginning of the ROS release cycle
+ and will be kept during the whole life of the ROS distribution.
+Gazebo development is independent from ROS, so each new major version of Gazebo
+ must be released before they being used in a ROS distribution.
+The following sections cover how to use ROS with different versions of Gazebo.
 
 ## Gazebo Ubuntu packages
 
