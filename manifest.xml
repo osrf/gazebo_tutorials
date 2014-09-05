@@ -434,6 +434,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="GUI Overlay" ref='gui_overlay'>
+      <markdown version="5.0+">gui_overlay/tutorial.md</markdown>
+      <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -510,6 +516,7 @@
       <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
       <tutorials>
         <tutorial>hydra</tutorial>
+        <tutorial>gui_overlay</tutorial>
       </tutorials>
     </category>
 
