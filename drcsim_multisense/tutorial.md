@@ -9,7 +9,7 @@ If not done previously, [install DRCSim first](http://gazebosim.org/tutorials/?t
 ## Starting Atlas Robot Simulation
 Source the environment setup script:
 
-    source /opt/ros/[Your ROS Distro Name]/setup.bash   # this is not necessary for drcsim 3.1.0 and later
+    source /opt/ros/[Your ROS Distro Name]/setup.bash   # this is necessary for drcsim 3.1.0 and later
     source /usr/share/drcsim/setup.sh
 
 Start the Atlas robot simulation:
