@@ -31,14 +31,14 @@ Next, start [rviz](http://ros.org/wiki/rviz)
     source /usr/share/drcsim/setup.sh
     rosrun rviz rviz
 
-and follow steps in [this tutorial](http://gazebosim.org/tutorials/?tut=drcsim_visualize) to configure rviz properly.
+and follow steps in [this tutorial](http://gazebosim.org/tutorials?tut=drcsim_visualization&cat=drcsim) to configure rviz properly.
 
 More importantly, repeat the steps to setup camera and laser visualization but substitute ROS topics in the original instructions with following ROS topics:
 
   - camera image streams: `/multisense_sl/camera/left/image_raw` and `/multisense_sl/camera/right/image_raw` for left and right eye.
   - LIDAR data stream: `/multisense_sl/laser/scan`
 
-In addition to visualizing camera images and laser data, to visualize stereo point cloud, click `Add` button under the rviz *Displays* panel, select `PointCloud2` then click `OK`.  Set the Topic for the newly added PointCloud2 visual as `/multisense_sl/camera/points2`.  It might take a few seconds but a point cloud of the ground plane should appears shortly:
+In addition to visualizing camera images and laser data, to visualize stereo point cloud, click `Add` button under the rviz *Displays* panel, select `PointCloud2` then click `OK`.  Set the Topic for the newly added PointCloud2 visual as `/multisense_sl/camera/points2`.  Now drop a box in front of the robot to see the point cloud visualization in rviz.
 
 [[file:files/Atlas_rviz.png|640px]]
 
