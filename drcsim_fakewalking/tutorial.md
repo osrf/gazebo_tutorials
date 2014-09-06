@@ -23,7 +23,7 @@ sudo apt-get install ros-groovy-pr2-teleop-app
 
 ## Background
 
-Note that this tutorial does not use the [walking controller](http://gazebosim.org/tutorials/?tut=drcsim_walking&cat=drcsim). It simply spawns Atlas with position controllers enabled that keep it standing upright, as shown in the following image:
+Note that this tutorial does not use the walking controller. It simply spawns Atlas with position controllers enabled that keep it standing upright, as shown in the following image:
 
 [[file:files/Gazebo_with_drc_robot.png|640px]]
 
