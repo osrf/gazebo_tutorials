@@ -72,8 +72,6 @@ Now instead of the black screen, we want to actually visualize information. At t
 
 We now need to tell rviz which fixed frame we want to use. In the 'Displays' group, under the 'Global Options' item, click the frame label next to 'Fixed Frame'. Type in or select '/pelvis'. You should now see your robot model from a distance.
 
-**TODO: imu_link is in error (no transform to pelvis)**
-
 [[file:files/Rviz_atlas_in_pelvis_frame_new_2.7.png|640px]]
 
 
@@ -89,11 +87,11 @@ To navigate using a wheeled mouse:
 
 ### Visualizing Sensor Information
 
-Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rviz > Camera'. Under the Camera item in the displays window, click the empty space to the right of 'Image Topic' and an empty field should appear. Select or type `/multisense_sl/camera/left/image_raw`. You should now see the camera video feed in a small frame. Note that rviz displays an overlay of the robot model on the camera image, which may cause circles to appear in the camera images. The overlays can be turned off by setting the Camera > Overlay Alpha to 1.0.
+Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rviz > Camera'. Under the Camera item in the displays window, click the empty space to the right of 'Image Topic' and an empty field should appear. Select or type `/multisense_sl/camera/left/image_raw`. You should now see the camera video feed in a small frame. Note that rviz displays an overlay of the robot model on the camera image, which may cause circles to appear in the camera images. The overlays can be turned off by setting the Camera > Overlay Alpha to 1.0. Note: The camera images may appear grey as there is nothing in front of Atlas so try dropping a box in front of the robot to see it in the camera feed.
 
 [[file:files/Rviz_atlas_with_camera_2.7.png|640px]]
 
-Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. You should now see a visualization of the laser scan in rviz.
+Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. Again, to see the laser scan visualization in rviz, drop a box in front of the robot to see red points rendered over it as it falls.
 
 Poke around in rviz and add different sensors or robot information. TF visualizes the joint transformations, Map visualizes a 2D collision map, PointCloud(2) visualizes depth information from sensors like a Microsoft Kinect.
 
@@ -147,9 +145,6 @@ To play the bag file create a launch file called "playback.launch" with the foll
 <launch>
   <!-- Creates a command line argument called file -->
   <arg name="file"/>
-
-  <!-- Loads the robot description of Atlas so rviz can visualize it -->
-  <param name="robot_description" textfile="$(find atlas)/atlas.urdf"/>
 
   <!-- Run the rosbag play as a node with the file argument -->
   <node name="rosbag" pkg="rosbag" type="play" args="--loop $(arg file)" output="screen"/>
