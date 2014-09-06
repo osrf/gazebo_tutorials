@@ -91,7 +91,7 @@ Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rvi
 
 [[file:files/Rviz_atlas_with_camera_2.7.png|640px]]
 
-Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. Again, to see the laser scan visualization in rviz, drop a box in front of the robot to see red points rendered over it as it falls.
+Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. Again, to see the laser scan visualization in rviz, drop a box in front of the robot to see red points rendered over the box as it falls.
 
 Poke around in rviz and add different sensors or robot information. TF visualizes the joint transformations, Map visualizes a 2D collision map, PointCloud(2) visualizes depth information from sensors like a Microsoft Kinect.
 
