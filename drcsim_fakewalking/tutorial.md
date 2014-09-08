@@ -1,7 +1,5 @@
 # Overview
 
-**IMPORTANT: This tutorial only works with ROS Groovy.**
-
 This tutorial will explain how to drive simulated Atlas around as if it were a wheeled robot (i.e., without walking or balancing).
 
 ## Setup
@@ -15,12 +13,6 @@ echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
 source ~/.bashrc
 ~~~
 
-We're going to use the [pr2_teleop](http://ros.org/wiki/pr2_teleop) package to drive Atlas around with keyboard commands. Install the Ubuntu package that contains it:
-
-~~~
-sudo apt-get install ros-groovy-pr2-teleop-app
-~~~
-
 ## Background
 
 Note that this tutorial does not use the [walking controller](http://gazebosim.org/tutorials/?tut=drcsim_walking&cat=drcsim). It simply spawns Atlas with position controllers enabled that keep it standing upright, as shown in the following image:
@@ -31,7 +23,7 @@ Note that all of the robot's joints, including the legs, are physically simulate
 
 So the simulated robot in this tutorial can't walk, but we still want to move it around in the world.  Fortunately, the simulated robot accepts velocity commands via ROS to translate and rotate in the plane, as if it were a wheeled robot.
 
-## The code
+## Moving Atlas
 
 1. Start the simulator:
 
@@ -39,97 +31,86 @@ So the simulated robot in this tutorial can't walk, but we still want to move it
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch
     ~~~
 
-    >**For drcsim < 3.1.0**: The package and launch file had a different name:
-
-    >~~~
-    VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas.launch
-    >~~~
-
     Note: Setting the variable `VRC_CHEATS_ENABLED=1` exposes several development aid topics including `/atlas/cmd_vel`, which are by default disabled for the VRC competition.
 
-2. In another shell, start `pr2_teleop/pr2_teleop_keyboard`:
+
+    The simulated robot is awaiting [ROS Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html) messages, which specify 6-D velocities, on the `atlas/cmd_vel` topic.  Check that with [rostopic](http://ros.org/wiki/rostopic):
 
     ~~~
-    rosrun pr2_teleop teleop_pr2_keyboard cmd_vel:=atlas/cmd_vel
+    rostopic info atlas/cmd_vel
     ~~~
 
     You should see something like:
 
-            Reading from keyboard
-            ---------------------------
-            Use 'WASD' to translate
-            Use 'QE' to yaw
-            Press 'Shift' to run
+    %%%
+    Type: geometry_msgs/Twist
+    Publishers: None
+    Subscribers:
+     * /gazebo (http://osrf-Latitude-E6420:35339/)
+    %%%
 
-3. Follow the instructions: get the robot moving with those keys.  Press any other key to stop. Control-C to stop the teleop utility.
+    You can publish ROS Twist messages from anywhere, including from the command line, using rostopic.  First, let's see what's in a Twist message, using [rosmsg](http://ros.org/wiki/rosmsg):
 
-## How does that work?
+    ~~~
+    rosmsg show Twist
+    ~~~
 
+    You should see:
 
-The simulated robot is awaiting [ROS Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html) messages, which specify 6-D velocities, on the `atlas/cmd_vel` topic.  Check that with [rostopic](http://ros.org/wiki/rostopic):
+    %%%
+    [geometry_msgs/Twist]:
+    geometry_msgs/Vector3 linear
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Vector3 angular
+      float64 x
+      float64 y
+      float64 z
+    %%%
 
-~~~
-rostopic info atlas/cmd_vel
-~~~
+    It's a 6-D velocity: 3 linear velocities (X, Y, and Z) and 3 angular velocities (rotations about X, Y, Z, also called roll, pitch, and yaw). Our robot is constrained to move in the plane, so we only care about X, Y, and yaw (rotation about Z).
 
-You should see something like:
+1. Place the robot in a *stand* position:
 
-~~~
-Type: geometry_msgs/Twist
+    ~~~
+    rostopic pub --once /atlas/mode std_msgs/String "pid_stand"
+    ~~~
 
-Publishers:
- * /pr2_base_keyboard (http://osrf-Latitude-E6420:36506/)
+1. *Pin* the robot for keeping its feet off the ground:
 
-Subscribers:
- * /gazebo (http://osrf-Latitude-E6420:35339/)
-~~~
+    ~~~
+    rostopic pub --once /atlas/mode std_msgs/String "pinned"
+    ~~~
 
-The teleop utility is simply converting your keyboard input to messages of that type and publishing them to that topic.  You can publish such messages from anywhere, including from the command line, using rostopic.  First, let's see what's in a Twist message, using [rosmsg](http://ros.org/wiki/rosmsg):
+1. Make the robot drive counter-clockwise in a circle:
 
-~~~
-rosmsg show Twist
-~~~
+    ~~~
+    rostopic pub -r 10 atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.5, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.5 } }'
+    ~~~
 
-You should see:
+    Every `cmd_vel` sent has a lifetime associated. By default, the last velocity command is applied to Atlas during 0.1 seconds. After that, the robot will stop. If you look at the last previous `rostopic` command that you typed, we included a `-r 10` option argument to publish the same message at 10 Hz., to guarantee that the robot does not stop.
 
-~~~
-[geometry_msgs/Twist]:
-geometry_msgs/Vector3 linear
-  float64 x
-  float64 y
-  float64 z
-geometry_msgs/Vector3 angular
-  float64 x
-  float64 y
-  float64 z
-~~~
+    It's also possible to modify the value of the velocity command timeout:
 
-It's a 6-D velocity: 3 linear velocities (X, Y, and Z) and 3 angular velocities (rotations about X, Y, Z, also called roll, pitch, and yaw). Our robot is constrained to move in the plane, so we only care about X, Y, and yaw (rotation about Z).
+    1. By adding a new ROS parameter in the [`atlas.launch`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_gazebo/launch/atlas.launch) file:
 
-Place the robot in a *stand* position:
+        ~~~
+        <param name="/atlas/cmd_vel_timeout" type="double" value="0.2"/>
+        ~~~
 
-~~~
-rostopic pub --once /atlas/mode std_msgs/String "pid_stand"
-~~~
+    1. By executing [`rosparam`](http://wiki.ros.org/rosparam) before launching drcsim:
 
-*Pin* the robot for keeping its feet off the ground:
+        ~~~
+        rosparam set /atlas/cmd_vel_timeout 0.2
+        ~~~
 
-~~~
-rostopic pub --once /atlas/mode std_msgs/String "pinned"
-~~~
+    You can verify the commands being sent with the command:
 
-Make the robot drive counter-clockwise in a circle:
+    ~~~
+    rostopic echo atlas/cmd_vel
+    ~~~
 
-~~~
-rostopic pub -r 10 atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.5, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.5 } }'
-~~~
-
-You can verify the commands being sent with the command:
-
-~~~
-rostopic echo atlas/cmd_vel
-~~~
-
-To stop the robot, press CTRL-C to cancel the previous command.
+    To stop the robot, press CTRL-C to cancel the previous command.
 
 From here, you're ready to write code that moves the robot around the world.
