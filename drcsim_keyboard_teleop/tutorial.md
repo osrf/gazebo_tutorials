@@ -49,9 +49,9 @@ Press `R` to move the robot to a BDI-controlled standing position.  You should d
 
 Press `i` to move forward, `,` to move backward. `J` sidesteps laterally to the left, and `L` sidesteps to the right.
 
-Pressing `O`, or `U` walks the atlas in a circle around a point to the left or right by 2 meters.
+Pressing `o`, or `u` walks the atlas in a circle around a point to the left or right by 2 meters.
 
-Pressing `M` and `.` turns the robot around on a point
+Pressing `m` and `.` turns the robot around on a point
 
 This is an image of Atlas walking in a 2 meter circle.
 
