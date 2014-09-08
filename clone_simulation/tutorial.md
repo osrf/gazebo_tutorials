@@ -24,7 +24,7 @@ current simulation.
     You should see a dialog window similar to the window below.
 
     [[file:files/gazebo_clone_sim.png|640px]]
-    
+
     The new cloned world will run on a separate server that will have its own
     *Master*. This dialog window allows you to specify the port in which the new
     Master will accept connections from the clients. Note that you should select
@@ -46,8 +46,8 @@ confirming that the world has been cloned.
     Copyright (C) 2012-2014 Open Source Robotics Foundation.
     Released under the Apache 2 License.
     http://gazebosim.org
-    
-    
+
+
     (1409088199 32370140) Cloning world [default]. Contact the server by typing:
       GAZEBO_MASTER_URI=http://localhost:11346 gzclient
     %%%
@@ -71,16 +71,16 @@ world.
     click on physics, and then change the z value of the property
     *gravity*). You should only see one of your spheres slowly flying.
     This proves that after cloning a simulation, each world is independent.
-    
+
     [[file:files/sidebyside.png|640px]]
-    
+
 1. Once the new server is cloned, it's totally detached from the orginal one, so
 you will need to kill it manually:
 
     ~~~
     killall gzserver
     ~~~
-    
+
     Note that the cloned server will be running on the same machine on which
     the original server is located. Take this into account before cloning
     a simulation because you may need SSH access to the server machine (if
@@ -175,7 +175,7 @@ Let's take a look at the source code for our example:
 
 This fragment of the code spawns a new thread and executes a new server.
 
-<include from='/  gazebo::transport::NodePtr/' to='/  getchar();/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/  gazebo::transport::NodePtr/' to='/simulation\\n\"(.*)$\n  getchar\(\);/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
 The simulation cloning is performed via the transport system. First, we have to
 initialize a transport node that will allow us to use the transport. We need a
@@ -183,7 +183,7 @@ topic publisher to send a new message with our cloning request. The topic is
 `/gazebo/server/control`. In addition, we need a subscriber on the topic `/gazebo/world/modify` for receiving the result of our
 clone request.
 
-<include from='/  gazebo::msgs::ServerControl/' to='/  getchar();/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/  gazebo::msgs::ServerControl/' to='/servers."(.*)$\n  getchar\(\);/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
 This is the part of the code where we prepare our `ServerControl` message for
 our cloning request. The field `save_world_name` specifies the name of the world that
@@ -202,6 +202,6 @@ subscription and it will be triggered when the response from the server is
 received. The field `cloned` will be true when a new server has been cloned.
 Also, the field `cloned_uri` will show us the *URI* of the new server.
 
-<include from='/  //Make sure/' to='/gazebo::shutdown/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/^(.*)Make sure/' to='/gazebo::shutdown\(\);/' src='http://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
 
 These commands will terminate all the servers running in our system.
