@@ -108,7 +108,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
 1. Click on the button to spawn spheres.
 
-    [[file:files/spawned_sphere.png|640px]]
+    [[file:files/spawn_sphere.png|640px]]
 
 
 # Example 2: Display Simulation Time
