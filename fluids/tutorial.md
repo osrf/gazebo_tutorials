@@ -32,16 +32,14 @@ available the simulation will run in CPU mode).
     sudo ./install.sh
     ~~~
 
-1. Install [gz_fluid]( https://bitbucket.org/ahaidu/gz_fluid)
+1. Install [gazebo](http://gazebosim.org/tutorials?tut=install) from source using the `fluid_sph` branch
 
     ~~~
-    cd /tmp
-    git clone https://bitbucket.org/ahaidu/gz_fluid 
-    cd gz_fluid
-    mkdir build
-    cd build
-    cmake ../
-    make
+    [...]
+    cd ~; hg clone https://bitbucket.org/osrf/gazebo
+    cd ~/gazebo
+    hg up fluid_sph
+    [...]
     ~~~
 
 # How the package works
@@ -64,8 +62,8 @@ The package contains two plugins, one world plugin for updating the fluid and it
 1. Set the gazebo plugin and model paths
 
     ~~~
-    echo "export GAZEBO_PLUGIN_PATH=/tmp/gz_fluid/build:${GAZEBO_PLUGIN_PATH}" >> ~/.bashrc
-    echo "export GAZEBO_MODEL_PATH=/tmp/gz_fluid/models:${GAZEBO_MODEL_PATH}" >> ~/.bashrc
+    echo "export GAZEBO_PLUGIN_PATH=/<path_to_gazebo_source>/gazebo/build/plugins:${GAZEBO_PLUGIN_PATH}" >> ~/.bashrc
+    echo "export GAZEBO_MODEL_PATH=/<path_to_gazebo_source>/gazebo/media/models:${GAZEBO_MODEL_PATH}" >> ~/.bashrc
     source ~/.bashrc
     ~~~
 
