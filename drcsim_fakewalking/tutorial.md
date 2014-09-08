@@ -38,13 +38,13 @@ So the simulated robot in this tutorial can't walk, but we still want to move it
     ~~~
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch
     ~~~
-    
+
     >**For drcsim < 3.1.0**: The package and launch file had a different name:
-    
+
     >~~~
     VRC_CHEATS_ENABLED=1 roslaunch atlas_utils atlas.launch
     >~~~
-    
+
     Note: Setting the variable `VRC_CHEATS_ENABLED=1` exposes several development aid topics including `/atlas/cmd_vel`, which are by default disabled for the VRC competition.
 
 2. In another shell, start `pr2_teleop/pr2_teleop_keyboard`:
@@ -52,9 +52,9 @@ So the simulated robot in this tutorial can't walk, but we still want to move it
     ~~~
     rosrun pr2_teleop teleop_pr2_keyboard cmd_vel:=atlas/cmd_vel
     ~~~
-    
+
     You should see something like:
-    
+
             Reading from keyboard
             ---------------------------
             Use 'WASD' to translate
@@ -104,22 +104,32 @@ geometry_msgs/Vector3 angular
   float64 z
 ~~~
 
-It's a 6-D velocity: 3 linear velocities (X, Y, and Z) and 3 angular velocities (rotations about X, Y, Z, also called roll, pitch, and yaw).  Our robot is constrained to move in the plane, so we only care about X, Y, and yaw (rotation about Z).  Make the robot drive counter-clockwise in a circle:
+It's a 6-D velocity: 3 linear velocities (X, Y, and Z) and 3 angular velocities (rotations about X, Y, Z, also called roll, pitch, and yaw). Our robot is constrained to move in the plane, so we only care about X, Y, and yaw (rotation about Z).
+
+Place the robot in a *stand* position:
 
 ~~~
-rostopic pub --once atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.5, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.5 } }'
+rostopic pub-once /atlas/mode std_msgs/String "pid_stand"
 ~~~
 
-Note that the robot keeps moving after rostopic exits; that's because there's no watchdog that requires recent receipt of a velocity command (that may change in the future).  You can verify that no commands are being sent with this with the command:
+*Pin* the robot for keeping its feet off the ground:
+
+~~~
+rostopic pub-once /atlas/mode std_msgs/String "pinned"
+~~~
+
+Make the robot drive counter-clockwise in a circle:
+
+~~~
+rostopic pub -r 10 atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.5, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.5 } }'
+~~~
+
+You can verify the commands being sent with the command:
 
 ~~~
 rostopic echo atlas/cmd_vel
 ~~~
 
-To stop the robot, send zero velocities:
-
-~~~
-rostopic pub --once atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.0, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.0 } }'
-~~~
+To stop the robot, press CTRL-C to cancel the previous command.
 
 From here, you're ready to write code that moves the robot around the world.
