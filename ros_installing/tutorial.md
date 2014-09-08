@@ -1,13 +1,13 @@
 # Introduction
 
-The set of ROS packages for interfacing with Gazebo are contained within a 
-new meta package (catkin's version of stacks) named `gazebo_ros_pkgs`. 
-See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview) 
+The set of ROS packages for interfacing with Gazebo are contained within a
+new meta package (catkin's version of stacks) named `gazebo_ros_pkgs`.
+See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview)
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Hydro](http://www.ros.org/wiki/hydro) and ROS [Indigo](http://www.ros.org/wiki/hydro). 
-It is recommended to first read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions) 
+with ROS [Hydro](http://www.ros.org/wiki/hydro) and ROS [Indigo](http://www.ros.org/wiki/indigo).
+It is recommended to first read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -29,7 +29,7 @@ See [Install Gazebo](http://gazebosim.org/tutorials?tut=install&cat=get_started)
 
 #### Test that stand-alone Gazebo works
 
-Before attempting to install the gazebo_ros_pkgs, make sure the stand-alone Gazebo works by running in terminal:
+Before attempting to install the `gazebo_ros_pkgs`, make sure the stand-alone Gazebo works by running in terminal:
 
 ~~~
 gazebo
@@ -48,17 +48,17 @@ which gzclient
 
 If you installed from source to the default location it should say:
 
-~~~
+%%%
 /usr/local/bin/gzserver
 /usr/local/bin/gzclient
-~~~
+%%%
 
 If you installed from debian it should say:
 
-~~~
+%%%
 /usr/bin/gzserver
 /usr/bin/gzclient
-~~~
+%%%
 
 ## Install gazebo\_ros\_pkgs
 
@@ -88,7 +88,7 @@ If this installation method ends successfully for you, jump to [testing gazebo w
 ### B. Install from Source (on Ubuntu)
 
 If you are running an earlier version of ROS (Groovy or earlier) you will need
-to install `gazebo_ros_pkgs` from source. Installing from source is also useful 
+to install `gazebo_ros_pkgs` from source. Installing from source is also useful
 if you want to develop new plugins or submit patches.
 
 #### Setup A Catkin Workspace
@@ -115,7 +115,7 @@ For more details see the [Create A Catkin Workspace](http://www.ros.org/wiki/cat
 
 #### Clone the Github Repositories
 
-Make sure `git` is installed on your Ubuntu machine
+Make sure `git` is installed on your Ubuntu machine:
 
 ~~~
 sudo apt-get install git
@@ -129,7 +129,7 @@ Indigo is using the gazebo 2.x series, start by installing it:
 sudo apt-get install -y gazebo2
 ~~~
 
-Download the source code from the [gazebo\_ros\_pkgs\ github\ repo](https://github.com/ros-simulation/gazebo_ros_pkgs):
+Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
 
 ~~~
 cd ~/catkin_ws/src
@@ -160,7 +160,7 @@ Hydro is using the gazebo 1.x series, start by installing it:
 sudo apt-get install -y gazebo
 ~~~
 
-Download the source code from the [gazebo\_ros\_pkgs\ github\ repo](https://github.com/ros-simulation/gazebo_ros_pkgs):
+Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
 
 ~~~
 cd ~/catkin_ws/src
@@ -228,14 +228,14 @@ rostopic list
 
 You should see within the lists topics such as:
 
-~~~
+%%%
 /gazebo/link_states
 /gazebo/model_states
 /gazebo/parameter_descriptions
 /gazebo/parameter_updates
 /gazebo/set_link_state
 /gazebo/set_model_state
-~~~
+%%%
 
 You can also verify the Gazebo services exist:
 
@@ -245,7 +245,7 @@ rosservice list
 
 You should see within the list services such as:
 
-~~~
+%%%
 /gazebo/apply_body_wrench
 /gazebo/apply_joint_effort
 /gazebo/clear_body_wrenches
@@ -276,7 +276,7 @@ You should see within the list services such as:
 /gazebo/unpause_physics
 /rosout/get_loggers
 /rosout/set_logger_level
-~~~
+%%%
 
 ## Other ROS Ways To Start Gazebo
 
@@ -284,30 +284,30 @@ There are several `rosrun` commands for starting Gazebo:
 
 * Launch both the server and client together
 
-~~~
-rosrun gazebo_ros gazebo
-~~~
+    ~~~
+    rosrun gazebo_ros gazebo
+    ~~~
 
 * Launch the Gazebo server only
 
-~~~
-rosrun gazebo_ros gzserver
-~~~
+    ~~~
+    rosrun gazebo_ros gzserver
+    ~~~
 
 * Launch the Gazebo client only
 
-~~~
-rosrun gazebo_ros gzclient
-~~~
+    ~~~
+    rosrun gazebo_ros gzclient
+    ~~~
 
 * Launches the Gazebo server only, in debug mode using GDB
 
-~~~
-rosrun gazebo_ros debug
-~~~
+    ~~~
+    rosrun gazebo_ros debug
+    ~~~
 
 * Additionally, you can start Gazebo using `roslaunch`
 
-~~~
-roslaunch gazebo_ros empty_world.launch
-~~~
+    ~~~
+    roslaunch gazebo_ros empty_world.launch
+    ~~~
