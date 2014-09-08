@@ -150,19 +150,19 @@ to process messages in the ROS callback queue
 
 ## Running the Simulation
 
-1. In terminal, source the DRC simulator setup script and start the DRC robot simulation:
+* In terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
 ~~~
 roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
-2. In a separate terminal, put Atlas in User mode, which will cause Atlas to fall over (which is ok):
+* In a separate terminal, put Atlas in User mode, which will cause Atlas to fall over (which is ok):
 
 ~~~
 rostopic pub /atlas/control_mode std_msgs/String --  "User"
 ~~~
 
-3. In a separate terminal, run the node constructed above, which will cause
+* In a separate terminal, run the node constructed above, which will cause
  Atlas to writhe around on the ground with all joints cycling through their full range of motion
  (see [this video](https://www.youtube.com/watch?v=-zpZ3lUvccI#t=23s)
   for a variant of this behavior):
