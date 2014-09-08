@@ -324,17 +324,32 @@ Follow this following steps:
 
 1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.2.10.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.2.10.2`.
 
-    a. If you installed DRCSim from debian:
-    
+    a. Source your ROS setup file. For example, if you are using ROS Indigo:
+
     ~~~
-    cp libAtlasSimInterface.so.2.10.2 /usr/lib/AtlasSimInterface_2.10.2/
+    source /opt/ros/indigo/setup.sh
     ~~~
 
-
-    b. If you installed DRCSim in a catkin workspace:
+    b. If you installed DRCSim from debian:
     
     ~~~
-    cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/AtlasSimInterface_2.10.2/
+    sudo cp libAtlasSimInterface.so.2.10.2 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.2.10.2
+    sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
+    sudo cp libQuadProg_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
+    ~~~
+
+    c. If you installed DRCSim in a catkin workspace:
+    
+    ~~~
+    cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/
+    cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
+    cp libQuadProg_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
+    ~~~
+
+1. The new interface needs `ulimit` set:
+
+    ~~~
+    ulimit -s unlimited
     ~~~
 
 1. Launch drcsim as usual
