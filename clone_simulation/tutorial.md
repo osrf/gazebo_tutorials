@@ -38,7 +38,7 @@ current world. If you look in your server log file, you should see a message
 confirming that the world has been cloned.
 
     ~~~
-    cat ~/.gazebo/gzserver.log
+    cat ~/.gazebo/server-default/default.log
     ~~~
 
     %%%
