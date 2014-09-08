@@ -109,13 +109,13 @@ It's a 6-D velocity: 3 linear velocities (X, Y, and Z) and 3 angular velocities 
 Place the robot in a *stand* position:
 
 ~~~
-rostopic pub-once /atlas/mode std_msgs/String "pid_stand"
+rostopic pub --once /atlas/mode std_msgs/String "pid_stand"
 ~~~
 
 *Pin* the robot for keeping its feet off the ground:
 
 ~~~
-rostopic pub-once /atlas/mode std_msgs/String "pinned"
+rostopic pub --once /atlas/mode std_msgs/String "pinned"
 ~~~
 
 Make the robot drive counter-clockwise in a circle:
