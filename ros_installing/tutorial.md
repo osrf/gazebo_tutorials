@@ -149,7 +149,7 @@ You can automatically install the missing dependencies using rosdep via debian i
 rosdep install --from-paths . --ignore-src --rosdistro indigo -y
 ~~~
 
-Now jump to the [build the gazebo\_ros\_pkgs](#build_the_gazebo_ros_pkgs) section.
+Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
 
 ##### ROS Hydro
@@ -180,9 +180,9 @@ You can automatically install the missing dependencies using rosdep via debian i
 rosdep install --from-paths . --ignore-src --rosdistro hydro -y
 ~~~
 
-Now jump to the [build the gazebo\_ros\_pkgs](#build_the_gazebo_ros_pkgs) section.
+Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
-#### Build the gazebo\_ros\_pkgs <a name="build_the_gazebo_ros_pkgs"></a>
+#### Build the gazebo\_ros\_pkgs
 
 To build the Gazebo ROS integration packages, run the following commands:
 
