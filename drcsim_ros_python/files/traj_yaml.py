@@ -59,8 +59,7 @@ if __name__ == '__main__':
     command.i_effort_min[i] = -command.i_effort_max[i]
 
   # set up the publisher
-  pub = rospy.Publisher('/atlas/joint_commands', JointCommands
-                      , queue_size=1)
+  pub = rospy.Publisher('/atlas/joint_commands', JointCommands, queue_size=1)
 
   # for each trajectory
   for i in xrange(0, traj_len):
