@@ -48,7 +48,7 @@ roslaunch drcsim_gazebo atlas.launch
 roslaunch atlas_utils atlas.launch
 >~~~
 
-You'll see the robot on its own, with just ground and sky:
+You'll see the robot on its own, with just the ground:
 
 [[file:files/Gazebo_with_drc_robot.png|640px]]
 
@@ -98,7 +98,7 @@ Now that we have our own copies of the .launch and .world files, we can make cha
 
         <include file="$(find world_modification_tutorial)/launch/atlas_no_controllers.launch">
 
-Now we need to change atlas_no_controllers to refer to the correct world file
+Now we need to change `atlas_no_controllers` to refer to the correct world file
 
     gedit ~/ros/world_modification_tutorial/launch/atlas_no_controllers.launch
 
@@ -108,7 +108,7 @@ Now we need to change atlas_no_controllers to refer to the correct world file
 
 1. In this .launch file, which is our local copy, we want to use our local copy of the .launch file.  So replace the above line with:
 
-        <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(find world_modification_tutorial)/worlds/$(arg gzworld)" output="screen" />
+        <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(find world_modification_tutorial)/worlds/$(arg gzworld) $(arg extra_gazebo_args)" output="screen" />
 
 Now you're ready to make modifications to the world.  There are a variety of ways to do this; see the [building a world](http://gazebosim.org/tutorials/?tut=drcsim_build_world) tutorial to get started. For now, we'll make some simple edits via the simulator GUI. Launch the Simulator using your just-edited `.launch` file:
 
