@@ -81,7 +81,7 @@ success: True
 status_message: success
 ~~~
 
-Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 68 ~ 91](https://bitbucket.org/osrf/drcsim/src/2f715339b8efd8c647e3e96edd5fa766121aca09/drcsim_gazebo_ros_plugins/src/SandiaHandPlugin.cpp?at=default#cl-84).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
+Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 68 ~ 91](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/SandiaHandPlugin.cpp?at=default#cl-84).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
 
 Change the Sandia hands model joint damping coefficients by typing:
 
