@@ -156,7 +156,7 @@ to process messages in the ROS callback queue
 roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
-* In a separate terminal, put Atlas in User mode, which will cause Atlas to fall over (which is ok):
+* In a separate terminal, put Atlas in User mode:
 
 ~~~
 rostopic pub /atlas/control_mode std_msgs/String --  "User"
