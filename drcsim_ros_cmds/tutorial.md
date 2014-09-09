@@ -45,13 +45,18 @@ roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
 ~~~
 
 ### Create a ROS Node
-Copy and paste the following code as file [`~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp) with any text editor (e.g. gedit, vi, emacs):
+Copy and paste the following code as file
+ `~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`
+ with any text editor (e.g. gedit, vi, emacs)
+ or [download it here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp):
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ### Compiling the ROS Node
 
-Edit [`~/ros/drcsim_joint_commands_tutorial/CMakeLists.txt`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt) so that it looks like below:
+Edit `~/ros/drcsim_joint_commands_tutorial/CMakeLists.txt`
+ so that it looks like below
+ (or [download it here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt)):
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt' />
 
@@ -145,19 +150,22 @@ to process messages in the ROS callback queue
 
 ## Running the Simulation
 
-1. In terminal, source the DRC simulator setup script and start the DRC robot simulation:
+* In terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
 ~~~
 roslaunch drcsim_gazebo atlas_sandia_hands.launch
 ~~~
 
-1. In a separate terminal, put Atlas in User mode:
+* In a separate terminal, put Atlas in User mode, which will cause Atlas to fall over (which is ok):
 
 ~~~
 rostopic pub /atlas/control_mode std_msgs/String --  "User"
 ~~~
 
-1. In a separate terminal, run the node constructed above:
+* In a separate terminal, run the node constructed above, which will cause
+ Atlas to writhe around on the ground with all joints cycling through their full range of motion
+ (see [this video](https://www.youtube.com/watch?v=-zpZ3lUvccI#t=23s)
+  for a variant of this behavior):
 
 ~~~
 export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
