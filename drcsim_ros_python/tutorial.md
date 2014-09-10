@@ -35,7 +35,7 @@ Move to the directory `tutorial_atlas_control`
 roscd tutorial_atlas_control
 ~~~
 
-Copy the file [`traj_yaml.py`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py) into it:
+Copy the file [traj_yaml.py](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py) into it:
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
 
