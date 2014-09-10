@@ -37,7 +37,7 @@ A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578
 
 ## Create a ROS Publisher
 
-Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/drcsim_animate_joints/files/joint_animation.py'):
+Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/drcsim_animate_joints/files/joint_animation.py):
 
 ~~~
 wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py
