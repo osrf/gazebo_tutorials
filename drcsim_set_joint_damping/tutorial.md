@@ -68,26 +68,26 @@ Here, the array of `damping_coefficients` should have exactly 28 elements, with 
 To see the damping values for the Sandia hands, type the following:
 
 ~~~
-rosservice call /sandia_hands/get_joint_damping
+rosservice call /sandia_hands/r_hand/get_joint_damping
 ~~~
 
 You should see the following:
 
 ~~~
-damping_coefficients: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 0.0, 0.0, 0.0, 0.0]
-damping_coefficients_min: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]
-damping_coefficients_max: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 0.0, 0.0, 0.0, 0.0]
+damping_coefficients: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+damping_coefficients_min: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+damping_coefficients_max: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 success: True
 status_message: success
 ~~~
 
-Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 68 ~ 91](https://bitbucket.org/osrf/drcsim/src/844cd73465a0/ros/atlas_msgs/SandiaHandPlugin.cpp?at=default#cl-68).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `right_f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
+Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 84 ~ 95](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/SandiaHandPlugin.cpp?at=default#cl-84).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
 
 Change the Sandia hands model joint damping coefficients by typing:
 
 ~~~
 . /usr/share/drcsim/setup.sh
-rosservice call /sandia_hands/set_joint_damping "damping_coefficients: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 5.0, 30.0, 30.0]" 
+rosservice call /sandia_hands/r_hand/set_joint_damping "damping_coefficients: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 5.0, 30.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
 ~~~
 
 Similarly for the Atlas robot model:
