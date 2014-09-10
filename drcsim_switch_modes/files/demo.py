@@ -50,7 +50,7 @@ class Demo:
         # Publish and give time to take effect
         print('[USER] Going to stand prep position...')
         self.ac_pub.publish(stand_prep_msg)
-        time.sleep(10.0)
+        time.sleep(2.0)
     
         # Step 2: Request BDI stand mode
         stand_msg = AtlasSimInterfaceCommand()
@@ -160,7 +160,7 @@ class Demo:
         # Publish and give time to take effect
         print('[USER/BDI] Walking...')
         self.asic_pub.publish(walk_msg)
-        time.sleep(16.0)
+        time.sleep(6.0)
 
         # Step 5: Go back to home pose under user control
         home_msg = AtlasCommand()
