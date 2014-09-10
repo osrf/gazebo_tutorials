@@ -102,7 +102,13 @@ The main method of the rospy node. It prevents the node from executing code if t
     VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch
     ~~~
 
-1. To prevent the robot from falling over (it's not running any controllers), disable gravity by clicking on `World->Physics->gravity->z` and setting the value to `0.0`.
+1. To prevent the robot from falling over (it's not running any controllers), disable gravity by
+ clicking on `World->Physics->gravity->z` and setting the value to `0.0`
+ or running the following command:
+
+    ~~~
+    gz physics -g 0,0,0
+    ~~~
 
 1. To prevent the robot from bouncing off the ground and flying into space (there's no gravity), remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
