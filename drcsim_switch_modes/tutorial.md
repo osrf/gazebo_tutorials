@@ -31,9 +31,8 @@ roslaunch drcsim_gazebo qual_task_1.launch
 
 What follows is, in a way, the worst sort of robot program: a single sequence of steps, executed open loop based on timers and without any feedback.  But it will serve to illustrate the point of this tutorial, which is how to manage BDI mode and User mode control of the Atlas robot.
 
-This program proceeds in 5 steps:
+This program proceeds in 4 steps:
 
-1. Send the robot to a home position with all joints at position=0.  This step is executed in full User mode, with all joints controlled by the new command.
 1. Switch to BDI STAND mode.  Note that this step is undertaken in two parts:
  1. Ask for STAND_PREP mode, but retain User mode control of all joints.  Wait a little bit to let the BDI library get ready to stand.
  1. Ask for STAND mode, handing control of all joints to BDI.
@@ -61,6 +60,8 @@ chmod +x demo.py
 
 ### The code 
 
-The [`demo script`](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py) in python which implements the instructions detailed in this section:
+Here is the python demo script
+ ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py))
+ that implements the instructions detailed in this section:
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py' />
