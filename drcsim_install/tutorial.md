@@ -255,7 +255,6 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-indigo-image-common ros-hydro-geometry \
                              ros-indigo-pr2-controllers                  \
                              ros-indigo-geometry-experimental            \
-                             ros-indigo-robot-model-visualization        \
                              ros-indigo-robot-state-publisher            \
                              ros-indigo-image-pipeline                   \
                              ros-indigo-image-transport-plugins          \
