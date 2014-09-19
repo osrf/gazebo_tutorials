@@ -163,20 +163,13 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          cd /tmp/ws/src
 
          # Download needed software
-         git clone https://github.com/osrf/gazebo_ros_pkgs-current.git
+         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git 
          hg clone https://bitbucket.org/osrf/osrf-common
          hg clone https://bitbucket.org/osrf/sandia-hand
          hg clone https://bitbucket.org/osrf/drcsim
 
-         # We don't need the gazebo_ros_control package
-         touch gazebo_ros_pkgs-current/gazebo_ros_control/CATKIN_IGNORE
-
          # Source ros distro's setup.bash
-         source /opt/ros/hydro/setup.bash   # hydro or hydro
-
-         # use CMakeLists.txt from drcsim (replace default caktin toplevel cmake file)
-         cd /tmp/ws/src
-         ln -s drcsim/CMakeLists.txt .
+         source /opt/ros/hydro/setup.bash
 
          # Build and install into workspace
          cd /tmp/ws
@@ -270,7 +263,7 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          cd /tmp/ws/src
 
          # Download needed software
-         git clone https://github.com/osrf/gazebo_ros_pkgs-current.git
+         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
          hg clone https://bitbucket.org/osrf/osrf-common
          hg clone https://bitbucket.org/osrf/sandia-hand
          hg clone https://bitbucket.org/osrf/drcsim
@@ -280,15 +273,8 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          git checkout indigo-devel
          cd ..
 
-         # We don't need the gazebo_ros_control package
-         touch gazebo_ros_pkgs-current/gazebo_ros_control/CATKIN_IGNORE
-
          # Source ros distro's setup.bash
          source /opt/ros/indigo/setup.bash
-
-         # use CMakeLists.txt from drcsim (replace default caktin toplevel cmake file)
-         cd /tmp/ws/src
-         ln -s drcsim/CMakeLists.txt .
 
          # Build and install into workspace
          cd /tmp/ws
