@@ -148,7 +148,6 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-hydro-image-common ros-hydro-geometry \
                              ros-hydro-pr2-controllers                  \
                              ros-hydro-geometry-experimental            \
-                             ros-hydro-robot-model-visualization        \
                              ros-hydro-robot-state-publisher            \
                              ros-hydro-image-pipeline                   \
                              ros-hydro-image-transport-plugins          \
@@ -256,7 +255,6 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-indigo-image-common ros-hydro-geometry \
                              ros-indigo-pr2-controllers                  \
                              ros-indigo-geometry-experimental            \
-                             ros-indigo-robot-model-visualization        \
                              ros-indigo-robot-state-publisher            \
                              ros-indigo-image-pipeline                   \
                              ros-indigo-image-transport-plugins          \
