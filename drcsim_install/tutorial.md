@@ -143,9 +143,9 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                                 ros-hydro-cmake-modules
 
         # Install drcsim's dependencies
-        sudo apt-get install -y cmake debhelper                          \
-                             ros-hydro-std-msgs ros-hydro-common-msgs  \
-                             ros-hydro-image-common ros-hydro-geometry \
+        sudo apt-get install -y cmake debhelper                         \
+                             ros-hydro-std-msgs ros-hydro-common-msgs   \
+                             ros-hydro-image-common ros-hydro-geometry  \
                              ros-hydro-pr2-controllers                  \
                              ros-hydro-geometry-experimental            \
                              ros-hydro-robot-state-publisher            \
@@ -153,7 +153,11 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-hydro-image-transport-plugins          \
                              ros-hydro-compressed-depth-image-transport \
                              ros-hydro-compressed-image-transport       \
-                             ros-hydro-theora-image-transport
+                             ros-hydro-theora-image-transport           \
+                             ros-hydro-ros-controllers                  \ 
+                             ros-hydro-moveit-msgs                      \
+                             ros-hydro-joint-limits-interface           \
+                             ros-hydro-transmission-interface
 
 1. Create the catkin workspace
 Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will be included into the workspace.
