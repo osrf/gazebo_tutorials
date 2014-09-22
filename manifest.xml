@@ -451,6 +451,20 @@
       <skill>intermediate</skill>
     </tutorial>
 
+
+    <tutorial title="GazeboJs installation" ref='drcsim_install'>
+          <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
+                <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
+          <skill>advanced</skill>
+    </tutorial>
+<!--
+    <tutorial>gazebojs_install</tutorial>
+    <tutorial>gazebojs_sim_info</tutorial>
+    <tutorial>gazebojs_pub</tutorial>
+    <tutorial>gazebojs_sub</tutorial>
+    <tutorial>gazebojs_sub_jpg</turorial>
+-->
+
   </tutorials>
 
   <categories>
@@ -616,10 +630,12 @@
 
     <category title="Scripting" skill="advanced" ref="gazebojs">
         <tutorial>gazebojs_install</tutorial>
+<!--
         <tutorial>gazebojs_sim_info</tutorial>
         <tutorial>gazebojs_pub</tutorial>
         <tutorial>gazebojs_sub</tutorial>
         <tutorial>gazebojs_sub_jpg</turorial>
+-->
     </description>
   </categories>
 
