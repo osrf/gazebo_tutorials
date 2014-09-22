@@ -251,9 +251,9 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 
         # Install drcsim's dependencies
         sudo apt-get install -y cmake debhelper                          \
-                             ros-indigo-std-msgs ros-hydro-common-msgs  \
-                             ros-indigo-image-common ros-hydro-geometry \
-                             ros-indigo-pr2-controllers                  \
+                             ros-indigo-std-msgs ros-indigo-common-msgs  \
+                             ros-indigo-image-common ros-indigo-geometry \
+                             ros-indigo-ros-control                      \
                              ros-indigo-geometry-experimental            \
                              ros-indigo-robot-state-publisher            \
                              ros-indigo-image-pipeline                   \
