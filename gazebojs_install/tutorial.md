@@ -14,21 +14,15 @@ install the osrf repository and install libgazebo4-dev (http://gazebosim.org/tut
 
 install nodejs and npm 
 
-    ~~~
     sudo pat-get install nodejs nodejs-legacy npm
-    ~~~
 
 install jansson 
 
-    ~~~
     sudo apt-get install libjansson-dev
-    ~~~
 
-Make sure that these packages can be found in your pkg-config path. This is important if you have a compiled version of Gazebo instead of the binary packaged one: in that case, make sure your PKG_CONFIG_PATH points to the parent directory where the gazebo.pc file can be found. You can check this by executing this command without any error:
+Make sure that these packages can be found in your pkg-config path. You can check this by executing this command without any error:
 
-    ~~~
     pkg-config --cflags gazebo jansson protobuf
-    ~~~
 
 
 #### Running
@@ -38,49 +32,34 @@ Now that everything is installed, here are the steps to test it:
 
 Create a NodeJs project directory
  
-    ~~~
     mkdir gz_node_inst
     cd gz_node_inst
-    ~~~
 
 
 Install Gazebojs
 
-     ~~~
      npm install gazebojs
-     ~~~
 
-    This operation should download and compile the latest gazebojs. There is a C++ compilation phase where a NodeJs module is created. There should now be a node_modules directory created in gz_node_inst.
+This operation should download and compile the latest gazebojs. There is a C++ compilation phase where a NodeJs module is created. There should now be a node_modules directory created in gz_node_inst.
 
 
 
 Test your installation:
 
-    Launch Gazebo in a separate terminal and verify that the simulation is running (Sim Time increases):
+Launch Gazebo in a separate terminal and verify that the simulation is running (Sim Time increases):
 
-    ~~~
     gazebo
-    ~~~
 
-    Use the 'node' command to invoke the NodeJs REPL console
 
-    ~~~
+Use the 'node' command to invoke the NodeJs REPL console
+
     node
-    ~~~
 
-    Type in the following command to load the gazeboJs module, create a simulation client and pause the running simulation
+Type in the following command to load the gazeboJs module, create a simulation client and pause the running simulation
 
-    ~~~
     var gazebojs = require('gazebojs')
     var sim = new gazbojs.Gazebo()
     sim.pause()
-    ~~~
 
-    You should see the simulation stop in Gazebo.
+You should see the simulation stop in Gazebo.
 
-
-1. Launch drcsim as usual
-
-    ~~~
-    roslaunch drcmsim_gazebo atlas_v3.launch
-    ~~~
