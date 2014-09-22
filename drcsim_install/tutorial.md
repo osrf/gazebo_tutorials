@@ -226,7 +226,7 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 
         # Install gazebo-ros-pkgs
         sudo apt-get install -y libtinyxml-dev                 \
-                                ros-indigo-opencv2             \
+                                ros-indigo-vision-opencv       \
                                 ros-indigo-angles              \
                                 ros-indigo-cv-bridge           \
                                 ros-indigo-driver-base         \
