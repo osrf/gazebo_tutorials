@@ -452,7 +452,7 @@
     </tutorial>
 
 
-    <tutorial title="GazeboJs installation" ref='drcsim_install'>
+    <tutorial title="GazeboJs installation" ref='gazebojs_install'>
           <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
                 <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
           <skill>advanced</skill>
