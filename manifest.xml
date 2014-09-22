@@ -614,6 +614,13 @@
       </tutorials>
     </category>
 
+    <category title="Scripting" skill="advanced" ref="gazebojs">
+        <tutorial>gazebojs_install</tutorial>
+        <tutorial>gazebojs_sim_info</tutorial>
+        <tutorial>gazebojs_pub</tutorial>
+        <tutorial>gazebojs_sub</tutorial>
+        <tutorial>gazebojs_sub_jpg</turorial>
+    </description>
   </categories>
 
 </content>
