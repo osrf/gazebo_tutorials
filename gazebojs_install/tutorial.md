@@ -16,7 +16,7 @@ install nodejs and npm
 
     sudo pat-get install nodejs nodejs-legacy npm
 
-install jansson 
+install jansson (JSON library)
 
     sudo apt-get install libjansson-dev
 
