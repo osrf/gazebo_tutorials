@@ -1,9 +1,9 @@
-# Overview
+# Introduction
 
-This page explains how to create publishers and subscriber to Gazebo topics in javascript using GazeboJs.
+This page explains how to create publishers and subscriber to Gazebo topics in javascript using GazeboJs. Publish / Subscribe is teh communication pattern used between the Gazebo server and its clients.
 
 
-### Project setup
+## Project setup
 
 Launch Gazebo in a separate terminal and verify that the simulation is running (Sim Time increases):
 
@@ -24,9 +24,12 @@ Now you can create javascript files and execute them by invoking node.
 
 
 
-### Publishers
+## Publishers
+
+Publishers allow client and servers to initiate communication, using typed messages. The messages are defined in GAzebo using Protobuf, and thery are accessed in javascript via a JSON representation. Publishers can be created in the Gazebo server or the Node client, and messages are sent to unique topics that subscribers can listen to. Messages can be published to existing topics, or new topics can be created for future subscribers.
 
 
+### Code
 Create  publish.js file
 
     gedit publish.js
@@ -65,7 +68,25 @@ setInterval(function (){
 
 ~~~
 
-Test your publisher:
+### Code explained
+
+The first two line load the Gazebo C++ module into the Node V8 script engine, and an instance of the Gazebo class is created.
+~~~
+var gazebojs = require("gazebojs");
+var gazebo = new gazebojs.Gazebo();
+~~~
+
+The command line arguments are then parsed to determine the type of protobuf Gazebo message to send, an acual instance of a message encoded in JSON, and the topic on which to send the message.
+This information is then used to publish a message:
+
+~~~
+gazebo.publish(type, topic , msg);
+~~~
+
+Once published, the message is going to received by each subscriber for this topic.
+ 
+
+### Test your publisher:
 
 
 Publish WorldControl message on the world_control topic to pause the simulation:
@@ -84,9 +105,11 @@ bye
 ~~~
 
 
-### Subscribers
+## Subscribers
 
+Subscribers provide a callback function for a specific type of message on a certain topic. Each time a new message is published by a publishers, the callback is invoked for every subscriber to this topic.
 
+### Code
 Create  subscribe.js file
 
     gedit subscribe.js
@@ -137,7 +160,30 @@ setInterval(function (){
 
 ~~~
 
-Test your subscriber:
+### Code explained
+
+A subscriber is created by calling subscribe with a message type (the protobuf message name), the topic and a callback function. The call to subscribe is non blocking. The callback has 2 parameters, error and data... following the NodeJs pattern for asynchronous execution.
+In this example, the callback simply converts the JSON to a string and prints it on the console.
+~~~
+// subscribe to the topic with a callback function
+gazebo.subscribe(type, topic, function (err, msg){
+    try {
+        if (err) throw(err);
+        console.log('-- [' + count + '] --');
+        count += -1;
+        // convert the Json msg to a string
+        var s= JSON.stringify(msg);
+        console.log(s);
+    } catch(err)  {
+        console.log('error: ' + err);
+        console.log(msg);
+   }
+});
+~~~
+
+It is possible to unsubscribe to a topic. When unsubscribe is called, all subscriptions to that topic are removed. If you need more than one subscriber on the same and you don't want to unsubscribe to them at the same time, you need to use multiple instances of gazebojs.Gazebo.
+
+### Test your subscriber:
 
 
 Subscribe for 5 consecutive WorldStatistics messages on the world_stats topic:
