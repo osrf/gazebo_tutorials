@@ -71,6 +71,7 @@ setInterval(function (){
 ### Code explained
 
 The first two line load the Gazebo C++ module into the Node V8 script engine, and an instance of the Gazebo class is created.
+
 ~~~
 var gazebojs = require("gazebojs");
 var gazebo = new gazebojs.Gazebo();
@@ -157,13 +158,13 @@ setInterval(function (){
         process.exit(0);
    }
 },100);
-
 ~~~
 
 ### Code explained
 
 A subscriber is created by calling subscribe with a message type (the protobuf message name), the topic and a callback function. The call to subscribe is non blocking. The callback has 2 parameters, error and data... following the NodeJs pattern for asynchronous execution.
 In this example, the callback simply converts the JSON to a string and prints it on the console.
+
 ~~~
 // subscribe to the topic with a callback function
 gazebo.subscribe(type, topic, function (err, msg){
