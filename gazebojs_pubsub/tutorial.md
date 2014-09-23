@@ -144,9 +144,9 @@ Subscribe for 5 consecutive WorldStatistics messages on the world_stats topic:
 
     node subscribe.js "gazebo.msgs.WorldStatistics" "~/world_stats" 5
 
-    You should see the following output:
+You should see the following output:
 
-    ~~~
+~~~
 node subscribe.js "gazebo.msgs.WorldStatistics" "~/world_stats" 5
 new Gazebo
 subscribing to topic [~/world_stats] of type [gazebo.msgs.WorldStatistics]
@@ -162,7 +162,6 @@ keep the process alive...
 -- [1] --
 {"sim_time":{"sec":13082,"nsec":664000000},"iterations":13082664,"paused":false,"pause_time":{"sec":69,"nsec":653000000},"real_time":{"sec":13116,"nsec":33668964}}
 GZPubSub::Unsubscribe() topic = [~/world_stats]
-
-    ~~~
+~~~
 
 
