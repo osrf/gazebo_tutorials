@@ -459,7 +459,7 @@
     </tutorial>
 
 
-    <tutorial title="GazeboJs installation" ref='gazebojs_pubsub'>
+    <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
         <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
         <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
         <skill>advanced</skill>
