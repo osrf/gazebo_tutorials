@@ -451,13 +451,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
-
+    <!-- scripting  -->
     <tutorial title="GazeboJs installation" ref='gazebojs_install'>
           <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
           <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
           <skill>advanced</skill>
     </tutorial>
-
 
     <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
         <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
@@ -466,13 +465,19 @@
     </tutorial>
 
 
-<!--
-    <tutorial>gazebojs_install</tutorial>
-    <tutorial>gazebojs_sim_info</tutorial>
-    <tutorial>gazebojs_pub</tutorial>
-    <tutorial>gazebojs_sub</tutorial>
-    <tutorial>gazebojs_sub_jpg</turorial>
--->
+    <tutorial title="GazeboJs image topics" ref='gazebojs_camera_topics'>
+        <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
+        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+        <skill>advanced</skill>
+    </tutorial>
+
+
+    <tutorial title="GazeboJs models" ref='gazebojs_models'>
+        <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
+        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+        <skill>advanced</skill>
+    </tutorial>
+
 
   </tutorials>
 
