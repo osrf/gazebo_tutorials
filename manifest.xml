@@ -467,14 +467,14 @@
 
     <tutorial title="GazeboJs image topics" ref='gazebojs_camera_topics'>
         <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
-        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+        <description>Explains how save images from Gazebo camera topics.</description>
         <skill>advanced</skill>
     </tutorial>
 
 
     <tutorial title="GazeboJs models" ref='gazebojs_models'>
         <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
-        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+        <description>Explains how access the sdf and to get other information from Gazebo models.</description>
         <skill>advanced</skill>
     </tutorial>
 
