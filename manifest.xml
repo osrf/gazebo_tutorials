@@ -642,7 +642,7 @@
       </tutorials>
     </category>
 
-    <category title="Scripting" skill="advanced" ref="gazebojs">
+    <category title="Scripting (javascript and NodeJs)" skill="advanced" ref="gazebojs">
       <description>Gazebo scripting interface: NodeJS bindings for the Gazebo simulator.</description>
       <tutorials>
         <tutorial>gazebojs_install</tutorial>
