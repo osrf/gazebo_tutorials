@@ -648,7 +648,7 @@
         <tutorial>gazebojs_install</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
-        <tutorial>gazebojs_sub_jpg</turorial>
+        <tutorial>gazebojs_models</turorial>
 
       </tutorials>
     </category>
