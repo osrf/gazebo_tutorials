@@ -22,7 +22,14 @@ Gazebo development is independent from ROS, so each new major version of Gazebo
  must be released before being used in a ROS distribution.
 The following sections cover how to use ROS with different versions of Gazebo.
 
-## Gazebo Ubuntu packages
+Gazebo ABI stability policy follows the 
+[semantic versioning](http://semver.org/) philosophy, all versions that have the 
+same major number (`gazebo_2.0.0`, `gazebo_2.1.0`, `gazebo_2.0.1`, ...)
+are binary compatible, thus interchangeable when using the same ROS distro.
+
+## Gazebo source
+
+### Gazebo Ubuntu packages
 
 The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `osrfoundation.packages.org`. At the time of writing:
 
@@ -37,6 +44,20 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
+
+### Gazebo built from source
+
+If you have compiled a gazebo version from source, note that depending on the
+repository branch used (`gazebo_3.0`,`gazebo_4.0`,...) your gazebo will be
+binary compatible with the gazebo_ros_pkgs (and all other ROS packages compiled
+on top of gazebo) only if the major version matches your local branch
+repository and the gazebo version used in your ROS distro.  For example, if you
+are compiling from gazebo branch `gazebo_2.0`, you can use the ros_gazebo_pkgs
+present in Indigo (which uses gazebo2 series).
+
+Note that if you are using `default` branch, you are probably not binary 
+compatible with any of the packages released, so you will need a catkin 
+workspace for getting a valid gazebo_ros_pkgs.
 
 ## Using a specific ROS version and Gazebo
 
