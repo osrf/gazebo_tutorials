@@ -1,5 +1,5 @@
 
-## Save camera images as jpeg files
+# Save camera images as jpeg files
 
 In this example, we will describe how to save a number of successive camera images to jpeg files. This is done using subscribeToImageTopic, a specialized version of the subscribe function that allows you to save images in porpular formats.
 This method only works with 'gazebo.msgs.ImageStamped' topics, and accepts the following options:
