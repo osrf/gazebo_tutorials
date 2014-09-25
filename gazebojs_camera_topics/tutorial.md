@@ -1,56 +1,5 @@
 
-## republish
-
-~~~
-var util = require('util');
-var gazebojs = require('../../gazebojs');
-var gazebo = new gazebojs.Gazebo();
-
-if (process.argv.length != 5)
-{
-  console.log('node camera echo.js [source camera name] [dest camera name] [frame_skip]');
-  console.log('ex:\n   node camera chimera 30');
-  process.exit(-1);
-}
-
-
-var src_camera = process.argv[2];
-var dest_camera = process.argv[3];
-var frame_skip = parseInt(process.argv[4]);  
-
-var msg_type = 'gazebo.msgs.ImageStamped';
-var src_topic  = '~/' + src_camera + '/link/camera/image';
-var dest_topic =  '~/' + dest_camera + '/link/camera/image'; 
-
-var frame_counter = 0;
-
-console.log('== Republishing: [' + src_topic + '] on topic: [' + dest_topic + '] every ' + frame_skip + ' frames');
-
-gazebo.subscribe(msg_type, src_topic,
-    function (err, img){
-        // make sure the simulation is running
-//        pubsub.publish('gazebo.msgs.WorldControl', '~/world_control' , '{"pause": false}');
-        if(err)
-        {
-            console.log('error: ' + err);
-            return;
-        }
-        frame_counter += 1;
-        if (frame_counter % frame_skip == 0)
-        {
-            console.log('publishing frame: ' + frame_counter );
-            gazebo.publish( msg_type, dest_topic, img);
-        }  
-
-    } );
-
-console.log('setup a loop with 5 sec interval tick');
-setInterval(function (){
-    console.log('tick');
-},5000);
-~~~
-
-## Save jpeg 
+## Save camera images as jpeg files
 
 In this example, we will describe how to save a number of successive camera images to jpeg files. This is done using subscribeToImageTopic, a specialized version of the subscribe function that allows you to save images in porpular formats.
 This method only works with 'gazebo.msgs.ImageStamped' topics, and accepts the following options:
@@ -230,7 +179,7 @@ setInterval(function (){
 
 First, you must setup Gazebo. In an empty world, add a few items (the double pendulum is a good one because it is animated) and drop a camera. Make sure you get the name of your camera (the default name for the first camera is "camera").
 
-[[file:files/TutorialGazebojs_camera_topics_world.png|640px]]
+[[file:files/world.png|640px]]
 
 
 Invoke the script
@@ -258,4 +207,4 @@ bye
 
 Inspect your images.
 
-[[file:files/TutorialGazebojs_camera_topics_frame_0007.png|640px]]
+[[file:files/frame_0007.png|640px]]
