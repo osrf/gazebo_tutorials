@@ -50,47 +50,40 @@ setInterval(function (){
 },5000);
 ~~~
 
-## Save jpeg
+## Save jpeg 
 
+In this example, we will describe how to save a number of successive camera images to jpeg files. This is done using subscribeToImageTopic, a specialized version of the subscribe function that allows you to save images in porpular formats.
+This method only works with 'gazebo.msgs.ImageStamped' topics, and accepts the following options:
+- format: either jpeg (default) or png
+- encoding: either binary (default) or base64
+
+Png files are uncompressed (whereas jpeg are smaller). If you want to save the image to disk, use the binary encoding. The base64 encoding is useful if you want to send the image data to another client in a portable way (ex: to make a mjpg stream for web browsers).
+
+### Code
+
+Create a file
+
+    gedit save_jpeg.
+
+and add the following content:
 
 ~~~
+
 var util = require('util');
 var gazebojs = require('gazebojs');
-
-
 var fs = require('fs');
-var Jpeg = require('jpeg').Jpeg; // https://github.com/pkrumins/node-jpeg
-
-var gz_formats = ['UNKNOWN_PIXEL_FORMAT',
-                    'L_INT8',
-                    'L_INT16',
-                    'RGB_INT8',
-                    'RGBA_INT8',
-                    'BGRA_INT8',
-                    'RGB_INT16',
-                    'RGB_INT32',
-                    'BGR_INT8',
-                    'BGR_INT16',
-                    'BGR_INT32',
-                    'R_FLOAT16',
-                    'RGB_FLOAT16',
-                    'R_FLOAT32',
-                    'RGB_FLOAT32',
-                    'BAYER_RGGB8',
-                    'BAYER_RGGR8',
-                    'BAYER_GBRG8',
-                    'BAYER_GRBG8'];
 
 
-function getImageInfo(image)
+function getImageInfo(image_stamped)
 {
+    var image = image_stamped.image;
     var s = ''
-               
-    s += 'pixel format: ' + gz_formats[image.pixel_format] + ' [' + image.width + ' x ' + image.height + ']';
+    s += 'timestamp: ' + image_stamped.time;
+    s += ' pixel format: ' + gz_formats[image.pixel_format] + ' [' + image.width + ' x ' + image.height + ']';
     s += ' (bytes per row: ' + image.step + ')';
     return s;
 }
- 
+
 
 // adds 0 in front a string for padding
 function pad(num, size) {
@@ -99,81 +92,164 @@ function pad(num, size) {
     return s;
 }
 
-function saveToFile(image, fname, cb)
-{
-    console.log(getImageInfo(image));
-    var rgb = new Buffer(image.data, 'base64');
-    
-    var jpeg = new Jpeg(rgb, image.width, image.height);
-    jpeg.encode(function (image) {
-        fs.writeFile(fname, image.toString('binary'), 'binary', function(err){
-            if(err){
-                console.log('ERROR saving file: ' + err);
-                process.exit(-2);
-            }
-            cb(null);
-        });  
-    });
-} 
-
-
-
-var fs = require('fs');
-
 if (process.argv.length != 5)
 {
   console.log( 'node ' + process.argv[2] + ' [source camera name] [dest_path] [count]');
-  
   process.exit(-1);
 }
 
 var gazebo = new gazebojs.Gazebo();
 var src_camera = process.argv[2];
 var dest_path = process.argv[3];
-var framesToSave = parseInt(process.argv[4]);  
+var framesToSave = parseInt(process.argv[4]);
 
-var msg_type = 'gazebo.msgs.ImageStamped';
 var src_topic  = '~/' + src_camera + '/link/camera/image';
 
 var savedFrames = 0;
 
 console.log('saving [' + src_topic + '] to  [' + dest_path + '] for ' + framesToSave + ' frames');
 
-gazebo.subscribe(msg_type, src_topic,
-    function (err, img){
-        // make sure the simulation is running
-        console.log('!');
+options = {format:'jpeg', encoding:'binary' }
 
+gazebo.subscribeToImageTopic(src_topic, function (err, img){
+        savedFrames += 1;
         if(err) {
             console.log('error: ' + err);
             return;
         }
 
-        if (savedFrames < framesToSave) {
-	    // make a nice zero padded number (0003 instead of 3)
-	    var nb = pad(savedFrames, 4);
-            var fname = dest_path + '_' + nb + '.jpeg' ;
-            console.log('saving image: ' + savedFrames );
-            console.log('keys:  ' + Object.keys(img));
-            console.log('time: ' + util.inspect(img.time));
-            saveToFile(img.image, fname, function(err){
-                if(err) raise(err);
-                console.log(fname + ' saved'); 
-                savedFrames += 1;
-            });
-           console.log('done'); 
-        } else {
+        if (savedFrames > framesToSave) {
+            console.log('bye');
             process.exit(0);
         }
-        
-    } );
+
+        // make a nice zero padded number (0003 instead of 3)
+        var nb = pad(savedFrames, 4);
+        var fname = dest_path + '_' + nb + '.jpeg' ;
+        fs.writeFile(fname, img, {encoding:'binary'}, function (err) {
+            if(err)
+                console.log('ERROR: ' + err);
+            else
+                console.log(fname + ' saved');
+         });
+
+    }, options);
 
 console.log('setup a loop with 5 sec interval tick');
 setInterval(function (){
   console.log('tick');
-//  pubsub.publish('gazebo.msgs.WorldControl', '~/world_control' , '{"pause": false}');
 },5000);
 
+~~~
 
+
+### Code explained
+
+
+First, we load the necessary sctripts and modules into the script engine.
 
 ~~~
+var util = require('util');
+var gazebojs = require('gazebojs');
+var fs = require('fs');
+~~~
+
+Then we add basic functionality: a function to generate padded numbers (ie "007" instead of "7") and we collect arguments:
+- which camera to get images from (we then compute the full topic name: "~/camera/link/camera/image"
+- how to name the saved images ( "frame_" to get names like "frame_000.jpeg")
+- how many images to save before exiting the program
+
+~~~
+
+// adds 0 in front a string for padding
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
+if (process.argv.length != 5)
+{
+  console.log( 'node ' + process.argv[2] + ' [source camera name] [dest_path] [count]');
+  process.exit(-1);
+}
+
+var gazebo = new gazebojs.Gazebo();
+var src_camera = process.argv[2];
+var dest_path = process.argv[3];
+var framesToSave = parseInt(process.argv[4]);
+
+var src_topic  = '~/' + src_camera + '/link/camera/image';
+
+var savedFrames = 0;
+
+console.log('saving [' + src_topic + '] to  [' + dest_path + '] for ' + framesToSave + ' frames');
+~~~
+
+Then we call the subscribeToImageTopic and provide a callback method. In this case, we use jpeg images with binary encoding so we can save the files to disk.
+
+~~~
+options = {format:'jpeg', encoding:'binary' }
+
+gazebo.subscribeToImageTopic(src_topic, function (err, img){
+        savedFrames += 1;
+        if(err) {
+            console.log('error: ' + err);
+            return;
+        }
+
+        if (savedFrames > framesToSave) {
+            console.log('bye');
+            process.exit(0);
+        }
+
+        // make a nice zero padded number (0003 instead of 3)
+        var nb = pad(savedFrames, 4);
+        var fname = dest_path + '_' + nb + '.jpeg' ;
+        fs.writeFile(fname, img, {encoding:'binary'}, function (err) {
+            if(err)
+                console.log('ERROR: ' + err);
+            else
+                console.log(fname + ' saved');
+         });
+
+    }, options);
+~~~
+
+Because of the asynchronous nature of our script, we setup callbacks to keep the script alive until all the images have been processed.
+
+~~~
+console.log('setup a loop with 5 sec interval tick');
+setInterval(function (){
+  console.log('tick');
+},5000);
+
+~~~~
+
+### Testing the code
+
+First, you must setup Gazebo. In an empty world, add a few items (the double pendulum is a good one because it is animated) and drop a camera. Make sure you get the name of your camera (the default name for the first camera is "camera").
+Invoke the script
+
+    node save_jpeg.js camera frame 10
+    
+You should see the following output:
+
+~~~
+node save_jpeg.js camera frame 10
+saving [~/camera/link/camera/image] to  [frame] for 10 frames
+setup a loop with 5 sec interval tick
+frame_0001.jpeg saved
+frame_0002.jpeg saved
+frame_0003.jpeg saved
+frame_0004.jpeg saved
+frame_0005.jpeg saved
+frame_0006.jpeg saved
+frame_0007.jpeg saved
+frame_0008.jpeg saved
+frame_0009.jpeg saved
+frame_0010.jpeg saved
+bye
+~~~
+
+Inspect your images.
