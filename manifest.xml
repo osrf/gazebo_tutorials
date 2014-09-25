@@ -465,7 +465,7 @@
     </tutorial>
 
 
-    <tutorial title="GazeboJs image topics" ref='gazebojs_camera_topics'>
+    <tutorial title="GazeboJs camera topics" ref='gazebojs_camera_topics'>
         <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
         <description>Explains how to save images from Gazebo camera topics.</description>
         <skill>advanced</skill>
