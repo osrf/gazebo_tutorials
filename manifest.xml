@@ -100,6 +100,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Camera Distortion" ref='camera_distortion'>
+      <markdown version="5.0+">camera_distortion/tutorial.md</markdown>
+      <description>How to add distortion to cameras.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Building a world" ref='build_world'>
       <markdown version="1.9+">build_world/tutorial.md</markdown>
       <description>How to populate a simulated world with simulated objects.</description>
@@ -372,7 +378,7 @@
       <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
-    
+
     <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
       <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
       <description>How to send desired grasp pose to Sandia hands mounted on the Atlas robot through ROS.</description>
@@ -513,6 +519,7 @@
       <tutorials>
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
+        <tutorial>camera_distortion</tutorial>
       </tutorials>
     </category>
 
