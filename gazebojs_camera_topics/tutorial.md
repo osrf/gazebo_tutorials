@@ -229,6 +229,10 @@ setInterval(function (){
 ### Testing the code
 
 First, you must setup Gazebo. In an empty world, add a few items (the double pendulum is a good one because it is animated) and drop a camera. Make sure you get the name of your camera (the default name for the first camera is "camera").
+
+[[file:files/TutorialGazebojs_camera_topics_world.png|640px]]
+
+
 Invoke the script
 
     node save_jpeg.js camera frame 10
@@ -253,3 +257,5 @@ bye
 ~~~
 
 Inspect your images.
+
+[[file:files/TutorialGazebojs_camera_topics_frame_0007.png|640px]]
