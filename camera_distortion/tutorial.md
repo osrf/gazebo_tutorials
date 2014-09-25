@@ -6,7 +6,7 @@ Using camera calibration tools such as Matlab or OpenCV, it is possible to extra
 
 ## Current Implementation
 
-Gazebo currently support simulation of camera based on the Brown's distortion model. It expects 5 distortion coefficients `k1, k2, k3, p1, p` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the disotrtion model, while the `p` coefficients are the tegnetial components.
+Gazebo currently support simulation of camera based on the Brown's distortion model. It expects 5 distortion coefficients `k1`, `k2`, `k3`, `p1`, `p1` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the disotrtion model, while the `p` coefficients are the tegnetial components.
 
 There are a few limitations with the current implementation that needs to be taken into account:
 
@@ -114,7 +114,7 @@ To add a camera model with distortion:
 
         gazebo
 
-1. Insert the distorted camera model: in the left pane, select the "Insert" tab, then click on "Distorted Camera".  Drop your camera somewhere in the world, and put a box in front of it.
+1. Insert the distorted camera model: in the left pane, select the `Insert` tab, then click on `Distorted Camera`.  Drop your camera somewhere in the world, and put a box in front of it.
 
     [[file:files/distorted_camera_inserted.png|640px]]
 
@@ -122,8 +122,8 @@ To add a camera model with distortion:
 
     [[file:files/distorted_camera_topic_visualizer.png|640px]]
 
-1. Find the the topic with a name like "/gazebo/default/distorted_camera/link/camera/image" and click on it, then click "Okay".  You'll get get a Camera View window that shows you the camera image data.
+1. Find the the topic with a name like `/gazebo/default/distorted_camera/link/camera/image` and click on it, then click `Ok`.  You'll get get a Camera View window that shows you the camera image data.
 
     [[file:files/distorted_camera_image_visualizer.png|640px]]
 
-As you can see, the camera image is distorted, made obvious by the curve edges of the box. To adjust the distortion, simply play with the `k1, k2, k3, p1, p2` distortion coefficients in the `model.sdf`.
+As you can see, the camera image is distorted, made obvious by the curve edges of the box. To adjust the distortion, simply play with the `k1`, `k2`, `k3`, `p1`, `p1` distortion coefficients in the `model.sdf`.
