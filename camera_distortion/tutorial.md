@@ -6,7 +6,7 @@ Using camera calibration tools such as Matlab or OpenCV, it is possible to extra
 
 ## Current Implementation
 
-Gazebo currently support simulation of camera based on the Brown's distortion model. It expects 5 distortion coefficients `k1`, `k2`, `k3`, `p1`, `p1` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the distortion model, while the `p` coefficients are the tangential components.
+Gazebo currently support simulation of camera based on the Brown's distortion model. It expects 5 distortion coefficients `k1`, `k2`, `k3`, `p1`, `p2` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the distortion model, while the `p` coefficients are the tangential components.
 
 There are a few limitations with the current implementation that needs to be taken into account:
 
