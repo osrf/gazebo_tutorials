@@ -1,7 +1,7 @@
 
 # Save camera images as jpeg files
 
-In this example, we will describe how to save a number of successive camera images to jpeg files. This is done using subscribeToImageTopic, a specialized version of the subscribe function that allows you to save images in porpular formats.
+In this example, we will describe how to save a number of successive camera images to jpeg files. This is done using subscribeToImageTopic, a specialized version of the subscribe function that allows you to save images in popular formats.
 This method only works with 'gazebo.msgs.ImageStamped' topics, and accepts the following options:
 - format: either jpeg (default) or png
 - encoding: either binary (default) or base64
@@ -12,7 +12,7 @@ Png files are uncompressed (whereas jpeg are smaller). If you want to save the i
 
 Create a file
 
-    gedit save_jpeg.
+    gedit save_jpeg.js
 
 and add the following content:
 
