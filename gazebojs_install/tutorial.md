@@ -6,15 +6,15 @@ This page explains how to install the GazeboJs Node bindings to Gazebo.
 
 ### Ubuntu Linux
 
-This tutorial shows how to download install and compile Gazebojs on a computer where Gazebo 4 and its  development libraries are installed.
+This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo 4 and its  development libraries are installed.
 
-#### setup
+#### Setup
 
-install the osrf repository and install libgazebo4-dev (http://gazebosim.org/tutorials?tut=install)
+install the osrf repository and install libgazebo4-dev (see http://gazebosim.org/tutorials?tut=install). The libgazebo4-dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
 
 install nodejs and npm 
 
-    sudo pat-get install nodejs nodejs-legacy npm
+    sudo apt-get install nodejs nodejs-legacy npm
 
 install jansson (JSON library)
 
@@ -40,7 +40,7 @@ Install Gazebojs
 
      npm install gazebojs
 
-This operation should download and compile the latest gazebojs. There is a C++ compilation phase where a NodeJs module is created. There should now be a node_modules directory created in gz_node_inst.
+This operation should download and compile the latest gazebojs. There is a C++ compilation phase where a NodeJs module is created. There should now be a 'gz_mode_inst/node_modules' directory.
 
 
 

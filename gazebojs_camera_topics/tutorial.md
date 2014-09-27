@@ -95,7 +95,7 @@ setInterval(function (){
 ### Code explained
 
 
-First, we load the necessary sctripts and modules into the script engine.
+First, we load the necessary scripts and modules into the script engine.
 
 ~~~
 var util = require('util');
