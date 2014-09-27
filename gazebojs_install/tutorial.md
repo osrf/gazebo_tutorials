@@ -58,7 +58,7 @@ Use the 'node' command to invoke the NodeJs REPL console
 Type in the following command to load the gazeboJs module, create a simulation client and pause the running simulation
 
     var gazebojs = require('gazebojs')
-    var sim = new gazbojs.Gazebo()
+    var sim = new gazebojs.Gazebo()
     sim.pause()
 
 You should see the simulation stop in Gazebo.

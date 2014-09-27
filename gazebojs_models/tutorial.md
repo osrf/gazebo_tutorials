@@ -40,7 +40,7 @@ sim.model( model_uri, function (err, data) {
 
 ### Code explained
 
-First we load the Gazebo bingings into the script engine, and create a client for the running simulation.
+First we load the Gazebo bindings into the script engine, and create a client for the running simulation.
 
 ~~~
 var gazebojs = require('gazebojs')
@@ -48,7 +48,7 @@ var sim = new gazebojs.Gazebo();
 ~~~
 
 Then we use the model function to get the information. The model function takes a model uri (ex: 'model://bowl') and a callback function.
-The callback has 2 parameters, error and data. If error is null, then the call ws successful and data contains a string with the SDF infromation.
+The callback has 2 parameters, error and data. If error is null, then the call was successful and data contains a string with the SDF infromation.
 
 In this case, we simply print the SDF to the console:
 
