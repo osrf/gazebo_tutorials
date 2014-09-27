@@ -179,6 +179,8 @@ setInterval(function (){
 
 First, you must setup Gazebo. In an empty world, add a few items (the double pendulum is a good one because it is animated) and drop a camera. Make sure you get the name of your camera (the default name for the first camera is "camera").
 
+![Alt text](files/world.png)
+
 [[file:files/world.png|640px]]
 
 
