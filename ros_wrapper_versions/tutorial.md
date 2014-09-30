@@ -57,7 +57,7 @@ present in Indigo (which uses gazebo2 series).
 
 Note that if you are using `default` branch, you are probably not binary
 compatible with any of the packages released, so you will need a catkin
-workspace for getting a valid gazebo_ros_pkgs.
+workspace for getting a valid `gazebo_ros_pkgs`.
 
 ## Using the default Gazebo version for a ROS distribution
 
@@ -82,7 +82,9 @@ The way to proceed is just to use the ROS repository (it will automatically inst
 ## Using a specific Gazebo version with ROS
 ***Warning!: Using this option,
  you won't be able to use any ROS Ubuntu package related to Gazebo from ROS deb repository.
-The way to go is to build them from source.
+The equivalent of `gazebo_ros_pkgs` can be installed from debian packages,
+ but all other software (such as [turtlebot_gazebo](http://wiki.ros.org/turtlebot_gazebo))
+ must be built from source.
 Thanks to
  [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
  this is quite easy to do.***
