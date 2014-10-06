@@ -23,17 +23,6 @@ var gazebojs = require('gazebojs');
 var fs = require('fs');
 
 
-function getImageInfo(image_stamped)
-{
-    var image = image_stamped.image;
-    var s = ''
-    s += 'timestamp: ' + image_stamped.time;
-    s += ' pixel format: ' + gz_formats[image.pixel_format] + ' [' + image.width + ' x ' + image.height + ']';
-    s += ' (bytes per row: ' + image.step + ')';
-    return s;
-}
-
-
 // adds 0 in front a string for padding
 function pad(num, size) {
     var s = num+"";
