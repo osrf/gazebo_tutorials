@@ -41,7 +41,6 @@ Then we add basic functionality: a function to generate padded numbers (ie "007"
 
 <include from='/adds 0 in front a string for padding/' to='/console.log(\'saving [/' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
 
-<include from='//' to='//' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
 
 XXX
 ~~~
