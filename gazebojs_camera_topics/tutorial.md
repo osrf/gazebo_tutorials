@@ -19,150 +19,53 @@ and add the following content:
 <include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
 
 
-included
-
-~~~
-
-var util = require('util');
-var gazebojs = require('gazebojs');
-var fs = require('fs');
-
-
-function getImageInfo(image_stamped)
-{
-    var image = image_stamped.image;
-    var s = ''
-    s += 'timestamp: ' + image_stamped.time;
-    s += ' pixel format: ' + gz_formats[image.pixel_format] + ' [' + image.width + ' x ' + image.height + ']';
-    s += ' (bytes per row: ' + image.step + ')';
-    return s;
-}
-
-
-// adds 0 in front a string for padding
-function pad(num, size) {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
-}
-
-if (process.argv.length != 5)
-{
-  console.log( 'node ' + process.argv[2] + ' [source camera name] [dest_path] [count]');
-  process.exit(-1);
-}
-
-var gazebo = new gazebojs.Gazebo();
-var src_camera = process.argv[2];
-var dest_path = process.argv[3];
-var framesToSave = parseInt(process.argv[4]);
-
-var src_topic  = '~/' + src_camera + '/link/camera/image';
-
-var savedFrames = 0;
-
-console.log('saving [' + src_topic + '] to  [' + dest_path + '] for ' + framesToSave + ' frames');
-
-options = {format:'jpeg', encoding:'binary' }
-
-gazebo.subscribeToImageTopic(src_topic, function (err, img){
-        savedFrames += 1;
-        if(err) {
-            console.log('error: ' + err);
-            return;
-        }
-
-        if (savedFrames > framesToSave) {
-            console.log('bye');
-            process.exit(0);
-        }
-
-        // make a nice zero padded number (0003 instead of 3)
-        var nb = pad(savedFrames, 4);
-        var fname = dest_path + '_' + nb + '.jpeg' ;
-        fs.writeFile(fname, img, {encoding:'binary'}, function (err) {
-            if(err)
-                console.log('ERROR: ' + err);
-            else
-                console.log(fname + ' saved');
-         });
-
-    }, options);
-
-console.log('setup a loop with 5 sec interval tick');
-setInterval(function (){
-  console.log('tick');
-},5000);
-
-~~~
-
-
 ### Code explained
 
 
 First, we load the necessary scripts and modules into the script engine.
 
+<include from='/var util = require/' to='/require(\'fs\')/' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+
 ~~~
 var util = require('util');
 var gazebojs = require('gazebojs');
 var fs = require('fs');
 ~~~
+
+=== 
 
 Then we add basic functionality: a function to generate padded numbers (ie "007" instead of "7") and we collect arguments:
 - which camera to get images from (we then compute the full topic name: "~/camera/link/camera/image"
 - how to name the saved images ( "frame_" to get names like "frame_000.jpeg")
 - how many images to save before exiting the program
 
+<include from='/adds 0 in front a string for padding/' to='/console.log(\'saving [/' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+
+<include from='//' to='//' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+
+XXX
 ~~~
 
 // adds 0 in front a string for padding
 function pad(num, size) {
     var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
-}
-
-if (process.argv.length != 5)
-{
-  console.log( 'node ' + process.argv[2] + ' [source camera name] [dest_path] [count]');
-  process.exit(-1);
-}
-
-var gazebo = new gazebojs.Gazebo();
-var src_camera = process.argv[2];
-var dest_path = process.argv[3];
-var framesToSave = parseInt(process.argv[4]);
-
-var src_topic  = '~/' + src_camera + '/link/camera/image';
-
-var savedFrames = 0;
-
 console.log('saving [' + src_topic + '] to  [' + dest_path + '] for ' + framesToSave + ' frames');
 ~~~
 
+XXX included DONE
+
+===
+
 Then we call the subscribeToImageTopic and provide a callback method. In this case, we use jpeg images with binary encoding so we can save the files to disk.
+
+
+<include from='/options = {format:\'jpeg\'/' to='/}, options);/' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+
+XXX
 
 ~~~
 options = {format:'jpeg', encoding:'binary' }
 
-gazebo.subscribeToImageTopic(src_topic, function (err, img){
-        savedFrames += 1;
-        if(err) {
-            console.log('error: ' + err);
-            return;
-        }
-
-        if (savedFrames > framesToSave) {
-            console.log('bye');
-            process.exit(0);
-        }
-
-        // make a nice zero padded number (0003 instead of 3)
-        var nb = pad(savedFrames, 4);
-        var fname = dest_path + '_' + nb + '.jpeg' ;
-        fs.writeFile(fname, img, {encoding:'binary'}, function (err) {
-            if(err)
-                console.log('ERROR: ' + err);
             else
                 console.log(fname + ' saved');
          });
@@ -170,8 +73,13 @@ gazebo.subscribeToImageTopic(src_topic, function (err, img){
     }, options);
 ~~~
 
+XXX included DONE
+
 Because of the asynchronous nature of our script, we setup callbacks to keep the script alive until all the images have been processed.
 
+<include from='/setup a loop with/' to='/},5000);/' src='http://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+
+XXX
 ~~~
 console.log('setup a loop with 5 sec interval tick');
 setInterval(function (){
@@ -179,6 +87,7 @@ setInterval(function (){
 },5000);
 
 ~~~~
+XXX include DONE
 
 ### Testing the code
 
