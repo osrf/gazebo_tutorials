@@ -25,7 +25,7 @@ Now you can create javascript files and execute them by invoking node.
 
 ## Publishers
 
-Publishers allow client and servers to initiate communication, using typed messages. The messages are defined in Gazebo using Protobuf, and they are accessed in javascript via a JSON representation. Publishers can be created in the Gazebo server or the Node client, and messages are sent to unique topics that subscribers can listen to. Messages can be published to existing topics, or new topics can be created for future subscribers.
+Publishers allow clients and servers to initiate communication, using typed messages. The messages are defined in Gazebo using Protobuf, and they are accessed in javascript via a JSON representation. Publishers can be created in the Gazebo server or the Node client, and messages are sent to unique topics that subscribers can listen to. Messages can be published to existing topics, or new topics can be created for future subscribers.
 
 
 ### Code

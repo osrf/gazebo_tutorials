@@ -7,7 +7,13 @@ This tutorial shows you how to fetch Gazebo information that is not available vi
 
 ### Code
 
-create a script file
+Create a NodeJs project
+
+    mkdir gzmodels
+    cd gzmodels
+    npm install gazebojs
+
+Add a script script file in your project directory:
 
     gedit model.js
 
@@ -84,7 +90,7 @@ data: string
 
 ## Materials
 
-You can access the materials using Gazebojs. This shows you how to do it in a node console session. Start the interactive console:
+You can access the materials using Gazebojs. This section shows you how to do it in a node console session. Start the interactive console:
 
 ~~~
 node
