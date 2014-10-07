@@ -16,7 +16,7 @@ Create a file
 
 and add the following content:
 
-<include src='https://bitbucket.org/osrf/gazebojs/src/4294c3d3a78ea3bf0154c24a812b45dc88dae904/examples/save_jpeg.js?at=default'>
+<include src='http://bitbucket.org/osrf/gazebojs/src/4294c3d3a78ea3bf0154c24a812b45dc88dae904/examples/save_jpeg.js?at=default'>
 
 included
 
