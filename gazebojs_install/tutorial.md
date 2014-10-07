@@ -2,7 +2,7 @@
 
 GazeboJs provides a scripting interface to the Gazebo simulator. Specifically, it provides a javascript client for the simulator, using NodeJs and built on Google's V8 script engine.
 
-Gazebojs is a C++ addon to NodeJs that is loaded inside node process at runtime (using the require javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
+GazeboJs is a C++ addon to NodeJs that is loaded inside node process at runtime (using the require javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
 This is the same mechanism that the Gazebo simulation client (the gzclient process) uses to communicate with the simulation server.
 The source code for this project can be found here: <https://bitbucket.org/osrf/gazebojs>
 
@@ -23,7 +23,11 @@ Install the osrf repository and install libgazebo4-dev (see http://gazebosim.org
 
 Install nodejs and npm 
 
-    sudo apt-get install nodejs nodejs-legacy npm
+    sudo apt-get install nodejs npm
+
+You may have to install nodejs-legacy if the `node` command does not exist:
+
+    sudo apt-get install nodejs-legacy
 
 Install jansson (JSON library)
 
