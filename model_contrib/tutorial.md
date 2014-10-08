@@ -5,7 +5,9 @@ First, create a directory for your model. For this tutorial, we will assume that
     model.config
     model.sdf
 
-# Contents of `model.config`
+# Contents of model.config:
+
+The `model.config` file provides information necessary to pick the proper SDF file, information on authorship of the model, and a textual description of the model. 
 
 A sample model.config looks like this:
 
@@ -24,8 +26,6 @@ A sample model.config looks like this:
         A ball-in-wedge juggler. 
       </description>
     </model>
-
-# Contents of `model.sdf`
 
 
 # Path for the directory
