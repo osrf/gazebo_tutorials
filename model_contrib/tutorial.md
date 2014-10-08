@@ -9,8 +9,7 @@ First, create a directory for your model. For this tutorial, we will assume that
 
 A sample model.config looks like this:
 
-<?xml version="1.0"?>
-
+    <?xml version="1.0"?>
     <model>
       <name>Wedge juggler</name>
       <version>1.0</version>
