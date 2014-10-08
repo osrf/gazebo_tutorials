@@ -1,6 +1,6 @@
 # Adding a model to Gazebo
 
-First, create a directory for your model. For this tutorial, we will assume that this directory is called **mymodel**. That directory should include the file **model.config**.
+First, create a directory for your model. For this tutorial, we will assume that this directory is called **mymodel**. That directory must include the file **model.config**, and it may include other files as well (plugins, makefiles, README's, etc.)
 
 # Contents of **model.config**:
 
