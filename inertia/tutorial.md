@@ -109,7 +109,7 @@ The `<inertia>` tag contains the inertia tensor you have computed in the previou
     | ixy iyy iyz |
     | ixz iyz izz |
 
-As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values and be non-negative, and the off-diagonal numbers should more or less approach zero. 
+As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values and be positive, and the off-diagonal numbers should more or less approach zero. 
 
 Precisely, the matrix has to be positive definite (use your favorite maths tool to verify that). Its diagonal entries also have to satisfy the triangle inequality, ie. `ixx + iyy >= izz`, `ixx + izz >= iyy` and `iyy + izz >= ixx`.
 
