@@ -109,7 +109,7 @@ The `<inertia>` tag contains the inertia tensor you have computed in the previou
     | ixy iyy iyz |
     | ixz iyz izz |
 
-As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values, and the off-diagonal numbers should more or less approach zero. No diagonal entry can be negative.
+As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values, and the off-diagonal numbers should more or less approach zero. No diagonal entry can be negative (precisely, the matrix has to be positive definite; use your favorite maths tool to verify that).
 
 # Checking in Gazebo
 
