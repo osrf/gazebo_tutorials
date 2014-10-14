@@ -79,4 +79,4 @@ for the requested device. If we have a response, the returned value is `hxOK`.
 We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes.
 
-<include from='/  // Send commands/' to='/    usleep\(10000\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
