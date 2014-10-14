@@ -62,6 +62,8 @@ controller executable:
 You should see your fingers moving following a smooth trajectory in an infinite
 loop.
 
+<iframe width="500" height="313" src="//player.vimeo.com/video/108959804" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 # The code explained
 
 <include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
@@ -81,11 +83,11 @@ print all the received fields for debugging purposes.
 
 <include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
 
-Once we know or verify the device information we can start to send commands for
+Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
 command and receive the current state of the hand.
 
-First of all we need to fill a `hxCommand` struct that contains the positions,
+First of all, we need to fill a `hxCommand` struct that contains the positions,
 velocities, and gains for each joint. Check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default)
 for a detailed view of the `hxCommand` struct. In our case we are modifying the
 position of all the joints according to a sinusoidal function.
