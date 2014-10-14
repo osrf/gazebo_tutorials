@@ -15,25 +15,26 @@ it against the haptix_comm library.
 
 1. Create a new directory named `haptix_controller` for this tutorial:
 
-  ~~~
-  mkdir ~/haptix_controller
-  cd ~/haptix_controller
-  ~~~
+    ~~~
+    mkdir ~/haptix_controller
+    cd ~/haptix_controller
+    ~~~
 
 1. Download the source code of the controller and the cmake file:
 
-  ~~~
-  wget http://bitbucket.org/osrf/TODO
-  wget http://bitbucket.org/osrf/TODO
-  ~~~
+    ~~~
+    wget http://bitbucket.org/osrf/TODO
+    wget http://bitbucket.org/osrf/TODO
+    ~~~
 
 1. Create a build directory and compile the source code.
-  ~~~
-  mkdir build
-  cd build
-  cmake ..
-  make
-  ~~~
+
+    ~~~
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ~~~
 
 Now, we are ready to test our controller with the HAPTIX simulator.
 
@@ -41,22 +42,22 @@ Now, we are ready to test our controller with the HAPTIX simulator.
 
 1. In a terminal, start the HAPTIX simulation:
 
-~~~
-roslaunch handsim_gazebo handsim.launch
-~~~
+    ~~~
+    roslaunch handsim_gazebo handsim.launch
+    ~~~
 
 1. In a different terminal, go to the build directory where you have your
 controller executable:
 
-~~~
-cd ~/haptix_controller/build
-~~~
+    ~~~
+    cd ~/haptix_controller/build
+    ~~~
 
 1. Start the controller:
 
-~~~
-./hx_controller
-~~~
+    ~~~
+    ./hx_controller
+    ~~~
 
 You should see your fingers moving following a smooth trajectory in an infinite
 loop.
