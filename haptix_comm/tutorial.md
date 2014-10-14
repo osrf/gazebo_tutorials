@@ -75,3 +75,8 @@ We use the `hxGAZEBO` constant to specify that the target device is inside a Gaz
 simulation. For other targets available check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default). The second parameter of `hx_getdeviceinfo()` is a `hxDeviceInfo` struct that
 contains the number of motors, joints, contact sensors, IMUs and joint limits
 for the requested device. If we have a response, the returned value is `hxOK`.
+
+We have included in our example a helper function `printDeviceInfo()` that will
+print all the received fields for debugging purposes.
+
+<include from='/  // Send commands/' to='/    usleep\(10000\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
