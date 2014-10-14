@@ -14,21 +14,16 @@ wave to all the hand joints. First, you should compile your controller and link
 it against the haptix_comm library.
 
 1. Create a new directory named `haptix_controller` for this tutorial:
-
 ~~~
 mkdir ~/haptix_controller
 cd ~/haptix_controller
 ~~~
-
 1. Download the source code of the controller and the cmake file:
-
 ~~~
 wget http://bitbucket.org/osrf/TODO
 wget http://bitbucket.org/osrf/TODO
 ~~~
-
 1. Create a build directory and compile the source code.
-
 ~~~
 mkdir build
 cd build
