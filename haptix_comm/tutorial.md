@@ -3,8 +3,6 @@
 This tutorial will explain how to use the HAPTIX-Comm C-API for sending new
 joint commands to the hand and receiving state updates.
 
-# Simulation setup
-
 We assume that you have already done the [installation step](TODO).
 
 # Compile your controller.
