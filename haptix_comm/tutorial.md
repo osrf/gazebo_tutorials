@@ -5,7 +5,7 @@ joint commands to the hand and receiving state updates.
 
 # Simulation setup
 
-We assume that you have already done the installation step.
+We assume that you have already done the [installation step](TODO).
 
 # Compile your controller.
 
@@ -23,8 +23,8 @@ it against the haptix_comm library.
 1. Download the source code of the controller and the cmake file:
 
     ~~~
-    wget http://bitbucket.org/osrf/TODO
-    wget http://bitbucket.org/osrf/TODO
+    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
+    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c
     ~~~
 
 1. Create a build directory and compile the source code.
