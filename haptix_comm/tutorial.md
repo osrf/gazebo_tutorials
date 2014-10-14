@@ -80,3 +80,23 @@ We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes.
 
 <include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+
+Once we know or verify the device information we can start to send commands for
+controlling the hand. The function `hx_update()` is in charge of sending a new
+command and receive the current state of the hand.
+
+First of all we need to fill a `hxCommand` struct that contains the positions,
+velocities, and gains for each joint. Check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default)
+for a detailed view of the `hxCommand` struct. In our case we are modifying the
+position of all the joints according to a sinusoidal function.
+
+The function `hx_update()` accepts a first argument that is the target device
+where the command will be sent (similar to `hx_getdeviceinfo()`). The second
+parameter is the command that we want to send to the device and that we already
+filled. A third output command is passed to the function that will contain the
+state of the hand after applying the command.
+
+We have included a helper function `printState()` that shows all the state
+information for debugging purposes. Similar to `hx_getdeviceinfo()`, the function
+`hx_update()` returns `hxOK` when the command was successfully sent and the
+state has been received.
