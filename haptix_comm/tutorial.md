@@ -65,3 +65,14 @@ loop.
 # The code explained
 
 <include from='/int main/' to='/return -1;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+
+The HAPTIX C API is composed by two C function calls: `hx_getdeviceinfo()` and
+`hx_update()`. `hx_getdeviceinfo()` requests information to a given device.
+In this tutorial, our device is a hand simulated in Gazebo. Note that this call
+blocks for a certain amount of time until the response is received.
+
+We use the `hxGAZEBO` to specify that the target device is inside a Gazebo
+simulation. For other targets available, check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default). The second parameter of `hx_getdeviceinfo()` is a `hxDeviceInfo` struct. Check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default)
+that contains the number of motors, joints, contact sensors, IMUs and joint
+limits for the requested device. If we have a response, the returned value is
+`hxOK`.
