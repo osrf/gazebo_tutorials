@@ -64,4 +64,4 @@ loop.
 
 # The code explained
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+<include from='/int main/' to='/return -1;/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
