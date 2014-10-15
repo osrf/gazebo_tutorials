@@ -1,15 +1,18 @@
 # Overview
 
-This tutorial will explain how to use the Ignition Transport for sending new
-joint commands to the hand and receiving state updates using C++.
+This tutorial will explain how to use the Ignition Transport C++ library for
+sending new joint commands to the hand and receiving state updates.
 
-We assume that you have already done the [installation step](TODO).
+We assume that you have already done the [installation steps](TODO). It's highly
+recommended to go through the Ignition-Transport tutorials before continuing to
+get familiar with some of the concepts used in the library.
+
 
 # Compile your controller
 
 In this tutorial we include a very basic controller that applies a sinusoidal
 wave to all the hand joints. First, you should compile your controller and link
-it to the haptix_comm and ignition-transport libraries. Ignition-transport
+it to the `haptix_comm` and `ignition-transport` libraries. `Ignition-transport`
 provides the communication capabilities in C++. Besides the C API, Haptix_comm
 exposes a set of protobuf messages that can be used in C++ programs.
 
@@ -67,37 +70,49 @@ You should see your fingers following a smooth trajectory.
 
 <include from='/int main/' to='/return -1;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
 
-The HAPTIX C API is composed of two C function calls: `hx_getdeviceinfo()` and
-`hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
-In this tutorial, our device is a hand simulated in Gazebo. Note that this call
-blocks until the response is received.
+The HAPTIX Gazebo plugin advertises two services with topic names
+`/haptix/gazebo/GetDeviceInfo` and '/haptix/gazebo/Update`. Clients can request
+service calls to `/haptix/gazebo/GetDeviceInfo` for receiving information about
+the simulated device in Gazebo. By requesting service calls to the topic
+'/haptix/gazebo/Update`, clients can send new joint commands and receive the
+current hand state.
 
-We use the `hxGAZEBO` constant to specify that the target device is a hand inside a Gazebo
-simulation. For other available targets check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default). The second parameter of `hx_getdeviceinfo()` is a `hxDeviceInfo` struct that
-contains the number of motors, joints, contact sensors, IMUs and joint limits
-for the requested device. If we have a valid response, the returned value is `hxOK`.
+During the first part of the main program we declare multiple variables,
+including a transport node and haptix messages. The first call to
+`hxNode.Request()` makes a blocking service request to the
+`/haptix/gazebo/GetDeviceInfo` service. The second argument is the input
+parameter passed to the service. Although we do not need an input parameter,
+we need to pass it and it has to be initialized. Future versions of
+`Ignition-transport` will allow empty input parameters. The next argument is a
+timeout expressed in milliseconds. This is the maximum time that the request
+will be waiting for a response. The next argument is the output parameter and
+in our case it will contain the device information sent from our simulated
+hand. The output `result` parameter will flag the result of the operation
+(true if the operation succeed of false otherwise). The return value of the
+request will tell the caller if the operation timed out or reached the service
+provider.
 
 We have included in our example a helper function `printDeviceInfo()` that will
-print all the received fields for debugging purposes.
+print all the received fields for debugging purposes. Inside `printDeviceInfo()`
+you can see how to read the different fields from a protobuf message.
 
 <include from='/  // Set the service name/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
 
 Once we confirm the device information we can start sending commands for
-controlling the hand. The function `hx_update()` is in charge of sending a new
-command and receiving the current state of the hand.
-
-First of all, we need to fill a `hxCommand` struct that contains the positions,
-velocities, and gains for each joint. Check the [haptix_comm API](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default)
-for a detailed view of the `hxCommand` struct. In our case, we are modifying the
-position of all the joints according to a sinusoidal function.
-
-The function `hx_update()` accepts a first argument that is the target device
-where the command will be sent (similar to `hx_getdeviceinfo()`). The second
-parameter `cmd` is the command that we want to send to the device, which we already
-filled in. A third output command `sensor` is passed to the function; it will contain the
-state of the hand after applying the command.
+controlling the hand. The next call to `hxNode.Request()` is located inside a
+loop that runs approximately at 100Hz. This is the main control loop that sends
+joint commands to the simulated hand and receive its state. The first argument
+is the name of the service in charge of receiving new joint commands. The second
+argument is the Command message containing the new command to send to the hand.
+Next, we use a timeout in milliseconds to set the maximum waiting time for the
+response. The forth parameter contains the output parameter of the call and in
+this case is filled in with the state information coming from the hand. Finally,
+the last argument will contain the result of the request (true if the request
+succeed of false otherwise). The return value of the request tells the caller if
+the operation timed out or reached the service provider.
 
 We have included a helper function `printState()` that shows all the state
-information for debugging purposes. Similar to `hx_getdeviceinfo()`, the function
-`hx_update()` returns `hxOK` when the command was successfully sent and the
-state has been received.
+information for debugging purposes.
+
+The protobuf message definition for hxCommand, hxDevice and hxSensor can be
+found [here](https://bitbucket.org/osrf/haptix_comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/msg/?at=default).
