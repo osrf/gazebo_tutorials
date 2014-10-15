@@ -23,8 +23,8 @@ exposes a set of protobuf messages that can be used in C++ programs.
 1. Download the source code of the controller and the cmake file:
 
     ~~~
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.cpp
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
+    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp
+    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/CMakeLists.txt
     ~~~
 
 1. Create a build directory and compile the source code.
@@ -50,7 +50,7 @@ Now, we are ready to test our controller with the HAPTIX simulator.
 controller executable:
 
     ~~~
-    cd ~/haptix_controller/build
+    cd ~/haptix_controller_cpp/build
     ~~~
 
 1. Start the controller:
