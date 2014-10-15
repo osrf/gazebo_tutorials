@@ -74,23 +74,22 @@ The HAPTIX Gazebo plugin advertises two services with topic names
 `/haptix/gazebo/GetDeviceInfo` and `/haptix/gazebo/Update`. Clients can request
 service calls to `/haptix/gazebo/GetDeviceInfo` for receiving information about
 the simulated device in Gazebo. By requesting service calls to the topic
-'/haptix/gazebo/Update`, clients can send new joint commands and receive the
+`/haptix/gazebo/Update`, clients can send new joint commands and receive the
 current hand state.
 
 During the first part of the main program we declare multiple variables,
 including a transport node and haptix messages. The first call to
 `hxNode.Request()` makes a blocking service request to the
 `/haptix/gazebo/GetDeviceInfo` service. The second argument is the input
-parameter passed to the service. Although we do not need an input parameter,
-we need to pass it and it has to be initialized. Future versions of
-`Ignition-transport` will allow empty input parameters. The next argument is a
-timeout expressed in milliseconds. This is the maximum time that the request
-will be waiting for a response. The next argument is the output parameter and
-in our case it will contain the device information sent from our simulated
-hand. The output `result` parameter will flag the result of the operation
-(true if the operation succeed of false otherwise). The return value of the
-request will tell the caller if the operation timed out or reached the service
-provider.
+parameter passed to the service. The `Request()` call always requires an input
+and output parameters. Future versions of `Ignition-transport` will allow empty
+input parameters. The next argument is a timeout expressed in milliseconds.
+This is the maximum time that the request will be waiting for a response.
+The next argument is the output parameter and in our case it will contain the
+device information sent from our simulated hand. The output `result` parameter
+will flag the result of the operation (true if the operation succeed of false
+otherwise). The return value of the request will tell the caller if the
+operation timed out or reached the service provider.
 
 We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes. Inside `printDeviceInfo()`
@@ -103,7 +102,7 @@ controlling the hand. The next call to `hxNode.Request()` is located inside a
 loop that runs approximately at 100Hz. This is the main control loop that sends
 joint commands to the simulated hand and receive its state. The first argument
 is the name of the service in charge of receiving new joint commands. The second
-argument is the Command message containing the new command to send to the hand.
+argument is the `hxCommand` message containing the new command to send to the hand.
 Next, we use a timeout in milliseconds to set the maximum waiting time for the
 response. The forth parameter contains the output parameter of the call and in
 this case is filled in with the state information coming from the hand. Finally,
