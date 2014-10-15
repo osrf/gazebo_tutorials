@@ -80,7 +80,7 @@ for the requested device. If we have a valid response, the returned value is `hx
 We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes.
 
-<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+<include from='/  // Set the service name/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
