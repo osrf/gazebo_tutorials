@@ -65,7 +65,7 @@ You should see your fingers following a smooth trajectory.
 
 # The code explained
 
-<include from='/int main/' to='/return -1;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c' />
+<include from='/int main/' to='/return -1;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.c' />
 
 The HAPTIX C API is composed of two C function calls: `hx_getdeviceinfo()` and
 `hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
