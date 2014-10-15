@@ -96,7 +96,7 @@ We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes. Inside `printDeviceInfo()`
 you can see how to read the different fields from a protobuf message.
 
-<include from='/  // Set the service name/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
+<include from='/  // Set the service name for requesting a joint update/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The next call to `hxNode.Request()` is located inside a
