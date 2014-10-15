@@ -71,7 +71,7 @@ You should see your fingers following a smooth trajectory.
 <include from='/int main/' to='/return -1;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_cpp/files/hx_controller.cpp' />
 
 The HAPTIX Gazebo plugin advertises two services with topic names
-`/haptix/gazebo/GetDeviceInfo` and '/haptix/gazebo/Update`. Clients can request
+`/haptix/gazebo/GetDeviceInfo` and `/haptix/gazebo/Update`. Clients can request
 service calls to `/haptix/gazebo/GetDeviceInfo` for receiving information about
 the simulated device in Gazebo. By requesting service calls to the topic
 '/haptix/gazebo/Update`, clients can send new joint commands and receive the
