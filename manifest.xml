@@ -457,6 +457,20 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX C API" ref='haptix_comm'>
+      <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
+      <description>This tutorial describes how to use the C API for creating a
+        hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX C++ API" ref='haptix_cpp'>
+      <markdown version="4.0+">haptix_cpp/tutorial.md</markdown>
+      <description>This tutorial describes how to use the C++ API for creating a
+        hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -618,6 +632,14 @@
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="HAPTIX" skill="beginner" ref="haptix">
+      <description>HAPTIX specific tutorials.</description>
+      <tutorials>
+        <tutorial>haptix_comm</tutorial>
+        <tutorial>haptix_cpp</tutorial>
       </tutorials>
     </category>
 
