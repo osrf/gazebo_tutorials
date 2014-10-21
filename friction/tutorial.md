@@ -59,3 +59,6 @@ The following example will specify a box with low friction:
 ~~~
 
 This is a more exhaustive [example](https://bitbucket.org/osrf/gazebo/src/3bd08807f5d9997e9d51eed9276350bac523c4bf/sdf/worlds/test_friction.world?at=default).
+
+
+<iframe src="//player.vimeo.com/video/105581956" width="500" height="287" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/105581956">Physics engine benchmark: free-floating boxes</a> from <a href="http://vimeo.com/user10437789">Steven Peters</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
