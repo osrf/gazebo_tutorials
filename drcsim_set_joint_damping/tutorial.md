@@ -15,8 +15,12 @@ rosservice list | grep damping
 
 /atlas/get_joint_damping
 /atlas/set_joint_damping
-/sandia_hands/get_joint_damping
-/sandia_hands/set_joint_damping
+/sandia_hands/l_hand/get_joint_damping
+/sandia_hands/l_hand/set_joint_damping
+/sandia_hands/r_hand/get_joint_damping
+/sandia_hands/r_hand/set_joint_damping
+
+
 ~~~
 
 Each service is described in detail below:
