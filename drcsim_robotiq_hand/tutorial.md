@@ -194,7 +194,7 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0
 You should see how the different state fields change according to the target position specified,
 the current finger position, velocities, etc. Check out the Section 4.5 of the
 [instruction manual](robotiq.com/media/3-FINGER-140613.pdf) for a detailed description
-of the state register.
+of the state registers.
 
 # Visualizing the gripper in rviz
 
@@ -204,9 +204,9 @@ where visualizing the hand state and press CTRL-C.
 
 Open rviz:
 
-%%%
+~~~
 rosrun rviz rviz
-%%%
+~~~
 
 Let's start by adding Atlas to the visualization by pressing the `Add` button,
 and then, `RobotModel`. Change the property `Fixed frame` to `pelvis`.
