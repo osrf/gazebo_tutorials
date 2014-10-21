@@ -31,11 +31,11 @@ Each service is described in detail below:
 * To set Atlas robot model's joint damping coefficients,
  * ROS service: `/atlas/set_joint_damping`
  * message type: [atlas_msgs/srv/SetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
-* To get Sandia hand model's current joint damping coefficients,
- * ROS service: `/sandia_hands/get_joint_damping`
+* To get Sandia hand model's current joint damping coefficients (right hand),
+ * ROS service: `/sandia_hands/r_hand/get_joint_damping`
  * message type: [atlas_msgs/srv/GetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/GetJointDamping.srv)
 * To set Sandia hand model's joint damping coefficients,
- * ROS service: `/sandia_hands/set_joint_damping`
+ * ROS service: `/sandia_hands/r_hand/set_joint_damping`
  * message type: [atlas_msgs/srv/SetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
 
 # Running the Tutorial
