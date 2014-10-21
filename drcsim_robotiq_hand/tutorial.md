@@ -31,7 +31,7 @@ roslaunch drcsim_gazebo atlas_robotiq_hands.launch
 ~~~
 
 If the initial hand configuration does not match your robot's configuration, you
-can edit the file [atlas_robotiq_hands.urdf.xacro](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
+can edit the file [`atlas_robotiq_hands.urdf.xacro`](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
 Note that there are alternative versions of this file for Atlas V3 and Atlas V4.
 
 Once your configuration is correct you can look for ROS nodes controlling Robotiq hands by typing:
