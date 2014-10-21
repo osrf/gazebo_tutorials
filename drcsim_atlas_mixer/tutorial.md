@@ -36,14 +36,15 @@ You'll see the robot at a table with a drill on it:
 
 **Note: the ROS package being created here is also available in the drcsim 2.7.x source release, in the directory `tutorials/atlas_teleop`.**
 
-1. Create a ROS package to contain the code for this tutorial. If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
+1. If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
 
-~~~
-mkdir ~/ros
-echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
-source ~/.bashrc
-~~~
+    ~~~
+    mkdir ~/ros
+    echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+    source ~/.bashrc
+    ~~~
 
+1. Create a ROS package to contain the code for this tutorial.
 
     ~~~
     cd ~/ros
