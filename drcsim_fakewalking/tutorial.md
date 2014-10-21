@@ -19,6 +19,10 @@ Note that this tutorial does not use the [walking controller](http://gazebosim.o
 
 [[file:files/Gazebo_with_drc_robot.png|640px]]
 
+Note that in drcsim 4.x.x, the robot starts with a standing pose:
+
+[[file:files/Gazebo_with_drc_robot_drcsim4.png|640px]]
+
 Note that all of the robot's joints, including the legs, are physically simulated and actively controlled.
 
 So the simulated robot in this tutorial can't walk, but we still want to move it around in the world.  Fortunately, the simulated robot accepts velocity commands via ROS to translate and rotate in the plane, as if it were a wheeled robot.
