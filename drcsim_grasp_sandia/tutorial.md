@@ -32,10 +32,12 @@ roslaunch drcsim_gazebo atlas_sandia_hands.launch
 Look for ros nodes controlling Sandia hands by typing
 
 ~~~
-rosservice list | grep sandia_hand
+$ rosservice list | grep sandia_hand
+~~~
 
-In particular, note the Sandia hands services:
+In particular, note the output should contain Sandia hands services for simplified grasps:
 
+~~~
 /sandia_hands/l_hand/simple_grasp
 /sandia_hands/r_hand/simple_grasp
 ~~~
@@ -44,6 +46,9 @@ To get more information on the type of service offered, type
 
 ~~~
 rosservice info /sandia_hands/l_hand/simple_grasp
+~~~
+with the following output:
+~~~
 Node: /sandia_hands/l_hand/simple_grasp_left
 URI: rosrpc://lcp1:37083
 Type: sandia_hand_msgs/SimpleGraspSrv
@@ -54,6 +59,9 @@ Args: grasp
 
 ~~~
 rosmsg show SimpleGrasp
+~~~
+with the following output:
+~~~
 [sandia_hand_msgs/SimpleGrasp]:
 string name
 float64 closed_amount
