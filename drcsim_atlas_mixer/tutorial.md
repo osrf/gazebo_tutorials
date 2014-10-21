@@ -83,12 +83,12 @@ You'll see the robot at a table with a drill on it:
     rosrun atlas_teleop nanokontrol.py 0
     ~~~
 
-If `nanokontrol.py` exits with an error about the wrong ID, start it again (kill `nanokontrol.py` with Ctrl-C first, if needed), with the next ID:
+    If `nanokontrol.py` exits with an error about the wrong ID, start it again (kill `nanokontrol.py` with Ctrl-C first, if needed), with the next ID:
 
-        # It wasn't ID 0.  Try the driver with ID 1
+         # It wasn't ID 0.  Try the driver with ID 1
         rosrun atlas_teleop nanokontrol.py 1
 
- Repeat this procedure until you find the right ID.  Remember that ID.  For the rest of this tutorial, we'll assume that the correct ID is 3 (it seems to often be 3).
+    Repeat this procedure until you find the right ID.  Remember that ID.  For the rest of this tutorial, we'll assume that the correct ID is 3 (it seems to often be 3).
 
 1. Move the sliders around; you're looking for a stream of output from `rostopic` similar to:
 
