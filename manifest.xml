@@ -624,6 +624,7 @@
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
+        <tutorial>drcsim_robotiq_hand</tutorial>
       </tutorials>
     </category>
 
