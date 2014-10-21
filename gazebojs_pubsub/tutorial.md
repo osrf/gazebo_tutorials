@@ -1,6 +1,6 @@
 # Introduction
 
-This page explains how to create publishers and subscriber to Gazebo topics in javascript using GazeboJs. Publish / Subscribe is the communication pattern used between the Gazebo server and its clients.
+This page explains how to create publishers and subscribers to Gazebo topics in javascript using GazeboJs. Publish / Subscribe is the communication pattern used between the Gazebo server and its clients.
 
 
 ## Project setup
@@ -60,7 +60,7 @@ Once published, the message is going to be received by each subscriber for this 
 ### Test your publisher:
 
 
-Publish WorldControl message on the world_control topic to pause the simulation:
+Publish `WorldControl` message on the world_control topic to pause the simulation:
 
     node publish.js "gazebo.msgs.WorldControl"  "~/world_control" "{\"pause\": true}"
 
@@ -81,7 +81,7 @@ bye
 Subscribers provide a callback function for a specific type of message on a certain topic. Each time a new message is published by a publisher, the callback is invoked for every subscriber to this topic.
 
 ### Code
-Create  subscribe.js file
+Create subscribe.js file
 
     gedit subscribe.js
 
@@ -117,7 +117,7 @@ It is possible to unsubscribe to a topic. When unsubscribe is called, all subscr
 ### Test your subscriber:
 
 
-Subscribe for 5 consecutive WorldStatistics messages on the world_stats topic:
+Subscribe for 5 consecutive `WorldStatistics` messages on the world_stats topic:
 
     node subscribe.js "gazebo.msgs.WorldStatistics" "~/world_stats" 5
 

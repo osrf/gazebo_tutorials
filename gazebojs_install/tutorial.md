@@ -2,7 +2,7 @@
 
 GazeboJs provides a scripting interface to the Gazebo simulator. Specifically, it provides a javascript client for the simulator, using NodeJs and built on Google's V8 script engine.
 
-GazeboJs is a C++ addon to NodeJs that is loaded inside node process at runtime (using the require javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
+GazeboJs is a C++ addon to NodeJs that is loaded inside node process at runtime (using the `require` javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
 This is the same mechanism that the Gazebo simulation client (the gzclient process) uses to communicate with the simulation server.
 The source code for this project can be found here: <https://bitbucket.org/osrf/gazebojs>
 
@@ -15,11 +15,12 @@ This page explains how to install the GazeboJs Node bindings to Gazebo.
 
 ### Ubuntu Linux
 
-This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo 4 and its  development libraries are installed.
+This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo and its  development libraries are installed.
 
 #### Setup
 
-Install the osrf repository and install libgazebo4-dev (see http://gazebosim.org/tutorials?tut=install). The libgazebo4-dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
+Install the osrf repository and install the development libraries, dependending on the version of Gazeobo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?tut=install). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
+Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
 
 Install nodejs and npm 
 
