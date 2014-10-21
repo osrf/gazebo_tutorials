@@ -105,6 +105,7 @@ rosrun atlas_sim_interface_tutorial walk.py
 Static
 
 ~~~
+gz physics -i 60  # update physics iterations from 50 to 60
 rosrun atlas_sim_interface_tutorial walk.py static
 ~~~
 
