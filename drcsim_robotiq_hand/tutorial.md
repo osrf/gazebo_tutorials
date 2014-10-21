@@ -30,7 +30,11 @@ In terminal, source the DRC simulator setup script and start the DRC robot simul
 roslaunch drcsim_gazebo atlas_robotiq_hands.launch
 ~~~
 
-Look for ros nodes controlling Robotiq hands by typing
+If the initial hand configuration does not match your robot's configuration, you
+can edit the file [atlas_robotiq_hands.urdf.xacro](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
+Note that there are alternative versions of this file for Atlas V3 and Atlas V4.
+
+Once your configuration is correct you can look for ROS nodes controlling Robotiq hands by typing:
 
 ~~~
 rostopic list | grep hand
@@ -194,3 +198,29 @@ of the state register.
 
 # Visualizing the gripper in rviz
 
+The simulated robotiq gripper publishes its state using ROS, so it is possible
+to graphically visualize its state using rviz. Go to the terminal where you
+where visualizing the hand state and press CTRL-C.
+
+Open rviz:
+
+%%%
+rosrun rviz rviz
+%%%
+
+Let's start by adding Atlas to the visualization by pressing the `Add` button,
+and then, `RobotModel`. Change the property `Fixed frame` to `pelvis`.
+
+Now, you should be able to visualize the hands in real time.
+
+[[file:files/robotiq_hand_rviz.png|600px]]
+
+# Known limitations
+
+The following features are not yet available in drcsim:
+
+* Speed/torque control.
+* Individual Control of Scissor.
+* Joint coupling between actuated and underactuated joints.
+
+We will update this tutorial when these features become available.
