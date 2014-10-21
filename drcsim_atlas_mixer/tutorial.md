@@ -36,7 +36,14 @@ You'll see the robot at a table with a drill on it:
 
 **Note: the ROS package being created here is also available in the drcsim 2.7.x source release, in the directory `tutorials/atlas_teleop`.**
 
-1. Create a ROS package to contain the code for this tutorial. You should do this somewhere in your `ROS_PACKAGE_PATH`.
+1. Create a ROS package to contain the code for this tutorial. If you haven't already, create a ros directory in your home directory and add it to your `$ROS_PACKAGE_PATH`. From the command line
+
+~~~
+mkdir ~/ros
+echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+source ~/.bashrc
+~~~
+
 
     ~~~
     cd ~/ros
@@ -62,7 +69,7 @@ You'll see the robot at a table with a drill on it:
     chmod a+x atlas_teleop.py
     ~~~
 
-    This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/raw/default/ros/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
+    This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/src/default/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
 
 # Finding your mixer device
 
@@ -74,6 +81,13 @@ You'll see the robot at a table with a drill on it:
     # Try the driver with ID 0
     rosrun atlas_teleop nanokontrol.py 0
     ~~~
+
+If `nanokontrol.py` exits with an error about the wrong ID, start it again (kill `nanokontrol.py` with Ctrl-C first, if needed), with the next ID:
+
+        # It wasn't ID 0.  Try the driver with ID 1
+        rosrun atlas_teleop nanokontrol.py 1
+
+ Repeat this procedure until you find the right ID.  Remember that ID.  For the rest of this tutorial, we'll assume that the correct ID is 3 (it seems to often be 3).
 
 1. Move the sliders around; you're looking for a stream of output from `rostopic` similar to:
 
@@ -88,12 +102,7 @@ You'll see the robot at a table with a drill on it:
         buttons: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ---
 
-1. If you see that output, you've found the right ID.  If you see nothing, or if `nanokontrol.py` exits with an error about the wrong ID, start it again (kill `nanokontrol.py` with Ctrl-C first, if needed), with the next ID:
-
-        # It wasn't ID 0.  Try the driver with ID 1
-        rosrun atlas_teleop nanokontrol.py 1
-
- Repeat this procedure until you find the right ID.  Remember that ID.  For the rest of this tutorial, we'll assume that the correct ID is 3 (it seems to often be 3).
+1. If you see that output, you've found the right ID.  If you see nothing, continue trying with the next ID.
 
 # Pick up the drill
 
