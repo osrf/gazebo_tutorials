@@ -154,10 +154,11 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-hydro-compressed-depth-image-transport \
                              ros-hydro-compressed-image-transport       \
                              ros-hydro-theora-image-transport           \
-                             ros-hydro-ros-controllers                  \ 
+                             ros-hydro-ros-controllers                  \
                              ros-hydro-moveit-msgs                      \
                              ros-hydro-joint-limits-interface           \
-                             ros-hydro-transmission-interface
+                             ros-hydro-transmission-interface           \
+                             ros-hydro-laser-assembler
 
 1. Create the catkin workspace
 Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will be included into the workspace.
@@ -167,7 +168,7 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          cd /tmp/ws/src
 
          # Download needed software
-         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git 
+         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
          hg clone https://bitbucket.org/osrf/osrf-common
          hg clone https://bitbucket.org/osrf/sandia-hand
          hg clone https://bitbucket.org/osrf/drcsim
@@ -257,7 +258,9 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-indigo-image-transport-plugins          \
                              ros-indigo-compressed-depth-image-transport \
                              ros-indigo-compressed-image-transport       \
-                             ros-indigo-theora-image-transport
+                             ros-indigo-theora-image-transport           \
+                             ros-indigo-laser-assembler
+
 
 1. Create the catkin workspace
 Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will be included into the workspace.
@@ -319,7 +322,7 @@ Follow this following steps:
     ~~~
 
     b. If you installed DRCSim from debian:
-    
+
     ~~~
     sudo cp libAtlasSimInterface.so.2.10.2 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.2.10.2
     sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
@@ -327,7 +330,7 @@ Follow this following steps:
     ~~~
 
     c. If you installed DRCSim in a catkin workspace:
-    
+
     ~~~
     cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/
     cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
