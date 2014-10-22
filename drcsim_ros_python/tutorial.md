@@ -16,7 +16,7 @@ If you haven't already, create a ros directory in your home directory and add it
 
 ~~~
 mkdir ~/ros
-echo "export ROS_PACKAGE_PATH=~/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+echo "export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}" >> ~/.bashrc
 source ~/.bashrc
 ~~~
 
@@ -51,10 +51,10 @@ roslaunch drcsim_gazebo atlas.launch
 
 You should see the Atlas standing in an empty world.  It will likely sway back and forth; that's an artifact of the controllers holding position on the joints.
 
-In a separate terminal, put Atlas in User mode:
+In a separate terminal, put Atlas in `User` mode:
 
 ~~~
-rostopic pub /atlas/control_mode std_msgs/String --  "User"
+rostopic pub /atlas/control_mode std_msgs/String -- "User"
 ~~~
 
 In a separate terminal, run the node that you just built:
@@ -90,7 +90,7 @@ Specify the names of the joints in the correct order.
 
 <include from='/atlasJointNames/' to='/'atlas::r_arm_mwx'\]/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
 
-Create a ROS callback for reading the JointState message published on /atlas/joint_states
+Create a ROS callback for reading the `JointState` message published on `/atlas/joint_states`
 
 <include from='/currentJointState/' to='/currentJointState = msg/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
 
@@ -112,7 +112,7 @@ Get the current controller gains from the parameter server.
 
 Set up the joint command publisher.
 
-<include from='/  # set up the publisher/' to='/, JointCommands\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # set up the publisher/' to='/, queue_size=1\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
 
 Read in each line from the yaml file as a trajectory command, and the current joint states from the ROS topic. Publish trajectory commands that interpolate between the initial state and the desired position to generate a smooth motion.
 
