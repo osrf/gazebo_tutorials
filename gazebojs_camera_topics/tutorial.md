@@ -31,8 +31,11 @@ var fs = require('fs');
 ~~~
 
 Then we add the basic functionality: a function to generate padded numbers (ie "007" instead of "7") and we collect arguments:
+
 - which camera to get images from (we then compute the full topic name: "~/camera/link/camera/image"
-- how to name the saved images ( "frame_" to get names like "frame_000.jpeg")
+
+- how to name the saved images ( "frame\_" to get names like "frame\_000.jpeg")
+
 - how many images to save before exiting the program.
 
 ~~~
