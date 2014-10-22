@@ -17,17 +17,17 @@ Launch the simulator using the `atlas_drc_vehicle_fire_hose.launch` and with the
 The VRC plugin exposes ROS topics for the DRC Vehicle interface elements. In addition to the steering wheel, hand brake, and pedals, the DRC Vehicle also has a key switch and a 3-way direction switch (Forward / Neutral / Reverse). The current state of each interface element can be read on the following ROS topics, which broadcast at 1 Hz:
 
 %%%
-    /drc_vehicle/brake_pedal/state
-    /drc_vehicle/direction/state
-    /drc_vehicle/gas_pedal/state
-    /drc_vehicle/hand_brake/state
-    /drc_vehicle/hand_wheel/state
-    /drc_vehicle/key/state
+    /drc_vehicle_xp900/brake_pedal/state
+    /drc_vehicle_xp900/direction/state
+    /drc_vehicle_xp900/gas_pedal/state
+    /drc_vehicle_xp900/hand_brake/state
+    /drc_vehicle_xp900/hand_wheel/state
+    /drc_vehicle_xp900/key/state
 %%%
 
 These topics can be viewed from the command line using, for example:
 
-    rostopic echo /drc_vehicle/brake_pedal/state
+    rostopic echo /drc_vehicle_xp900/brake_pedal/state
 
 
 The `brake_pedal`, `gas_pedal`, and `hand_brake` topics send a Float64 value scaled from 0 (disengaged) to 1 (fully engaged). The DRC Vehicle defaults to the pedals disengaged and the hand brake engaged. The `hand_wheel` topic reports the steering wheel angle in radians. Note that the steering wheel has a range of more than [-7 rad, 7 rad].
@@ -40,22 +40,22 @@ The DRC Vehicle model currently does not have visual elements attached to the wh
 
 With these rendering options set, start by sending a command to turn the steering wheel to the left:
 
-    rostopic pub --once /drc_vehicle/hand_wheel/cmd std_msgs/Float64 '{ data : 3.14 }'
+    rostopic pub --once /drc_vehicle_xp900/hand_wheel/cmd std_msgs/Float64 '{ data : 3.14 }'
 
 Look at the front wheels to see a change.
 
 Turn back to the right:
 
-    rostopic pub --once /drc_vehicle/hand_wheel/cmd std_msgs/Float64 '{ data : -3.14 }'
+    rostopic pub --once /drc_vehicle_xp900/hand_wheel/cmd std_msgs/Float64 '{ data : -3.14 }'
 
 Press the gas pedal:
 
-    rostopic pub --once /drc_vehicle/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
+    rostopic pub --once /drc_vehicle_xp900/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
 
-but the vehicle's not moving! The hand brake is engaged by default. Let's disengage it:
+but the vehicle_xp900's not moving! The hand brake is engaged by default. Let's disengage it:
 
-    rostopic pub --once /drc_vehicle/hand_brake/cmd std_msgs/Float64 '{ data : 0 }'
+    rostopic pub --once /drc_vehicle_xp900/hand_brake/cmd std_msgs/Float64 '{ data : 0 }'
 
-The vehicle will start driving in circles. Send the following command to turn the engine off:
+The vehicle_xp900 will start driving in circles. Send the following command to turn the engine off:
 
-    rostopic pub --once /drc_vehicle/key/cmd std_msgs/Int8 '{ data : 0 }'
+    rostopic pub --once /drc_vehicle_xp900/key/cmd std_msgs/Int8 '{ data : 0 }'
