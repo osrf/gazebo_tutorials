@@ -14,7 +14,7 @@ Create a file
 
     gedit save_jpeg.js
 
-and add the following [content (https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js)]:
+and add the following content (https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js):
 
 <include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
 
