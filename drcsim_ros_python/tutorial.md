@@ -80,7 +80,7 @@ python traj_yaml.py Traj_data2.yaml touchdown_exhausted
 
 ### Restarting
 
-To try it again, go to the Gazebo "Edit" menu and click on "Reset Model Poses".  That will teleport the robot back to its initial pose, from where you can run a trajectory again.  In this way, you can iterate, making changes to the program sending the trajectory and checking the effect in simulation, without shutting everything down.
+To try it again, go to the Gazebo "Edit" menu and click on "Reset Model Poses" (you might need to do this several times, use `Shift+Ctrl+R` for convenience).  That will teleport the robot back to its initial pose, from where you can run a trajectory again.  In this way, you can iterate, making changes to the program sending the trajectory and checking the effect in simulation, without shutting everything down.
 
 ## The Code Explained
 
