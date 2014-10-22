@@ -1,7 +1,7 @@
 # Overview
 
 In this tutorial, we'll describe how to interact with the simulated Robotiq hand,
-as well as how to read its state or visualize it in rviz.
+as well as how to read its state and visualize it in rviz.
 
 # Setup
 
@@ -20,11 +20,11 @@ echo 'source /usr/share/drcsim/setup.sh' >> ~/.bashrc
 source ~/.bashrc
 ~~~
 
-But remember to remove them from your `.bashrc` file when they are not needed any more.
+But remember to remove it from your `.bashrc` file when it is not needed anymore.
 
 # Running the Simulation and controlling the gripper
 
-In terminal, source the DRC simulator setup script and start the DRC robot simulation:
+In a new terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
 ~~~
 roslaunch drcsim_gazebo atlas_robotiq_hands.launch
@@ -32,15 +32,15 @@ roslaunch drcsim_gazebo atlas_robotiq_hands.launch
 
 If the initial hand configuration does not match your robot's configuration, you
 can edit the file [`atlas_robotiq_hands.urdf.xacro`](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
-Note that there are alternative versions of this file for Atlas V3 and Atlas V4.
+Note that there are different versions of this file for Atlas V3 and Atlas V4.
 
-Once your configuration is correct you can look for ROS nodes controlling Robotiq hands by typing:
+Once your configuration is correct you can look for ROS nodes controlling the Robotiq hands by typing:
 
 ~~~
 rostopic list | grep hand
 ~~~
 
-In particular, note the Robotiq hand messages:
+Note the Robotiq hand messages:
 
 %%%
 /left_hand/command
@@ -97,13 +97,13 @@ uint8 rFRS
 %%%
 
 Open a separate terminal and make sure to source the environment setup.sh files as we explained at the beginning of the tutorial.
-Then, invoke the next command to send a ROS message for closing the right hand half way by executing:
+Then, invoke the next command to send a ROS message for closing the right hand halfway:
 
 ~~~
 rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0,127,255,0,155,0,0,255,0,0,0,0,0}
 ~~~
 
-You can send the next ROS message for fully opening the hand:
+You can send the next ROS message to fully open the hand:
 
 ~~~
 rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0,0,255,0,155,0,0,255,0,0,0,0,0}
@@ -112,8 +112,8 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0
 [[file:files/robotiq_hand_open.png|300px]]
 [[file:files/robotiq_hand_close.png|300px]]
 
-The hand supports different grasping modes and uses multiple registers to control the position of the fingers among other parameters.
-Check out the Section 4.4 of the [instruction manual](robotiq.com/media/3-FINGER-140613.pdf) for a full list of features and a description of each control register.
+The hand supports different grasping modes and uses multiple registers to control the position of the fingers, as well as other parameters.
+Check out Section 4.4 of the [instruction manual](http://robotiq.com/media/3-FINGER-140613.pdf) for a full list of features and a description of each control register.
 
 As an example, you can execute the following command to change the grasping mode to `pinch` and close the gripper:
 
@@ -127,7 +127,7 @@ Or switch to `wide` mode and fully open the hand:
 rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,2,1,0,0,0,0,255,0,155,0,0,255,0,0,0,0,0}
 ~~~
 
-Or you can change to `Scissor` mode and close the fingers:
+Or you can change to `scissor` mode and close the fingers:
 
 ~~~
 rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,3,1,0,0,0,255,255,0,155,0,0,255,0,0,0,0,0}
@@ -141,7 +141,7 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,3,1,0,0,0
 
 # Showing the gripper state
 
-The gripper state is periodically published via ROS messages and available at:
+The gripper state is periodically published via ROS messages and is available at:
 
 %%%
 /left_hand/state
@@ -191,9 +191,9 @@ close the hand by typing:
 rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0,255,255,0,155,0,0,255,0,0,0,0,0}
 ~~~
 
-You should see how the different state fields change according to the target position specified,
-the current finger position, velocities, etc. Check out the Section 4.5 of the
-[instruction manual](robotiq.com/media/3-FINGER-140613.pdf) for a detailed description
+You should see how the different state registers change according to the target position specified,
+the current finger position, velocities, etc. Check out Section 4.5 of the
+[instruction manual](http://robotiq.com/media/3-FINGER-140613.pdf) for a detailed description
 of the state registers.
 
 # Visualizing the gripper in rviz
