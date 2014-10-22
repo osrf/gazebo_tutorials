@@ -12,7 +12,7 @@ Png files are uncompressed (whereas jpeg are smaller). If you want to save the i
 
 Create a file
 
-    gedit save_jpeg.js
+    gedit [save_jpeg.js (https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js)
 
 and add the following content:
 
