@@ -198,9 +198,9 @@ of the state registers.
 
 # Visualizing the gripper in rviz
 
-The simulated robotiq gripper publishes its state using ROS, so it is possible
+The simulated Robotiq gripper publishes its state using ROS, so it is possible
 to graphically visualize its state using rviz. Go to the terminal where you
-where visualizing the hand state and press CTRL-C.
+were visualizing the hand state and press CTRL-C.
 
 Open rviz:
 
@@ -209,9 +209,9 @@ rosrun rviz rviz
 ~~~
 
 Let's start by adding Atlas to the visualization by pressing the `Add` button,
-and then, `RobotModel`. Change the property `Fixed frame` to `pelvis`.
+and then, `RobotModel`. Change the property `Fixed Frame` to `pelvis`.
 
-Now, you should be able to visualize the hands in real time.
+Now, you should be able to visualize the hands in real-time.
 
 [[file:files/robotiq_hand_rviz.png|600px]]
 
@@ -219,8 +219,8 @@ Now, you should be able to visualize the hands in real time.
 
 The following features are not yet available in drcsim:
 
-* Speed/torque control.
-* Individual Control of Scissor.
-* Joint coupling between actuated and underactuated joints.
+* Speed/torque control
+* Individual Control of Scissor
+* Joint coupling between actuated and underactuated joints
 
 We will update this tutorial when these features become available.
