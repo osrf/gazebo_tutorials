@@ -22,7 +22,7 @@ If you haven't already, create a ros directory in your home directory and add it
 
 ~~~
 mkdir -p ~/ros
-echo "export ROS_PACKAGE_PATH=\$HOME/ros:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+echo "export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}" >> ~/.bashrc
 source ~/.bashrc
 ~~~
 
@@ -59,7 +59,7 @@ We want to add some objects to that world.  But we don't want to modify the cont
 ~~~
 roscd world_modification_tutorial
 ~~~
-The above command is equivalent to: cd ~/ros/world_modification_tutorial
+The above command is equivalent to: cd `~/ros/world_modification_tutorial`
 
 ~~~
 mkdir worlds launch
@@ -68,17 +68,11 @@ mkdir worlds launch
 ~~~
 roscd drcsim_gazebo
 ~~~
-The above command is equivalent to : cd /usr/share/drcsim-2.0/ros/drcsim_gazebo
+The above command takes you to the `drcsim_gazebo` directory, which may be different according to your installation. It will be something like `/opt/ros/indigo/share/drcsim_gazebo`. We will copy some files from there:
 
 ~~~
 cp launch/atlas.launch ~/ros/world_modification_tutorial/launch/
-~~~
-
-~~~
 cp launch/atlas_no_controllers.launch ~/ros/world_modification_tutorial/launch/
-~~~
-
-~~~
 cp ../drcsim_model_resources/worlds/atlas.world ~/ros/world_modification_tutorial/worlds/
 ~~~
 
@@ -86,7 +80,7 @@ cp ../drcsim_model_resources/worlds/atlas.world ~/ros/world_modification_tutoria
 roscd world_modification_tutorial/
 ~~~
 
-Now that we have our own copies of the .launch and .world files, we can make changes.  We'll start with the .launch files: open `~/ros/world_modification_tutorial/launch/atlas.launch` in a text editor.
+Now that we have our own copies of the `.launch` and `.world` files, we can make changes.  We'll start with the `.launch` files: open `~/ros/world_modification_tutorial/launch/atlas.launch` in a text editor.
 
     gedit ~/ros/world_modification_tutorial/launch/atlas.launch
 
@@ -94,23 +88,23 @@ Now that we have our own copies of the .launch and .world files, we can make cha
 
         <include file="$(find drcsim_gazebo)/launch/atlas_no_controllers.launch">
 
-1. In this .launch file, which is our local copy, we want to use our local copy of the .launch file.  So replace the above line with:
+1. In this `atlas.launch` file, which is our local copy, we want to use our local copy of the `atlas_no_controllers.launch` file.  So replace the above line with:
 
         <include file="$(find world_modification_tutorial)/launch/atlas_no_controllers.launch">
 
-Now we need to change `atlas_no_controllers` to refer to the correct world file
+Now we need to change `atlas_no_controllers.launch` to refer to the correct world file.
 
     gedit ~/ros/world_modification_tutorial/launch/atlas_no_controllers.launch
 
 1. Look for this line:
 
-        <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(arg gzworld)" output="screen" />
+        <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(arg gzworld) $(arg extra_gazebo_args)" output="screen" />
 
-1. In this .launch file, which is our local copy, we want to use our local copy of the .launch file.  So replace the above line with:
+1. Again, to use local copies, we replace the above line with:
 
         <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(find world_modification_tutorial)/worlds/$(arg gzworld) $(arg extra_gazebo_args)" output="screen" />
 
-Now you're ready to make modifications to the world.  There are a variety of ways to do this; see the [building a world](http://gazebosim.org/tutorials/?tut=drcsim_build_world) tutorial to get started. For now, we'll make some simple edits via the simulator GUI. Launch the Simulator using your just-edited `.launch` file:
+Now you're ready to make modifications to the world.  There are a variety of ways to do this; see the [building a world](http://gazebosim.org/tutorials/?tut=drcsim_build_world) tutorial to get started. For now, we'll make some simple edits via the simulator GUI. Launch the Simulator using your just-edited `atlas.launch` file:
 
     roslaunch world_modification_tutorial atlas.launch
 
