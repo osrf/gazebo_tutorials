@@ -5,7 +5,7 @@ This tutorial assumes that you have an account on Bitbucket, and that you have a
 ## Fork and clone the osrf/gazebo\_models repository
 Go to [https://bitbucket.org/osrf/gazebo\_models](https://bitbucket.org/osrf/gazebo_models) and, from the menu on the left hand side of the screen, choose "Fork". The default options are generally fine. After you have forked the repository, clone it. Assuming that you chose the default name for the repository, you will clone using commands similar to the following: 
 
-    $ hg clone hg clone https://yourname@bitbucket.org/yourname/gazebo_models
+    $ hg clone https://yourname@bitbucket.org/yourname/gazebo_models
 
 where _yourname_ is your Bitbucket username.
 
