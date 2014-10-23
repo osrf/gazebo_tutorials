@@ -1,8 +1,9 @@
-# Adding a model to Gazebo
+# How to contribute to gazebo\_models database
 
+## Creating a model
 First, create a directory for your model. For this tutorial, we will assume that this directory is called **mymodel**. That directory must include the file **model.config**, and it may include other files as well (plugins, makefiles, README's, etc.)
 
-# Contents of **model.config**:
+## Contents of **model.config**:
 
 The **model.config** file provides information necessary to pick the proper SDF file, information on authorship of the model, and a textual description of the model. 
 
@@ -44,6 +45,6 @@ This **model.config** file indicates that the simulator's definition of the mode
     </model>
 
 
-# Path for the directory
+## Path for the directory
 
 The directory (**mymodel**) should be located in the default Gazebo models path (_~/.gazebo/models_) or under the path pointed to be the `GAZEBO_MODEL_PATH` environment variable.
