@@ -1,10 +1,18 @@
 # How to contribute to gazebo\_models database
 
+This tutorial assumes that you have an account on Bitbucket, and that you have a client for [Mercurial](http://mercurial.selenic.com).
+
+## Fork and clone the osrf/gazebo\_models repository
+Go to [https://bitbucket.org/osrf/gazebo\_models](https://bitbucket.org/osrf/gazebo_models) and, from the menu on the left hand side of the screen, choose "Fork". The default options are generally fine. After you have forked the repository, clone it. Assuming that you chose the default name for the repository, you will clone using commands similar to the following: 
+
+    $ hg clone hg clone https://yourname@bitbucket.org/yourname/gazebo_models
+
+where _yourname_ is your Bitbucket username.
+
 ## Creating a model
-First, create a directory for your model. For this tutorial, we will assume that this directory is called **mymodel**. That directory must include the file **model.config**, and it may include other files as well (plugins, makefiles, README's, etc.)
+Create a directory for your model under the **gazebo\_models** directory. For this tutorial, we will assume that this directory is called **mymodel**. That directory must include the file **model.config**, and it may include other files as well (plugins, makefiles, README's, etc.)
 
 ## Contents of **model.config**:
-
 The **model.config** file provides information necessary to pick the proper SDF file, information on authorship of the model, and a textual description of the model. 
 
 A sample **model.config** looks like this:
@@ -45,6 +53,18 @@ This **model.config** file indicates that the simulator's definition of the mode
     </model>
 
 
-## Path for the directory
+## Adding the directory (and files) to the repository
+You can add all of your files to the repository by typing:
+    $ hg add mymodel
+or, if you have some files that you do not wish to track, you can add files individually:
+    $ hg add mymodel/model.config
+    $ hg add mymodel/model.sdf
+etc.
 
-The directory (**mymodel**) should be located in the default Gazebo models path (_~/.gazebo/models_) or under the path pointed to be the `GAZEBO_MODEL_PATH` environment variable.
+## Committing and pushing
+Commit and push your changes to Bitbucket:
+    $ hg commit
+    $ hg push
+
+## Final step: creating a pull request
+
