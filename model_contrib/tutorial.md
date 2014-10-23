@@ -55,14 +55,18 @@ This **model.config** file indicates that the simulator's definition of the mode
 
 ## Adding the directory (and files) to the repository
 You can add all of your files to the repository by typing:
-     $ hg add mymodel
+   
+    $ hg add mymodel
+    
 or, if you have some files that you do not wish to track, you can add files individually:
-     $ hg add mymodel/model.config
-     $ hg add mymodel/model.sdf
+
+    $ hg add mymodel/model.config
+    $ hg add mymodel/model.sdf
 etc.
 
 ## Committing and pushing
 Commit and push your changes to Bitbucket:
+
      $ hg commit
      $ hg push
 
