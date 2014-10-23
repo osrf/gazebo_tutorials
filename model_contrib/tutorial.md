@@ -5,7 +5,7 @@ This tutorial assumes that you have an account on Bitbucket, and that you have a
 ## Fork and clone the osrf/gazebo\_models repository
 Go to [https://bitbucket.org/osrf/gazebo\_models](https://bitbucket.org/osrf/gazebo_models) and, from the menu on the left hand side of the screen, choose "Fork". The default options are generally fine. After you have forked the repository, clone it. Assuming that you chose the default name for the repository, you will clone using commands similar to the following: 
 
-    $ hg clone https://yourname@bitbucket.org/yourname/gazebo_models
+    code$ hg clone https://yourname@bitbucket.org/yourname/gazebo_models
 
 where _yourname_ is your Bitbucket username.
 
@@ -56,19 +56,20 @@ This **model.config** file indicates that the simulator's definition of the mode
 ## Adding the directory (and files) to the repository
 You can add all of your files to the repository by typing:
    
-    $ hg add mymodel
+    gazebo_models$ hg add mymodel
     
 or, if you have some files that you do not wish to track, you can add files individually:
 
-    $ hg add mymodel/model.config
-    $ hg add mymodel/model.sdf
+    gazebo_models$ hg add mymodel/model.config
+    gazebo_models$ hg add mymodel/model.sdf
 etc.
 
 ## Committing and pushing
 Commit and push your changes to Bitbucket:
 
-     $ hg commit
-     $ hg push
+    gazebo_models$ hg commit
+    gazebo_models$ hg push
 
 ## Final step: creating a pull request
 
+From your Bitbucket repository **https://bitbucket.org/yourname/gazebo\_models** (assuming that your Bitbucket username is _yourname_ and you used the defaults for the fork, this is where you would find the forked repository), create a pull request. Pick "Create pull request" from the menu on the left side of the web page. Make sure that "osrf/gazebo\_models" is selected to the right of the arrow. When satisfied with your other options, click "Create pull request". OSRF will review your pull request and begin integrating your changes into the model database.  
