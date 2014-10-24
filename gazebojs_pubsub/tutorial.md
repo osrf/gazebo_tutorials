@@ -33,7 +33,7 @@ Create  publish.js file
 
     gedit publish.js
 
-And put the following code:
+And put the following code ([publish.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/publish.js)):
 
 <include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/publish.js' />
 
@@ -85,7 +85,7 @@ Create subscribe.js file
 
     gedit subscribe.js
 
-And put the following code:
+And put the following code ([subscribe.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/subscribe.js)):
 
 
 <include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/subscribe.js' />
