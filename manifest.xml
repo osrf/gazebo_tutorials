@@ -457,6 +457,34 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <!-- scripting  -->
+    <tutorial title="GazeboJs installation" ref='gazebojs_install'>
+          <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
+          <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
+          <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
+        <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
+        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+        <skill>advanced</skill>
+    </tutorial>
+
+
+    <tutorial title="GazeboJs camera topics" ref='gazebojs_camera_topics'>
+        <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
+        <description>Explains how to save images from Gazebo camera topics.</description>
+        <skill>advanced</skill>
+    </tutorial>
+
+
+    <tutorial title="GazeboJs models" ref='gazebojs_models'>
+        <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
+        <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
+        <skill>advanced</skill>
+    </tutorial>
+
+
   </tutorials>
 
   <categories>
@@ -621,6 +649,16 @@
       </tutorials>
     </category>
 
+    <category title="Scripting (javascript and NodeJs)" skill="advanced" ref="gazebojs">
+      <description>Gazebo scripting interface: NodeJS bindings for the Gazebo simulator.</description>
+      <tutorials>
+        <tutorial>gazebojs_install</tutorial>
+        <tutorial>gazebojs_pubsub</tutorial>
+        <tutorial>gazebojs_camera_topics</tutorial>
+        <tutorial>gazebojs_models</turorial>
+
+      </tutorials>
+    </category>
   </categories>
 
 </content>
