@@ -176,6 +176,13 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Installation" ref='haptix_install'>
+      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
+      <description>This tutorial describes how to install Gazebo and the client
+        library SDK for the HAPTIX project.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -656,9 +663,17 @@
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
         <tutorial>gazebojs_models</turorial>
-
       </tutorials>
     </category>
+
+    <category title="HAPTIX" skill="beginner" ref="haptix">
+      <description>HAPTIX specific tutorials.</description>
+      <tutorials>
+        <tutorial>haptix_install</tutorial>
+        <tutorial>haptix_comm</tutorial>
+      </tutorials>
+    </category>
+
   </categories>
 
 </content>
