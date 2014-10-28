@@ -464,6 +464,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX C API" ref='haptix_install'>
+      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
+      <description>This tutorial describes how to install Gazebo and the client
+        libraries SDK for the HAPTIX project.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -632,6 +639,7 @@
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
         <tutorial>haptix_comm</tutorial>
+        <tutorial>haptix_install</tutorial>
       </tutorials>
     </category>
 
