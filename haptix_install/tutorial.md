@@ -5,7 +5,9 @@ researchers and developers to test their control software before running on the
 real hardware. The HAPTIX setup is composed by a Gazebo simulator, a client
 library and a client controller. The Gazebo simulator runs on a Linux machine,
 whereas the client library and the client controller can run in Linux and
-Windows.
+Windows hosts. This tutorial will guide your through the installation of Gazebo
+and the client library. Check out the rest of the HAPTIX tutorials for
+instructions on how to create your own hand controller.
 
 # Gazebo installation.
 
