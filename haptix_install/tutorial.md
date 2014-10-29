@@ -2,16 +2,16 @@
 
 The HAPTIX project simulates advanced robotic prosthetic limbs to allow
 researchers and developers to test their control software before running on the
-real hardware. The HAPTIX setup is composed by a Gazebo simulator, a client
+real hardware. The HAPTIX setup is composed of a Gazebo simulator, a client
 library and a client controller. The Gazebo simulator runs on a Linux machine,
-whereas the client library and the client controller can run in Linux and
+whereas the client library and the client controller can run on Linux and
 Windows hosts. This tutorial will guide your through the installation of Gazebo
 and the client library. Check out the rest of the HAPTIX tutorials for
 instructions on how to create your own hand controller.
 
 # Gazebo installation
 
-Before installing Gazebo, you need a machine with Ubuntu 14.04 64 bits
+Before installing Gazebo, you need a machine with Ubuntu 14.04 64-bit
 installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
@@ -19,18 +19,18 @@ following command:
 wget -O /tmp/gazebo_haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo_haptix_install.sh; sudo sh /tmp/gazebo_haptix_install.sh
 ~~~
 
-You can test your Gazebo installation by running the next command on your
+You can test your Gazebo installation by running the next command in your
 terminal:
 
 ~~~
 gazebo
 ~~~
 
-# Client library SDK.
+# Client library SDK
 
-The client library SDK is a stack of libraries that enables the communication
-between programs and the simulated hand in Gazebo. The main public library is
-called `haptix-comm`. `haptix-comm` exposes the API that will allow a program to
+The client library SDK is a stack of libraries that enables communication
+between your control software and the simulated hand in Gazebo. The main public library is
+called `haptix-comm`. `haptix-comm` exposes the API that will allow your software to
 request information about the hand (number of joints, motors, number of sensors,
 etc.), as well as request new joint commands and receive the hand state.
 
@@ -40,7 +40,7 @@ We currently support Windows 7 and Windows 8, as well as Visual Studio 2013.
 
 Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0.zip).
 
-Unzip the zip file into your HAPTIX prefered working folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
+Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
 ## Installing the client library SDK in Linux
 
@@ -56,7 +56,7 @@ wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
-1. Setup keys
+1. Setup keys.
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update

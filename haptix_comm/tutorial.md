@@ -1,7 +1,7 @@
 # Overview
 
 This tutorial will explain how to use the C client library `haptix-comm` for
-sending new joint commands to the hand and receiving state updates.
+requesting a description of the hand, sending new joint commands, and receiving state updates.
 
 We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
 
@@ -19,7 +19,7 @@ on `File`->`New Project`->`Visual C++`->`Win32 Console Application`. Select an
 appropriate name for your project, for example `MyBasicController`. Click `OK`,
 and then, click on `Finish`.
 
-Replace the source code from your current project by our basic controller. Copy
+Replace the source code from your current project with our basic controller. Copy
 the code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c) and paste it in your current project.
 
 Add the following line at the begginning of your source code:
@@ -28,13 +28,13 @@ Add the following line at the begginning of your source code:
 #include "stdafx.h"
 ~~~
 
-Open the property manager view by clicking on `View`->`Other Windows`->`Property
+Open the Property Manager view by clicking on `View`->`Other Windows`->`Property
 Manager`. This will allow you to use the property sheet provided by the HAPTIX
-library SDK. Move to the `Property Manager` tab, select your project and right
-click on it. Then, select `Add Existing Property Sheet...`. A new pop un window
+library SDK. Move to the `Property Manager` tab and right click on your project.
+Then, select `Add Existing Property Sheet...`. A new popup window
 will appear. Browse to the folder where you downloaded the HAPTIX client library
 SDK and select the property sheet named `haptix_comm`. This will handle all the
-project dependencies for your project.
+dependencies for your project.
 
 Select the target build type (`Debug` or `Release`) in the upper toolbar. Then,
 click on `BUILD`->`Build Solution` to build your controller.
@@ -48,7 +48,7 @@ click on `BUILD`->`Build Solution` to build your controller.
     cd ~/haptix_controller
     ~~~
 
-1. Download the source code of the controller and the cmake file:
+1. Download the source code and the cmake file for the controller:
 
     ~~~
     wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c
@@ -67,7 +67,7 @@ click on `BUILD`->`Build Solution` to build your controller.
 # Running the simulation with your controller
 
 Now, we are ready to test our controller with the HAPTIX simulator. Open a new
-terminal in the machine running Gazebo and start the HAPTIX simulation:
+terminal on the Linux machine running Gazebo and start the HAPTIX simulation:
 
 ~~~
 gazebo worlds/arat_test.world
@@ -81,7 +81,7 @@ Your code should be ready to be executed using Visual Studio. Click on `DEBUG`->
 ## Linux
 
 1. Go to the Linux machine where you want to run your controller code. Open a
-terminal and go to the build directory where you have your controller
+terminal and go to the `build/` directory where you have your controller
 executable:
 
     ~~~
@@ -94,7 +94,7 @@ executable:
     ./hx_controller
     ~~~
 
-# Controller visualization.
+# Controller visualization
 
 While your controller is running, you should see your fingers following a smooth
 trajectory in Gazebo.

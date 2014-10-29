@@ -1,13 +1,14 @@
 # Overview
 
-This tutorial will explain how to use Matlab or Octave for
-sending new joint commands to the simulated hand and receiving state updates.
+This tutorial will explain how to use Matlab or Octave for requesting a
+description of the hand, sending new joint commands, and receiving state updates.
 
 We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
 
 # Start the Gazebo simulation
 
-Open a new terminal in the machine running Gazebo and start the HAPTIX simulation:
+Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
+simulation:
 
 ~~~
 gazebo worlds/arat_test.world
@@ -16,7 +17,7 @@ gazebo worlds/arat_test.world
 # Run your controller in Matlab or Octave
 
 The HAPTIX client library SDK includes two `mex` files that allow you to run
-the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/octave
+the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
 console or from a .m file.
 
 Open the file [`hx_matlab_controller.m`](ToDo) in Matlab/Octave. Then, type in
@@ -26,7 +27,7 @@ the Matlab/Octave prompt:
 hx_matlab_controller
 ~~~
 
-# Controller visualization.
+# Controller visualization
 
 While your controller is running, you should see your fingers following a smooth
 trajectory in Gazebo.
