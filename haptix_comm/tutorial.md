@@ -66,9 +66,8 @@ click on `BUILD`->`Build Solution` to build your controller.
 
 # Running the simulation with your controller
 
-Now, we are ready to test our controller with the HAPTIX simulator.
-
-1. Open a new terminal in the machine running Gazebo and start the HAPTIX simulation:
+Now, we are ready to test our controller with the HAPTIX simulator. Open a new
+terminal in the machine running Gazebo and start the HAPTIX simulation:
 
     ~~~
     gazebo worlds/arat_test.world
