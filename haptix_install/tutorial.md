@@ -9,7 +9,7 @@ Windows hosts. This tutorial will guide your through the installation of Gazebo
 and the client library. Check out the rest of the HAPTIX tutorials for
 instructions on how to create your own hand controller.
 
-# Gazebo installation.
+# Gazebo installation
 
 Before installing Gazebo, you need a machine with Ubuntu 14.04 64 bits
 installed. Once your Linux machine is ready, open up a terminal and run the
@@ -29,18 +29,20 @@ gazebo
 # Client library SDK.
 
 The client library SDK is a stack of libraries that enables the communication
-between programs and the simulated hand in Gazebo. Tha main public library is
+between programs and the simulated hand in Gazebo. The main public library is
 called `haptix-comm`. `haptix-comm` exposes the API that will allow a program to
 request information about the hand (number of joints, motors, number of sensors,
-etc.), as well as request a new joint command and receive the new hand state.
+etc.), as well as request new joint commands and receive the hand state.
 
-## Installing the client library SDK in Windows.
+## Installing the client library SDK in Windows
+
+We currently support Windows 7 and Windows 8, as well as Visual Studio 2013.
 
 Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0.zip).
 
-Unzip the zip file into your HAPTIX working folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
+Unzip the zip file into your HAPTIX prefered working folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
-## Installing the client library SDK in Linux.
+## Installing the client library SDK in Linux
 
 ###  One-line install
 
