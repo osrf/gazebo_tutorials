@@ -471,6 +471,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Matlab API" ref='haptix_matlab'>
+      <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
+      <description>This tutorial describes how to use the Matlab interface for
+        creating a hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
