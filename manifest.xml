@@ -645,8 +645,9 @@
     <category title="HAPTIX" skill="beginner" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
-        <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_install</tutorial>
+        <tutorial>haptix_comm</tutorial>
+        <tutorial>haptix_matlab</tutorial>
       </tutorials>
     </category>
 
