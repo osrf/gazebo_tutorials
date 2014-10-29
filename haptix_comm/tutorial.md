@@ -41,8 +41,6 @@ click on `BUILD`->`Build Solution` to build your controller.
 
 ## Linux
 
-# Compile your controller on Linux
-
 1. Create a new directory named `haptix_controller` for this tutorial:
 
     ~~~
