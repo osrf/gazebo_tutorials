@@ -1,98 +1,30 @@
 # Overview
 
-This tutorial will explain how to use the C client library `haptix-comm` for
+This tutorial will explain how to use Matlab or Octave for
 sending new joint commands to the hand and receiving state updates.
 
 We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
 
+# Start the Gazebo simulation
 
-# Compile your controller
-
-In this tutorial we include a very basic controller that applies a sinusoidal
-function to all the hand joints. First, you should compile your controller and
-link it to the haptix_comm library.
-
-## Windows
-
-Open Visual Studio 2013 and create a new project for your hand controller. Click
-on `File`->`New Project`->`Visual C++`->`Win32 Console Application`. Select an
-appropriate name for your project, for example `MyBasicController`. Click `OK`,
-and then, click on `Finish`.
-
-Replace the source code from your current project by our basic controller. Copy
-the code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c) and paste it in your current project.
-
-Add the following line at the begginning of your source code:
-
-~~~
-#include "stdafx.h"
-~~~
-
-Open the property manager view by clicking on `View`->`Other Windows`->`Property
-Manager`. This will allow you to use the property sheet provided by the HAPTIX
-library SDK. Move to the `Property Manager` tab, select your project and right
-click on it. Then, select `Add Existing Property Sheet...`. A new pop un window
-will appear. Browse to the folder where you downloaded the HAPTIX client library
-SDK and select the property sheet named `haptix_comm`. This will handle all the
-project dependencies for your project.
-
-Select the target build type (`Debug` or `Release`) in the upper toolbar. Then,
-click on `BUILD`->`Build Solution` to build your controller.
-
-## Linux
-
-1. Create a new directory named `haptix_controller` for this tutorial:
-
-    ~~~
-    mkdir ~/haptix_controller
-    cd ~/haptix_controller
-    ~~~
-
-1. Download the source code of the controller and the cmake file:
-
-    ~~~
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/hx_controller.c
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
-    ~~~
-
-1. Create a build directory and compile the source code.
-
-    ~~~
-    mkdir build
-    cd build
-    cmake ..
-    make
-    ~~~
-
-# Running the simulation with your controller
-
-Now, we are ready to test our controller with the HAPTIX simulator. Open a new
-terminal in the machine running Gazebo and start the HAPTIX simulation:
+Open a new terminal in the machine running Gazebo and start the HAPTIX simulation:
 
 ~~~
 gazebo worlds/arat_test.world
 ~~~
 
-## Windows
+# Run your controller in Matlab or Octave
 
-Your code should be ready to be executed using Visual Studio. Click on `DEBUG`->
-`Start Without Debugging...` (alternatively you can press Ctrl+F5).
+The HAPTIX client library SDK includes two `mex` files that allow you to run
+the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/octave
+console or from a .m file.
 
-## Linux
+Open the file [`hx_matlab_controller.m`](ToDo) in Matlab/Octave. Then, type in
+the Matlab/Octave prompt:
 
-1. Go to the Linux machine where you want to run your controller code. Open a
-terminal and go to the build directory where you have your controller
-executable:
-
-    ~~~
-    cd ~/haptix_controller/build
-    ~~~
-
-1. Start the controller:
-
-    ~~~
-    ./hx_controller
-    ~~~
+~~~
+hx_matlab_controller
+~~~
 
 # Controller visualization.
 
