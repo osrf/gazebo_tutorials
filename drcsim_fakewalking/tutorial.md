@@ -95,28 +95,28 @@ So the simulated robot in this tutorial can't walk, but we still want to move it
 
 <iframe src="//player.vimeo.com/video/110497452" width="500" height="370" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/110497452">Gazebo with drc robot drcsim4</a> from <a href="http://vimeo.com/osrfoundation">OSRF</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-    Every `cmd_vel` sent has a lifetime associated. By default, the velocity command is applied to Atlas for 0.1 seconds. After that, the robot will stop. If you look at the previous `rostopic` command that you typed, we included a `-r 10` option argument to publish the same message at 10 Hz., to guarantee that the robot does not stop.
+Every `cmd_vel` sent has a lifetime associated. By default, the velocity command is applied to Atlas for 0.1 seconds. After that, the robot will stop. If you look at the previous `rostopic` command that you typed, we included a `-r 10` option argument to publish the same message at 10 Hz., to guarantee that the robot does not stop.
 
-    It's also possible to modify the value of the velocity command timeout:
+It's also possible to modify the value of the velocity command timeout:
 
-    1. By adding a new ROS parameter in the [`atlas.launch`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_gazebo/launch/atlas.launch) file:
-
-        ~~~
-        <param name="/atlas/cmd_vel_timeout" type="double" value="0.2"/>
-        ~~~
-
-    1. By executing [`rosparam`](http://wiki.ros.org/rosparam) before launching drcsim:
-
-        ~~~
-        rosparam set /atlas/cmd_vel_timeout 0.2
-        ~~~
-
-    You can verify the commands being sent with the command:
+1. By adding a new ROS parameter in the [`atlas.launch`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_gazebo/launch/atlas.launch) file:
 
     ~~~
-    rostopic echo atlas/cmd_vel
+    <param name="/atlas/cmd_vel_timeout" type="double" value="0.2"/>
     ~~~
 
-    To stop the robot, press CTRL-C to cancel the previous command.
+1. By executing [`rosparam`](http://wiki.ros.org/rosparam) before launching drcsim:
+
+    ~~~
+    rosparam set /atlas/cmd_vel_timeout 0.2
+    ~~~
+
+You can verify the commands being sent with the command:
+
+~~~
+rostopic echo atlas/cmd_vel
+~~~
+
+To stop the robot, press CTRL-C to cancel the previous command.
 
 From here, you're ready to write code that moves the robot around the world.
