@@ -93,6 +93,8 @@ So the simulated robot in this tutorial can't walk, but we still want to move it
     rostopic pub -r 10 atlas/cmd_vel geometry_msgs/Twist '{ linear: { x: 0.5, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.5 } }'
     ~~~
 
+<iframe src="//player.vimeo.com/video/110497452" width="500" height="370" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/110497452">Gazebo with drc robot drcsim4</a> from <a href="http://vimeo.com/osrfoundation">OSRF</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
     Every `cmd_vel` sent has a lifetime associated. By default, the velocity command is applied to Atlas for 0.1 seconds. After that, the robot will stop. If you look at the previous `rostopic` command that you typed, we included a `-r 10` option argument to publish the same message at 10 Hz., to guarantee that the robot does not stop.
 
     It's also possible to modify the value of the velocity command timeout:
