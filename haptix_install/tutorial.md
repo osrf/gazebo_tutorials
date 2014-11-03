@@ -16,7 +16,7 @@ installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
 ~~~
-wget -O /tmp/gazebo_haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo_haptix_install.sh; sudo sh /tmp/gazebo_haptix_install.sh
+wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_install.sh; sudo sh /tmp/haptix_install.sh
 ~~~
 
 You can test your Gazebo installation by running the next command in your
@@ -36,7 +36,7 @@ etc.), as well as request new joint commands and receive the hand state.
 
 ## Installing the client library SDK in Windows
 
-We currently support Windows 7 and Windows 8, as well as Visual Studio 2013.
+We currently support Windows 7 and Visual Studio 2013.
 
 Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0.zip).
 
