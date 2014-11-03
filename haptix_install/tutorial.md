@@ -16,7 +16,7 @@ installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
 ~~~
-wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_install.sh; sudo sh /tmp/haptix_install.sh
+wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
 ~~~
 
 You can test your Gazebo installation by running the next command in your
@@ -47,7 +47,7 @@ Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osr
 ###  One-line install
 
 ~~~
-wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/haptix_install.sh; sudo sh /tmp/haptix_install.sh
+wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
 ~~~
 
 ### Step-by-step install
@@ -60,18 +60,6 @@ wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
-
-1. Install Google Protobuf.
-
-        sudo apt-get install libprotobuf-dev protobuf-compiler
-
-1. Install ZeroMQ and cppzmq.
-
-        sudo apt-get install libzmq3 libzmq3-dev
-
-1. Install Ignition Transport.
-
-        sudo apt-get install libignition-transport0 libignition-transport-dev
 
 1. Install haptix-comm.
 
