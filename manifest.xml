@@ -415,7 +415,7 @@
       <skill>intermediate</skill>
     </tutorial>
 
-	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+  <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
       <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
       <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
@@ -483,7 +483,7 @@
         <skill>advanced</skill>
     </tutorial>
 
-	<!-- HAPTIX -->
+    <!-- HAPTIX -->
     <tutorial title="HAPTIX C API" ref='haptix_comm'>
       <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
       <description>This tutorial describes how to use the C API for creating a
@@ -680,7 +680,7 @@
       </tutorials>
     </category>
 
-	<category title="HAPTIX" skill="beginner" ref="haptix">
+    <category title="HAPTIX" skill="beginner" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
         <tutorial>haptix_install</tutorial>
