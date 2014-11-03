@@ -16,11 +16,11 @@ gazebo worlds/arat_test.world
 
 # Run your controller in Matlab or Octave
 
-The HAPTIX client library SDK includes two `mex` files that allow you to run
+The HAPTIX client library SDK includes two `mex` files that allow you to call
 the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
 console or from a .m file.
 
-Open the file [`hx_matlab_controller.m`](ToDo) in Matlab/Octave. Then, type in
+Open the file [`hx_matlab_controller.m`](http://bitbucket.org/osrf/haptix-comm/raw/default/haptix-comm/example/hx_controller.c) in Matlab/Octave. Then, type in
 the Matlab/Octave prompt:
 
 ~~~
@@ -36,9 +36,9 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_matlab_controller.m' />
+<include from='/counter =/' to='/end/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_matlab_controller.m' />
 
-The HAPTIX C API is composed of two C function calls: `hx_getdeviceinfo()` and
+The HAPTIX Matlab API is composed of two mex function: `hx_getdeviceinfo()` and
 `hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
@@ -48,7 +48,7 @@ motors, joints, contact sensors, IMUs and joint limits for the requested device,
  as well as the result of the request. If we have a valid response, the
  returned value is 0.
 
-<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_matlab_controller.m' />
+<include from='/while true/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_matlab_controller.m' />
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
