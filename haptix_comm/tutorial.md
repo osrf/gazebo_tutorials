@@ -20,7 +20,7 @@ appropriate name for your project, for example `MyBasicController`. Click `OK`,
 and then, click on `Finish`.
 
 Replace the source code from your current project with our basic controller. Copy
-the code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/hx_controller.c) and paste it in your current project.
+the code from [here](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c) and paste it in your current project.
 
 Add the following line at the begginning of your source code:
 
@@ -51,7 +51,7 @@ click on `BUILD`->`Build Solution` to build your controller.
 1. Download the source code and the cmake file for the controller:
 
     ~~~
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/hx_controller.c
+    wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
     wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/CMakeLists.txt
     ~~~
 
