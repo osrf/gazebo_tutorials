@@ -61,19 +61,19 @@ With Atlas placed in the vehicle, you can use the methods described in [another 
 Disengage the hand brake:
 
 ~~~
-rostopic pub --once /drc_vehicle/hand_brake/cmd std_msgs/Float64 '{ data : 0 }'
+rostopic pub --once /drc_vehicle_xp900/hand_brake/cmd std_msgs/Float64 '{ data : 0 }'
 ~~~
 
 Turn the steering wheel:
 
 ~~~
-rostopic pub --once /drc_vehicle/hand_wheel/cmd std_msgs/Float64 '{ data : 3.14 }'
+rostopic pub --once /drc_vehicle_xp900/hand_wheel/cmd std_msgs/Float64 '{ data : 3.14 }'
 ~~~
 
 Press the gas pedal:
 
 ~~~
-rostopic pub --once /drc_vehicle/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
+rostopic pub --once /drc_vehicle_xp900/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
 ~~~
 
 Now the DRC Vehicle should be driving with Atlas in the passenger's seat. As described a [tutorial on using rviz](http://gazebosim.org/tutorials/?tut=drcsim_visualization&cat=drcsim) and a [tutorial on the MultiSense head](http://gazebosim.org/tutorials/?tut=drcsim_multisense&cat=drcsim), you can use rviz to view the camera or laser scan data while driving.
