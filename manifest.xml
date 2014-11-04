@@ -415,7 +415,7 @@
       <skill>intermediate</skill>
     </tutorial>
 
-	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+    <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
       <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
       <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
@@ -477,13 +477,33 @@
         <skill>advanced</skill>
     </tutorial>
 
-
     <tutorial title="GazeboJs models" ref='gazebojs_models'>
         <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
         <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
         <skill>advanced</skill>
     </tutorial>
 
+    <!-- HAPTIX -->
+    <tutorial title="HAPTIX C API" ref='haptix_comm'>
+      <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
+      <description>This tutorial describes how to use the C API for creating a
+        hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX software installation" ref='haptix_install'>
+      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
+      <description>This tutorial describes how to install Gazebo and the client
+        libraries SDK for the HAPTIX project.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Matlab API" ref='haptix_matlab'>
+      <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
+      <description>This tutorial describes how to use the Matlab interface for
+        creating a hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
   </tutorials>
 
@@ -659,6 +679,16 @@
 
       </tutorials>
     </category>
+
+    <category title="HAPTIX" skill="beginner" ref="haptix">
+      <description>HAPTIX specific tutorials.</description>
+      <tutorials>
+        <tutorial>haptix_install</tutorial>
+        <tutorial>haptix_comm</tutorial>
+        <tutorial>haptix_matlab</tutorial>
+      </tutorials>
+    </category>
+
   </categories>
 
 </content>
