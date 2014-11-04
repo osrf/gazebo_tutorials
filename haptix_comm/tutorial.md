@@ -107,6 +107,7 @@ executable:
     ~~~
 
 1. Run `ifconfig` to show the list of network interfaces that you currently have.
+
     ~~~
     ifconfig
     ~~~
