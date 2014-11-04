@@ -49,7 +49,7 @@ Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osr
 ###  One-line install
 
 ~~~
-wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
+wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
 ~~~
 
 ### Step-by-step install
