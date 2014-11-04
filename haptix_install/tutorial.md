@@ -40,7 +40,7 @@ etc.), as well as request new joint commands and receive the hand state.
 
 We currently support Windows 7 and Visual Studio 2013.
 
-Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0.zip).
+Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0-release.zip).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
