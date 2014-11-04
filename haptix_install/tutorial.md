@@ -13,8 +13,8 @@ instructions on how to create your own hand controller.
 
 # Gazebo installation
 
-*Note: This section is only required if you do not yet have a Linux server
-running Gazebo.*
+**Note: This section is only required if you do not yet have a Linux server
+running Gazebo.**
 
 Before installing Gazebo, you need a machine with Ubuntu 14.04 64-bit
 installed. Once your Linux machine is ready, open up a terminal and run the
