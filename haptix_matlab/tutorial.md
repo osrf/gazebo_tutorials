@@ -16,6 +16,10 @@ gazebo worlds/arat_test.world
 
 # Run your controller in Matlab or Octave
 
+Before opening Matlab/Octave you should make sure that the environment variable
+IGN_IP is properly set. Check out [this tutorial]
+(http://gazebosim.org/tutorials?tut=haptix_matlab&cat=haptix) for detailed instructions.
+
 The HAPTIX client library SDK includes two `mex` files that allow you to call
 the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
 console or from a .m file.
