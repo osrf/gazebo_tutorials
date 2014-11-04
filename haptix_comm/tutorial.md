@@ -103,7 +103,7 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/hx_controller.c' />
+<include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
 The HAPTIX C API is composed of two C function calls: `hx_getdeviceinfo()` and
 `hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
@@ -118,7 +118,7 @@ for the requested device. If we have a valid response, the returned value is `hx
 We have included in our example a helper function `printDeviceInfo()` that will
 print all the received fields for debugging purposes.
 
-<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/hx_controller.c' />
+<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
