@@ -19,9 +19,9 @@ the IP address that you will use for communicating with Gazebo.
 Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
 `Environment variables`. Click on the `New` button from the `User variables`
-section to create a new environment variable with name `IGN_IP`. The value
+section to create a new environment variable with name `IGN_IP`. **The value
 should be the IP address of the network interface that you are using to
-communicate with Gazebo. You can open a terminal by executing `cmd` and run the
+communicate with Gazebo**. You can open a terminal by executing `cmd` and run the
 command `ipconfig` to show a list of active network interfaces. Once you enter
 the value of the IP address, click `OK`.
 
