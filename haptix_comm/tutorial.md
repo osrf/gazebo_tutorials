@@ -18,11 +18,12 @@ Before opening Visual Studio you need to do some network configuration to specif
 the IP address that you will use for communicating with Gazebo.
 Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
-`Environment variables`. Click on `New` to create a new environment variable
- with name `IGN_IP`. The value should be the IP address of the network interface
- that you are using to communicate with Gazebo. You can open a terminal by
- executing `cmd` and run the command `ipconfig` to show a list of active
- network interfaces. Once you enter the value of the IP address, click `OK`.
+`Environment variables`. Click on the `New` button from the `User variables`
+section to create a new environment variable with name `IGN_IP`. The value
+should be the IP address of the network interface that you are using to
+communicate with Gazebo. You can open a terminal by executing `cmd` and run the
+command `ipconfig` to show a list of active network interfaces. Once you enter
+the value of the IP address, click `OK`.
 
 Open Visual Studio 2013 and create a new project for your hand controller. Click
 on `File`->`New Project`->`Visual C++`->`Win32 Console Application`. Select an
@@ -46,10 +47,17 @@ will appear. Browse to the folder where you downloaded the HAPTIX client library
 SDK and select the property sheet named `haptix-comm`. This will handle all the
 dependencies for your project.
 
-Select the target build type (`Debug` or `Release`) in the upper toolbar. Then,
+Select the `Release` target build type in the upper toolbar. Then,
 click on `BUILD`->`Build Solution` to build your controller.
 
 ## Linux
+
+1. Install the following packages required for downloading and compiling the
+example:
+
+    ~~~
+    sudo apt-get install wget cmake build-essential
+    ~~~
 
 1. Create a new directory named `haptix_controller` for this tutorial:
 
@@ -62,7 +70,7 @@ click on `BUILD`->`Build Solution` to build your controller.
 
     ~~~
     wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix-comm/files/CMakeLists.txt
+    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
     ~~~
 
 1. Create a build directory and compile the source code.

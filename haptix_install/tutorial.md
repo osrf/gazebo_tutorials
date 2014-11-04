@@ -65,4 +65,4 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
 
 1. Install haptix-comm.
 
-        sudo apt-get install libhaptix-comm libhaptix-comm-dev
+        sudo apt-get install libhaptix-comm-dev
