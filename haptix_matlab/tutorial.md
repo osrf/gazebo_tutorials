@@ -20,8 +20,8 @@ Before opening Matlab/Octave you should make sure that the environment variable
 `IGN_IP` is properly set. Check out [this tutorial]
 (http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix) for detailed instructions.
 
-Change the current directory to the folder where you downloaded the client SDK.
-Click the `Browse for folger` icon and select the appropriate directory.
+Open Matlab and change the current directory to the folder where you downloaded the client SDK.
+Click the `Browse for folder` icon and select the appropriate directory.
 
 The HAPTIX client library SDK includes two `mex` files that allow you to call
 the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave

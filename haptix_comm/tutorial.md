@@ -20,7 +20,7 @@ Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
 `Environment variables`. Click on the `New` button from the `User variables`
 section to create a new environment variable with name `IGN_IP`. **The value
-should be the IP address of the network interface that you are using to
+should be the WIRED IP address of the network interface that you are using to
 communicate with Gazebo**. You can open a terminal by executing `cmd` and run the
 command `ipconfig` to show a list of active network interfaces. Once you enter
 the value of the IP address, click `OK`.
@@ -47,8 +47,8 @@ will appear. Browse to the folder where you downloaded the HAPTIX client library
 SDK and select the property sheet named `haptix-comm`. This will handle all the
 dependencies for your project.
 
-Select the `Release` target build type in the upper toolbar. Then,
-click on `BUILD`->`Build Solution` to build your controller.
+Switch the target build type from `Debug` to `Release` using the upper toolbar.
+Then, click on `BUILD`->`Build Solution` to build your controller.
 
 ## Linux
 
