@@ -41,9 +41,12 @@ etc.), as well as request new joint commands and receive the hand state.
 
 ## Installing the client library SDK in Windows
 
-We currently support Windows 7 and Visual Studio 2013.
+We currently support Windows 7, Visual Studio 2013, and Matlab 2014b.
 
-Download the latest version of the client SDK from [here](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0-release.zip).
+If you have a Matlab 2014b 64-bit version you should download the
+ [HAPTIX 64-bit client SDK](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0-release-x64.zip).
+Otherwise, you can use the
+ [HAPTIX 32-bit client SDK](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0-release-Win32.zip).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
