@@ -21,7 +21,7 @@ installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
 ~~~
-wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
+wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_install.sh
 ~~~
 
 You can test your Gazebo installation by running the next command in your
@@ -61,7 +61,7 @@ Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osr
 wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
 ~~~
 
-### Step-by-step install
+### or Step-by-step install
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
