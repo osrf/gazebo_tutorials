@@ -60,7 +60,7 @@ Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osr
 wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
 ~~~
 
-### Step-by-step install
+### or Step-by-step install
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
