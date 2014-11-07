@@ -1,6 +1,6 @@
 # Overview
 
-This tutorial will explain how to use the C client library `haptix-comm` for
+This tutorial will explain how to use the C HAPTIX client library `haptix-comm` for
 requesting a description of the hand, sending new joint commands, and receiving state updates.
 
 We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
@@ -25,8 +25,8 @@ ipconfig
 ~~~
 
 Look for the `IPv4 Address` inside the network interface that you want to use
-for communicating with Gazebo. Here, we will use the wired interface, so you
-should look for `Ethernet adapter Local Area Connection`.
+for communicating with Gazebo. **Here, we will use the wired interface**, so you
+should **look for `Ethernet adapter Local Area Connection`**.
 
 %%%
 [[file:files/ipconfig.png|600px]]
@@ -40,14 +40,14 @@ should be the WIRED IP address of the network interface that you are using to
 communicate with Gazebo**.
 
 Open Visual Studio 2013 and create a new project for your hand controller. Click
-on `File`->`New Project`->`Visual C++`->`Win32 Console Application`. Select an
-appropriate name for your project, for example `MyBasicController`. Click `OK`,
-and then, click on `Finish`.
+on `File`->`New Project`->`Visual C++`, and select `Win32 Console Application`
+from the right side window. Select an appropriate name for your project, for
+example `MyBasicController`. Click `OK`, and then, click on `Finish`.
 
 Replace the source code from your current project with our basic controller. Copy
 the code from [**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c) and paste it in your current project.
 
-Add the following line at the begginning of your source code:
+Add the following line at the beginning of your source code:
 
 ~~~
 #include "stdafx.h"
@@ -55,7 +55,7 @@ Add the following line at the begginning of your source code:
 
 ### Configuration for 64-bit SDK
 
-**Note: You should skip this section if you are using the 32-bit SDK.**
+**Note: Skip this section if you are using the 32-bit SDK.**
 
 
 Click on the dropdown menu with the `Win32` option in the toolbar and select

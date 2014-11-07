@@ -33,8 +33,8 @@ The HAPTIX client library SDK includes two `mex` files that allow you to call
 the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
 console or from a .m file.
 
-Open the file [`hx_matlab_controller.m`](http://bitbucket.org/osrf/haptix-comm/raw/default/haptix-comm/matlab/hx_matlab_controller.m) in Matlab/Octave. Then, type in
-the Matlab/Octave prompt:
+Open the file `hx_matlab_controller.m` in Matlab/Octave. Then, type in
+the Matlab/Octave Command Window:
 
 ~~~
 hx_matlab_controller

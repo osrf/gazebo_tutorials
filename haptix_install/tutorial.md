@@ -4,9 +4,9 @@ The HAPTIX project simulates advanced robotic prosthetic limbs to allow
 researchers and developers to test their control software before running on the
 real hardware. The HAPTIX setup is composed of a Gazebo simulator, a client
 library and a client controller. The Gazebo simulator runs on a Linux machine,
-whereas the client library and the client controller can run on Linux and
+whereas the HAPTIX client library and the client controller can run on Linux and
 Windows hosts. This tutorial will guide your through the installation of Gazebo
-and the client library. Check out the rest of the HAPTIX tutorials for
+and the HAPTIX client library. Check out the rest of the HAPTIX tutorials for
 instructions on how to create your own hand controller.
 
 [[file:files/haptix_SDK_diagram.png|800px]]
@@ -31,22 +31,22 @@ terminal:
 gazebo
 ~~~
 
-# Client library SDK
+# HAPTIX Client library SDK
 
-The client library SDK is a stack of libraries that enables communication
-between your control software and the simulated hand in Gazebo. The main public library is
+The HAPTIX client library SDK is a stack of libraries that enables communication
+between your control software and the simulated hand in Gazebo. The main library is
 called `haptix-comm`. `haptix-comm` exposes the API that will allow your software to
 request information about the hand (number of joints, motors, number of sensors,
 etc.), as well as request new joint commands and receive the hand state.
 
-## Installing the client library SDK in Windows
+## Installing the HAPTIX client library SDK in Windows
 
 We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
 
-**If you have a Matlab R2014b 64-bit version you should download the
+**If you have a Matlab R2014b 64-bit version you must download the
  [HAPTIX 64-bit client SDK](
 https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-Release-win64.zip)**.
-Otherwise, you can use the
+Otherwise, you must use the
  [HAPTIX 32-bit client SDK](
 https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-Release-win32.zip). You can
  determine the Matlab version by selecting `Help`->`About MATLAB` from the main
@@ -54,7 +54,7 @@ https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-Release-win32
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
-## Installing the client library SDK in Linux
+## Installing the HAPTIX client library SDK in Linux
 
 ###  One-line install
 
