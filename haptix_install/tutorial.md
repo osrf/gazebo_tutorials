@@ -21,7 +21,7 @@ installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
 ~~~
-wget -O /tmp/haptix_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_install.sh
+wget -O /tmp/haptix_gazebo_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
 ~~~
 
 You can test your Gazebo installation by running the next command in your
@@ -44,10 +44,10 @@ etc.), as well as request new joint commands and receive the hand state.
 We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
 
 **If you have a Matlab R2014b 64-bit version you should download the
- [HAPTIX 64-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-release.zip)**.
+ [HAPTIX 64-bit client SDK](https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-release-x64.zip)**.
 Otherwise, you can use the
- [HAPTIX 32-bit client SDK](http://osrf-distributions.s3.amazonaws.com/haptix/hx_gz_sdk-0.1.0-release-Win32.zip). You can
+ [HAPTIX 32-bit client SDK](
+https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-release-Win32.zip). You can
  determine the Matlab version by selecting `Help`->`About MATLAB` from the main
  menu.
 
