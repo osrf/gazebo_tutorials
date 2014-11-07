@@ -29,7 +29,7 @@ for communicating with Gazebo. Here, we will use the wired interface, so you
 should look for `Ethernet adapter Local Area Connection`.
 
 %%%
-[[file:files/ipconfig.png|600px]]
+[[file:files/ipconfig.png|800px]]
 %%%
 
 Click on the `Start button` and search for `environment variables`.
