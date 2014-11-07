@@ -53,7 +53,7 @@ Add the following line at the begginning of your source code:
 #include "stdafx.h"
 ~~~
 
-Click on the dropdown menu with the "Win32" option in the toolbar and select
+Click on the dropdown menu with the `Win32` option in the toolbar and select
 `Configuration Manager`.
 
 %%%
