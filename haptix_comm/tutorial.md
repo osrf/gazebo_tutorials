@@ -53,6 +53,17 @@ Add the following line at the begginning of your source code:
 #include "stdafx.h"
 ~~~
 
+Click on the dropdown menu with the "Win32" option in the toolbar and select
+`Configuration Manager`.
+
+%%%
+[[file:files/visual-studio.png|800px]]
+%%%
+
+After that, look for the `Active solution platform` dropdown menu and select
+`<New...>`. Click on `Type or select the new platform` and change `ARM` to `x64`
+, and then, click the `Close` button.
+
 Open the Property Manager view by clicking on `View`->`Other Windows`->`Property
 Manager`. This will allow you to use the property sheet provided by the HAPTIX
 library SDK. Move to the `Property Manager` tab and right click on your project.
