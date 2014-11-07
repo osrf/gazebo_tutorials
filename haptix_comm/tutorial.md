@@ -69,6 +69,8 @@ After that, look for the `Active solution platform` dropdown menu and select
 `<New...>`. Click on `Type or select the new platform` and change `ARM` to `x64`
 , and then, click the `Close` button.
 
+### Compile your code
+
 Open the Property Manager view by clicking on `View`->`Other Windows`->`Property
 Manager`. This will allow you to use the property sheet provided by the HAPTIX
 library SDK. Move to the `Property Manager` tab and right click on your project.
@@ -76,8 +78,6 @@ Then, select `Add Existing Property Sheet...`. A new popup window
 will appear. Browse to the folder where you downloaded the HAPTIX client library
 SDK and select the property sheet named `haptix-comm`. This will handle all the
 dependencies for your project.
-
-### Compile your code
 
 Switch the target build type from `Debug` to `Release` using the upper toolbar.
 Then, click on `BUILD`->`Build Solution` to build your controller.
