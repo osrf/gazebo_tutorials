@@ -53,6 +53,11 @@ Add the following line at the begginning of your source code:
 #include "stdafx.h"
 ~~~
 
+### Configuration for 64-bit SDK
+
+**Note: You should skip this section if you are using the 32-bit SDK.**
+
+
 Click on the dropdown menu with the `Win32` option in the toolbar and select
 `Configuration Manager`.
 
@@ -71,6 +76,8 @@ Then, select `Add Existing Property Sheet...`. A new popup window
 will appear. Browse to the folder where you downloaded the HAPTIX client library
 SDK and select the property sheet named `haptix-comm`. This will handle all the
 dependencies for your project.
+
+### Compile your code
 
 Switch the target build type from `Debug` to `Release` using the upper toolbar.
 Then, click on `BUILD`->`Build Solution` to build your controller.
