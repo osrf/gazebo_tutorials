@@ -16,14 +16,28 @@ link it to the haptix-comm library.
 
 Before opening Visual Studio you need to do some network configuration to specify
 the IP address that you will use for communicating with Gazebo.
+
+Click on the `Start button` and type `cmd` in the `Search box`. Once you are in
+the terminal run the following command:
+
+~~~
+ipconfig
+~~~
+
+Look for the `IPv4 Address` inside the network interface that you want to use
+for communicating with Gazebo. Here, we will use the wired interface, so you
+should look for `Ethernet adapter Local Area Connection`.
+
+%%%
+[[file:files/ipconfig.png|800px]]
+%%%
+
 Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
 `Environment variables`. Click on the `New` button from the `User variables`
 section to create a new environment variable with name `IGN_IP`. **The value
 should be the WIRED IP address of the network interface that you are using to
-communicate with Gazebo**. You can open a terminal by executing `cmd` and run the
-command `ipconfig` to show a list of active network interfaces. Once you enter
-the value of the IP address, click `OK`.
+communicate with Gazebo**.
 
 Open Visual Studio 2013 and create a new project for your hand controller. Click
 on `File`->`New Project`->`Visual C++`->`Win32 Console Application`. Select an
@@ -88,7 +102,7 @@ Now, we are ready to test our controller with the HAPTIX simulator. Open a new
 terminal on the Linux machine running Gazebo and start the HAPTIX simulation:
 
 ~~~
-gazebo worlds/arat_test.world
+gazebo worlds/arat.world
 ~~~
 
 ## Windows

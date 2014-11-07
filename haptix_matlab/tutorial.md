@@ -11,7 +11,7 @@ Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
 simulation:
 
 ~~~
-gazebo worlds/arat_test.world
+gazebo worlds/arat.world
 ~~~
 
 # Run your controller in Matlab or Octave
@@ -50,7 +50,7 @@ The HAPTIX Matlab API is composed of two mex function: `hx_getdeviceinfo()` and
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
 
-The result value of `hx_getdeviceinfo() is a struct containing the number of
+The result value of `hx_getdeviceinfo()` is a struct containing the number of
 motors, joints, contact sensors, IMUs and joint limits for the requested device,
  as well as the result of the request. If we have a valid response, the
  returned value is 0.
