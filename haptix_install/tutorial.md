@@ -24,10 +24,24 @@ following command:
 wget -O /tmp/haptix_gazebo_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
 ~~~
 
+If you are a HAPTIX participant you should have access to the
+[`handsim-proprietary` deb package](http://gazebosim.org/haptix-proprietary).
+Please, downloaded the package, open a new console and type the following
+command to install the [Johns Hopkins APL arm](http://www.jhuapl.edu/prosthetics/):
+
+~~~
+dpkg -i ~/downloads/handsim-proprietary*.deb
+~~~
+
+You will experience some delay during the Gazebo start up phase if you do not
+have the `handsim-proprietary` package installed. The APL arm will not appear in
+the scene.
+
 You can test your Gazebo installation by running the next command in your
 terminal:
 
 ~~~
+. /usr/share/haptix_gazebo_plugins/setup.sh
 gazebo
 ~~~
 

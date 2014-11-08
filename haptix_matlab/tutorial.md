@@ -11,6 +11,7 @@ Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
 simulation:
 
 ~~~
+. /usr/share/haptix_gazebo_plugins/setup.sh
 gazebo worlds/arat.world
 ~~~
 
