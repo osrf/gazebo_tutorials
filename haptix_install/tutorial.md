@@ -9,7 +9,7 @@ Windows hosts. This tutorial will guide your through the installation of Gazebo
 and the HAPTIX client library. Check out the rest of the HAPTIX tutorials for
 instructions on how to create your own hand controller.
 
-[[file:files/haptix_SDK_diagram.png|800px]]
+[[file:files/haptix_overview.png|800px]]
 
 # Gazebo installation
 
