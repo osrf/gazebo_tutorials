@@ -53,7 +53,7 @@ To set rotation speed commands to the LIDAR spindle, open a new terminal and typ
 
     rostopic pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'
 
-**For drcsim >= 4.1.0**: If you are using atlas verions >= v3 (e.g. atlas\_v3.launch), use the following command instead:
+**For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), use the following command instead:
 
     rostopic pub --once /multisense/set_spindle_speed std_msgs/Float64 '{data: 3.0}'
 
