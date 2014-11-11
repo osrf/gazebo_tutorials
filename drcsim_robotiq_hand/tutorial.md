@@ -1,6 +1,6 @@
 # Overview
 
-In this tutorial, we'll describe how to interact with the simulated Robotiq hand,
+In this tutorial, we'll describe how to interact with the simulated RobotiQ hand,
 as well as how to read its state and visualize it in rviz.
 
 # Setup
@@ -34,13 +34,13 @@ If the initial hand configuration does not match your robot's configuration, you
 can edit the file [`atlas_robotiq_hands.urdf.xacro`](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
 Note that there are different versions of this file for Atlas V3 and Atlas V4.
 
-Once your configuration is correct you can look for ROS nodes controlling the Robotiq hands by typing:
+Once your configuration is correct you can look for ROS nodes controlling the RobotiQ hands by typing:
 
 ~~~
 rostopic list | grep hand
 ~~~
 
-Note the Robotiq hand messages:
+Note the RobotiQ hand messages:
 
 %%%
 /left_hand/command
@@ -198,7 +198,7 @@ of the state registers.
 
 # Visualizing the gripper in rviz
 
-The simulated Robotiq gripper publishes its state using ROS, so it is possible
+The simulated RobotiQ gripper publishes its state using ROS, so it is possible
 to graphically visualize its state using rviz. Go to the terminal where you
 were visualizing the hand state and press CTRL-C.
 
