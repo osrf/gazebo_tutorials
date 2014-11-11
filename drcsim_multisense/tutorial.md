@@ -38,7 +38,7 @@ More importantly, repeat the steps to setup camera and laser visualization but s
   - camera image streams: `/multisense_sl/camera/left/image_raw` and `/multisense_sl/camera/right/image_raw` for left and right eye.
   - LIDAR data stream: `/multisense_sl/laser/scan`
 
-**For drcsim >= 4.1.0**: If you are using atlas verions >= v3 (e.g. atlas\_v3.launch), the camera and laser topics have changed:
+**For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), the camera and laser topics have changed:
 
   - camera image streams: `/multisense/camera/left/image_raw` and `/multisense/camera/right/image_raw` for left and right eye.
   - LIDAR data stream: `/multisense/lidar_scan`
