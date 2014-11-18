@@ -84,7 +84,7 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
 
 1. Setup keys.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
         sudo apt-get update
 
 1. Install haptix-comm.
