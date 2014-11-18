@@ -94,6 +94,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+     <tutorial title="Model structure and requirements" ref='model_structure'>
+      <markdown version="1.9+">model_structure/tutorial.md</markdown>
+      <description>Describes how Gazebo finds and load models, and requirements for creating a model.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Sensor Noise Model" ref='sensor_noise'>
       <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
       <description>How to add noise to sensors</description>
@@ -522,6 +528,7 @@
     <category title="Build a Robot" skill="beginner" ref="build_robot">
       <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
       <tutorials>
+        <tutorial>model_structure</tutorial>
         <tutorial>build_model</tutorial>
         <tutorial>build_robot</tutorial>
         <tutorial>import_mesh</tutorial>
