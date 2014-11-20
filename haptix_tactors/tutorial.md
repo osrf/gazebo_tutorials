@@ -126,13 +126,13 @@ Make sure you include `-a` in the command, otherwise your account could lose sud
 
 Once you have confirmed that the electronics and the Arduino sketch are working, execute whatever plans you made for attaching the motors to the glove in the first step. Make sure you know the correspondence between the motor on each finger and which character will make it buzz. For reference, here are the mappings we used:
 
-|Finger |     Pin        | Character|
-|:------|:--------------:|---------:|
-|Index  |     4          | 1        |
-|Middle |     9          | 2        |
-|Ring   |     10         | 3        |
-|Little |     12         | 4        |
-|Thumb  |     14         | 5        |
+||Finger|| Board Pin  || Character||
+||:-----||:----------:||---------:||
+||Index ||     4      || 1        ||
+||Middle||     9      || 2        ||
+||Ring  ||     10     || 3        ||
+||Little||     12     || 4        ||
+||Thumb ||     14     || 5        ||
 
 # Communicating with Gazebo
 We are going to write a haptix-comm client that reads contact sensor data from the simulation and translate it to motor clicks.
