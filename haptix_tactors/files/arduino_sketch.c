@@ -42,8 +42,6 @@ void loop()
       int motor = b - '1';
       t_motor_start[motor] = millis();
       analogWrite(motors[motor], MOTOR_PWM);
-
-
     }
   }
 }

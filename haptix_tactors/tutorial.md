@@ -26,13 +26,9 @@ The machine talking to the glove must be running Linux (preferably Ubuntu) and m
 
 This might be the most difficult part of this tutorial, and the most fun.
 
-%%%
 [[file:files/glove_back.jpg|800px]]
-%%%
 
-%%%
 [[file:files/glove_front.jpg|800px]]
-%%%
 
 # Assembling the Electronics
 
@@ -53,7 +49,7 @@ Now that everything is soldered up and connected, it's time to make the Lilypads
 # Programming the Board
 Open the Arduino IDE and start a new sketch. Click on the 'Tools' drop-down menu and select 'USB Type: "Serial"'.
 
-Download the Arduino sketch code from [here]([file:files/arduino_sketch.c]) and copy it into the Arduino IDE.
+Download the Arduino sketch code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/arduino_sketch.c) and copy it into the Arduino IDE.
 
 This Arduino sketch behaves as follows:
 
@@ -103,11 +99,15 @@ You can easily test to see if your electronics rig and your software work using 
 
 Install picocom by bringing up a terminal and running
 
-```sudo apt-get install picocom```
+~~~
+sudo apt-get install picocom
+~~~
 
 Plug the tactor glove into the USB port of your machine and run
 
-```picocom /dev/ttyACM0```
+~~~
+picocom /dev/ttyACM0
+~~~
 
 You should be able to press the number keys 1-5 (or whatever keys corresponding to the characters you chose in the previous step) to make the motors buzz. Press CTRL-a CTRL-q to exit.
 
@@ -124,18 +124,18 @@ Make sure you include `-a` in the command, otherwise your account could lose sud
 
 Once you have confirmed that the electronics and the Arduino sketch are working, execute whatever plans you made for attaching the motors to the glove in the first step. Make sure you know the correspondence between the motor on each finger and which character will make it buzz. For reference, here are the mappings we used:
 
-|Finger|Teensy Board Pin|Character|
-|------|----------------|---------|
-|Index |4               |1        |
-|Middle|9               |2        |
-|Ring  |10              |3        |
-|Little|12              |4        |
-|Thumb |14              |5        |
+|Finger |Teensy Board Pin| Character|
+|-------|----------------|----------|
+|Index  |4               | 1        |
+|Middle |9               | 2        |
+|Ring   |10              | 3        |
+|Little |12              | 4        |
+|Thumb  |14              | 5        |
 
 # Communicating with Gazebo
 We are going to write a haptix-comm client that reads contact sensor data from the simulation and translate it to motor clicks.
 
-Make a folder for your C code and download the tactor glove [source code]([file:files/tactors.cc]) and the [CMakeLists.txt]([file:files/CMakeLists.txt]) for this project.
+Make a folder for your C code and download the tactor glove [source code](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors.cc) and the [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/CMakeLists.txt) for this project.
 
 Again, you may need to customize some parts of the code if you have a different electronics setup from this example.
 
@@ -209,9 +209,10 @@ make
 
 In a separate window, run the Gazebo HAPTIX simulator:
 
-```gazebo worlds/arat.worlds```
+~~~
+gazebo worlds/arat.worlds
+~~~
 
 Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator. Feel the buzz!
 
 [[file:files/grasp_sim.png|800px]]
-
