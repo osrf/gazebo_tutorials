@@ -24,7 +24,11 @@ The machine talking to the glove must be running Linux (preferably Ubuntu) and m
 
 # Design the Glove
 
-This might be the most difficult part of the 
+This might be the most difficult part of this tutorial, and the most fun.
+
+[[file:files/glove_back.jpg|800px]]
+
+[[file:files/glove_front.jpg|800px]]
 
 # Assembling the Electronics
 
@@ -32,13 +36,13 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-%%%
 [[file:files/teensy_pinout.png|800px]]
-%%%
-
-Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, which are already quite thin, it isolates the components from electrostatic interference originating from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
 
 Connect the Mini-USB cable to the port on the Teensy board.
+
+[[file:files/tactors_soldered.jpg|800px]]
+
+Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, which are already quite thin, it isolates the components from electrostatic interference originating from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
 
 Now that everything is soldered up and connected, it's time to make the Lilypads buzz. 
 
@@ -53,16 +57,20 @@ When the USB board gets plugged into a Linux computer, it will create an ACM dev
 
 You may want to customize this code depending on your electronics setup or other preferences.
 
-`#define NUM_MOTORS 5`
+```c++
+#define NUM_MOTORS 5```
 If you have more than 5 motors, you should change this number to match.
 
-`#define MOTOR_RUN_TIME 100`
+```c++
+#define MOTOR_RUN_TIME 100```
 This line defines the length of one motor 'click' in milliseconds.
 
-`int motors[NUM_MOTORS] = {4, 9, 10, 12, 14};`
+```c++
+int motors[NUM_MOTORS] = {4, 9, 10, 12, 14};```
 Make sure these numbers correspond to the pins that you chose to connect the Lilypad boards to in the previous section.
 
-`unsigned long t_motor_start[NUM_MOTORS] = {0, 0, 0, 0, 0};`
+```c++
+unsigned long t_motor_start[NUM_MOTORS] = {0, 0, 0, 0, 0};```
 If you change the number of motors, make sure you change the number of zeros in this array.
 
 ```c
@@ -94,20 +102,21 @@ If `/dev/ttyACM0` fails to open, then `ls /dev` to see if another ACM device is 
 
 You might need to run picocom as root (`sudo picocom`). You will need to add your username to the `plugdev` and `dialout` groups to open devices without sudoing.
 
-`sudo usermod -a -G plugdev <username>`
-`sudo usermod -a -G dialout <username>`
+```bash
+sudo usermod -a -G plugdev <username>
+sudo usermod -a -G dialout <username>```
 
 Make sure you include `-a` in the command, otherwise your account could lose sudo access!
 
 Once you have confirmed that the electronics and the Arduino sketch are working, execute whatever plans you made for attaching the motors to the glove in the first step. Make sure you know the correspondence between the motor on each finger and which character will make it buzz. For reference, here are the mappings we used:
 
-Finger|Teensy Board Pin|Character
----------------------------------
-Index |4               |1
-Middle|9               |2
-Ring  |10              |3
-Little|12              |4
-Thumb |14              |5
+|Finger|Teensy Board Pin|Character|
+|------|----------------|---------|
+|Index |4               |1        |
+|Middle|9               |2        |
+|Ring  |10              |3        |
+|Little|12              |4        |
+|Thumb |14              |5        |
 
 # Communicating with Gazebo
 We are going to write a haptix-comm client that reads contact sensor data from the simulation and translate it to motor clicks.
@@ -181,6 +190,9 @@ make
 ```
 
 In a separate window, run the Gazebo HAPTIX simulator:
-```gazebo worlds/arat.worlds```
+```bash
+gazebo worlds/arat.worlds```
 
-Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator.
+Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator. Feel the buzz!
+
+[[file:files/grasp_sim.png|800px]]
