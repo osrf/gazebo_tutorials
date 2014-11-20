@@ -30,9 +30,9 @@ The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each
 
 We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove.
 
-[[file:files/glove_back.jpg|600px]]
+[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_back.jpg|600px]]
 
-[[file:files/glove_front.jpg|600px]]
+[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_front.jpg|600px]]
 
 The wires (two per each board) were twisted together and joined at the back of the hand to minimize trailing.
 
@@ -42,7 +42,7 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-[[file:files/teensy_pinout.png|402px]]
+[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/teensy_pinout.png|402px]]
 
 Connect the Mini-USB cable to the port on the Teensy board.
 
@@ -117,7 +117,7 @@ picocom /dev/ttyACM0
 
 You should be able to press the number keys 1-5 (or whatever keys corresponding to the characters you chose in the previous step) to make the motors buzz. Press CTRL-a CTRL-q to exit.
 
-If `/dev/ttyACM0` fails to open, then `ls /dev` to see if another ACM device is available.
+If `/dev/ttyACM0` fails to open, or if sending characters to it does nothing, then `ls /dev` to see if another ACM device is available and repeat the process with a different device.
 
 You might need to run picocom as root (`sudo picocom`). You will need to add your username to the `plugdev` and `dialout` groups to open devices without sudoing.
 
@@ -141,7 +141,7 @@ Once you have confirmed that the electronics and the Arduino sketch are working,
 # Communicating with Gazebo
 We are going to write a haptix-comm client that reads contact sensor data from the simulation and translate it to motor clicks.
 
-Make a folder for your C code and download the tactor glove [source code](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors.cc) and the [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/CMakeLists.txt) for this project.
+Make new folder (e.g. `tactors`) and download the tactor glove [source code](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors.cc) and the [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/CMakeLists.txt) for this project.
 
 Again, you may need to customize some parts of the code if you have a different electronics setup from this example.
 
@@ -150,7 +150,7 @@ const unsigned int sleeptime_us = 10000;
 const float minContactForce = 0;
 ~~~
 
-`sleeptime_us` controls the rate of updates from the simulator. The default value is 10000 microseconds. `minContactForce` is the minimum force a contact sensor must experience to make the corresponding motor click.
+`sleeptime_us` controls the rate of updates from the simulator. The default value is 10000 microseconds or 10 milliseconds. `minContactForce` is the minimum force a contact sensor must experience to make the corresponding motor click. Increase this value to make the glove less sensitive to contact.
 
 ~~~
 int fd = open("/dev/ttyACM0", O_WRONLY);
@@ -161,7 +161,7 @@ if (fd < 0)
 }
 ~~~
 
-You may want to change which device the program opens, especially if you have other ACM devices that have already taken `/dev/tty/ACM0`.
+The glove may connect on a different device file (e.g. `/dev/ttyACM1`) if there are already ACM device connected on `/dev/ttyACM0`. If you find that the glove consistently opens on a different device file, change the open command to take that device.
 
 ~~~
 for (unsigned int i = 0; i < deviceInfo.ncontactsensor; i++)
@@ -219,6 +219,6 @@ In a separate window, run the Gazebo HAPTIX simulator:
 gazebo worlds/arat.worlds
 ~~~
 
-Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator.
+Then in the folder with your C++ code, run the `tactors` executable. Put on the glove and try picking up items in the simulator.
 
-[[file:files/grasp_sim.png|700px]]
+[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/grasp_sim.png|700px]]
