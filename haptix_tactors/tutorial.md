@@ -131,7 +131,7 @@ Make sure you include `-a` in the command, otherwise your account could lose sud
 Once you have confirmed that the electronics and the Arduino sketch are working, execute whatever plans you made for attaching the motors to the glove in the first step. Make sure you know the correspondence between the motor on each finger and which character will make it buzz. For reference, here are the mappings we used:
 
 |Finger |Teensy Board Pin| Character|
-|:-----:|:--------------:|:--------:|
+|:------|:--------------:|---------:|
 |Index  |     4          | 1        |
 |Middle |     9          | 2        |
 |Ring   |     10         | 3        |
