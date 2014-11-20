@@ -1,7 +1,6 @@
 # Introduction
 
-Hydra publisher using GazeboJs and node-sixense modules. 
-
+Hydra publisher using GazeboJs and node-sixense modules. It publishes the controllers' data over the `~/hydra` gazebo topic. Similar tutorial cand be found [here](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input). The main difference being that the later requires gazebo being installed from source.
 
 ## Project setup
 
@@ -17,11 +16,13 @@ Run the publisher:
 
     cd node_modules/hydra_gzjs_pub
     sudo node hydra_pub.js
+    
+For publishing the hydra controller without root privileges please look at [this](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input) tutorial.
 
 Test that the publisher works:
 
     gz topic -l
-    gz topic -e /gazebo/<my_world>/hydra
+    gz topic -e /gazebo/default/hydra
 
 
 ### Code
@@ -56,11 +57,19 @@ hydra.sixenseInit();
 hydra.sixenseSetActiveBase(0);
 hydra.sixenseGetAllNewestDataAsync(function (error, allData)
 {    
-    var msgS = <...>
+    var msgS =
+~~~
+...
+~~~
     var msg = JSON.parse(msgS);
     gazebo.publish(type, topic , msg);
 });
 ~~~
+
+### Troubleshooting
+
+In case of offsets, the axis of the controller have been switched in multiple places in order to be similar to the output of the hydra [plugin](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input) version. If needed otherwise these can be easily changed from the source code.
+
 
 
 
