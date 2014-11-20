@@ -26,7 +26,7 @@ The machine talking to the glove must be running Linux (preferably Ubuntu) and m
 
 This might be the most difficult part of this tutorial, and the most fun.
 
-The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each finger of the glove. The placement of the Lilypad on each finger, the method of attachment for the boards, and type of glove (full-fingered vs. fingerless) are all up to you. In fact, instead of a glove you could use an armband (particularly if you are, say, designing a haptic feedback system for a person preparing for a real prosthetic arm). You'll also want to think about where to put the USB board that acts as the hub for the Lilypads and connects to the computer.
+The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each finger of the glove. The placement of the Lilypad on each finger, the method of attachment for the boards, and type of glove (full-fingered vs. fingerless) are all up to you. In fact, instead of a glove you could use an armband (particularly if you are, say, designing a haptic feedback system for a person preparing for a real prosthetic arm). You'll also want to think about where to put the USB board that acts as the hub for the Lilypads and connects to the computer. And if you don't know how to sew, well... there's always hot glue, right?
 
 We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove.
 
