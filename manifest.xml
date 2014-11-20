@@ -511,6 +511,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
+      <markdown version="4.0+">haptix_tactors/tutorial.md</markdown>
+      <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
