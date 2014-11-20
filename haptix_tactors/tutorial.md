@@ -11,7 +11,7 @@ Hardware
   + 1 Mini-B USB cable (available from Amazon, Radioshack, etc.)
   + Wires (we used 30 gauge teflon)
   + Soldering iron
-  + 1 glove, preferably a light spandex material
+  + 1 glove, preferably made of a thin spandex material
   + Needle and thread (or a sewing machine)
 
 Software
@@ -20,15 +20,21 @@ You will need a Linux machine with Gazebo and the handsim package. See [this tut
 
 To program the Teensy USB board, you will need to install the [Arduino IDE](http://arduino.cc/en/Main/Software) and the [Teensyduino add-on](https://www.pjrc.com/teensy/teensyduino.html) for Arduino.
 
-The machine talking to the glove must be running Linux (preferably Ubuntu) and must have the haptix-comm library installed (see [here](https://www.pjrc.com/teensy/teensyduino.html) for installation instructions).
+The machine talking to the glove must be running Linux (preferably Ubuntu) and must have the haptix-comm library installed (see [here](https://www.pjrc.com/teensy/teensyduino.html) for installation instructions). It can be the same machine that is running Gazebo, but it doesn't have to be.
 
 # Design the Glove
 
 This might be the most difficult part of this tutorial, and the most fun.
 
-[[file:files/glove_back.jpg|800px]]
+The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each finger of the glove. The placement of the Lilypad on each finger, the method of attachment for the boards, and type of glove (full-fingered vs. fingerless) are all up to you. In fact, instead of a glove you could use an armband (particularly if you are, say, designing a haptic feedback system for a person preparing for a real prosthetic arm). You'll also want to think about where to put the USB board that acts as the hub for the Lilypads and connects to the computer.
 
-[[file:files/glove_front.jpg|800px]]
+We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove.
+
+[[file:files/glove_back.jpg|600px]]
+
+[[file:files/glove_front.jpg|600px]]
+
+The wires (two per each board) were twisted together and joined at the back of the hand to minimize trailing.
 
 # Assembling the Electronics
 
@@ -36,13 +42,13 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-[[file:files/teensy_pinout.png|800px]]
+[[file:files/teensy_pinout.png|402px]]
 
 Connect the Mini-USB cable to the port on the Teensy board.
 
-[[file:files/tactors_soldered.jpg|800px]]
-
 Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, which are already quite thin, it isolates the components from electrostatic interference originating from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
+
+[[file:files/tactors_soldered.jpg|600px]]
 
 Now that everything is soldered up and connected, it's time to make the Lilypads buzz. 
 
@@ -213,6 +219,6 @@ In a separate window, run the Gazebo HAPTIX simulator:
 gazebo worlds/arat.worlds
 ~~~
 
-Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator. Feel the buzz!
+Then in the folder with your tactors code, execute the tactors executable. Put on the glove and try picking up items in the simulator.
 
-[[file:files/grasp_sim.png|800px]]
+[[file:files/grasp_sim.png|700px]]
