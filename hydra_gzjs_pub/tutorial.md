@@ -1,6 +1,6 @@
 # Introduction
 
-Hydra publisher using GazeboJs and node-sixense modules. It publishes the controllers' data over the `~/hydra` gazebo topic. Similar tutorial cand be found [here](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input). The main difference being that the later requires gazebo being installed from source.
+Hydra publisher using GazeboJs and node-sixense modules. It publishes the hydra messages over the `~/hydra` gazebo topic. Similar tutorial cand be found [here](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input). The main difference being that the later requires gazebo being installed from source.
 
 ## Project setup
 
