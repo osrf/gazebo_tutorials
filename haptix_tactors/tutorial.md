@@ -30,9 +30,9 @@ The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each
 
 We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove. Each pair of wires was twisted together and all of the pairs were bundled at the back of the hand to minimize trailing.
 
-![The back of the finished tactor glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_back.jpg|600px)
+![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_back.jpg "The back of the finished tactor glove.")
 
-![The front of the finished tactor glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_front.jpg|600px)
+![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_front.jpg "The front of the finished tactor glove.")
 
 # Assembling the Electronics
 
@@ -40,13 +40,13 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-[!Pinout for the Teensy USB Board.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/teensy_pinout.png|402px)
+[!alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/teensy_pinout.png "Pinout for the Teensy USB Board.")
 
 Connect the Mini-USB cable to the port on the Teensy board.
 
 Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, which are already quite thin, it isolates the components from electrostatic interference originating from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
 
-[!The electronics components sans glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors_soldered.jpg|600px)
+[!alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors_soldered.jpg "The electronics components sans glove.")
 
 Now that everything is soldered up and connected, it's time to make the Lilypads buzz. 
 
@@ -217,4 +217,4 @@ gazebo worlds/arat.worlds
 
 Then in the folder with your C++ code, run the `tactors` executable. Put on the glove and try picking up items in the simulator.
 
-[!](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/grasp_sim.png|700px)
+[!](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/grasp_sim.png)
