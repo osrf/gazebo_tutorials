@@ -28,13 +28,11 @@ This might be the most difficult part of this tutorial, and the most fun.
 
 The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each finger of the glove. The placement of the Lilypad on each finger, the method of attachment for the boards, and type of glove (full-fingered vs. fingerless) are all up to you. In fact, instead of a glove you could use an armband (particularly if you are, say, designing a haptic feedback system for a person preparing for a real prosthetic arm). You'll also want to think about where to put the USB board that acts as the hub for the Lilypads and connects to the computer. And if you don't know how to sew, well... there's always hot glue, right?
 
-We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove.
+We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove. Each pair of wires was twisted together and all of the pairs were bundled at the back of the hand to minimize trailing.
 
-[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_back.jpg|600px]]
+![The back of the finished tactor glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_back.jpg|600px)
 
-[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_front.jpg|600px]]
-
-The wires (two per each board) were twisted together and joined at the back of the hand to minimize trailing.
+![The front of the finished tactor glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/glove_front.jpg|600px)
 
 # Assembling the Electronics
 
@@ -42,13 +40,13 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/teensy_pinout.png|402px]]
+[!Pinout for the Teensy USB Board.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/teensy_pinout.png|402px)
 
 Connect the Mini-USB cable to the port on the Teensy board.
 
 Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, which are already quite thin, it isolates the components from electrostatic interference originating from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
 
-[[file:files/tactors_soldered.jpg|600px]]
+[!The electronics components sans glove.](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/tactors_soldered.jpg|600px)
 
 Now that everything is soldered up and connected, it's time to make the Lilypads buzz. 
 
@@ -57,9 +55,7 @@ Open the Arduino IDE and start a new sketch. Click on the 'Tools' drop-down menu
 
 Download the Arduino sketch code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/arduino_sketch.c) and copy it into the Arduino IDE.
 
-This Arduino sketch behaves as follows:
-
-When the USB board gets plugged into a Linux computer, it will create an ACM device (e.g. "/dev/ttyACM0"). It will listen for characters written to that device. When characters '1' through '5' are written to the device, the corresponding motor will buzz for 100 milliseconds.
+What does the Arduino sketch do? When the USB board gets plugged into a Linux computer, it will create an ACM device (e.g. "/dev/ttyACM0"). It will listen for characters written to that device. When characters '1' through '5' are written to the device, the corresponding motor will buzz for 100 milliseconds.
 
 You may want to customize this code depending on your electronics setup or other preferences.
 
@@ -221,4 +217,4 @@ gazebo worlds/arat.worlds
 
 Then in the folder with your C++ code, run the `tactors` executable. Put on the glove and try picking up items in the simulator.
 
-[[http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/grasp_sim.png|700px]]
+[!](http://bitbucket.org/osrf/gazebo_tutorials/raw/haptix_tactors/haptix_tactors/files/grasp_sim.png|700px)
