@@ -110,7 +110,7 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0
 ~~~
 
 [[file:files/robotiq_hand_open.png|300px]]
-[[file:files/robotiq_hand_close.png|300px]]
+[[file:files/robotiq_hand_closed.png|300px]]
 
 The hand supports different grasping modes and uses multiple registers to control the position of the fingers, as well as other parameters.
 Check out Section 4.4 of the [instruction manual](http://robotiq.com/media/3-FINGER-140613.pdf) for a full list of features and a description of each control register.
