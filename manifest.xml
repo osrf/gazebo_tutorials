@@ -286,6 +286,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Using the Robotiq 3-Finger Adaptive Robot Gripper" ref='drcsim_robotiq_hand'>
+      <markdown version="1.9+">drcsim_robotiq_hand/tutorial.md</markdown>
+      <description>How to grasp and view the state while using the 3-Finger gripper grom Robotiq</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -680,6 +686,7 @@
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
+        <tutorial>drcsim_robotiq_hand</tutorial>
       </tutorials>
     </category>
 
