@@ -1,4 +1,3 @@
-# How to contribute to gazebo\_models database
 
 This tutorial assumes that you have an account on Bitbucket, and that you have a client for [Mercurial](http://mercurial.selenic.com).
 
