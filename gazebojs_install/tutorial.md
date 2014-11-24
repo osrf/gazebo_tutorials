@@ -19,7 +19,7 @@ This tutorial shows how to download, install and compile Gazebojs on a computer 
 
 #### Setup
 
-Install the osrf repository and install the development libraries, dependending on the version of Gazeobo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?tut=install). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
+Install the osrf repository and install the development libraries, dependending on the version of Gazeobo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?cat=installation). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
 Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
 
 Install nodejs and npm 

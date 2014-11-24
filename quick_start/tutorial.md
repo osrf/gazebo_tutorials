@@ -2,7 +2,7 @@
 
 These three steps will run Gazebo with a default world.
 
-1. [Install]( http://gazebosim.org/tutorials?tut=install) Gazebo.
+1. [Install]( http://gazebosim.org/tutorials?cat=installation) Gazebo.
 
 2. Open a terminal. On most Ubuntu systems you can press `CTRL+ALT+t`
 
