@@ -37,6 +37,19 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Install gazebo from source (Ubuntu and Mac)" ref='install_from_source'>
+      <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
+      <description>
+       Installation instructions for building a gazebo application using the
+       source code. For user who want to contribute with code patches or pull
+       requests.
+      </description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+ 
     <tutorial title="Quick Start" ref='quick_start'>
       <markdown version="1.9+">quick_start/tutorial.md</markdown>
       <description>Simple and fast introduction to Gazebo.</description>
@@ -558,8 +571,8 @@
         <tutorial>install_ubuntu</tutorial>
 	<tutorial>install_other_linux</tutorial>
 	<tutorial>install_old_versions</tutorials>
-	<!--
 	<tutorial>install_from_source</tutorial>
+	<!--
 	<tutorial>install_on_mac</tutorial>
 -->
       </tutorials>
