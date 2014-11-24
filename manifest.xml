@@ -15,7 +15,7 @@
     </tutorial>
 
     <tutorial title="Install gazebo on Debian, Fedora or Arch" ref='install_other_linux'>
-      <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
+      <markdown version="4.0">install_other_linux/tutorial_4-0.md</markdown>
       <description>
 	Installation instructions for major linux distributions (non Ubuntu). Currently,
 	Debian, Fedora or Arch Linux.
