@@ -25,7 +25,16 @@
       </tags>
       <skill>beginner</skill>
     </tutorial>
- 
+
+    <tutorial title="Install gazebo on Mac" ref='install_on_mac'>
+      <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
+      <description>Installation instructions for Mac installations using homebrew</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Install old gazebo versions (prior to gazebo4)" ref='install_old_versions'>
       <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
       <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
@@ -570,11 +579,9 @@
       <tutorials>
         <tutorial>install_ubuntu</tutorial>
 	<tutorial>install_other_linux</tutorial>
+	<tutorial>install_on_mac</tutorial>
 	<tutorial>install_old_versions</tutorials>
 	<tutorial>install_from_source</tutorial>
-	<!--
-	<tutorial>install_on_mac</tutorial>
--->
       </tutorials>
     </category>
 
