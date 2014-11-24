@@ -707,7 +707,7 @@
       </tutorials>
     </category>
 
-    <category title="HAPTIX" skill="beginner" ref="haptix">
+    <category title="HAPTIX" skill="advanced" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
         <tutorial>haptix_install</tutorial>
