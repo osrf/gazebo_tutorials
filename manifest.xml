@@ -6,9 +6,9 @@
     <!-- Beginner tutorials -->
 
     <tutorial title="Install old gazebo versions (prior to gazebo4)" ref='install_old_versions'>
-      <markdown version="1.9">install/tutorial_1-9.md</markdown>
-      <markdown version="2.2">install/tutorial_2-2.md</markdown>
-      <markdown version="3.0">install/tutorial_3-0.md</markdown>
+      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
+      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
+      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
       <description>Installation instruction.</description>
       <tags>
         <tag>install</tag>
@@ -17,7 +17,7 @@
     </tutorial>
 
     <tutorial title="Install gazebo with Ubuntu packages" ref='install_ubuntu'>
-      <markdown version="4.0">install/tutorial_4-0.md</markdown>
+      <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <description>Installation instruction.</description>
       <tags>
         <tag>install</tag>
@@ -544,19 +544,16 @@
       <description>Instructions to install Gazebo on all the plaforms supported: major linux distributions and Mac (windows is still under development).</description>
       <tutorials>
         <tutorial>install_ubuntu</tutorial>
-	<!--
 	<tutorial>install_other_linux</tutorial>
 	<tutorial>install_from_source</tutorial>
 	<tutorial>install_on_mac</tutorial>
 	<tutorial>install_old_versions</tutorials>
--->
       </tutorials>
     </category>
 
     <category title="Get Started" skill="beginner" ref="get_started">
       <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each category to the left presents a collection of relevant tutorials.</description>
       <tutorials>
-        <tutorial>install</tutorial>
         <tutorial>quick_start</tutorial>
         <tutorial>components</tutorial>
         <tutorial>architecture</tutorial>
