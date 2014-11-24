@@ -5,20 +5,32 @@
     <!-- ****************** -->
     <!-- Beginner tutorials -->
 
-    <tutorial title="Install old gazebo versions (prior to gazebo4)" ref='install_old_versions'>
-      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
-      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
-      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
-      <description>Installation instruction.</description>
+    <tutorial title="Install gazebo on Ubuntu" ref='install_ubuntu'>
+      <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
+      <description>Installation instructions for Ubuntu using packages</description>
       <tags>
         <tag>install</tag>
       </tags>
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Install gazebo with Ubuntu packages" ref='install_ubuntu'>
+    <tutorial title="Install gazebo on Debian, Fedora or Arch" ref='install_other_linux'>
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
-      <description>Installation instruction.</description>
+      <description>
+	Installation instructions for major linux distributions (non Ubuntu). Currently,
+	Debian, Fedora or Arch Linux.
+      </description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+ 
+    <tutorial title="Install old gazebo versions (prior to gazebo4)" ref='install_old_versions'>
+      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
+      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
+      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
+      <description>Installation instructions for version prior to 4.0 of Gazebo</description>
       <tags>
         <tag>install</tag>
       </tags>
@@ -540,14 +552,16 @@
   </tutorials>
 
   <categories>
-    <category title="Get Started" skill="beginner" ref="installation">
+    <category title="Gazebo installation" skill="beginner" ref="installation">
       <description>Instructions to install Gazebo on all the plaforms supported: major linux distributions and Mac (windows is still under development).</description>
       <tutorials>
         <tutorial>install_ubuntu</tutorial>
 	<tutorial>install_other_linux</tutorial>
+	<tutorial>install_old_versions</tutorials>
+	<!--
 	<tutorial>install_from_source</tutorial>
 	<tutorial>install_on_mac</tutorial>
-	<tutorial>install_old_versions</tutorials>
+-->
       </tutorials>
     </category>
 
