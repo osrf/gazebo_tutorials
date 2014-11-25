@@ -500,6 +500,12 @@
         <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
         <skill>advanced</skill>
     </tutorial>
+    
+    <tutorial title="GazeboJs hydra publisher" ref='hydra_gzjs_pub'>
+        <markdown version="4.0+">hydra_gzjs_pub/tutorial.md</markdown>
+        <description>Hydra publisher using node-sixense and GazeboJs </description>
+        <skill>beginner</skill>
+    </tutorial>
 
     <!-- HAPTIX -->
     <tutorial title="HAPTIX C API" ref='haptix_comm'>
