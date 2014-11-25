@@ -579,10 +579,13 @@
       <description>Instructions to install Gazebo on all the plaforms supported: major linux distributions and Mac (windows is still under development).</description>
       <tutorials>
         <tutorial>install_ubuntu</tutorial>
-	<tutorial>install_other_linux</tutorial>
-	<tutorial>install_on_mac</tutorial>
-	<tutorial>install</tutorials> <!-- keep name for historical reasons -->
-	<tutorial>install_from_source</tutorial>
+        <tutorial>install_other_linux</tutorial>
+        <tutorial>install_on_mac</tutorial>
+
+        <!-- keep name for historical reasons -->
+        <tutorial>install</tutorial>
+
+        <tutorial>install_from_source</tutorial>
       </tutorials>
     </category>
 
@@ -597,7 +600,7 @@
     </category>
 
     <category title="Build a Robot" skill="beginner" ref="build_robot">
-      description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
+      <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
       <tutorials>
         <tutorial>model_structure</tutorial>
         <tutorial>model_contrib</tutorial>
@@ -755,8 +758,7 @@
         <tutorial>gazebojs_install</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
-        <tutorial>gazebojs_models</turorial>
-
+        <tutorial>gazebojs_models</tutorial>
       </tutorials>
     </category>
 
