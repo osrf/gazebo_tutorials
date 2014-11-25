@@ -39,7 +39,7 @@
       <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
       <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
       <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
-      <markdown version="3.0">install_old_versions/tutorial_4-0.md</markdown>
+      <markdown version="4.0">install_old_versions/tutorial_4-0.md</markdown>
       <description>Installation instructions for version prior to 4.0 of Gazebo</description>
       <tags>
         <tag>install</tag>
