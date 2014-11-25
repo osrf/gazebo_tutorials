@@ -708,8 +708,8 @@
         <tutorial>gazebojs_install</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
-        <tutorial>gazebojs_models</turorial>
-
+        <tutorial>gazebojs_models</tutorial>
+        <tutorial>hydra_gzjs_pub</tutorial>
       </tutorials>
     </category>
 
