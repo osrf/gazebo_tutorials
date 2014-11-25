@@ -59,7 +59,9 @@ hydra.sixenseGetAllNewestDataAsync(function (error, allData)
 {    
     var msgS =
 ~~~
+
 ...
+
 ~~~
     var msg = JSON.parse(msgS);
     gazebo.publish(type, topic , msg);
