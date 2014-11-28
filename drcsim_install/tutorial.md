@@ -324,7 +324,7 @@ Follow this following steps:
     b. If you installed DRCSim from debian:
 
     ~~~
-    sudo cp libAtlasSimInterface.so.3.0.0 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.3.0.0
+    sudo cp libAtlasSimInterface.so.3.0.0 /opt/ros/$ROS_DISTRO/libAtlasSimInterface3.so.3.0.0
     sudo cp libQuadProg_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
     # if provided also run: sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
     ~~~
