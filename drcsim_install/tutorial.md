@@ -303,17 +303,17 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
 
-# Atlas Simulation Interface 2.10.2
+# Atlas Simulation Interface 3.0.0
 
-This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 2.10.2 from BDI.
+This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.0 from BDI.
 
-DRCSim version 4.0 or greater is required.
+DRCSim version 4.2 or greater is required.
 
 Follow this following steps:
 
-1. Install DRCSim >= 4.0
+1. Install DRCSim >= 4.2
 
-1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.2.10.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.2.10.2`.
+1. Copy BDI's `libAtlasSimInterface.so.3.0.0` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.0` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.0`.
 
     a. Source your ROS setup file. For example, if you are using ROS Indigo:
 
@@ -324,27 +324,33 @@ Follow this following steps:
     b. If you installed DRCSim from debian:
 
     ~~~
-    sudo cp libAtlasSimInterface.so.2.10.2 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.2.10.2
-    sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
+    sudo cp libAtlasSimInterface.so.3.0.0 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.3.0.0
     sudo cp libQuadProg_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
+    # if provided also run: sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
     ~~~
 
     c. If you installed DRCSim in a catkin workspace:
 
     ~~~
-    cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/
-    cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
+    cp libAtlasSimInterface.so.3.0.0 <catkin_ws_path>/install/lib/
     cp libQuadProg_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
+    # if provided also run: cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
     ~~~
 
-1. The new interface needs `ulimit` set:
+1. The new interface needs `ulimit` set stack and core to unlimited:
 
     ~~~
     ulimit -s unlimited
+    ulimit -c unlimited
     ~~~
 
 1. Launch drcsim as usual
 
     ~~~
-    roslaunch drcmsim_gazebo atlas_v3.launch
+    roslaunch drcmsim_gazebo atlas.launch model_args:="_v5"
+    ~~~
+
+    Optionally add `--verbose` flag to get more console outputs:
+    ~~~
+    roslaunch drcmsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
     ~~~
