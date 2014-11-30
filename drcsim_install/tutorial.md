@@ -351,6 +351,7 @@ Follow this following steps:
     ~~~
 
     Optionally add `--verbose` flag to get more console outputs:
+
     ~~~
     roslaunch drcmsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
     ~~~
