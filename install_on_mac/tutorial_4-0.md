@@ -8,6 +8,7 @@ Gazebo and several of its dependencies can be compiled on OS X with
 Here are the instructions:
 
 1. Install [homebrew](http://brew.sh)
+
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 2. Install [XQuartz](http://xquartz.macosforge.org/landing/), which provides 
