@@ -9,7 +9,7 @@ Here are the instructions:
 
 1. Install [homebrew](http://brew.sh)
 
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 2. Install [XQuartz](http://xquartz.macosforge.org/landing/), which provides 
 X11 support and is required by Gazebo and OGRE
