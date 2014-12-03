@@ -88,7 +88,7 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
 
-   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=2.2&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         
@@ -98,7 +98,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         # for bullet 2.82:
         sudo apt-get install libbullet2.82-dev
 
-   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=2.2&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
