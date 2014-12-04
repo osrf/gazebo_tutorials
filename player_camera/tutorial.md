@@ -4,17 +4,17 @@
 please visit their [website](http://playerstage.sourceforge.net) for more
 infomartion.
 
-This tutorial covers connecting the position2d Player interfaces to Gazebo. 
+This tutorial covers connecting the camera Player interfaces to Gazebo. 
 
 Create a working directory
 
 ~~~
-cd; mkdir gazebo_position2d; cd gazebo_position2d
+cd; mkdir gazebo_camera; cd gazebo_camera
 ~~~
 
 # Player Config
 
-Copy the config script below into a file called `position.cfg`
+Copy the config script below into a file called `camera.cfg`
 
 ~~~
 driver
@@ -30,25 +30,25 @@ driver
 driver
 (
   name "gazebo"
-  provides ["position2d:0"]
+  provides ["camera:0"]
 
-  # This name must match the name of a model in the "default" world
-  model_name "pioneer2dx"
+  # The fully scoped camera sensor name.
+  camera_name "pioneer2dx::camera::link::camera"
 )
 ~~~
 
 # Run
 
-Run the Gazebo
+Run Gazebo
 
 ~~~
-gazebo worlds/pioneer2dx.world
+gazebo worlds/pioneer2dx_camera.world
 ~~~
 
 Run Player
 
 ~~~
-player position.cfg
+player camera.cfg
 ~~~
 
 Run playerv
@@ -57,4 +57,4 @@ Run playerv
 playerv
 ~~~
 
-You can now drive the pioneer2dx using playerv.
+You can now visualize the camera inside playerv.

@@ -349,9 +349,21 @@
       </tags>
     </tutorial>
 
-    <tutorial title="Player Position, Laser, and Camera" ref='player_position'>
+    <tutorial title="Player Position" ref='player_position'>
       <markdown version="1.9+">player_position/tutorial.md</markdown>
-      <description>Covers connecting the position2d, laser, and camera Player interfaces to Gazebo.</description>
+      <description>Covers connecting the position2d Player interface to Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Player Laser" ref='player_laser'>
+      <markdown version="4.1+">player_laser/tutorial.md</markdown>
+      <description>Covers connecting the laser Player interface to Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Player Camera" ref='player_camera'>
+      <markdown version="4.1+">player_camera/tutorial.md</markdown>
+      <description>Covers connecting the camera Player interface to Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -618,10 +630,12 @@
       </tutorials>
     </category>
 
-    <category title="Connect to Player" skill="advanced" ref="connect_player">
+    <category title="Connect to Player" skill="intermediate" ref="connect_player">
       <description>Player is a robot control framework. These tutorials describe how to interface Gazebo and Player.</description>
       <tutorials>
         <tutorial>player_position</tutorial>
+        <tutorial>player_laser</tutorial>
+        <tutorial>player_camera</tutorial>
       </tutorials>
     </category>
 

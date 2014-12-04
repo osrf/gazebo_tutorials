@@ -4,17 +4,17 @@
 please visit their [website](http://playerstage.sourceforge.net) for more
 infomartion.
 
-This tutorial covers connecting the position2d Player interfaces to Gazebo. 
+This tutorial covers connecting the laser Player interfaces to Gazebo. 
 
 Create a working directory
 
 ~~~
-cd; mkdir gazebo_position2d; cd gazebo_position2d
+cd; mkdir gazebo_laser; cd gazebo_laser
 ~~~
 
 # Player Config
 
-Copy the config script below into a file called `position.cfg`
+Copy the config script below into a file called `laser.cfg`
 
 ~~~
 driver
@@ -30,25 +30,25 @@ driver
 driver
 (
   name "gazebo"
-  provides ["position2d:0"]
+  provides ["laser:0"]
 
-  # This name must match the name of a model in the "default" world
-  model_name "pioneer2dx"
+  # The fully scoped laser sensor name.
+  laser_name "pioneer2dx::hokuyo::link::laser"
 )
 ~~~
 
 # Run
 
-Run the Gazebo
+Run Gazebo
 
 ~~~
-gazebo worlds/pioneer2dx.world
+gazebo worlds/pioneer2dx_laser.world
 ~~~
 
 Run Player
 
 ~~~
-player position.cfg
+player laser.cfg
 ~~~
 
 Run playerv
@@ -57,4 +57,4 @@ Run playerv
 playerv
 ~~~
 
-You can now drive the pioneer2dx using playerv.
+You can now visualize the laser inside playerv.
