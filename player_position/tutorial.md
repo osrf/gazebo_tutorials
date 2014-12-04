@@ -2,7 +2,7 @@
 
 [Player](http://playerstage.sourceforge.net) is a robot control framework,
 please visit their [website](http://playerstage.sourceforge.net) for more
-infomartion.
+information.
 
 This tutorial covers connecting the position2d Player interfaces to Gazebo. 
 
