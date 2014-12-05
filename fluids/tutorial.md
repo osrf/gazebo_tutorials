@@ -32,7 +32,7 @@ available the simulation will run in CPU mode).
     sudo ./install.sh
     ~~~
 
-1. Install [gazebo](http://gazebosim.org/tutorials?tut=install) from source using the `fluid_sph` branch
+1. Install [gazebo](http://gazebosim.org/tutorials?cat=installation) from source using the `fluid_sph` branch
 
     ~~~
     [...]

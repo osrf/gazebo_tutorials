@@ -1,54 +1,8 @@
-#Download and Install Gazebo
+# Install Gazebo from source (Ubuntu and Mac)
 
-<a id="Ubuntu"></a>
-## Ubuntu
+## Install Gazebo from source on Ubuntu
 
-### One-line install
-
-1. Install
-
-        wget -O /tmp/gazebo4_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo4_install.sh; sudo sh /tmp/gazebo4_install.sh
-
-2. Run
-
-        gazebo
-
-### Step-by-step Install
-
-1. Setup your computer to accept software from packages.osrfoundation.org.
-    
-    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
-
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
-
-1. Setup keys
-
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-1. Install Gazebo.
-
-        sudo apt-get update
-        sudo apt-get install gazebo4
-        # For developers that works on top of Gazebo, one extra package
-        sudo apt-get install libgazebo4-dev
-
-1. Check your installation
-
-    ***Note*** The first time `gazebo` is executed requires the download of some models and it could take some time, please be patient.
-
-        gazebo
-
-## Mac OSX
-
-You must install from source using Homebrew. Seen the instructions below titled Compiling From Source(MacOSX).
-
-## Windows
-
-Windows support is under development.
-
-# Compiling From Source (Ubuntu)
-
-## Prerequisites
+### Prerequisites
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
 
@@ -66,11 +20,11 @@ As a side note, default install locations:
 
   2. Default source install : /usr/local/bin/gazebo
 
-## ROS Users
+### ROS Users
 
 When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
 
-## Install Required Dependencies
+### Install Required Dependencies
 
 Install prerequisites.  A clean Ubuntu system will need:
 
@@ -83,9 +37,9 @@ Install prerequisites.  A clean Ubuntu system will need:
         sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
 
-## Optional Physics Engines
+### Optional Physics Engines
 
-### Trusty
+#### Trusty
 
 **Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
@@ -100,7 +54,7 @@ Install prerequisites.  A clean Ubuntu system will need:
         sudo apt-get install libdart-core4-dev
 
 
-### Precise
+#### Precise
 
 **Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
@@ -108,14 +62,14 @@ Gazebo supports multiple physics engines in addition to the modified version of 
 
   ***Bullet Support***
 
-  [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+  [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update        
         sudo apt-get install libbullet2.82-dev
 
    ***Simbody Support***
    
-   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
@@ -130,7 +84,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         sudo apt-get update
         sudo apt-get install libdart-core4-dev
 
-## Optional Dependencies ##
+### Optional Dependencies ###
 
    ***GUI test Support*** (Optional)
   
@@ -148,7 +102,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
 
         sudo apt-get install robot-player-dev*
 
-## Build And Install SDFormat
+### Build And Install SDFormat
 
 To install from source, you should first install the SDFormat package, then build Gazebo off of that:
 
@@ -174,7 +128,7 @@ To install from source, you should first install the SDFormat package, then buil
         make -j4
         sudo make install
 
-## Build And Install Gazebo
+### Build And Install Gazebo
 
 1. Clone the repository into a directory in your home folder:
 
@@ -227,7 +181,7 @@ To install from source, you should first install the SDFormat package, then buil
 
 1. Setup environment variables
 
-### Local Install
+#### Local Install
 
 If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
 
@@ -253,7 +207,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
-## Uninstalling Source-based Install
+### Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
 
@@ -262,7 +216,7 @@ If you need to uninstall Gazebo or switch back to a debian-based install of Gaze
     cd ~/sdformat/build
     sudo make uninstall
 
-# Compiling From Source (Mac OS X)
+## Compiling From Source (Mac OS X)
 
 Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](http://brew.sh) using the [osrf/simulation tap](https://github.com/osrf/homebrew-simulation). Here are the instructions:
 
@@ -278,29 +232,14 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
         brew install gazebo4
         gazebo
 
-## Optional dependencies ##
+### Optional dependencies ###
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
         brew install gazebo4 --with-bullet --with-simbody
 
-## Versions ##
+### Versions ###
 The formula currently installs version 4.0 of gazebo.
 Version 1.9 can be installed using the gazebo formula, gazebo 2.2 using gazebo2, and gazebo 3 using gazebo3.
 To install the latest version of gazebo's default branch:
 
         brew install gazebo4 --HEAD
-
-# Gazebo in different deb packages
-
-Gazebo ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
-
- * Use Gazebo as an application: for the users that just run Gazebo simulator with the provided plugins and models and do not plan on developing on top of gazebo its own custom software. To use Gazebo 4.0, please install the package called ***gazebo4***.
- * Use Gazebo to develop software using Gazebo libraries: for users that develop plugins or any other kind of software that needs Gazebo headers and libraries. In this case, together with gazebo4 package, please install ***libgazebo4-dev***. 
-
-# Gazebo multi physics engines support
-
-Gazebo is able to use different physics engines to perform the simulation. ODE is the one used by default, but support is in place for Bullet, Simbody and DART. For those users that wan't to try a different physics engine than ODE, a from source installation of gazebo is needed, so please do not use the .deb packages. For those that just need ODE, .deb packages are just fine.
-
-# Gazebo 4 in ROS
-
-Please follow the [Connect to ROS](http://gazebosim.org/tutorials?cat=connect_ros) tutorials for using Gazebo with ROS.

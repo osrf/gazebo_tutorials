@@ -1,21 +1,32 @@
 <a id="Ubuntu"></a>
-#Download and Install Gazebo
+## Gazebo in different deb packages
 
-### Ubuntu Debians
+Gazebo 3.0 version is the first one that ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
 
-1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [Ubuntu guide](https://help.ubuntu.com/community/Repositories/Ubuntu) for instructions on doing this.
+ * Use gazebo as an application: for the users that just run gazebo simulator with the provided plugins and models and do not plan on developing on top of gazebo its own custom software. In this case, please install the package called ***gazebo3***.
+ * Use gazebo also to develop software using gazebo libraries: for users that develop plugins or any other kind of software that needs gazebo headers and libraries. In this case, together with gazebo3 package, please install ***libgazebo-dev***. 
+
+## Gazebo3 in ROS ##
+
+Gazebo3 will be use by ROS-J (gazebo2 is the one used in ROS Indigo). All the details are in the [Gazebo/ROS integration page](http://gazebosim.org/tutorials?cat=connect_ros).
+
+## Gazebo3 multi physics engines support ##
+
+Gazebo3 is able to use different physics engines to perform the simulation. ODE is the one used by default, but support is in place for Bullet, Simbody and DART. For those users that wan't to try a different physics engine than ODE, a from source installation of gazebo is needed, so please do not use the .deb packages. For those that just need ODE, .deb packages are just fine.
+
+#Download and Install Gazebo#
+
+### Ubuntu Debians ###
+
+1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [https://help.ubuntu.com/community/Repositories/Ubuntu Ubuntu guide] for instructions on doing this.
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-***Note: ***there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
   **Ubuntu Linux 12.04 (precise)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu precise main" > /etc/apt/sources.list.d/gazebo-latest.list'
-
-  **Ubuntu Linux 12.10 (quantal)**
-
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu quantal main" > /etc/apt/sources.list.d/gazebo-latest.list'
 
   **Ubuntu Linux 13.04 (raring)**
 
@@ -29,14 +40,13 @@
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-1. Update apt-get and install Gazebo 2.2.
+1. Update apt-get and install Gazebo.
 
         sudo apt-get update
-        # A) Ubuntu precise, quantal and raring (gazebo_current)
-        sudo apt-get install gazebo-current
-        # B) Ubuntu saucy and trusty (gazebo2) 
-        sudo apt-get install gazebo2
-    **There is available the old gazebo version 1 under the package name of: gazebo**
+        sudo apt-get install gazebo3
+        # For developers that works on top of gazebo, one extra package
+        sudo apt-get install libgazebo-dev
+    **There is available the old gazebo version 2 under the package name of: gazebo-current (or gazebo2 in saucy/trusty)**
 
 
 1. Check your installation
@@ -57,7 +67,7 @@
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source
 
-    sudo apt-get remove gazebo gazebo-current gazebo-prerelease gazebo-nightly sdformat sdformat-prerelease sdformat-nightly
+    sudo apt-get remove 'gazebo-*' 'sdformat-*'
 
 We also recommend for ROS users that your remove older ROS versions of Gazebo:
 
@@ -69,11 +79,11 @@ As a side note, default install locations:
 ; Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
 ; Default source install : /usr/local/bin/gazebo
 
-## ROS Users ##
+## ROS Users
 
 When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
 
-## Install Required Dependencies ##
+## Install Required Dependencies
 
 Install prerequisites.  A clean Ubuntu system will need:
 <!-- Ogre doesn't install on Ubuntu 13.10, so use ogre-1.8 which does -->
@@ -84,21 +94,20 @@ Install prerequisites.  A clean Ubuntu system will need:
                      libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev \
                      playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
 
-## Optional Physics Engines ##
+**Note: ** in Precise replace libogre-1.8-dev by libogre-dev
+
+## Optional Physics Engines
+
+**Release Note: in order to use a physics engine different than ODE, a full compilation of gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE physics engine.**
 
 Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
 
-   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+   ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 3.0. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=3.0&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
-        sudo apt-get update
-        
-        # for bullet 2.81:
-        sudo apt-get install libbullet-dev
-        
-        # for bullet 2.82:
+        sudo apt-get update        
         sudo apt-get install libbullet2.82-dev
 
-   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install&ver=2.2&cat=get_started#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+   ***Simbody Support*** [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=3.0&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
@@ -135,12 +144,12 @@ To install from source, you should first install the SDFormat package, then buil
         cd ~/gazebo_source/
         hg clone https://bitbucket.org/osrf/sdformat
 
-1. Change directory into the sdformat repository and switch to the 1.4 branch
+1. Change directory into the sdformat repository and switch to the 2.0 branch
 
         cd sdformat
-        hg up sdf_1.4
+        hg up sdf_2.0
 
-   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability**
+   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
 
 1. Create a build directory and go there
 
@@ -149,7 +158,7 @@ To install from source, you should first install the SDFormat package, then buil
 
 1. Build and install
 
-        cmake ../
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
         make -j4
         sudo make install
 
@@ -160,12 +169,12 @@ To install from source, you should first install the SDFormat package, then buil
         cd ~/gazebo_source/
         hg clone https://bitbucket.org/osrf/gazebo
 
-1. Change directory in the Gazebo repository and switch to the 2.0 branch
+1. Change directory in the Gazebo repository and switch to the 3.0 branch
 
         cd gazebo
-        hg up gazebo_2.0
+        hg up gazebo_3.0
 
-   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
+   **Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 3.0 branch if you desire more stability**
 
 1. Create a build directory and go there
 
@@ -252,17 +261,17 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 4. Run the following commands:
 
         brew tap osrf/simulation
-        brew install gazebo2
+        brew install gazebo3
         gazebo
 
 ## Optional dependencies ##
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-        brew install gazebo2 --with-bullet --with-simbody
+        brew install gazebo3 --with-bullet --with-simbody
 
 ## Versions ##
-The gazebo2 formula currently installs version 2.2.2 of gazebo.
-Version 1.9 can be installed using the gazebo formula or version 3.0 using the gazebo3 formula.
+The formula currently installs version 3.0 of gazebo.
+Version 1.9 can be installed using the gazebo formula, or gazebo 2.2 using gazebo2.
 To install the latest version of gazebo's default branch:
 
         brew install gazebo3 --HEAD
