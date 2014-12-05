@@ -332,7 +332,7 @@ Follow this following steps:
     c. If you installed DRCSim in a catkin workspace:
 
     ~~~
-    cp libAtlasSimInterface.so.3.0.0 <catkin_ws_path>/install/lib/
+    cp libAtlasSimInterface.so.3.0.0 <catkin_ws_path>/install/lib/libAtlasSimInterface3.so.3.0.0
     cp libQuadProg_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
     # if provided also run: cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
     ~~~
