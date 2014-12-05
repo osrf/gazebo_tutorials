@@ -35,6 +35,7 @@ The [DART](http://dartsim.github.io) physics engine can be used as well,
 
         brew tap dartsim/dart
         brew install dartsim --core-only
+        brew install gazebo4 --with-bullet --with-simbody
 
 ## Versions
 The formula currently installs version 4.0 of gazebo.
