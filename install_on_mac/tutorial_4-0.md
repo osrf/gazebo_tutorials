@@ -25,9 +25,16 @@ install them when you install Homebrew in step 1.
         gazebo
 
 ## Optional dependencies
-The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
+The gazebo formula has several optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
         brew install gazebo4 --with-bullet --with-simbody
+
+The [DART](http://dartsim.github.io) physics engine can be used as well,
+  though it must be installed using the following procedure
+  prior to installing gazebo.
+
+        brew tap dartsim/dart
+        brew install dartsim --core-only
 
 ## Versions
 The formula currently installs version 4.0 of gazebo.
