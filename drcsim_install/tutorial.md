@@ -313,7 +313,7 @@ Follow this following steps:
 
 1. Install DRCSim >= 4.2
 
-1. Copy BDI's `libAtlasSimInterface.so.3.0.0` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.0` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.0`.
+1. Copy BDI's `libAtlasSimInterface.so.3.0.0` file into the DRCSim install space, replacing the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.0` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.0`.
 
     a. Source your ROS setup file. For example, if you are using ROS Indigo:
 
@@ -347,11 +347,11 @@ Follow this following steps:
 1. Launch drcsim as usual
 
     ~~~
-    roslaunch drcmsim_gazebo atlas.launch model_args:="_v5"
+    roslaunch drcsim_gazebo atlas.launch model_args:="_v5"
     ~~~
 
     Optionally add `--verbose` flag to get more console outputs:
 
     ~~~
-    roslaunch drcmsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
+    roslaunch drcsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
     ~~~
