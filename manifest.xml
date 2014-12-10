@@ -578,6 +578,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
+      <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
+      <description>This tutorial describes how to control arm position and grasps using a keyboard, mice, or mixer board.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -773,6 +779,7 @@
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
         <tutorial>haptix_install</tutorial>
+        <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
         <tutorial>haptix_tactors</tutorial>
