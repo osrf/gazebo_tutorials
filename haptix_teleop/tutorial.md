@@ -74,3 +74,19 @@ By default, the spacenav mouse controls the position and
 orientation of the viewpoint. Press the button the left side of the mouse
 to change control to the arm. Once in this mode, the mouse will change the
 position and orientation of the arm. 
+
+## Razer Hydra
+
+Please follow the [hydra installation instructions](http://gazebosim.org/tutorials?tut=hydra&cat=user_input).
+
+Once installed, the right paddle will perform the following actions:
+
+    1. Middle button (between the 1 & 2 buttons): Enable/disable hydra control.
+    1. Move paddle to change arm position and orientation.
+    1. Button 1: Change to spherical grasp.
+    1. Button 2: Change to cylinderical grasp.
+    1. Button 3: Change to British pinch grasp.
+    1. Button 4: Change to American pinch grasp.
+    1. Trigger: Close/open grasp
+    1. Bumper: Switch tasks
+
