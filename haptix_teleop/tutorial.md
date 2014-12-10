@@ -67,3 +67,10 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
         1. SHIFT + X: Negative deviation
         1. C: Positive flexion
         1. SHIFT + C: Negative flexion
+
+## Spacenav Control
+
+By default, the spacenav mouse controls the position and
+orientation of the viewpoint. Press the button the left side of the mouse
+to change control to the arm. Once in this mode, the mouse will change the
+position and orientation of the arm. 
