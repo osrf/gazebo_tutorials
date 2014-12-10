@@ -61,11 +61,11 @@ roslaunch drcsim_gazebo drc_practice_task_<task number>.launch model_args:="_v<m
 
 # Other options
 
-`extra_gazebo_args`: 
+`extra_gazebo_args`: Use this argument to add extra options to Gazebo, such as `--verbose`. For a full list of Gazebo options, type `gazebo --help` into a terminal.
 
-`gzworld`:
+`gzworld`: Load a different world file. You can use this with `atlas.launch` to place Atlas into any Gazebo world.
 
-`gzname`:
+`gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo window isn't showing up, but terminal outputs look fine, trying setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window won't start unless `gzclient` is launched separately.
 
 ## Example
 Try launching Atlas v4 with Robotiq hands in the world for DRC task 4:
