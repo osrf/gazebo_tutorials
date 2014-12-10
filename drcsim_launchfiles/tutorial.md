@@ -16,7 +16,7 @@ source ~/.bashrc
 ~~~
 
 # Background
-There are many different combinations that can be configured when launching DRCSim. There are 4 possible Atlas models, 3 supported hand models, and over 23 different worlds.
+DRCSim supports 4 possible Atlas models, 3 supported hand models, and over 23 different worlds. The many possible combinations are all accessible via launch file arguments.
 
 ## Versions
 Boston Dynamics has released four versions of the Atlas robot: version 1, version 3, version 4, and version 5.
@@ -26,13 +26,16 @@ Boston Dynamics has released four versions of the Atlas robot: version 1, versio
 ## Hands
 There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the Robotiq hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [Robotiq](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
 
-Sandia hands
+Sandia hands:
+
 [[file:files/sandia.png|232px]]
 
-iRobot hands
+iRobot hands:
+
 [[file:files/irobot.png|250px]]
 
-Robotiq hands
+Robotiq hands:
+
 [[file:files/robotiq.png|223px]]
 
 ## Worlds
@@ -42,13 +45,13 @@ The VRC Final Task worlds were used in the VRC (Virtual Robotics Challenge) to h
 vrc_final_task<1-15>.world
 ~~~
 
-The DRC Practice Task worlds reflect the tasks planned for the DRC Finals as outlined in [this document](http://archive.darpa.mil/roboticschallengetrialsarchive/sites/default/files/DRC%20Trials%20Task%20Description%20Release%2011%20DISTAR%2022197.pdf) provided by DARPA. Their world names in Gazebo/DRCSim follow the form:
+The DRC Practice Task worlds reflect the tasks planned for the DRC Finals as outlined in [this document](http://archive.darpa.mil/roboticschallengetrialsarchive/sites/default/files/DRC%20Trials%20Task%20Description%20Release%2011%20DISTAR%2022197.pdf) provided by DARPA. Their world names in Gazebo/DRCSim are:
 
 ~~~
 drc_practice_task_<1-8>.world
 ~~~
 
-# Launch file syntax
+# Launch file arguments
 For most drcsim launch files, you can specify the model version number using the `model_args` argument and the hand type using the `hand_suffix` argument.
 
 `atlas.launch` launches DRCSim with Atlas in an empty world:
@@ -65,6 +68,8 @@ Similarly for the DRC practice worlds:
 ~~~
 roslaunch drcsim_gazebo drc_practice_task_<task number>.launch model_args:="_v<model number>" hand_suffix:="_<sandia,irobot,robotiq>_hands"
 ~~~
+
+If you want to launch Atlas with no hands, simply leave out `hand_suffix` or pass an empty string. In most cases, if you leave out `model_args`, the default Atlas model will be v3 or v1.
 
 ## Other options
 
