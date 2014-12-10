@@ -113,7 +113,7 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0
 [[file:files/robotiq_hand_closed.png|300px]]
 
 The hand supports different grasping modes and uses multiple registers to control the position of the fingers, as well as other parameters.
-Check out Section 4.4 of the [instruction manual](http://robotiq.com/media/3-FINGER-140613.pdf) for a full list of features and a description of each control register.
+Check out Section 4.4 of the [instruction manual](http://support.robotiq.com/pages/viewpage.action?pageId=590044) for a full list of features and a description of each control register.
 
 As an example, you can execute the following command to change the grasping mode to `pinch` and close the gripper:
 
@@ -193,8 +193,7 @@ rostopic pub --once right_hand/command atlas_msgs/SModelRobotOutput {1,0,1,0,0,0
 
 You should see how the different state registers change according to the target position specified,
 the current finger position, velocities, etc. Check out Section 4.5 of the
-[instruction manual](http://robotiq.com/media/3-FINGER-140613.pdf) for a detailed description
-of the state registers.
+[instruction manual](http://support.robotiq.com/pages/viewpage.action?pageId=590045) for a detailed description of the state registers.
 
 # Visualizing the gripper in rviz
 
@@ -221,6 +220,5 @@ The following features are not yet available in drcsim:
 
 * Speed/torque control
 * Individual Control of Scissor
-* Joint coupling between actuated and underactuated joints
 
 We will update this tutorial when these features become available.
