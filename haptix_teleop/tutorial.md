@@ -8,17 +8,19 @@ This tutorial covers various teloperation methods for use in the HAPTIX simulati
 
 1. [Razer hydra](http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1313.TR3.TRC1.A0.H0.Xrazer+hydra&_nkw=razer+hydra&_sacat=0): Control arm position and grasps using a 3D gaming joystick.
 
+
+For each of the following sections, use the following command to start simulation:
+
+~~~
+gazebo worlds/arat.world
+~~~
+
 ## Keyboard Control
 
 [[file:files/keyboard.png | 640px]]
 
 A set of keys, as shown in the above figure, are mapped to arm and hand control.
 
-1. **Start simulation**
-
-    ~~~
-    gazebo worlds/arat.world
-    ~~~
 
 1. **Grasp control**
 
