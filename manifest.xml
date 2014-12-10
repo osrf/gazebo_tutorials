@@ -351,8 +351,8 @@
 
     <tutorial title="Launchfile options" ref='drcsim_launchfiles'>
       <markdown version="4.2+">drcsim_launchfiles/tutorial.md</markdown>
-      <description>A guide to launching DRCSim with different options: Atlas model numbers, hand options, and world files.</description>
-      <skill>beginner</skill>
+      <description>A guide to launching DRCSim with different Atlas versions, hand options, and world files.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
