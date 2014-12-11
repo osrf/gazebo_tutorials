@@ -6,7 +6,7 @@ If you have no prior experience with ROS launch files, you can learn more on the
 
 # Setup
 
-We assume that you've already installed DRCSim 4.2 via the [installation instructions](http://gazebosim.org/tutorials/?tut=drcsim_install). If you have not installed DRCSim 4.2, you must upgrade before you can complete this tutorial.
+We assume that you've already installed DRCSim 4.2 or higher via the [installation instructions](http://gazebosim.org/tutorials/?tut=drcsim_install). If you have not installed a version of DRCSim greater than or equal to 4.2, you must upgrade before you can complete this tutorial.
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -24,7 +24,7 @@ Boston Dynamics has released four versions of the Atlas robot: version 1, versio
 [[file:files/versions.png|750px]]
 
 ## Hands
-There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the Robotiq hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [Robotiq](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
+There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the RobotiQ hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [Robotiq](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
 
 Sandia hands:
 
@@ -34,7 +34,7 @@ iRobot hands:
 
 [[file:files/irobot.png|250px]]
 
-Robotiq hands:
+RobotiQ hands:
 
 [[file:files/robotiq.png|223px]]
 
@@ -55,16 +55,19 @@ drc_practice_task_<1-8>.world
 For most drcsim launch files, you can specify the model version number using the `model_args` argument and the hand type using the `hand_suffix` argument.
 
 `atlas.launch` launches DRCSim with Atlas in an empty world:
+
 ~~~
 roslaunch drcsim_gazebo atlas.launch model_args:="_v<model number>" hand_suffix:="_<sandia,irobot,robotiq>_hands"
 ~~~
 
 To launch a VRC final world, the launch file name is the same as the world file name speified above:
+
 ~~~
 roslaunch drcsim_gazebo vrc_final_task<task number>.launch model_args:="_v<model number>" hand_suffix:="_<sandia,irobot,robotiq>_hands"
 ~~~
 
 Similarly for the DRC practice worlds:
+
 ~~~
 roslaunch drcsim_gazebo drc_practice_task_<task number>.launch model_args:="_v<model number>" hand_suffix:="_<sandia,irobot,robotiq>_hands"
 ~~~
@@ -80,7 +83,7 @@ If you want to launch Atlas with no hands, simply leave out `hand_suffix` or pas
 `gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo window isn't showing up, but terminal outputs look fine, trying setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window won't start unless `gzclient` is launched separately.
 
 # Example
-Try launching Atlas v4 with Robotiq hands in the world for DRC task 4:
+Try launching Atlas v4 with RobotiQ hands in the world for DRC task 4:
 
 ~~~
 roslaunch drcsim_gazebo drc_practice_task_4.launch model_args:="_v4" hand_suffix:="_robotiq_hands"
