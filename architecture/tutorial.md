@@ -13,7 +13,7 @@ of Gazebo.
 
 ### Gazebo Master
 
-This is essentiall a topic name server. It provides namelookup, and topic management. A single master can handle multiple physics simulations, sensor generators, and GUIs. 
+This is essentialy a topic name server. It provides namelookup, and topic management. A single master can handle multiple physics simulations, sensor generators, and GUIs. 
 
 ### Communication Library
 
