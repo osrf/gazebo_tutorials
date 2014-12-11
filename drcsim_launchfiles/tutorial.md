@@ -80,7 +80,7 @@ If you want to launch Atlas with no hands, simply leave out `hand_suffix` or pas
 
 `gzworld`: Load a different world file. You can use this with `atlas.launch` to place Atlas into any Gazebo world.
 
-`gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo window isn't showing up, but terminal outputs look fine, trying setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window won't start unless `gzclient` is launched separately.
+`gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo graphical window does not start, but no errors are printed to the terminal, try setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window won't start unless `gzclient` is launched separately.
 
 # Example
 Try launching Atlas v4 with RobotiQ hands in the world for DRC task 4:
