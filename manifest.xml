@@ -404,6 +404,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Launchfile options" ref='drcsim_launchfiles'>
+      <markdown version="4.2+">drcsim_launchfiles/tutorial.md</markdown>
+      <description>A guide to launching DRCSim with different Atlas versions, hand options, and world files.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
       <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
       <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
@@ -743,6 +749,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_launchfiles</tutorial>
         <tutorial>drcsim_animate_joints</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
