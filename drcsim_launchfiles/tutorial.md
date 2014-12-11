@@ -2,7 +2,7 @@
 
 This tutorial explains the many options for launching DRCSim.
 
-If you have no prior experience with ROS launch files, you can learn more on the [ROS Wiki](http://wiki.ros.org/roslaunch). 
+If you have no prior experience with ROS launch files, you can learn more on the [ROS Wiki](http://wiki.ros.org/roslaunch).
 
 # Setup
 
@@ -24,7 +24,7 @@ Boston Dynamics has released four versions of the Atlas robot: version 1, versio
 [[file:files/versions.png|750px]]
 
 ## Hands
-There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the RobotiQ hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [Robotiq](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
+There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the RobotiQ hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [RobotiQ](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
 
 Sandia hands:
 
@@ -80,7 +80,7 @@ If you want to launch Atlas with no hands, simply leave out `hand_suffix` or pas
 
 `gzworld`: Load a different world file. You can use this with `atlas.launch` to place Atlas into any Gazebo world.
 
-`gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo graphical window does not start, but no errors are printed to the terminal, try setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window won't start unless `gzclient` is launched separately.
+`gzname`: Specify the executable used to invoke Gazebo. Common options include `gazebo` or `gzserver`. If the Gazebo graphical window does not start, but no errors are printed to the terminal, try setting `gzname:="gazebo"`. `gzname` is set to `gzserver` by default for the `vrc_final` worlds, which means the graphical client window will not start unless `gzclient` is launched separately.
 
 # Example
 Try launching Atlas v4 with RobotiQ hands in the world for DRC task 4:
