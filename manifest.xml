@@ -231,6 +231,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Building Editor" ref="building_editor">
+      <markdown version="5+">building_editor/tutorial.md</markdown>
+      <description>Create multi-level buildings without having to write code.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -641,6 +647,7 @@
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
         <tutorial>model_population</tutorial>
+        <tutorial>building_editor</tutorial>
       </tutorials>
     </category>
 
