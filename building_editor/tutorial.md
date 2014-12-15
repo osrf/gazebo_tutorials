@@ -170,9 +170,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 > **Tip:** On the 2D View, staircases are visible on both the level it starts at and the level it ends at.
 
-
-    [[file:files/edit_stairs.png|640px]]
-
+[[file:files/edit_stairs.png|640px]]
 
 ## Edit levels
 
@@ -188,10 +186,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 > **Tip:** On the top of the 2D View, you can choose to view or hide the floor plan or features for the current level.
 
-
-    [[file:files/view_floorplan.png|640px]]
-
-
+[[file:files/view_floorplan.png|640px]]
 
 ## Add colors and textures
 
