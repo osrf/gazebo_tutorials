@@ -32,7 +32,7 @@ The editor is composed of the following 3 areas:
 
 You may create a scene from scratch, or use an existing image as a template to trace over. This image can be, for example, a 2D laser scan of a building.
 
-Click [here](https://bitbucket.org/osrf/drcsim/raw/default/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
+Click [here](file:files/floorplan.png) to get an example floor plan, then proceed as follows:
 
 1. Click on the `Import` button. The `Import Image` dialog will come up.
 
@@ -40,19 +40,15 @@ Click [here](https://bitbucket.org/osrf/drcsim/raw/default/building_editor/files
 
     [[file:files/import_step_1.png|800px]]
 
-1. Step 2: To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter (`px/m`). There are two ways of setting the resolution:
+1. Step 2: To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter (`px/m`). If we knew the resolution, we could directly type it on the dialog and click `Ok`. Here we don't know the resolution though, but we know the real-world distance of two points in the image (for example, the top wall of 7.5 m), so we can use that to calculate the resolution:
 
-    a. If you know your image's resolution, you can directly input the resolution on the dialog and click `Ok`.
+    a. Click on the first point. As you move the mouse, an orange line will appear as shown below.
 
-    b. If you don't know the resolution, but you know the real-world distance of two points in the image, you can:
+    b. Click on the second point to complete the line.
 
-        1. Click on the first point. As you move the mouse, an orange line will appear as shown below.
+    c. Now you type the distance in meters on the dialog. The resolution will be automatically calculated for you based on the line you drew.
 
-        2. Click on the second point to complete the line.
-
-        3. The default length is 1 m. If the real-world distance of your line is different than that, type it in on the dialog. In the example below, it is 7,5 m. The resolution will be automatically calculated for you based on the line you drew.
-
-        4. You can then click `Ok`.
+    d. You can then click `Ok`.
 
     [[file:files/import_step_2.png|800px]]
 
@@ -64,7 +60,7 @@ Click [here](https://bitbucket.org/osrf/drcsim/raw/default/building_editor/files
 
 ## Add walls
 
-Trace all walls on the floor plan as follows. Keep in mind that we will attach windows and doors to the walls later, so here you can draw the walls over them.
+Trace all walls on the floor plan as follows. Keep in mind that we will attach windows and doors to the walls later, so here you can draw the walls over them. Don't worry too much if the walls are not perfect, we will edit them later.
 
 1. On the palette, click on `Wall`.
 
@@ -102,7 +98,7 @@ Let's insert windows and doors on the locations shown on the floor plan.
 
 ## Add stairs
 
-There are no staircases on this floor plan, but we can insert one anyways.
+There are no staircases on this floor plan, but we will insert one anyways.
 
 1. On the palette, click on `Stairs`.
 
@@ -120,25 +116,25 @@ On the top of the 2D View, click on `+` to add a level. Alternatively, right-cli
 
 When a new level is added, a floor is automatically inserted. If there are stairs on the level below, a hole above the stairs will be cutout from the floor when the building is saved.
 
-    > **Note: Currently, all floors are rectangular.**
+> **Note: Currently, all floors are rectangular.**
 
-    > **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
+> **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
 
-    > **Tip:** All the walls from the level below are copied to the new level, with default materials. No other features are copied.
+> **Tip:** All the walls from the level below are copied to the new level, with default materials. No other features are copied.
 
-    [[file:files/add_level.png|800px]]
+[[file:files/add_level.png|800px]]
 
 # Edit your building
 
 **Note: Be careful when editing your building, the editor currently has no option to undo your actions.**
 
-    > **Tip:** All measurements are in meters.
+> **Tip:** All measurements are in meters.
 
 ## Change levels
 
 Since we added a level, we were brought to the new level on the 2D view. You can go back to Level 1 by choosing it from the drop-down list on the top of the 2D View.
 
-    > **Tip:** The level currently selected in the 2D View will appear as semi-transparent on the 3D View and all levels below it will appear opaque. Levels above will be hidden - but keep in mind they are still part of your building!
+> **Tip:** The level currently selected in the 2D View will appear as semi-transparent on the 3D View and all levels below it will appear opaque. Levels above will be hidden - but keep in mind they are still part of your building!
 
 We can also edit some level configurations if we want.
 
