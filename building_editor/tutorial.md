@@ -12,7 +12,7 @@ This tutorial describes the process of creating a building using the Building Ed
     $ gazebo
     ~~~
 
-1. On the File menu, go to `Edit` and then `Building Editor`, or hit `Ctrl+B` to open the editor.
+1. On the `Edit` menu, go to `Building Editor`, or hit `Ctrl+B` to open the editor.
 
     [[file:files/empty_editor.png|800px]]
 
