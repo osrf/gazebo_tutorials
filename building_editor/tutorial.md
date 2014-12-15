@@ -32,11 +32,11 @@ The editor is composed of the following 3 areas:
 
 You may create a scene from scratch, or use an existing image as a template to trace over. This image can be, for example, a 2D laser scan of a building.
 
-You can import an existing floor plan for each level of your building as follows.
+Click [here](https://bitbucket.org/osrf/drcsim/raw/default/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
 
 1. Click on the `Import` button. The `Import Image` dialog will come up.
 
-1. Step 1: Choose a `jpg` or `png` image from your computer and click `Next`.
+1. Step 1: Choose the image you previously saved on your computer and click `Next`.
 
     [[file:files/import_step_1.png|800px]]
 
@@ -45,20 +45,26 @@ You can import an existing floor plan for each level of your building as follows
     a. If you know your image's resolution, you can directly input the resolution on the dialog and click `Ok`.
 
     b. If you don't know the resolution, but you know the real-world distance of two points in the image, you can:
+
         1. Click on the first point. As you move the mouse, an orange line will appear as shown below.
+
         2. Click on the second point to complete the line.
+
         3. The default length is 1 m. If the real-world distance of your line is different than that, type it in on the dialog. In the example below, it is 7,5 m. The resolution will be automatically calculated for you based on the line you drew.
+
         4. You can then click `Ok`.
 
     [[file:files/import_step_2.png|800px]]
 
 1. The image will appear on the 2D View properly scaled.
 
-> **Tip:** You can add a floor plan for each level on your building once you've added more levels, by repeating the same process for each level.
+    > **Tip:** You can add a floor plan for each level on your building once you've added more levels, by repeating the same process for each level.
 
 # Add features
 
 ## Add walls
+
+Trace all walls on the floor plan as follows. Keep in mind that we will attach windows and doors to the walls later, so here you can draw the walls over them.
 
 1. On the palette, click on `Wall`.
 
@@ -78,47 +84,75 @@ You can import an existing floor plan for each level of your building as follows
 
 **Note: Currently, windows and doors are simple holes on the wall.**
 
+Let's insert windows and doors on the locations shown on the floor plan.
+
 1. On the palette, click on `Window` or `Door`.
 
 2. As you move the mouse on the 2D view, the feature to be inserted moves with it, as does its counterpart on the 3D View.
 
-3. Click on the desired position to place the feature.
-
     > **Tip:** Windows and doors automatically snap to walls as you hover over them. The distances to the ends of the wall are displayed as you move.
+
+3. Click on the desired position to place the feature.
 
     [[file:files/add_windows_doors.png|800px]]
 
+    > **Tip:** It might be difficult to see where the features are on your floor plan after the walls have been drawn on top of it. To make it easier, on the top of the 2D View, you can choose to view or hide the floor plan or features for the current level. You can also use hotkeys to toggle visibility, `F` for floor plan and `G` for features.
+
+    [[file:files/view_floorplan.png|640px]]
+
 ## Add stairs
+
+There are no staircases on this floor plan, but we can insert one anyways.
 
 1. On the palette, click on `Stairs`.
 
 1. As you move the mouse on the 2D view, the staircase to be inserted moves with it, as does its counterpart on the 3D View.
 
-1. Click on the desired position to place the staircase.
+1. Choose a position for your staircase and click to place it.
 
     [[file:files/add_stairs.png|800px]]
 
 ## Add levels
 
-> **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
+We're pretty much done with Level 1. Let's add another level to our building so our staircase ends up somewhere.
 
 On the top of the 2D View, click on `+` to add a level. Alternatively, right-click the 2D View and choose `Add a level`.
 
 When a new level is added, a floor is automatically inserted. If there are stairs on the level below, a hole above the stairs will be cutout from the floor when the building is saved.
 
-> **Note: Currently, all floors are rectangular.**
+    > **Note: Currently, all floors are rectangular.**
 
-> **Tip:** All the walls from the level below are copied to the new level, with default materials. No other features are copied.
+    > **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
 
-[[file:files/add_level.png|800px]]
+    > **Tip:** All the walls from the level below are copied to the new level, with default materials. No other features are copied.
 
-# Edit features
+    [[file:files/add_level.png|800px]]
+
+# Edit your building
 
 **Note: Be careful when editing your building, the editor currently has no option to undo your actions.**
 
-> **Tip:** All measurements are in meters.
+    > **Tip:** All measurements are in meters.
+
+## Change levels
+
+Since we added a level, we were brought to the new level on the 2D view. You can go back to Level 1 by choosing it from the drop-down list on the top of the 2D View.
+
+    > **Tip:** The level currently selected in the 2D View will appear as semi-transparent on the 3D View and all levels below it will appear opaque. Levels above will be hidden - but keep in mind they are still part of your building!
+
+We can also edit some level configurations if we want.
+
+* Double-click the 2D View to open an inspector with level configuration options. Alternatively, right-click and choose `Open Level Inspector`.
+
+You might also have added more levels which you didn't want, or maybe made a mess in the current level and would like to start it over.
+
+* To delete the current level, either press the `-` button on the top of the 2D View, or right-click and choose `Delete Level`.
+
+    [[file:files/edit_level.png|640px]]
 
 ## Edit walls
+
+We drew a lot of walls earlier, but maybe they didn't turn out exactly the way we wanted. See below some ways in which you can edit the walls and try out each of them on the walls of your choice.
 
 * On the 2D View, click on the wall to be edited.
 
@@ -128,7 +162,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
     > **Tip:** By default, walls snap to 15° and 0.25 m increments. To override this, hold `Shift` while drawing.
 
-* Double-click a wall on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Wall Inspector`.
+* Double-click a wall on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Wall Inspector`. Edit some fields and press `Apply`.
 
 * To delete a wall, either press the `Delete` key while it is selected, or right-click it on the 2D View and choose `Delete`.
 
@@ -140,11 +174,13 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 ## Edit windows and doors
 
+Now let's play around with windows and doors. As you did for the walls, now try the different ways below in which you can edit these features. You can try making them fit more precisely the floor plan below.
+
 * On the 2D View, click on the feature to be edited.
 
-    a. Translate the feature by dragging it to a new position. Windows and doors automatically snap to walls.
+    a. Translate the feature by dragging it to a new position. Remember that windows and doors automatically snap to walls and it doesn't make much sense to have them detached from any walls, as they represent holes on a wall.
 
-    b. Rotate the feature by dragging its rotation handle.
+    b. Rotate the feature by dragging its rotation handle. However, currently, as long as they are attached to a wall, their orientation doesn't make a difference.
 
     c. Resize the feature's width by dragging one of the end points.
 
@@ -156,7 +192,9 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 ## Edit stairs
 
-* On the 2D View, click on the staircase to be edited.
+Finally, let's edit the staircase we inserted earlier. Since it is not on the floor plan, we can go creative and resize it as we want.
+
+* On the 2D View, click on the staircase to select it.
 
     a. Translate the staircase by dragging it to a new position.
 
@@ -164,33 +202,17 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
     c. Resize the staircase by dragging one of the end nodes.
 
-* Double-click a staircase on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Stairs Inspector`.
+* Double-click the staircase on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Stairs Inspector`.
 
-* To delete a staircase, either press the `Delete` key while it is selected, or right-click and choose `Delete`.
+* To delete the staircase, either press the `Delete` key while it is selected, or right-click and choose `Delete`.
 
 > **Tip:** On the 2D View, staircases are visible on both the level it starts at and the level it ends at.
 
 [[file:files/edit_stairs.png|640px]]
 
-## Edit levels
-
-* You can choose what level to see in the 2D View from the drop-down list on the top.
-
-    > **Tip:** The level currently selected in the 2D View will appear as semi-transparent on the 3D View and all levels below it will appear opaque. Levels above will be hidden - but keep in mind they are still part of your building!
-
-* Double-click the 2D View to open an inspector with level configuration options. Alternatively, right-click and choose `Open Level Inspector`.
-
-* To delete the current level, either press the `-` button on the top of the 2D View, or right-click and choose `Delete Level`.
-
-    [[file:files/edit_level.png|640px]]
-
-> **Tip:** On the top of the 2D View, you can choose to view or hide the floor plan or features for the current level.
-
-[[file:files/view_floorplan.png|640px]]
-
 ## Add colors and textures
 
-You can assign colors and textures to walls, floors and staircases. Currently, windows and doors are only holes on the wall and therefore cannot have materials.
+Now that everything is properly placed and sized, you can assign colors and textures to walls, floors and staircases. Remember that windows and doors are only holes on the wall and therefore cannot have materials.
 
 > **Tip:** The default color is white and the default texture is none.
 
