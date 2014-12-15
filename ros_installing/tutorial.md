@@ -25,7 +25,7 @@ See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for mo
 
 You can install Gazebo either from source or from pre-build Ubuntu debians.
 
-See [Install Gazebo](http://gazebosim.org/tutorials?cat=installation). If installing from source, be sure to build the `gazebo_X.Y` (X.Y being your desired version) branch.
+See [Install Gazebo](http://gazebosim.org/tutorials?cat=install). If installing from source, be sure to build the `gazebo_X.Y` (X.Y being your desired version) branch.
 
 #### Test that stand-alone Gazebo works
 

@@ -4,7 +4,7 @@ This tutorial describes the process of creating a building using the Building Ed
 
 ## Open the Building Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=installation).
+1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
 
 1.  Start up gazebo.
 
