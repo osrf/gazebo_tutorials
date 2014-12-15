@@ -40,17 +40,21 @@ You can import an existing floor plan for each level of your building as follows
 
     [[file:files/import_step_1.png|800px]]
 
-1. Step 1: To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter (`px/m`). There are two ways of setting the resolution:
+1. Step 2: To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter (`px/m`). There are two ways of setting the resolution:
 
     a. If you know your image's resolution, you can directly input the resolution on the dialog and click `Ok`.
 
-    b. If you don't know the resolution, but you know the real-world distance of two points in the image, you can click on the two points to draw a line on the image and input the line's length in meters on the dialog. The resolution will be automatically calculated for you based on the line you drew (as an example, see the orange line of 7.5 m below). You can then click `Ok`.
+    b. If you don't know the resolution, but you know the real-world distance of two points in the image, you can:
+        1. Click on the first point. As you move the mouse, an orange line will appear as shown below.
+        2. Click on the second point to complete the line.
+        3. The default length is 1 m. If the real-world distance of your line is different than that, type it in on the dialog. In the example below, it is 7,5 m. The resolution will be automatically calculated for you based on the line you drew.
+        4. You can then click `Ok`.
 
     [[file:files/import_step_2.png|800px]]
 
 1. The image will appear on the 2D View properly scaled.
 
-> Tip: You can add a floor plan for each level on your building once you've added more levels, by repeating the same process for each level.
+> **Tip:** You can add a floor plan for each level on your building once you've added more levels, by repeating the same process for each level.
 
 # Add features
 
@@ -64,9 +68,9 @@ You can import an existing floor plan for each level of your building as follows
 
 1. Double-click to end a wall without starting a new one.
 
-    > Tip: You can also right-click or press `Esc` to cancel drawing the current wall segment.
+    > **Tip:** You can right-click or press `Esc` to cancel drawing the current wall segment.
 
-    > Tip: By default, walls snap to 15° and 0.25 m increments and also to the end points of existing walls. To override this, hold `Shift` while drawing.
+    > **Tip:** By default, walls snap to 15° and 0.25 m increments and also to the end points of existing walls. To override this, hold `Shift` while drawing.
 
     [[file:files/add_walls.png|800px]]
 
@@ -80,7 +84,7 @@ You can import an existing floor plan for each level of your building as follows
 
 3. Click on the desired position to place the feature.
 
-    > Tip: Windows and doors automatically snap to walls as you hover over them. The distances to the ends of the wall are displayed as you move.
+    > **Tip:** Windows and doors automatically snap to walls as you hover over them. The distances to the ends of the wall are displayed as you move.
 
     [[file:files/add_windows_doors.png|800px]]
 
@@ -96,15 +100,15 @@ You can import an existing floor plan for each level of your building as follows
 
 ## Add levels
 
-> Tip: Before adding a level, make sure you have walls on the current level to build on top of.
+> **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
 
-On the top of the 2D View, click on `+` to add a level. You can also right-click the 2D View and choose `Add a level`.
+On the top of the 2D View, click on `+` to add a level. Alternatively, right-click the 2D View and choose `Add a level`.
 
 When a new level is added, a floor is automatically inserted. If there are stairs on the level below, a hole above the stairs will be cutout from the floor when the building is saved.
 
 > **Note: Currently, all floors are rectangular.**
 
-> Tip: All the walls from the level below are copied to the new level, with default materials. No other features are copied.
+> **Tip:** All the walls from the level below are copied to the new level, with default materials. No other features are copied.
 
 [[file:files/add_level.png|800px]]
 
@@ -112,7 +116,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 **Note: Be careful when editing your building, the editor currently has no option to undo your actions.**
 
-> Tip: All measurements are in meters.
+> **Tip:** All measurements are in meters.
 
 ## Edit walls
 
@@ -122,15 +126,15 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
     b. Resize or rotate the wall by dragging one of its end points.
 
-    > Tip: By default, walls snap to 15° and 0.25 m increments. To override this, hold `Shift` while drawing.
+    > **Tip:** By default, walls snap to 15° and 0.25 m increments. To override this, hold `Shift` while drawing.
 
-* Double-click a wall on the 2D View to open an inspector with configuration options. You can also right-click and choose `Open Wall Inspector`.
+* Double-click a wall on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Wall Inspector`.
 
 * To delete a wall, either press the `Delete` key while it is selected, or right-click it on the 2D View and choose `Delete`.
 
-    > Tip: Editing a wall takes attached walls into account.
+    > **Tip:** Editing a wall takes attached walls into account.
 
-    > Tip: Deleting a wall deletes all doors and windows attached to it.
+    > **Tip:** Deleting a wall deletes all doors and windows attached to it.
 
     [[file:files/edit_walls.png|640px]]
 
@@ -144,7 +148,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
     c. Resize the feature's width by dragging one of the end points.
 
-* Double-click a feature on the 2D View to open an inspector with configuration options. You can also right-click and choose `Open Window/Door Inspector`.
+* Double-click a feature on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Window/Door Inspector`.
 
 * To delete a feature, either press the `Delete` key while it is selected, or right-click it on the 2D View and choose `Delete`.
 
@@ -160,42 +164,46 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
     c. Resize the staircase by dragging one of the end nodes.
 
-* Double-click a staircase on the 2D View to open an inspector with configuration options. You can also right-click and choose `Open Stairs Inspector`.
+* Double-click a staircase on the 2D View to open an inspector with configuration options. Alternatively, right-click and choose `Open Stairs Inspector`.
 
 * To delete a staircase, either press the `Delete` key while it is selected, or right-click and choose `Delete`.
 
-> Tip: On the 2D View, staircases are visible on both the level it starts at and the level it ends at.
+> **Tip:** On the 2D View, staircases are visible on both the level it starts at and the level it ends at.
+
 
     [[file:files/edit_stairs.png|640px]]
+
 
 ## Edit levels
 
 * You can choose what level to see in the 2D View from the drop-down list on the top.
 
-    > Tip: The level currently selected in the 2D View will appear as semi-transparent on the 3D View, all levels below it will appear opaque and levels above will be hidden - but keep in mind it is still part of your building!
+    > **Tip:** The level currently selected in the 2D View will appear as semi-transparent on the 3D View and all levels below it will appear opaque. Levels above will be hidden - but keep in mind they are still part of your building!
 
-* Double-click the 2D View to open an inspector with level configuration options. You can also right-click and choose `Open Level Inspector`.
+* Double-click the 2D View to open an inspector with level configuration options. Alternatively, right-click and choose `Open Level Inspector`.
 
 * To delete the current level, either press the `-` button on the top of the 2D View, or right-click and choose `Delete Level`.
 
     [[file:files/edit_level.png|640px]]
 
-> Tip: On the top of the 2D View, you can choose to view or hide the floor plan or features for the current level.
+> **Tip:** On the top of the 2D View, you can choose to view or hide the floor plan or features for the current level.
+
 
     [[file:files/view_floorplan.png|640px]]
+
 
 
 ## Add colors and textures
 
 You can assign colors and textures to walls, floors and staircases. Currently, windows and doors are only holes on the wall and therefore cannot have materials.
 
-> Tip: The default color is white and the default texture is none.
+> **Tip:** The default color is white and the default texture is none.
 
 There are two ways to add colors and textures to your building:
 
 ### From inspectors
 
-You can add color and texture to walls, stairs and floors from the Wall Inspector, Stairs Inspector and Level Inspector respectively. Simply open the inspector, select your materials and press `Apply`.
+You can add color and texture to walls, stairs and floors from the `Wall Inspector`, `Stairs Inspector` and `Level Inspector` respectively. Simply open the inspector, select your materials and press `Apply`.
 
 [[file:files/color_texture_inspector.png|640px]]
 
@@ -217,9 +225,9 @@ Colors and textures can be chosen from the palette and assigned to items on your
 
     [[file:files/custom_color.png|640px]]
 
-> Tip: Each feature can have only one color and one texture. The same material is assigned to all faces of the feature.
+> **Tip:** Each feature can have only one color and one texture. The same material is assigned to all faces of the feature.
 
-> Note: Currently, it is not possible to assign custom textures from the GUI.
+> **Note: Currently, it is not possible to assign custom textures on the Building Editor.**
 
 # Saving your building
 
@@ -231,7 +239,7 @@ Before saving, give your building a name on the palette.
 
 On the top menu, choose `File`, then `Save As` (or hit `Ctrl+S`). A dialog will come up where you can choose the location for your model.
 
-> Tip: Under `Advanced Options` you can set some meta-data for your building.
+> **Tip:** Under `Advanced Options` you can set some meta-data for your building.
 
 [[file:files/save_dialog.png|300px]]
 
