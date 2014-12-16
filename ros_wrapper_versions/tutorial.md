@@ -130,7 +130,7 @@ The steps to use them are:
 #### I am not using ROS at all, which version should I use?
 
 If you don't need ROS support, the recommended version is the latest released version that can be
- [installed using the osrfoundation repo](http://gazebosim.org/tutorials/?tut=install).
+ [installed using the osrfoundation repo](http://gazebosim.org/tutorials/?cat=installation).
 
 #### I want to use the bullet/simbody/dart physics engine, which version of Gazebo should I use?
 

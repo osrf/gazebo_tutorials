@@ -1,5 +1,7 @@
 # Overview
 
+**Looking for the [C-API documentation](http://gazebosim.org/haptix/api)? Try [http://gazebosim.org/haptix/api](http://gazebosim.org/haptix/api).**
+
 This tutorial will explain how to use the C HAPTIX client library `haptix-comm` for
 requesting a description of the hand, sending new joint commands, and receiving state updates.
 

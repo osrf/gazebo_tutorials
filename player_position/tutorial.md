@@ -39,7 +39,7 @@ driver
 
 # Run
 
-Run the Gazebo
+Run Gazebo
 
 ~~~
 gazebo worlds/pioneer2dx.world
