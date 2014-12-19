@@ -14,28 +14,10 @@ cd; mkdir gazebo_camera; cd gazebo_camera
 
 # Player Config
 
-Copy the config script below into a file called `camera.cfg`
+Copy the config script below into a file called `camera.cfg`. The following script is also accessible via this [link](https://bitbucket.org/osrf/gazebo/raw/default/examples/player/camera/camera.cfg).
 
-~~~
-driver
-(
-  name "gazebo"
-  provides ["simulation:0"]
-  plugin "libgazebo_player"
-
-  # The name of a running Gazebo world, specified in a .world file
-  world_name "default"
-)
-
-driver
-(
-  name "gazebo"
-  provides ["camera:0"]
-
-  # The fully scoped camera sensor name.
-  camera_name "pioneer2dx::camera::link::camera"
-)
-~~~
+<include
+src='https://bitbucket.org/osrf/gazebo/raw/default/examples/player/camera/camera.cfg'/>
 
 # Run
 

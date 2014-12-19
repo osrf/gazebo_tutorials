@@ -14,28 +14,10 @@ cd; mkdir gazebo_position2d; cd gazebo_position2d
 
 # Player Config
 
-Copy the config script below into a file called `position.cfg`
+Copy the config script below into a file called `position2d.cfg`. The following script is also accessible via this [link](https://bitbucket.org/osrf/gazebo/raw/default/examples/player/position2d/position2d.cfg).
 
-~~~
-driver
-(
-  name "gazebo"
-  provides ["simulation:0"]
-  plugin "libgazebo_player"
-
-  # The name of a running Gazebo world, specified in a .world file
-  world_name "default"
-)
-
-driver
-(
-  name "gazebo"
-  provides ["position2d:0"]
-
-  # This name must match the name of a model in the "default" world
-  model_name "pioneer2dx"
-)
-~~~
+<include
+src='https://bitbucket.org/osrf/gazebo/raw/default/examples/player/position2d/position2d.cfg'/>
 
 # Run
 
@@ -48,7 +30,7 @@ gazebo worlds/pioneer2dx.world
 Run Player
 
 ~~~
-player position.cfg
+player position2d.cfg
 ~~~
 
 Run playerv

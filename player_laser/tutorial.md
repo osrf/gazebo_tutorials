@@ -14,28 +14,10 @@ cd; mkdir gazebo_laser; cd gazebo_laser
 
 # Player Config
 
-Copy the config script below into a file called `laser.cfg`
+Copy the config script below into a file called `laser.cfg`. The following script is also accessible via this [link](https://bitbucket.org/osrf/gazebo/raw/default/examples/player/laser/laser.cfg).
 
-~~~
-driver
-(
-  name "gazebo"
-  provides ["simulation:0"]
-  plugin "libgazebo_player"
-
-  # The name of a running Gazebo world, specified in a .world file
-  world_name "default"
-)
-
-driver
-(
-  name "gazebo"
-  provides ["laser:0"]
-
-  # The fully scoped laser sensor name.
-  laser_name "pioneer2dx::hokuyo::link::laser"
-)
-~~~
+<include
+src='https://bitbucket.org/osrf/gazebo/raw/default/examples/player/laser/laser.cfg'/>
 
 # Run
 
