@@ -1,6 +1,6 @@
 # Overview
 
-Gazebo is able to dynamically load models into simulation either programmatically or through the GUI. Models exist on your computer, after the have been downloaded or created by you. This tutorial describes Gazebo's model directory structure, and the necessary files within a model directory.
+Gazebo is able to dynamically load models into simulation either programmatically or through the GUI. Models exist on your computer, after they have been downloaded or created by you. This tutorial describes Gazebo's model directory structure, and the necessary files within a model directory.
 
 Models in Gazebo define a physical entity with dynamic, kinematic, and
 visual properties. In addition, a model may have one or more plugins, which

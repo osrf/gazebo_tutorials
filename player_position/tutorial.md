@@ -21,7 +21,7 @@ src='https://bitbucket.org/osrf/gazebo/raw/default/examples/player/position2d/po
 
 # Run
 
-Run the Gazebo
+Run Gazebo
 
 ~~~
 gazebo worlds/pioneer2dx.world
