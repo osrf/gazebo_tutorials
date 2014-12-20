@@ -303,9 +303,9 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
 
-# Atlas Simulation Interface 3.0.0
+# Atlas Simulation Interface 3.0.1
 
-This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.0 from BDI.
+This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.1 from BDI.
 
 DRCSim version 4.2 or greater is required.
 
