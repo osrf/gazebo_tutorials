@@ -352,7 +352,7 @@ Follow this following steps:
     roslaunch drcsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
     ~~~
 
-    Note that some of the launch files, e.g. `vrc_final_*.launch` launches `gzserver` only without the graphical client. To launch gazebo with both the server and the client, you can explicitly specify to use the `gazebo` command:
+    Note that some of the launch files, e.g. `vrc_final_*.launch` launch `gzserver` only without the graphical client. To launch gazebo with both the server and the client, you can explicitly specify to use the `gazebo` command:
 
     ~~~
     roslaunch drcsim_gazebo vrc_final_task1.launch model_args:="_v5" gzname:="gazebo"
