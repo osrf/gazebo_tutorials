@@ -202,6 +202,8 @@ The sample code given above will not work for Atlas v4 and v5 because these late
 
 <include from='/jointcommands.name.push_back("atlas::l_leg_hpz");/' to='/jointcommands.name.push_back("atlas::back_bkx");/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_ros_cmds_v4v5/drcsim_ros_cmds/files/publish_joint_commands_v4.cpp' />
 
+Next, make the ROS package as above. Note that if you downloaded the source code, you will have to either rename the file from `publish_joint_commands_v4.cpp` to `publish_joint_commands.cpp`. Alternatively, you can build a new executable from `publish_joint_commands_v4.cpp` by modifying `CMakeLists.txt`.
+
 To run the new joint publisher, follow the steps above, but start DRCSim with the following command to launch Atlas v4:
 
 ~~~
