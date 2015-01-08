@@ -29,8 +29,8 @@ Make sure you have already installed <tt>ros_control</tt>, <tt>ros_controllers</
 ## Add transmission elements to a URDF
 
 To use ros_control with your robot, you need to add some additional elements to your URDF.
-The <tt><transmission></tt> element is used to link actuators to joints, see the
-[<transmission> spec](http://ros.org/wiki/urdf/XML/Transmission) for exact XML format.
+The `<transmission>` element is used to link actuators to joints, see the
+[`<transmission>` spec](http://ros.org/wiki/urdf/XML/Transmission) for exact XML format.
 
 For the purposes of gazebo_ros_control in its current implementation, the only important information in these transmission tags are:
 
