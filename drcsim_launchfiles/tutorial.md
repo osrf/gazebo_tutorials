@@ -21,6 +21,14 @@ DRCSim supports 4 possible Atlas models, 3 supported hand models, and over 23 di
 ## Versions
 Boston Dynamics has released four versions of the Atlas robot: version 1, version 3, version 4, and version 5.
 
+**Version 1:** This is the first version of Atlas associated with the DRC program. This version was used by teams competing in the Virtual Robotics Challenge in June of 2013.
+
+**Version 3:** Atlas v3 represents the hardware teams received following completion of the Virtual Robotics Challenge. This is also the version that teams used during the DRC Trials competition in December of 2013.
+
+**Version 4:** Atlas v4 is completely untethered. This entailed a backpack redesign. DRC teams received this version of Atlas in late 2014.
+
+**Version 5:** The final version of Atlas was made available to teams in early 2015. This version is the same as version 4, except that the forearms are electric.
+
 [[file:files/versions.png|750px]]
 
 ## Hands
