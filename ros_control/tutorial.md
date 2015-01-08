@@ -73,7 +73,7 @@ The default behavior provides the following ros_control interfaces:
  * hardware_interface::EffortJointInterface
  * hardware_interface::VelocityJointInterface - *not fully implemented*
 
-### Advanced: custom gazebo\_ros_\control Simulation Plugins
+### Advanced: custom gazebo\_ros\_control Simulation Plugins
 
 The gazebo\_ros\_control Gazebo plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo and ros_control for simulating more complex mechanisms (nonlinear springs, linkages, etc).
 
