@@ -32,18 +32,18 @@ To use ros_control with your robot, you need to add some additional elements to 
 The `<transmission>` element is used to link actuators to joints, see the
 [`<transmission>` spec](http://ros.org/wiki/urdf/XML/Transmission) for exact XML format.
 
-For the purposes of gazebo_ros_control in its current implementation, the only important information in these transmission tags are:
+For the purposes of gazebo\_ros_control in its current implementation, the only important information in these transmission tags are:
 
  * `<joint name="">` - the name must correspond to a joint else where in your URDF
  * `<type>` - the type of transmission. Currently only "transmission_interface/SimpleTransmission" is implemented. (feel free to add more)
- * `<hardwareInterface>` - within the `<actuator>` tag, this tells the gazebo_ros_control plugin what hardware interface to load (position, velocity or effort interfaces). Currently only effort interfaces are implemented. (feel free to add more)
+ * `<hardwareInterface>` - within the `<actuator>` tag, this tells the gazebo\_ros_control plugin what hardware interface to load (position, velocity or effort interfaces). Currently only effort interfaces are implemented. (feel free to add more)
 
 The rest of the names and elements are currently ignored.
 
-## Add the gazebo_ros_control plugin
+## Add the gazebo\_ros_control plugin
 
 In addition to the transmission tags, a Gazebo plugin needs to be added to your URDF that actually parses the transmission tags and loads the appropriate hardware interfaces and controller manager.
-By default the gazebo_ros_control plugin is very simple, though it is also extensible via an additional plugin architecture to allow power users to create their own custom robot hardware interfaces between ros_control and Gazebo.
+By default the gazebo\_ros_control plugin is very simple, though it is also extensible via an additional plugin architecture to allow power users to create their own custom robot hardware interfaces between ros_control and Gazebo.
 
 The default plugin XML should be added to your URDF:
 
@@ -55,16 +55,16 @@ The default plugin XML should be added to your URDF:
 </gazebo>
 ~~~
 
-The gazebo_ros_control `<plugin>` tag also has the following optional child elements:
+The gazebo\_ros_control `<plugin>` tag also has the following optional child elements:
 
  * `<robotNamespace>`: The ROS namespace to be used for this instance of the plugin, defaults to robot name in URDF/SDF
  * `<controlPeriod>`: The period of the controller update (in seconds), defaults to Gazebo's period
  * `<robotParam>`: The location of the robot_description (URDF) on the parameter server, defaults to '/robot_description'
  * `<robotSimType>`: The pluginlib name of a custom robot sim interface to be used (see below for more details), defaults to 'DefaultRobotHWSim'
 
-### Default gazebo_ros_control Behavior
+### Default gazebo\_ros_control Behavior
 
-By default, without a `<robotSimType>` tag, gazebo_ros_control will attempt to get all of the information it needs to interface with a ros_control-based controller out of the URDF.
+By default, without a `<robotSimType>` tag, gazebo\_ros_control will attempt to get all of the information it needs to interface with a ros_control-based controller out of the URDF.
 This is sufficient for most cases, and good for at least getting started.
 
 The default behavior provides the following ros_control interfaces:
@@ -73,11 +73,11 @@ The default behavior provides the following ros_control interfaces:
  * hardware_interface::EffortJointInterface
  * hardware_interface::VelocityJointInterface - *not fully implemented*
 
-### Advanced: custom gazebo_ros_control Simulation Plugins
+### Advanced: custom gazebo\_ros_control Simulation Plugins
 
-The gazebo_ros_control Gazebo plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo and ros_control for simulating more complex mechanisms (nonlinear springs, linkages, etc).
+The gazebo\_ros_control Gazebo plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo and ros_control for simulating more complex mechanisms (nonlinear springs, linkages, etc).
 
-These plugins must inherit gazebo_ros_control::RobotHWSim which implements a simulated ros_control hardware_interface::RobotHW.
+These plugins must inherit `gazebo_ros_control::RobotHWSim` which implements a simulated ros_control hardware_interface::RobotHW.
 RobotHWSim provides API-level access to read and command joint properties in the Gazebo simulator.
 
 The respective RobotHWSim sub-class is specified in a URDF model and is loaded when the robot model is loaded.
@@ -117,7 +117,7 @@ Open your `rrbot.xacro` file and at the bottom of the file you should see:
   </transmission>
 ~~~
 
-You'll also see the gazebo_ros_control plugin in `rrbot.gazebo` that reads in all the `<transmission>` tags:
+You'll also see the gazebo\_ros_control plugin in `rrbot.gazebo` that reads in all the `<transmission>` tags:
 
 ~~~
 <gazebo>
