@@ -45,6 +45,9 @@ roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
 ~~~
 
 ### Create a ROS Node
+
+**Note: Atlas versions 4 and 5 require different joint names. See [Atlas v4 and v5 instructions](/tutorials?cat=drcsim&tut=drcsim_ros_cmds#Atlasv4andv5)**
+
 Copy and paste the following code as file
  `~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`
  with any text editor (e.g. gedit, vi, emacs)
