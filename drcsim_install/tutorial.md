@@ -303,9 +303,9 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
 
-# Atlas Simulation Interface 3.0.1
+# Atlas Simulation Interface 3.0.2
 
-This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.1 from BDI.
+This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.2 from BDI.
 
 DRCSim version 4.2 or greater is required.
 
@@ -313,7 +313,7 @@ Follow this following steps:
 
 1. Install DRCSim >= 4.2
 
-1. Copy BDI's `libAtlasSimInterface.so.3.0.1` file into the DRCSim install space, replacing the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.1` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.1`.
+1. Copy BDI's `libAtlasSimInterface.so.3.0.2` file into the DRCSim install space, replacing the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.2`.
 
     a. Source your ROS setup file. For example, if you are using ROS Indigo:
 
@@ -324,13 +324,13 @@ Follow this following steps:
     b. If you installed DRCSim from debian:
 
     ~~~
-    sudo cp libAtlasSimInterface.so.3.0.1 /opt/ros/$ROS_DISTRO/lib/libAtlasSimInterface3.so.3.0.1
+    sudo cp libAtlasSimInterface.so.3.0.2 /opt/ros/$ROS_DISTRO/lib/libAtlasSimInterface3.so.3.0.2
     ~~~
 
     c. If you installed DRCSim in a catkin workspace:
 
     ~~~
-    cp libAtlasSimInterface.so.3.0.1 <catkin_ws_path>/install/lib/libAtlasSimInterface3.so.3.0.1
+    cp libAtlasSimInterface.so.3.0.2 <catkin_ws_path>/install/lib/libAtlasSimInterface3.so.3.0.2
     ~~~
 
 1. The new interface needs `ulimit` set stack and core to unlimited:
