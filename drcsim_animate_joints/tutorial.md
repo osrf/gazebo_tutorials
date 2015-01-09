@@ -129,7 +129,7 @@ The sample code given above will not work for Atlas v4 and v5 because these late
 
 <include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.joint_names.append\("atlas::r_arm_wry2"\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
 
-and replace the joint position trajectories:
+and replace the joint trajectory positions:
 
 <include from='/        p.positions.append\(x1\)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
 
