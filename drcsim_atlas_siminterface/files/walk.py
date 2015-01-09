@@ -15,8 +15,8 @@ class AtlasWalk():
     def walk(self):
         # Initialize atlas mode and atlas_sim_interface_command publishers        
         self.mode = rospy.Publisher('/atlas/mode', String, None, False, \
-          True, None)
-        self.asi_command = rospy.Publisher('/atlas/atlas_sim_interface_command', AtlasSimInterfaceCommand, None, False, True, None)
+          True, None, queue_size=1)
+        self.asi_command = rospy.Publisher('/atlas/atlas_sim_interface_command', AtlasSimInterfaceCommand, None, False, True, None, queue_size=1)
         
         # Assume that we are already in BDI Stand mode
         
