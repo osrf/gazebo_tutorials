@@ -126,7 +126,7 @@ Now, modify the world file to remove the Atlas model. This is because the robot 
 
 Look for the `<model name='atlas'>` tag and remove it entirely (a few hundred lines of text).  
 
-***Note: Currently, loading a world that contains `<state>` tags is not working properly. Thus, you must also delete the `<state>` tag and all its child elements (everything from `<state>` until `</state>`). To edit the `atlas.world`:***
+***Note: Currently, loading a world that contains `<state>` tags is not working properly. Thus, you must also delete the `<state>` tag and all its child elements (everything from `<state>` until `</state>`).***
 
 
 Now, if you haven't done so already, stop the simulation (via `Ctrl+C` in the terminal where you ran `roslaunch`), and start it again:
