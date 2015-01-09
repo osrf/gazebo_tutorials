@@ -56,7 +56,7 @@ Type: sandia_hand_msgs/SimpleGraspSrv
 Args: grasp
 ~~~
 
-  The service type is [sandia_hand_msgs/SimpleGraspSrv](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
+  The service type is [sandia\_hand\_msgs/SimpleGraspSrv](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
 
 ~~~
 rosmsg show SimpleGrasp
