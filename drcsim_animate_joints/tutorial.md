@@ -73,9 +73,9 @@ Create an instantiation of a JointTrajectory message and add the time stamp and 
 
 Create the list of names of joints that will be controlled.
 
-<include from='/    n = 1500/' to='/1\*theta\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/    n = 3000/' to='/1\*theta\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
-Setup a for loop that runs for n=1500 times. It calculates joint angles at two different positions x1 and x2. There should be a position for each joint added above.
+Setup a for loop that runs for n=3000 times. It calculates joint angles at two different positions x1 and x2. There should be a position for each joint added above.
 
 <include from='/        p.positions.append\(x1\)/' to='/    jt.points.append\(p\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
