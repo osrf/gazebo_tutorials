@@ -129,34 +129,45 @@ The sample code given above will not work for Atlas v4 and v5 because these late
 
 <include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.joint_names.append\("atlas::r_arm_wry2"\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
 
-To run the new joint trajectory publisher, follow the steps above, but start DRCSim with the following command to launch Atlas v4:
+1. To run the new joint trajectory publisher, follow steps similar to above, but start DRCSim with the following command to launch Atlas v4:
 
-~~~
-VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v4"
-~~~
+    ~~~
+    VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v4"
+    ~~~
 
-Or you can launch Atlas v5:
+    Or you can launch Atlas v5:
 
-~~~
-VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v5"
-~~~
+    ~~~
+    VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v5"
+    ~~~
 
-In addition, you would need to put Atlas in User mode before running the joint trajectory publisher:
+1. Disable gravity by clicking on `World->Physics->gravity->z` and setting the value to `0.0`
+ or running the following command:
 
-~~~
-rostopic pub --once /atlas/control_mode std_msgs/String "User"
-~~~
+    ~~~
+    gz physics -g 0,0,0
+    ~~~
 
-Finally, in a separate terminal, run the modified `joint_animation.py` script that has the new joint names.
+1. Remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-~~~
-rosrun joint_animation_tutorial joint_animation.py
-~~~
+1. Reset the model poses by clicking `Edit->Reset Model Poses`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
 
-or if you downloaded the `joint_animation_v4.py` script, run the command with the new script:
+1. An extra step needed is to put Atlas in User mode before running the joint trajectory publisher:
 
-~~~
-rosrun joint_animation_tutorial joint_animation_v4.py
-~~~
+    ~~~
+    rostopic pub --once /atlas/control_mode std_msgs/String "User"
+    ~~~
+
+1. Finally, in a separate terminal, run the modified `joint_animation.py` script that has the new joint names.
+
+    ~~~
+    rosrun joint_animation_tutorial joint_animation.py
+    ~~~
+
+    or if you downloaded the `joint_animation_v4.py` script, run the command with the new script:
+
+    ~~~
+    rosrun joint_animation_tutorial joint_animation_v4.py
+    ~~~
 
 Note: At the time of writing, there is an issue setting the trajectory of Atlas v4 and v5's knee and ankle joints and thus the corresponding code has been commented out.

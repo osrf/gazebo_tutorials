@@ -27,12 +27,12 @@ def jointTrajectoryCommand():
     jt.joint_names.append("atlas::l_leg_hpz")
     jt.joint_names.append("atlas::l_leg_hpx")
     jt.joint_names.append("atlas::l_leg_hpy")
-    jt.joint_names.append("atlas::l_leg_kny")
-    jt.joint_names.append("atlas::l_leg_aky")
-    jt.joint_names.append("atlas::l_leg_akx")
-    jt.joint_names.append("atlas::r_leg_akx")
-    jt.joint_names.append("atlas::r_leg_aky")
-    jt.joint_names.append("atlas::r_leg_kny")
+#    jt.joint_names.append("atlas::l_leg_kny")
+#    jt.joint_names.append("atlas::l_leg_aky")
+#    jt.joint_names.append("atlas::l_leg_akx")
+#    jt.joint_names.append("atlas::r_leg_akx")
+#    jt.joint_names.append("atlas::r_leg_aky")
+#    jt.joint_names.append("atlas::r_leg_kny")
     jt.joint_names.append("atlas::r_leg_hpy")
     jt.joint_names.append("atlas::r_leg_hpx")
     jt.joint_names.append("atlas::r_leg_hpz")
@@ -51,7 +51,7 @@ def jointTrajectoryCommand():
     jt.joint_names.append("atlas::r_arm_wrx")
     jt.joint_names.append("atlas::r_arm_wry2")
 
-    n = 1500
+    n = 3000
     dt = 0.01
     rps = 0.05
     for i in range (n):
@@ -67,29 +67,29 @@ def jointTrajectoryCommand():
         p.positions.append(x2)
         p.positions.append(x2)
         p.positions.append(x1)
-        p.positions.append(x2)
         p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
+#        p.positions.append(x1)
+#        p.positions.append(x2)
+#        p.positions.append(x1)
+#        p.positions.append(x2)
+#        p.positions.append(x1)
+#        p.positions.append(x1)
         p.positions.append(x1)
         p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x2)
-        p.positions.append(x1)
-        p.positions.append(x1)
         p.positions.append(x2)
         p.positions.append(x1)
         p.positions.append(x1)
         p.positions.append(x1)
         p.positions.append(x2)
+        p.positions.append(x2)
+        p.positions.append(x2)
+        p.positions.append(x1)
+        p.positions.append(x1)
+        p.positions.append(x2)
+        p.positions.append(x1)
+        p.positions.append(x1)
+        p.positions.append(x1)
+        p.positions.append(x1)
         jt.points.append(p)
 
         # set duration
@@ -97,7 +97,7 @@ def jointTrajectoryCommand():
         rospy.loginfo("test: angles[%d][%f, %f]",n,x1,x2)
 
     pub.publish(jt)
-    rospy.spin()
+    #rospy.spin()
 
 if __name__ == '__main__':
     try:
