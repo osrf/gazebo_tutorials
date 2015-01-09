@@ -48,6 +48,7 @@ To get more information on the type of service offered, type
 rosservice info /sandia_hands/l_hand/simple_grasp
 ~~~
 with the following output:
+
 ~~~
 Node: /sandia_hands/l_hand/simple_grasp_left
 URI: rosrpc://lcp1:37083
@@ -61,6 +62,7 @@ Args: grasp
 rosmsg show SimpleGrasp
 ~~~
 with the following output:
+
 ~~~
 [sandia_hand_msgs/SimpleGrasp]:
 string name
