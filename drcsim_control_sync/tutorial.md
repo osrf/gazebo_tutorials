@@ -100,7 +100,9 @@ In a separate terminal, start the mock-controller:
 rosrun control_synchronization_tutorial my_atlas_controller
 ~~~
 
-To view synchronization status, rxplot will be used. To install rxplot:
+To view synchronization status, `rxplot`  or `rqt_plot` can be used.
+
+To use `rxplot` (deprecated):
 
 ~~~
 # depending on your ROS version
@@ -115,12 +117,15 @@ rxplot -p 5 -b 10 /atlas/controller_statistics/command_age /atlas/controller_sta
 ~~~
 
 Or alternatively with `rqt_plot`, install by:
+
 ~~~
 # depending on your ROS version
 sudo apt-get install ros-hydro-rqt-plot
 sudo apt-get install ros-indigo-rqt-plot
 ~~~
+
 and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
+
 ~~~
 rqt_plot /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
 ~~~

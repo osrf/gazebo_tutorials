@@ -89,9 +89,13 @@ To navigate using a wheeled mouse:
 
 Now we will add sensors to visualize. Click 'Add' to add a new item and add 'rviz > Camera'. Under the Camera item in the displays window, click the empty space to the right of 'Image Topic' and an empty field should appear. Select or type `/multisense_sl/camera/left/image_raw`. You should now see the camera video feed in a small frame. Note that rviz displays an overlay of the robot model on the camera image, which may cause circles to appear in the camera images. The overlays can be turned off by setting the Camera > Overlay Alpha to 1.0. Note: The camera images may appear grey as there is nothing in front of Atlas so try dropping a box in front of the robot to see it in the camera feed.
 
+  **For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), the camera topic namespace has changed from `/multisense_sl/` to `/multisense/`.
+
 [[file:files/Rviz_atlas_with_camera_2.7.png|640px]]
 
 Now add a LaserScan using a similar method as the camera, and change the 'Topic' to `/multisense_sl/laser/scan`. Again, to see the laser scan visualization in rviz, drop a box in front of the robot to see red points rendered over the box as it falls.
+
+  **For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), the laser topic has changed from `/multisense_sl/laser/scan` to `/multisense/lidar_scan`.
 
 Poke around in rviz and add different sensors or robot information. TF visualizes the joint transformations, Map visualizes a 2D collision map, PointCloud(2) visualizes depth information from sensors like a Microsoft Kinect.
 
@@ -132,6 +136,13 @@ We will record the joint states, cameras, laser and [tf](http://www.ros.org/wiki
 ~~~
 rosbag record -O /tmp/ROS.bag /tf /atlas/joint_states /multisense_sl/camera/left/image_raw /multisense_sl/camera/left/camera_info /multisense_sl/laser/scan
 ~~~
+
+  **For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), use the following rosbag command instead:
+
+~~~
+rosbag record -O /tmp/ROS.bag /tf /atlas/joint_states /multisense/camera/left/image_raw /multisense/camera/left/camera_info /multisense/lidar_scan
+~~~
+
 
 After a while, stop the rosbag recording by pressing Control + C in its terminal.
 

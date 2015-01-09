@@ -87,18 +87,60 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
 1. We also need to tell Gazebo that it should load the overlay plugin.
 
-    ~~~
-    gedit ~/.gazebo/gui.ini
-    ~~~
+    There are two methods to accomplish this.
 
-    Add the following lines
+    1. SDF world file:
 
-    ~~~
-    [overlay_plugins]
-    filenames=libgui_example_spawn_widget.so
-    ~~~
+        1. Install the plugin into a common search path, such as `/usr/local/lib`, or into one of the paths specified by the `GAZEBO_PLUGIN_PATH` library.
+
+        1. Modify a world SDF file to contain the GUI plugin. For example:
+
+            ~~~
+            <?xml version="1.0" ?>
+            <sdf version="1.5">
+              <world name="default">
+            
+                <gui>
+                  <plugin name="sample" filename="libgui_example_spawn_widget.so"/>
+                </gui>
+            
+                <!-- A global light source -->
+                <include>
+                  <uri>model://sun</uri>
+                </include>
+                <!-- A ground plane -->
+                <include>
+                  <uri>model://ground_plane</uri>
+                </include>
+              </world>
+            </sdf>
+            ~~~
+
+    1. GUI INI file:
+
+        1. Modify the ~/.gazebo/gui.ini file:
+
+            ~~~
+            gedit ~/.gazebo/gui.ini
+            ~~~
+
+            Add the following lines
+
+            ~~~
+            [overlay_plugins]
+            filenames=libgui_example_spawn_widget.so
+            ~~~
 
 1. Now when Gazebo is run, a button should appear in the upper left of the render window.
+
+
+    If you created a custom SDF world file with with GUI plugin:
+
+    ~~~
+    gazebo spawn_widget_example.world
+    ~~~
+
+    or if you modified `~/.gazebo/gui.ini`
 
     ~~~
     gazebo

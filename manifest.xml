@@ -5,18 +5,61 @@
     <!-- ****************** -->
     <!-- Beginner tutorials -->
 
-    <tutorial title="Install" ref='install'>
-      <markdown version="1.9">install/tutorial_1-9.md</markdown>
-      <markdown version="2.2">install/tutorial_2-2.md</markdown>
-      <markdown version="3.0">install/tutorial_3-0.md</markdown>
-      <markdown version="4.0">install/tutorial_4-0.md</markdown>
-      <description>Installation instruction.</description>
+    <tutorial title="Ubuntu" ref='install_ubuntu'>
+      <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
+      <description>Installation instructions for Ubuntu using packages</description>
       <tags>
         <tag>install</tag>
       </tags>
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Debian, Fedora or Arch" ref='install_other_linux'>
+      <markdown version="4.0">install_other_linux/tutorial_4-0.md</markdown>
+      <description>
+	Installation instructions for major linux distributions (non Ubuntu). Currently,
+	Debian, Fedora or Arch Linux.
+      </description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Mac" ref='install_on_mac'>
+      <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
+      <description>Installation instructions for Mac installations using homebrew</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Old versions (prior to gazebo4)" ref='install'>
+      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
+      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
+      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
+      <markdown version="4.0">install_old_versions/tutorial_4-0.md</markdown>
+      <description>Installation instructions for version prior to 4.0 of Gazebo</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
+      <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
+      <description>
+       Installation instructions for building a gazebo application using the
+       source code. For user who want to contribute with code patches or pull
+       requests.
+      </description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+ 
     <tutorial title="Quick Start" ref='quick_start'>
       <markdown version="1.9+">quick_start/tutorial.md</markdown>
       <description>Simple and fast introduction to Gazebo.</description>
@@ -94,9 +137,27 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model structure and requirements" ref='model_structure'>
+      <markdown version="1.9+">model_structure/tutorial.md</markdown>
+      <description>Describes how Gazebo finds and load models, and requirements for creating a model.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="How to contribute a model" ref='model_contrib'>
+      <markdown version="1.9+">model_contrib/tutorial.md</markdown>
+      <description>Describes how add a new model to the Gazebo model database.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Sensor Noise Model" ref='sensor_noise'>
       <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
       <description>How to add noise to sensors</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Camera Distortion" ref='camera_distortion'>
+      <markdown version="5.0+">camera_distortion/tutorial.md</markdown>
+      <description>How to add distortion to cameras.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -168,6 +229,12 @@
       <markdown version="5+">model_population/tutorial.md</markdown>
       <description>Automatically create a collection of identical models.</description>
       <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Building Editor" ref="building_editor">
+      <markdown version="5+">building_editor/tutorial.md</markdown>
+      <description>Create multi-level buildings without having to write code.</description>
+      <skill>beginner</skill>
     </tutorial>
 
     <!-- ********************** -->
@@ -268,6 +335,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Using the RobotiQ 3-Finger Adaptive Robot Gripper" ref='drcsim_robotiq_hand'>
+      <markdown version="1.9+">drcsim_robotiq_hand/tutorial.md</markdown>
+      <description>How to grasp and view the state while using the 3-Finger gripper grom RobotiQ</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -337,6 +410,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Launchfile options" ref='drcsim_launchfiles'>
+      <markdown version="4.2+">drcsim_launchfiles/tutorial.md</markdown>
+      <description>A guide to launching DRCSim with different Atlas versions, hand options, and world files.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
       <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
       <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
@@ -372,7 +451,7 @@
       <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
-    
+
     <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
       <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
       <description>How to send desired grasp pose to Sandia hands mounted on the Atlas robot through ROS.</description>
@@ -409,7 +488,7 @@
       <skill>intermediate</skill>
     </tutorial>
 
-	<tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
+    <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
       <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
       <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
@@ -471,21 +550,72 @@
         <skill>advanced</skill>
     </tutorial>
 
-
     <tutorial title="GazeboJs models" ref='gazebojs_models'>
         <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
         <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
         <skill>advanced</skill>
     </tutorial>
+    
+    <tutorial title="GazeboJs hydra publisher" ref='hydra_gzjs_pub'>
+        <markdown version="4.0+">hydra_gzjs_pub/tutorial.md</markdown>
+        <description>Hydra publisher using node-sixense and GazeboJs </description>
+        <skill>beginner</skill>
+    </tutorial>
 
+    <!-- HAPTIX -->
+    <tutorial title="HAPTIX C API" ref='haptix_comm'>
+      <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
+      <description>This tutorial describes how to use the C API for creating a
+        hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX software installation" ref='haptix_install'>
+      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
+      <description>This tutorial describes how to install Gazebo and the client
+        libraries SDK for the HAPTIX project.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Matlab API" ref='haptix_matlab'>
+      <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
+      <description>This tutorial describes how to use the Matlab interface for
+        creating a hand controller.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
+      <markdown version="4.0+">haptix_tactors/tutorial.md</markdown>
+      <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
+      <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
+      <description>This tutorial describes how to control arm position and grasps using a keyboard, mice, or mixer board.</description>
+      <skill>beginner</skill>
+    </tutorial>
 
   </tutorials>
 
   <categories>
+    <category title="Installation" skill="beginner" ref="install">
+      <description>Instructions to install Gazebo on all the plaforms supported: major linux distributions and Mac (windows is still under development).</description>
+      <tutorials>
+        <tutorial>install_ubuntu</tutorial>
+        <tutorial>install_other_linux</tutorial>
+        <tutorial>install_on_mac</tutorial>
+
+        <!-- keep name for historical reasons -->
+        <tutorial>install</tutorial>
+
+        <tutorial>install_from_source</tutorial>
+      </tutorials>
+    </category>
+
     <category title="Get Started" skill="beginner" ref="get_started">
       <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each category to the left presents a collection of relevant tutorials.</description>
       <tutorials>
-        <tutorial>install</tutorial>
         <tutorial>quick_start</tutorial>
         <tutorial>components</tutorial>
         <tutorial>architecture</tutorial>
@@ -496,6 +626,8 @@
     <category title="Build a Robot" skill="beginner" ref="build_robot">
       <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
       <tutorials>
+        <tutorial>model_structure</tutorial>
+        <tutorial>model_contrib</tutorial>
         <tutorial>build_model</tutorial>
         <tutorial>build_robot</tutorial>
         <tutorial>import_mesh</tutorial>
@@ -515,6 +647,7 @@
         <tutorial>modifying_world</tutorial>
         <tutorial>dem</tutorial>
         <tutorial>model_population</tutorial>
+        <tutorial>building_editor</tutorial>
       </tutorials>
     </category>
 
@@ -541,6 +674,7 @@
       <tutorials>
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
+        <tutorial>camera_distortion</tutorial>
       </tutorials>
     </category>
 
@@ -622,6 +756,7 @@
       <description>DARPA Robotics Challenge specific tutorials.</description>
       <tutorials>
         <tutorial>drcsim_install</tutorial>
+        <tutorial>drcsim_launchfiles</tutorial>
         <tutorial>drcsim_animate_joints</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
@@ -639,6 +774,7 @@
         <tutorial>drcsim_control_sync</tutorial>
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
+        <tutorial>drcsim_robotiq_hand</tutorial>
       </tutorials>
     </category>
 
@@ -648,10 +784,22 @@
         <tutorial>gazebojs_install</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
-        <tutorial>gazebojs_models</turorial>
-
+        <tutorial>gazebojs_models</tutorial>
+        <tutorial>hydra_gzjs_pub</tutorial>
       </tutorials>
     </category>
+
+    <category title="HAPTIX" skill="advanced" ref="haptix">
+      <description>HAPTIX specific tutorials.</description>
+      <tutorials>
+        <tutorial>haptix_install</tutorial>
+        <tutorial>haptix_teleop</tutorial>
+        <tutorial>haptix_comm</tutorial>
+        <tutorial>haptix_matlab</tutorial>
+        <tutorial>haptix_tactors</tutorial>
+      </tutorials>
+    </category>
+
   </categories>
 
 </content>

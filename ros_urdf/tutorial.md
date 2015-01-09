@@ -428,7 +428,10 @@ Again, similar to `<gazebo>` elements for `<robot>` and `<link>`, any arbitrary 
 
 With Gazebo installed, an easy tool exists to check if your URDF can be properly converted into a SDF. Simply run the following command:
 
+      # gazebo2 and below
       gzsdf print MODEL.urdf
+      # gazebo3 and above
+      gz sdf -p MODEL.urdf
 
 This will show you the SDF that has been generated from your input URDF as well as any warnings about missing information required to generate the SDF.
 

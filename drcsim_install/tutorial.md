@@ -84,7 +84,7 @@ There are several ways of getting a working gazebo installation to use with drcs
 1. Install using apt-get from the OSRF repository
 2. Install gazebo from source
 
-Both are very well documented in the [Gazebo Installation](http://gazebosim.org/tutorials?tut=install&cat=get_started) page.
+Both are very well documented in the [Gazebo Installation](http://gazebosim.org/tutorials?cat=install) page.
 
 ### Ubuntu and ROS Hydro
 
@@ -143,9 +143,9 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                                 ros-hydro-cmake-modules
 
         # Install drcsim's dependencies
-        sudo apt-get install -y cmake debhelper                          \
-                             ros-hydro-std-msgs ros-hydro-common-msgs  \
-                             ros-hydro-image-common ros-hydro-geometry \
+        sudo apt-get install -y cmake debhelper                         \
+                             ros-hydro-std-msgs ros-hydro-common-msgs   \
+                             ros-hydro-image-common ros-hydro-geometry  \
                              ros-hydro-pr2-controllers                  \
                              ros-hydro-geometry-experimental            \
                              ros-hydro-robot-state-publisher            \
@@ -153,7 +153,12 @@ Here we'll explain how to build drcsim from source. You will need a working inst
                              ros-hydro-image-transport-plugins          \
                              ros-hydro-compressed-depth-image-transport \
                              ros-hydro-compressed-image-transport       \
-                             ros-hydro-theora-image-transport
+                             ros-hydro-theora-image-transport           \
+                             ros-hydro-ros-controllers                  \
+                             ros-hydro-moveit-msgs                      \
+                             ros-hydro-joint-limits-interface           \
+                             ros-hydro-transmission-interface           \
+                             ros-hydro-laser-assembler
 
 1. Create the catkin workspace
 Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will be included into the workspace.
@@ -163,20 +168,13 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          cd /tmp/ws/src
 
          # Download needed software
-         git clone https://github.com/osrf/gazebo_ros_pkgs-current.git
+         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
          hg clone https://bitbucket.org/osrf/osrf-common
          hg clone https://bitbucket.org/osrf/sandia-hand
          hg clone https://bitbucket.org/osrf/drcsim
 
-         # We don't need the gazebo_ros_control package
-         touch gazebo_ros_pkgs-current/gazebo_ros_control/CATKIN_IGNORE
-
          # Source ros distro's setup.bash
-         source /opt/ros/hydro/setup.bash   # hydro or hydro
-
-         # use CMakeLists.txt from drcsim (replace default caktin toplevel cmake file)
-         cd /tmp/ws/src
-         ln -s drcsim/CMakeLists.txt .
+         source /opt/ros/hydro/setup.bash
 
          # Build and install into workspace
          cd /tmp/ws
@@ -226,7 +224,7 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 
         # Install gazebo-ros-pkgs
         sudo apt-get install -y libtinyxml-dev                 \
-                                ros-indigo-opencv2             \
+                                ros-indigo-vision-opencv       \
                                 ros-indigo-angles              \
                                 ros-indigo-cv-bridge           \
                                 ros-indigo-driver-base         \
@@ -251,16 +249,18 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 
         # Install drcsim's dependencies
         sudo apt-get install -y cmake debhelper                          \
-                             ros-indigo-std-msgs ros-hydro-common-msgs  \
-                             ros-indigo-image-common ros-hydro-geometry \
-                             ros-indigo-pr2-controllers                  \
+                             ros-indigo-std-msgs ros-indigo-common-msgs  \
+                             ros-indigo-image-common ros-indigo-geometry \
+                             ros-indigo-ros-control                      \
                              ros-indigo-geometry-experimental            \
                              ros-indigo-robot-state-publisher            \
                              ros-indigo-image-pipeline                   \
                              ros-indigo-image-transport-plugins          \
                              ros-indigo-compressed-depth-image-transport \
                              ros-indigo-compressed-image-transport       \
-                             ros-indigo-theora-image-transport
+                             ros-indigo-theora-image-transport           \
+                             ros-indigo-laser-assembler
+
 
 1. Create the catkin workspace
 Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will be included into the workspace.
@@ -270,7 +270,7 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          cd /tmp/ws/src
 
          # Download needed software
-         git clone https://github.com/osrf/gazebo_ros_pkgs-current.git
+         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
          hg clone https://bitbucket.org/osrf/osrf-common
          hg clone https://bitbucket.org/osrf/sandia-hand
          hg clone https://bitbucket.org/osrf/drcsim
@@ -280,15 +280,8 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
          git checkout indigo-devel
          cd ..
 
-         # We don't need the gazebo_ros_control package
-         touch gazebo_ros_pkgs-current/gazebo_ros_control/CATKIN_IGNORE
-
          # Source ros distro's setup.bash
          source /opt/ros/indigo/setup.bash
-
-         # use CMakeLists.txt from drcsim (replace default caktin toplevel cmake file)
-         cd /tmp/ws/src
-         ln -s drcsim/CMakeLists.txt .
 
          # Build and install into workspace
          cd /tmp/ws
@@ -310,17 +303,17 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
 Please help us by contributing patches and configuration to build from source on your favorite platform!
 
-# Atlas Simulation Interface 2.10.2
+# Atlas Simulation Interface 3.0.2
 
-This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 2.10.2 from BDI.
+This section is for DRC competitors who have received the Atlas Simulation Interfaces library version 3.0.2 from BDI.
 
-DRCSim version 4.0 or greater is required.
+DRCSim version 4.2 or greater is required.
 
 Follow this following steps:
 
-1. Install DRCSim >= 4.0
+1. Install DRCSim >= 4.2
 
-1. Copy BDI's `libAtlasSimInterface.so.2.10.2` file over the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.2.10.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.2.10.2`.
+1. Copy BDI's `libAtlasSimInterface.so.3.0.2` file into the DRCSim install space, replacing the library provided by DRCSim. BDI provides the `libAtlasSimInterface.so.3.0.2` to DRC competitors. If you are a DRC competitor with an Atlas robot, please contact BDI to acquire `libAtlasSimInterface.so.3.0.2`.
 
     a. Source your ROS setup file. For example, if you are using ROS Indigo:
 
@@ -329,29 +322,37 @@ Follow this following steps:
     ~~~
 
     b. If you installed DRCSim from debian:
-    
+
     ~~~
-    sudo cp libAtlasSimInterface.so.2.10.2 /opt/ros/$ROS_DISTRO/libAtlasSimInterface2.so.2.10.2
-    sudo cp libqpOASES_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
-    sudo cp libQuadProg_x86-64_gcc46_noqt.so /opt/ros/$ROS_DISTRO/lib/
+    sudo cp libAtlasSimInterface.so.3.0.2 /opt/ros/$ROS_DISTRO/lib/libAtlasSimInterface3.so.3.0.2
     ~~~
 
     c. If you installed DRCSim in a catkin workspace:
-    
+
     ~~~
-    cp libAtlasSimInterface.so.2.10.2 <catkin_ws_path>/install/lib/
-    cp libqpOASES_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
-    cp libQuadProg_x86-64_gcc46_noqt.so <catkin_ws_path>/install/lib/
+    cp libAtlasSimInterface.so.3.0.2 <catkin_ws_path>/install/lib/libAtlasSimInterface3.so.3.0.2
     ~~~
 
-1. The new interface needs `ulimit` set:
+1. The new interface needs `ulimit` set stack and core to unlimited:
 
     ~~~
     ulimit -s unlimited
+    ulimit -c unlimited
     ~~~
 
 1. Launch drcsim as usual
 
     ~~~
-    roslaunch drcmsim_gazebo atlas_v3.launch
+    roslaunch drcsim_gazebo atlas.launch model_args:="_v5"
     ~~~
+
+    Optionally add `--verbose` flag to get more console outputs:
+
+    ~~~
+    roslaunch drcsim_gazebo atlas.launch model_args:="_v5" extra_gazebo_args:="--verbose"
+    ~~~
+
+    Note that some of the launch files, e.g. `vrc_final_*.launch`, launch `gzserver` only without the graphical client. To launch gazebo with both the server and the client, you can explicitly specify to use the `gazebo` command:
+
+    ~~~
+    roslaunch drcsim_gazebo vrc_final_task1.launch model_args:="_v5" gzname:="gazebo"

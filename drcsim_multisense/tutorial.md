@@ -38,6 +38,11 @@ More importantly, repeat the steps to setup camera and laser visualization but s
   - camera image streams: `/multisense_sl/camera/left/image_raw` and `/multisense_sl/camera/right/image_raw` for left and right eye.
   - LIDAR data stream: `/multisense_sl/laser/scan`
 
+**For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), the camera and laser topics have changed:
+
+  - camera image streams: `/multisense/camera/left/image_raw` and `/multisense/camera/right/image_raw` for left and right eye.
+  - LIDAR data stream: `/multisense/lidar_scan`
+
 In addition to visualizing camera images and laser data, to visualize stereo point cloud, click `Add` button under the rviz *Displays* panel, select `PointCloud2` then click `OK`.  Set the Topic for the newly added PointCloud2 visual as `/multisense_sl/camera/points2`.  Now drop a box in front of the robot to see the point cloud visualization in rviz.
 
 [[file:files/Atlas_rviz.png|640px]]
@@ -47,6 +52,10 @@ In addition to visualizing camera images and laser data, to visualize stereo poi
 To set rotation speed commands to the LIDAR spindle, open a new terminal and type
 
     rostopic pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'
+
+**For drcsim >= 4.1.0**: If you are using atlas versions >= v3 (e.g. atlas\_v3.launch), use the following command instead:
+
+    rostopic pub --once /multisense/set_spindle_speed std_msgs/Float64 '{data: 3.0}'
 
 Setting `Decay Time` under `LaserScan` in the rviz display panel to 5 (seconds), and change the laser scan data to green in rviz yields:
 

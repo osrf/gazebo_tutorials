@@ -8,7 +8,7 @@ This tutorial describes the process of creating a world with both static and dyn
 
 # Setup
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?tut=install).
+1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
 
 1.  Create a working directory for this tutorial:
 
@@ -68,7 +68,7 @@ Gazebo's model database is a repository of all types of models including robots,
 
 The pose of each model may be altered through the translate and rotate tools:
 
-[[file:files/Empty_translate_rotate_highlighted.png|640px]]
+[[file:files/empty_translate_rotate_highlighted.png|640px]]
 
 ## Translation
 The translate tools allows you to move the object along the x,y, and z axes. Select this tool now, and then move an object by left-pressing and dragging the object.

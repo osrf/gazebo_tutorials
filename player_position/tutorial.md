@@ -1,8 +1,8 @@
 # Introduction
 
 [Player](http://playerstage.sourceforge.net) is a robot control framework,
-please visit their [webiste](http://playerstage.sourceforge.net) for more
-infomartion.
+please visit their [website](http://playerstage.sourceforge.net) for more
+infomation.
 
 This tutorial covers connecting the position2d, laser, and camera Player interfaces to Gazebo. 
 

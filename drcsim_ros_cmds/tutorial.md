@@ -68,7 +68,7 @@ roscd drcsim_joint_commands_tutorial
 make
 ~~~
 
-If you have gazebo installed in a non-standard location (such as a local install), you must set the PKG_CONFIG_PATH appropriately. For example, use the following if you have installed into ~/local:
+If you have gazebo installed in a non-standard location (such as a local install), you must set the `PKG_CONFIG_PATH` appropriately. For example, use the following if you have installed into ~/local:
 
 ~~~
 roscd drcsim_joint_commands_tutorial

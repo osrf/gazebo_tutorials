@@ -76,4 +76,4 @@ URL parameter.
 For example, let us suppose you have made modification to the install
 tutorial in a branch called `my_install`. Once this branch has been pushed
 to bitbucket, you may visualize your work with
-`http://gazebosim.org/tutorials?tut=install&branch=my_install`.
+`http://gazebosim.org/tutorials?tut=install_ubuntu&branch=my_install`.
