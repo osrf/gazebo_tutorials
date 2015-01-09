@@ -121,3 +121,42 @@ The main method of the rospy node. It prevents the node from executing code if t
     ~~~
 
     The DRC robot should move according to the published ROS JointTrajectory message.
+
+
+## Atlas v4 and v5
+
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, replace the joint names in `joint_animation.py` with the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_animate_joints/files/joint_animation_v4.py) of the code):
+
+<include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.joint_names.append\("atlas::r_arm_wry2"\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
+
+To run the new joint trajectory publisher, follow the steps above, but start DRCSim with the following command to launch Atlas v4:
+
+~~~
+VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v4"
+~~~
+
+Or you can launch Atlas v5:
+
+~~~
+VRC_CHEATS_ENABLED=1 roslaunch drcsim_gazebo atlas.launch model_args:="_v5"
+~~~
+
+In addition, you would need to put Atlas in User mode before running the joint trajectory publisher:
+
+~~~
+rostopic pub --once /atlas/control_mode std_msgs/String "User"
+~~~
+
+Finally, in a separate terminal, run the modified `joint_animation.py` script that has the new joint names.
+
+~~~
+rosrun joint_animation_tutorial joint_animation.py
+~~~
+
+or if you downloaded the `joint_animation_v4.py` script, run the command with the new script:
+
+~~~
+rosrun joint_animation_tutorial joint_animation_v4.py
+~~~
+
+Note: At the time of writing, there is an issue setting the trajectory of Atlas v4 and v5's knee and ankle joints and thus the corresponding code has been commented out.
