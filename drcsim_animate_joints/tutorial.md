@@ -157,7 +157,7 @@ and replace the joint trajectory positions:
 
 1. Remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-1. Reset the model poses by clicking `Edit->Reset Model Poses`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
+1. Reset the model poses by clicking `Edit->Reset World`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
 
 1. An extra step needed is to put Atlas in User mode before running the joint trajectory publisher:
 
