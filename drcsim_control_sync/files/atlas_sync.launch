@@ -8,9 +8,15 @@
   <param name="/atlas/delay_max_per_step" type="double" value="0.1"/>
 
   <arg name="gzname" default="gazebo"/>
+  <arg name="hand_suffix" default=""/>
+  <arg name="extra_gazebo_args" default="-q" />
+  <arg name="model_args" default="" />
   <!-- default launch file for starting an Atlas robot -->
   <include file="$(find drcsim_gazebo)/launch/atlas.launch">
     <arg name="gzname" value="$(arg gzname)"/>
     <arg name="gzworld" value="atlas.world"/>
+    <arg name="hand_suffix" value="$(arg hand_suffix)"/>
+    <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+    <arg name="model_args" value="$(arg model_args)"/>
   </include>
 </launch>
