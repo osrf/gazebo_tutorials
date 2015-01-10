@@ -34,8 +34,8 @@ The robot will execute a simple 5 step behavior.
 
 # 5steps.py Explained
 
-Examining [5steps.py](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2),
-
+Examining [5steps](https://bitbucket.org/osrf/drcsim/src/218ab5bd75c05f1dd31c28a714912a266f7c0acf/drcsim_gazebo/scripts/5steps.py?at=drcsim_4.2) (or [5steps.py](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2) for DRC v3.1 and below)
+ 
 ~~~
 mode.publish("harnessed")
 control_mode.publish("stand-prep")
