@@ -91,7 +91,7 @@ chmod +x ~/ros/atlas_sim_interface_tutorial/scripts/walk.py
 Start up simulation
 
 ~~~
-roslaunch drcsim_gazebo atlas_sandia_hands.launch
+roslaunch drcsim_gazebo atlas.launch hand_suffix:=_sandia_hands
 ~~~
 
 Rosrun the executable, specifying static if desired
