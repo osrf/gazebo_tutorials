@@ -25,7 +25,7 @@ Use [roscreate-pkg](http://ros.org/wiki/roscreate) to create a ROS package for t
 
 ~~~
 cd ~/ros
-roscreate-pkg joint_animation_tutorial roscpp trajectory_msgs
+roscreate-pkg joint_animation_tutorial rospy trajectory_msgs std_msgs
 cd joint_animation_tutorial
 mkdir scripts
 cd scripts
@@ -125,16 +125,12 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 # Atlas v4 and v5
 
-The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, replace the joint names in `joint_animation.py` with the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_animate_joints/files/joint_animation_v4.py) of the code):
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code:
 
-<include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.joint_names.append\("atlas::r_arm_wry2"\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
-
-and replace the joint trajectory positions:
-
-<include from='/        p.positions.append\(x1\)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4.py' />
+<include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
 
-**Note**: At the time of writing, there is an issue setting the trajectory of Atlas v4 and v5's knee and ankle joints and thus the corresponding code has been commented out.
+**Note**: As seen in the code snippet above, we have to explicity turn off PID control for Atlas v4/v5 as it interferes with joint trajectory control. In addition, Atlas is set to User mode.
 
 1. To run the new joint trajectory publisher, follow steps similar to above, but start DRCSim with the following command to launch Atlas v4:
 
@@ -157,21 +153,10 @@ and replace the joint trajectory positions:
 
 1. Remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-1. Reset the model poses by clicking `Edit->Reset World`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
+1. Reset the model poses by clicking `Edit->Reset Model Poses`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
 
-1. An extra step needed is to put Atlas in User mode before running the joint trajectory publisher:
 
-    ~~~
-    rostopic pub --once /atlas/control_mode std_msgs/String "User"
-    ~~~
-
-1. Finally, in a separate terminal, run the modified `joint_animation.py` script that has the new joint names.
-
-    ~~~
-    rosrun joint_animation_tutorial joint_animation.py
-    ~~~
-
-    or if you downloaded the `joint_animation_v4.py` script, run the command with the new script:
+1. Finally, in a separate terminal, run the the `joint_animation_v4v5.py` script:
 
     ~~~
     rosrun joint_animation_tutorial joint_animation_v4.py

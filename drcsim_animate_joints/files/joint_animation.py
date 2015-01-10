@@ -49,7 +49,7 @@ def jointTrajectoryCommand():
     jt.joint_names.append("atlas::r_arm_usy")
     jt.joint_names.append("atlas::r_arm_uwy")
 
-    n = 3000
+    n = 1500
     dt = 0.01
     rps = 0.05
     for i in range (n):
