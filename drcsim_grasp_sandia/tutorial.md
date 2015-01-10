@@ -48,6 +48,7 @@ To get more information on the type of service offered, type
 rosservice info /sandia_hands/l_hand/simple_grasp
 ~~~
 with the following output:
+
 ~~~
 Node: /sandia_hands/l_hand/simple_grasp_left
 URI: rosrpc://lcp1:37083
@@ -55,12 +56,13 @@ Type: sandia_hand_msgs/SimpleGraspSrv
 Args: grasp
 ~~~
 
-  The service type is [sandia_hand_msgs/SimpleGraspSrv](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
+  The service type is [sandia\_hand\_msgs/SimpleGraspSrv](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
 
 ~~~
 rosmsg show SimpleGrasp
 ~~~
 with the following output:
+
 ~~~
 [sandia_hand_msgs/SimpleGrasp]:
 string name
