@@ -201,7 +201,9 @@ rosrun drcsim_joint_commands_tutorial publish_joint_commands
 
 ## Atlas v4 and v5
 
-The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To control Atlas v4/v5, change lines 60-87 of `publish_joint_commands.cpp` to the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_ros_cmds_v4v5/default/files/publish_joint_commands_v4.txt) of the code):
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints.
+
+To control Atlas v4/v5, change lines 60-87 of `publish_joint_commands.cpp` to the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/default/files/publish_joint_commands_v4.txt) of the code):
 
 <include from='/  jointcommands.name.push_back\("atlas::l_leg_hpz"\);/' to='/jointcommands.name.push_back\("atlas::back_bkx"\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp' />
 
