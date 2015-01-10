@@ -53,8 +53,7 @@ def jointTrajectoryCommand():
     jt.joint_names.append("atlas::r_arm_wrx")
     jt.joint_names.append("atlas::r_arm_wry2")
 
-
-    # turn off pids so it does not interfere with trajectory control
+    # turn off pid control so it does not interfere with trajectory control
     rospy.loginfo("Turning off PID control")
     for i in jt.joint_names:
         rospy.set_param('/atlas_controller/gains/' + i[7:] + '/p', 0)
