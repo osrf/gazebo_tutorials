@@ -125,12 +125,12 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 # Atlas v4 and v5
 
-The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code:
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code.
+
+**Note**: For Atlas v4/v5, we have to explicity turn off PID control as it interferes with joint trajectory control. In addition, Atlas is set to User mode:
 
 <include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
-
-**Note**: As seen in the code snippet above, we have to explicity turn off PID control for Atlas v4/v5 as it interferes with joint trajectory control. In addition, Atlas is set to User mode.
 
 1. To run the new joint trajectory publisher, follow steps similar to above, but start DRCSim with the following command to launch Atlas v4:
 
@@ -159,5 +159,5 @@ The sample code given above will not work for Atlas v4 and v5 because these late
 1. Finally, in a separate terminal, run the the `joint_animation_v4v5.py` script:
 
     ~~~
-    rosrun joint_animation_tutorial joint_animation_v4.py
+    rosrun joint_animation_tutorial joint_animation_v4v5.py
     ~~~
