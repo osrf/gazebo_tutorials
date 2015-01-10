@@ -30,7 +30,7 @@ Please, downloaded the package, open a new console and type the following
 command to install the [Johns Hopkins APL arm](http://www.jhuapl.edu/prosthetics/):
 
 ~~~
-dpkg -i ~/Downloads/handsim-proprietary*.deb
+sudo dpkg -i ~/Downloads/handsim-proprietary*.deb
 ~~~
 
 You will experience some delay during the Gazebo start up phase if you do not
