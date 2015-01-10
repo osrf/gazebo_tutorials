@@ -153,8 +153,7 @@ The sample code given above will not work for Atlas v4 and v5 because these late
 
 1. Remove the ground by clicking on `World->Models`, then right-clicking on `ground_plane` and clicking Delete.
 
-1. Reset the model poses by clicking `Edit->Reset Model Poses`. The robot should now be in its default pose, "standing" at the origin with arms outstretched.
-
+1. Reset the model poses by clicking `Edit->Reset Model Poses`.
 
 1. Finally, in a separate terminal, run the the `joint_animation_v4v5.py` script:
 
