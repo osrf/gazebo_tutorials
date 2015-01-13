@@ -45,6 +45,9 @@ roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
 ~~~
 
 ### Create a ROS Node
+
+**Note: Atlas versions 4 and 5 require different joint names. See [Atlas v4 and v5 instructions](/tutorials?cat=drcsim&tut=drcsim_ros_cmds#Atlasv4andv5)**
+
 Copy and paste the following code as file
  `~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`
  with any text editor (e.g. gedit, vi, emacs)
@@ -150,27 +153,27 @@ to process messages in the ROS callback queue
 
 ## Running the Simulation
 
-* In terminal, source the DRC simulator setup script and start the DRC robot simulation:
+* In a terminal, source the DRC simulator setup script and start the DRC robot simulation:
 
-~~~
-roslaunch drcsim_gazebo atlas_sandia_hands.launch
-~~~
+    ~~~
+    roslaunch drcsim_gazebo atlas_sandia_hands.launch
+    ~~~
 
 * In a separate terminal, put Atlas in User mode:
 
-~~~
-rostopic pub /atlas/control_mode std_msgs/String --  "User"
-~~~
+    ~~~
+    rostopic pub /atlas/control_mode std_msgs/String --  "User"
+    ~~~
 
 * In a separate terminal, run the node constructed above, which will cause
  Atlas to writhe around on the ground with all joints cycling through their full range of motion
  (see [this video](https://www.youtube.com/watch?v=-zpZ3lUvccI#t=23s)
   for a variant of this behavior):
 
-~~~
-export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
-rosrun drcsim_joint_commands_tutorial publish_joint_commands
-~~~
+    ~~~
+    export ROS_PACKAGE_PATH=${HOME}/ros:${ROS_PACKAGE_PATH}
+    rosrun drcsim_joint_commands_tutorial publish_joint_commands
+    ~~~
 
 ## Altering the code
 
@@ -194,4 +197,26 @@ Then rebuild and re-run the node:
 ~~~
 make
 rosrun drcsim_joint_commands_tutorial publish_joint_commands
+~~~
+
+## Atlas v4 and v5
+
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints.
+
+To control Atlas v4/v5, change lines 60-87 of `publish_joint_commands.cpp` to the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp) of the code):
+
+<include from='/  jointcommands.name.push_back\("atlas::l_leg_hpz"\);/' to='/jointcommands.name.push_back\("atlas::back_bkx"\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp' />
+
+Next, make the ROS package as above. Note that if you downloaded the source code, you will have to either rename the file from `publish_joint_commands_v4v5.cpp` to `publish_joint_commands.cpp`. Alternatively, you can build a new executable from `publish_joint_commands_v4v5.cpp` by modifying `CMakeLists.txt`.
+
+To run the new joint publisher, follow the steps above, but start DRCSim with the following command to launch Atlas v4:
+
+~~~
+roslaunch drcsim_gazebo atlas_sandia_hands.launch model_args:="_v4"
+~~~
+
+Or you can launch Atlas v5:
+
+~~~
+roslaunch drcsim_gazebo atlas_sandia_hands.launch model_args:="_v5"
 ~~~
