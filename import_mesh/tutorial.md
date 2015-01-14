@@ -34,7 +34,7 @@ gazebo my_mesh.world
 
 # Test Mesh ###
 
-You can use these [duck.dae](http://www.c3dl.org/wp-content/2.0Release/Resources/duck.dae) and [duck.png](http://www.c3dl.org/wp-content/2.0Release/Resources/duck.png) mesh files. Put them together in the same directory as the world file. Since the duck mesh is defined with the y-axis as up, you can put a rotation in the sdf so that it displays upright:
+You can use these [duck.dae](https://web.archive.org/web/20120513213905/http://www.c3dl.org/wp-content/2.0Release/Resources/duck.dae) and [duck.png](https://web.archive.org/web/20120513213905/http://www.c3dl.org/wp-content/2.0Release/Resources/duck.png) mesh files. Put them together in the same directory as the world file. Since the duck mesh is defined with the y-axis as up, you can put a rotation in the sdf so that it displays upright:
 
 ~~~
 <visual name="visual">
