@@ -124,7 +124,7 @@ Now, modify the world file to remove the Atlas model. This is because the robot 
 
     gedit ~/ros/world_modification_tutorial/worlds/atlas.world
 
-Look for the `<model name='atlas'>` tag and remove it entirely (a few hundred lines of text).  
+Look for the `<model name='atlas'>` tag and remove it entirely (until the next '</model>' tag few hundred lines of text).  
 
 ***Note: Currently, loading a world that contains `<state>` tags is not working properly. Thus, you must also delete the `<state>` tag and all its child elements (everything from `<state>` until `</state>`).***
 
