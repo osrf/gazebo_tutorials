@@ -125,11 +125,11 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 # Atlas v4 and v5
 
-The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code:
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code. The modified script now contains updated joint names:
 
 <include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/append\("atlas::r_arm_wry2"\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
-and the corresponding section for populating the joint angles:
+Correspondingly, populate the joint angles:
 
 <include from='/        p.positions.append\(x2\)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
