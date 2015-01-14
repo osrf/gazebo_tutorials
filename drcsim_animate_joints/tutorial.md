@@ -135,7 +135,7 @@ and the corresponding section for populating the joint angles:
 
 **Note**: For Atlas v4/v5, we have to explicity turn off PID control as it interferes with joint trajectory control. In addition, Atlas is set to User mode:
 
-<include from='/    \# turn off/' to='mode_pub.publish\(String\("User"\)\)' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
+<include from='/    \# turn off/' to='/mode_pub.publish\(String\("User"\)\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
 1. To run the new joint trajectory publisher, follow steps similar to above, but start DRCSim with the following command to launch Atlas v4:
 
