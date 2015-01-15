@@ -120,9 +120,13 @@ You should see something like this:
 
 Now you can save your changes: in the Gazebo GUI, click "File->Save World As".  When prompted for where to save it, browse to `world_modification_tutorial/worlds/atlas.world` to overwrite our copy of Atlas's simulation world.
 
-***Note: Currently, loading a world that contains `<state>` tags is not working properly. Thus, you must open the newly saved world and delete the `<state>` tag and all its child elements (everything from `<state>` until `</state>`). To edit the `atlas.world`:***
+Now, modify the world file to remove the Atlas model. This is because the robot is spawned automatically.
 
     gedit ~/ros/world_modification_tutorial/worlds/atlas.world
+
+Look for the `<model name='atlas'>` tag and remove it entirely (until the next '</model>' tag few hundred lines of text).  
+
+***Note: Currently, loading a world that contains `<state>` tags is not working properly. Thus, you must also delete the `<state>` tag and all its child elements (everything from `<state>` until `</state>`).***
 
 
 Now, if you haven't done so already, stop the simulation (via `Ctrl+C` in the terminal where you ran `roslaunch`), and start it again:
