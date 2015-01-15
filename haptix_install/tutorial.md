@@ -30,19 +30,18 @@ Please, downloaded the package, open a new console and type the following
 command to install the [Johns Hopkins APL arm](http://www.jhuapl.edu/prosthetics/):
 
 ~~~
-dpkg -i ~/downloads/handsim-proprietary*.deb
+sudo dpkg -i ~/Downloads/handsim-proprietary*.deb
 ~~~
 
 You will experience some delay during the Gazebo start up phase if you do not
 have the `handsim-proprietary` package installed. The APL arm will not appear in
 the scene.
 
-You can test your Gazebo installation by running the next command in your
-terminal:
+You can test your Gazebo installation by running the next
+command in your terminal:
 
 ~~~
-. /usr/share/haptix_gazebo_plugins/setup.sh
-gazebo
+gazebo worlds/arat.world
 ~~~
 
 # HAPTIX Client library SDK
@@ -59,10 +58,10 @@ We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
 
 **If you have a Matlab R2014b 64-bit version you must download the
  [HAPTIX 64-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-Release-win64.zip)**.
+https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.2.0-Release-win64.zip)**.
 Otherwise, you must use the
  [HAPTIX 32-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.1.0-Release-win32.zip). You can
+https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.2.0-Release-win32.zip). You can
  determine the Matlab version by selecting `Help`->`About MATLAB` from the main
  menu.
 
