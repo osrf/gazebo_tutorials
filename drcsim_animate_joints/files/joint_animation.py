@@ -14,7 +14,7 @@ def jointTrajectoryCommand():
         time.sleep(0.1)
         print rospy.get_rostime().to_sec()
 
-    pub = rospy.Publisher('/joint_trajectory', JointTrajectory)
+    pub = rospy.Publisher('/joint_trajectory', JointTrajectory, queue_size=10)
     jt = JointTrajectory()
 
     jt.header.stamp = rospy.Time.now()
