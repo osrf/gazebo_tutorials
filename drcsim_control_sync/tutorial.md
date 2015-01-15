@@ -124,11 +124,16 @@ sudo apt-get install ros-hydro-rqt-plot
 sudo apt-get install ros-indigo-rqt-plot
 ~~~
 
-and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
+To see all the signals in one plot, execute:
 
 ~~~
 rqt_plot /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
 ~~~
+
+Or you can run this bash script to view the signals in their own plots:
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/plot.sh' />
+
+Or you can simply run `rqt` and set up custom perspectives using the rqt GUI.
 
 [[file:files/Sync_stats.png|640px]]
 
