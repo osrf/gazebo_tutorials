@@ -110,7 +110,7 @@ sudo apt-get install ros-hydro-rqt-plot
 sudo apt-get install ros-indigo-rqt-plot
 ~~~
 
-and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
+-Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PACKAGE_PATH`), and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
 
 ~~~
 rqt_plot /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
