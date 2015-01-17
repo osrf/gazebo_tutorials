@@ -100,23 +100,9 @@ In a separate terminal, start the mock-controller:
 rosrun control_synchronization_tutorial my_atlas_controller
 ~~~
 
-To view synchronization status, `rxplot`  or `rqt_plot` can be used.
+To view synchronization status, `rqt_plot` can be used.
 
-To use `rxplot` (deprecated):
-
-~~~
-# depending on your ROS version
-sudo apt-get install ros-hydro-rx
-sudo apt-get install ros-indigo-rx
-~~~
-
-Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PACKAGE_PATH`), and type the following:
-
-~~~
-rxplot -p 5 -b 10 /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
-~~~
-
-Or alternatively with `rqt_plot`, install by:
+To use `rqt_plot`, install by:
 
 ~~~
 # depending on your ROS version
@@ -128,6 +114,12 @@ and plot by running `rqt` and setup custom perspectives; or by executing command
 
 ~~~
 rqt_plot /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
+~~~
+
+alternatively, you can plot the topics side by side:
+
+~~~
+rqt_plot /atlas/controller_statistics/command_age & sleep 1 && rqt --command-start-plugin  rqt_plot --args /atlas/controller_statistics/command_age_mean && rqt --command-start-plugin rqt_plot --args /atlas/synchronization_statistics/delay_in_step && rqt --command-start-plugin rqt_plot --args /atlas/synchronization_statistics/delay_in_window && rqt --command-start-plugin rqt_plot --args /atlas/synchronization_statistics/delay_window_remain
 ~~~
 
 [[file:files/Sync_stats.png|640px]]
@@ -146,6 +138,8 @@ As demonstrated in this tutorial, synchronization at 200Hz(sim time rate) for a 
 [[file:files/Sync_exhaust_stats.png|640px]]
 
 As shown in above figure, within each 5 second delay window, the delay budget is exhausted in about 1 second, and controller becomes unsynchronized.
+
+**Note** the above plot is generated using `rxplot` which has been deprecated in ROS Groovy.
 
 Along the same logic, attempt to synchronize at 500 Hz. (sim time rate) and stay within the existing delay budget, the controller needs to be able to complete its update within 0.5 ms. (real-time) (For a sample implementation, see [pub\_atlas\_command_fast.cpp](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/pub_atlas_command.cpp?at=default).
 
