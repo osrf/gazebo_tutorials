@@ -434,6 +434,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Spawn Atlas into a custom world" ref='drcsim_create_atlas_world'>
+      <markdown version="2.0+">drcsim_create_atlas_world/tutorial.md</markdown>
+      <description>How to spawn Atlas into your own custom world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Modify environment" ref='drcsim_modify_world'>
       <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
       <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>

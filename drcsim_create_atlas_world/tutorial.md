@@ -1,5 +1,5 @@
 # Overview
-This tutorial will teach you how to how to spawn the Atlas robot into your own world.
+This tutorial will teach you how to create a Gazebo world and spawn Atlas into it.
 
 ## Setup
 We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
