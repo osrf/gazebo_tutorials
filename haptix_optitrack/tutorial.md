@@ -1,0 +1,123 @@
+# Overview
+This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo simulator.
+
+## What you'll need
+
+1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
+
+2. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. (link to motion tracking install)
+
+3. The Optitrack V120 Trio 3D camera and necessary wires, hubs, etc. (link to buy)
+
+4. A set of motion tracking targets (at least 9 total motion tracking spheres are needed) (link to buy)
+
+## Camera setup
+
+## Motion tracking target setup
+
+### Arm and head trackers
+Participating HAPTIX teams are provided with pre-made motion tracking targets that can be worn on the arm and head:
+
+((pictures))
+
+If you already have arm and head trackers, skip to the next section on monitor tracker placement.
+
+To create your own motion tracking targets, you will need at least 3 silver motion tracking spheres per target.
+
+In the HAPTIX project, the Optitrack is used to track the pose of the user's arm, which directly controls the pose of the simulated robot arm. Additionally, the pose of the user's head is tracked to control the viewpoint in simulation. Therefore, you will need to create one motion tracking target that can be strapped to the user's arm, and another that can be worn on the head.
+
+In a pinch, tracking targets can be made by taping or gluing motion tracking spheres to a piece of cardboard or rigid plastic:
+
+(picture)
+
+This target can then be affixed to a cloth or velcro armband to make an arm tracker:
+
+(picture)
+
+To make a head tracker, affix the target to a headband. Alternatively, if you are using Nvidia 3D glasses, affix them to the right leg of the glasses:
+
+((picture))
+
+### Monitor tracker placement
+Participating HAPTIX teams are provided with three motion tracking spheres attached to round bases with double-sided tape on one side:
+
+((picture))
+
+These spheres will be attached to the corners of the monitor associated with the Gazebo machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the bottom right corner.
+
+((picture))
+
+## Configuring the Motive Project File
+If you received a premade set of tracking targets, download this Motive Project file. We are going to make a small modification to it.
+
+### Tracking rigid bodies
+On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software:
+
+(icon of picture)
+
+If you downloaded the premade project file, select "Open Existing Project".
+
+Otherwise, select (option) and 
+
+In Capture view, you should see three images with small white dots. The dots represent the position of motion tracker spheres in each camera frame (the Optitrack Trio has 3 cameras). In the 3D view, you should see the position of each sphere in 3D space.
+
+(picture)
+
+In 3D view, figure out which spheres represent the monitor tracker. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
+
+Now open up the Rigid Bodies view:
+
+(picture)
+
+Click on "Create From Selection". A triangle connecting your selected points and a label should appear on the 3D view:
+
+(picture)
+
+Rename the new rigid body "MonitorTracker".
+
+If you created your own arm and head trackers:
+
+Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Put on the arm tracker band and hold out your arm straight, facing the monitor. Carefully move your arm close to the screen and try to align the target/your arm so that it is as perpendicular to the monitor as possible:
+
+(picture)
+
+Hold your arm still and click on "Create From Selection", as above. Rename the new rigid body "ArmTracker".
+
+Similarly for the head target, select the associated spheres, making sure you are only selecting the head tracker spheres.
+
+If you are using Nvidia 3D glasses, hold the glasses up as straight as possible like this, trying to align the long axis of the glasses with the long edge of the monitor:
+
+(picture)
+
+If you made your own head tracking, put the head tracker on and hold your head still and as straight as possible, facing the monitor. I recommend making sure that the target is placed on a consistent position  (e.g. above the ear) when it is used.
+
+Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
+
+Important: make sure to get the rigid body names correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!
+
+You should be able to move around the arm and head trackers and watch the positions change in the 3D view in Motive!
+
+### Network configuration
+If you did not start from the premade project file, you'll need to configure the network options so that the Windows Optitrack machine can pass information to the Linux Gazebo machine about rigid bodies.
+
+Open up "Data Streaming"
+
+(picture)
+
+Check the box next to "Broadcast Frame Data".
+
+## Starting Gazebo
+Make sure the Optitrack is plugged in and then start Gazebo on the linux machine:
+
+~~~
+gazebo --verbose worlds/arat.world
+~~~
+
+Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
+
+## How it works
+
+## Troubleshooting
+If the arm and viewpoint aren't moving in simulation, even after unpausing:
+
+If motion of the simulated arm doesn't seem to match up with the motion of your arm:
