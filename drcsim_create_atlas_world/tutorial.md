@@ -104,3 +104,5 @@ roslaunch world_create_tutorial atlas.launch
 You should see Atlas spawned next to the objects you placed in the previous step:
 
 [[file:files/atlas_spawned.png]]
+
+From here, you're ready to modify the robot's environment any way you like.  Have a look at [SDF documentation](http://gazebosim.org/sdf) and edit `~/ros/world_modification_tutorial/worlds/atlas.world` however you like.
