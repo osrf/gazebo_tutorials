@@ -18,7 +18,7 @@ This tutorial describes how to configure the Optitrack motion tracking system fo
 ### Arm and head trackers
 Participating HAPTIX teams are provided with pre-made motion tracking targets that can be worn on the arm and head:
 
-((pictures))
+[[file:files/premade_trackers.png]]
 
 If you already have arm and head trackers, skip to the next section on monitor tracker placement.
 
@@ -28,24 +28,20 @@ In the HAPTIX project, the Optitrack is used to track the pose of the user's arm
 
 In a pinch, tracking targets can be made by taping or gluing motion tracking spheres to a piece of cardboard or rigid plastic:
 
-(picture)
+[[file:files/diy_target.png]]
 
-This target can then be affixed to a cloth or velcro armband to make an arm tracker:
+This target can then be affixed to a cloth or velcro armband to make an arm tracker.
 
-(picture)
-
-To make a head tracker, affix the target to a headband. Alternatively, if you are using Nvidia 3D glasses, affix them to the right leg of the glasses:
-
-((picture))
+To make a head tracker, affix the target to a headband. Alternatively, if you are using Nvidia 3D glasses, affix them to the right leg of the glasses.
 
 ### Monitor tracker placement
 Participating HAPTIX teams are provided with three motion tracking spheres attached to round bases with double-sided tape on one side:
 
-((picture))
+[[file:files/spheres.png]]
 
 These spheres will be attached to the corners of the monitor associated with the Gazebo machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the bottom right corner.
 
-((picture))
+[[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
 If you received a premade set of tracking targets, download this Motive Project file. We are going to make a small modification to it.
@@ -83,7 +79,7 @@ If you created your own arm and head trackers:
 
 Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Hold the arm tracker band in the orientation that it will be worn. Extend out your arm straight, facing the monitor. Carefully move your arm close to the screen and try to align the target so that it is as perpendicular to the monitor as possible:
 
-(picture)
+[[file:files/arm_alignment.png]]
 
 Hold your arm still and click on "Create From Selection", as above. Rename the new rigid body "ArmTracker".
 
@@ -91,7 +87,7 @@ Similarly for the head target, select the associated spheres, making sure you ar
 
 If you are using Nvidia 3D glasses, hold the glasses up as straight as possible like this, trying to align the long axis of the glasses with the long edge of the monitor:
 
-(picture)
+[[file:files/head_alignment.png]]
 
 If you made your own head tracking, put the head tracker on and hold your head still and as straight as possible, facing the monitor. I recommend making sure that the target is placed on a consistent position  (e.g. above the ear) when it is used.
 
@@ -109,7 +105,7 @@ To do this, open up the "Data Streaming" view and check the box next to "Broadca
 [[file:files/data_streaming.PNG]]
 
 ## Starting Gazebo
-Make sure the Optitrack is plugged in and then start Gazebo on the linux machine:
+Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine:
 
 ~~~
 gazebo --verbose worlds/arat.world
