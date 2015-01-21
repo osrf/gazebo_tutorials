@@ -51,33 +51,37 @@ These spheres will be attached to the corners of the monitor associated with the
 If you received a premade set of tracking targets, download this Motive Project file. We are going to make a small modification to it.
 
 ### Tracking rigid bodies
-On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software:
+On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
-(icon of picture)
+[[file:files/motive_icon.PNG]]
 
-If you downloaded the premade project file, select "Open Existing Project".
+You should see the following screen pop up:
 
-Otherwise, select (option) and 
+[[file:files/motive_start.PNG|800px]]
 
-In Capture view, you should see three images with small white dots. The dots represent the position of motion tracker spheres in each camera frame (the Optitrack Trio has 3 cameras). In the 3D view, you should see the position of each sphere in 3D space.
+If you downloaded the premade project file, select "Open Existing Project". You can also open Motive with the existing project file just by double-clicking on the project file.
 
-(picture)
+If you did not download the project file, close the startup menu.
 
-In 3D view, figure out which spheres represent the monitor tracker. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
+If it isn't already visible, open the Rigid Body Properties view under "Views" in the top toolbar.
 
-Now open up the Rigid Bodies view:
+In the Camera Preview view, you should see three images with small white dots. The dots represent the position of motion tracker spheres in each camera frame (the Optitrack Trio has 3 cameras). In the 3D view, you should see the position of each sphere in 3D space.
 
-(picture)
+[[file:files/camera_preview.PNG|800px]]
 
-Click on "Create From Selection". A triangle connecting your selected points and a label should appear on the 3D view:
+In Perspective View, figure out which spheres represent the monitor tracker. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
 
-(picture)
+[[file:files/selection.PNG|800px]]
 
-Rename the new rigid body "MonitorTracker".
+Click on "Create From Selection" in Rigid Body Properties. A triangle connecting your selected points and a label should appear on the 3D view:
+
+[[file:files/new_rigid_body.PNG|800px]]
+
+Rename the new rigid body "MonitorTracker". You can do this in Rigid Body Properties, or under the Project tab by right-clicking on the rigid body and selecting "Rename Asset".
 
 If you created your own arm and head trackers:
 
-Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Put on the arm tracker band and hold out your arm straight, facing the monitor. Carefully move your arm close to the screen and try to align the target/your arm so that it is as perpendicular to the monitor as possible:
+Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Hold the arm tracker band in the orientation that it will be worn. Extend out your arm straight, facing the monitor. Carefully move your arm close to the screen and try to align the target so that it is as perpendicular to the monitor as possible:
 
 (picture)
 
@@ -100,11 +104,9 @@ You should be able to move around the arm and head trackers and watch the positi
 ### Network configuration
 If you did not start from the premade project file, you'll need to configure the network options so that the Windows Optitrack machine can pass information to the Linux Gazebo machine about rigid bodies.
 
-Open up "Data Streaming"
+To do this, open up the "Data Streaming" view and check the box next to "Broadcast Frame Data".
 
-(picture)
-
-Check the box next to "Broadcast Frame Data".
+[[file:files/data_streaming.PNG]]
 
 ## Starting Gazebo
 Make sure the Optitrack is plugged in and then start Gazebo on the linux machine:
