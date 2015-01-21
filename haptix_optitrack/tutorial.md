@@ -114,8 +114,6 @@ gazebo --verbose worlds/arat.world
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
 
 ## How it works
+Why is the monitor motion tracking target needed? The monitor acts as a reference frame for the arm and head trackers. If the camera is moved at any point, the settings in the Motive configuration file don't need to be recalibrated, because the pose data coming into Gazebo is calculated relative to the position of the monitor.
 
-## Troubleshooting
-If the arm and viewpoint aren't moving in simulation, even after unpausing:
-
-If motion of the simulated arm doesn't seem to match up with the motion of your arm:
+Why do the head and arm trackers need to be calibrated in such a specific way? The orientation of rigid bodies that Motive sends to Gazebo is measured relative to the initial position of the tracker. It is not relative to the camera frame. Therefore, the head and arm need to be calibrated relative to a known object. The coordinate axes of the monitor can be thought of as the coordinate axes of Gazebo, so the monitor frame is known. Therefore, we configure the head and arm trackers to be measured relative to the monitor.
