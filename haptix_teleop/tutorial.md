@@ -73,6 +73,19 @@ orientation of the viewpoint. Press the button the left side of the mouse
 to change control to the arm. Once in this mode, the mouse will change the
 position and orientation of the arm. 
 
+If the Spacenav is not working, try running:
+
+~~~
+sudo spacenavd
+~~~
+
+You could also try
+
+~~~
+sudo service spacenavd restart
+sudo spacenavd
+~~~
+
 ## Razer Hydra
 
 Please follow the [hydra installation instructions](http://gazebosim.org/tutorials?tut=hydra&cat=user_input).

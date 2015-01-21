@@ -8,18 +8,20 @@ All of the necessary items, including all software components, will be provided 
 
 2. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html))
 
-3. The Optitrack V120 Trio 3D camera and necessary wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/))
+3. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/))
 
 4. A camera tripod, 1-2 meters high
 
 5. A set of motion tracking targets (DIY participants can find motion tracking accessories here [here](https://www.naturalpoint.com/optitrack/products/suits-markers/), we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases)
 
 ## Camera setup
-Set up the 
+Mount the Optitrack on the tripod.
 
-connecting optitrack
+The Optitrack kit comes with a long USB cable, a power cable, and a hub with several ports. Plug the power cable into the wall and into the hub. Then plug the USB cable into the hub. Later, you will use this cable to connect to the computer. Finally, plug the wire coming out of the hub into the back of the Optitrack. Consult the [V120 Trio Quick Start Guide](https://www.naturalpoint.com/optitrack/static/documents/V120-Trio%20Quick%20Start%20Guide.pdf) if you need more help setting up the camera.
 
-Note: if you need to simulate the left arm, the physical setup must be flipped:
+Place the Optitrack 1-2 meters to the right of the workstation desk, so that the camera is nearly rotated 90 degrees from the plane of the monitor and facing the workstation/the chair where the user will sit. The cable connecting the Optitrack to the computer is more than long enough, but take care not to catch it on anything and leave enough slack so that it doesn't pull.
+
+Note: if you need to simulate the left arm, the physical setup must be flipped: place the camera on the left side of the workstation, and make sure all motion tracking targets are worn on the left side.
 
 ## Motion tracking target setup
 
