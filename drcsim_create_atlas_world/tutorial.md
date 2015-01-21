@@ -28,26 +28,13 @@ The above command is equivalent to: cd `~/ros/world_create_tutorial`
 mkdir worlds launch
 ~~~
 
-~~~
-roscd drcsim_gazebo
-~~~
-The above command takes you to the `drcsim_gazebo` directory, which may be different according to your installation. It will be something like `/opt/ros/indigo/share/drcsim_gazebo`. We will copy a file from there to help spawn Atlas:
-
-~~~
-cp launch/atlas_no_controllers.launch ~/ros/world_create_tutorial/launch/
-~~~
-
-~~~
-roscd world_create_tutorial/
-~~~
-
 Next, copy and paste this launchfile into `~/ros/world_create_tutorial/launch/atlas.world`, or download the file [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_create_atlas_world/files/atlas.launch):
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_create_atlas_world/files/atlas.launch' />
 
-This launchfile is a direct copy of the `atlas.launch` file in `drcsim_gazebo/launch`, except that the `gzworld` argument has been changed to a different file. This file doesn't exist yet, but we will create it in the next step.
+This launchfile is nearly identical of the `atlas.launch` file in `drcsim_gazebo`, except that the `gzworld` argument has been changed to a different file. This file doesn't exist yet, but we will create it in the next step.
 
-If you want to spawn Atlas in a different position, change `robot_initial_pose/x` and `robot_initial_pose/y` to whatever you desire.
+If you want to spawn Atlas in a different position, change `robot_initial_pose/x` and `robot_initial_pose/y`.
 
 ## Modify an empty world
 Open gazebo with no command line arguments:
