@@ -2,16 +2,24 @@
 This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo simulator.
 
 ## What you'll need
+All of the necessary items, including all software components, will be provided to participating HAPTIX teams. We are also providing links for any participants or hobbyists who want to create their own kit.
 
 1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
-2. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. (link to motion tracking install)
+2. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html))
 
-3. The Optitrack V120 Trio 3D camera and necessary wires, hubs, etc. (link to buy)
+3. The Optitrack V120 Trio 3D camera and necessary wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/))
 
-4. A set of motion tracking targets (at least 9 total motion tracking spheres are needed) (link to buy)
+4. A camera tripod, 1-2 meters high
+
+5. A set of motion tracking targets (DIY participants can find motion tracking accessories here [here](https://www.naturalpoint.com/optitrack/products/suits-markers/), we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases)
 
 ## Camera setup
+Set up the 
+
+connecting optitrack
+
+Note: if you need to simulate the left arm, the physical setup must be flipped:
 
 ## Motion tracking target setup
 
@@ -64,6 +72,8 @@ If it isn't already visible, open the Rigid Body Properties view under "Views" i
 In the Camera Preview view, you should see three images with small white dots. The dots represent the position of motion tracker spheres in each camera frame (the Optitrack Trio has 3 cameras). In the 3D view, you should see the position of each sphere in 3D space.
 
 [[file:files/camera_preview.PNG|800px]]
+
+If you see dots or big circles that don't correspond to your motion tracking objects, there may be infrared interference in the scene. Try removing or hiding metallic/shiny objects and blocking nearby sources of natural light.
 
 In Perspective View, figure out which spheres represent the monitor tracker. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
 
