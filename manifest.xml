@@ -345,7 +345,8 @@
     <!-- Advanced tutorials -->
 
     <tutorial title="Digital Elevation Models" ref='dem'>
-      <markdown version="3.0+">dem/tutorial.md</markdown>
+      <markdown version="3.0-4.0">dem/tutorial.md</markdown>
+      <markdown version="5.0+">dem/tutorial.md</markdown>
       <description>How to use DEMs in Gazebo.</description>
       <skill>advanced</skill>
     </tutorial>
