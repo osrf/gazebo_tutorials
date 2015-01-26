@@ -50,13 +50,13 @@ Use a Sensor plugin to acquire sensor information and control sensor properties.
 Plugins are designed to be simple.
 A bare bones world plugin contains a class with a few member functions.
 
-First, if you installed Gazebo from debians, make sure you've install development files before completing this tutorial (if you installed Gazebo from source, you can ignore this step):
+First, if you installed Gazebo from debians, make sure you've install development files (if you installed Gazebo from source, you can ignore this step):
 
 ~~~
 sudo apt-get install libgazebo5-dev
 ~~~
 
-Next, make a directory for your plugin and a .cc file for the new plugin class:
+Next, make a directory and a .cc file for the new plugin:
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial
