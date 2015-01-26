@@ -234,7 +234,7 @@ Colors and textures can be chosen from the Palette and assigned to items on your
 
     [[file:files/color_texture_palette.png|800px]]
 
-> **New on Gazebo 5.1:** To choose a custom color, click on `More` on the Palette. A dialog opens where you can specify custom colors.
+    > **New on Gazebo 5.1:** To choose a custom color, click on `More` on the Palette. A dialog opens where you can specify custom colors.
 
     [[file:files/custom_color.png|640px]]
 
