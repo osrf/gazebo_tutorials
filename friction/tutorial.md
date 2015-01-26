@@ -20,7 +20,12 @@ ODE will automatically compute the first and second friction directions for us. 
 
 The two objects in collision each specify '''mu''' and '''mu2'''. Gazebo will choose the smallest '''mu''' and '''mu2''' from the two colliding objects.
 
-The valid range of values for '''mu''' and '''mu2''' is between 0 and 1, where 0 equates to a friction-less contact and 1 a surface with infinite friction.
+The valid range of values for '''mu''' and '''mu2''' is any non-negative number,
+where 0 equates to a friction-less contact
+and a large value approximates a surface with infinite friction.
+Tables of friction coefficient values for a variety of
+materials can be found in engineering handbooks
+or [online references](http://www.engineershandbook.com/Tables/frictioncoefficients.htm).
 
 ## How to specify friction
 
