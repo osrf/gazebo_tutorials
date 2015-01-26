@@ -85,7 +85,7 @@ Try rotating the objects into a different configuration.
 ## Scale
 The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
 
-Try scaling the simple shapes into a different sizes.
+Try scaling the simple shapes into different sizes.
 
 # Delete Models
 
