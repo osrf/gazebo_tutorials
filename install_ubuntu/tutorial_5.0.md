@@ -26,7 +26,7 @@
 
         sudo apt-get update
         sudo apt-get install gazebo5
-        # For developers that works on top of Gazebo, one extra package
+        # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo5-dev
 
 1. Check your installation
