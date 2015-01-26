@@ -4,7 +4,7 @@ The tutorial demonstrates Gazebo's basic model management, and exercises familia
 
 ## Setup your model directory ##
 
-Read through the [Model Database documentation](http://gazebosim.org/user_guide/started__models__database.html). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
+Read through the [Model Database documentation](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
 
 1.  Create a model directory:
 
