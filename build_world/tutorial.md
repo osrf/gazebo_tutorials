@@ -68,7 +68,7 @@ Gazebo's model database is a repository of all types of models including robots,
 
 The pose of each model may be altered through the translate and rotate tools:
 
-[[file:files/empty_translate_rotate_highlighted.png|640px]]
+[[file:files/empty_rts.png|640px]]
 
 ## Translation
 The translate tools allows you to move the object along the x, y, and z axes. Select this tool now and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
