@@ -66,14 +66,14 @@ Publish `WorldControl` message on the world_control topic to pause the simulatio
 
 You should see the simulation stop in Gazebo, and the following output:
 
-~~~
+%%%
 type:  [gazebo.msgs.WorldControl]
 topic: [~/world_control]
 msg:   [{ pause: true }]
 
 published!
 bye
-~~~
+%%%
 
 
 ## Subscribers
