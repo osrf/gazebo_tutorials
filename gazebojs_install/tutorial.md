@@ -56,7 +56,7 @@ Install Gazebojs
 
 This operation should download and compile the latest gazebojs. There is a C++
 compilation phase where a NodeJs module is created. There should now be a
-`gz_node_inst/node_modules` directory and should not see the installation
+`gz_node_inst/node_modules` directory and you should not see the installation
 failed message.
 
 
