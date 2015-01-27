@@ -62,6 +62,7 @@ Once published, the message is going to be received by each subscriber for this 
 
 Publish `WorldControl` message on the world_control topic to pause the simulation:
 
+    node publish.js 'gazebo.msgs.WorldControl'  '~/world_control' '{"pause": true}
     node publish.js "gazebo.msgs.WorldControl"  "~/world_control" "{\"pause\": true}"
 
 You should see the simulation stop in Gazebo, and the following output:
@@ -119,7 +120,7 @@ It is possible to unsubscribe to a topic. When unsubscribe is called, all subscr
 
 Subscribe for 5 consecutive `WorldStatistics` messages on the world_stats topic:
 
-    node subscribe.js "gazebo.msgs.WorldStatistics" "~/world_stats" 5
+    node subscribe.js 'gazebo.msgs.WorldStatistics' '~/world_stats' 5
 
 You should see the following output:
 
