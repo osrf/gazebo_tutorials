@@ -52,10 +52,12 @@ Create a NodeJs project directory
 
 Install Gazebojs
 
-     npm install gazebojs
+     npm install gazebojs || echo "Installation failed!"
 
-This operation should download and compile the latest gazebojs. There is a C++ compilation phase where a NodeJs module is created. There should now be a `gz_node_inst/node_modules` directory.
-
+This operation should download and compile the latest gazebojs. There is a C++
+compilation phase where a NodeJs module is created. There should now be a
+`gz_node_inst/node_modules` directory and should not see the installation
+failed message.
 
 
 Test your installation:
@@ -65,15 +67,21 @@ Launch Gazebo in a separate terminal and verify that the simulation is running (
     gazebo
 
 
-Use the 'node' command to invoke the NodeJs REPL console
+Use the 'node' command (from the same directory where you invoked the npm
+command) to invoke the NodeJs REPL console
 
     node
 
-Type in the following command to load the gazeboJs module, create a simulation client and pause the running simulation
+Type in the following commands ('undefined' messages are NodeJS console valid
+responses to your command) to load the gazeboJs module, create a
+simulation client and pause the running simulation
 
-    var gazebojs = require('gazebojs')
-    var sim = new gazebojs.Gazebo()
-    sim.pause()
+    > var gazebojs = require('gazebojs')
+    undefined
+    > var sim = new gazebojs.Gazebo()
+    undefined
+    > sim.pause()
+    undefined
 
 You should see the simulation stop in Gazebo.
 
