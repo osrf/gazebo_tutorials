@@ -29,6 +29,7 @@
 
     <tutorial title="Mac" ref='install_on_mac'>
       <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
+      <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
