@@ -181,6 +181,7 @@ $ gzserver ../hello.world --verbose
 ~~~
 
 You should see output similar to:
+
 ~~~
 Gazebo multi-robot simulator, version 1.9.5
 Copyright (C) 2013 Open Source Robotics Foundation.
