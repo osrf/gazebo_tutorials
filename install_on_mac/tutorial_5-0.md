@@ -45,8 +45,8 @@ The [DART](http://dartsim.github.io) physics engine can be used as well,
 
 ## Versions
 The formula currently installs version 5.0 of gazebo.
-Version 1.9 can be installed using the gazebo formula,
-gazebo 2.2 using gazebo2, gazebo 3 using gazebo3, and gazebo 4 using gazebo4.
+Version 1.9 can be installed using the 'gazebo' formula,
+gazebo 2.2 using 'gazebo2', gazebo 3 using 'gazebo3', and gazebo 4 using 'gazebo4'.
 To install the latest version of gazebo's default branch:
 
         brew install gazebo5 --HEAD
