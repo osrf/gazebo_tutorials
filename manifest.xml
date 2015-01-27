@@ -120,7 +120,7 @@
     </tutorial>
 
     <tutorial title="Make a Simple Gripper" ref='simple_gripper'>
-      <markdown version="1.9-4.2">simple_gripper/tutorial_1-9.md</markdown>
+      <markdown version="1.9-4.1">simple_gripper/tutorial_1-9.md</markdown>
       <markdown version="5.0+">simple_gripper/tutorial.md</markdown>
       <description>Build a simple pinching gripper</description>
       <skill>beginner</skill>
