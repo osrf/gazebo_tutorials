@@ -1,3 +1,7 @@
+# DEM Compatibility
+
+Gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
+
 #Overview
 
 A Digital Elevation Model (DEM) is a 3D representation of a terrain's surface that does not include any objects like buildings or vegetation. DEMs are frequently created by using a combination of sensors, such as LIDAR, radar, or cameras. The terrain elevations for ground positions are sampled at regularly-spaced horizontal intervals. [Wikipedia](http://en.wikipedia.org/wiki/Digital_elevation_model) is a good resource for getting more details about DEMs.
@@ -10,7 +14,7 @@ The main motivation to support DEMs in Gazebo is to be able to simulate a realis
 
 In order to work with DEM files you should install GDAL libraries.
 
-**On Ubuntu Trusty/Utopic:**
+**On Ubuntu Trusty:**
 
 ~~~
 $ sudo apt-get install gdal-bin libgdal-dev libgdal1h python-gdal
@@ -50,7 +54,6 @@ Launch Gazebo with the world containing your DEM file and you should see the vol
 
 ~~~
 # Be sure of sourcing gazebo setup.sh in your own installation path
-$ source /usr/share/gazebo/setup.sh
 $ GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/tmp" gazebo /tmp/volcano.world
 ~~~
 
