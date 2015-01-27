@@ -62,7 +62,7 @@ Once published, the message is going to be received by each subscriber for this 
 
 Publish `WorldControl` message on the world_control topic to pause the simulation:
 
-    node publish.js 'gazebo.msgs.WorldControl'  '~/world_control' '{"pause": true}
+    node publish.js 'gazebo.msgs.WorldControl'  '~/world_control' '{"pause": true}'
 
 You should see the simulation stop in Gazebo, and the following output:
 
