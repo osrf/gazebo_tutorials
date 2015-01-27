@@ -77,7 +77,7 @@ In the Camera Preview view, you should see three images with small white dots. T
 
 If you see dots or big circles that don't correspond to your motion tracking objects, there may be infrared interference in the scene. Try removing or hiding metallic/shiny objects and blocking nearby sources of natural light.
 
-In Perspective View, figure out which spheres represent the monitor tracker. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
+In Perspective View, figure out which spheres represent the spheres placed on your monitor. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
 
 [[file:files/selection.PNG|800px]]
 
@@ -86,6 +86,10 @@ Click on "Create From Selection" in Rigid Body Properties. A triangle connecting
 [[file:files/new_rigid_body.PNG|800px]]
 
 Rename the new rigid body "MonitorTracker". You can do this in Rigid Body Properties, or under the Project tab by right-clicking on the rigid body and selecting "Rename Asset".
+
+Now, open "Coordinate System Tools" under "Tools" in the top toolbar. Highlight the three spheres on the monitor again in Perspective View, then click on "Set Ground Plane". You should see the monitor rigid body line up with the axes in Perspective View.
+
+[[file:files/groundplane.PNG]]
 
 If you created your own arm and head trackers:
 
