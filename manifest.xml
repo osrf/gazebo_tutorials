@@ -609,7 +609,7 @@
     </tutorial>
 
     <tutorial title="HAPTIX Optitrack Control" ref='haptix_optitrack'>
-      <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
+      <markdown version="4.0+">haptix_optitrack/tutorial.md</markdown>
       <description>How to configure the Optitrack V120 Trio camera and the Motive motion tracking software to control the arm and viewpoint in Gazebo.</description>
       <skill>beginner</skill>
     </tutorial>
