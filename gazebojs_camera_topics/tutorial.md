@@ -142,5 +142,5 @@ bye
 
 Inspect your images.
 
-[[file:files/frame_0007.png|640px]]
+[[file:files/frame_0007.jpeg|640px]]
 
