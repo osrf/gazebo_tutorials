@@ -68,24 +68,21 @@ Gazebo's model database is a repository of all types of models including robots,
 
 The pose of each model may be altered through the translate and rotate tools:
 
-[[file:files/empty_rts.png|640px]]
+[[file:files/empty_translate_rotate_highlighted.png|640px]]
 
 ## Translation
-The translate tools allows you to move the object along the x, y, and z axes. Select this tool now and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
+The translate tools allows you to move the object along the x, y, and z axes. Select this tool now and then move an object by left-pressing and dragging the object.
 
-You can also just click on the object itself and drag it to move on the x-y plane. You may control which axis the object moves along by pressing and holding the x, y, or z key while dragging the object.
+By default the object will translate around on the x, y plane. You may control which axis the object moves along by pressing and holding the x, y, or z key while dragging the object.
 
 Try moving the objects around now into a different configuration.
 
 ## Rotation
-The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
+The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now and then rotate an object by left-pressing and dragging the rings around the object.
+
+By default the object will rotate around the z axis (yaw).  You may control which axis the object rotates around by pressing and holding the x, y, or z key while dragging the object.
 
 Try rotating the objects into a different configuration.
-
-## Scale
-The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
-
-Try scaling the simple shapes into different sizes.
 
 # Delete Models
 

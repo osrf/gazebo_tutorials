@@ -60,7 +60,7 @@
       </tags>
       <skill>beginner</skill>
     </tutorial>
- 
+
     <tutorial title="Quick Start" ref='quick_start'>
       <markdown version="1.9+">quick_start/tutorial.md</markdown>
       <description>Simple and fast introduction to Gazebo.</description>
@@ -163,7 +163,8 @@
     </tutorial>
 
     <tutorial title="Building a world" ref='build_world'>
-      <markdown version="1.9+">build_world/tutorial.md</markdown>
+      <markdown version="1.9">build_world/tutorial_1.9.md</markdown>
+      <markdown version="2.2+">build_world/tutorial.md</markdown>
       <description>How to populate a simulated world with simulated objects.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -568,7 +569,7 @@
         <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
         <skill>advanced</skill>
     </tutorial>
-    
+
     <tutorial title="GazeboJs hydra publisher" ref='hydra_gzjs_pub'>
         <markdown version="4.0+">hydra_gzjs_pub/tutorial.md</markdown>
         <description>Hydra publisher using node-sixense and GazeboJs </description>
