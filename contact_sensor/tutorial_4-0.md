@@ -132,13 +132,10 @@ It is also possible to create a plugin for the contact sensor. This plugin can g
 *    **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed. If you install Gazebo from source then you should already have the necessary files. If you install the Gazebo binary deb version, then you'll need to install a couple of additional packages.
 
     ~~~
-    sudo apt-get install libgazebo4-dev libsdformat2-dev
+    sudo apt-get install libgazebo[MAJOR VERSION NUMBER]-dev libsdformat2-dev
     ~~~
-
-    Note for gazebo 5.x.x,
-    ~~~
-    sudo apt-get install libgazebo5-dev libsdformat2-dev
-    ~~~
+    
+    where for example `MAJOR VERSION NUMBER` for gazebo4 is `4`.
 
 
 Start by modifying the `contact.world` SDF file. Add the following line directly below `<sensor name='my_contact' type='contact'>`:
