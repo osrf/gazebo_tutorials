@@ -135,6 +135,11 @@ It is also possible to create a plugin for the contact sensor. This plugin can g
     sudo apt-get install libgazebo4-dev libsdformat2-dev
     ~~~
 
+    Note for gazebo 5.x.x,
+    ~~~
+    sudo apt-get install libgazebo5-dev libsdformat2-dev
+    ~~~
+
 
 Start by modifying the `contact.world` SDF file. Add the following line directly below `<sensor name='my_contact' type='contact'>`:
 
