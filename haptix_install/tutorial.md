@@ -58,10 +58,10 @@ We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
 
 **If you have a Matlab R2014b 64-bit version you must download the
  [HAPTIX 64-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.2.0-Release-win64.zip)**.
+https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.3.0-Release-win64.zip)**.
 Otherwise, you must use the
  [HAPTIX 32-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.2.0-Release-win32.zip). You can
+https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-0.3.0-Release-win32.zip). You can
  determine the Matlab version by selecting `Help`->`About MATLAB` from the main
  menu.
 
