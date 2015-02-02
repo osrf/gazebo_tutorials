@@ -65,7 +65,7 @@ You should see the following screen pop up:
 
 [[file:files/motive_start.PNG|800px]]
 
-If you downloaded the premade project file, select "Open Existing Project". You can also open Motive with the existing project file just by double-clicking on the project file.
+If you downloaded the premade project file, select "Open Existing Project" and then browse to and select the .ttp file that you downloaded. You can also open Motive with the existing project file just by double-clicking on the project file.
 
 If you did not download the project file, close the startup menu.
 
@@ -77,7 +77,7 @@ In the Camera Preview view, you should see three images with small white dots. T
 
 If you see dots or big circles that don't correspond to your motion tracking objects, there may be infrared interference in the scene. Try removing or hiding metallic/shiny objects and blocking nearby sources of natural light.
 
-In Perspective View, figure out which spheres represent the spheres placed on your monitor. You can make it easier by taking the head and arm tracker outside of the view. Highlight then by clicking and dragging.
+In Perspective View, figure out which spheres represent the spheres placed on your monitor. You can make it easier by taking the head and arm tracker outside of the view. Highlight those three markers by clicking and dragging the selection rectangle across them.
 
 [[file:files/selection.PNG|800px]]
 
@@ -116,9 +116,14 @@ You should be able to move around the arm and head trackers and watch the positi
 ### Network configuration
 If you did not start from the premade project file, you'll need to configure the network options so that the Windows Optitrack machine can pass information to the Linux Gazebo machine about rigid bodies.
 
-To do this, open up the "Data Streaming" view and check the box next to "Broadcast Frame Data".
+To do this, open "Data Streaming" under "View" in the top toolbar and check the box next to "Broadcast Frame Data".
 
 [[file:files/data_streaming.PNG]]
+
+### Save the result
+You're now done configuring Motive for your physical setup.  Select "Save Project" under "File" in the top toolbar (you can save the file under a different name or in a different location if you like; just remember what you called it and where you put it).
+
+Whenever you want to run an experiment, repeat the initial steps of this tutorial to open Motive and select the .ttp file that you created here.  You should not need to modify the configuration in the future unless you change the marker placements.
 
 ## Starting Gazebo
 Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine:
