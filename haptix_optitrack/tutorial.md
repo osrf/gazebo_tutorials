@@ -12,14 +12,14 @@ All of the necessary items, including all software components, will be provided 
 
 4. A camera tripod, 1-2 meters high
 
-5. A set of motion tracking targets (DIY participants can find motion tracking accessories here [here](https://www.naturalpoint.com/optitrack/products/suits-markers/), we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases)
+5. A set of motion tracking targets (DIY participants can find motion tracking accessories here [here](https://www.naturalpoint.com/optitrack/products/suits-markers/); we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases)
 
 ## Camera setup
 Mount the Optitrack on the tripod.
 
-The Optitrack kit comes with a long USB cable, a power cable, and a hub with several ports. Plug the power cable into the wall and into the hub. Then plug the USB cable into the hub. Later, you will use this cable to connect to the computer. Finally, plug the wire coming out of the hub into the back of the Optitrack. Consult the [V120 Trio Quick Start Guide](https://www.naturalpoint.com/optitrack/static/documents/V120-Trio%20Quick%20Start%20Guide.pdf) if you need more help setting up the camera.
+The Optitrack kit comes with a long USB cable, a power cable, and a hub with several ports. Plug the power cable into the wall and into the hub. Then plug the USB cable into the hub. Later, you will use this cable to connect to the Windows computer. Finally, plug the wire coming out of the hub into the back of the Optitrack. Consult the [V120 Trio Quick Start Guide](https://www.naturalpoint.com/optitrack/static/documents/V120-Trio%20Quick%20Start%20Guide.pdf) if you need more help setting up the camera.
 
-Place the Optitrack 1-2 meters to the right of the workstation desk, so that the camera is nearly rotated 90 degrees from the plane of the monitor and facing the workstation/the chair where the user will sit. The cable connecting the Optitrack to the computer is more than long enough, but take care not to catch it on anything and leave enough slack so that it doesn't pull.
+Place the Optitrack 1-2 meters to the right of the workstation desk, so that the camera is nearly rotated 90 degrees from the plane of the monitor and facing the workstation/the chair where the user will sit. The camera should be looking at the user's right side, with a slight over-the-shoulder perspective.  The cable connecting the Optitrack to the Windows computer is more than long enough, but take care not to catch it on anything and leave enough slack so that it doesn't pull.
 
 Note: if you need to simulate the left arm, the physical setup must be flipped: place the camera on the left side of the workstation, and make sure all motion tracking targets are worn on the left side.
 
@@ -49,7 +49,7 @@ Participating HAPTIX teams are provided with three motion tracking spheres attac
 
 [[file:files/spheres.png]]
 
-These spheres will be attached to the corners of the monitor associated with the Gazebo machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the bottom right corner.
+These spheres will be attached to the corners of the monitor associated with the Gazebo machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the middle of the right side.
 
 [[file:files/monitor.png]]
 
