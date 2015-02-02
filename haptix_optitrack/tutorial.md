@@ -120,8 +120,11 @@ To do this, open "Data Streaming" under "View" in the top toolbar and check the 
 
 [[file:files/data_streaming.PNG]]
 
+### Check the result
+You're now done configuring Motive for your physical setup.  This is a good time to make sure that all the markers are being tracked correctly.  Bring the arm and head trackers back into the scene and verify that you see them move in the Camera and Perspective Views in Motive.
+
 ### Save the result
-You're now done configuring Motive for your physical setup.  Select "Save Project" under "File" in the top toolbar (you can save the file under a different name or in a different location if you like; just remember what you called it and where you put it).
+Select "Save Project" under "File" in the top toolbar (you can save the file under a different name or in a different location if you like; just remember what you called it and where you put it).
 
 Whenever you want to run an experiment, repeat the initial steps of this tutorial to open Motive and select the .ttp file that you created here.  You should not need to modify the configuration in the future unless you change the marker placements.
 
