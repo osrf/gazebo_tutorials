@@ -28,7 +28,7 @@ Note: if you need to simulate the left arm, the physical setup must be flipped: 
 ### Arm and head trackers
 Participating HAPTIX teams are provided with pre-made motion tracking targets that can be worn on the arm and head:
 
-[[file:files/premade_trackers.png]]
+[[file:/haptix_optitrack/files/premade_trackers.png]]
 
 If you already have arm and head trackers, skip to the next section on monitor tracker placement.
 
