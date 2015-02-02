@@ -54,7 +54,7 @@ These spheres will be attached to the corners of the monitor associated with the
 [[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
-If you received a premade set of tracking targets, download this Motive Project file. We are going to make a small modification to it.
+If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttb). We are going to make a small modification to it.
 
 ### Tracking rigid bodies
 On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
