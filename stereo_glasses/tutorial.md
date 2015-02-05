@@ -23,7 +23,7 @@ This tutorial assumes that you will be using Ubuntu.
 
 ## Sofware requirements
 
-1. Ubuntu 14.04 or better.
+1. Ubuntu 14.04 (Trusty).
 
 1. Install `libogre3d-1.9-dev`.
 
@@ -37,7 +37,7 @@ This tutorial assumes that you will be using Ubuntu.
     sudo apt-get install nvidia-settings
     ~~~
 
-1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install), or the Gazebo6 debians.
+1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debains when they are made available on July 27, 2015.
 
 ## Setup Nvidia Stereo
 
@@ -47,11 +47,11 @@ This tutorial assumes that you will be using Ubuntu.
     nvidia-settings
     ~~~
 
-1. Set the refresh rate. Do not use `auto`.
+1. Set the refresh rate to 120Hz. Do not use `auto`.
 
 1. Set the resolution. Do not use `auto`.
 
-1. Select the `Save to X Configuration File` and follow instructions to save to `/etx/xorg.conf`.
+1. Select the `Save to X Configuration File` and follow instructions to save to `/etx/X11/xorg.conf`.
 
 1. Add stereo option to `xorg.conf`. 
 
@@ -124,6 +124,8 @@ This tutorial assumes that you will be using Ubuntu.
 
 ## Verify Stereo
 
+1. The Nvidia logo on the emitter should glow green. If red, then go back through the previous steps to make sure everything was done correctly.
+
 1. Open `nvidia-settings`.
 
     ~~~
@@ -134,7 +136,7 @@ This tutorial assumes that you will be using Ubuntu.
 
 1. The `Stereo Mode` setting should say `NVIDIA 3D Vision Stereo`.
 
-1. Install `meda-utils`.
+1. Install `mesa-utils`.
 
     ~~~
     sudo apt-get install mesa-utils
