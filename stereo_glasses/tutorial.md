@@ -8,7 +8,7 @@ This tutorial assumes that you will be using Ubuntu.
 
 1. A [3D ready monitor](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=3D+monitor&rh=i%3Aaps%2Ck%3A3D+monitor). This monitor should have a 120Hz refresh rate.
 
-1. An [Nvida Quadro K4200](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=quadro+k4200&rh=i%3Aaps%2Ck%3Aquadro+k4200).
+1. An [Nvida Quadro K4000](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=quadro+k4200&rh=i%3Aaps%2Ck%3Aquadro+k4000) or better.
     **Warning: Many Nvidia cards say they support 3D stereo. Such a statement may only be true when using Windows drivers. Make sure there is a 3pin VESA connector on the card, otherwise the card will not work in Linux.**
 
 1. A complete [Nvidia 3D Vision kit](http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=nvidia+3d+vision+2): glasses, emitter, sync cable, and usb cable.
