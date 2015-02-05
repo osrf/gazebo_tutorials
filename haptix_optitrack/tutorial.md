@@ -6,18 +6,18 @@ All of the necessary items, including all software components, will be provided 
 
 1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
-2. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html))
+1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 
-3. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/))
+1. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/)).
 
-4. A camera tripod, 1-2 meters high
+1. A camera tripod, 1-2 meters high.
 
-5. A set of motion tracking targets (DIY participants can find motion tracking accessories here [here](https://www.naturalpoint.com/optitrack/products/suits-markers/); we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases)
+1. A set of motion tracking targets (DIY participants can find motion tracking accessories [here](https://www.naturalpoint.com/optitrack/products/suits-markers/); we recommend getting 9 reflective markers, 9 short bases, and 2 rigid body bases).
 
 ## Camera setup
 Mount the Optitrack on the tripod.
 
-The Optitrack kit comes with a long USB cable, a power cable, and a hub with several ports. Plug the power cable into the wall and into the hub. Then plug the USB cable into the hub. Later, you will use this cable to connect to the Windows computer. Finally, plug the wire coming out of the hub into the back of the Optitrack. Consult the [V120 Trio Quick Start Guide](https://www.naturalpoint.com/optitrack/static/documents/V120-Trio%20Quick%20Start%20Guide.pdf) if you need more help setting up the camera.
+The Optitrack kit comes with a long USB cable, a power cable, and a hub with several ports. Plug the power cable into the wall and into the hub. Then plug the USB cable into the hub. Later, you will use this cable to connect to the machine running Motive (or any other tracking program). Finally, plug the wire coming out of the hub into the back of the Optitrack. Consult the [V120 Trio Quick Start Guide](https://www.naturalpoint.com/optitrack/static/documents/V120-Trio%20Quick%20Start%20Guide.pdf) if you need more help setting up the camera.
 
 Place the Optitrack 1-2 meters to the right of the workstation desk, so that the camera is nearly rotated 90 degrees from the plane of the monitor and facing the workstation/the chair where the user will sit. The camera should be looking at the user's right side, with a slight over-the-shoulder perspective.  The cable connecting the Optitrack to the Windows computer is more than long enough, but take care not to catch it on anything and leave enough slack so that it doesn't pull.
 
