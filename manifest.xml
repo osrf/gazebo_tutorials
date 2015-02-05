@@ -820,6 +820,7 @@
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
         <tutorial>haptix_tactors</tutorial>
+        <tutorial>haptix_optitrack</tutorial>
       </tutorials>
     </category>
 
