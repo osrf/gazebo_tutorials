@@ -9,7 +9,14 @@ This tutorial assumes that you will be using Ubuntu.
 1. A [3D ready monitor](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=3D+monitor&rh=i%3Aaps%2Ck%3A3D+monitor). This monitor should have a 120Hz refresh rate.
 
 1. An [Nvida Quadro K4000](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=quadro+k4200&rh=i%3Aaps%2Ck%3Aquadro+k4000) or better.
+
     **Warning: Many Nvidia cards say they support 3D stereo. Such a statement may only be true when using Windows drivers. Make sure there is a 3pin VESA connector on the card, otherwise the card will not work in Linux.**
+
+    1. You can check your current graphics card with:
+
+        ~~~
+        lspci | grep VGA
+        ~~~
 
 1. A complete [Nvidia 3D Vision kit](http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=nvidia+3d+vision+2): glasses, emitter, sync cable, and usb cable.
 
@@ -24,6 +31,12 @@ This tutorial assumes that you will be using Ubuntu.
 ## Sofware requirements
 
 1. Ubuntu 14.04 (Trusty).
+
+1. Nvidia drivers.
+
+    ~~~
+    sudo apt-get install nvidia-current
+    ~~~
 
 1. Install `libogre3d-1.9-dev`.
 
@@ -49,7 +62,7 @@ This tutorial assumes that you will be using Ubuntu.
 
 1. Set the refresh rate to 120Hz. Do not use `auto`.
 
-1. Set the resolution. Do not use `auto`.
+1. Set the resolution to be a fixed value. Do not use `auto`.
 
 1. Select the `Save to X Configuration File` and follow instructions to save to `/etx/X11/xorg.conf`.
 
