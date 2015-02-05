@@ -360,6 +360,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Stereo Glasses" ref='stereo_glasses'>
+      <markdown version="6.0+">stereo_glasses/tutorial.md</markdown>
+      <description>Setup Gazebo to generate a stereo images suitable for use with stereo glasses.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Advanced ROS Integration" ref='ros_advanced'>
       <markdown version="1.9+">ros_advanced/tutorial.md</markdown>
       <description>Miscellaneous Gazebo-ROS tricks and tips.</description>
@@ -758,6 +764,7 @@
       <tutorials>
         <tutorial>lightmap</tutorial>
         <tutorial>oculus</tutorial>
+        <tutorial>stereo_glasses</tutorial>
       </tutorials>
     </category>
 
