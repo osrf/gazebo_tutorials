@@ -124,11 +124,11 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
 1. Right-click on the model and select "View->Joints". The newly created joints will be displayed:
 
-[[file:files/Simple-gripper-joints_5.png|640px]]
+[[file:files/Simple-gripper-joints.png|640px]]
 
 1. You can also control the forces on each joint using the Joint Control widget.  Click on the gripper model.  Then expand this widget by clicking on the vertical handle on the right side of the GUI and dragging it to the left. The widget displays a list of sliders, one for each joint. Select the Force tab and use the sliders to apply forces to each joint, and you should see the gripper move.  E.g., set the force on `palm_riser` to 10 (Newtons), and you should see something like:
 
-[[file:files/Simple_gripper_joint_control_1_5.png|640px]]
+[[file:files/Simple_gripper_joint_control_1_4.png|640px]]
 
 1. Optional:
 
