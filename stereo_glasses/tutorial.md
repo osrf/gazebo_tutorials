@@ -1,6 +1,6 @@
 # Introduction
 
-This tutorial describes how to setup a machine and Gazebo for use with stero glasses, such as those provided by [Nvidia 3D Vision](http://www.nvidia.com/object/3d-vision-main.html). 
+This tutorial describes how to setup a machine and Gazebo for use with stereo glasses, such as those provided by [Nvidia 3D Vision](http://www.nvidia.com/object/3d-vision-main.html). 
 
 This tutorial assumes that you will be using Ubuntu.
 
@@ -50,7 +50,7 @@ This tutorial assumes that you will be using Ubuntu.
     sudo apt-get install nvidia-settings
     ~~~
 
-1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debains when they are made available on July 27, 2015.
+1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
 
 ## Setup Nvidia Stereo
 
@@ -64,7 +64,7 @@ This tutorial assumes that you will be using Ubuntu.
 
 1. Set the resolution to be a fixed value. Do not use `auto`.
 
-1. Select the `Save to X Configuration File` and follow instructions to save to `/etx/X11/xorg.conf`.
+1. Select the `Save to X Configuration File` and follow instructions to save to `/etc/X11/xorg.conf`.
 
 1. Add stereo option to `xorg.conf`. 
 
