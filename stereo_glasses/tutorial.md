@@ -52,6 +52,14 @@ This tutorial assumes that you will be using Ubuntu.
 
 1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
 
+1. If you are using the Unity desktop environment, stereo probably won't work. Install Gnome Classic:
+
+    ~~~
+    sudo apt-get install gnome-session-fallback
+    ~~~
+
+  Logout and click on the icon next to your username. Select "GNOME Classic (Metacity)" and log in.
+
 ## Setup Nvidia Stereo
 
 1. Start `nvidia-settings` manager.
