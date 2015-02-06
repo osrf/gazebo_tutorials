@@ -17,7 +17,7 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
         gedit ~/simple_gripper_tutorial/gripper.world
 
-    Copy the following SDF into [gripper.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/box.sdf):
+    Copy the following SDF into [gripper.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/gripper.world):
 
     <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/gripper.world' />
 
