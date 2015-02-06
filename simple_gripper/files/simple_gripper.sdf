@@ -119,7 +119,7 @@
                 <geometry>
                     <box>
                         <size>0.1 0.2 0.1</size>
-                    </box>gedit ~/.gazebo/models/my_gripper/simple_gripper.sdf
+                    </box>
                 </geometry>
                 <material>
                     <script>Gazebo/Blue</script>
