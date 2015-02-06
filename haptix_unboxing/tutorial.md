@@ -1,8 +1,8 @@
-# Overview
+## Overview
 
 This documents gives instructions for installing and configuring your HAPTIX machine from OSRF.
 
-# Inventory
+## Inventory
 
 - 1 Zareason computer with power cable and Display Port cable
 - 1 Logitech keyboard
@@ -16,7 +16,7 @@ This documents gives instructions for installing and configuring your HAPTIX mac
 - 1 3DConnexion Spacenav
 - switch (TODO: finalize)
 
-# Hardware setup
+## Hardware setup
 Connect the computer to power. 
 
 (Explain hooking up USB peripherals)
@@ -25,25 +25,25 @@ Power the computer on.
 
 You should see the Nvidia Stereo emitter shine dull green upon power-up.
 
-# Software setup
+## Software setup
 
 Log in using the provided username and password.
 
-## Change your password
+### Change your password
 For security reasons, you should change your password. In the top toolbar, click on "Applications", then hover over "System Tools" and "Administration". Click on "User Accounts".
 
 Click on "Unlock" and type your password to unlock adminstrator privileges. Click on "Password" to change your password.
 
 You can add new user accounts if multiple people expect to use the machine, or you can simply share the password to one user account among multiple users. If you want to new user accounts to be able to add/remove/update software, make sure to make them Administrator accounts.
 
-## Change your timezone
+### Change your timezone
 Optional: change your timezone by click on the time in the upper-right hand corner, selecting "Time & Date settings", and clicking on the appropriate timezone.
 
-# Environment overview
+## Environment overview
 
 On the desktop, you should see three icons.
 
-[[files:files/desktop.png]]
+[[file:files/desktop.png]]
 
 Gazebo: Double-click to launch the Gazebo prosthetic arm simulator.
 
@@ -51,7 +51,7 @@ haptixUpdate: Double-click to check for software updates and install them if fou
 
 VirtualOSRF: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
 
-# Testing your setup
+## Testing your setup
 
 Make sure the stereo glasses are charged and turned on (you should see a shining green LED indicator) and the emitter is glowing dull green.
 
@@ -63,7 +63,9 @@ Put the glasses on. The Gazebo window should look 3D.
 
 You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the teleop tutorial for more information) ((link)).
 
-# Troubleshooting
+Move to the next tutorial for configuring the Optitrack 3D camera for viewpoint and arm pose control (link).
+
+## Troubleshooting
 
 If clicking on the "Shadows" box does not enable stereo, contact OSRF support (haptix-support@osrfoundation.org).
 
@@ -80,7 +82,3 @@ You will have to type in your password.
 If the Spacenav does not glow blue even if it is connected, or the terminal command does not work, contact OSRF support.
 
 If Gazebo does not load or the arm is unresponsive to keyboard input, contact OSRF support.
-
-# Optitrack configuration
-
-See the next tutorial for configuring the Optitrack 3D camera for viewpoint and arm pose control (link).
