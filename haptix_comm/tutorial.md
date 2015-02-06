@@ -131,6 +131,12 @@ gazebo worlds/arat.world
 Your code should be ready to be executed using Visual Studio. Click on `DEBUG`->
 `Start Without Debugging...` (alternatively you can press Ctrl+F5).
 
+**Note:** if the Windows firewall is enabled, it will show a Window called
+"Windows security alert. Windows Firewall has blocked some features of this
+program" asking for permissions to run the recently compiled application. You
+could leave the default option ("Private networks, such as my home or work
+network.") and click on "Allow access".
+
 ## Linux
 
 1. Go to the Linux machine where you want to run your controller code. Open a
@@ -219,3 +225,42 @@ We have included a helper function `printState()` that shows all the state
 information for debugging purposes. Similar to `hx_getdeviceinfo()`, the function
 `hx_update()` returns `hxOK` when the command was successfully sent and the
 state has been received.
+
+## Troubleshooting
+
+### I can not connect the Windows client with Gazebo Linux Server
+
+Usually you will recieve a message from the command line launched by Visual
+Studio with an error message `hx_getdeviceinfo() Service call timed out`. This
+means that the communication to the Gazebo Linux server failed.
+
+First check: ¿are both machines in the same network and can reach each other?
+Simply using the ping command from both (windows command line and linux shell),
+should be enough to check connectivity. If it is not working, there is a problem 
+in network configuration, be sure that both are connected to the same network.
+
+Second check: ¿is the Windows firewall affecting the communication? It can be
+disabled from the Windows Control Panel and try to launch the Visual Studio 
+application again.
+
+Third check: ¿is the communication layer using the right network interface? 
+Double check that you have set the IGN_IP properly. This can be done from the 
+Windows command line `echo %IGN_IP%`. To be completely sure, logout from 
+your user session, login again and open Visual Studio.
+
+Fourth check: ¿is the router cutting the communication? Several solutions: 
+Login into the router, disable any kind of firewall. If you can not do that,
+connect both machines using an ethernet cable directly. You will need to
+manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and 
+192.168.X.Y+1/255.255.255.0).
+
+### In the Windows Firewall question, I clicked the wrong option (cancel)
+
+If by an error you pressed the wrong button, you can access to the `Windows
+Firewall advanced security` from the Windows control panel, go to `Inbound
+rules` and remove the ones with the name `ConsoleApplication` (or the name that
+you gave to the application).
+
+Another option is to modify your application name, in the `Project Properties
+name` (not the solution name) that appears in the `Solution Explorer window`.
+Clean, rebuild and run again.
