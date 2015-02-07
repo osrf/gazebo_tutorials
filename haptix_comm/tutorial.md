@@ -230,25 +230,25 @@ state has been received.
 
 ### I can not connect the Windows client with Gazebo Linux Server
 
-Usually you will recieve a message from the command line launched by Visual
+Usually you will receive a message from the command line launched by Visual
 Studio with an error message `hx_getdeviceinfo() Service call timed out`. This
 means that the communication to the Gazebo Linux server failed.
 
-First check: ¿are both machines in the same network and can reach each other?
-Simply using the ping command from both (windows command line and linux shell),
+**First check:** ¿are both machines in the same network and can reach each other?
+Simply using the ping command from both (windows command line and Linux shell),
 should be enough to check connectivity. If it is not working, there is a problem 
 in network configuration, be sure that both are connected to the same network.
 
-Second check: ¿is the Windows firewall affecting the communication? It can be
+**Second check:** ¿is the Windows firewall affecting the communication? It can be
 disabled from the Windows Control Panel and try to launch the Visual Studio 
 application again.
 
-Third check: ¿is the communication layer using the right network interface? 
+**Third check:** ¿is the communication layer using the right network interface? 
 Double check that you have set the IGN_IP properly. This can be done from the 
 Windows command line `echo %IGN_IP%`. To be completely sure, logout from 
 your user session, login again and open Visual Studio.
 
-Fourth check: ¿is the router cutting the communication? Several solutions: 
+**Fourth check:** ¿is the router cutting the communication? Several solutions: 
 Login into the router, disable any kind of firewall. If you can not do that,
 connect both machines using an ethernet cable directly. You will need to
 manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and 
