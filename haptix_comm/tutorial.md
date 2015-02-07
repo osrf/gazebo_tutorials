@@ -118,7 +118,7 @@ example:
 
 # Running the simulation with your controller
 
-First, be sure about the IP address used by the network interface connect to
+First, be sure about the IP address used by the network interface connecting
 both machines.  Open a terminal and run `ifconfig` to show the list of network
 interfaces that you currently have:
 
