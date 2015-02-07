@@ -239,14 +239,14 @@ Simply using the ping command from both (windows command line and Linux shell),
 should be enough to check connectivity. If it is not working, there is a problem 
 in network configuration, be sure that both are connected to the same network.
 
-**Second check:** ¿is the Windows firewall affecting the communication? It can be
+**Second check:** ¿is the communication layer using the right network interface? 
+Double check that you have set the `IGN_IP` properly in **both** Gazebo Linux server
+and Windows. In Windows this can be done from the Windows command line `echo %IGN_IP%`. 
+To be completely sure, logout from your user session, login again and open Visual Studio.
+
+**Third check:** ¿is the Windows firewall affecting the communication? It can be
 disabled from the Windows Control Panel and try to launch the Visual Studio 
 application again.
-
-**Third check:** ¿is the communication layer using the right network interface? 
-Double check that you have set the IGN_IP properly. This can be done from the 
-Windows command line `echo %IGN_IP%`. To be completely sure, logout from 
-your user session, login again and open Visual Studio.
 
 **Fourth check:** ¿is the router cutting the communication? Several solutions: 
 Login into the router, disable any kind of firewall. If you can not do that,
