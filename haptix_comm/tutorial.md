@@ -118,36 +118,9 @@ example:
 
 # Running the simulation with your controller
 
-Now, we are ready to test our controller with the HAPTIX simulator. Open a new
-terminal on the Linux machine running Gazebo and start the HAPTIX simulation:
-
-~~~
-. /usr/share/haptix_gazebo_plugins/setup.sh
-gazebo worlds/arat.world
-~~~
-
-## Windows
-
-Your code should be ready to be executed using Visual Studio. Click on `DEBUG`->
-`Start Without Debugging...` (alternatively you can press Ctrl+F5).
-
-**Note:** if the Windows firewall is enabled, it will show a Window called
-"Windows security alert. Windows Firewall has blocked some features of this
-program" asking for permissions to run the recently compiled application. You
-could leave the default option ("Private networks, such as my home or work
-network.") and click on "Allow access".
-
-## Linux
-
-1. Go to the Linux machine where you want to run your controller code. Open a
-terminal and go to the `build/` directory where you have your controller
-executable:
-
-    ~~~
-    cd ~/haptix_controller/build
-    ~~~
-
-1. Run `ifconfig` to show the list of network interfaces that you currently have.
+First, be sure about the IP address used by the network interface connect to
+both machines.  Open a terminal and run `ifconfig` to show the list of network
+interfaces that you currently have:
 
     ~~~
     ifconfig
@@ -173,8 +146,40 @@ executable:
           RX bytes:1098106845630 (1.0 TB)  TX bytes:1098106845630 (1.0 TB)
     %%%
 
-1. Start the controller filling `IGN_IP` with the appropriate IP address (depending if
-you want to use your wired or wireless connection):
+
+Now, we are ready to test our controller with the HAPTIX simulator. Open a new
+terminal on the Linux machine running Gazebo and start the HAPTIX simulation
+using `IGN_IP` with the appropriate IP address (depending if you want to use
+your wired or wireless connection):
+
+~~~
+. /usr/share/haptix_gazebo_plugins/setup.sh
+IGN_IP=172.23.2.37 gazebo worlds/arat.world
+~~~
+
+## Windows
+
+Your code should be ready to be executed using Visual Studio. Click on `DEBUG`->
+`Start Without Debugging...` (alternatively you can press Ctrl+F5).
+
+**Note:** if the Windows firewall is enabled, it will show a Window called
+"Windows security alert. Windows Firewall has blocked some features of this
+program" asking for permissions to run the recently compiled application. You
+could leave the default option ("Private networks, such as my home or work
+network.") and click on "Allow access".
+
+## Linux
+
+1. Go to the Linux machine where you want to run your controller code. Open a
+terminal and go to the `build/` directory where you have your controller
+executable:
+
+    ~~~
+    cd ~/haptix_controller/build
+    ~~~
+
+1. Start the controller filling `IGN_IP` with the appropriate IP address (check
+above instructions about how to get it):
 
     ~~~
     IGN_IP=172.23.2.37 ./hx_controller
