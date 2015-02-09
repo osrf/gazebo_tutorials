@@ -45,11 +45,11 @@ On the desktop, you should see three icons.
 
 [[file:files/desktop.png]]
 
-Gazebo: Double-click to launch the Gazebo prosthetic arm simulator.
+- Gazebo: Double-click to launch the Gazebo prosthetic arm simulator.
 
-haptixUpdate: Double-click to check for software updates and install them if found.
+- haptixUpdate: Double-click to check for software updates and install them if found.
 
-VirtualOSRF: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
+- virtualOSRF: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
 
 ## Testing your setup
 
@@ -61,9 +61,9 @@ The screen should appear "blurry", as if there are two images on top of each oth
 
 Put the glasses on. The Gazebo window should look 3D.
 
-You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the teleop tutorial for more information) ((link)).
+You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the [teleop tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_teleop) for more information).
 
-Move to the next tutorial for configuring the Optitrack 3D camera for viewpoint and arm pose control (link).
+Move to the [next tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_optitrack) for configuring the Optitrack 3D camera for viewpoint and arm pose control.
 
 ## Troubleshooting
 
