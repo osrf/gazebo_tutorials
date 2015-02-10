@@ -7,12 +7,43 @@ We assume that you have already done the [installation step](http://gazebosim.or
 
 # Start the Gazebo simulation
 
-Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
-simulation:
+First, be sure about the IP address used by the network interface connecting
+both machines.  Open a terminal and run `ifconfig` to show the list of network
+interfaces that you currently have:
+
+    ~~~
+    ifconfig
+    ~~~
+    %%%
+    eth1  Link encap:Ethernet  HWaddr 90:2b:34:d7:51:7a
+          inet addr:172.23.2.37  Bcast:172.23.3.255  Mask:255.255.252.0
+          inet6 addr: fe80::922b:34ff:fed7:517a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:13253086 errors:0 dropped:4 overruns:0 frame:0
+          TX packets:6567550 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:7740317824 (7.7 GB)  TX bytes:1601307286 (1.6 GB)
+          Interrupt:20 Memory:f7500000-f7520000
+
+    lo    Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:3680508884 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3680508884 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:1098106845630 (1.0 TB)  TX bytes:1098106845630 (1.0 TB)
+    %%%
+
+
+Now, we are ready to test our controller with the HAPTIX simulator. Open a new
+terminal on the Linux machine running Gazebo and start the HAPTIX simulation
+using `IGN_IP` with the appropriate IP address (depending if you want to use
+your wired or wireless connection):
 
 ~~~
 . /usr/share/haptix_gazebo_plugins/setup.sh
-gazebo worlds/arat.world
+IGN_IP=172.23.2.37 gazebo worlds/arat.world
 ~~~
 
 # Run your controller in Matlab or Octave
