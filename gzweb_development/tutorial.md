@@ -25,11 +25,11 @@ To install required Grunt packages:
 
         ./updateGZ3D.sh
 
-1. Verify your changes: start gzweb with `./start_gzweb.sh` and open browser to `localhost:8080`, or just refresh page. If you don't see anything changed after modifying the javascript code, you might need to clear your browser cache to see the changes.
+1. Verify your changes: start gzweb with `./start_gzweb.sh` and open browser to `localhost:8080`, or just refresh page. If you don't see anything changed after modifying the Javascript code, you might need to clear your browser cache to see the changes.
 
 # C++ development
 
-Gzweb communicated with `gzserver` by publishing and subscribing to Gazebo topics.
+Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topics.
 
 ## Work Flow:
 

@@ -243,7 +243,7 @@
 
     <tutorial title="Gzweb installation" ref='gzweb_install'>
       <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
-      <description>Explains how to install the WebGL client for Gazebo.</description>
+      <description>Explains how to install and run the WebGL client for Gazebo.</description>
       <skill>beginner</skill>
     </tutorial>
 
