@@ -29,15 +29,6 @@ Gzweb is a graphical interface which communicates with gzserver. To use gzserver
     ~~~
 
 
- 1. After all dependencies have been installed, install NodeJS modules:
-
-    ~~~
-    npm config set registry http://registry.npmjs.org/
-    sudo npm install -g node-gyp
-    sudo npm install -g http-server
-    ~~~
-
-
 # Clone the repository and build
 
  1. Clone the repository into a directory in your home folder:
@@ -55,14 +46,22 @@ Gzweb is a graphical interface which communicates with gzserver. To use gzserver
 
  1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
 
+    >If you installed gazebo via deb packages:
+
     ~~~
-    . /usr/share/gazebo/setup.sh
+    source /usr/share/gazebo/setup.sh
+    ~~~
+
+    >If you did a source install then:
+
+    ~~~
+    source <YOUR_GAZEBO_PATH>/share/gazebo/setup.sh
     ~~~
 
  1. If you have drcsim then source:
 
     ~~~
-    . /usr/share/drcsim/setup.sh
+    source /usr/share/drcsim/setup.sh
     ~~~
 
  1. Run the deploy script, this downloads models from the web and may take a couple of minutes.
