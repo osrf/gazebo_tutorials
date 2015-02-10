@@ -119,7 +119,7 @@ To stop Gzweb server, from your gzweb directory, run:
 
  * **Q: When running `./deploy.sh`, it is missing a file in `gz3d/build`:**
 
-    A: You will need to install grunt and run it appropriately, as described in the following section.
+    A: You will need to install Grunt and run it appropriately, as described in the [development](http://gazebosim.org/tutorials?tut=gzweb_development) section.
 
  * **Q: When running `./deploy.sh`, I see errors along the lines of:**
 
