@@ -6,50 +6,72 @@ Gzweb is installed on the server-side. Once the server is set up and running, cl
 
 Gzweb is a graphical interface which communicates with gzserver. To use gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
 
-Make sure your system supports a more recent version of NodeJS (>=0.10) then install the dependencies from the terminal:
+ 1. Make sure your system supports a more recent version of NodeJS (>=0.10)
 
-    sudo apt-get install libjansson-dev nodejs npm libboost-dev imagemagick libtinyxml-dev mercurial
+    >**Note:** For Ubuntu Precise or older distributions, the NodeJS version that comes with it may not work with gzweb. In that case, set up your system to grab and install the latest NodeJS debs:
 
->**Note:** For Ubuntu Precise or older distributions, the NodeJS version that comes with it may not work with gzweb. In that case, set up your system to grab and install the latest NodeJS debs:
+    ~~~~
+    dpkg -l nodejs
+    ~~~
 
->     curl -sL https://deb.nodesource.com/setup | sudo bash -
->     sudo apt-get install nodejs
+    >If the above command returns a version < 0.10 or couldn't find the nodejs package use:
 
->If NodeJS installs without errors then install the rest of the dependencies (leaving out npm as that should be installed with NodeJS):
+    ~~~
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    ~~~
 
->     sudo apt-get install libjansson-dev nodejs libboost-dev make cmake mercurial g++ libtinyxml-dev imagemagick
+    >We will install the nodejs package in the following step.
+  
+ 1. Next, install the dependencies from a terminal:
 
-After all dependencies have been installed, install NodeJS modules:
+    ~~~
+    sudo apt-get install libjansson-dev nodejs npm libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+    ~~~
 
+
+ 1. After all dependencies have been installed, install NodeJS modules:
+
+    ~~~
     npm config set registry http://registry.npmjs.org/
     sudo npm install -g node-gyp
     sudo npm install -g http-server
+    ~~~
 
 
 # Clone the repository and build
 
-Clone the repository into a directory in your home folder:
+ 1. Clone the repository into a directory in your home folder:
 
+    ~~~
     cd ~; hg clone https://bitbucket.org/osrf/gzweb
+    ~~~
 
-Enter the Gzweb repository and switch to the 1.2.0 branch:
+ 1. Enter the Gzweb repository and switch to the 1.2.0 branch:
 
+    ~~~
     cd ~/gzweb
     hg up gzweb_1.2.0
+    ~~~
 
-The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
+ 1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
 
+    ~~~
     . /usr/share/gazebo/setup.sh
+    ~~~
 
-If you have drcsim then source:
+ 1. If you have drcsim then source:
 
+    ~~~
     . /usr/share/drcsim/setup.sh
+    ~~~
 
-Run the deploy script, this downloads models from the web and may take a couple of minutes.
+ 1. Run the deploy script, this downloads models from the web and may take a couple of minutes.
 
+    ~~~
     ./deploy.sh -m
+    ~~~
 
-Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed.
+    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed.
 
 ## Options
 
@@ -81,19 +103,27 @@ Note: the `-m` flag tells the deploy script to grab models from the model databa
 
 1. Start gazebo or gzserver first:
 
-        gzserver
+    ~~~
+    gzserver
+    ~~~
 
 1. On another terminal, from your gzweb directory, start the http and websocket servers:
 
-        ./start_gzweb.sh
+    ~~~
+    ./start_gzweb.sh
+    ~~~
 
 1. Open a browser (Chrome works well) that has WebGL and websocket support and point it to the ip address and port where the http server is started, by default it's on port 8080, e.g.
 
-        http://localhost:8080
+    ~~~
+    http://localhost:8080
+    ~~~
 
-To stop Gzweb server, from your gzweb directory, run:
+1. To stop Gzweb server, from your gzweb directory, run:
 
+    ~~~
     ./stop_gzweb.sh
+    ~~~
 
 # Troubleshooting
 
