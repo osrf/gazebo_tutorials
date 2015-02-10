@@ -129,27 +129,3 @@ To stop Gzweb server, from your gzweb directory, run:
 
         sudo apt-get remove gyp
 
-# For developers
-
-## Grunt setup
-
-Grunt is used for running tasks including code checking and minification:
-
-* Minification: Compresses all *.js code into `gz3d.js` and `gz3d.min.js` files that can be included into other projects.
-* Code check: uses JSHint for detecting potential errors in Javascript code.
-
-To install required Grunt packages:
-
-    cd gz3d/utils && npm install
-
-## Work Flow:
-
-1. Make changes to javascript source code in `gzweb/gz3d`
-
-1. Code check and minify javascript files and copy them to the right directory, run:
-
-        ./updateGZ3D.sh
-
-1. Verify your changes, start gzweb with `./start_gzweb.sh` and open browser to `localhost:8080`, or just refresh page. If you don't see anything changed after modifying the javascript code, you might need to clear your browser cache to see the changes.
-
-
