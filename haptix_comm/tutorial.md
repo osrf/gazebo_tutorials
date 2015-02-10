@@ -147,10 +147,9 @@ interfaces that you currently have:
     %%%
 
 
-Now, we are ready to test our controller with the HAPTIX simulator. Open a new
-terminal on the Linux machine running Gazebo and start the HAPTIX simulation
-using `IGN_IP` with the appropriate IP address (depending if you want to use
-your wired or wireless connection):
+Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
+simulation using `IGN_IP` with the appropriate IP address (depending if you
+want to use your wired or wireless connection):
 
 ~~~
 . /usr/share/haptix_gazebo_plugins/setup.sh
