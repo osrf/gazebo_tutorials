@@ -10,7 +10,7 @@ Gzweb makes use of the [JQuery mobile](http://jquerymobile.com/) user interface 
 
 [Grunt](http://gruntjs.com/) is used for running tasks including code checking and minification:
 
-* Minification: Compresses all *.js code into `gz3d.js` and `gz3d.min.js` files that can be included into other projects.
+* Minification: Compresses all `*.js` code located at  `gzweb/gz3d/src` into `gz3d.js` and `gz3d.min.js` files that can be included into other projects.
 * Code check: uses JSHint for detecting potential errors in Javascript code.
 
 To install required Grunt packages:
@@ -19,7 +19,7 @@ To install required Grunt packages:
 
 ## Work Flow:
 
-1. Make changes to Javascript source code in `gzweb/gz3d/src`
+1. Make changes to Javascript source code at `gzweb/gz3d/src`. You may also edit files at `gzweb/gz3d/client/js/include`, but keep in mind most of these were taken from somewhere else.
 
 1. Code check and minify Javascript files and copy them to the right directory, running:
 

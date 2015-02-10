@@ -250,7 +250,7 @@
     <tutorial title="Gzweb development" ref='gzweb_development'>
       <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
       <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
-      <skill>beginner</skill>
+      <skill>advanced</skill>
     </tutorial>
 
     <!-- ********************** -->
