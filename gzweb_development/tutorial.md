@@ -41,12 +41,12 @@ Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topic
 
 1. Verify your changes: start gzweb with `./start_gzweb.sh` and open browser to `localhost:8080`, or just refresh page.
 
-## Making a contribution
+# Making a contribution
 
-# Bug reports and feature requests
+## Bug reports and feature requests
 
 On Gzweb's [issue tracker](https://bitbucket.org/osrf/gzweb/issues?status=new&status=open), you're able to report bugs and ask for new features. Simply create an issue and categorize it accordingly.
 
-# Pull requests
+## Pull requests
 
 If you've fixed a bug or added a feature and would like your changes to be integrated into Gzweb, you can make a [pull request](https://bitbucket.org/osrf/gzweb/pull-requests)  to the repository, and the changes will be reviewed and merged.
