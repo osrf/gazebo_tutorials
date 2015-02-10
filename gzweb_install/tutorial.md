@@ -39,7 +39,7 @@ Enter the Gzweb repository and switch to the 1.2.0 branch:
 
 The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
 
-    . /usr/local/share/gazebo/setup.sh
+    . /usr/share/gazebo/setup.sh
 
 If you have drcsim then source:
 
