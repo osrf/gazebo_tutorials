@@ -348,7 +348,11 @@ Unlike for SDFs, no version is required for the <sdf> tag when it is used for UR
 
 #### Environment Variable
 
-Finally, you need to add an environment variable to your .bashrc file that tells Gazebo where to look for model databases. Using the editor of your choice edit "~/.bashrc". Check if you already have a GAZEBO_MODEL_PATH defined. If you already have one, append to it using a semi-colon, otherwise add the new export. Assuming your Catkin workspace is in <tt>~/catkin_ws/</tt> Your path should look something like:
+Finally, you need to add an environment variable to your .bashrc file that tells Gazebo where to look for model databases.
+Using the editor of your choice edit "~/.bashrc".
+Check if you already have a `GAZEBO_MODEL_PATH` defined.
+If you already have one, append to it using a semi-colon, otherwise add the new export.
+Assuming your Catkin workspace is in <tt>~/catkin_ws/</tt> Your path should look something like:
 
       export GAZEBO_MODEL_PATH=/home/user/catkin_ws/src/
 
@@ -393,7 +397,9 @@ The advantage of the model database method is that now you can include your robo
 roslaunch MYROBOT_gazebo MYROBOT.launch
 </pre>
 
-The disadvantage of this method is that your packaged MYROBOT_description and MYROBOT_gazebo are not as easily portable between computers - you first have to set the GAZEBO_MODEL_PATH on any new system before being able to use these ROS packages.
+The disadvantage of this method is that your packaged `MYROBOT_description` and `MYROBOT_gazebo`
+are not as easily portable between computers - you first have to set the `GAZEBO_MODEL_PATH`
+on any new system before being able to use these ROS packages.
 
 ## Next Steps
 
