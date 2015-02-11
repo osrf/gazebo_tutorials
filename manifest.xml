@@ -241,6 +241,18 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Gzweb installation" ref='gzweb_install'>
+      <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
+      <description>Explains how to install and run the WebGL client for Gazebo.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Gzweb development" ref='gzweb_development'>
+      <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
+      <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -727,6 +739,14 @@
         <tutorial>player_position</tutorial>
         <tutorial>player_laser</tutorial>
         <tutorial>player_camera</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Web client (Gzweb)" skill="intermediate" ref="gzweb">
+      <description>Gzweb is a WebGL client for Gazebo. It lets you interact with the simulation from the comfort of a web browser.</description>
+      <tutorials>
+        <tutorial>gzweb_install</tutorial>
+        <tutorial>gzweb_development</tutorial>
       </tutorials>
     </category>
 
