@@ -58,6 +58,8 @@ Optional: change your timezone by click on the time in the upper-right hand corn
 
 ## Environment overview
 
+TODO: document how to add the Gazebo and haptixUpdate icons to the Desktop (or have them automatically installed by the debs).  Regarding virtualOSRF, add a note for non-HAPTIX teams that they can look at http://wiki.osrfoundation.org/RequestingRemoteControl for details on setting it up themselves.
+
 On the desktop, you should see three icons.
 
 [[file:files/desktop.png]]
