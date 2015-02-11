@@ -111,15 +111,23 @@ An typical path might be something like <tt>/usr/local/share/gazebo-1.9</tt>. Ad
 
 ## Creating your own Gazebo ROS Package
 
-Before continuing on how to spawn robots into Gazebo, we will first go over file hierarchy standards for using ROS with Gazebo so that we can make later assumptions.
+Before continuing on how to spawn robots into Gazebo,
+we will first go over file hierarchy standards for using
+ROS with Gazebo so that we can make later assumptions.
 
-For now, we will assume your catkin workspace is named <tt>catkin_ws</tt>, though you can name this to whatever you want. Thus, your catkin workspace might be located on your computer at something like:
+For now, we will assume your catkin workspace is named <tt>catkin_ws</tt>,
+though you can name this to whatever you want.
+Thus, your catkin workspace might be located on your computer at something like:
 
 <pre>
 /home/user/catkin_ws/src
 </pre>
 
-Everything concerning your robot's model and description is located, as per ROS standards, in a package named <tt>/MYROBOT_description</tt> and all the world files and launch files used with Gazebo is located in a ROS package named <tt>/MYROBOT_gazebo</tt>. Replace 'MYROBOT' with the name of your bot in lower case letters. With these two packages, your hierarchy should be as follows:
+Everything concerning your robot's model and description is located,
+as per ROS standards, in a package named `/MYROBOT_description`
+and all the world files and launch files used with Gazebo is located in a ROS package named
+`/MYROBOT_gazebo`. Replace 'MYROBOT' with the name of your bot in lower case letters.
+With these two packages, your hierarchy should be as follows:
 
 <pre>
 ../catkin_ws/src
@@ -147,7 +155,9 @@ Everything concerning your robot's model and description is located, as per ROS 
         /plugins
 </pre>
 
-Remember that the command <tt>catkin_create_pkg</tt> is used for creating new packages, though this can also easily be adapted for rosbuild if you must. Most of these folders and files should be self explanatory.
+Remember that the command `catkin_create_pkg` is used for creating new packages,
+though this can also easily be adapted for rosbuild if you must.
+Most of these folders and files should be self explanatory.
 
 The next section will walk you through making some of this setup for use with a custom world file.
 
@@ -191,10 +201,11 @@ You can create custom <tt>.world</tt> files within your own ROS packages that ar
 ~~~
 
 * You should now be able to launch your custom world (with a gas station) into Gazebo using the following command:
-<pre>
+
+~~~
 . ~/catkin_ws/devel/setup.bash
 roslaunch MYROBOT_gazebo MYROBOT.launch
-</pre>
+~~~
 
 You should see the following world model (zoom out with the scroll wheel on your mouse):
 
@@ -221,11 +232,15 @@ We will go over both methods. Overall our recommended method is using the '''ROS
 
 ### "ROS Service Call" Robot Spawn Method
 
-This method uses a small python script called <tt>spawn_model</tt> to make a service call request to the <tt>gazebo_ros</tt> ROS node (named simply "gazebo" in the rostopic namespace) to add a custom URDF into Gazebo. The <tt>spawn_model</tt> script is located within the <tt>gazebo_ros</tt> package. You can use this script in the following way:
+This method uses a small python script called `spawn_model` to make
+a service call request to the `gazebo_ros` ROS node
+(named simply "gazebo" in the rostopic namespace) to add a custom URDF into Gazebo.
+The `spawn_model` script is located within the `gazebo_ros` package.
+You can use this script in the following way:
 
-<pre>
+~~~
 rosrun gazebo_ros spawn_model -file `rospack find MYROBOT_description`/urdf/MYROBOT.urdf -urdf -x 0 -y 0 -z 1 -model MYROBOT
-</pre>
+~~~
 
 To see all of the available arguments for <tt>spawn_model</tt> including namespaces, trimesh properties, joint positions and RPY orientation run:
 
@@ -243,9 +258,9 @@ git clone https://github.com/RethinkRobotics/baxter_common.git
 
 You should now have a URDF file named <tt>baxter.urdf</tt> located in a  within baxter_description/urdf/, and you can run:
 
-<pre>
+~~~
 rosrun gazebo_ros spawn_model -file `rospack find baxter_description`/urdf/baxter.urdf -urdf -z 1 -model baxter
-</pre>
+~~~
 
 You should then see something similar to:
 
@@ -301,7 +316,7 @@ To accomplish this method, you must make a new model database that contains just
 
 We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a <tt>model.config</tt> file is addded to your <tt>MYROBOT_description</tt> package like so:
 
-<pre>
+~~~
 ../catkin_ws/src
     /MYROBOT_description
         package.xml
@@ -316,7 +331,7 @@ We will assume your ROS workspace file hierarchy is setup as described in the ab
         /materials
         /plugins
         /cad
-</pre>
+~~~
 
 This hierarchy is specially adapted for use as a Gazebo model database by means of the following folders/files:
 
