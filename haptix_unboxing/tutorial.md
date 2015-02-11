@@ -1,12 +1,15 @@
 ## Overview
 
-This documents gives instructions for installing and configuring your HAPTIX machine from OSRF.
+This document gives instructions for installing and configuring your HAPTIX machine from OSRF.
 
 ## Inventory
 
-- 1 Zareason computer with power cable and Display Port cable
+- 1 Zareason Linux computer with power cable
+- 1 DisplayPort cable
+- 1 DVI cable
 - 1 Logitech keyboard
 - 1 Logitech mouse
+- 1 3D Nvidia 3D Monitor 
 - Nvidia 3D Vision 2 kit:
   - 1 pair 3D glasses
   - 1 infrared emitter
@@ -14,16 +17,30 @@ This documents gives instructions for installing and configuring your HAPTIX mac
   - 1 mini-USB cable
   - 1 micro-USB cable
 - 1 3DConnexion Spacenav
-- switch (TODO: finalize)
+- 1 USB switch
 
 ## Hardware setup
-Connect the computer to power. 
+This tutorial will instruct you on setting up a scheme where two computers share one monitor and keyboard. The Gazebo simulator runs on the Linux machine, but most Haptix teams are more comfortable and familiar with Windows. Thus, the setup instructions include a method for switching between our Linux machine and a Windows machine that you will provide.
 
-(Explain hooking up USB peripherals)
+Connect both the Linux computer and the Windows computer to power. 
 
-Power the computer on.
+Connect one computer to the monitor using the DisplayPort cable and one with the DVI cable (it doesn't matter which).
 
-You should see the Nvidia Stereo emitter shine dull green upon power-up.
+Connect the Nvidia emitter to a USB port into the Linux computer. Connect the VESA cable to the 3-pin DIN port on the back of the Linux computer (picture).
+
+If you are using stereo on the Windows computer: connect a second Nvidia emitter to the Windows computer.
+
+The USB switch has two USB cables. Connect one to the Linux computer and one to the Windows computer.
+
+Connect the keyboard and mouse to the USB switch. Connect the Spacenav to the 2-port hub that is plugged into the USB switch.
+
+Power the computer(s) on.
+
+You should see the Nvidia Stereo emitter shine dull green when the computer it is connected to is powered on.
+
+You may need to charge the Nvidia glasses before using them. Plug them into the computer using the micro-USB cable.
+
+To switch between the two computers, press the button connected to the USB switch, and use the buttons on the monitor display to switch the input source (pictures).
 
 ## Software setup
 
