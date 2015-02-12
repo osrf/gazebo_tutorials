@@ -26,6 +26,9 @@ the scene to build the model.
 * The **3D View** on the right where you can see a preview of your model and
 interact with it to edit its properties and create joints between links.
 
+The GUI tools on the top toolbar can be used to manipulate and links in the 3D
+View.
+
 # Add Links
 
 ## Add simple shapes
