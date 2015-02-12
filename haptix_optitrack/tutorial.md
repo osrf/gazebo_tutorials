@@ -65,6 +65,8 @@ You should see the following screen pop up:
 
 [[file:files/motive_start.PNG|800px]]
 
+If Motive displays the error message "License not found", the Optitrack was not plugged in correctly. Review the Camera Setup section above and double-check that the Optitrack is connected to power and to your computer via USB.
+
 If you downloaded the premade project file, select "Open Existing Project" and then browse to and select the .ttp file that you downloaded. You can also open Motive with the existing project file just by double-clicking on the project file.
 
 If you did not download the project file, close the startup menu.
