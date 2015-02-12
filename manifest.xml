@@ -241,6 +241,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model Editor" ref="model_editor">
+      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <description>Create and edit models within a model editor.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Gzweb installation" ref='gzweb_install'>
       <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
       <description>Explains how to install and run the WebGL client for Gazebo.</description>
@@ -677,6 +683,7 @@
         <tutorial>attach_gripper</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
+        <tutorial>model_editor</tutorial>
       </tutorials>
     </category>
 
