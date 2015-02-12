@@ -20,10 +20,10 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 The editor is composed of the following 2 areas:
 
-1. The **Palette** on the left where you can select links and insert them into
+* The **Palette** on the left where you can select links and insert them into
 the scene to build the model.
 
-1. The **3D View** on the right where you can see a preview of your model and
+* The **3D View** on the right where you can see a preview of your model and
 interact with it to edit its properties and create joints between links.
 
 # Add Links
@@ -67,8 +67,8 @@ model being edited. To create a joint:
 
 1. Click on the `joint` icon on the tool bar. This defaults to a `revolute`
 joint which you can edit its type later. Alternatively, click on the
-small arrow at the bottom right of the joint icon to choose a specific joint
-type.
+small arrow at the bottom right corner of the joint icon to choose a specific
+joint type.
 
 1. Once the joint type is selected, move your mouse over the link you wish to
 create a joint for to see it being highlighted and click on it. This link
@@ -83,8 +83,8 @@ to the child link.
 
     [[file:files/model_editor_joint.png|800px]]
 
-The line representing the joint is color-coded. Play around with creating
-different joint types to see the colors.
+The line representing the joint is color-coded. Play around with different
+joint types to see the colors.
 
 The joint visual consists of RGB axes which help to give an idea of the
 coordinate frame of the joint. The yellow arrow indicates the primary axis of
