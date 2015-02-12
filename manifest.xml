@@ -845,10 +845,10 @@
       <tutorials>
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_teleop</tutorial>
+        <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
         <tutorial>haptix_tactors</tutorial>
-        <tutorial>haptix_optitrack</tutorial>
       </tutorials>
     </category>
 
