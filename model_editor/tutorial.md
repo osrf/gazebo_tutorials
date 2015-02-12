@@ -58,9 +58,7 @@ currently only supports importing collada and stl files.
 
 1. Click `Import` to load the mesh file then add it to the 3D view.
 
-    [[file:files/model_editor_insert_mesh.png|800px]]
-
-    [[file:files/model_editor_insert_mesh.png|200px]]
+    [[file:files/model_editor_insert_mesh.png|640]]
 
 # Create Joints
 
@@ -104,7 +102,7 @@ rotation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-    > **Note:**  The current version (gazebo 6) supports editing
+> **Note:**  The current version (gazebo 6) supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
@@ -116,7 +114,7 @@ As an example, try changing the link pose and visual colors. Click on `Apply`
 to see the changes reflected in the 3D view. Once you are done, click on
 `OK` to close the inspector.
 
-    [[file:files/model_editor_inspector.png|640px]]
+[[file:files/model_editor_inspector.png|640px]]
 
 ## Edit joints
 
@@ -130,7 +128,7 @@ As an example, try changing the joint pose and joint type. Click on `Apply`
 to see the changes reflected in the 3D view. Once you are done, click on
 `OK` to close the inspector.
 
-    [[file:files/model_editor_joint_inspector.png|640px]]
+[[file:files/model_editor_joint_inspector.png|640px]]
 
 # Saving your model
 
