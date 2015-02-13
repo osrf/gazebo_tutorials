@@ -4,7 +4,7 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 ## Open the Model Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
+1.  Make sure Gazebo is [installed](http://gazebosim.org/install).
 
 1.  Start up gazebo.
 
@@ -110,7 +110,7 @@ links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
 To edit a link's properties: Double-click on the link or right click and select
-`Open Link Inspector`. A dialog window will appears which contains
+`Open Link Inspector`. A dialog window will appear which contains
 `Link`, `Visual`, and `Collision` property tabs.
 
 As an example, try changing the link pose and visual colors. Click on `Apply`
@@ -139,7 +139,7 @@ Saving will create a [directory, SDF and config files](http://gazebosim.org/tuto
 
 As an exercise, let's build a simple car and save it. The car will have a
 box chassis and four cylinder wheels. Each wheel will be connected to the
-chassive with a revolute joint:
+chassis with a revolute joint:
 
 [[file:files/model_editor_car.png|800px]]
 
