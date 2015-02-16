@@ -91,6 +91,16 @@ Thanks to
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
+### Gazebo 5.x series
+
+The OSRF repository provides `-gazebo5-` versions of ROS/Indigo gazebo wrappers
+ (`gazebo5_ros_pkgs`) which are built on top of the `gazebo5` package.
+The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-indigo-gazebo5-ros-pkgs` from the osrfoundation repository, which will install the `gazebo5` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
+
 ### Gazebo 4.x series
 
 The OSRF repository provides `-gazebo4-` versions of ROS/Indigo and ROS/Hydro gazebo wrappers
@@ -99,16 +109,6 @@ The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
  * Install `ros-$distro-gazebo4-ros-pkgs` from the osrfoundation repository, which will install the `gazebo4` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
-### Gazebo 3.x series
-
-The OSRF repository provides `-gazebo3-` versions of ROS/Hydro and ROS/Groovy gazebo wrappers
- (`gazebo3_ros_pkgs`) which are built on top of the `gazebo3` package.
-The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-$distro-gazebo3-ros-pkgs` from the osrfoundation repository, which will install the `gazebo3` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 2.x series
