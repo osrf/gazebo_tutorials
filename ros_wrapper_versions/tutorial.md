@@ -36,11 +36,12 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
  * ***packages.ros.org***
   *  Hydro: hosts gazebo version 1.x package.
   *  Indigo: host gazebo version 2.x package.
+  *  Jade: host gazebo version 5.x package.
  * ***packages.osrfoundation.org***
   * gazebo 1.x series (package name `gazebo`)
   * gazebo 2.x series (package name `gazebo-current` or `gazebo2` in saucy/trusty)
-  * gazebo 3.x series (package name `gazebo3`)
   * gazebo 4.x series (package name `gazebo4`)
+  * gazebo 5.x series (package name `gazebo5`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
@@ -48,7 +49,7 @@ It can be installed from the ros repository.
 ### Gazebo built from source
 
 If you have compiled a gazebo version from source, note that depending on the
-repository branch used (`gazebo_3.0`,`gazebo_4.0`,...) your gazebo will be
+repository branch used (`gazebo_4.0`,`gazebo_5.0`,...) your gazebo will be
 binary compatible with the `gazebo_ros_pkgs` (and all other ROS packages compiled
 on top of gazebo) only if the major version matches your local branch
 repository and the gazebo version used in your ROS distro.  For example, if you
@@ -64,6 +65,14 @@ workspace for getting a valid `gazebo_ros_pkgs`.
 For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
+
+### Jade
+
+ROS Jade hosts the 5.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 5.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo5`) and do ***not*** use the osrfoundation
+repository.
 
 ### Indigo
 
@@ -138,10 +147,6 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
  so please follow the above instructions to use `gazebo4` in combination with ROS.
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
-
-#### Which version of Gazebo is going to work in ROS-J?
-
-It is still undecided but [according with the schedule](http://gazebosim.org/#status), probably `gazebo5`.
 
 #### I need to use gazebo4 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
