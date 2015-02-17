@@ -134,7 +134,13 @@ The steps to use them are:
 
 #### I am a DARPA Robotics Challenge participant, which version should I use?
 
-`drcsim-3.2` is built on top of `gazebo3`. Starting from `drcsim-4.0`, `gazebo4` is the one to use.
+Starting from `drcsim-4.0`, `gazebo4` is the one to use. The old `drcsim-3.2` is built
+on top of `gazebo3`.
+
+DRCSim package can not use `gazebo5` since Ubuntu Precise is one of the
+supported platforms and lacks of `gazebo5` support. Participants using
+Ubuntu Trusty can use `gazebo5` but `drcsim` needs to be compiled from
+source.
 
 #### I am not using ROS at all, which version should I use?
 
@@ -148,10 +154,14 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
 
-#### I need to use gazebo4 and ROS Indigo, what can I do?
+#### I need to use gazebo4/gazebo5 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 4.x of Gazebo, there is a way of installing `gazebo4` and ROS Indigo. Please follow the [instructions about how to use ROS with gazebo4 package](#Gazebo 4.x series) which are in this page.
+If you need some features only present in version 4.x or 5.x of Gazebo, there
+is a way of installing `gazebo4` or `gazebo5` and ROS Indigo. Please follow the
+[instructions about how to use ROS with gazebo4 package](#Gazebo 4.x series) or
+[instructions about how to use ROS with gazebo5 package](#Gazebo 5.x series)
+which are in this page.
 
 #### I need to use gazebo3 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
