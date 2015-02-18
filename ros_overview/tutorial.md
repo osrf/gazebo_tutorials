@@ -36,7 +36,7 @@ Some changes are required in previously created roslaunch files for starting Gaz
 
 - Because Gazebo is no longer a ROS package but instead a system dependency, your CMake file might need to be reconfigured. The following is an example CMakeLists.txt:
 
-<pre><nowiki>
+~~~
 cmake_minimum_required(VERSION 2.8.3)
 project(YOURROBOT_gazebo_plugins)
 
@@ -59,7 +59,7 @@ catkin_package(
     INCLUDE_DIRS
     LIBRARIES
 )
-</nowiki></pre>
+~~~
 
 ### package.xml
 
