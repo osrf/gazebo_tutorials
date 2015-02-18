@@ -235,7 +235,7 @@ state has been received.
 ### I can not connect the Windows client with Gazebo Linux Server
 
 Usually you will receive a message from the command line launched by Visual
-Studio with an error message `hx_getdeviceinfo() Service call timed out`. This
+Studio with an error message `hx_robot_info() Service call timed out`. This
 means that the communication to the Gazebo Linux server failed.
 
 **First check:** ¿are both machines in the same network and can reach each other?
