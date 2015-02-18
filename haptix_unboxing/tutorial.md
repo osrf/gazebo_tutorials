@@ -23,7 +23,7 @@ This document gives instructions for installing and configuring your HAPTIX mach
 ### Two-computer setup
 The Gazebo simulator runs on the Linux machine, but most Haptix teams are more comfortable and familiar with Windows. This is a setup for switching between our Linux machine and a Windows machine that you will provide.
 
-(diagram)
+[[file:files/haptix_setup_diagram_final.svg]]
 
 Connect both the Linux computer and the Windows computer to power. 
 
@@ -46,8 +46,6 @@ You may need to charge the Nvidia glasses before using them. Plug them into the 
 To switch between the two computers, press the button connected to the USB switch, and use the buttons on the monitor display to switch the input source (pictures).
 
 ### One computer setup
-(diagram)
-
 You can also take advantage of the Windows virtual machine installed on the Linux computer in the one-computer setup. (You can learn more about virtual machines [here](http://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/).)
 
 Connect the Linux computer to power.
@@ -59,8 +57,6 @@ Connect all of the USB peripherals (keyboard, mouse, Spacenav, Optitrack, emitte
 Connect the emitter to the 3-pin port on the back of the computer with the VESA cable.
 
 Power the computer on.
-
-(instructions for running the VM)
 
 Make sure to connect your computer to the internet with an Ethernet cable before continuing.
 
@@ -89,7 +85,7 @@ On the desktop, you should see three icons.
 
 - virtualOSRF: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
 
-To reproduce the virtualOSRF command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
+If you want to reproduce the virtualOSRF command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
 
 You can make your own icons via the [Terminal](http://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04) or [graphically](http://askubuntu.com/questions/450266/an-easy-way-to-create-a-desktop-shortcut).
 
@@ -108,7 +104,7 @@ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
 sudo apt-get update
 ~~~
 
-and try the first command again.
+Try the first command again.
 
 Next, you can install the full simulation environment by typing:
 
