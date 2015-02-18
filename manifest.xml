@@ -586,7 +586,7 @@
     </tutorial>
 
     <!-- HAPTIX -->
-    <tutorial title="HAPTIX unboxing instructions" ref='haptix_unboxing'>
+    <tutorial title="HAPTIX hardware setup" ref='haptix_unboxing'>
       <markdown version="4.0+">haptix_unboxing/tutorial.md</markdown>
       <description>Instructions for the installation and configuration of a HAPTIX simulation system.</description>
       <skill>beginner</skill>
@@ -828,6 +828,7 @@
     <category title="HAPTIX" skill="advanced" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
+        <tutorial>haptix_setup</tutorial>
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_comm</tutorial>
