@@ -65,7 +65,8 @@ catkin_package(
 
 This is the replacement for the rosbuild "manifest.xml":
 
-- Add dependency on the new <tt>gazebo_ros</tt> package:
+- Add dependency on the new `gazebo_ros` package:
+
 ~~~
 <build_depend>gazebo_ros</build_depend>
 <run_depend>gazebo_ros</run_depend>
