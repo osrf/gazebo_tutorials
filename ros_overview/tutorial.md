@@ -76,9 +76,9 @@ This is the replacement for the rosbuild "manifest.xml":
 
 The names of the ROS nodes to launch Gazebo have changes slightly to coincide with the Gazebo executable names:
 
- - <tt>rosrun gazebo_ros gazebo</tt> now launch both the Gazebo server and GUI.
- - <tt>rosrun gazebo_ros gui</tt> has been renamed to <tt>rosrun gazebo_ros gzclient</tt>
- - <tt>rosrun gazebo_ros gzserver</tt> has been added
+ - `rosrun gazebo_ros gazebo` now launch both the Gazebo server and GUI.
+ - `rosrun gazebo_ros gui` has been renamed to <tt>rosrun gazebo_ros gzclient</tt>
+ - `rosrun gazebo_ros gzserver` has been added
 
 Available nodes to run:
 
