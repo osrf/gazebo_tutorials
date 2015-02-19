@@ -10,7 +10,7 @@ setup.
 - 1 DVI cable
 - 1 Logitech keyboard
 - 1 Logitech mouse
-- 1 3D Nvidia 3D Monitor 
+- 1 3D Monitor 
 - Nvidia 3D Vision 2 kit:
   - 1 pair 3D glasses
   - 1 infrared emitter
@@ -86,7 +86,7 @@ You can add new user accounts if multiple people expect to use the machine, or y
 
 ## Change your timezone (optional)
 
-Change your timezone by click on the time in the upper-right hand corner, selecting "Time & Date settings", and clicking on the appropriate timezone.
+Change your timezone by clicking on the time in the upper-right hand corner, selecting "Time & Date settings", and clicking on the appropriate timezone.
 
 # Environment overview
 #
