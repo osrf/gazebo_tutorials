@@ -159,9 +159,8 @@ Dart still requires gazebo installation from source (starting from `gazebo3`),
 
 If you need some features only present in version 4.x or 5.x of Gazebo, there
 is a way of installing `gazebo4` or `gazebo5` and ROS Indigo. Please follow the
-[instructions about how to use ROS with gazebo4 package](#Gazebo 4.x series) or
-[instructions about how to use ROS with gazebo5 package](#Gazebo 5.x series)
-which are in this page.
+instructions about how to use ROS with gazebo4 package or gazebo5 which are in 
+this same docuement.
 
 #### I need to use gazebo3 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
