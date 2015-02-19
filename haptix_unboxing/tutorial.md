@@ -29,10 +29,9 @@ The HAPTIX system consists of both a Linux and Windows computer. Gazebo relies o
 
 1. Connect both the Linux computer and the Windows computer to power. 
 
-1. Connect one computer to the monitor using the DisplayPort cable and one
-with the DVI cable (it doesn't matter which).
+1. Connect the Linux computer to the monitor using the DisplayPort cable and the Windows computer with the DVI cable. 
 
-1. Connect the Nvidia emitter to a USB port into the Linux computer.
+1. Connect one Nvidia emitter to a USB port on the Linux computer.
 
 1. Connect the VESA cable of the same emitter to the 3-pin DIN port on the back of the Linux computer.
 
