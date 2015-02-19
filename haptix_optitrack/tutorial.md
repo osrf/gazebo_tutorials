@@ -6,7 +6,7 @@ All of the necessary items, including all software components, will be provided 
 
 1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
-1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a Windows VM that initializes on startup. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
+1. A Windows computer or a Windows virtual machine (VM) with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a Windows VM that initializes on startup. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 
 1. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/)).
 
@@ -73,7 +73,7 @@ Select "Data Streaming" under "View" in the top toolbar and check the box next t
 
 --[[file:files/data_streaming.PNG]]
 
-Now, select "File", "Open", and select the project file you downloaded, `haptix_osrf.ttp`.
+Now, select "File", "Open", and select the project file you downloaded, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp).
 
 If it isn't already visible, open the Rigid Body Properties view under "Views" in the top toolbar.
 
@@ -111,7 +111,7 @@ If you are using Nvidia 3D glasses, hold the glasses up as straight as possible 
 
 [[file:files/head_alignment.png]]
 
-If you made your own head tracking, put the head tracker on and hold your head still and as straight as possible, facing the monitor. Make sure that the target is placed in a position consistent with where it will be worn (e.g. above the ear).
+If you made your own head tracker, put the head tracker on and hold your head still and as straight as possible, facing the monitor. Make sure that the target is placed in a position consistent with where it will be worn (e.g. above the ear).
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
