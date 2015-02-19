@@ -68,7 +68,7 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
 
 ### Arm teleop GUI options
 
-The left-hand GUI in the HAPTIX simulator has some options for controlling keyboard teleop.
+The GUI on the left side of the HAPTIX simulator has some options for controlling keyboard teleop.
 
 [[file:files/gui_teleop.png]]
 
