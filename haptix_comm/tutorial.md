@@ -152,7 +152,6 @@ simulation using `IGN_IP` with the appropriate IP address (depending if you
 want to use your wired or wireless connection):
 
 ~~~
-. /usr/share/haptix_gazebo_plugins/setup.sh
 IGN_IP=172.23.2.37 gazebo worlds/arat.world
 ~~~
 
@@ -238,21 +237,21 @@ Usually you will receive a message from the command line launched by Visual
 Studio with an error message `hx_robot_info() Service call timed out`. This
 means that the communication to the Gazebo Linux server failed.
 
-**First check:** ¿are both machines in the same network and can reach each other?
+**First check:** Are both machines in the same network and can reach each other?
 Simply using the ping command from both (windows command line and Linux shell),
 should be enough to check connectivity. If it is not working, there is a problem 
 in network configuration, be sure that both are connected to the same network.
 
-**Second check:** ¿is the communication layer using the right network interface? 
+**Second check:** Is the communication layer using the right network interface? 
 Double check that you have set the `IGN_IP` properly in **both** Gazebo Linux server
 and Windows. In Windows this can be done from the Windows command line `echo %IGN_IP%`. 
 To be completely sure, logout from your user session, login again and open Visual Studio.
 
-**Third check:** ¿is the Windows firewall affecting the communication? It can be
+**Third check:** Is the Windows firewall affecting the communication? It can be
 disabled from the Windows Control Panel and try to launch the Visual Studio 
 application again.
 
-**Fourth check:** ¿is the router cutting the communication? Several solutions: 
+**Fourth check:** Is the router cutting the communication? Several solutions: 
 Login into the router, disable any kind of firewall. If you can not do that,
 connect both machines using an ethernet cable directly. You will need to
 manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and 
