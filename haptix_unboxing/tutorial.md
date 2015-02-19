@@ -94,11 +94,11 @@ On the desktop, you should see three icons.
 
 [[file:files/desktop.png]]
 
-1. Gazebo: Double-click to launch the Gazebo prosthetic arm simulator.
+1. haptixStart: Double-click to launch the Gazebo prosthetic arm simulator.
 
 1. haptixUpdate: Double-click to check for software updates and install them if found.
 
-1. virtualOSRF: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
+1. haptixSupport: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
 
 If you want to reproduce the virtualOSRF command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
 
