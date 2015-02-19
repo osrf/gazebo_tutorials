@@ -14,6 +14,7 @@ interfaces that you currently have:
     ~~~
     ifconfig
     ~~~
+    
     %%%
     eth1  Link encap:Ethernet  HWaddr 90:2b:34:d7:51:7a
           inet addr:172.23.2.37  Bcast:172.23.3.255  Mask:255.255.252.0
