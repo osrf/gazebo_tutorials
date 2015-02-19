@@ -6,7 +6,7 @@ All of the necessary items, including all software components, will be provided 
 
 1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
-1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
+1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a  (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 
 1. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/)).
 
@@ -67,9 +67,15 @@ You should see the following screen pop up:
 
 If Motive displays the error message "License not found", the Optitrack was not plugged in correctly. Review the Camera Setup section above and double-check that the Optitrack is connected to power and to your computer via USB.
 
-If you downloaded the premade project file, select "Open Existing Project" and then browse to and select the .ttp file that you downloaded. You can also open Motive with the existing project file just by double-clicking on the project file.
+#If you downloaded the premade project file, select "Open Existing Project" and then browse to and select the .ttp file that you downloaded. You can also open Motive with the existing project file just by double-clicking on the project file.
 
-If you did not download the project file, close the startup menu.
+Close the startup menu.
+
+Select "Data Streaming" under "View" in the top toolbar and check the box next to "Broadcast Frame Data".
+
+--[[file:files/data_streaming.PNG]]
+
+Now, select "File", "Open", and select the project file you downloaded, `haptix_osrf.ttp`.
 
 If it isn't already visible, open the Rigid Body Properties view under "Views" in the top toolbar.
 
@@ -107,7 +113,7 @@ If you are using Nvidia 3D glasses, hold the glasses up as straight as possible 
 
 [[file:files/head_alignment.png]]
 
-If you made your own head tracking, put the head tracker on and hold your head still and as straight as possible, facing the monitor. I recommend making sure that the target is placed on a consistent position  (e.g. above the ear) when it is used.
+If you made your own head tracking, put the head tracker on and hold your head still and as straight as possible, facing the monitor. Make sure that the target is placed in a position consistent with where it will be worn (e.g. above the ear).
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
@@ -115,20 +121,13 @@ Important: make sure to get the rigid body names correct, otherwise Gazebo will 
 
 You should be able to move around the arm and head trackers and watch the positions change in the 3D view in Motive!
 
-### Network configuration
-If you did not start from the premade project file, you'll need to configure the network options so that the Windows Optitrack machine can pass information to the Linux Gazebo machine about rigid bodies.
-
-To do this, open "Data Streaming" under "View" in the top toolbar and check the box next to "Broadcast Frame Data".
-
-[[file:files/data_streaming.PNG]]
-
 ### Check the result
 You're now done configuring Motive for your physical setup.  This is a good time to make sure that all the markers are being tracked correctly.  Bring the arm and head trackers back into the scene and verify that you see them move in the Camera and Perspective Views in Motive.
 
 ### Save the result
 Select "Save Project" under "File" in the top toolbar (you can save the file under a different name or in a different location if you like; just remember what you called it and where you put it).
 
-Whenever you want to run an experiment, repeat the initial steps of this tutorial to open Motive and select the .ttp file that you created here.  You should not need to modify the configuration in the future unless you change the marker placements.
+You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker.
 
 ## Starting Gazebo
 Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine:
@@ -138,6 +137,11 @@ gazebo --verbose worlds/arat.world
 ~~~
 
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
+
+### Motion tracking without Motive
+Now that the project file is configured, you can start motion tracking without Motive.
+
+Make sure Motive is closed on the Windows machine. Then, start Gazebo and press on the button that says "Reset Mocap". Wait for a few seconds, then press spacebar to unpause motion tracking. You should be able to move your head and arm around to control simulation.
 
 ## How it works
 Why is the monitor motion tracking target needed? The monitor acts as a reference frame for the arm and head trackers. If the camera is moved at any point, the settings in the Motive configuration file don't need to be recalibrated, because the pose data coming into Gazebo is calculated relative to the position of the monitor.
