@@ -11,11 +11,11 @@ First, be sure about the IP address used by the network interface connecting
 both machines.  Open a terminal and run `ifconfig` to show the list of network
 interfaces that you currently have:
 
-    ~~~
-    ifconfig
-    ~~~
+~~~
+ifconfig
+~~~
     
-    %%%
+%%%
     eth1  Link encap:Ethernet  HWaddr 90:2b:34:d7:51:7a
           inet addr:172.23.2.37  Bcast:172.23.3.255  Mask:255.255.252.0
           inet6 addr: fe80::922b:34ff:fed7:517a/64 Scope:Link
@@ -34,7 +34,7 @@ interfaces that you currently have:
           TX packets:3680508884 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:0
           RX bytes:1098106845630 (1.0 TB)  TX bytes:1098106845630 (1.0 TB)
-    %%%
+%%%
 
 
 Now, we are ready to test our controller with the HAPTIX simulator. Open a new
