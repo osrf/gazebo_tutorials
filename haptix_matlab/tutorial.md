@@ -89,6 +89,12 @@ This directory should contain several `.m` files.
 cd /usr/lib/x86_64-linux-gnu/haptix-comm/octave
 ~~~
 
+If that directory does not exist, try:
+
+~~~
+cd /usr/lib/haptix-comm/octave
+~~~
+
 Start Octave by typing `octave`.
 
 You should be able to call `hx_connect()`, `hx_robot_info()`, `hx_update()`, `hx_read_sensors()`,
