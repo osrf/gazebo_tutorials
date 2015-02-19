@@ -6,7 +6,7 @@ All of the necessary items, including all software components, will be provided 
 
 1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
-1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a  (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
+1. A Windows computer or a Windows virtual machine with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a Windows VM that initializes on startup. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 
 1. The Optitrack V120 Trio 3D camera and accompanying wires, hubs, etc. ([purchase here](https://www.naturalpoint.com/optitrack/products/v120-trio/)).
 
@@ -66,8 +66,6 @@ You should see the following screen pop up:
 [[file:files/motive_start.PNG|800px]]
 
 If Motive displays the error message "License not found", the Optitrack was not plugged in correctly. Review the Camera Setup section above and double-check that the Optitrack is connected to power and to your computer via USB.
-
-#If you downloaded the premade project file, select "Open Existing Project" and then browse to and select the .ttp file that you downloaded. You can also open Motive with the existing project file just by double-clicking on the project file.
 
 Close the startup menu.
 
