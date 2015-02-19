@@ -41,7 +41,7 @@ The HAPTIX system consists of both a Linux and Windows computer. Gazebo relies o
 
 1. Connect the keyboard and mouse to the USB switch.
 
-1. Connect the 2-port hub to the USB switch.
+1. Connect the 2-port hub to the USB switch. Optionally connect the 2-port hub to its power adaptor.
 
 1. Connect the Spacenav to the 2-port hub.
 
