@@ -104,7 +104,7 @@ octave
 You should be able to call `hx_connect()`, `hx_robot_info()`, `hx_update()`, `hx_read_sensors()`,
 and `hx_close()` from Octave (the parentheses are optional).
 
-To run a controller for the simulated arm, type
+To run a controller for the simulated arm, type:
 
 ~~~
 hx_matlab_controller
