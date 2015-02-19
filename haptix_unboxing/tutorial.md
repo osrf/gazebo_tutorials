@@ -153,7 +153,7 @@ If you did not receive a team machine but are configuring a Linux machine to use
 1. If the Spacenav is non-functional, first check if the blue LED light is on. If it is on, open up a Terminal and type:
 
     ~~~
-    sudo spacenavd
+    sudo service spacenavd restart
     ~~~
 
     You will have to type in your password.
