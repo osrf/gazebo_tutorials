@@ -95,7 +95,11 @@ If that directory does not exist, try:
 cd /usr/lib/haptix-comm/octave
 ~~~
 
-Start Octave by typing `octave`.
+Start Octave:
+
+~~~
+octave
+~~~
 
 You should be able to call `hx_connect()`, `hx_robot_info()`, `hx_update()`, `hx_read_sensors()`,
 and `hx_close()` from Octave (the parentheses are optional).
