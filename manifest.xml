@@ -632,7 +632,7 @@
 
     <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
       <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
-      <description>This tutorial describes how to control arm position and grasps using a keyboard, mice, or mixer board.</description>
+      <description>This tutorial describes how to control arm position and grasps using a keyboard, SpaceNav, or Razer Hydra.</description>
       <skill>beginner</skill>
     </tutorial>
 
