@@ -42,7 +42,6 @@ using `IGN_IP` with the appropriate IP address (depending if you want to use
 your wired or wireless connection):
 
 ~~~
-. /usr/share/haptix_gazebo_plugins/setup.sh
 IGN_IP=172.23.2.37 gazebo worlds/arat.world
 ~~~
 
