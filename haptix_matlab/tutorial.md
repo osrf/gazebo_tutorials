@@ -85,9 +85,9 @@ sudo apt-get install octave
 Then, change directories to the `octave` subdirectory of the `haptix-comm` install directory. 
 This directory should contain several `.m` files.
 
-~~
+~~~
 cd /usr/lib/x86_64-linux-gnu/haptix-comm/octave
-~~
+~~~
 
 Start Octave by typing `octave`.
 
@@ -96,9 +96,9 @@ and `hx_close()` from Octave (the parentheses are optional).
 
 To run a controller for the simulated arm, type
 
-~~
+~~~
 hx_matlab_controller
-~~
+~~~
 
 # Controller visualization
 
