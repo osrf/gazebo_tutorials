@@ -61,8 +61,9 @@ Open Matlab and click on the `Browse for folder` icon.
 A new pop-up window will appear. Browse to the folder `matlab\` inside the
 directory where you unzipped the HAPTIX client library SDK.
 
-The HAPTIX client library SDK includes two `mex` files that allow you to call
-the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
+The HAPTIX client library SDK includes five `mex` files that allow you to call
+the functions `hx_connect()`, `hx_robot_info()`,
+`hx_update`, `hx_read_sensors` and `hx_close()` from your Matlab/Octave
 console or from a .m file.
 
 Open the file `hx_matlab_controller.m` in Matlab/Octave. Then, type in
