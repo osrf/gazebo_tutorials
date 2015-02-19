@@ -115,7 +115,7 @@ If you made your own head tracker, put the head tracker on and hold your head st
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
-Important: make sure to get the rigid body names are correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!
+Important: make sure the rigid body names are correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!
 
 You should be able to move around the arm and head trackers and watch the positions change in the 3D view in Motive!
 
