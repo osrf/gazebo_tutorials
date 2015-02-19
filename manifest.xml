@@ -617,7 +617,7 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Matlab/Octave API" ref='haptix_matlab'>
+    <tutorial title="HAPTIX Matlab and Octave API" ref='haptix_matlab'>
       <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
       <description>This tutorial describes how to use the Matlab/Octave interface for
         creating a hand controller.</description>
@@ -848,7 +848,7 @@
     <category title="HAPTIX" skill="advanced" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
-        <tutorial>haptix_setup</tutorial>
+        <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_optitrack</tutorial>
