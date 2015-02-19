@@ -95,10 +95,10 @@ If that directory does not exist, try:
 cd /usr/lib/haptix-comm/octave
 ~~~
 
-Start Octave:
+Start Octave using IGN_IP with the appropriate IP address (depending if you want to use your wired or wireless connection):
 
 ~~~
-octave
+IGN_IP=172.23.2.37 octave
 ~~~
 
 You should be able to call `hx_connect()`, `hx_robot_info()`, `hx_update()`, `hx_read_sensors()`,
