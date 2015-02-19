@@ -598,6 +598,11 @@
     </tutorial>
 
     <!-- HAPTIX -->
+    <tutorial title="HAPTIX hardware setup" ref='haptix_unboxing'>
+      <markdown version="4.0+">haptix_unboxing/tutorial.md</markdown>
+      <description>Instructions for the installation and configuration of a HAPTIX simulation system.</description>
+      <skill>beginner</skill>
+    </tutorial>
     <tutorial title="HAPTIX C API" ref='haptix_comm'>
       <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
       <description>This tutorial describes how to use the C API for creating a
@@ -843,6 +848,7 @@
     <category title="HAPTIX" skill="advanced" ref="haptix">
       <description>HAPTIX specific tutorials.</description>
       <tutorials>
+        <tutorial>haptix_setup</tutorial>
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_optitrack</tutorial>
