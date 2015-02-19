@@ -194,38 +194,39 @@ trajectory in Gazebo.
 
 <include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
-The HAPTIX C API is composed of two C function calls: `hx_getdeviceinfo()` and
-`hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
+The HAPTIX C API is composed of five C function calls: `hx_connect()`, `hx_robot_info()`,
+`hx_update()`, `hx_read_sensors()`, and `hx_close()`. `hx_connect()` and `hx_close()` are
+optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
+
+`hx_robot_info()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
 
-We use the `hxGAZEBO` constant to specify that the target device is a hand inside a Gazebo
-simulation. For other available targets check the [haptix-comm API](https://bitbucket.org/osrf/haptix-comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default). The second parameter of `hx_getdeviceinfo()` is a `hxDeviceInfo` struct that
+The parameter to `hx_robot_info()` is a `hxRobotInfo` struct that
 contains the number of motors, joints, contact sensors, IMUs and joint limits
-for the requested device. If we have a valid response, the returned value is `hxOK`.
+for the requested device. It also includes the update rate, which is how frequently the
+device updates. If we have a valid response, the returned value is `hxOK`.
 
-We have included in our example a helper function `printDeviceInfo()` that will
+We have included in our example a helper function `printRobotInfo()` that will
 print all the received fields for debugging purposes.
 
 <include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
-Once we confirm the device information we can start sending commands for
+Once we confirm the robot information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
 command and receiving the current state of the hand.
 
 First of all, we need to fill a `hxCommand` struct that contains the positions,
-velocities, and gains for each joint. Check the [haptix-comm API](https://bitbucket.org/osrf/haptix-comm/src/cfd7e09c00ad045c0ee99a871f786971dc527fc5/include/haptix/comm/haptix.h?at=default)
+velocities, and gains for each joint. Check the [haptix-comm API](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.2.2/haptix_8h.html)
 for a detailed view of the `hxCommand` struct. In our case, we are modifying the
 position of all the joints according to a sinusoidal function.
 
-The function `hx_update()` accepts a first argument that is the target device
-where the command will be sent (similar to `hx_getdeviceinfo()`). The second
-parameter `cmd` is the command that we want to send to the device, which we already
-filled in. A third output command `sensor` is passed to the function; it will contain the
+The first parameter to `hx_update()`, `cmd`, is the command that we want to send to the device, which we already
+filled in. The second output command `sensor` is passed to the function; it will contain the
 state of the hand after applying the command.
 
 We have included a helper function `printState()` that shows all the state
-information for debugging purposes. Similar to `hx_getdeviceinfo()`, the function
+information for debugging purposes. Similar to `hx_robot_info()`, the function
 `hx_update()` returns `hxOK` when the command was successfully sent and the
 state has been received.
 
