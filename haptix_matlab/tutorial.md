@@ -83,15 +83,18 @@ trajectory in Gazebo.
 
 <include from='/counter =/' to='/end/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
 
-The HAPTIX Matlab API is composed of two mex function: `hx_getdeviceinfo()` and
-`hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
+The HAPTIX Matlab API is composed of five mex functions: `hx_connect()`, `hx_robot_info()`,
+`hx_update`, `hx_read_sensors` and `hx_close()`.  `hx_connect()` and `hx_close()` are
+optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
+
+`hx_robot_info()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
 
-The result value of `hx_getdeviceinfo()` is a struct containing the number of
+The result value of `hx_robot_info()` is a struct containing the number of
 motors, joints, contact sensors, IMUs and joint limits for the requested device,
- as well as the result of the request. If we have a valid response, the
- returned value is 0.
+ as well as the result of the request. It also contains the update rate, the frequency
+ at which the device is updated.
 
 <include from='/while counter/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
 
@@ -103,7 +106,5 @@ First of all, we need to fill a command struct that contains the positions,
 velocities, and gains for each joint. It is important to use the same names for
 the fields that we are using in this example.
 
-The function `hx_update()` accepts an argument that is the command that we want
-to send to the device, which we already filled in. The returned value will
-contain the state of the hand after applying the command and the result of the
-request (0 on success).
+The function `hx_update()` returns a value which will
+contain the state of the hand after applying the command.
