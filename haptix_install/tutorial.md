@@ -138,3 +138,42 @@ echo "export IGN_PARTITION=gazebo1" >> ~/.bashrc
 
 Repeat this process on any Linux machine that you plan to use with this Gazebo
 instance.
+
+# Software Update
+
+There are two ways the HAPTIX software may be updated:
+
+1. Command-line
+
+    1. Open a terminal
+
+    1. Run the following commands
+
+        ~~~
+        sudo apt-get update
+        sudo apt-get upgrade
+        ~~~
+
+1. Using the desktop icon.
+
+    1. **Note:** This requires the `haptixUpdate` desktop icon. For more information, see <a href='/tutorials?tut=haptix_unboxing&cat=haptix#Environmentoverview'>here</a>.
+
+    1. Double click the `haptixUpate` icon on the desktop.
+
+##Version numbers
+
+There are two version numbers relevant to the HAPTIX software. One is the version of Gazebo, the core simulation software. The second is the supplementary HAPTIX library.  Follow these steps to access both version numbers.
+
+1. Run Gazebo by either double-clicking the `haptixStart` desktop icon, or running the following command in a terminal.
+
+    ~~~
+    gazebo worlds/arat.world
+    ~~~
+
+1. Use the `Help`->`About` menu option to display Gazebo's version.
+
+    [[file:files/gazebo_version.png|400px]]
+
+1. The HAPTIX client library version number is located at the bottom left of the on-screen GUI.
+
+    [[file:files/haptix_version.png|400px]]
