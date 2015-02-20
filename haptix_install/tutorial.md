@@ -14,7 +14,7 @@ instructions on how to create your own hand controller.
 # Gazebo installation
 
 **Note: This section is only required if you do not yet have a Linux server
-running Gazebo.**
+running Gazebo with the HAPTIX packages.**
 
 Before installing Gazebo, you need a machine with Ubuntu 14.04 64-bit
 installed. Once your Linux machine is ready, open up a terminal and run the
@@ -37,7 +37,7 @@ The HAPTIX client library SDK is a stack of libraries that enables communication
 between your control software and the simulated hand in Gazebo. The main library is
 called `haptix-comm`. `haptix-comm` exposes the API that will allow your software to
 request information about the hand (number of joints, motors, number of sensors,
-etc.), as well as request new joint commands and receive the hand state.
+etc.), as well as send new joint commands and receive the hand state.
 
 ## Installing the HAPTIX client library SDK in Windows
 
@@ -50,6 +50,27 @@ https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-latest-Release-win6
  menu.
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
+
+Now, you need to do some network configuration to specify
+the IP address that you will use for communicating with Gazebo.
+
+Click on the `Start button` and type `cmd` in the `Search box`. Once you are in
+the terminal run the following command:
+
+~~~
+ipconfig
+~~~
+
+Look for the `IPv4 Address` inside the `Ethernet adapter Local Area Connection` section.
+
+%%%
+[[file:files/ipconfig.png|600px]]
+%%%
+
+Click on the `Start button` and search for `environment variables`.
+Click on `Edit the system environment variables`, and then, click on the button
+`Environment variables`. Click on the `New` button from the `User variables`
+section to create a new environment variable with name `IGN_IP`. **Enter the IPv4 Address mentioned above**.
 
 ## Installing the HAPTIX client library SDK in Linux
 
