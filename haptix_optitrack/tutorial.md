@@ -57,7 +57,7 @@ These spheres will be attached to the corners of the monitor associated with the
 If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp). We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
-On your Windows virtual machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
+Make sure Gazebo is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
 [[file:files/motive_icon.PNG]]
 
@@ -129,14 +129,9 @@ You should not need to modify the configuration in the future unless you change 
 
 ## Starting Gazebo
 Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
-by double-clicking on the `haptixStart` desktop icon:
+by double-clicking on the `haptixStart` desktop icon.
 
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
-
-### Motion tracking without Motive
-Now that the project file is configured, you can start motion tracking without Motive.
-
-Make sure Motive is closed on the Windows machine. Then, start Gazebo and press on the button that says "Reset Mocap". Wait for a few seconds, then press spacebar to unpause motion tracking. You should be able to move your head and arm around to control simulation.
 
 ## How it works
 Why is the monitor motion tracking target needed? The monitor acts as a reference frame for the arm and head trackers. If the camera is moved at any point, the settings in the Motive configuration file don't need to be recalibrated, because the pose data coming into Gazebo is calculated relative to the position of the monitor.
