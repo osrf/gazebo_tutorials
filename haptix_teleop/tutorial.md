@@ -66,6 +66,18 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. C: Positive flexion
        1. SHIFT + C: Negative flexion
 
+### Arm teleop GUI options
+
+The GUI on the left side of the HAPTIX simulator has some options for controlling keyboard teleop.
+
+[[file:files/gui_teleop.png]]
+
+If the "Local frame" checkbox is checked, keyboard teleop will move the arm in the arm's local axes, which change as the arm rotates. If "Local frame" is unchecked, the keys will always move the arm in the same "global" coordinate system.
+
+The slider next to "Arm move speed" controls the speed of the arm under keyboard teleop.
+
+These options are only relevant for keyboard teleop control. They do not affect motion capture teleoperation or Spacenav.
+
 ## Spacenav Control
 
 By default, the spacenav mouse controls the position and
