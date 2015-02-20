@@ -598,47 +598,50 @@
     </tutorial>
 
     <!-- HAPTIX -->
-    <tutorial title="HAPTIX hardware setup" ref='haptix_unboxing'>
-      <markdown version="4.0+">haptix_unboxing/tutorial.md</markdown>
-      <description>Instructions for the installation and configuration of a HAPTIX simulation system.</description>
-      <skill>beginner</skill>
-    </tutorial>
-    <tutorial title="HAPTIX C API" ref='haptix_comm'>
-      <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
-      <description>This tutorial describes how to use the C API for creating a
-        hand controller.</description>
+    <tutorial title="HAPTIX system setup" ref='haptix_unboxing'>
+      <markdown version="6.0+">haptix_unboxing/tutorial.md</markdown>
+      <description><![CDATA[Instructions for the installation and
+        configuration of a HAPTIX simulation system, both hardware and
+        software. The HAPTIX simulation system is a specific hardware and
+        software configuration designed by OSRF for teams participating in
+        the <a href="https://www.fbo.gov/index?s=opportunity&mode=form&id=ccbc51af982e354304886e363e6c8404&tab=core&_cview=1">HAPTIX</a>
+        program.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX software installation" ref='haptix_install'>
-      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
-      <description>This tutorial describes how to install Gazebo and the client
-        libraries SDK for the HAPTIX project.</description>
+    <tutorial title="HAPTIX C API" ref='haptix_comm'>
+      <markdown version="6.0+">haptix_comm/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the C API, defined at <a href="/haptix/api">http://gazebosim.org/haptix/api</a> and implemented in the <a href="https://bitbucket.org/osrf/haptix-comm">haptix-comm</a> package, for creating a hand controller.]]></description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX software install and update" ref='haptix_install'>
+      <markdown version="6.0+">haptix_install/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to install <a href="/">Gazebo</> and the HAPTIX client library, <a href='https://bitbucket.org/osrf/haptix-comm'>haptix-comm</a>. Also included are instructions for updating software after it has been installed.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Matlab and Octave API" ref='haptix_matlab'>
-      <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
-      <description>This tutorial describes how to use the Matlab/Octave interface for
-        creating a hand controller.</description>
+      <markdown version="6.0+">haptix_matlab/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the <a href="https://bitbucket.org/osrf/haptix-comm/src/default/matlab/">Matlab/Octave interface</a> for creating a hand controller. The Matlab/Octave interface is a wrapper around the <a href="/tutorials?cat=haptix&tut=haptix_comm">C-API</a>.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
-      <markdown version="4.0+">haptix_tactors/tutorial.md</markdown>
+      <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
       <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
       <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
-      <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
+      <markdown version="6.0+">haptix_teleop/tutorial.md</markdown>
       <description>This tutorial describes how to control arm position and grasps using a keyboard, SpaceNav, or Razer Hydra.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Optitrack Control" ref='haptix_optitrack'>
-      <markdown version="4.0+">haptix_optitrack/tutorial.md</markdown>
-      <description>How to configure the Optitrack V120 Trio camera and the Motive motion tracking software to control the arm and viewpoint in Gazebo.</description>
+      <markdown version="6.0+">haptix_optitrack/tutorial.md</markdown>
+      <description><![CDATA[How to configure the <a href="http://www.optitrack.com/products/v120-trio/">Optitrack V120 Trio</a> camera and the <a href="http://www.optitrack.com/products/motive/">Motive motion tracking software</a> to control the arm and viewpoint in <a href="/">Gazebo</a>.]]></description>
       <skill>beginner</skill>
     </tutorial>
   </tutorials>
@@ -846,7 +849,13 @@
     </category>
 
     <category title="HAPTIX" skill="advanced" ref="haptix">
-      <description>HAPTIX specific tutorials.</description>
+      <description><![CDATA[The following are tutorials designed for <a
+          href='https://www.fbo.gov/index?s=opportunity&mode=form&id=ccbc51af982e354304886e363e6c8404&tab=core&_cview=1'>HAPTIX</a>,
+        a <a href='http://www.darpa.mil'>DARPA</a> program designed to
+        develop new science and technology to achieve closed-loop control of
+        dexterous mechatronic prosthesesis. For more information, please visit <a href="/haptix">http://gazebosim.org/haptix</a>.
+      ]]>
+      </description>
       <tutorials>
         <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_install</tutorial>
