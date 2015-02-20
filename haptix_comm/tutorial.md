@@ -16,31 +16,6 @@ link it to the haptix-comm library.
 
 ## Windows
 
-Before opening Visual Studio you need to do some network configuration to specify
-the IP address that you will use for communicating with Gazebo.
-
-Click on the `Start button` and type `cmd` in the `Search box`. Once you are in
-the terminal run the following command:
-
-~~~
-ipconfig
-~~~
-
-Look for the `IPv4 Address` inside the network interface that you want to use
-for communicating with Gazebo. **Here, we will use the wired interface**, so you
-should **look for `Ethernet adapter Local Area Connection`**.
-
-%%%
-[[file:files/ipconfig.png|600px]]
-%%%
-
-Click on the `Start button` and search for `environment variables`.
-Click on `Edit the system environment variables`, and then, click on the button
-`Environment variables`. Click on the `New` button from the `User variables`
-section to create a new environment variable with name `IGN_IP`. **The value
-should be the WIRED IP address of the network interface that you are using to
-communicate with Gazebo**.
-
 Open Visual Studio 2013 and create a new project for your hand controller. Click
 on `File`->`New Project`->`Visual C++`, and select `Win32 Console Application`
 from the right side window. Select an appropriate name for your project, for
@@ -240,22 +215,22 @@ means that the communication to the Gazebo Linux server failed.
 
 **First check:** Are both machines in the same network and can reach each other?
 Simply using the ping command from both (windows command line and Linux shell),
-should be enough to check connectivity. If it is not working, there is a problem 
+should be enough to check connectivity. If it is not working, there is a problem
 in network configuration, be sure that both are connected to the same network.
 
-**Second check:** Is the communication layer using the right network interface? 
+**Second check:** Is the communication layer using the right network interface?
 Double check that you have set the `IGN_IP` properly in **both** Gazebo Linux server
-and Windows. In Windows this can be done from the Windows command line `echo %IGN_IP%`. 
+and Windows. In Windows this can be done from the Windows command line `echo %IGN_IP%`.
 To be completely sure, logout from your user session, login again and open Visual Studio.
 
 **Third check:** Is the Windows firewall affecting the communication? It can be
-disabled from the Windows Control Panel and try to launch the Visual Studio 
+disabled from the Windows Control Panel and try to launch the Visual Studio
 application again.
 
-**Fourth check:** Is the router cutting the communication? Several solutions: 
+**Fourth check:** Is the router cutting the communication? Several solutions:
 Login into the router, disable any kind of firewall. If you can not do that,
 connect both machines using an ethernet cable directly. You will need to
-manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and 
+manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and
 192.168.X.Y+1/255.255.255.0).
 
 ### In the Windows Firewall question, I clicked the wrong option (cancel)
