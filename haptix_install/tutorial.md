@@ -156,7 +156,7 @@ There are two ways the HAPTIX software may be updated:
 
 1. Using the desktop icon.
 
-    1. **Note:** This requires the `haptixUpdate` desktop icon. For more information, see <a href='/tutorials?tut=haptix_unboxing&cat=haptix#Environmentoverview'>here</a>
+    1. **Note:** This requires the `haptixUpdate` desktop icon. For more information, see <a href='/tutorials?tut=haptix_unboxing&cat=haptix#Environmentoverview'>here</a>.
 
     1. Double click the `haptixUpate` icon on the desktop.
 
