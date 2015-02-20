@@ -97,9 +97,8 @@ In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
 
 The result value of `hx_robot_info()` is a struct containing the number of
-motors, joints, contact sensors, IMUs and joint limits for the requested device,
- as well as the result of the request. It also contains the update rate, the frequency
- at which the device is updated.
+motors, joints, contact sensors, IMUs and joint limits for the requested device.
+It also contains the update rate, the frequency at which the device is updated.
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
@@ -108,6 +107,3 @@ command and receiving the current state of the hand.
 First of all, we need to fill a command struct that contains the positions,
 velocities, and gains for each joint. It is important to use the same names for
 the fields that we are using in this example.
-
-The function `hx_update()` returns a value which will
-contain the state of the hand after applying the command.
