@@ -1,5 +1,5 @@
 # Overview
-This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo simulator.
+This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo simulator. You will learn about each piece of equipment and how to calibrate the markers so that each component works properly.
 
 ## What you'll need
 All of the necessary items, including all software components, will be provided to participating HAPTIX teams. We are also providing links for any participants or hobbyists who want to create their own kit.
@@ -54,10 +54,10 @@ These spheres will be attached to the corners of the monitor associated with the
 [[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
-If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp). We are going to make a small modification to it.
+If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp). We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
-On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
+On your Windows virtual machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
 [[file:files/motive_icon.PNG]]
 
@@ -115,7 +115,7 @@ If you made your own head tracker, put the head tracker on and hold your head st
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
-Important: make sure the rigid body names are correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!
+**Important: make sure the rigid body names are correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!**
 
 You should be able to move around the arm and head trackers and watch the positions change in the 3D view in Motive!
 
@@ -128,11 +128,8 @@ Select "Save Project" under "File" in the top toolbar (you can save the file und
 You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker.
 
 ## Starting Gazebo
-Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine:
-
-~~~
-gazebo --verbose worlds/arat.world
-~~~
+Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
+by double-clicking on the `haptixStart` desktop icon:
 
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
 
