@@ -51,6 +51,8 @@ https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-latest-Release-win6
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
+### Network configuration
+
 Now, you need to do some network configuration to specify
 the IP address that you will use for communicating with Gazebo.
 
@@ -94,3 +96,60 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
 1. Install handsim.
 
         sudo apt-get install handsim
+
+### Network configuration
+
+Now, you need to do some network configuration to specify
+the IP address that you will use for communicating with the other machines (e.g. your MATLAB development machine).
+
+Open a terminal and run the following command:
+
+~~~
+ifconfig
+~~~
+
+Look for `inet addr` in the `eth0` section.
+
+%%%
+eth0      Link encap:Ethernet  HWaddr 90:2b:34:d7:51:7a
+          inet addr:172.23.2.37  Bcast:172.23.3.255  Mask:255.255.252.0
+          inet6 addr: fe80::922b:34ff:fed7:517a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:64111138 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:57702428 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:14401677278 (14.4 GB)  TX bytes:6048516431 (6.0 GB)
+          Interrupt:20 Memory:f7500000-f7520000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:30882650 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:30882650 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:12394703023 (12.3 GB)  TX bytes:12394703023 (12.3 GB)
+
+vmnet1    Link encap:Ethernet  HWaddr 00:50:56:c0:00:01
+          inet addr:172.16.100.1  Bcast:172.16.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fec0:1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:460 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+vmnet8    Link encap:Ethernet  HWaddr 00:50:56:c0:00:08
+          inet addr:172.16.49.1  Bcast:172.16.49.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fec0:8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:173555 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1315 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+%%%
+
+Run the following command in the terminal, replacing the `IGN_IP` value with the
+one mentioned above:
+
+echo "export IGN_IP=172.23.2.37 >> ~/.bashrc"
