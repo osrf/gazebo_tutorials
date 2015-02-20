@@ -93,7 +93,7 @@ example:
 
 # Running the simulation with your controller
 
-In the Linux machine, double-click on the `haptixStart` desktop icon to start
+On the Linux machine, double-click on the `haptixStart` desktop icon to start
 the simulation.
 
 ## Windows

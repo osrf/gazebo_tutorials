@@ -25,7 +25,7 @@ Open Matlab and click on the `Browse for folder` icon.
 A new pop-up window will appear. Browse to the folder `matlab\` inside the
 directory where you unzipped the HAPTIX client library SDK.
 
-The HAPTIX client library SDK includes five `mex` files that allow you to call
+The HAPTIX client library SDK includes one `mex` file that allows you to call
 the functions `hx_connect()`, `hx_robot_info()`,
 `hx_update()`, `hx_read_sensors()` and `hx_close()` from your Matlab/Octave
 console or from a .m file.
@@ -36,6 +36,8 @@ the Matlab Command Window:
 ~~~
 hx_matlab_controller
 ~~~
+
+You should see the arm move like in the controller visualization video below.
 
 # Run your controller in Octave
 
@@ -73,6 +75,8 @@ To run a controller for the simulated arm, type:
 hx_matlab_controller
 ~~~
 
+You should see the arm move like in the controller visualization video below.
+
 # Controller visualization
 
 While your controller is running, you should see your fingers following a smooth
@@ -82,10 +86,10 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include from='/counter =/' to='/end/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
+<include from='/counter =/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
 
-The HAPTIX Matlab/Octave API is composed of five mex functions: `hx_connect()`, `hx_robot_info()`,
-`hx_update`, `hx_read_sensors` and `hx_close()`.  `hx_connect()` and `hx_close()` are
+The HAPTIX Matlab/Octave API is composed of five functions: `hx_connect()`, `hx_robot_info()`,
+`hx_update()`, `hx_read_sensors()` and `hx_close()`. `hx_connect()` and `hx_close()` are
 optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
 
 `hx_robot_info()` requests information from a given device.
