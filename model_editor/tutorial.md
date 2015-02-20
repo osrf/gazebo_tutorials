@@ -51,13 +51,13 @@ click/release anywhere to add it to the model.
 
 To add a custom mesh,
 
-1. click on the `Add` button under **Custom Shapes**, which pops up a dialog
+1. Click on the `Add` button under **Custom Shapes**, which pops up a dialog
 that lets you find the mesh you want to add.
 
 1. Click on `Browse` button and use the file browser to find the mesh file
 on your local machine. If you know the path of the mesh file, you can enter it
 directly in the text field box next to the `Browse` button. Note Gazebo
-currently only supports importing collada and stl files.
+currently only supports importing collada (dae) and stl files.
 
 1. Click `Import` to load the mesh file then add it to the 3D view.
 
@@ -65,7 +65,7 @@ currently only supports importing collada and stl files.
 
 # Create Joints
 
-The model editor support creating types of joints between links in the
+The model editor supports creating several types of joints between links in the
 model being edited. To create a joint:
 
 1. Click on the `joint` icon on the tool bar. This defaults to a `revolute`
