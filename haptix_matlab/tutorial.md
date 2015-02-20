@@ -101,8 +101,6 @@ motors, joints, contact sensors, IMUs and joint limits for the requested device,
  as well as the result of the request. It also contains the update rate, the frequency
  at which the device is updated.
 
-<include from='/while counter/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
-
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
 command and receiving the current state of the hand.
