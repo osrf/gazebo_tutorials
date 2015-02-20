@@ -65,9 +65,7 @@ ipconfig
 
 Look for the `IPv4 Address` inside the `Ethernet adapter Local Area Connection` section.
 
-%%%
 [[file:files/ipconfig.png|600px]]
-%%%
 
 Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
@@ -110,9 +108,7 @@ ifconfig
 
 Look for `inet addr` in the `eth0` section.
 
-%%%
 [[file:files/ifconfig.png|600px]]
-%%%
 
 Run the following command in the terminal, replacing the `IGN_IP` value with the
 one mentioned above:
