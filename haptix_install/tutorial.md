@@ -70,7 +70,17 @@ Look for the `IPv4 Address` inside the `Ethernet adapter Local Area Connection` 
 Click on the `Start button` and search for `environment variables`.
 Click on `Edit the system environment variables`, and then, click on the button
 `Environment variables`. Click on the `New` button from the `User variables`
-section to create a new environment variable with name `IGN_IP`. **Enter the IPv4 Address mentioned above**.
+section to create a new environment variable with name `IGN_IP`.
+**Enter the IPv4 Address mentioned above**.
+
+Now, we want to **create a partition** to group your Gazebo machine with all the
+related machines (e.g.: your MATLAB/Octave/Visual Studio development machine).
+This is important because if you decide to later run a second or third Gazebo
+instance on the same network, you will get crosstalk if there is no partition.
+
+Click on the `New` button again and create a new environment variable with name
+`IGN_PARTITION`. Enter a name like `Gazebo1`. Repeat this process on any Windows
+machine that you plan to use with this Gazebo instance.
 
 ## Installing the HAPTIX client library SDK in Linux
 
@@ -116,3 +126,15 @@ Run the following command in the terminal, replacing the `IGN_IP` value with the
 ~~~
 echo "export IGN_IP=172.23.2.37" >> ~/.bashrc
 ~~~
+
+Now, we want to add our Linux machines (Gazebo/Octave) to the partition created
+in the previous section (in this example we called it `gazebo1`).
+
+Run the following command in the terminal:
+
+~~~
+echo "export IGN_PARTITION=gazebo1" >> ~/.bashrc
+~~~
+
+Repeat this process on any Linux machine that you plan to use with this Gazebo
+instance.
