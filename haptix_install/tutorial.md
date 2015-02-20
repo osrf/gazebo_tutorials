@@ -111,7 +111,7 @@ Look for `inet addr` in the `eth0` section.
 [[file:files/ifconfig.png|600px]]
 
 Run the following command in the terminal, replacing the `IGN_IP` value with the
-one mentioned above:
+`inet_addr` mentioned above:
 
 ~~~
 echo "export IGN_IP=172.23.2.37" >> ~/.bashrc
