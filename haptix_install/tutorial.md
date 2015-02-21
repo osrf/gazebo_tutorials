@@ -79,7 +79,7 @@ This is important because if you decide to later run a second or third Gazebo
 instance on the same network, you will get crosstalk if there is no partition.
 
 Click on the `New` button again and create a new environment variable with name
-`IGN_PARTITION`. Enter a name like `Gazebo1`. Repeat this process on any Windows
+`IGN_PARTITION`. Enter a name like `gazebo1`. Repeat this process on any Windows
 machine that you plan to use with this Gazebo instance.
 
 ## Installing the HAPTIX client library SDK in Linux
