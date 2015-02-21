@@ -143,22 +143,18 @@ instance.
 
 There are two ways the HAPTIX software may be updated:
 
-1. Command-line
+- Command-line
+   1. Open a terminal
+   1. Run the following commands
 
-    1. Open a terminal
+         ~~~
+         sudo apt-get update
+         sudo apt-get upgrade
+         ~~~
 
-    1. Run the following commands
-
-        ~~~
-        sudo apt-get update
-        sudo apt-get upgrade
-        ~~~
-
-1. Using the desktop icon.
-
-    1. **Note:** This requires the `haptixUpdate` desktop icon. For more information, see <a href='/tutorials?tut=haptix_unboxing&cat=haptix#Environmentoverview'>here</a>.
-
-    1. Double click the `haptixUpate` icon on the desktop.
+- Using the desktop icon.
+   1. **Note:** This requires the `haptixUpdate` desktop icon. For more information, see <a href='/tutorials?tut=haptix_unboxing&cat=haptix#Environmentoverview'>here</a>.
+   1. Double click the `haptixUpate` icon on the desktop.
 
 ##Version numbers
 
