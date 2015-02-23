@@ -57,7 +57,7 @@ These spheres will be attached to the corners of the monitor associated with the
 If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp). We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
-Make sure Gazebo is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
+Make sure Gazebo is closed on Linux. On your Windows VM machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
 [[file:files/motive_icon.PNG]]
 
