@@ -39,7 +39,7 @@ called `haptix-comm`. `haptix-comm` exposes the API that will allow your softwar
 request information about the hand (number of joints, motors, number of sensors,
 etc.), as well as send new joint commands and receive the hand state.
 
-## Installing the HAPTIX client library SDK in Windows
+## Installing on Windows 
 
 We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
 
@@ -82,7 +82,7 @@ Click on the `New` button again and create a new environment variable with name
 `IGN_PARTITION`. Enter a name like `gazebo1`. Repeat this process on any Windows
 machine that you plan to use with this Gazebo instance.
 
-## Installing the HAPTIX client library SDK in Linux
+## Installing on Linux
 
 ###  One-line install
 
