@@ -100,9 +100,11 @@ On the desktop, you should see three icons.
 
 1. haptixSupport: This will open up a secure connection with the support staff at OSRF for troubleshooting purposes. If your simulation system or connection to peripheral hardware appears broken, please contact haptix-support@osrfoundation.org and schedule a support session. Then double-click on this icon to initiate the connection.
 
-If you want to reproduce the virtualOSRF command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
+If you want to reproduce the haptixSupport command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
 
 You can make your own icons via the [Terminal](http://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04) or [graphically](http://askubuntu.com/questions/450266/an-easy-way-to-create-a-desktop-shortcut).
+
+1. checkStereo: This will open a window that displays two rotating gears in stereo. Use this icon to test whether stereo is enabled on your system.
 
 # DIY machine configuration
 
