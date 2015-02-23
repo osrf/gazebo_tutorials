@@ -131,7 +131,7 @@ As an example, try changing the joint pose and joint type. Click on `Apply`
 to see the changes reflected in the 3D view. Once you are done, click on
 `OK` to close the inspector.
 
-[[file:files/model_editor_joint_inspector.png|640px]]
+[[file:files/model_editor_joint_inspector.png|300px]]
 
 # Saving your model
 
