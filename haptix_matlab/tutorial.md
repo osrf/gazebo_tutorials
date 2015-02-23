@@ -13,8 +13,8 @@ Double-click on the `haptixStart` desktop icon.
 # Run your controller in Matlab
 
 Before opening Matlab you should make sure that the environment variable
-`IGN_IP` is properly set. Check out [this tutorial]
-(http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix#Networkconfiguration) for detailed instructions.
+`IGN_IP` is properly set. Go to this [this tutorial]
+(http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix#Networkconfiguration), and scroll to the Network Configuration section for detailed instructions.
 
 Open Matlab and click on the `Browse for folder` icon.
 
