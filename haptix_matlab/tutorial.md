@@ -14,7 +14,7 @@ Double-click on the `haptixStart` desktop icon.
 
 Before opening Matlab you should make sure that the environment variable
 `IGN_IP` is properly set. Check out [this tutorial]
-(http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Networkconfiguration) for detailed instructions.
+(http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix#Networkconfiguration) for detailed instructions.
 
 Open Matlab and click on the `Browse for folder` icon.
 
