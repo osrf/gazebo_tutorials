@@ -1,6 +1,6 @@
-This tutorial describes the process of creating a model using the Model Editor.
-
 # Overview
+
+This tutorial describes the process of creating a model using the Model Editor.
 
 ## Open the Model Editor
 
