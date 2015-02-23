@@ -31,6 +31,8 @@ command in your terminal:
 gazebo worlds/arat.world
 ~~~
 
+Once you are done testing, please close Gazebo.
+
 # HAPTIX Client library SDK
 
 The HAPTIX client library SDK is a stack of libraries that enables communication
