@@ -203,6 +203,13 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Collide bitmask" ref='collide_bitmask'>
+      <markdown version="6.0+">collide_bitmask/tutorial.md</markdown>
+      <description>Learn how to control which geometries collide or do not collide with each other through the use of bitmasks.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+
     <tutorial title="Fluids" ref='fluids'>
       <markdown version="3.0+">fluids/tutorial.md</markdown>
       <description>Fluid simulation on the GPU using Fluidix library.</description>
@@ -795,6 +802,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
         <tutorial>clone_simulation</tutorial>
       </tutorials>
