@@ -78,6 +78,8 @@ The slider next to "Arm move speed" controls the speed of the arm under keyboard
 
 These options are only relevant for keyboard teleop control. They do not affect motion capture teleoperation or Spacenav.
 
+Press `Ctrl+R` to reset the arm position, viewpoint and the objects in the scene.
+
 ## Spacenav Control
 
 By default, the spacenav mouse controls the position and
