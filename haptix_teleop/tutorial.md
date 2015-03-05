@@ -30,7 +30,7 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. Cylinderical grasp
        1. Pinch grasp
 
-    To release the hand, press and hold SHIFT and the number key. 
+    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp. 
 
 1. **Arm position**
 
