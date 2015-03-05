@@ -30,7 +30,7 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. Cylinderical grasp
        1. Pinch grasp
 
-    To release the hand, press and hold SHIFT and the number key. 
+    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp. 
 
 1. **Arm position**
 
@@ -77,6 +77,8 @@ If the "Local frame" checkbox is checked, keyboard teleop will move the arm in t
 The slider next to "Arm move speed" controls the speed of the arm under keyboard teleop.
 
 These options are only relevant for keyboard teleop control. They do not affect motion capture teleoperation or Spacenav.
+
+Press `Ctrl+R` to reset the arm position, viewpoint and the objects in the scene.
 
 ## Spacenav Control
 
