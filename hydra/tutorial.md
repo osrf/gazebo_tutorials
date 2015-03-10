@@ -30,7 +30,7 @@ sudo apt-get install libusb-1.0-0-dev
 
 Once Hydra is configured and the extra dependency satisfied, you should be able to compile Gazebo from source with Hydra support.
 
-Follow [this](http://gazebosim.org/tutorials/?cat=installation) instructions to compile Gazebo. During the execution of the `cmake` command, you should see this message confirming that the Oculus SDK is found:
+Follow [this](http://gazebosim.org/install) instructions to compile Gazebo. During the execution of the `cmake` command, you should see this message confirming that the Oculus SDK is found:
 
 ~~~
 -- Looking for libusb-1.0 - found. Razer Hydra support enabled.
