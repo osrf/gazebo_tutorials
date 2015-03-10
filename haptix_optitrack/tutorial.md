@@ -54,7 +54,7 @@ These spheres will be attached to the corners of the monitor associated with the
 [[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
-If you received a premade set of tracking targets, download [this Motive Project file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp). We are going to make a small modification to calibrate each component.
+If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop. We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
 Make sure Gazebo is closed on Linux. On your Windows VM machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
@@ -65,7 +65,7 @@ You should see the following screen pop up:
 
 [[file:files/motive_start.PNG|800px]]
 
-If Motive displays the error message "License not found", the Optitrack was not plugged in correctly. Review the Camera Setup section above and double-check that the Optitrack is connected to power and to your computer via USB.
+If Motive displays the error message "License not found", the Optitrack was not plugged in correctly. Review the Camera Setup section above and double-check that the Optitrack is connected to power and to your computer via USB. If you are using a Windows virtual machine, make sure the "Natural Point Optitrack" USB device is turned on at the bottom right corner of the VM window.
 
 Close the startup menu.
 
@@ -123,7 +123,7 @@ You should be able to move around the arm and head trackers and watch the positi
 You're now done configuring Motive for your physical setup.  This is a good time to make sure that all the markers are being tracked correctly.  Bring the arm and head trackers back into the scene and verify that you see them move in the Camera and Perspective Views in Motive.
 
 ### Save the result
-Select "Save Project" under "File" in the top toolbar (you can save the file under a different name or in a different location if you like; just remember what you called it and where you put it).
+Select "Save Project" under "File" in the top toolbar. Make sure it is saved to the Desktop as `haptix_osrf.ttp`.
 
 You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker.
 

@@ -27,7 +27,7 @@ directory where you unzipped the HAPTIX client library SDK.
 
 The HAPTIX client library SDK includes one `mex` file that allows you to call
 the functions `hx_connect()`, `hx_robot_info()`,
-`hx_update()`, `hx_read_sensors()` and `hx_close()` from your Matlab/Octave
+`hx_update()`, `hx_read_sensors()` and `hx_close()` from your Matlab
 console or from a .m file.
 
 Open the file `hx_matlab_controller.m` in Matlab. Then, type in
@@ -98,12 +98,15 @@ blocks until the response is received.
 
 The result value of `hx_robot_info()` is a struct containing the number of
 motors, joints, contact sensors, IMUs and joint limits for the requested device.
-It also contains the update rate, the frequency at which the device is updated.
+It also contains the update rate, which conveys how frequently the device is updated.
 
-Once we confirm the device information we can start sending commands for
+Once we confirm the device information, we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
 command and receiving the current state of the hand.
 
-First of all, we need to fill a command struct that contains the positions,
+We need to fill a command struct that contains the positions,
 velocities, and gains for each joint. It is important to use the same names for
 the fields that we are using in this example.
+
+We then call the function `hx_update()`, which returns a struct representing the
+sensor state of the command after applying the command.
