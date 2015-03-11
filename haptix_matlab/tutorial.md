@@ -98,7 +98,7 @@ blocks until the response is received.
 
 The result value of `hx_robot_info()` is a struct containing the number of
 motors, joints, contact sensors, IMUs and joint limits for the requested device.
-It also contains the update rate, which conveys how frequently the device is updated.
+It also contains the update rate, which is the frequency at which the device is updated.
 
 Once we confirm the device information, we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
