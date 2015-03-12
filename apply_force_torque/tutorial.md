@@ -44,9 +44,9 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 * **Application point**: By default, force is applied to the link's center of mass. Here you can edit the `X`, `Y` and `Z` fields to give the force an offset with respect to the link's origin expressed in the link's frame. Select `Center of mass` again to fill the `XYZ` fields withits coordinates.
 
-    > **Tip**: Right-click the model and choose `View -> Center of mass` to see its position. You might want to also make the model transparent for that. 
-  
-* **Apply Force**: Click this to apply only force for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large forces are needed in order to apply a significant impulse. 
+    > **Tip**: Right-click the model and choose `View -> Center of mass` to see its position. You might want to also make the model transparent for that.
+
+* **Apply Force**: Click this to apply only force for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large forces are needed in order to apply a significant impulse.
 
 ### Torque
 
@@ -56,7 +56,7 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 * **Clear**: Pressing this button will zero the `X`, `Y`, `Z` and `Mag` fields.
 
-* **Apply Torque**: Click this to apply only torque for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large torques are needed in order to apply a significant angular impulse. 
+* **Apply Torque**: Click this to apply only torque for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large torques are needed in order to apply a significant angular impulse.
 
     > **Note**: Torque is always applied about the center of mass.
 
@@ -64,9 +64,11 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 Force and torque are applied at the same time, i.e. apply a wrench. Hold enter to repeatededly trigger this button.
 
+    > **Note**: If you apply force and/or torque while the simulation is paused, they will accumulate and be applied all at once when the simulation is unpaused.
+
 ### Rotation tool
 
 The arrows directions will always match the directions specified in the dialog. From the dialog, the direction can be changed by editing the numbers on the `XYZ` fields. From the scene, the direction can be changed by dragging the pink circles around the arrows.
 
-> **Tip**: The pink circles are attached to the highlighted arrow. To rotate the other arrow, first click it to attach the circles to it and then drag them normally. 
+> **Tip**: The pink circles are attached to the highlighted arrow. To rotate the other arrow, first click it to attach the circles to it and then drag them normally.
 
