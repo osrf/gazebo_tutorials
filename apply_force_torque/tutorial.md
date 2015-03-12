@@ -64,7 +64,7 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 Force and torque are applied at the same time, i.e. apply a wrench. Hold enter to repeatededly trigger this button.
 
-    > **Note**: If you apply force and/or torque while the simulation is paused, they will accumulate and be applied all at once when the simulation is unpaused.
+> **Note**: If you apply force and/or torque while the simulation is paused, they will accumulate and be applied all at once when the simulation is unpaused.
 
 ### Rotation tool
 
