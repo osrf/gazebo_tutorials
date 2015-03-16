@@ -1,8 +1,9 @@
 # Introduction
 
-Gazebo supports the [Oculus Rift VR headset](http://www.oculusvr.com/). You
-will be able to attach a virtual Oculus Camera to one of the visual links of
-your model.
+Gazebo versions 3-5 supports the [Oculus Rift VR
+headset](http://www.oculusvr.com/) DK1. If you want to use Oculus DK2, you will need to use Gazebo 6 or above and follow [this tutorial](/tutorials?tut=oculus&cat=rendering&ver=6.0).
+
+After this tutorial, you will be able to attach a virtual Oculus Camera to one of the visual links of your model.
 
 # OculusVR SDK installation.
 
@@ -12,6 +13,7 @@ Follow the next instructions to install the Oculus SDK version that we prepared 
 sudo apt-get install libusb-dev libudev-dev libxinerama-dev
 hg clone https://bitbucket.org/osrf/oculussdk
 cd oculussdk
+hg up dk1
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr
@@ -77,3 +79,6 @@ It is also possible to enable the Oculus window by default when starting Gazebo.
 ~~~
 gazebo worlds/camera.world
 ~~~
+
+
+
