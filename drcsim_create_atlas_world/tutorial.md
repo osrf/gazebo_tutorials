@@ -41,11 +41,11 @@ You will see a blank world.
 
 Now, add some simple shapes to the environment using the icons in the toolbar. You can add boxes, spheres or cylinders.
 
-[[file:files/shapes_toolbar.png|640px]]
+[[file:files/shapes_toolbar.png|320px]]
 
 You can even add pre-existing models to the environment using the "Insert Models" tab:
 
-[[file:files/insert_models.png|640px]]
+[[file:files/insert_models.png|320px]]
 
 When you're done, save the world by clicking "File" then "Save World As". You can also use the keyboard shortcut, CTRL-SHIFT-S. Call it `myworld.world` and save it to `~/ros/world_create_tutorial/worlds`. When you are finished, exit Gazebo.
 
@@ -85,6 +85,6 @@ roslaunch world_create_tutorial atlas.launch
 
 You should see Atlas spawned next to the objects you placed in the previous step:
 
-[[file:files/atlas_spawned.png]]
+[[file:files/atlas_spawned.png|320px]]
 
 From here, you're ready to modify the robot's environment any way you like.  Have a look at [SDF documentation](http://gazebosim.org/sdf) and edit `~/ros/world_modification_tutorial/worlds/atlas.world` however you like.
