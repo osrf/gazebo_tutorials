@@ -50,7 +50,7 @@ This example is available as a run-able Gazebo demo.
 
   1. Press the play button to see the boxes drop.
 
-  [[file:files/collide_bitmask.png|320px]]
+      [[file:files/collide_bitmask.png|640px]]
 
 # How to set a collide bitmask
 
