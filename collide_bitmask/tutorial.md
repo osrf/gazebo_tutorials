@@ -50,6 +50,8 @@ This example is available as a run-able Gazebo demo.
 
   1. Press the play button to see the boxes drop.
 
+  [[file:files/collide_bitmask.png|320px]]
+
 # How to set a collide bitmask
 
 A collide bitmask may be set using [SDF](http://sdformat.org), an XML file
