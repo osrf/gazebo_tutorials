@@ -45,7 +45,7 @@ Now, add some simple shapes to the environment using the icons in the toolbar. Y
 
 You can even add pre-existing models to the environment using the "Insert Models" tab:
 
-[[file:files/insert_models.png|320px]]
+[[file:files/insert_models.png|240px]]
 
 When you're done, save the world by clicking "File" then "Save World As". You can also use the keyboard shortcut, CTRL-SHIFT-S. Call it `myworld.world` and save it to `~/ros/world_create_tutorial/worlds`. When you are finished, exit Gazebo.
 
