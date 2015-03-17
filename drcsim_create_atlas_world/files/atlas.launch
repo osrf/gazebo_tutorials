@@ -1,7 +1,7 @@
 <launch>
 
   <arg name="gzname" default="gazebo"/>
-  <arg name="gzworld" default="$(find world_modification_tutorial)/worlds/myworld.world"/>
+  <arg name="gzworld" default="$(find world_create_tutorial)/worlds/myworld.world"/>
   <arg name="hand_suffix" default=""/>
   <arg name="extra_gazebo_args" default="-q" />
   <arg name="model_args" default="" />

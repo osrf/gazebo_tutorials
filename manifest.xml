@@ -435,7 +435,7 @@
     </tutorial>
 
     <tutorial title="Spawn Atlas into a custom world" ref='drcsim_create_atlas_world'>
-      <markdown version="2.0+">drcsim_create_atlas_world/tutorial.md</markdown>
+      <markdown version="4.2+">drcsim_create_atlas_world/tutorial.md</markdown>
       <description>How to spawn Atlas into your own custom world.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -777,6 +777,7 @@
       <tutorials>
         <tutorial>drcsim_install</tutorial>
         <tutorial>drcsim_launchfiles</tutorial>
+        <tutorial>drcsim_create_atlas_world</tutorial>
         <tutorial>drcsim_animate_joints</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
