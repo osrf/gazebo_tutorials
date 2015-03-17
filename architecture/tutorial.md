@@ -1,19 +1,24 @@
 # Introduction
 
-In order to address the requirements and resolve the current issues with Gazebo,
-we propose a distributed architecture.
-Gazebo will be broken into libraries for physics simulation,
+Gazebo uses a distributed architecture
+with separate libraries for physics simulation,
 rendering, user interface, communication, and sensor generation.
-Three different processes will be provided:
-`physics_sim`, `sensor_gen`, `gui`, and a `master` for coordination.
+Additionally, gazebo provides two executable programs for running simulations,
+a server (gzserver) for simulating the physics, rendering, and sensors
+and a client (gzclient) that provides a graphical interface to
+visualize and interact with the simulation.
+The client and server communicate using the gazebo communication library.
 
 ## Communication Between Processes
 
-Communication between each process will use a combination of google::protobufs and sockets.
-A simulated world will publish body pose updates,
+The communication library currently uses the open source
+Google Protobuf for the message serialization
+and boost::ASIO for the transport mechanism.
+It supports the publish/subscribe communication paradigm.
+For example, a simulated world publishes body pose updates,
 and sensor generation and GUI will consume these messages to produce output.
 
-This mechanism will allow for introspection of a running simulation,
+This mechanism allow for introspection of a running simulation,
 and provide a convenient mechanism to control aspects
 of Gazebo.
 
@@ -36,16 +41,26 @@ sensor generators, and GUIs.
  
  This library is used by almost all subsequent libraries.
  It acts as the communication and transport mechanism for Gazebo.
- It currently supports only publish/subscribe, but it's possible to use RPC with minimal effort.
+ It currently supports only publish/subscribe,
+ but it is possible to use RPC with minimal effort.
  
 ### Physics Library
  * **Dependencies:** Dynamics engine, and Collision Library
  * **External API:** Provides a simple and generic interface to physics simulation
  * **Internal API:** Defines a fundamental interface to the physics library for 3rd party dynamic engines.
  
- The physics library can use any dynamic engine that conforms to the internal API (TBD).
- It also presents a simple external interface in order to establish a work physics simulation.
- 
+ The physics library provides a simple and generic interface to
+ fundamental simulation components, including rigid bodies,
+ collision shapes, and joints for representing articulation
+ constraints.
+ This interface has been integrated with four open-source
+ physics engines: Open Dynamics Engine (ODE), Bullet,
+ Simbody, and Dynamics, Animation, and Robotics Toolkit (DART).
+ A model described in the Simulation Description Format (SDF)
+ using XML can be loaded by each of these physics engines.
+ This provides access to different algorithm implementations
+ and simulation features.
+
 ### Collision Library
 
  * **Dependencies:** 3rd party collision engine
@@ -63,9 +78,10 @@ sensor generators, and GUIs.
  * **External API:** Allows for loading, initialization, and scene creation
  * **Internal API:** None, we are going to use only OGRE.
 
- The rendering library provides a simple interface to both the GUI and sensor generation.
- We are currently sticking with OGRE since we don't have a better alternative.
- It will be possible to write plugins for the rendering engine.
+ The rendering library uses OGRE to provide a simple interface
+ for rendering 3D scenes to both the GUI and sensor libraries.
+ It includes lighting, textures, and sky simulation.
+ It is possible to write plugins for the rendering engine.
 
 ### Sensor Generation
 
@@ -79,16 +95,18 @@ sensor generators, and GUIs.
  
 ### GUI
 
- * **Dependencies:** Rendering Library, wxWidgets
+ * **Dependencies:** Rendering Library, QT
  * **External API:** None
  * **Internal API:** None
 
- The primary function of the GUI involves displaying the current state
- of the simulation and providing a convenient means for user input.
- There is no need for an internal or external API since we are sticking with wxWidgets.
+ The GUI library uses QT to visualize the simulation and allow user interaction.
+ The user may control the flow of time by pausing or changing time step size.
+ The user may also modify the scene by adding, modifying, or removing models.
+ Additionally there are some tools for visualizing and
+ logging simulated sensor data.
 
 ### Plugins
- The physics, sensor, and rendering libraries will support plugins.
- These plugins will provide users with access to the respective libraries
+ The physics, sensor, and rendering libraries support plugins.
+ These plugins provide users with access to the respective libraries
  without using the communication system.
  
