@@ -41,7 +41,7 @@ $ cd ~/gazebo_plugin_tutorial
 $ gedit model_push.world
 ~~~
 
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/model_push.world' />
+<include lang='xml' src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/model_push.world' />
 
 The hook to attach a plugin to a model is specified at the end of the model element block using:
 

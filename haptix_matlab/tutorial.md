@@ -1,25 +1,20 @@
 # Overview
 
-This tutorial will explain how to use Matlab or Octave for requesting a
-description of the hand, sending new joint commands, and receiving state updates.
+This tutorial will explain how to use Matlab in Windows or Octave in Linux for requesting a
+description of the hand, sending new joint commands, and receiving state updates. The Matlab
+and Octave systems have the same API, but the steps to run each system differ slightly.
 
 We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
 
 # Start the Gazebo simulation
 
-Open a new terminal on the Linux machine running Gazebo and start the HAPTIX
-simulation:
+Double-click on the `haptixStart` desktop icon.
 
-~~~
-. /usr/share/haptix_gazebo_plugins/setup.sh
-gazebo worlds/arat.world
-~~~
+# Run your controller in Matlab
 
-# Run your controller in Matlab or Octave
-
-Before opening Matlab/Octave you should make sure that the environment variable
-`IGN_IP` is properly set. Check out [this tutorial]
-(http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix) for detailed instructions.
+Before opening Matlab you should make sure that the environment variable
+`IGN_IP` is properly set. Go to this [this tutorial]
+(http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix#Networkconfiguration), and scroll to the Network Configuration section for detailed instructions.
 
 Open Matlab and click on the `Browse for folder` icon.
 
@@ -30,16 +25,57 @@ Open Matlab and click on the `Browse for folder` icon.
 A new pop-up window will appear. Browse to the folder `matlab\` inside the
 directory where you unzipped the HAPTIX client library SDK.
 
-The HAPTIX client library SDK includes two `mex` files that allow you to call
-the functions `hx_getdeviceinfo()` and `hx_update()` from your Matlab/Octave
+The HAPTIX client library SDK includes one `mex` file that allows you to call
+the functions `hx_connect()`, `hx_robot_info()`,
+`hx_update()`, `hx_read_sensors()` and `hx_close()` from your Matlab/Octave
 console or from a .m file.
 
-Open the file `hx_matlab_controller.m` in Matlab/Octave. Then, type in
-the Matlab/Octave Command Window:
+Open the file `hx_matlab_controller.m` in Matlab. Then, type in
+the Matlab Command Window:
 
 ~~~
 hx_matlab_controller
 ~~~
+
+You should see the arm move like in the controller visualization video below.
+
+# Run your controller in Octave
+
+First, install Octave if you haven't already:
+
+~~~
+sudo apt-get install octave
+~~~
+
+Then, change directories to the `octave` subdirectory of the `haptix-comm` install directory.
+This directory should contain several `.m` files.
+
+~~~
+cd /usr/lib/x86_64-linux-gnu/haptix-comm/octave
+~~~
+
+If that directory does not exist, try:
+
+~~~
+cd /usr/lib/haptix-comm/octave
+~~~
+
+Start Octave:
+
+~~~
+octave
+~~~
+
+You should be able to call `hx_connect()`, `hx_robot_info()`, `hx_update()`, `hx_read_sensors()`,
+and `hx_close()` from Octave (the parentheses are optional).
+
+To run a controller for the simulated arm, type:
+
+~~~
+hx_matlab_controller
+~~~
+
+You should see the arm move like in the controller visualization video below.
 
 # Controller visualization
 
@@ -50,19 +86,19 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include from='/counter =/' to='/end/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
+<include lang='matlab' from='/counter =/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
 
-The HAPTIX Matlab API is composed of two mex function: `hx_getdeviceinfo()` and
-`hx_update()`. `hx_getdeviceinfo()` requests information from a given device.
+The HAPTIX Matlab/Octave API is composed of five functions: `hx_connect()`, `hx_robot_info()`,
+`hx_update()`, `hx_read_sensors()` and `hx_close()`. `hx_connect()` and `hx_close()` are
+optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
+
+`hx_robot_info()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
 blocks until the response is received.
 
-The result value of `hx_getdeviceinfo()` is a struct containing the number of
-motors, joints, contact sensors, IMUs and joint limits for the requested device,
- as well as the result of the request. If we have a valid response, the
- returned value is 0.
-
-<include from='/while counter/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m' />
+The result value of `hx_robot_info()` is a struct containing the number of
+motors, joints, contact sensors, IMUs and joint limits for the requested device.
+It also contains the update rate, the frequency at which the device is updated.
 
 Once we confirm the device information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
@@ -71,8 +107,3 @@ command and receiving the current state of the hand.
 First of all, we need to fill a command struct that contains the positions,
 velocities, and gains for each joint. It is important to use the same names for
 the fields that we are using in this example.
-
-The function `hx_update()` accepts an argument that is the command that we want
-to send to the device, which we already filled in. The returned value will
-contain the state of the hand after applying the command and the result of the
-request (0 on success).

@@ -30,7 +30,7 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. Cylinderical grasp
        1. Pinch grasp
 
-    To release the hand, press and hold SHIFT and the number key. 
+    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp. 
 
 1. **Arm position**
 
@@ -65,6 +65,20 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. SHIFT + X: Negative deviation
        1. C: Positive flexion
        1. SHIFT + C: Negative flexion
+
+### Arm teleop GUI options
+
+The GUI on the left side of the HAPTIX simulator has some options for controlling keyboard teleop.
+
+[[file:files/gui_teleop.png]]
+
+If the "Local frame" checkbox is checked, keyboard teleop will move the arm in the arm's local axes, which change as the arm rotates. If "Local frame" is unchecked, the keys will always move the arm in the same "global" coordinate system.
+
+The slider next to "Arm move speed" controls the speed of the arm under keyboard teleop.
+
+These options are only relevant for keyboard teleop control. They do not affect motion capture teleoperation or Spacenav.
+
+Press `Ctrl+R` to reset the arm position, viewpoint and the objects in the scene.
 
 ## Spacenav Control
 

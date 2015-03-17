@@ -25,7 +25,15 @@ Boston Dynamics has released four versions of the Atlas robot: version 1, versio
 
 **Version 3:** Atlas v3 represents the hardware teams received following completion of the Virtual Robotics Challenge. This is also the version that teams used during the DRC Trials competition in December of 2013.
 
-**Version 4:** Atlas v4 is completely untethered. This entailed a backpack redesign. DRC teams received this version of Atlas in late 2014.
+**Version 4:** Atlas v4 is completely untethered. This entailed a backpack redesign. DRC teams received this version of Atlas in late 2014. Take note of the two different versions of this model listed below.
+
+ * **Version 4.0**: The URDF file (`atlas_v4.urdf`) for this robot includes two joints (`l_arm_wry2` and `r_arm_wry2`) that do not exist on the real robot. These two joints are included to make the model compatible with BDI's libAtlasSimInterface.
+
+    Example usage: `roslaunch drcsim_gazebo atlas.launch model_args:="_v4"`
+ 
+ * **Version 4.1**: The URDF file (`atlas_v4_no_wry2.urdf`) excludes the wry2 joints. It is not possible to use BDI's libAtlasSimInterface library with this version.
+
+    Example usage: `roslaunch drcsim_gazebo atlas.launch model_args:="_v4_no_wry2"`
 
 **Version 5:** The final version of Atlas was made available to teams in early 2015. This version is the same as version 4, except that the forearms are electric.
 

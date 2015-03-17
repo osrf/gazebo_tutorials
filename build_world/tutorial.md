@@ -3,8 +3,8 @@ This tutorial describes the process of creating a world with both static and dyn
 # Terminology
 
 * **World:** The term used to describe a collection of robots and objects (such as buildings, tables, and lights), and global parameters including the sky, ambient light, and physics properties.
-* **Static:** Entities marked as static (those having the <static>true</static element in SDF), are objects which only have collision geometry. All objects which are not meant to move should be marked as static, which is a performance enhancement.
-* **Dynamic:** Entities marked as dynamic (either missing the <static> element or setting <static>false</static> in SDF), are objects which have both inertia and a collision geometry.
+* **Static:** Entities marked as static (those having the `<static>true</static>` element in SDF), are objects which only have collision geometry. All objects which are not meant to move should be marked as static, which is a performance enhancement.
+* **Dynamic:** Entities marked as dynamic (either missing the `<static>` element or setting <static>false</static> in SDF), are objects which have both inertia and a collision geometry.
 
 # Setup
 
@@ -68,21 +68,24 @@ Gazebo's model database is a repository of all types of models including robots,
 
 The pose of each model may be altered through the translate and rotate tools:
 
-[[file:files/empty_translate_rotate_highlighted.png|640px]]
+[[file:files/empty_rts.png|640px]]
 
 ## Translation
-The translate tools allows you to move the object along the x,y, and z axes. Select this tool now, and then move an object by left-pressing and dragging the object.
+The translate tools allows you to move the object along the x, y, and z axes. Select this tool now and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
 
-By default the object will translate around on the x,y plane. You may control which axis the object moves along by pressing and holding the x,y, or z key while dragging the object.
+You can also just click on the object itself and drag it to move on the x-y plane. You may control which axis the object moves along by pressing and holding the x, y, or z key while dragging the object.
 
-Trying moving the objects around now into a different configuration.
+Try moving the objects around now into a different configuration.
 
 ## Rotation
-The rotate tool allows you to orient a model around the x,y, and z axes. Select this tool now, and then rotate an object by left-pressing and dragging the object.
-
-By default the object will rotate around the z axis (yaw).  You may control which axis the object rotates around by pressing and holding the x, y, or z key while dragging the object.
+The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
 
 Try rotating the objects into a different configuration.
+
+## Scale
+The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
+
+Try scaling the simple shapes into different sizes.
 
 # Delete Models
 

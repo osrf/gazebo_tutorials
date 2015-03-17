@@ -2,7 +2,7 @@
 
 Each physics engine in Gazebo (for example ODE, Bullet, Simbody, DART) has
 different friction models. Please refer to the [SDF
-parameters](http://gazebosim.org/sdf/1.4.html#friction159) for a complete
+parameters](http://sdformat.org/spec?ver=1.5&elem=collision#surface_friction) for a complete
 listing of available friction parameters.
 
 The rest of this tutorial will assume you are using ODE, the default physics
@@ -16,15 +16,20 @@ When two object collide, such as a ball rolling on a plane, a friction term is g
 
   1. '''mu2''' is the friction coefficient for the second friction direction (perpendicular to the first friction direction).
 
-ODE will automatically compute the first and second friction directions for us. Note, you can manually specify the [first friction direction in SDF](http://gazebosim.org/sdf/1.4.html#friction159), but this capability is out of the scope of this tutorial.
+ODE will automatically compute the first and second friction directions for us. Note, you can manually specify the [first friction direction in SDF](http://sdformat.org/spec?ver=1.5&elem=collision#ode_fdir1), but this capability is out of the scope of this tutorial.
 
 The two objects in collision each specify '''mu''' and '''mu2'''. Gazebo will choose the smallest '''mu''' and '''mu2''' from the two colliding objects.
 
-The valid range of values for '''mu''' and '''mu2''' is between 0 and 1, where 0 equates to a friction-less contact and 1 a surface with infinite friction.
+The valid range of values for '''mu''' and '''mu2''' is any non-negative number,
+where 0 equates to a friction-less contact
+and a large value approximates a surface with infinite friction.
+Tables of friction coefficient values for a variety of
+materials can be found in engineering handbooks
+or [online references](http://www.engineershandbook.com/Tables/frictioncoefficients.htm).
 
 ## How to specify friction
 
-It's always best to refer to the [SDF documentation](http://gazebosim.org/sdf/1.4.html#friction159).
+It's always best to refer to the [SDF documentation](http://sdformat.org/spec?ver=1.5&elem=collision#surface_friction).
 
 The following example will specify a box with low friction:
 

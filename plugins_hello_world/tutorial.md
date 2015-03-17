@@ -48,7 +48,15 @@ Use a Sensor plugin to acquire sensor information and control sensor properties.
 # Hello WorldPlugin!
 
 Plugins are designed to be simple.
-A bare bones world plugin contains a class with a few member functions:
+A bare bones world plugin contains a class with a few member functions.
+
+First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a lower release than gazebo5, replace 5 with whatever version number you have.
+
+~~~
+sudo apt-get install libgazebo5-dev
+~~~
+
+Next, make a directory and a .cc file for the new plugin:
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial
@@ -173,6 +181,7 @@ $ gzserver ../hello.world --verbose
 ~~~
 
 You should see output similar to:
+
 ~~~
 Gazebo multi-robot simulator, version 1.9.5
 Copyright (C) 2013 Open Source Robotics Foundation.
