@@ -1,8 +1,8 @@
 # Introduction
 
 As of Gazebo6, it is possible to control which geometries collide. A bitmask
-may be applied to an SDF geometry element, where the bitwise-and of two
-geometry's bitmasks determines if they may collide.
+may be applied to an SDF collision element, where the bitwise-and of two
+collision's bitmasks determines if they may collide.
 
 # How collide bitmasks work
 
@@ -45,14 +45,14 @@ This example is available as a run-able Gazebo demo.
   1. Run the demo world, and start in a paused state
 
       ~~~
-      gazebo worlds/shapes_bitmask.world
+      gazebo -u worlds/shapes_bitmask.world
       ~~~
 
   1. Press the play button to see the boxes drop.
 
 # How to set a collide bitmask
 
-A collide bitmask may be set using [SDF](http://sdformat.org), and XML file
+A collide bitmask may be set using [SDF](http://sdformat.org), an XML file
 format for describing simulation properties and entities. The bitmask XML
 element is a child of the surface XML element. The bitmask value may be specified using either base-10 or base-16. The following is a simple example, note that some necessary SDF elements have been removed for clarity.
 
@@ -77,5 +77,7 @@ element is a child of the surface XML element. The bitmask value may be specifie
 ### Default value
 
 Each geometry has a default value of 0x01 for its collide bitmask. Many
-people use the ground_plane model provided by Gazebo. This model has
-a bitmask of 0xffff. 
+people use the ground_plane model provided by Gazebo, so this model has
+a bitmask of 0xffff. This value makes it possible for most objects to
+collide with the ground plane. You may use the upper 16-bits for objects
+that you do not want to collide with the ground plane.
