@@ -38,12 +38,12 @@ roscreate-pkg control_synchronization_tutorial drcsim_gazebo
 
 Copy the [launch file with control synchronization parameters](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch) into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
+<include lang="xml" src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
 
 ## Mock-Controller Node Setup
 
 
-Download [`my_atlas_controller.cpp`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp) into  `~/ros/control_synchronization_tutorial/my_atlas_controller.cpp`. This file contains the following code:
+Download [my\_atlas\_controller.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp) into  `~/ros/control_synchronization_tutorial/my_atlas_controller.cpp`. This file contains the following code:
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp' />
 
@@ -110,7 +110,7 @@ sudo apt-get install ros-hydro-rqt-plot
 sudo apt-get install ros-indigo-rqt-plot
 ~~~
 
--Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PACKAGE_PATH`), and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
+Then open a third terminal (don't forget to source `setup.sh` and export `ROS_PACKAGE_PATH`), and plot by running `rqt` and setup custom perspectives; or by executing command below to see all the plots in one window:
 
 ~~~
 rqt_plot /atlas/controller_statistics/command_age /atlas/controller_statistics/command_age_mean /atlas/synchronization_statistics/delay_in_step /atlas/synchronization_statistics/delay_in_window /atlas/synchronization_statistics/delay_window_remain
