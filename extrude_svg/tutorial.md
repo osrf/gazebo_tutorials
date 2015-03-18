@@ -17,7 +17,7 @@ Using a program such as [Inkscape](https://inkscape.org/), draw paths for each o
 
 > **Note**: Gazebo is not able to import very heavy files or files containing crossed paths.
 
-> **Note**: Different SVG editors might have features which are not supported, such as special ready-made shapes and transformations.
+> **Note**: Some SVG editors might have features which are not supported, such as special ready-made shapes and transformations. If your path doesn't look like how you expected in the *Extrude Link* dialog, try converting all objects to paths from the SVG editor.
 
 # Extruding the SVG
 
@@ -27,7 +27,7 @@ In the Model Editor, press the `Add` button under "Custom Shapes", you'll see th
 
 [[file:files/import_link.png|400px]]
 
-Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, the *Extrude Link* dialog will come up.
+Choose the `chassis.svg` file and hit Import. If you picked a valid SVG file, the *Extrude Link* dialog will come up.
 
 [[file:files/extrude_link.png|600px]]
 
@@ -39,7 +39,9 @@ Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, th
 
 On the right, you can see the path extracted from your SVG. The chassis contains 12 points and is about 1 m wide. The origin is indicated by the blue cross.
 
-Press `Ok` to accept the settings, the extruded link will show up.
+Press `Ok` to accept the settings, the extruded link will show up in the scene and in the list of links on the left.
+
+> **Note**: If nothing happens after you pressed Ok, your SVG path was probably too complex to be imported. Try simplifying it with Inkscape: select the path and press `Ctrl+L` as many times as necessary.
 
 [[file:files/extruded_chassis.png|400px]]
 
