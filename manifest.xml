@@ -8,7 +8,7 @@
     <tutorial title="Ubuntu" ref='install_ubuntu'>
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
-      <description>Installation instructions for Ubuntu using packages</description>
+      <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
       </tags>
