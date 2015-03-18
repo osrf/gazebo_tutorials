@@ -8,9 +8,8 @@ Before starting, make sure you're familiar with the [Model Editor](http://gazebo
 
 Using a program such as [Inkscape](https://inkscape.org/), draw paths for each of the meshes you'll be extruding and save them separately. As an example, here are two images which will be used to make a simple car: a [chassis](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/chassis.svg) and a [wheel](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
 
-[[file:files/chassis.svg|200px]]
-
-[[file:files/wheel.svg|200px]]
+[[file:files/chassis.svg|100px]]
+[[file:files/wheel.svg|100px]]
 
 > **Tip**: If you're using Inkscape, display the units in meters so you can easily import it into Gazebo without changing the resolution.
 
@@ -40,12 +39,12 @@ Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, th
 
 On the right, you can see the path extracted from your SVG. The chassis contains 12 points and is about 1 m wide. The origin is indicated by the blue cross.
 
-Press Ok to accept the settings, the extruded link will show up.
+Press `Ok` to accept the settings, the extruded link will show up.
 
 [[file:files/extruded_chassis.png|400px]]
 
 The link consists of a visual and a collision, both having the same geometry, which is an extruded polyline. A [polyline geometry](http://sdformat.org/spec?ver=1.5&elem=geometry#geometry_polyline) consists of a list of points and an extrusion height, all generated from the SVG. When your model is saved to SDF, the SVG file is not needed or referenced.
 
-Now go ahead and extrude the wheel, in this example it was extruded to 0.2 m. Copy and paste it 3 times, position the wheels, add joints and your car is ready.
+Now go ahead and extrude the wheel, in this example it was extruded to 0.2 m. Copy and paste it 3 times, position the wheels, add joints and your car made out of extruded parts is ready!
 
 [[file:files/extruded_car.png|800px]]
