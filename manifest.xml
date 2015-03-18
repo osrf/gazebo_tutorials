@@ -254,6 +254,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Extrude SVGs" ref="extrude_svg">
+      <markdown version="6+">extrude_svg/tutorial.md</markdown>
+      <description>Extrude 2D SVG files into 3D meshes to create robots.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Gzweb installation" ref='gzweb_install'>
       <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
       <description>Explains how to install and run the WebGL client for Gazebo.</description>
@@ -705,6 +711,14 @@
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Model Editor" skill="beginner" ref="model_editor_top">
+      <description>The following tutorials describe how to build and modify robots using the model editor.</description>
+      <tutorials>
+        <tutorial>model_editor</tutorial>
+        <tutorial>extrude_svg</tutorial>
       </tutorials>
     </category>
 
