@@ -8,15 +8,15 @@ Before starting, make sure you're familiar with the [Model Editor](http://gazebo
 
 Using a program such as [Inkscape](https://inkscape.org/), draw paths for each of the meshes you'll be extruding and save them separately. As an example, here are two images which will be used to make a simple car: a [chassis](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/chassis.svg) and a [wheel](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
 
-[[file:files/chassis.svg|400px]]
+[[file:files/chassis.svg|200px]]
 
-[[file:files/wheel.svg|400px]]
+[[file:files/wheel.svg|200px]]
 
-> **Tip**: If you're using Inkscape, display the units in meters so you have a feel of how big the parts will come up.
+> **Tip**: If you're using Inkscape, display the units in meters so you can easily import it into Gazebo without changing the resolution.
 
 > **Note**: Currently Gazebo will take the center of the path's bounding box as the origin.
 
-> **Note**: Currently Gazebo is not able to import very heavy files or files containing crossed paths.
+> **Note**: Gazebo is not able to import very heavy files or files containing crossed paths.
 
 > **Note**: Different SVG editors might have features which are not supported, such as special ready-made shapes and transformations.
 
@@ -30,7 +30,7 @@ In the Model Editor, press the `Add` button under "Custom Shapes", you'll see th
 
 Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, the *Extrude Link* dialog will come up.
 
-[[file:files/extrude_link.png|400px]]
+[[file:files/extrude_link.png|600px]]
 
 * **Thickness**: How thick the link will be in the axis perpendicular to the screen.
 
@@ -38,11 +38,11 @@ Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, th
 
 * **Samples per segment**: This indicates how many segments to divide each of the curved paths in the SVG. The more segments, the heavier and more complex your link will be. It doesn't change anything for straight paths.
 
-On the right, you can see the path extracted from your SVG. The chassis contains 12 points and is about 1m wide. The origin is indicated by the blue cross.
+On the right, you can see the path extracted from your SVG. The chassis contains 12 points and is about 1 m wide. The origin is indicated by the blue cross.
 
 Press Ok to accept the settings, the extruded link will show up.
 
-[[file:files/extruded_link.png|400px]]
+[[file:files/extruded_chassis.png|400px]]
 
 The link consists of a visual and a collision, both having the same geometry, which is an extruded polyline. A [polyline geometry](http://sdformat.org/spec?ver=1.5&elem=geometry#geometry_polyline) consists of a list of points and an extrusion height, all generated from the SVG. When your model is saved to SDF, the SVG file is not needed or referenced.
 
