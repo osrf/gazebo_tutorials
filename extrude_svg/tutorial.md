@@ -2,13 +2,11 @@
 
 This tutorial describes the process of extruding SVG files, which are 2D images, to create 3D meshes for your robots in Gazebo.
 
-# Model Editor
-
 Before starting, make sure you're familiar with the [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
 
 # Prepare SVG files
 
-Using a program such as [Inkscape](https://inkscape.org/), draw paths for each of the meshes you'll be extruding. As an example, here are two images which will be used to make a simple car: a [chassis](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/chassis.svg) and a [wheel](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
+Using a program such as [Inkscape](https://inkscape.org/), draw paths for each of the meshes you'll be extruding and save them separately. As an example, here are two images which will be used to make a simple car: a [chassis](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/chassis.svg) and a [wheel](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
 
 [[file:files/chassis.svg|400px]]
 
@@ -22,21 +20,19 @@ Using a program such as [Inkscape](https://inkscape.org/), draw paths for each o
 
 > **Note**: Different SVG editors might have features which are not supported, such as special ready-made shapes and transformations.
 
-> **Note**:
-
 # Extruding the SVG
 
 We will be using the Model Editor to make links out of extruded SVGs.
 
-In the Model Editor, press the `Add` button under "Custom Shapes", you'll see the Import Link dialog.
+In the Model Editor, press the `Add` button under "Custom Shapes", you'll see the *Import Link* dialog.
 
-[[file:files/import_link.svg|400px]]
+[[file:files/import_link.png|400px]]
 
-Choose the `chassis.svg` file and hit Import. If you picked a valid SVG file, the Extrude Link dialog will come up.
+Choose the `chassis.png` file and hit Import. If you picked a valid SVG file, the *Extrude Link* dialog will come up.
 
-[[file:files/extrude_link.svg|400px]]
+[[file:files/extrude_link.png|400px]]
 
-* **Thickness**: How thick the link will be in the axis perpendicular tot he screen.
+* **Thickness**: How thick the link will be in the axis perpendicular to the screen.
 
 * **Resolution**: How many pixels in your SVG correspond to a meter. The default value (3543.3 px/m) corresponds to 90 dpi (dots per inch), which is the default resolution for several editors, including Inkscape. If your model shows up the size you'd like in Inkscape when you display the units as meters, you shouldn't change the resolution value.
 
@@ -46,10 +42,10 @@ On the right, you can see the path extracted from your SVG. The chassis contains
 
 Press Ok to accept the settings, the extruded link will show up.
 
-[[file:files/extruded_link.svg|400px]]
+[[file:files/extruded_link.png|400px]]
 
-The link consists of a visual and a collision, both having the same geometry. A [polyline geometry](http://sdformat.org/spec?ver=1.5&elem=geometry#geometry_polyline) consists of a list of points and an extrusion height, so when your model is saved to SDF, the SVG file is not needed.
+The link consists of a visual and a collision, both having the same geometry, which is an extruded polyline. A [polyline geometry](http://sdformat.org/spec?ver=1.5&elem=geometry#geometry_polyline) consists of a list of points and an extrusion height, all generated from the SVG. When your model is saved to SDF, the SVG file is not needed or referenced.
 
 Now go ahead and extrude the wheel, in this example it was extruded to 0.2 m. Copy and paste it 3 times, position the wheels, add joints and your car is ready.
 
-[[file:files/extruded_car.svg|400px]]
+[[file:files/extruded_car.png|800px]]
