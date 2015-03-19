@@ -26,7 +26,7 @@ Follow these steps to change an existing tutorial.
 
 1. Make your changes to the file using Markdown syntax.
 
-1. Clock Commit at the bottom-right of the screen.
+1. Click Commit at the bottom-right of the screen.
 
 1. Type a commit message to describe your changes and click commit and make a pull request.
 
@@ -73,7 +73,7 @@ a pull-request. Tutorials from a specific branch of the
 `http://gazebosim.org/tutorials` using the `branch=<branch_name>`
 URL parameter. 
 
-For example, let us suppose you have made modification to the install
+For example, let us suppose you have made modifications to the install
 tutorial in a branch called `my_install`. Once this branch has been pushed
 to bitbucket, you may visualize your work with
 `http://gazebosim.org/tutorials?tut=install_ubuntu&branch=my_install`.
