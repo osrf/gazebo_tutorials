@@ -14,7 +14,7 @@ Let's go through an example of applying force and torque to simple models. Open 
 
 We want to apply force to a specific link in the `Simple Arm` model. On the World tree, right-click `arm_wrist_lift` and choose `Apply Force/Torque`. A dialog will pop up and you'll see a straight arrow and a curved arrow attach to the arm.
 
-On the dialog, write `100 N` on the `Y` field under `Force` and press `Enter`, the arm will start rotating slightly.
+On the dialog, write `100 N` on the `Y` field under `Force` and press `Enter`, the arm will start rotating slightly. The force was applied in the link's `Y` direction for a single time-step, which is in the order of miliseconds, thus the need for such a large force.
 
 [[file:files/apply_force.png|800px]]
 
@@ -64,7 +64,7 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 ### Apply All
 
-Force and torque are applied at the same time, i.e. apply a wrench. Hold enter to repeatededly trigger this button.
+Force and torque are applied at the same time, i.e. apply a wrench. Hold enter or click it repeatedly to apply multiple times.
 
 ### Rotation tool
 
