@@ -100,7 +100,8 @@ sensor generators, and GUIs.
  * **Internal API:** None
 
  The GUI library uses QT to visualize the simulation and allow user interaction.
- The user may control the flow of time by pausing or changing time step size.
+ The user may control the flow of time by pausing or changing time step size
+ via GUI widgets.
  The user may also modify the scene by adding, modifying, or removing models.
  Additionally there are some tools for visualizing and
  logging simulated sensor data.
