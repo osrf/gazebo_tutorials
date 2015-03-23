@@ -76,7 +76,7 @@ sensor generators, and GUIs.
 
  * **Dependencies:** OGRE
  * **External API:** Allows for loading, initialization, and scene creation
- * **Internal API:** None, we are going to use only OGRE.
+ * **Internal API:** Store metadata for visualization, call the OGRE API for rendering.
 
  The rendering library uses OGRE to provide a simple interface
  for rendering 3D scenes to both the GUI and sensor libraries.
