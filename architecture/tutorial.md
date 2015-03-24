@@ -45,7 +45,7 @@ sensor generators, and GUIs.
  but it is possible to use RPC with minimal effort.
  
 ### Physics Library
- * **Dependencies:** Dynamics engine, and Collision Library
+ * **Dependencies:** Dynamics engine (with interal collision detection)
  * **External API:** Provides a simple and generic interface to physics simulation
  * **Internal API:** Defines a fundamental interface to the physics library for 3rd party dynamic engines.
  
@@ -60,17 +60,6 @@ sensor generators, and GUIs.
  using XML can be loaded by each of these physics engines.
  This provides access to different algorithm implementations
  and simulation features.
-
-### Collision Library
-
- * **Dependencies:** 3rd party collision engine
- * **External API:** TBD
- * **Internal API:** Generic interface for collision engines
- * **Advertised Topics:** None
- * **Subscribed Topics:** None
-
- This is an abstraction library to handle different collision engines,
- and provide a simple external interface to the user.
 
 ### Rendering Library
 
