@@ -254,7 +254,7 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Extrude SVGs" ref="extrude_svg">
+    <tutorial title="Extrude SVG files" ref="extrude_svg">
       <markdown version="6+">extrude_svg/tutorial.md</markdown>
       <description>Extrude 2D SVG files into 3D meshes to create robots.</description>
       <skill>beginner</skill>
