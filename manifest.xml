@@ -224,6 +224,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Applying Force/Torque" ref='apply_force_torque'>
+      <markdown version="6.0+">apply_force_torque/tutorial.md</markdown>
+      <description>Use the graphical interface to apply force and torque to your models.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Gazebo Components" ref="components">
       <markdown version="1.9+">components/tutorial.md</markdown>
       <description>Overview of the basic components in a Gazebo simulation.</description>
@@ -723,6 +729,7 @@
       <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
       <tutorials>
         <tutorial>log_filtering</tutorial>
+        <tutorial>apply_force_torque</tutorial>
       </tutorials>
     </category>
 
