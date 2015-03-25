@@ -3,23 +3,26 @@
 Gazebo uses a distributed architecture
 with separate libraries for physics simulation,
 rendering, user interface, communication, and sensor generation.
-Additionally, gazebo provides two executable programs for running simulations,
-a server (gzserver) for simulating the physics, rendering, and sensors
-and a client (gzclient) that provides a graphical interface to
-visualize and interact with the simulation.
+Additionally, gazebo provides two executable programs for running simulations:
+
+* a server `gzserver` for simulating the physics, rendering, and sensors
+
+* a client `gzclient` that provides a graphical interface to
+visualize and interact with the simulation
+
 The client and server communicate using the gazebo communication library.
 
 ## Communication Between Processes
 
 The communication library currently uses the open source
-Google Protobuf for the message serialization
-and boost::ASIO for the transport mechanism.
+`Google Protobuf` for the message serialization
+and `boost::ASIO` for the transport mechanism.
 It supports the publish/subscribe communication paradigm.
 For example, a simulated world publishes body pose updates,
 and sensor generation and GUI will consume these messages to produce output.
 
-This mechanism allow for introspection of a running simulation,
-and provide a convenient mechanism to control aspects
+This mechanism allows for introspection of a running simulation,
+and provides a convenient mechanism to control aspects
 of Gazebo.
 
 ## System 
@@ -42,10 +45,12 @@ sensor generators, and GUIs.
  This library is used by almost all subsequent libraries.
  It acts as the communication and transport mechanism for Gazebo.
  It currently supports only publish/subscribe,
- but it is possible to use RPC with minimal effort.
+ but it is possible to use
+ [RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)
+ with minimal effort.
  
 ### Physics Library
- * **Dependencies:** Dynamics engine (with interal collision detection)
+ * **Dependencies:** Dynamics engine (with internal collision detection)
  * **External API:** Provides a simple and generic interface to physics simulation
  * **Internal API:** Defines a fundamental interface to the physics library for 3rd party dynamic engines.
  
@@ -54,9 +59,15 @@ sensor generators, and GUIs.
  collision shapes, and joints for representing articulation
  constraints.
  This interface has been integrated with four open-source
- physics engines: Open Dynamics Engine (ODE), Bullet,
- Simbody, and Dynamics, Animation, and Robotics Toolkit (DART).
- A model described in the Simulation Description Format (SDF)
+ physics engines:
+ 
+ * [Open Dynamics Engine (ODE)](http://ode.org)
+ * [Bullet](http://bulletphysics.org)
+ * [Simbody](https://simtk.org/home/simbody)
+ * [Dynamic Animation and Robotics Toolkit (DART)](http://dartsim.github.io)
+
+ A model described in the
+ [Simulation Description Format (SDF)](http://sdformat.org)
  using XML can be loaded by each of these physics engines.
  This provides access to different algorithm implementations
  and simulation features.
