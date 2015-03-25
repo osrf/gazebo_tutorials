@@ -68,9 +68,10 @@ autolaunch=0
 
 1. Plug in and turn on your Oculus Rift headset.
 
-> A new monitor will appear on Ubuntu. This new monitor will propbably have a rotation that is off by 90 degrees. Here is the fix:
-> 1. Applications > System Tools > Preferences > Displays.
-> 1. Select the Oculus display and set Rotation to Counterclockwise
+    > A new monitor will appear on Ubuntu. This new monitor will propbably have a rotation that is off by 90 degrees. Here is the fix:
+ 
+    > 1. Applications > System Tools > Preferences > Displays.
+    > 1. Select the Oculus display and set `Rotation` to `Counterclockwise`
 
 1. In a terminal, run the `oculusd` daemon.
 
