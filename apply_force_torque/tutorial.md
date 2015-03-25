@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial will explain how to apply force and/or torque to models during the simulation using the graphical user interface.
+This tutorial will explain how to apply force and/or torque to models during simulation using the graphical user interface.
 
 ## Applying force and torque examples
 
