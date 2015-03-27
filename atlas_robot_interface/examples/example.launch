@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find drcsim_gazebo)/launch/atlas_sandia_hands.launch"/>
+  <node pkg="atlas_interface" type="example" name="example"
+        output="screen"/>
+</launch>

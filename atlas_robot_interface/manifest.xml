@@ -1,0 +1,24 @@
+<package>
+  <description brief="atlas_interface">
+
+     atlas_interface
+
+  </description>
+  <author>Brian Gerkey</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/atlas_interface</url>
+  <depend package="atlas_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="osrf_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="rosgraph_msgs"/>
+  <depend package="orocos_kdl"/>
+
+  <export>
+    <cpp lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -latlas_interface"/>
+  </export>
+
+</package>
+
+
