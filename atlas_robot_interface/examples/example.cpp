@@ -30,11 +30,11 @@
 int
 main(int argc, char** argv)
 {
-  AtlasInterface atlas_interface;
-  AtlasErrorCode ec;
+  AtlasInterface* atlas_interface;
+  AtlasErrorCode ec = AtlasInterface::get_instance(atlas_interface);
 
-  ec = atlas_interface.open_net_connection_to_robot("myrobot", 1234, 4321);
-  if (ec != NO_ERRORS || !atlas_interface.net_connection_open())
+  ec = atlas_interface->open_net_connection_to_robot("myrobot", 1234, 4321);
+  if (ec != NO_ERRORS || !atlas_interface->net_connection_open())
   {
     printf("Failed to open network connection to the robot\n");
     return 1;
@@ -47,7 +47,7 @@ main(int argc, char** argv)
     AtlasControlDataFromRobot data;
     bool data_available;
     // Query for new data, waiting up to 1 second
-    ec = atlas_interface.new_control_data_from_robot_available(1.0,
+    ec = atlas_interface->new_control_data_from_robot_available(1.0,
            &data_available);
     if (ec != NO_ERRORS)
     {
@@ -55,7 +55,7 @@ main(int argc, char** argv)
     }
     else if (data_available)
     {
-      ec = atlas_interface.get_control_data_from_robot(&data);
+      ec = atlas_interface->get_control_data_from_robot(&data);
       if (ec != NO_ERRORS)
       {
         printf("Failed to get data from robot\n");
@@ -71,7 +71,7 @@ main(int argc, char** argv)
     }
 
     AtlasControlDataToRobot command;
-    ec = atlas_interface.send_control_data_to_robot(command, &packet_seq_id);
+    ec = atlas_interface->send_control_data_to_robot(command, &packet_seq_id);
     if (ec != NO_ERRORS)
       printf("Failed to send command from robot\n");
 

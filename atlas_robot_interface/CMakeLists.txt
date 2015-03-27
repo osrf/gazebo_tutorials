@@ -48,4 +48,4 @@ target_link_libraries(atlas_interface AtlasRobotInterface)
 target_link_libraries(atlas_interface z)
 
 rosbuild_add_executable(example examples/example.cpp)
-target_link_libraries(example atlas_interface)
+target_link_libraries(example atlas_interface rosconsole roscpp)

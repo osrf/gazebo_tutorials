@@ -142,7 +142,7 @@ bool AtlasInterface::net_connection_open()
   return true;
 }
 
-#if ATLAS_VERSION_MAJOR >= 2 && ATLAS_VERSION_MINOR >= 4
+#if ATLAS_SOFTWARE_VERSION_MAJOR >= 3 && ATLAS_SOFTWARE_VERSION_MINOR >= 0
 AtlasErrorCode AtlasInterface::get_robot_ip_address(std::string& robot_ip_address)
 {
   robot_ip_address = "10.66.171.30";
@@ -150,8 +150,8 @@ AtlasErrorCode AtlasInterface::get_robot_ip_address(std::string& robot_ip_addres
 }
 #endif
 
-AtlasErrorCode AtlasInterface::start(AtlasHydraulicPressureSetting desired_pressure,
-         int64_t* packet_seq_id)
+AtlasErrorCode start(AtlasHydraulicMode desired_power_mode,
+		int64_t* packet_seq_id)
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return NO_ERRORS;
@@ -375,8 +375,10 @@ AtlasErrorCode AtlasInterface::send_control_data_to_robot(AtlasControlDataToRobo
   asic.manipulate_params.use_demo_mode = data_to_robot.manipulate_params.use_demo_mode;
   asic.manipulate_params.use_desired   = data_to_robot.manipulate_params.use_desired;
   asic.manipulate_params.desired.pelvis_height = data_to_robot.manipulate_params.desired.pelvis_height;
-  asic.manipulate_params.desired.pelvis_lat    = data_to_robot.manipulate_params.desired.pelvis_lat;
+  // asic.manipulate_params.desired.pelvis_lat    = data_to_robot.manipulate_params.desired.pelvis_lat;
   asic.manipulate_params.desired.pelvis_yaw    = data_to_robot.manipulate_params.desired.pelvis_yaw;
+  asic.manipulate_params.desired.pelvis_pitch    = data_to_robot.manipulate_params.desired.pelvis_pitch;
+  asic.manipulate_params.desired.pelvis_roll    = data_to_robot.manipulate_params.desired.pelvis_roll;
 
   pub_atlas_command_.publish(ac);
   pub_bdi1.publish(asic);
@@ -553,8 +555,10 @@ AtlasErrorCode AtlasInterface::get_control_data_from_robot(AtlasControlDataFromR
     }
 
     data_from_robot->manipulate_feedback.clamped.pelvis_height = G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_height;
-    data_from_robot->manipulate_feedback.clamped.pelvis_lat =  G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_lat;
+    // data_from_robot->manipulate_feedback.clamped.pelvis_lat =  G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_lat;
     data_from_robot->manipulate_feedback.clamped.pelvis_yaw =  G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_yaw;
+    data_from_robot->manipulate_feedback.clamped.pelvis_pitch =  G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_pitch;
+    data_from_robot->manipulate_feedback.clamped.pelvis_roll =  G_atlassiminterface_msg.manipulate_feedback.clamped.pelvis_roll;
     data_from_robot->manipulate_feedback.status_flags =  G_atlassiminterface_msg.manipulate_feedback.status_flags;
   }
 
@@ -567,62 +571,63 @@ AtlasErrorCode AtlasInterface::clear_faults(int64_t* packet_seq_id)
   return NO_ERRORS;
 }
 
-#if ATLAS_VERSION_MAJOR >= 2 && ATLAS_VERSION_MINOR >= 4
-AtlasErrorCode AtlasInterface::download_robot_log_file(std::string dest_directory, float duration)
+#if ATLAS_SOFTWARE_VERSION_MAJOR >= 3 && ATLAS_SOFTWARE_VERSION_MINOR >= 0
+AtlasErrorCode download_robot_log_file(std::string dest_directory = "",
+		float duration = 300.0f, std::string filename = "")
 {
   return NO_ERRORS;
 }
 #endif
 
-std::string AtlasInterface::get_error_code_text(AtlasErrorCode ec)
+std::string AtlasInterface::get_error_code_text(AtlasErrorCode ec) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-std::string AtlasInterface::get_run_state_as_string(AtlasRobotRunState run_state)
+std::string AtlasInterface::get_run_state_as_string(AtlasRobotRunState run_state) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-std::string AtlasInterface::get_status_flag_as_string(AtlasRobotStatus robot_status_flag)
+std::string AtlasInterface::get_status_flag_as_string(AtlasRobotStatus robot_status_flag) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-std::string AtlasInterface::link_name_from_link_id(AtlasLinkId link_id)
+std::string AtlasInterface::link_name_from_link_id(AtlasLinkId link_id) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-AtlasLinkId AtlasInterface::link_id_from_link_name(std::string link_name)
+AtlasLinkId AtlasInterface::link_id_from_link_name(std::string link_name) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return LINK_PELVIS;
 }
 
-std::string AtlasInterface::joint_name_from_joint_id(AtlasJointId joint_id)
+std::string AtlasInterface::joint_name_from_joint_id(AtlasJointId joint_id) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-AtlasJointId AtlasInterface::joint_id_from_joint_name(std::string joint_name)
+AtlasJointId AtlasInterface::joint_id_from_joint_name(std::string joint_name) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return JOINT_BACK_BKZ;
 }
 
-std::string AtlasInterface::behavior_name_from_behavior(AtlasRobotBehavior behavior)
+std::string AtlasInterface::behavior_name_from_behavior(AtlasRobotBehavior behavior) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return("hello");
 }
 
-AtlasRobotBehavior AtlasInterface::behavior_from_behavior_name(std::string behavior_name)
+AtlasRobotBehavior AtlasInterface::behavior_from_behavior_name(std::string behavior_name) const
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return BEHAVIOR_FREEZE;
