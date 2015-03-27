@@ -9,7 +9,9 @@ To try it out:
 
 ## Configure and build
 
-* Download AtlasRobotInterface v2.0.2 and unpack it somewhere.  Let's call that directory /work/AtlasRobotInterface_2.0.2.
+* Create a 
+
+* Download AtlasRobotInterface v3.0.0 and unpack it somewhere.  Let's call that directory /work/AtlasRobotInterface_3.0.0.
 
 * Build and install drcsim as usual (or you could install the latest 4.2.x package via apt-get).
 
@@ -29,7 +31,7 @@ export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 you unpacked AtlasRobotInterface, e.g.:
 
 ~~~
-export ATLAS_ROBOT_INTERFACE_ROOT=/work/AtlasRobotInterface_2.0.2
+export ATLAS_ROBOT_INTERFACE_ROOT=/work/AtlasRobotInterface_3.0.0
 ~~~
 
 * Build this package:
