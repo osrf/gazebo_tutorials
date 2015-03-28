@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>atlas_robot_interface</name>
+  <name>atlas_interface</name>
   <version>0.0.0</version>
-  <description>The atlas_robot_interface package</description>
+  <description>The atlas_interface package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/atlas_robot_interface</url> -->
+  <url type="website">http://gazebosim.org/tutorials?tut=drcsim_atlas_robot_interface</url>
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
