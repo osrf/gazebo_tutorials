@@ -63,9 +63,10 @@ Populate it with content from below:
 * Update the CMakeLists.txt to look like below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt' />
 
-* Add this package's directory (atlas_interface) to your ROS_PACKAGE_PATH, e.g.:
+* Add this package's directory (`atlas_interface`) to your ROS_PACKAGE_PATH, e.g.:
 
 ~~~
+cd ..
 export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 ~~~
 
@@ -79,7 +80,9 @@ export ATLAS_ROBOT_INTERFACE_ROOT=/work/AtlasRobotInterface_3.0.0
 * Build this package:
 
 ~~~
-roscd atlas_interface
+mkdir build
+cd build
+cmake ..
 make
 ~~~
 
