@@ -33,7 +33,7 @@ cd atlas_interface
 
 ~~~
 mkdir src
-gedit atlas_interface.cpp
+gedit src/atlas_interface.cpp
 ~~~
 
 Populate it with content from below:
@@ -42,10 +42,8 @@ Populate it with content from below:
 * To use the library `libatlas_interface.so` we created here, create an `examples` directory and add [examples/example.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp).
 
 ~~~
-cd ..
 mkdir examples
-cd examples
-gedit example.cpp
+gedit examples/example.cpp
 ~~~
 
 Populate it with content from below:
@@ -54,7 +52,7 @@ Populate it with content from below:
 * Also create a launch file [examples/example.launch](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch)
 
 ~~~
-gedit example.launch
+gedit examples/example.launch
 ~~~
 
 Populate it with content from below:
@@ -66,7 +64,6 @@ Populate it with content from below:
 * Add this package's directory (`atlas_interface`) to your ROS_PACKAGE_PATH, e.g.:
 
 ~~~
-cd ..
 export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 ~~~
 
