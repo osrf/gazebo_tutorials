@@ -21,6 +21,16 @@ source /usr/share/drcsim/setup.sh
 
 * Create a ros package for atlas_interface
 
+~~~
+catkin_create_pkg atlas_interface roscpp atlas_msgs sensor_msgs osrf_msgs std_msgs rosgraph_msgs cmake_modules
+~~~
+
+* Add exports to the package.xml if we want to have other files depned on this package:
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
+
+* Update the CMakeLists.txt to look like below:
+<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt' />
+
 * Add this package's directory (atlas_interface) to your ROS_PACKAGE_PATH, e.g.:
 
 ~~~
