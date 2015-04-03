@@ -1,0 +1,23 @@
+<sdf version="1.5">
+  <world name="preset_example">
+    <physics name="quick" type="ode" default="true">
+      <real_time_factor>0.0</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>30</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <physics name="slow" type="ode">
+      <real_time_factor>1.0</real_time_factor>
+      <ode>
+        <solver>
+          <type>world</type>
+          <iters>70</iters>
+        </solver>
+      </ode>
+    </physics>
+  </world>
+</sdf>
