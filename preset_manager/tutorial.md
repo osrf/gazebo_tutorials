@@ -18,7 +18,7 @@ specified, Gazebo will choose the one with the `default` attribute set to true.
 If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/preset_manager/files/preset_example.world'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world'/>
 
 In the above example, the `quick` profile is set as the default, and the `slow`
 profile will be available to be switched to using the C++ API or the terminal.
@@ -102,6 +102,6 @@ gz physics -p slow
 Download the world file `preset_example.world` and the bash script
 `switch_profiles.sh`.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/preset_manager/files/switch_profiles.sh'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/switch_profiles.sh'/>
 
 
