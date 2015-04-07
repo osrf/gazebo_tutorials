@@ -18,7 +18,9 @@ specified, Gazebo will choose the one with the `default` attribute set to true.
 If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
-In the following example, the `quick` profile is set as the default, and the `slow`
+In the following example
+([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef477/preset_manager/files/preset_example.world)),
+the `quick` profile is set as the default, and the `slow`
 profile will be available to be switched to using the C++ API or the terminal.
 
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world'/>
