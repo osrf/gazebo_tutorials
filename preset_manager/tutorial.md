@@ -18,10 +18,12 @@ specified, Gazebo will choose the one with the `default` attribute set to true.
 If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/default/files/preset_example.world'/>
-
-In the above example, the `ode_world_30iters` profile is set as the default, and the `ode_world_70iters`
+In the following example
+([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef477/preset_manager/files/preset_example.world)),
+the `ode_quick_70iters` profile is set as the default, and the `ode_world_30iters`
 profile will be available to be switched to using the C++ API or the terminal.
+
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
