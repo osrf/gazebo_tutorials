@@ -111,8 +111,8 @@ to close and reopen the menu to refresh the GUI.
 [[file:files/worldtab.png|600px]]
 
 You can also see the real time factor in the bottom of the screen change every 5 seconds,
-since `ode_quick_30iters` has an unthrottled real time factor and `ode_world_70iters` has a
-target real time factor of 1.0.
+since `ode_quick_30iters` has an unthrottled real time update rate and `ode_world_70iters` has
+the default real time update rate and step size, which will give a real time factor of 1.0.
 
 Use this script as a base for your own experimentation and profiling with the Gazebo physics
 library!
