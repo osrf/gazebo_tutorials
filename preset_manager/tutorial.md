@@ -96,8 +96,9 @@ gz physics -o ode_world_70iters
 
 # Example
 
-Download the world file `preset_example.world` and the bash script
-`switch_profiles.sh`.
+Download the world file
+[`preset_example.world`](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world)
+and the bash script [`switch_profiles.sh`](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/switch_profiles.sh).
 
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/switch_profiles.sh'/>
 
