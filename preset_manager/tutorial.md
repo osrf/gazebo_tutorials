@@ -19,11 +19,11 @@ If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following example
-([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef477/preset_manager/files/preset_example.world)),
+([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)),
 the `ode_quick_70iters` profile is set as the default, and the `ode_world_30iters`
 profile will be available to be switched to using the C++ API or the terminal.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
@@ -97,12 +97,12 @@ gz physics -o ode_world_70iters
 # Example
 
 Download the
-[world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/preset_example.world)
+[world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)
 `preset_example.world` and the
-[bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/switch_profiles.sh)
+[bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
 `switch_profiles.sh`.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/51a6ddef47799aba9c7a7347418191be69e02662/preset_manager/files/switch_profiles.sh'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
 The script launches Gazebo with the `ode_world_70iters` profile and switches between
 the two world profiles 10 times, pausing for 5 seconds between each switch.
