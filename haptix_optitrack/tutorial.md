@@ -23,6 +23,8 @@ Place the Optitrack 1-2 meters to the right of the workstation desk, so that the
 
 Note: if you need to simulate the left arm, the physical setup must be flipped: place the camera on the left side of the workstation, and make sure all motion tracking targets are worn on the left side.
 
+[[file:files/fullsetup.png]]
+
 ## Motion tracking target setup
 
 ### Arm and head trackers
@@ -54,10 +56,10 @@ These spheres will be attached to the corners of the monitor associated with the
 [[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
-If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop. We are going to make a small modification to calibrate each component.
+If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop of the Windows machine. We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
-Make sure Gazebo is closed on Linux. On your Windows VM machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
+Make sure Gazebo is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
 [[file:files/motive_icon.PNG]]
 
@@ -71,9 +73,11 @@ Close the startup menu.
 
 Select "Data Streaming" under "View" in the top toolbar and check the box next to "Broadcast Frame Data".
 
---[[file:files/data_streaming.PNG]]
+[[file:files/data_streaming.PNG]]
 
 Now, select "File", "Open", and select the project file you downloaded, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp).
+
+**Known bug with Motive: While running Motive on the Virtual Machine, make sure to enable "Broadcast Frame Data" before opening a project file! If you try to open the project file directly, Motive will crash.**
 
 If it isn't already visible, open the Rigid Body Properties view under "Views" in the top toolbar.
 
@@ -99,19 +103,15 @@ Now, open "Coordinate System Tools" under "Tools" in the top toolbar. Highlight 
 
 If you created your own arm and head trackers:
 
-Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Hold the arm tracker band in the orientation that it will be worn. Extend out your arm straight, facing the monitor. Carefully move your arm close to the screen and try to align the target so that it is as perpendicular to the monitor as possible:
+Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Put on the arm tracker and hold your arm straight out, with your palm facing the ground. Make sure the tracker is aligned so that the sphere attached perpendicular to the marker is facing straight up, and the two diagonal prongs are facing towards the camera.
 
-[[file:files/arm_alignment.png]]
+[[file:files/armcloseup.png]]
 
 Hold your arm still and click on "Create From Selection", as above. Rename the new rigid body "ArmTracker".
 
 Similarly for the head target, select the associated spheres, making sure you are only selecting the head tracker spheres.
 
-If you are using Nvidia 3D glasses, hold the glasses up as straight as possible like this, trying to align the long axis of the glasses with the long edge of the monitor:
-
-[[file:files/head_alignment.png]]
-
-If you made your own head tracker, put the head tracker on and hold your head still and as straight as possible, facing the monitor. Make sure that the target is placed in a position consistent with where it will be worn (e.g. above the ear).
+If you are using Nvidia 3D glasses, put the head tracker on and hold your head still and as straight as possible, facing the monitor. Make sure that the target is placed in a position consistent with where it will be worn (e.g. above the ear).
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
@@ -125,7 +125,7 @@ You're now done configuring Motive for your physical setup.  This is a good time
 ### Save the result
 Select "Save Project" under "File" in the top toolbar. Make sure it is saved to the Desktop as `haptix_osrf.ttp`.
 
-You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker.
+You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker or unless you move the angle of the camera significantly.
 
 ## Starting Gazebo
 Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
