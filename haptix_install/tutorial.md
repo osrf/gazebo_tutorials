@@ -105,7 +105,7 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
 
 1. Install handsim.
 
-        sudo apt-get install handsim
+        sudo apt-get install libhaptix-comm-dev
 
 ### Network configuration
 
