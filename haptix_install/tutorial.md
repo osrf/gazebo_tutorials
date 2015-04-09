@@ -103,7 +103,7 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
         sudo apt-get update
 
-1. Install handsim.
+1. Install the SDK.
 
         sudo apt-get install libhaptix-comm-dev
 
