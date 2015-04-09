@@ -103,9 +103,7 @@ Now, open "Coordinate System Tools" under "Tools" in the top toolbar. Highlight 
 
 If you created your own arm and head trackers:
 
-Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Put on the arm tracker and hold your arm straight out, with your palm facing the ground. Make sure the tracker is aligned so that the sphere attached perpendicular to the marker is facing straight up, and the two diagonal prongs are facing towards the camera.
-
-[[file:files/armcloseup.png]]
+Make sure the spheres from the previous rigid body are deselected. Hold up the arm target and select the spheres in the arm target by clicking and dragging. Put on the arm tracker and hold your arm straight out, with your palm facing the ground. Make sure the tracker is aligned so that the sphere attached perpendicular to the marker is facing straight up, and the two diagonal prongs are facing towards the camera. (See the picture below in "Starting Gazebo" for arm posture reference.)
 
 Hold your arm still and click on "Create From Selection", as above. Rename the new rigid body "ArmTracker".
 
@@ -132,6 +130,8 @@ Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
 by double-clicking on the `haptixStart` desktop icon.
 
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
+
+[[file:files/armcloseup.png]]
 
 ## How it works
 Why is the monitor motion tracking target needed? The monitor acts as a reference frame for the arm and head trackers. If the camera is moved at any point, the settings in the Motive configuration file don't need to be recalibrated, because the pose data coming into Gazebo is calculated relative to the position of the monitor.
