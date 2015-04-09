@@ -113,7 +113,7 @@ If you did not receive a team machine but are configuring a Linux machine to use
 1. Open a Terminal (under "Applications", "Accessories") and type:
 
     ~~~
-    `sudo apt-get install haptix-tools`
+    sudo apt-get install haptix-tools
     ~~~
 
     If this command does not work, you need to tell your computer it's okay to accept software from OSRF:
@@ -129,7 +129,7 @@ If you did not receive a team machine but are configuring a Linux machine to use
 1. Next, you can install the full simulation environment by typing:
 
     ~~~
-    `sudo apt-get install handsim`
+    sudo apt-get install handsim
     ~~~
 
 # Testing your setup
