@@ -150,7 +150,7 @@ device updates. If we have a valid response, the returned value is `hxOK`.
 We have included in our example a helper function `printRobotInfo()` that will
 print all the received fields for debugging purposes.
 
-<include from='/  // Send commands/' to='/endif}/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
+<include from='/  // Send commands/' to='/endif/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
 Once we confirm the robot information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
