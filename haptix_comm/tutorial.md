@@ -75,7 +75,8 @@ example:
     cd ~/haptix_controller
     ~~~
 
-1. Download the source code and the cmake file for the controller:
+1. Download the [source code](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
+and the [cmake file](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt) for the controller:
 
     ~~~
     wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
@@ -149,8 +150,6 @@ device updates. If we have a valid response, the returned value is `hxOK`.
 
 We have included in our example a helper function `printRobotInfo()` that will
 print all the received fields for debugging purposes.
-
-<include from='/  // Send commands/' to='/    usleep\(10000\);\n  }/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
 Once we confirm the robot information we can start sending commands for
 controlling the hand. The function `hx_update()` is in charge of sending a new
