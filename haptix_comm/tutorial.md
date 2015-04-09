@@ -75,7 +75,8 @@ example:
     cd ~/haptix_controller
     ~~~
 
-1. Download the source code and the cmake file for the controller:
+1. Download the [source code](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
+and the [cmake file](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt) for the controller:
 
     ~~~
     wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
