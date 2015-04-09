@@ -106,18 +106,10 @@ Please follow the [hydra installation instructions](http://gazebosim.org/tutoria
 
 Once installed, the right paddle will perform the following actions:
 
-1. Middle button (between the 1 & 2 buttons): Enable/disable hydra control.
+1. Spacebar or letter `p` on the keyboard: Enable/disable hydra control.
 
-1. Move paddle to change arm position and orientation.
+1. Once enabled, move paddle to change arm position and orientation.
 
-1. Button 1: Change to spherical grasp.
+1. Button 1: Deadman switch for grasping with Trigger.
 
-1. Button 2: Change to cylinderical grasp.
-
-1. Button 3: Change to British pinch grasp.
-
-1. Button 4: Change to American pinch grasp.
-
-1. Trigger: Close/open grasp
-
-1. Bumper: Switch tasks
+1. Trigger:  While holding down Button 1, the Trigger closes and opens the grasp.
