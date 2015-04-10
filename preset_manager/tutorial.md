@@ -94,7 +94,7 @@ start gazebo with:
 gazebo preset_example.world --profile ode_world_70iters
 ```
 
-For a shortcut, use `-o` (`-p` is a different command that plays a log file):
+For a shortcut, use `-o`:
 
 ```
 gazebo preset_world.world -o ode_world_70iters
