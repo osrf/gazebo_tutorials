@@ -43,13 +43,15 @@ etc.), as well as send new joint commands and receive the hand state.
 
 ## Installing on Windows 
 
-We currently support Windows 7, Visual Studio 2013, and Matlab R2014b.
+We currently support Windows 7, Visual Studio 2013, and Matlab R2014b, all
+64-bit (you can determine the Matlab version by selecting `Help`->`About
+MATLAB` from the main menu).  We are working on 32-bit versions; they will be
+available soon.
 
-**If you have a Matlab R2014b 64-bit version you must download the
- [HAPTIX 64-bit client SDK](
-https://s3.amazonaws.com/osrf-distributions/haptix/hx_gz_sdk-latest-Release-win64.zip) (32-bit version should be available soon)**. You can
- determine the Matlab version by selecting `Help`->`About MATLAB` from the main
- menu.
+Download the SDK by going to [the distributions
+archive](http://shrub.appspot.com/osrf-distributions/haptix/) and selecting a
+version.  You probably want the latest version that is available (but check
+below for information on version compatibility).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
@@ -160,18 +162,61 @@ There are two ways the HAPTIX software may be updated:
 
 ##Version numbers
 
-There are two version numbers relevant to the HAPTIX software. One is the version of Gazebo, the core simulation software. The second is the supplementary HAPTIX library.  Follow these steps to access both version numbers.
+There are two version numbers relevant to the HAPTIX software. One is the
+version of the simulator; the other is the version of the client SDK.
 
-1. Run Gazebo by either double-clicking the `haptixStart` desktop icon, or running the following command in a terminal.
+###Simulator version
 
-    ~~~
-    gazebo worlds/arat.world
-    ~~~
+To check the simulator version: Run Gazebo by either double-clicking the
+`haptixStart` desktop icon, or running the following command in a terminal.
 
-1. Use the `Help`->`About` menu option to display Gazebo's version.
+~~~
+gazebo worlds/arat.world
+~~~
 
-    [[file:files/gazebo_version.png|400px]]
-
-1. The HAPTIX client library version number is located at the bottom left of the on-screen GUI.
+The simulator version (more specifically, the version of the `handsim`
+package) is located at the bottom left of the on-screen GUI.
 
     [[file:files/haptix_version.png|400px]]
+
+In this case, the simulator version is 0.5.1.
+
+###Client SDK version
+
+On Windows, the client SDK version is in the name of the `.zip` file and the
+directory that you downloaded (and the resulting directory that the `.zip` file
+extracts to).  E.g., if you downloaded `hx_gz_sdk-0.6.0-Release-win64.zip`,
+then you have version 0.6.0 of the client SDK.
+
+On Linux, the client SDK version is the version of the `libhaptix-comm-dev`
+package that is installed.  You can check it by running the following command in
+a terminal:
+
+~~~
+dpkg -l libhaptix-comm-dev
+~~~
+
+You should see output similar to:
+
+~~~
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                    Version          Architecture     Description
++++-=======================-================-================-====================================================
+ii  libhaptix-comm-dev:amd6 0.6.0-1~trusty   amd64            Haptix project communication library - Development f
+~~~
+
+In this case, the client SDK version is 0.6.0.
+
+##Version compatiblity
+
+To ensure correct behavior between the Gazebo simulator and the client
+library SDK, you should check that you are using compatible versions of the
+two packages.  The following table summarizes compatible combinations:
+
+| Simulator Version | Client SDK Version |
+| ----------------- | ------------------ |
+| 0.7.x             | 0.6.y              |
+| 0.6.x             | 0.5.y              |
+
