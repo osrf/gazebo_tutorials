@@ -122,17 +122,30 @@ Download the
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
 The script launches Gazebo with the `ode_world_300iters` profile and switches between
-the two world profiles 10 times, pausing for 5 seconds between each switch.
+the two world profiles 3 times, pausing for 7 seconds between each switch.
 
-In the left-hand panel in the GUI, under the "World" tab, click on "Physics" and look
-at the physics properties of the world change as the script changes profiles. You will have
-to close and reopen the menu to refresh the GUI.
+The behavior of double pendulum model in this world illustrates the differences between the two physics
+profiles. A classic double pendulum consists of two links attached by a hinge joint. One of the links is
+attached to a fixed point via another hinge joint. In this example, the link attached to a fixed point
+is much smaller, and thus there is a large inertia ratio between the two links. The world enforces a constant
+force lateral to the hinge joint (in the x-direction) by setting the x component of gravity to 1.0 meters
+per second squared..
+
+[[file:files/inertia_ratio_pendulum.svg]]
+
+The `ode_quick_75iters` profile uses the "quickstep" physics constraint solver, which is faster but sometimes less
+accurate. In particular, the large inertia ratio of this model causes the constraint solver to converge slowly.
+You can observe when this profile is active that the pendulum tends to wobble.
+
+The `ode_world_300iters` profile uses the "world" solver, which is more accurate. The increased number of iterations
+also give the constraint solver more time to converge. Thus when the profile switches, you can see the pendulum
+converge back to back and forth behavior in the XZ plane.
+
+You can also see the physics parameter changes reflected in the GUI. In the left-hand panel, under the "World" tab,
+click on "Physics" and look at the physics properties of the world change as the script changes profiles. You
+will have to close and reopen the menu to refresh the GUI.
 
 [[file:files/worldtab.png|600px]]
-
-You can also see the real time factor in the bottom of the screen change every 5 seconds,
-since `ode_quick_75iters` has an unthrottled real time update rate and `ode_world_300iters` has
-the default real time update rate and step size, which will give a real time factor of 1.0.
 
 Use this script as a base for your own experimentation and profiling with the Gazebo physics
 library!
