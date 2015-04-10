@@ -630,11 +630,11 @@
     </tutorial>
 
     <!-- HAPTIX -->
-    <tutorial title="HAPTIX system setup" ref='haptix_unboxing'>
+    <tutorial title="HAPTIX environment setup" ref='haptix_unboxing'>
       <markdown version="6.0+">haptix_unboxing/tutorial.md</markdown>
-      <description><![CDATA[Instructions for the installation and
-        configuration of a HAPTIX simulation system, both hardware and
-        software. The HAPTIX simulation system is a specific hardware and
+      <description><![CDATA[Instructions for the hardware installation and
+        desktop environment configuration of a HAPTIX simulation system.
+        The HAPTIX simulation system is a specific hardware and
         software configuration designed by OSRF for teams participating in
         the <a href="https://www.fbo.gov/index?s=opportunity&mode=form&id=ccbc51af982e354304886e363e6c8404&tab=core&_cview=1">HAPTIX</a>
         program.]]></description>
@@ -901,12 +901,12 @@
       ]]>
       </description>
       <tutorials>
-        <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_install</tutorial>
-        <tutorial>haptix_teleop</tutorial>
-        <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
+        <tutorial>haptix_teleop</tutorial>
+        <tutorial>haptix_unboxing</tutorial>
+        <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
       </tutorials>
     </category>
