@@ -4,22 +4,23 @@
       <uri>model://sun</uri>
     </include>
 
-    <physics name="ode_quick_75iters" type="ode" default="true">
+    <physics name="ode_70iters" type="ode">
+      <real_time_update_rate>1500</real_time_update_rate>
       <gravity>1.0 0 -9.81</gravity>
       <ode>
         <solver>
           <type>quick</type>
-          <iters>75</iters>
+          <iters>70</iters>
         </solver>
       </ode>
     </physics>
 
-    <physics name="ode_world_300iters" type="ode">
+    <physics name="ode_200iters" type="ode" default="true">
       <gravity>1.0 0 -9.81</gravity>
       <ode>
         <solver>
-          <type>world</type>
-          <iters>300</iters>
+          <type>quick</type>
+          <iters>200</iters>
         </solver>
       </ode>
     </physics>
