@@ -179,7 +179,7 @@ gazebo worlds/arat.world
 The simulator version (more specifically, the version of the `handsim`
 package) is located at the bottom left of the on-screen GUI.
 
-    [[file:files/haptix_version.png|400px]]
+[[file:files/haptix_version.png|400px]]
 
 In this case, the simulator version is 0.5.1.
 
@@ -219,8 +219,8 @@ To ensure correct behavior between the Gazebo simulator and the client
 library SDK, you should check that you are using compatible versions of the
 two packages.  The following table summarizes compatible combinations:
 
-| Simulator Version |   | Client SDK Version |
-| ----------------- | - | ------------------ |
-| 0.7.x             |   | 0.6.y              |
-| 0.6.x             |   | 0.5.y              |
+| Simulator Version | Client SDK Version |
+| ----------------- | ------------------ |
+| 0.7.x             | 0.6.y              |
+| 0.6.x             | 0.5.y              |
 
