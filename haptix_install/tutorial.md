@@ -50,7 +50,7 @@ available soon.
 
 Download the SDK by going to:
 
-* [Windows Client SDK Download](http://shrub.appspot.com/osrf-distributions/haptix/)
+* [Windows Client SDK Download](http://gazebosim.org/distributions/haptix)
 
 and selecting a version.  You probably want the latest version that is
 available (but check below for information on version compatibility).
