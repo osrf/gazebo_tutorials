@@ -217,9 +217,9 @@ In this case, the client SDK version is 0.6.0.
 
 To ensure correct behavior between the Gazebo simulator and the client
 library SDK, you should check that you are using compatible versions of the
-two packages.  The following table summarizes compatible combinations:
+two packages.  The following table summarizes compatible combinations.
 
-* Simulator Version : Client SDK Version
+Simulator Version : Client SDK Version
 * 0.7.x : 0.6.y
 * 0.6.x : 0.5.y
 
