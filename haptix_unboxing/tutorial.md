@@ -1,16 +1,16 @@
 # Overview
+This document provides instructions for replicating the setup used by participating HAPTIX teams.
 
-This document provides instructions for installing and configuring a HAPTIX
-setup.
+Please note that you can install the full simulation environment on a standalone Linux machine by simply following the [installation tutorial](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix). This tutorial is for users who want to integrate 3D vision and motion capture for a full virtual reality experience.
 
 # Inventory
 
-- 1 Zareason Linux computer with power cable
+- 1 64-bit computer with [3D Vision-compatible graphics card](http://www.nvidia.com/object/quadro_pro_graphics_boards_linux.html) and Ubuntu 14.04 (Trusty Tahr)
 - 1 DisplayPort cable
-- 1 DVI cable
+- 1 DVI cable (for 2-computer setup)
 - 1 Logitech keyboard
 - 1 Logitech mouse
-- 1 3D Monitor 
+- 1 [3D Monitor](http://www.nvidia.com/object/3d-vision-displays.html)
 - Nvidia 3D Vision 2 kit:
   - 1 pair 3D glasses
   - 1 infrared emitter
@@ -18,12 +18,14 @@ setup.
   - 1 mini-USB cable
   - 1 micro-USB cable
 - 1 3DConnexion Spacenav
-- 1 USB switch with 2-port USB hub
+- 1 USB switch with 2-port USB hub (for 2-computer setup)
 
 # Hardware setup
+There are two options to replicate the HAPTIX setup. One requires two physical computers, and the other requires one Linux computer (with a virtual machine installed).
+
 ## Two-computer setup
 
-The HAPTIX system consists of both a Linux and Windows computer. Gazebo relies on Linux, while OptiTrack must run on Windows. A USB switch allows these two computers to share a single monitor, keyboard, and other peripherals. The following diagram depicts the connections between each component in the system.
+The two-computer HAPTIX system consists of both Linux computer and a Windows computer. Gazebo relies on Linux, while OptiTrack must run on Windows. A USB switch allows these two computers to share a single monitor, keyboard, and other peripherals. The following diagram depicts the connections between each component in the system.
 
 [[file:files/haptix_setup_diagram_final.svg]]
 
@@ -55,8 +57,7 @@ The HAPTIX system consists of both a Linux and Windows computer. Gazebo relies o
 
 ## One computer setup
 
-You can also take advantage of the Windows virtual machine installed on the
-Linux computer in a one-computer setup. (You can learn more about virtual machines [here](http://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/).)
+For a one-computer setup, one Linux computer is required. A Windows virtual machine must be installed on the Linux computer to interface with the Optitrack. (You can learn more about virtual machines [here](http://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/).)
 
 1. Connect the Linux computer to power.
 
@@ -72,24 +73,42 @@ Linux computer in a one-computer setup. (You can learn more about virtual machin
 
 # Software setup
 
-Log in using the provided user name and password.
+## Gazebo installation
+To install the full simulation environment, open a Terminal (under "Applications", "Accessories") and type:
 
-## Change your password
+~~~
+sudo apt-get install handsim
+~~~
 
-For security reasons, you should change your password.
+If this command does not work, you need to tell your computer it's okay to accept software from OSRF:
 
-1. In the top toolbar, click on "Applications", then hover over "System Tools" and "Administration". Click on "User Accounts".
+~~~
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
+sudo apt-get update
+sudo apt-get install handsim
+~~~
 
-1. Click on "Unlock" and type your password to unlock administrator privileges. Click on "Password" to change your password.
+You can start Gazebo in the terminal by typing:
 
-You can add new user accounts if multiple people expect to use the machine, or you can simply share the password to one user account among multiple users. If you want to new user accounts to be able to add/remove/update software, make sure to make them Administrator accounts.
+~~~
+gazebo --verbose worlds/arat.world
+~~~
 
-## Change your timezone (optional)
+## Desktop Environment (optional)
 
-Change your timezone by clicking on the time in the upper-right hand corner, selecting "Time & Date settings", and clicking on the appropriate timezone.
+The HAPTIX teams were provided with a set of user-friendly icons and startup scripts. To replicate this setup, install the `haptix-tools` package with the following instructions.
 
-# Environment overview
-#
+WARNING: The `haptix-tools` package may be harmful to an existing desktop environment. In particular, if you have heavily modified your `xorg.conf`, you may want to avoid installing `haptix-tools`.
+
+1. Create a new user called "haptix" by going to "System Tools", "Administration" and "User Accounts". Log in as the new user.
+
+1. Open a Terminal and type:
+
+    ~~~
+    sudo apt-get install haptix-tools
+    ~~~
+
 On the desktop, you should see three icons.
 
 [[file:files/desktop.png]]
@@ -102,35 +121,47 @@ On the desktop, you should see three icons.
 
     If you want to reproduce the haptixSupport command, see the [OSRF wiki](http://wiki.osrfoundation.org/RequestingRemoteControl), and read more about [x11vnc](http://www.karlrunge.com/x11vnc/).
 
-    You can make your own icons via the [Terminal](http://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04) or [graphically](http://askubuntu.com/questions/450266/an-easy-way-to-create-a-desktop-shortcut).
-
 1. checkStereo: This will open a window that displays two rotating gears in stereo. Use this icon to test whether stereo is enabled on your system.
 
-# DIY machine configuration
+You can also make your own icons via the [Terminal](http://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04) or [graphically](http://askubuntu.com/questions/450266/an-easy-way-to-create-a-desktop-shortcut).
 
-If you did not receive a team machine but are configuring a Linux machine to use the HAPTIX simulation suite, you can install the icons as well as helpful start-up scripts and configuration tools.
+## Virtual machine installation (for one computer setup)
+On your Linux machine, follow the link on [this website](http://www.vmware.com/products/player/playerpro-evaluation.html) to install VMWare player for Linux 64-bit.
 
-1. Open a Terminal (under "Applications", "Accessories") and type:
+Download the Windows virtual machine image from the OSRF web servers from [here](https://s3.amazonaws.com/osrf-distributions/haptix/vm/vm.tgz). WARNING: this is a large file, about 5 gigabytes.
 
-    ~~~
-    sudo apt-get install haptix-tools
-    ~~~
+Untar the file to `~/vmware`. The tarball should contain a file ending in `.vmx`. Start VMware Player using the graphical menu icon or in the terminal by typing `vmware-player`. Open `.vmx` file in VMWare Player. This should start the Windows virtual machine.
 
-    If this command does not work, you need to tell your computer it's okay to accept software from OSRF:
-    
-    ~~~
-    sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
-    wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
-    sudo apt-get update
-    ~~~
-    
-    Try the command in step 2 again.
+## Nvidia drivers
+To find the correct Nvidia drivers for stereo vision, go to [this page](http://www.nvidia.com/Download/index.aspx?lang=en-us) and use the drop-down menus to find your video card model. Select "Linux 64-bit".
 
-1. Next, you can install the full simulation environment by typing:
+On the next page, note the number in the "Version" field, but do not download anything. Ignore the part of the version number after the dot. For example, if the Nvidia website said your required driver version was 346.59, ignore the ".59" part.
 
-    ~~~
-    sudo apt-get install handsim
-    ~~~
+Open a terminal.
+
+If the version number was between 304 and 331:
+
+~~~
+sudo apt-get install nvidia-<version number>
+~~~
+
+If the number was greater than 331:
+
+You will need to install nvidia drivers from a PPA. Type the following into the terminal:
+
+~~~
+deb http://ppa.launchpad.net/xorg-edgers/ppa/ubuntu trusty main 
+deb-src http://ppa.launchpad.net/xorg-edgers/ppa/ubuntu trusty main 
+~~~
+
+Then:
+
+~~~
+sudo apt-get install nvidia-<version number>
+~~~
+
+You may need to restart your computer for the new drivers to take effect.
+
 
 # Testing your setup
 
@@ -144,7 +175,7 @@ If you did not receive a team machine but are configuring a Linux machine to use
 
 1. You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the [teleop tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_teleop) for more information).
 
-1. Move to the [next tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_optitrack) for configuring the OptiTrack 3D camera for viewpoint and arm pose control.
+1. Move to the [next tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_optitrack) for instructions on configuring the OptiTrack 3D camera for viewpoint and arm pose control.
 
 # Troubleshooting
 
