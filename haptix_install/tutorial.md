@@ -53,7 +53,7 @@ Download the SDK by going to:
 * [Windows Client SDK Download](http://shrub.appspot.com/osrf-distributions/haptix/)
 
 and selecting a version.  You probably want the latest version that is
-available (but check [below](#version_compat) for information on version compatibility).
+available (but check below for information on version compatibility).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
@@ -211,7 +211,6 @@ ii  libhaptix-comm-dev:amd6 0.6.0-1~trusty   amd64            Haptix project com
 
 In this case, the client SDK version is 0.6.0.
 
-<a name="version_compat"></a>
 ##Version compatiblity
 
 To ensure correct behavior between the Gazebo simulator and the client
