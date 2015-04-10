@@ -39,20 +39,20 @@ physics::WorldPtr world = physics::get_world("default");
 // Get the PresetManager object from the world
 physics::PresetManagerPtr presetManager = world->GetPresetManager();
 
-// Create a new profile called "ode_quick_30iters"
+// Create a new profile called "ode_quick_75iters"
 // It will be populated with the default physics parameters
 // Many of the PresetManager functions return a boolean for error-checking
-if (!presetManager->CreateProfile("ode_quick_30iters"))
+if (!presetManager->CreateProfile("ode_quick_75iters"))
 {
-  gzerr << "Couldn't create profile ode_quick_30iters" << std::endl;
+  gzerr << "Couldn't create profile ode_quick_75iters" << std::endl;
   return -1;
 }
 
 // Create another profile
-presetManager->CreateProfile("ode_world_70iters");
+presetManager->CreateProfile("ode_world_300iters");
 
-// Set the current profile to "ode_quick_30iters"
-presetManager->CurrentProfile("ode_quick_30iters");
+// Set the current profile to "ode_quick_75iters"
+presetManager->CurrentProfile("ode_quick_75iters");
 
 // Set the solver type to quickstep in the current profile, checking for errors
 // SetCurrentProfileParam will change the current state of the physics engine
@@ -62,13 +62,13 @@ if (!presetManager->SetCurrentProfileParam("solver", "quick"))
   return -1;
 }
 
-// Set the number of iterations in the current profile to 30
-presetManager->SetCurrentProfileParam("iters", 30);
+// Set the number of iterations in the current profile to 75
+presetManager->SetCurrentProfileParam("iters", 75);
 
 // Set parameters in the other profile. These changes will be stored in
 // presetManager but will not change the current state of the physics engine
-presetManager->SetProfileParam("ode_world_70iters", "solver", "world");
-presetManager->SetProfileParam("ode_world_70iters", "iters", 70);
+presetManager->SetProfileParam("ode_world_300iters", "solver", "world");
+presetManager->SetProfileParam("ode_world_300iters", "iters", 300);
 
 boost::any iters;
 
@@ -80,7 +80,7 @@ gzmsg << "Iterations in current preset: " << boost::any_cast<int>(iters);
 
 // Generate an SDF Element from the profile we constructed
 sdf::ElementPtr odeQuickProfileSDF =
-    presetManager->GenerateSDFFromPreset("ode_quick_30iters");
+    presetManager->GenerateSDFFromPreset("ode_quick_75iters");
 ```
 
 ## Command Line Interface
@@ -91,13 +91,13 @@ To start the `preset_example` world we made above with a non-default profile,
 start gazebo with:
 
 ```
-gazebo preset_example.world --profile ode_world_70iters
+gazebo preset_example.world --profile ode_world_300iters
 ```
 
 For a shortcut, use `-o`:
 
 ```
-gazebo preset_world.world -o ode_world_70iters
+gazebo preset_world.world -o ode_world_300iters
 ```
 
 You can also substitute `gazebo` with `gzserver` to run Gazebo headless
@@ -107,8 +107,8 @@ While Gazebo is running, you can switch the profile in another terminal
 by using `gz physics`:
 
 ```
-gz physics --profile ode_quick_30iters
-gz physics -o ode_world_70iters
+gz physics --profile ode_quick_75iters
+gz physics -o ode_world_300iters
 ```
 
 # Example
@@ -121,7 +121,7 @@ Download the
 
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
-The script launches Gazebo with the `ode_world_70iters` profile and switches between
+The script launches Gazebo with the `ode_world_300iters` profile and switches between
 the two world profiles 10 times, pausing for 5 seconds between each switch.
 
 In the left-hand panel in the GUI, under the "World" tab, click on "Physics" and look
@@ -131,7 +131,7 @@ to close and reopen the menu to refresh the GUI.
 [[file:files/worldtab.png|600px]]
 
 You can also see the real time factor in the bottom of the screen change every 5 seconds,
-since `ode_quick_30iters` has an unthrottled real time update rate and `ode_world_70iters` has
+since `ode_quick_75iters` has an unthrottled real time update rate and `ode_world_300iters` has
 the default real time update rate and step size, which will give a real time factor of 1.0.
 
 Use this script as a base for your own experimentation and profiling with the Gazebo physics

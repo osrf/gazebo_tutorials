@@ -1,22 +1,31 @@
 <sdf version="1.5">
   <world name="preset_example">
-    <physics name="ode_quick_30iters" type="ode" default="true">
-      <real_time_update_rate>0.0</real_time_update_rate>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <physics name="ode_quick_75iters" type="ode" default="true">
+      <gravity>1.0 0 -9.81</gravity>
       <ode>
         <solver>
           <type>quick</type>
-          <iters>30</iters>
+          <iters>75</iters>
         </solver>
       </ode>
     </physics>
 
-    <physics name="ode_world_70iters" type="ode">
+    <physics name="ode_world_300iters" type="ode">
+      <gravity>1.0 0 -9.81</gravity>
       <ode>
         <solver>
           <type>world</type>
-          <iters>70</iters>
+          <iters>300</iters>
         </solver>
       </ode>
     </physics>
+  <include>
+    <uri>model://inertia_ratio</uri>
+  </include>
+
   </world>
 </sdf>
