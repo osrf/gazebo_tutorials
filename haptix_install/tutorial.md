@@ -185,11 +185,13 @@ In this case, the simulator version is 0.5.1.
 
 ###Client SDK version
 
+####Windows
 On Windows, the client SDK version is in the name of the `.zip` file and the
 directory that you downloaded (and the resulting directory that the `.zip` file
 extracts to).  E.g., if you downloaded `hx_gz_sdk-0.6.0-Release-win64.zip`,
 then you have version 0.6.0 of the client SDK.
 
+####Linux
 On Linux, the client SDK version is the version of the `libhaptix-comm-dev`
 package that is installed.  You can check it by running the following command in
 a terminal:
@@ -217,8 +219,8 @@ To ensure correct behavior between the Gazebo simulator and the client
 library SDK, you should check that you are using compatible versions of the
 two packages.  The following table summarizes compatible combinations:
 
-| Simulator Version | Client SDK Version |
-| ----------------- | ------------------ |
-| 0.7.x             | 0.6.y              |
-| 0.6.x             | 0.5.y              |
+| Simulator Version |   | Client SDK Version |
+| ----------------- | - | ------------------ |
+| 0.7.x             |   | 0.6.y              |
+| 0.6.x             |   | 0.5.y              |
 
