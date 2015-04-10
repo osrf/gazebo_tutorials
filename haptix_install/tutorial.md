@@ -48,10 +48,12 @@ We currently support Windows 7, Visual Studio 2013, and Matlab R2014b, all
 MATLAB` from the main menu).  We are working on 32-bit versions; they will be
 available soon.
 
-Download the SDK by going to [the distributions
-archive](http://shrub.appspot.com/osrf-distributions/haptix/) and selecting a
-version.  You probably want the latest version that is available (but check
-below for information on version compatibility).
+Download the SDK by going to:
+
+[Windows Client SDK Download](http://shrub.appspot.com/osrf-distributions/haptix/)
+
+and selecting a version.  You probably want the latest version that is
+available (but check below for information on version compatibility).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
