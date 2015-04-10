@@ -31,12 +31,16 @@ API to access the `PresetManager` to add, remove, and switch between profiles.
 You can also get and set profile parameters and generate an SDF element
 representing your physics profile.
 
-Here's an example `PresetManager` code snippet:
+Here's an example `PresetManager` code snippet that would programmatically
+construct the example world shown above in SDF:
 
 ```
 physics::WorldPtr world = physics::get_world("default");
+// Get the PresetManager object from the world
 physics::PresetManagerPtr presetManager = world->GetPresetManager();
 
+// Create a new profile called "ode_quick_30iters"
+// It will be populated with the default physics parameters
 // Many of the PresetManager functions return a boolean for error-checking
 if (!presetManager->CreateProfile("ode_quick_30iters"))
 {
@@ -44,26 +48,39 @@ if (!presetManager->CreateProfile("ode_quick_30iters"))
   return -1;
 }
 
+// Create another profile
 presetManager->CreateProfile("ode_world_70iters");
 
+// Set the current profile to "ode_quick_30iters"
 presetManager->CurrentProfile("ode_quick_30iters");
 
+// Set the solver type to quickstep in the current profile, checking for errors
+// SetCurrentProfileParam will change the current state of the physics engine
 if (!presetManager->SetCurrentProfileParam("solver", "quick"))
 {
   gzerr << "Couldn't set parameter, did you pass a valid key/value pair?"
   return -1;
 }
 
+// Set the number of iterations in the current profile to 30
 presetManager->SetCurrentProfileParam("iters", 30);
 
+// Set parameters in the other profile. These changes will be stored in
+// presetManager but will not change the current state of the physics engine
 presetManager->SetProfileParam("ode_world_70iters", "solver", "world");
 presetManager->SetProfileParam("ode_world_70iters", "iters", 70);
 
 boost::any iters;
 
+// Get the number of iterations from the current profile.
 presetManager->GetCurrentProfileParam(iters, "iters");
-
+// GetProfileParam and GetCurrentProfileParam currently return a boost::any,
+// which must be casted to the correct type
 gzmsg << "Iterations in current preset: " << boost::any_cast<int>(iters);
+
+// Generate an SDF Element from the profile we constructed
+sdf::ElementPtr odeQuickProfileSDF =
+    presetManager->GenerateSDFFromPreset("ode_quick_30iters");
 ```
 
 ## Command Line Interface
@@ -98,7 +115,7 @@ gz physics -o ode_world_70iters
 
 Download the
 [world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)
-`preset_example.world` and the
+`preset_example.world` (same as the SDF example shown above) and the
 [bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
 `switch_profiles.sh`.
 

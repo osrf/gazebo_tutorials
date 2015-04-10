@@ -352,7 +352,7 @@
     </tutorial>
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
-      <markdown version="1.9+">preset_manager/tutorial.md</markdown>
+      <markdown version="3.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
