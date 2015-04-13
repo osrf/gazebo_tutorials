@@ -119,7 +119,7 @@ Download the
 [bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
 `switch_profiles.sh`.
 
-<include to='<!--' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
+<include from='<sdf version="1.5">' to='<!-- end physics presets, models and other world properties go here -->' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
 The script launches Gazebo with the `ode_70iters` profile and switches between
 the two world profiles 5 times, pausing for 5 seconds between each switch.
