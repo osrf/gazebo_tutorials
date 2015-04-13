@@ -23,7 +23,7 @@ In the following example
 the `ode_quick_70iters` profile is set as the default, and the `ode_quick_200iters`
 profile will be available to be switched to using the C++ API or the terminal.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
+<include from='<sdf version="1.5">' to='<!-- end physics presets, models and other world properties go here -->' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
@@ -119,7 +119,7 @@ Download the
 [bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
 `switch_profiles.sh`.
 
-<include from='<sdf version="1.5">' to='<!-- end physics presets, models and other world properties go here -->' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
 The script launches Gazebo with the `ode_70iters` profile and switches between
 the two world profiles 5 times, pausing for 5 seconds between each switch.
