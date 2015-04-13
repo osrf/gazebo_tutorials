@@ -73,6 +73,5 @@
           <xyz>1 0 0</xyz>
         </axis>
       </joint>
-
   </model>
 </sdf>

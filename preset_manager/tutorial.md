@@ -20,7 +20,7 @@ multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following example
 ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)),
-the `ode_quick_70iters` profile is set as the default, and the `ode_quick_30iters`
+the `ode_quick_70iters` profile is set as the default, and the `ode_quick_200iters`
 profile will be available to be switched to using the C++ API or the terminal.
 
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
@@ -119,7 +119,7 @@ Download the
 [bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
 `switch_profiles.sh`.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
+<include to='<!--' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
 
 The script launches Gazebo with the `ode_70iters` profile and switches between
 the two world profiles 5 times, pausing for 5 seconds between each switch.
