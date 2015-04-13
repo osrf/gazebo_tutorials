@@ -20,8 +20,8 @@ multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following world example
 ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)),
-the `ode_quick_70iters` profile is set as the default, and the `ode_quick_200iters`
-profile will be available via the C++ API or the `gz` command line tool. The following is an excerpt from the downloadable world example that shows the values for `ode_quick_70iters` and `ode_quick_200iters`.
+the `ode_70iters` profile is set as the default, and the `ode_200iters`
+profile will be available via the C++ API or the `gz` command line tool. The following is an excerpt from the downloadable world example that shows the values for `ode_70iters` and `ode_200iters`.
 
 <include from=' <sdf version="1.5">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
 
