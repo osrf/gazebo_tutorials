@@ -31,6 +31,13 @@ command in your terminal:
 gazebo worlds/arat.world
 ~~~
 
+Gazebo will load a manipulation environment with a right Modular Prosthetic
+Limb (MPL). Alternatively, you can load a left arm by typing:
+
+~~~
+gazebo worlds/arat_left.world
+~~~
+
 Once you are done testing, please close Gazebo.
 
 # HAPTIX Client library SDK
@@ -41,7 +48,7 @@ called `haptix-comm`. `haptix-comm` exposes the API that will allow your softwar
 request information about the hand (number of joints, motors, number of sensors,
 etc.), as well as send new joint commands and receive the hand state.
 
-## Installing on Windows 
+## Installing on Windows
 
 We currently support Windows 7, Visual Studio 2013, and Matlab R2014b, all
 64-bit (you can determine the Matlab version by selecting `Help`->`About
