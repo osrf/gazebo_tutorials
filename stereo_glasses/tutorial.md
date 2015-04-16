@@ -4,6 +4,8 @@ This tutorial describes how to setup a machine and Gazebo for use with stereo gl
 
 This tutorial assumes that you will be using Ubuntu.
 
+> **Performance Note:** Stencil shadows, as opposed to the default shadow maps, are used when stereo rendering is enabled. Stencil shadows utilize the CPU, which could affect your performance. Reducing the number of light sources in your world will help minimize the impact of the stencil shadows.
+
 ## Hardware requirements
 
 1. A [3D ready monitor](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=3D+monitor&rh=i%3Aaps%2Ck%3A3D+monitor). This monitor should have a 120Hz refresh rate.
