@@ -39,7 +39,7 @@ int main(int argc, char** argv)
   // Initialize haptix-comm
   if (hx_robot_info(&robotInfo) != hxOK)
   {
-    printf("hx_getdeviceinfo(): Request error.\n");
+    printf("hx_robot_info(): Request error.\n");
     return -1;
   }
 
