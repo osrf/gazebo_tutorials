@@ -1,4 +1,4 @@
-# Tutorial: Instrument HDF5 datasets for benchmark
+# Tutorial: Instrument HDF5 datasets
 
 # Introduction
 
@@ -20,7 +20,7 @@ sudo make install
 ### Use only gzserver
 
 ~~~
-./test/regression/REGRESSION_351_world_step
+./test/integration/INTEGRATION_physics_inertia_ratio
 ~~~
 
 ### Use the world file
