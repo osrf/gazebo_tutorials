@@ -8,6 +8,7 @@ Instrument tools are provided to dump physical data into HDF5 format. The datase
 
 ## Build Gazebo
 Build Gazebo with the cmake parameter `HDF5_INSTRUMENT` [default False] as True
+
 ~~~
 cd ~/gazebo
 mkdir build
