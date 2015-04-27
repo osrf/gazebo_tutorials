@@ -7,16 +7,14 @@ Instrument tools are provided to dump physical data into HDF5 format. The datase
 # Example Usage
 
 ## Build Gazebo
-Build Gazebo with the cmake parameter `HDF5_INSTRUMENT` [default False] as True
+Build Gazebo with the cmake parameter `HDF5_INSTRUMENT` [default False] as True   
 
-~~~
-cd ~/gazebo
-mkdir build
-cd build
-cmake -DHDF5_INSTRUMENT=True ../
-make -j4
-sudo make install
-~~~
+        cd ~/gazebo  
+        mkdir build  
+        cd build
+        cmake -DHDF5_INSTRUMENT=True ../
+        make -j4
+        sudo make install
 
 ## Collect Datasets
 ### Use only gzserver
