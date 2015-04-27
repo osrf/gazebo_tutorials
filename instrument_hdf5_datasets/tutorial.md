@@ -1,4 +1,4 @@
-# Tutorial: Instrument HDF5 datasets
+# Instrument HDF5 datasets
 
 # Introduction
 
@@ -52,7 +52,7 @@ A hierarchical file shows up:
 [[file:files/hdf5.png|800px]]
 
 
-*Note* The instrument tool will save hierarchical data for each time step, so it will be slow to write the data into the `ode_frames.hdf5` file.  
+> **Note** The instrument tool will save hierarchical data for each time step, so it will be slow to write the data into the `ode_frames.hdf5` file.  
 Be patient, especially for complex simulation scenarios such as Atlas robots or many body simulation.
 
 
