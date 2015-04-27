@@ -12,10 +12,6 @@ Build Gazebo with the cmake parameter `HDF5_INSTRUMENT` [default False] as True
 ## Collect Datasets
 ### Use only gzserver
 
-~~~
-./test/integration/INTEGRATION_physics_inertia_ratio
-~~~
-
 ### Use the world file
  
 
