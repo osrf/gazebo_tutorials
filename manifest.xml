@@ -231,7 +231,7 @@
     </tutorial>
 
     <tutorial title="Instrument HDF5 Datasets" ref='instrument_hdf5_datasets'>
-      <markdown version="6.0+">instrument_hdf5_datasets/tutorial.md</markdown>
+      <markdown version="4.0+">instrument_hdf5_datasets/tutorial.md</markdown>
       <description>How to dump simulation data into HDF5 format for benchmark.</description>
       <skill>beginner</skill>
     </tutorial>
