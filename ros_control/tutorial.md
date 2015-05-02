@@ -264,7 +264,7 @@ rosrun rqt_gui rqt_gui
 
 ### Add a Command Publisher
 
-Add the 'Publisher' plugin then choose the topic from the drop down box that commands any particular controller that you want to publish to.
+On the 'Plugins' menu of RQT add the 'Topics->Message Publisher' plugin then choose the topic from the drop down box that commands any particular controller that you want to publish to.
 For the RRBot, add the controller:
 
 ~~~
