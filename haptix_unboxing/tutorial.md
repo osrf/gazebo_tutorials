@@ -133,25 +133,26 @@ Download the Windows virtual machine image from the OSRF web servers from [here]
 Untar the file to `~/vmware`. The tarball should contain a file ending in `.vmx`. Start VMware Player using the graphical menu icon or in the terminal by typing `vmware-player`. Open `.vmx` file in VMWare Player. This should start the Windows virtual machine.
 
 ## Nvidia drivers
-To find the correct Nvidia drivers for stereo vision, go to [this page](http://www.nvidia.com/Download/index.aspx?lang=en-us) and use the drop-down menus to find your video card model. Select "Linux 64-bit".
+To find the correct Nvidia drivers for stereo vision, go to
+[this page](http://www.nvidia.com/Download/index.aspx) and use the drop-down menus
+to select your video card model. For the `Operating System` field, be sure to select "Linux 64-bit".
 
-On the next page, note the number in the "Version" field, but do not download anything. Ignore the part of the version number after the dot. For example, if the Nvidia website said your required driver version was 346.59, ignore the ".59" part.
+On the next page, note the number in the "Version:" field, but do not download anything.
+Ignore the part of the version number after the dot.
+For example, if the Nvidia website said your required driver version was 346.59, the version
+number is simply "346", ignore the ".59" part.
 
-Open a terminal.
-
-If the version number was between 304 and 331:
+If the version number is between 304 and 331:
 
 ~~~
 sudo apt-get install nvidia-<version number>
 ~~~
 
-If the number was greater than 331:
-
-You will need to install nvidia drivers from a PPA. Type the following into the terminal:
+If the number is greater than 331, you will need to install nvidia drivers from a PPA. Type the following into the terminal:
 
 ~~~
-deb http://ppa.launchpad.net/xorg-edgers/ppa/ubuntu trusty main 
-deb-src http://ppa.launchpad.net/xorg-edgers/ppa/ubuntu trusty main 
+sudo add-apt-repository -y ppa:xorg-edgers/ppa
+sudo apt-get update
 ~~~
 
 Then:
@@ -160,7 +161,7 @@ Then:
 sudo apt-get install nvidia-<version number>
 ~~~
 
-You may need to restart your computer for the new drivers to take effect.
+You will need to restart your computer for the new drivers to take effect.
 
 
 # Testing your setup
