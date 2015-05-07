@@ -1,7 +1,7 @@
 # Introduction
 
-This package contains a library that can be used as a stand-in for the
-AtlasRobotInterface library.  It implements the same API as that library but on
+This tutorial demonstrates instructions to build a library that can be used as a stand-in for the
+Boston Dynamics AtlasRobotInterface v3.0.0 library.  It implements the same API as that library but on
 the back end, instead of talking to a physical Atlas, it talks to 
 Gazebo/DRCSim via ROS.
 
