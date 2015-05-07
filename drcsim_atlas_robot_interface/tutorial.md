@@ -21,39 +21,39 @@ To try it out:
 
 * Create a ros package for atlas_interface and cd into it:
 
-~~~
-catkin_create_pkg atlas_interface roscpp atlas_msgs sensor_msgs osrf_msgs std_msgs rosgraph_msgs cmake_modules
-cd atlas_interface
-~~~
+    ~~~
+    catkin_create_pkg atlas_interface roscpp atlas_msgs sensor_msgs osrf_msgs std_msgs rosgraph_msgs cmake_modules
+    cd atlas_interface
+    ~~~
 
 * Add exports to the [package.xml](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml) if we want to have other files depned on this package:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
 
 * Create a `src` directory and add [src/atlas_interface.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp).
 
-~~~
-mkdir src
-gedit src/atlas_interface.cpp
-~~~
+    ~~~
+    mkdir src
+    gedit src/atlas_interface.cpp
+    ~~~
 
 Populate it with content from below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp' />
 
 * To use the library `libatlas_interface.so` we created here, create an `examples` directory and add [examples/example.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp).
 
-~~~
-mkdir examples
-gedit examples/example.cpp
-~~~
+    ~~~
+    mkdir examples
+    gedit examples/example.cpp
+    ~~~
 
 Populate it with content from below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp' />
 
 * Also create a launch file [examples/example.launch](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch)
 
-~~~
-gedit examples/example.launch
-~~~
+    ~~~
+    gedit examples/example.launch
+    ~~~
 
 Populate it with content from below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch' />
@@ -63,33 +63,33 @@ Populate it with content from below:
 
 * Add this package's directory (`atlas_interface`) to your ROS_PACKAGE_PATH, e.g.:
 
-~~~
-export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
-~~~
+    ~~~
+    export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
+    ~~~
 
 * Set the `ATLAS_ROBOT_INTERFACE_ROOT` environment variable to point to where
 you unpacked AtlasRobotInterface, e.g.:
 
-~~~
-export ATLAS_ROBOT_INTERFACE_ROOT=/work/AtlasRobotInterface_3.0.0
-~~~
+    ~~~
+    export ATLAS_ROBOT_INTERFACE_ROOT=/work/AtlasRobotInterface_3.0.0
+    ~~~
 
 * Build this package:
 
-~~~
-mkdir build
-cd build
-cmake ..
-make
-~~~
+    ~~~
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ~~~
 
 ## Running
 
 * Try the example launch file:
 
-~~~
-roslaunch atlas_interface example.launch
-~~~
+    ~~~
+    roslaunch atlas_interface example.launch
+    ~~~
 
 That will bring up Atlas in an empty world, with the example program
 (example/example.cpp) running.  The intent is that the example is the kind of
