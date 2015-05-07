@@ -15,9 +15,9 @@ To try it out:
 
 * Source the drcsim setup file, e.g.:
 
-~~~
-source /usr/share/drcsim/setup.sh
-~~~
+  ~~~
+  source /usr/share/drcsim/setup.sh
+  ~~~
 
 * Create a ros package for atlas_interface and cd into it:
 
@@ -67,7 +67,7 @@ Populate it with content from below:
 export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 ~~~
 
-* Set the ATLAS_ROBOT_INTERFACE_ROOT environment variable to point to where
+* Set the `ATLAS_ROBOT_INTERFACE_ROOT` environment variable to point to where
 you unpacked AtlasRobotInterface, e.g.:
 
 ~~~
