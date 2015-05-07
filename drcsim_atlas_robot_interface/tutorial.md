@@ -15,9 +15,9 @@ To try it out:
 
 * Source the drcsim setup file, e.g.:
 
-  ~~~
-  source /usr/share/drcsim/setup.sh
-  ~~~
+    ~~~
+    source /usr/share/drcsim/setup.sh
+    ~~~
 
 * Create a ros package for atlas_interface and cd into it:
 
