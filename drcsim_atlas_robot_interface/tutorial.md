@@ -9,7 +9,7 @@ To try it out:
 
 ## Configure and build
 
-* Download AtlasRobotInterface v3.0.0 and unpack it somewhere.  Let's call that directory /work/AtlasRobotInterface_3.0.0.
+* Download AtlasRobotInterface v3.0.0 from your team files portal and unpack it somewhere.  Let's call that directory /work/AtlasRobotInterface_3.0.0.
 
 * Build and install drcsim as usual (or you could install the latest 4.2.x package via apt-get).
 
