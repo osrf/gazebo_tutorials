@@ -27,7 +27,7 @@ To try it out:
     ~~~
 
 * Add exports to the [package.xml](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml) if we want to have other files depned on this package:
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
+    <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
 
 * Create a `src` directory and add [src/atlas_interface.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp).
 
