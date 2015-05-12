@@ -101,7 +101,7 @@ Here, we set the color of the table from red to green to blue.
 ### `hxs_contacts`
 Get points at which one model is contacting other models.
 
-<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts('wood_cube_5cm');/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts\('wood_cube_5cm'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
 
 This example retrieves the contacts struct and then traverses it to print out each
 contact point for the wooden cube. Expect to see four contact points, one on each
