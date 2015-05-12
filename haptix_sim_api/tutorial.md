@@ -36,3 +36,18 @@ info = hxs_sim_info();
 <include lang='matlab' from="/\% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 
+### `hxs_linear_velocity` and `hxs_set_linear_velocity`
+~~~
+vel = hxs_linear_velocity('wood_cube_5cm');
+~~~
+
+<include lang='matlab' from="/hxs_set_linear_velocity/" to="/pause\(1.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+
+### `hxs_angular_velocity` and `hxs_set_angular_velocity`
+~~~
+vel = hxs_angular_velocity('wood_cube_5cm');
+~~~
+
+<include lang='matlab' from="/hxs_set_angular_velocity/" to="/pause\(1.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+
+
