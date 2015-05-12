@@ -28,12 +28,15 @@ Download the `hxs_example.cc` source code here.
 At the beginning of the C example, we declare all of the structs needed in the
 upcoming API calls:
 
-<>
+<include from="/hxsSimInfo sim_info;/" to="/int i, j;/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
 
-### hxs_sim_info
+### `hxs_sim_info`
 
-|MATLAB                  |C|
-|------------------------|-|
-|`info = hxs_sim_info();`| |
-|                        |<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> |
+#### Matlab
+~~~
+info = hxs_sim_info();
+~~~
+
+#### C
+<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
 
