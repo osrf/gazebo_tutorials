@@ -29,7 +29,7 @@ info = hxs_sim_info();
 
 ### `hxs_camera_transform` and `hxs_set_camera_transform`
 
-<include lang='matlab' from="/\% Get the user camera pose/" to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Get the user camera pose/" to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 ### `hxs_model_color` and `hxs_set_model_color`
 
@@ -67,5 +67,8 @@ hxs_apply_force('wood_cube_5cm', 'link', [-1.0; 0; 0], 0.2);
 ~~~
 hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
 ~~~
+
+
+<include lang='matlab' from="/% Apply force and torque at the same time./" to="/pause\(1.5\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 
