@@ -74,7 +74,7 @@ hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
 
 #### Setting the pose of the arm
 
-<!-- <include lang='matlab' from="/\% Set the position of the arm/" to="/0, 0, 0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>  -->
+<include lang='matlab' from="/\% Set the position of the arm/" to="/0, 0, 0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
 
 
 ### `hxs_model_collide_mode` and `hxs_set_model_collide_mode`
