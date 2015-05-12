@@ -28,9 +28,7 @@ Download the `hxs_example.cc` source code here.
 At the beginning of the C example, we declare all of the structs needed in the
 upcoming API calls:
 
-<include from="/hxsSimInfo sim_info;/"
-         to="/int i, j;/"
-         src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
+<include from="/hxsSimInfo sim_info;/" to="/int i, j;/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
 
 ### `hxs_sim_info`
 
@@ -40,21 +38,14 @@ info = hxs_sim_info();
 ~~~
 
 #### C
-<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/"
-         to="/}/"
-         src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
+<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
 ### `hxs_camera_transform` and `hxs_set_camera_transform`
 
 #### Matlab
-<include lang='matlab' from=/"tx = hxs_camera_transform\(\);"/
-         to="/hxs_set_camera_transform\(new_tx\);/"
-         src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from=/"tx = hxs_camera_transform\(\);"/ to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 #### C
-<include from="/if \(hxs_camera_transform\(&camera_transform\) != hxOK\)/"
-         to="/}/"
-         src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
-<include from="/new_transform = camera_transform\)/"
-         to="/}/"
-         src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
+<include from="/if \(hxs_camera_transform\(&camera_transform\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
+
+<include from="/new_transform = camera_transform\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> 
 
