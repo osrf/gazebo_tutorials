@@ -29,7 +29,28 @@ info = hxs_sim_info();
 
 ### `hxs_camera_transform` and `hxs_set_camera_transform`
 
-#### Matlab
 <include lang='matlab' from="/tx = hxs_camera_transform\(\);/" to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
+### `hxs_model_color` and `hxs_set_model_color`
+
+<include lang='matlab' from="/hxs_set_model_color/" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+
+
+### `hxs_linear_velocity` and `hxs_set_linear_velocity`
+
+### `hxs_angular_velocity` and `hxs_set_angular_velocity`
+
+### `hxs_apply_force`, `hxs_apply_torque`, and `hxs_apply_wrench`
+
+### `hxs_model_gravity_mode` and `hxs_set_model_gravity_mode`
+
+### `hxs_model_transform` and `hxs_set_model_transform`
+
+### `hxs_model_collide_mode` and `hxs_set_model_collide_mode`
+
+### `hxs_add_model` and `hxs_remove_model
+
+### `hxs_set_model_joint_state`
+
+### `hxs_reset`
 
