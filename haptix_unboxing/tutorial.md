@@ -104,10 +104,12 @@ WARNING: The `haptix-tools` package may be harmful to an existing desktop enviro
 1. Create a new user called "haptix" by going to "System Tools", "Administration" and "User Accounts". Log in as the new user.
 
 1. Open a terminal and type:
+
     ~~~
     sudo adduser haptix sudo
     ~~~
-    to add the new user to sudoer list. Reboot the machine.
+    
+    to add the new user to the sudoers list. Reboot the machine.
 
 1. Log back in as the new `haptix` user, open a terminal and type:
 
