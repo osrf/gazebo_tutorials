@@ -34,6 +34,6 @@ upcoming API calls:
 
 |MATLAB                  |C|
 |------------------------|-|
-|`info = hxs_sim_info();`| 
-|                        |<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/>
+|`info = hxs_sim_info();`| |
+|                        |<include from="/if \(hxs_sim_info\(&sim_info\) != hxOK\)/" to="/}/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/example/hxs_requester.c'/> |
 
