@@ -665,6 +665,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Simulation API" ref='haptix_sim_api'>
+      <markdown version="6.0+">haptix_sim_api/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
       <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
       <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
@@ -911,6 +917,7 @@
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
+        <tutorial>haptix_sim_api</tutorial>
         <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_optitrack</tutorial>
