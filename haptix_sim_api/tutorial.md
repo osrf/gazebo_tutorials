@@ -35,7 +35,7 @@ whole would be considered a model.
 # Example
 In our example, we will demonstrate how to use the sim API to manipulate objects in the ARAT world.
 
-## MATLAB on Windows instructions
+## Run the code: MATLAB
 The HAPTIX MATLAB SDK should already contain the `hxs_example.m` script used in
 this tutorial. If it was moved or deleted, you can download it
 [here](https://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m)
@@ -50,7 +50,7 @@ command prompt.
 
 Watch the Gazebo window as the script runs through each example API call.
 
-## Octave on Linux instructions
+## Run the code: Octave on Linux
 Installing the `haptix-comm` package on Linux will install a `matlab` folder to
 `/usr/lib/x86_64-linux-gnu/haptix-comm`. This folder contains `hxs_example` script
 used in this tutorial. If it was moved or deleted, you can download it
@@ -97,6 +97,15 @@ the object is fully opaque (solid).
 <include lang='matlab' from="/% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 Here, we set the color of the table from red to green to blue.
+
+### `hxs_contacts`
+Get points at which one model is contacting other models.
+
+<include lang='matlab' from="/% Get contact information/" to="/end/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
+
+This example retrieves the contacts struct and then traverses it to print out each
+contact point for the wooden cube. Expect to see four contact points, one on each
+corner of the face of the cube that contacts the "lid" link of the wooden case.
 
 ### `hxs_linear_velocity` and `hxs_set_linear_velocity`
 Get and set the linear velocity of the model. The linear velocity is a 3-vector
@@ -174,7 +183,7 @@ and orientation.
 #### Setting the transform of the arm
 You can also set the position and orientation of the robotic arm:
 
-<include lang='matlab' from="/\% Set the position of the arm/" to="/0, 0, 0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Set the position of the arm/" to="/arm_tx\)/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
 
 These commands will be overridden by motion tracking technology such as the
 Optitrack. If you want them to take effect, make sure motion tracking is paused or
