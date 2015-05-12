@@ -60,7 +60,7 @@ To run the example, first make sure Gazebo is running (double-click on the deskt
 or use the terminal).
 
 In a terminal, navigate to the aforementioned `haptix-comm/matlab` folder and
-start Octave with `octave`. Then, in the Octave command prompt, type `hxs_example`.
+type `octave hxs_example.m`.
 
 Watch the Gazebo window as the script runs through each example API call.
 
