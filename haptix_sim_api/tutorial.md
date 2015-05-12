@@ -42,7 +42,10 @@ info = hxs_sim_info();
 vel = hxs_linear_velocity('wood_cube_5cm');
 ~~~
 
-<include lang='matlab' from="/\% Move by setting linear velocity/" to="/pause\(1.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+~~~
+% Move by setting linear velocity
+hxs_set_linear_velocity('wood_cube_5cm', [-0.5; 0; 0]);
+~~~
 
 ### `hxs_angular_velocity` and `hxs_set_angular_velocity`
 
@@ -50,5 +53,8 @@ vel = hxs_linear_velocity('wood_cube_5cm');
 vel = hxs_angular_velocity('wood_cube_5cm');
 ~~~
 
-<include lang='matlab' from="/\% Move by setting angular velocity/" to="/pause\(1.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+~~~
+% Move by setting angular velocity
+hxs_set_angular_velocity('wood_cube_5cm', [0; 0; 100]);
+~~~
 
