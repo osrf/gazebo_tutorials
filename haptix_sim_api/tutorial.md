@@ -72,28 +72,3 @@ hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
 <include lang='matlab' from="/\% Apply force and torque at the same time./" to="/pause\(1.5\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 
-### `hxs_model_gravity_mode` and `hxs_set_model_gravity_mode`
-
-<include lang='matlab' from="/\% Check gravity mode on wooden cube/" to="/hxs_set_model_gravity_mode\('wood_cube_5cm', gravity_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
-
-### `hxs_model_transform` and `hxs_set_model_transform`
-<include lang='matlab' from="/\% Get the pose of the cube/" to="/hxs_set_model_transform\('wood_cube_5cm', tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
-
-#### Setting the pose of the arm
-
-<include lang='matlab' from="/\% Set the position of the arm/" to="/0, 0, 0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
-
-
-### `hxs_model_collide_mode` and `hxs_set_model_collide_mode`
-<include lang='matlab' from="/\% Check collide mode on the cube/" to="/hxs_set_model_collide_mode\('wood_cube_5cm', collide_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
-
-### `hxs_add_model` and `hxs_remove_model`
-
-<include lang='matlab' from="/\% Define a new model./" to="/hxs_remove_model\('green_cricket_ball'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
-
-### `hxs_set_model_joint_state`
-<include lang='matlab' from="/\% Set the state of a wrist joint/" to="/pause\(1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
-
-### `hxs_reset`
-
-<include lang='matlab' from="/\% Move the camera/" to="/hxs_reset\(1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
