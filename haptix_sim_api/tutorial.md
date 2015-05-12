@@ -58,3 +58,16 @@ vel = hxs_angular_velocity('wood_cube_5cm');
 hxs_set_angular_velocity('wood_cube_5cm', [0; 0; 100]);
 ~~~
 
+### `hxs_apply_force`, `hxs_apply_torque`, and `hxs_apply_wrench`
+
+~~~
+hxs_apply_force('wood_cube_5cm', 'link', [-1.0; 0; 0], 0.2);
+~~~
+
+~~~
+hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
+~~~
+
+<include lang='matlab' from="/\% Apply force and torque/" to="/pause\(1.5\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+
+
