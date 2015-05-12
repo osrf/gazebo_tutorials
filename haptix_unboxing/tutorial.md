@@ -101,7 +101,7 @@ The HAPTIX teams were provided with a set of user-friendly icons and startup scr
 
 WARNING: The `haptix-tools` package may be harmful to an existing desktop environment. In particular, if you have heavily modified your `xorg.conf`, you may want to avoid installing `haptix-tools`.
 
-1. Create a new user called "haptix" by going to "System Tools", "Administration" and "User Accounts". Log in as the new user.
+1. Create a new user called "haptix" by going to "System Tools", "Administration" and "User Accounts".
 
 1. Open a terminal and type:
 
