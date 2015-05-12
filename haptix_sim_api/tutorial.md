@@ -33,7 +33,7 @@ info = hxs_sim_info();
 
 ### `hxs_model_color` and `hxs_set_model_color`
 
-<include lang='matlab' from="/\% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 
 ### `hxs_linear_velocity` and `hxs_set_linear_velocity`
@@ -69,6 +69,6 @@ hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
 ~~~
 
 
-<include lang='matlab' from="/\% Apply force and torque at the same time./" to="/pause\(1.5\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Apply force and torque at the same time./" to="/pause\(1.5\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 
