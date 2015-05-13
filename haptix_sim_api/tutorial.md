@@ -101,7 +101,7 @@ Here, we set the color of the table from red to green to blue.
 ### `hxs_contacts`
 Get points at which one model is contacting other models.
 
-<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts\('wood_cube_5cm'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts\('wood_cube_5cm'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 This example retrieves the contacts struct and then traverses it to print out each
 contact point for the wooden cube. Expect to see four contact points, one on each
@@ -183,7 +183,7 @@ and orientation.
 #### Setting the transform of the arm
 You can also set the position and orientation of the robotic arm:
 
-<include lang='matlab' from="/\% Set the position of the arm/" to="/arm_tx\)/" src='http://bitbucket.org/osrf/haptix-comm/raw/update_hxs_example/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Set the position of the arm/" to="/arm_tx\)/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
 
 These commands will be overridden by motion tracking technology such as the
 Optitrack. If you want them to take effect, make sure motion tracking is paused or
