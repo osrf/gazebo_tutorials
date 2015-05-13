@@ -210,7 +210,7 @@ to the Windows system. It is probably because of the Windows Firewall.
 ## The hand is moving in the simulator, but erratically, not smoothly
 
 If you are using a Wireless connection, it could happen that latency is
-making the interaction to fail. Please try using a wired connection.
+making the interaction fail. Please try using a wired connection.
 
 ### In the Windows Firewall question, I clicked the wrong option (cancel)
 
