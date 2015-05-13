@@ -200,11 +200,11 @@ manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and
 
 ### 'Error setting socket option <IP_MULTICAST_IF>'
 
-Probably you have a an incorrect IP adress set in the `IGN_IP` variable.
+Probably you have an incorrect IP adress set in the `IGN_IP` variable.
 
 ## The handsim simulator displays: 'NodeShared: no route to host'
 
-The error means that there is no connection from the linux simulator back
+The error means that there is no connection from the Linux simulator back
 to the Windows system. It is probably because of the Windows Firewall.
 
 ## The hand is moving in the simulator, but erratically, not smoothly
