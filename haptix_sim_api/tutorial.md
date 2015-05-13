@@ -6,7 +6,7 @@ We assume that you have already completed the
 
 # Documentation
 The full sim API documentation can be found
-[here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.2.2/haptix__sim_8h.html).
+[here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.7.1/haptix__sim_8h.html).
 
 ## Conventions and terminology
 
