@@ -202,14 +202,15 @@ manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and
 
 Probably you have a an incorrect IP adress set in the `IGN_IP` variable.
 
-## I can see the hand moving, but not smoothly
-
-If you are using a Wireless connection, please use a wired one.
-
 ## The handsim simulator displays: 'NodeShared: no route to host'
 
 The error means that there is no connection from the linux simulator back
 to the Windows system. It is probably because of the Windows Firewall.
+
+## The hand is moving in the simulator, but erratically, not smoothly
+
+If you are using a Wireless connection, it could happen that latency is
+making the interaction to fail. Please try using a wired connection.
 
 ### In the Windows Firewall question, I clicked the wrong option (cancel)
 
