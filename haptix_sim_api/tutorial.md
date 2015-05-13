@@ -163,7 +163,7 @@ component  of 0.1 Newton-meters about the Z axis.
 
 ### `hxs_model_gravity_mode` and `hxs_set_model_gravity_mode`
 Get and set the gravity mode of the model. If the gravity mode is 1, then the
-model will experience gravity (by default, 9.81 Newtons/second^2 in the negative Z
+model will experience gravity (by default, 9.81 meters/second^2 in the negative Z
 direction). If the gravity mode is 0, the model will not experience gravity and will
 float in the air unless disturbed by external forces.
 
