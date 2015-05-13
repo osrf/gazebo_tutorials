@@ -51,7 +51,7 @@ command prompt.
 Watch the Gazebo window as the script runs through each example API call.
 
 ## Run the code: Octave on Linux
-Installing the `haptix-comm` package on Linux will install a `matlab` folder to
+Installing the `haptix-comm` package on Linux will install an `octave` folder to
 `/usr/lib/x86_64-linux-gnu/haptix-comm`. This folder contains `hxs_example` script
 used in this tutorial. If it was moved or deleted, you can download it
 [here](https://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m)
@@ -59,7 +59,7 @@ used in this tutorial. If it was moved or deleted, you can download it
 To run the example, first make sure Gazebo is running (double-click on the desktop icon
 or use the terminal).
 
-In a terminal, navigate to the aforementioned `haptix-comm/matlab` folder and
+In a terminal, navigate to the aforementioned `haptix-comm/octave` folder and
 type `octave hxs_example.m`.
 
 Watch the Gazebo window as the script runs through each example API call.
