@@ -109,7 +109,7 @@ Windows `cmd` for configuring and building.  You might also need to
     1. If in Debug: Copy in the following into `plugins.cfg`
     
             # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\code\gz\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
+            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
 
             # Define plugins
             Plugin=RenderSystem_GL_d
@@ -122,7 +122,7 @@ Windows `cmd` for configuring and building.  You might also need to
     1. If in Release: Copy in the following into `plugins.cfg`
     
             # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\code\gz\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Release\bin\Release
+            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Release\bin\Release
 
             # Define plugins
             Plugin=RenderSystem_GL
@@ -143,12 +143,14 @@ Just in case that you need to debug problems on Gazebo
 ### Building Ogre Examples
 
 1. Download OIS
+
        http://sunet.dl.sourceforge.net/project/wgois/Source%20Release/1.3/ois-v1-3.zip
   
 1. Compile OIS in Visual Studio
    Use the project in Win32/ folder
 
 1. Place OIS headers and libs into
+
        ogre-.../Dependencies/include
        ogre-.../Dependencies/lib
        ogre-.../Dependencies/bin
