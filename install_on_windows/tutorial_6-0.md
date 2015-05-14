@@ -26,7 +26,7 @@ Windows `cmd` for configuring and building.  You might also need to
         mkdir gz-ws
         cd gz-ws
 
-1. Download the following things into that directory:
+1. Download the following dependencies into that directory:
 
     1. [freeImage 3.x, slightly modified to build on VS2013](http://packages.osrfoundation.org/win32/deps/FreeImage-vc12-x64-release-debug.zip)
 
