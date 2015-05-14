@@ -1,6 +1,4 @@
-# Install Gazebo on Mac (using homebrew)
-
-## Step-by-step Install
+# Install on Windows
 
 This documentation describes how to set up a workspace for trying to compile
 Gazebo on Windows.  It does not actually work yet.
@@ -30,30 +28,39 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Download the following things into that directory:
 
-    - [freeImage 3.x, slightly modified to build on VS2013](http://packages.osrfoundation.org/win32/deps/FreeImage-vc12-x64-release-debug.zip)
-    - [boost 1.56.0](http://packages.osrfoundation.org/win32/deps/boost_1_56_0.zip)
-    - [bzip2 1.0.6](http://packages.osrfoundation.org/win32/deps/bzip2-1.0.6-vc12-x64-release-debug.zip)
-    - [dlfcn-win32](http://packages.osrfoundation.org/win32/deps/dlfcn-win32-vc12-x64-release-debug.zip)
-    - [libcurl HEAD](http://packages.osrfoundation.org/win32/deps/libcurl-vc12-x64-release-debug-static-ipv6-sspi-winssl.zip)
-    - [OGRE 1.9.0 rc1](http://packages.osrfoundation.org/win32/deps/ogre_src_v1-8-1-vc12-x64-release-debug.zip)
-    - [protobuf 2.6.0](http://packages.osrfoundation.org/win32/deps/protobuf-2.6.0-win64-vc12.zip)
-    - [TBB 4.3](http://packages.osrfoundation.org/win32/deps/tbb43_20141023oss_win.zip)
-    - [zziplib 0.13.62](http://packages.osrfoundation.org/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
-    - [zlib](http://packages.osrfoundation.org/win32/deps/zlib-1.2.8-vc12-x64-release-debug.zip)
+    1. [freeImage 3.x, slightly modified to build on VS2013](http://packages.osrfoundation.org/win32/deps/FreeImage-vc12-x64-release-debug.zip)
+
+    1. [boost 1.56.0](http://packages.osrfoundation.org/win32/deps/boost_1_56_0.zip)
+
+    1. [bzip2 1.0.6](http://packages.osrfoundation.org/win32/deps/bzip2-1.0.6-vc12-x64-release-debug.zip)
+
+    1. [dlfcn-win32](http://packages.osrfoundation.org/win32/deps/dlfcn-win32-vc12-x64-release-debug.zip)
+
+    1. [libcurl HEAD](http://packages.osrfoundation.org/win32/deps/libcurl-vc12-x64-release-debug-static-ipv6-sspi-winssl.zip)
+
+    1. [OGRE 1.9.0 rc1](http://packages.osrfoundation.org/win32/deps/ogre_src_v1-8-1-vc12-x64-release-debug.zip)
+
+    1. [protobuf 2.6.0](http://packages.osrfoundation.org/win32/deps/protobuf-2.6.0-win64-vc12.zip)
+
+    1. [TBB 4.3](http://packages.osrfoundation.org/win32/deps/tbb43_20141023oss_win.zip)
+
+    1. [zziplib 0.13.62](http://packages.osrfoundation.org/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
+
+    1. [zlib](http://packages.osrfoundation.org/win32/deps/zlib-1.2.8-vc12-x64-release-debug.zip)
 
 1. Unzip each of them in gz-ws.
 
 1. Also download and execute the Qt 4.8 installer.  It should end up somewhere like C:\Qt.  As far as I can tell, this installation is not relocatable, so cannot be put into a .zip and dropped into a local workspace:
 
-    - [Qt 4.8.6](http://packages.osrfoundation.org/win32/deps/qt-4.8.6-x64-msvc2013-rev1.7z)
+    > [Qt 4.8.6](http://packages.osrfoundation.org/win32/deps/qt-4.8.6-x64-msvc2013-rev1.7z)
 
 1. Install cmake, make sure to select the "Add CMake to system path for all users" option in the install dialog box
 
-    - [Cmake](http://www.cmake.org/download/)
+    > [Cmake](http://www.cmake.org/download/)
     
 1. Install Ruby 1.9 or greater. Make sure to have the installer add Ruby to your paths.
 
-    - [Ruby](http://rubyinstaller.org/downloads/)
+    > [Ruby](http://rubyinstaller.org/downloads/)
     
 1. Clone sdformat and gazebo:
 
@@ -91,8 +98,9 @@ Windows `cmd` for configuring and building.  You might also need to
 ### gzserver
 
 1. Adjust all paths to load dll
-         cd gz-ws/gazebo
-         addpath.bat Debug|Release
+
+         cd gz-ws/gazebo/build
+         ../win_addpath.bat Debug|Release
 
 1. Create an ogre plugins.cfg file
 
@@ -146,7 +154,8 @@ Just in case that you need to debug problems on Gazebo
        ogre-.../Dependencies/bin
 
 1. Patch configure.bat inside ogre-1.8 to use
-       -DOGRE_BUILD_SAMPLES:BOOL=TRUE .. 
+
+       `-DOGRE_BUILD_SAMPLES:BOOL=TRUE ..`
 
 1. Compile as usual
         ..\configure.bat

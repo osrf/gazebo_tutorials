@@ -39,7 +39,7 @@
 
     <tutorial title="Windows" ref='install_on_windows'>
       <markdown version="6.0">install_on_windows/tutorial_6-0.md</markdown>
-      <description>Installation instructions for Windows installations.</description>
+      <description>Installation instructions for Windows.</description>
       <tags>
         <tag>install</tag>
       </tags>
