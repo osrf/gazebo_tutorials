@@ -10,7 +10,7 @@ sources together with all the dependencies and compilation artifacts.
 
 ## Supported compilers
 
-At this moment, compilation has been testewd on Windows 7 and is supported when
+At this moment, compilation has been tested on Windows 7 and is supported when
 using [Visual Studio 2013](https://www.visualstudio.com/downloads/).
 Patches for other versions are welcome.
 
