@@ -37,6 +37,15 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Windows" ref='install_on_windows'>
+      <markdown version="6.0">install_on_windows/tutorial_6-0.md</markdown>
+      <description>Installation instructions for Windows installations.</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Old versions (prior to gazebo4)" ref='install'>
       <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
       <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
@@ -685,6 +694,7 @@
         <tutorial>install_ubuntu</tutorial>
         <tutorial>install_other_linux</tutorial>
         <tutorial>install_on_mac</tutorial>
+        <tutorial>install_on_windows</tutorial>
 
         <!-- keep name for historical reasons -->
         <tutorial>install</tutorial>
