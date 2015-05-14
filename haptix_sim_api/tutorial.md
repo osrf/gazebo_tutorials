@@ -15,25 +15,28 @@ we represent rotations as [quaternions](http://en.wikipedia.org/wiki/Quaternion)
 
 Unless otherwise stated, all vectors and transforms are relative to a fixed world frame.
 
-Through the documentation, we refer to "models", "links", and "joints".
-
-A "model" is named object that may consistent of zero or more links and joints. Most objects
-in this example will only have one link and zero joints, such as the wood cube and the
-cricket ball. However, the robotic prosthetic arm is an example of a model with many
-links and joints.
+Through the documentation, we refer to "links", "joints", and "models".
 
 A "link" is a rigid body that moves as a whole.
 
 A "joint" holds together two links, constraining their motion. A joint may have limits.
 
-For example, a typical door has three links: the frame, which is fixed, the door
+A "model" is a named object that may consist of zero or more links and joints. Most objects
+in this example will only have one link and zero joints, such as the wood cube and the
+cricket ball. However, the robotic prosthetic arm is an example of a model with many
+links and joints.
+
+For example, a typical doorway has three links: the frame, which is fixed, the door
 itself, and the handle.
-The frame and the door are connected by a joint which allows the door to swing. The door
-and the handle are connected by a joint which allows the handle to turn. The door as a
-whole would be considered a model.
+The hinges that connect the frame and the door
+are modeled as a joint that allows the door to swing.
+Likewise, the door and the handle are connected by a
+joint that allows the handle to turn.
+The doorway as a whole would be considered a model.
 
 # Example
-In our example, we will demonstrate how to use the sim API to manipulate objects in the ARAT world.
+In our example, we will demonstrate how to use the sim API to manipulate
+objects in the ARAT world.
 
 ## Run the code: MATLAB
 The HAPTIX MATLAB SDK should already contain the `hxs_example.m` script used in
@@ -76,7 +79,7 @@ info = hxs_sim_info();
 ~~~
 
 In this example, we use the result `info` struct to iterate through every model
-in the world, displaying their names and the names of all links and joints.
+in the world, displaying the names of all models, links, and joints.
 In this loop, we could also query the links and joints for their current dynamic
 state, such as position, velocity, and internal/external forces/torques.
 
