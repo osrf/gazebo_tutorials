@@ -58,7 +58,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Cmake](http://www.cmake.org/download/)
     
-1. Install Ruby 1.9 or greater. Make sure to have the installer add Ruby to your paths.
+1. Install Ruby 1.9 or greater. During the install process make sure add Ruby to your system paths.
 
     > [Ruby](http://rubyinstaller.org/downloads/)
     
