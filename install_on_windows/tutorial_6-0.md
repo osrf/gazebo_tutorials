@@ -50,7 +50,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Unzip each of them in gz-ws.
 
-1. Also download and execute the Qt 4.8 installer.  It should end up somewhere like C:\Qt.  As far as I can tell, this installation is not relocatable, so cannot be put into a .zip and dropped into a local workspace:
+1. Also download Qt 4.8, using the link below, and unzip it into `C:\Qt\4.8.6\x64\msvc2013`:
 
     > [Qt 4.8.6](http://packages.osrfoundation.org/win32/deps/qt-4.8.6-x64-msvc2013-rev1.zip)
 
