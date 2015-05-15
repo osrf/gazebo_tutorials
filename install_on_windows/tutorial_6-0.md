@@ -160,11 +160,11 @@ Just in case that you need to debug problems on Gazebo
        `-DOGRE_BUILD_SAMPLES:BOOL=TRUE ..`
 
 1. Compile as usual
+
         ..\configure.bat
         nmake
 
-1. Run the demo browser in
+1. Run the demo browser using:
+
        # copy OIS_*.dll into the bin directory
        ogre-.../build/bin/SampleBrowser.exe
-
-
