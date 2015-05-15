@@ -19,7 +19,7 @@ Patches for other versions are welcome.
 This installation procedure uses pre-compiled binaries in a local workspace.  To
 make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/) with [Mercurial](http://tortoisehg.bitbucket.org/download/index.html)), and only use the
 Windows `cmd` for configuring and building.  You might also need to
-[disable the Windows firewall](http://windows.microsoft.com/en-us/windows/turn-windows-firewall-on-off#turn-windows-firewall-on-off=windows-7). Not sure about that.
+[disable the Windows firewall](http://windows.microsoft.com/en-us/windows/turn-windows-firewall-on-off#turn-windows-firewall-on-off=windows-7).
 
 1. Make a directory to work in, e.g.:
 
