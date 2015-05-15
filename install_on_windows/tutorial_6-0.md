@@ -91,7 +91,7 @@ Windows `cmd` for configuring and building.  You might also need to
         nmake
         nmake install
 
-    Once this all works (which it currently does not, by a long shot): you should now have an installation of gazebo in gz-ws/sdformat/build/install/Release.
+    Once this all works (which it currently does not, by a long shot): you should now have an installation of gazebo in gz-ws/gazebo/build/install/Release.
 
 ## Running
 
