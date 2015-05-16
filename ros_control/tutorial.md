@@ -145,7 +145,8 @@ mkdir launch
 ### Create a .yaml config file
 
 The PID gains and controller settings must be saved in a yaml file that gets loaded to the param server via the roslaunch file.
-In the config folder of your <tt>MYROBOT_control</tt> package, adapt the following RRBot example to your robot as `MYROBOT_control/config/rrbot_control.yaml`:
+In the config folder of your <tt>MYROBOT\_control</tt> package, adapt the following RRBot example to your robot as
+`MYROBOT_control/config/rrbot_control.yaml`:
 
 ~~~
 rrbot:
