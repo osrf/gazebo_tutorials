@@ -72,20 +72,9 @@ Windows `cmd` for configuring and building.  You might also need to
 
         "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
 
-1. In a Windows shell, configure and build Sdformat
+1. In a Windows shell, configure and build Ignition Math
 
-        cd sdformat
-        mkdir build       
-        cd build
-        ..\configure
-        nmake
-        nmake install
-
-    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release.
-
-1. In the same Windows shell, configure and build Ignition Math
-
-        cd ..\..\ign-math
+        cd ign-math
         mkdir build       
         cd build
         ..\configure
@@ -93,6 +82,18 @@ Windows `cmd` for configuring and building.  You might also need to
         nmake install
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
+
+
+1. In the same Windows shell, configure and build Sdformat
+
+        cd ..\..\sdformat
+        mkdir build       
+        cd build
+        ..\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release.
 
 1. In the same Windows shell, configure and build Gazebo:
 
