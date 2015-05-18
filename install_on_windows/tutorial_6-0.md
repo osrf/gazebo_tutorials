@@ -62,8 +62,9 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
     
-1. Clone sdformat and gazebo:
+1. Clone ignition math, sdformat, and gazebo:
 
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math
         hg clone https://bitbucket.org/osrf/sdformat
         hg clone https://bitbucket.org/osrf/gazebo
 
@@ -82,9 +83,20 @@ Windows `cmd` for configuring and building.  You might also need to
 
     You should now have an installation of sdformat in gz-ws/sdformat/build/install/Release.
 
+1. In the same Windows shell, configure and build Ignition Math
+
+        cd ..\..\ign-math
+        mkdir build       
+        cd build
+        ..\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
+
 1. In the same Windows shell, configure and build gazebo:
 
-        cd ..\gazebo
+        cd ..\..\gazebo
         mkdir build
         cd build
         ..\configure
