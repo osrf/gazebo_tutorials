@@ -113,7 +113,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. `cd gz-ws/gazebo/build/gazebo`
 
-    1. If in Debug: Copy in the following into `plugins.cfg and reaplse MYUSERNAME with your actual username`
+    1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
     
             # Define plugin folder
             PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
