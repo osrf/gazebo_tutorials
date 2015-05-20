@@ -101,17 +101,17 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. if in Debug
 
-         cd gz-ws/gazebo/build
+         cd gz-ws\gazebo\build
          ..\win_addpath.bat Debug
 
     2. if in Release
 
-         cd gz-ws/gazebo/build
+         cd gz-ws\gazebo\build
          ..\win_addpath.bat Release
 
 1. Create an ogre plugins.cfg file
 
-    1. `cd gz-ws/gazebo/build/gazebo`
+    1. `cd gz-ws\gazebo\build\gazebo`
 
     1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
     
@@ -167,9 +167,9 @@ If you run into issues, use --verbose to get more information. A known issues is
 
 1. Place OIS headers and libs into
 
-       ogre-.../Dependencies/include
-       ogre-.../Dependencies/lib
-       ogre-.../Dependencies/bin
+       ogre-...\Dependencies\include
+       ogre-...\Dependencies\lib
+       ogre-...\Dependencies\bin
 
 1. Patch configure.bat inside ogre-1.8 to use
 
@@ -183,4 +183,4 @@ If you run into issues, use --verbose to get more information. A known issues is
 1. Run the demo browser using:
 
        # copy OIS_*.dll into the bin directory
-       ogre-.../build/bin/SampleBrowser.exe
+       ogre-...\build\bin\SampleBrowser.exe
