@@ -76,7 +76,7 @@ The `gazebo_ros_pkgs` packages are available in:
 * [ROS Jade](http://ros.org/wiki/jade):
 
 Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
-released. Check [the issue in the gazebo_ros_control tracker](https://github.com/ros-controls/ros_control/issues/201)
+released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
 to see the progress.
 
 ~~~
