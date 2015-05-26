@@ -138,9 +138,9 @@ sudo apt-get install git
 
 Jade is using the gazebo 5.x series, start by installing it:
 
-~~
+~~~
 sudo apt-get install -y libgazebo5-dev
-~~
+~~~
 
 Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
 
@@ -163,7 +163,7 @@ rosdep install --from-paths . --ignore-src --rosdistro jade -y
 ~~~
 
 Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
-released. Check [the issue in the gazebo_ros_control tracker](https://github.com/ros-controls/ros_control/issues/201)
+released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
 to see the progress. Meantime, we need to disable the gazebo-ros-control compilation:
 
 ~~~
