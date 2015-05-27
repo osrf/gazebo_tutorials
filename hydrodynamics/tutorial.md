@@ -3,28 +3,88 @@
 This tutorial describes how to use the `BuoyancyPlugin` in concert with the
 `LiftDragPlugin` to simulate the behavior of underwater objects.
 
-## Demo
+# Prerequisites
+See [this tutorial]() for an overview of the `LiftDragPlugin`.
 
-First, open the `underwater.world` environment with Gazebo paused:
+# Background
+
+## Buoyancy
+
+Buoyancy is the force opposing gravity exerted on an object immersed in a fluid.
+It is due to the pressure increase in the volume of fluid when the object is
+submerged. Buoyancy is the reason some objects float in water.
+
+## Using the BuoyancyPlugin
+The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each link
+in the model and applies the force to the center of volume of the link.
+
+The following parameters can be specified to the plugin SDF, but all parameters are optional.
+
+* `fluid_density`: The density of the fluid surrounding the object in kilograms/cubic meters.
+Defaults to 1000 kg/m^3, the density of water.
+* `link` element:
+..* `name`: an attribute of the `link` element. Must match the name of an existing link
+in the model.
+..* `center_of_volume`: The center of volume of the link in the link frame. A point in
+3-space. Automatically calculated if unspecified.
+..* `volume`: The volume of the link in cubic meters. Automatically calculated if unspecified.
+
+If the link's center of volume and volume are not specified, they will be calculated
+from the dimensions of the collision shapes that compose the object. This calculation
+will be accurate if the object is composed of simple shapes (boxes, cylinders, and spheres),
+but a bounding box approximation is used for meshes, polyline shapes, etc.
+
+Here is an example `BuoyancyPlugin` block:
+
+~~~
+<model name="boat">
+  <link name="body">
+    <!-- ... link info here ... -->
+  </link>
+
+  <plugin name="BuoyancyPlugin" filename="libBuoyancyPlugin.so">
+    <!-- a viscous liquid -->
+    <fluid_density>2000</fluid_density>
+    <link name="body">
+      <center_of_volume>1 2 3</center_of_volume>
+      <volume>50</volume>
+    </link>
+  </plugin>
+</model>
+~~~
+
+# Demo
+Open the `underwater.world` environment with Gazebo paused:
 
 ```
 gazebo --verbose worlds/underwater.world -u
 ```
 
-(((picture)))
+[[file:files/submarines.png]]
 
-This world contains three submarines. The white submarine will float to the top
-of the world, the black submarine will sink to the ground plane, and the yellow
-submarine will maintain a constant height if left undisturbed.
+This world contains three submarines. When you unpause Gazebo, the white submarine
+will float to the top of the world, the black submarine will sink to the ground
+plane, and the yellow submarine will maintain a constant height if left undisturbed.
 
-Each submarine model has a propeller link that will move the submarine forward
-when the joint between the propeller and the body is spun.
+Each submarine model has a propeller link. The yellow submarine has been designed to
+move forward when the propeller is spun.
 
 Drag out the left hand menu and select the yellow submarine model. Under the
-"velocity" tab, give the `spinning_joint` joint a 
+"Velocity" tab, give the `spinning_joint` joint a value of 300.
 
-(((picture)))
+[[file:files/leftmenu.png]]
+
+Wait for a moment for the model to accelerate. It will turn around, then start
+propelling itself at a constant velocity. When it hits the ground plane, it will
+bounce off and propel itself along the angle of deflection.
+
+<iframe width="500" height="313" src="https://youtu.be/Y_y4iXy5YGk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Explanation
 
+### Buoyancy
+
+### Lift and Drag
+
+# Extra credit
 
