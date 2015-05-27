@@ -33,10 +33,7 @@ buoyancy force on object = volume of object*density of fluid*gravity
 ~~~
 
 ## Using the BuoyancyPlugin
-The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each link
-in the model and applies the force to the center of volume of the link.
-
-The following parameters can be specified to the plugin SDF, but all parameters are optional.
+The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each link in the model and applies the force to the center of volume of the link.  The following parameters can be specified to the plugin SDF, but all parameters are optional.
 
 * `fluid_density`: The density of the fluid surrounding the object in kilograms/cubic meters.
 Defaults to 999.1026 kg/m^3, the density of water.
@@ -78,7 +75,7 @@ Open the `underwater.world` environment with Gazebo paused:
 gazebo --verbose worlds/underwater.world -u
 ```
 
-[[file:files/submarines.png | 500px]]
+[[file:files/submarines.png | 600px]]
 
 This world contains three submarines. When you unpause Gazebo, the white submarine
 will float to the top of the world, the black submarine will sink to the ground
@@ -90,12 +87,12 @@ move forward when the propeller is spun.
 Drag out the left hand menu and select the yellow submarine model. Give the
 `spinning_joint` a small positive torque.
 
-[[file:files/leftmenu.png | 500px]]
+[[file:files/leftmenu.png | 600px]]
 
 The submarine will move forward as the propeller spins. If you increase the torque, the
 submarine will move faster.
 
-<iframe width="500" height="313" src="https://youtu.be/aK8r-cnJip4" frameborder="0"></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/aK8r-cnJip4" frameborder="0" allowfullscreen></iframe>
 
 ## Explanation
 
