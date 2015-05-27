@@ -41,11 +41,11 @@ The following parameters can be specified to the plugin SDF, but all parameters 
 * `fluid_density`: The density of the fluid surrounding the object in kilograms/cubic meters.
 Defaults to 999.1026 kg/m^3, the density of water.
 * `link` element:
-..* `name`: an attribute of the `link` element. Must match the name of an existing link
+  * `name`: an attribute of the `link` element. Must match the name of an existing link
 in the model.
-..* `center_of_volume`: The center of volume of the link in the link frame. A point in
+  * `center_of_volume`: The center of volume of the link in the link frame. A point in
 3-space. Automatically calculated if unspecified.
-..* `volume`: The volume of the link in cubic meters. Automatically calculated if unspecified.
+  * `volume`: The volume of the link in cubic meters. Automatically calculated if unspecified.
 
 If the link's center of volume and volume are not specified, they will be calculated
 from the dimensions of the collision shapes that compose the object. This calculation
