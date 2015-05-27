@@ -25,7 +25,8 @@ submerging that object in the fluid. The weight of the fluid is the force due to
 gravity on the fluid. To find this force, we must know the mass of the displaced
 fluid, which we can derive from its volume and density. The volume of the displaced
 fluid is equal to the volume of the object that displaced the fluid. The density
-is a property of the fluid (for example, water has a density of 999 kg/m^3).
+is a known property of the fluid (for example, water has a fluid of approximately
+999 kg/m^3).
 Thus:
 
 ~~~
@@ -33,7 +34,9 @@ buoyancy force on object = volume of object*density of fluid*gravity
 ~~~
 
 ## Using the BuoyancyPlugin
-The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each link in the model and applies the force to the center of volume of the link.  The following parameters can be specified to the plugin SDF, but all parameters are optional.
+The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each
+link in the model and applies the force to the center of volume of the link. 
+The following parameters can be specified to the plugin SDF, but all parameters are optional.
 
 * `fluid_density`: The density of the fluid surrounding the object in kilograms/cubic meters.
 Defaults to 999.1026 kg/m^3, the density of water.
@@ -77,7 +80,7 @@ gazebo --verbose worlds/underwater.world -u
 
 [[file:files/submarines.png | 600px]]
 
-This world contains three submarines. When you unpause Gazebo, the white submarine
+This world contains three submarines. When Gazebo is unpaused, the white submarine
 will float to the top of the world, the black submarine will sink to the ground
 plane, and the yellow submarine will maintain a constant height if left undisturbed.
 
@@ -89,8 +92,8 @@ Drag out the left hand menu and select the yellow submarine model. Give the
 
 [[file:files/leftmenu.png | 600px]]
 
-The submarine will move forward as the propeller spins. If you increase the torque, the
-submarine will move faster.
+The submarine will move forward as the propeller spins. Increasing the torque will
+cause the submarine to propel forward faster.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/aK8r-cnJip4" frameborder="0" allowfullscreen></iframe>
 
@@ -99,7 +102,7 @@ submarine will move faster.
 ### Buoyancy
 The white submarine has a density of 500 kg/m^3. It immediately floats to the
 top of the world when simulation is unpaused because the buoyancy force is greater
-than gravity. On the other hand, the black submarine's density is 1500 kg/m^3, so
+than gravity. On the other hand, the black submarine has a density is 1500 kg/m^3, so
 it sinks to the ground plane. The yellow submarine has a density of exactly 999.1026
 kg/m^3, so it floats at equilibrium unless disturbed by other forces.
 
