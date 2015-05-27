@@ -78,7 +78,7 @@ Open the `underwater.world` environment with Gazebo paused:
 gazebo --verbose worlds/underwater.world -u
 ```
 
-[[file:files/submarines.png]]
+[[file:files/submarines.png | 500px]]
 
 This world contains three submarines. When you unpause Gazebo, the white submarine
 will float to the top of the world, the black submarine will sink to the ground
@@ -90,12 +90,12 @@ move forward when the propeller is spun.
 Drag out the left hand menu and select the yellow submarine model. Give the
 `spinning_joint` a small positive torque.
 
-[[file:files/leftmenu.png]]
+[[file:files/leftmenu.png | 500px]]
 
 The submarine will move forward as the propeller spins. If you increase the torque, the
 submarine will move faster.
 
-<iframe width="500" height="313" src="https://youtu.be/aK8r-cnJip4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="500" height="313" src="https://youtu.be/aK8r-cnJip4" frameborder="0"></iframe>
 
 ## Explanation
 
@@ -107,5 +107,11 @@ it sinks to the ground plane. The yellow submarine has a density of exactly 999.
 kg/m^3, so it floats at equilibrium unless disturbed by other forces.
 
 ### Lift and Drag
-The submarine propellers are constructed so that 
+The submarine propellers are constructed so that spinning the propeller joint generates
+drag forces in forward direction.
 
+For each propeller blade, the lift and drag forces are applied at the center of pressure
+of the blade, approximately 70% of the radius from the center of the propeller along
+the axis of the blade.
+
+(( picture ))
