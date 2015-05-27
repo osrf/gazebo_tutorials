@@ -108,10 +108,15 @@ kg/m^3, so it floats at equilibrium unless disturbed by other forces.
 
 ### Lift and Drag
 The submarine propellers are constructed so that spinning the propeller joint generates
-drag forces in forward direction.
+drag forces in forward direction. The blades are tilted such that the angle of attack for
+the blades is always less 45 degrees. The propeller blades spin in the plane orthogonal to
+the direction of forward motion. Because lift and drag are orthogonal, a lift force gets
+generated in the forward direction. The lift force on the propeller causes the entire
+body to move forward.
 
 For each propeller blade, the lift and drag forces are applied at the center of pressure
 of the blade, approximately 70% of the radius from the center of the propeller along
-the axis of the blade.
-
-(( picture ))
+the axis of the blade. The center of pressure is also the point at which the velocity is
+measured for calculating the lift and drag forces. This is important for a rotating body
+because if the center of the propeller were used to calculate lift and drag, the forces
+would always be zero.
