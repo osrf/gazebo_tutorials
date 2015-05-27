@@ -77,12 +77,4 @@ Slope of the first portion of the alpha-lift coefficient curve.
 Slope of the second portion of the alpha-lift coefficient curve.
 * `cda_stall`: The ratio of coefficient of drag and alpha slope after stall.
 
-## Hydrodynamics: Submarine world
-
-To simulate objects floating underwater, this world uses Gazebo's `BuoyancyPlugin`,
-which
-
-https://youtu.be/Y_y4iXy5YG
-
-
 ## Fixed wing model
