@@ -25,7 +25,7 @@ submerging that object in the fluid. The weight of the fluid is the force due to
 gravity on the fluid. To find this force, we must know the mass of the displaced
 fluid, which we can derive from its volume and density. The volume of the displaced
 fluid is equal to the volume of the object that displaced the fluid. The density
-is a property of the fluid (for example, water has a density of 1000 kg/m^3).
+is a property of the fluid (for example, water has a density of 999 kg/m^3).
 Thus:
 
 ~~~
@@ -39,7 +39,7 @@ in the model and applies the force to the center of volume of the link.
 The following parameters can be specified to the plugin SDF, but all parameters are optional.
 
 * `fluid_density`: The density of the fluid surrounding the object in kilograms/cubic meters.
-Defaults to 1000 kg/m^3, the density of water.
+Defaults to 999.1026 kg/m^3, the density of water.
 * `link` element:
 ..* `name`: an attribute of the `link` element. Must match the name of an existing link
 in the model.
@@ -87,16 +87,15 @@ plane, and the yellow submarine will maintain a constant height if left undistur
 Each submarine model has a propeller link. The yellow submarine has been designed to
 move forward when the propeller is spun.
 
-Drag out the left hand menu and select the yellow submarine model. Under the
-"Velocity" tab, give the `spinning_joint` joint a value of 300.
+Drag out the left hand menu and select the yellow submarine model. Give the
+`spinning_joint` a small positive torque.
 
 [[file:files/leftmenu.png]]
 
-Wait for a moment for the model to accelerate. It will turn around, then start
-propelling itself at a constant velocity. When it hits the ground plane, it will
-bounce off and propel itself along the angle of deflection.
+The submarine will move forward as the propeller spins. If you increase the torque, the
+submarine will move faster.
 
-<iframe width="500" height="313" src="https://youtu.be/Y_y4iXy5YGk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="500" height="313" src="https://youtu.be/aK8r-cnJip4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Explanation
 
@@ -104,10 +103,9 @@ bounce off and propel itself along the angle of deflection.
 The white submarine has a density of 500 kg/m^3. It immediately floats to the
 top of the world when simulation is unpaused because the buoyancy force is greater
 than gravity. On the other hand, the black submarine's density is 1500 kg/m^3, so
-it sinks to the ground plane. The yellow submarine has a density of exactly 1000
+it sinks to the ground plane. The yellow submarine has a density of exactly 999.1026
 kg/m^3, so it floats at equilibrium unless disturbed by other forces.
 
 ### Lift and Drag
-
-# Extra credit
+The submarine propellers are constructed so that 
 
