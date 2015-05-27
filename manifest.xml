@@ -216,6 +216,11 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Aerodynamics" ref='lift_drag'>
+      <markdown version="3.0+">lift_drag/tutorial.md</markdown>
+      <description>Simulate aerodynamic robots and vehicles with the LiftDragPlugin.</description>
+      <skill>advanced</skill>
+    </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
