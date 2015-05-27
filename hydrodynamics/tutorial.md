@@ -4,15 +4,33 @@ This tutorial describes how to use the `BuoyancyPlugin` in concert with the
 `LiftDragPlugin` to simulate the behavior of underwater objects.
 
 # Prerequisites
-See [this tutorial]() for an overview of the `LiftDragPlugin`.
+See [this tutorial](http://gazebosim.org/tutorials?tut=lift_drag&branch=lift_drag)
+for an overview of the `LiftDragPlugin`.
 
 # Background
 
 ## Buoyancy
 
-Buoyancy is the force opposing gravity exerted on an object immersed in a fluid.
+[Buoyancy](http://en.wikipedia.org/wiki/Buoyancy) is the force opposing gravity
+exerted on an object immersed in a fluid.
 It is due to the pressure increase in the volume of fluid when the object is
-submerged. Buoyancy is the reason some objects float in water.
+submerged. There is greater pressure at the bottom of the column of fluid (in the
+direction of gravity) than there is at the top. Buoyancy is due to this pressure
+difference: it is the tendency for objects to move towards lower pressure. Buoyancy
+is the reason some objects float in water.
+
+By [Archimedes' principle](http://en.wikipedia.org/wiki/Archimedes%27_principle), 
+the buoyancy force on an object is equal to the weight of the fluid displaced by
+submerging that object in the fluid. The weight of the fluid is the force due to
+gravity on the fluid. To find this force, we must know the mass of the displaced
+fluid, which we can derive from its volume and density. The volume of the displaced
+fluid is equal to the volume of the object that displaced the fluid. The density
+is a property of the fluid (for example, water has a density of 1000 kg/m^3).
+Thus:
+
+~~~
+buoyancy force on object = volume of object*density of fluid*gravity
+~~~
 
 ## Using the BuoyancyPlugin
 The `BuoyancyPlugin` is a model plugin that calculates the buoyancy force for each link
@@ -83,6 +101,7 @@ bounce off and propel itself along the angle of deflection.
 ## Explanation
 
 ### Buoyancy
+The white submarine has a density of 500 kg/m^3, 
 
 ### Lift and Drag
 
