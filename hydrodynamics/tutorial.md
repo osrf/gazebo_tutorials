@@ -101,7 +101,11 @@ bounce off and propel itself along the angle of deflection.
 ## Explanation
 
 ### Buoyancy
-The white submarine has a density of 500 kg/m^3, 
+The white submarine has a density of 500 kg/m^3. It immediately floats to the
+top of the world when simulation is unpaused because the buoyancy force is greater
+than gravity. On the other hand, the black submarine's density is 1500 kg/m^3, so
+it sinks to the ground plane. The yellow submarine has a density of exactly 1000
+kg/m^3, so it floats at equilibrium unless disturbed by other forces.
 
 ### Lift and Drag
 
