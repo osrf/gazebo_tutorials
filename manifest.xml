@@ -225,8 +225,8 @@
       <skill>advanced</skill>
     </tutorial>
 
-    <tutorial title="Aerodynamics" ref='lift_drag'>
-      <markdown version="3.0+">lift_drag/tutorial.md</markdown>
+    <tutorial title="Aerodynamics" ref='aerodynamics'>
+      <markdown version="3.0+">aerodynamics/tutorial.md</markdown>
       <description>Simulate aerodynamic robots and vehicles with the LiftDragPlugin.</description>
       <skill>advanced</skill>
     </tutorial>
@@ -865,7 +865,7 @@
         <tutorial>friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
-        <tutorial>lift_drag</tutorial>
+        <tutorial>aerodynamics</tutorial>
         <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
