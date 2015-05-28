@@ -226,6 +226,12 @@
     </tutorial>
 
 
+    <tutorial title="Hydrodynamics" ref='hydrodynamics'>
+      <markdown version="3.0+">hydrodynamics/tutorial.md</markdown>
+      <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -854,6 +860,7 @@
         <tutorial>friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
+        <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
       </tutorials>
