@@ -85,15 +85,17 @@ Open the `cessna_demo.world` environment with Gazebo:
 gazebo --verbose worlds/cessna_demo.world
 ~~~
 
-[[file:files/submarines.png | 600px]]
+[[file:files/cessna_demo.png | 600px]]
 
 This world contains a model of the Cessna C-172 with three different plugin
 types:
 
-* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh): This model plugin exposes the topic ~/cessna_c172/control for controlling the thrust and control surfaces via Gazebo messages. It also publishes the state of the model into ~/cessna_c172/state. Please, read
-the documentation included in the header file of this plugin for a detailed
-explanation of its required and optional plugins. Here is the plugin block
-included in our `cessna_demo.world`:
+* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh): This model plugin exposes the topic `~/cessna_c172/control`
+for controlling the thrust and control surfaces via Gazebo messages. It also
+publishes the state of the model into the topic `~/cessna_c172/state`.
+Please, read the documentation included in the header file of this plugin for a
+detailed explanation of its required and optional plugins. Here is the plugin
+block included in our `cessna_demo.world`:
 
   ~~~
   <!-- A plugin for controlling the thrust and control surfaces -->
@@ -114,29 +116,29 @@ angle of the control surfaces and the thrust power. Next you can find the Cessna
 control keys:
 
 ~~~
-  a Increase thrust (+1 %).
-  z Decrease thrust (-1 %).
-  s Increase ailerons + flaps angle (+1 degree).
-  x Decrease ailerons + flaps angle (-1 degree).
-  d Increase elevators angle (+1 degree).
-  c Decrease elevators angle (-1 degree).
-  f Increase rudder angle (+1 degree).
-  v Decrease rudder angle (-1 degree).
+  a Increase thrust (+1 %)
+  z Decrease thrust (-1 %)
+  s Increase ailerons + flaps angle (+1 degree)
+  x Decrease ailerons + flaps angle (-1 degree)
+  d Increase elevators angle (+1 degree)
+  c Decrease elevators angle (-1 degree)
+  f Increase rudder angle (+1 degree)
+  v Decrease rudder angle (-1 degree)
 ~~~
 
-* [LiftDragPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh): The propeller will generate thrust based on its angular
-speed. The control surfaces will generate different forces according to their
-specific angles.
+* [LiftDragPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/LiftDragPlugin):
+The propeller will generate thrust based on its angular speed. The control
+surfaces will generate different forces according to their specific angles.
 
-Open a terminal and execute the folling command to visualize the state of the
-Cessna:
+Open a new terminal and execute the following command to visualize the state of
+the Cessna:
 
 ~~~
 gz topic -e /gazebo/default/cessna_c172/state
 ~~~
 
-Go ahead and press 'a' to increase the thrust up to 50%. The propeller should
-start spinning and the model should gain speed along the landing strip.
+Go ahead and press 'a' to increase the thrust up to 50% (0.5). The propeller
+should start spinning and the model should gain speed along the landing strip.
 
 Press 'x' to change ailerons and flaps up to 30 degrees (0.52 rads). Your model
 should take off.
