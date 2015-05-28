@@ -865,6 +865,7 @@
         <tutorial>friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
+        <tutorial>lift_drag</tutorial>
         <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
