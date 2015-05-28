@@ -95,7 +95,7 @@ Drag out the left hand menu and select the yellow submarine model. Give the
 The submarine will move forward as the propeller spins. Increasing the
 torque will cause the submarine to propel forward faster.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/aK8r-cnJip4" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Jmz-N7zqK8g" frameborder="0" allowfullscreen></iframe>
 
 ## Explanation
 
