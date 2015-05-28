@@ -1,11 +1,11 @@
 # Overview
 
-This tutorial describes how to use the [BuoyancyPlugin]() in concert with the
-[LiftDragPlugin]() to simulate the behavior of underwater objects.
+This tutorial describes how to use the [BuoyancyPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1BuoyancyPlugin.html) in concert with the
+[LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html) to simulate the behavior of underwater objects.
 
 # Prerequisites
 See [this tutorial](http://gazebosim.org/tutorials?tut=lift_drag&cat=physics)
-for an overview of the [LiftDragPlugin]().
+for an overview of the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
 
 # Background
 
@@ -37,7 +37,7 @@ buoyancy force on object = volume of object*density of fluid*gravity
 
 ## Using the BuoyancyPlugin
 
-The `BuoyancyPlugin` is a [Model plugin]() that calculates the buoyancy force for each link in the model and applies the force to the center of volume of the link.  The following optional plugin parameters can be specified using SDF.
+The `BuoyancyPlugin` is a [Model plugin](http://gazebosim.org/api/code/dev/classgazebo_1_1ModelPlugin.html) that calculates the buoyancy force for each link in the model and applies the force to the center of volume of the link.  The following optional plugin parameters can be specified using SDF.
 
 * `<fluid_density>`: The density of the fluid surrounding the object in kilograms/cubic meters.  Defaults to 999.1026 kg/m^3, the density of water.
 * `<link>`:
