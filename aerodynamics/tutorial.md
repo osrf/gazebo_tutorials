@@ -78,3 +78,75 @@ Slope of the second portion of the alpha-lift coefficient curve.
 * `cda_stall`: The ratio of coefficient of drag and alpha slope after stall.
 
 ## Fixed wing model
+
+Open the `cessna_demo.world` environment with Gazebo:
+
+~~~
+gazebo --verbose worlds/cessna_demo.world
+~~~
+
+[[file:files/submarines.png | 600px]]
+
+This world contains a model of the Cessna C-172 with three different plugin
+types:
+
+* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh): This model plugin exposes the topic ~/cessna_c172/control for controlling the thrust and control surfaces via Gazebo messages. It also publishes the state of the model into ~/cessna_c172/state. Please, read
+the documentation included in the header file of this plugin for a detailed
+explanation of its required and optional plugins. Here is the plugin block
+included in our `cessna_demo.world`:
+
+  ~~~
+  <!-- A plugin for controlling the thrust and control surfaces -->
+  <plugin name="cessna_control" filename="libCessnaPlugin.so">
+    <propeller>cessna_c172::propeller_joint</propeller>
+    <propeller_max_rpm>2500</propeller_max_rpm>
+    <left_aileron>cessna_c172::left_aileron_joint</left_aileron>
+    <left_flap>cessna_c172::left_flap_joint</left_flap>
+    <right_aileron>cessna_c172::right_aileron_joint</right_aileron>
+    <right_flap>cessna_c172::right_flap_joint</right_flap>
+    <elevators>cessna_c172::elevators_joint</elevators>
+    <rudder>cessna_c172::rudder_joint</rudder>
+  </plugin>
+  ~~~
+
+* [CessnaGUIPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh): This GUI plugin publishes Cessna messages to modify the
+angle of the control surfaces and the thrust power. Next you can find the Cessna
+control keys:
+
+~~~
+  a Increase thrust (+1 %).
+  z Decrease thrust (-1 %).
+  s Increase ailerons + flaps angle (+1 degree).
+  x Decrease ailerons + flaps angle (-1 degree).
+  d Increase elevators angle (+1 degree).
+  c Decrease elevators angle (-1 degree).
+  f Increase rudder angle (+1 degree).
+  v Decrease rudder angle (-1 degree).
+~~~
+
+* [LiftDragPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh): The propeller will generate thrust based on its angular
+speed. The control surfaces will generate different forces according to their
+specific angles.
+
+Open a terminal and execute the folling command to visualize the state of the
+Cessna:
+
+~~~
+gz topic -e /gazebo/default/cessna_c172/state
+~~~
+
+Go ahead and press 'a' to increase the thrust up to 50%. The propeller should
+start spinning and the model should gain speed along the landing strip.
+
+Press 'x' to change ailerons and flaps up to 30 degrees (0.52 rads). Your model
+should take off.
+
+Restore ailerons and flaps to 0 degrees by pressing 's' to make the Cessna
+cruise.
+
+You can press 'f' and 'v' to change de rudder angle and make the plane to turn
+and face the landing strip.
+
+Shutdown the engine by pressing 'z' until the thrust is 0 and press 's' to set
+flaps and ailerons to 30 degrees again. If you're a good pilot you should be
+able to land on the ground.
