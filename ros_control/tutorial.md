@@ -134,6 +134,7 @@ We'll next need to create a configuration file and launch file for our ros_contr
 ### Create new package
 
 ~~~
+mkdir ~/catkin_ws
 cd ~/catkin_ws
 catkin_create_pkg MYROBOT_control ros_control ros_controllers
 cd MYROBOT_control
@@ -144,7 +145,8 @@ mkdir launch
 ### Create a .yaml config file
 
 The PID gains and controller settings must be saved in a yaml file that gets loaded to the param server via the roslaunch file.
-In the config folder of your <tt>MYROBOT_control</tt> package, adapt the following RRBot example to your robot:
+In the config folder of your <tt>MYROBOT\_control</tt> package, adapt the following RRBot example to your robot as
+`MYROBOT_control/config/rrbot_control.yaml`:
 
 ~~~
 rrbot:
@@ -169,7 +171,7 @@ See the next section for more details about these controllers.
 ### Create a roslaunch file
 
 Create a roslaunch file for starting the ros\_control controllers.
-Within the launch folder create a `MYROBOT\_control.launch` file and adapt the following RRBot example to your robot:
+Within the launch folder create a `MYROBOT_control/launch/MYROBOT_control.launch` file and adapt the following RRBot example to your robot:
 
 ~~~
 <launch>
