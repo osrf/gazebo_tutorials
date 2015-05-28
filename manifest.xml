@@ -372,6 +372,13 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Parallel physics" ref='parallel'>
+      <markdown version="6.0+">parallel/tutorial.md</markdown>
+      <description>Take advantage of improved physics performance with two different threading options.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
       <description>How to apply lightmaps to a model visual.</description>
@@ -863,6 +870,7 @@
         <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
+        <tutorial>parallel</tutorial>
       </tutorials>
     </category>
 
