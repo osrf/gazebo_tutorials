@@ -218,16 +218,14 @@
       <skill>beginner</skill>
     </tutorial>
 
-
     <tutorial title="Fluids" ref='fluids'>
       <markdown version="3.0+">fluids/tutorial.md</markdown>
       <description>Fluid simulation on the GPU using Fluidix library.</description>
       <skill>advanced</skill>
     </tutorial>
 
-
     <tutorial title="Hydrodynamics" ref='hydrodynamics'>
-      <markdown version="3.0+">hydrodynamics/tutorial.md</markdown>
+      <markdown version="6.0+">hydrodynamics/tutorial.md</markdown>
       <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
       <skill>advanced</skill>
     </tutorial>
