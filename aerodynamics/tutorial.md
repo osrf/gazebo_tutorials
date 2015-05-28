@@ -34,7 +34,7 @@ reference plane is usually horizontal (perpendicular to gravity).
 When modeling aerodynamics, we must consider the relationship between angle of
 attack and coefficient of lift for a body:
 
-[[file:files/lift_curve.png]]
+[[file:files/lift_curve.png | 600px]]
 
 The alpha-lift curve for an object is often determined experimentally.
 
@@ -54,7 +54,7 @@ relationship between angle of attack (or alpha) and lift coefficient.
 Instead of a smooth curve, the alpha/lift coefficient curve is simplified
 as two lines.
 
-[[file:files/lift_curve_simplified.png]]
+[[file:files/lift_curve_simplified.png | 600px]]
 
 The same assumption is made about the relationship between angle of attack
 and drag coefficient.
