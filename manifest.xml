@@ -37,6 +37,15 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Windows" ref='install_on_windows'>
+      <markdown version="6.0">install_on_windows/tutorial_6-0.md</markdown>
+      <description>Installation instructions for Windows.</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Old versions (prior to gazebo4)" ref='install'>
       <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
       <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
@@ -209,13 +218,17 @@
       <skill>beginner</skill>
     </tutorial>
 
-
     <tutorial title="Fluids" ref='fluids'>
       <markdown version="3.0+">fluids/tutorial.md</markdown>
       <description>Fluid simulation on the GPU using Fluidix library.</description>
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Hydrodynamics" ref='hydrodynamics'>
+      <markdown version="6.0+">hydrodynamics/tutorial.md</markdown>
+      <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
+      <skill>advanced</skill>
+    </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
@@ -673,6 +686,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Simulation API" ref='haptix_sim_api'>
+      <markdown version="6.0+">haptix_sim_api/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
       <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
       <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
@@ -699,6 +718,7 @@
         <tutorial>install_ubuntu</tutorial>
         <tutorial>install_other_linux</tutorial>
         <tutorial>install_on_mac</tutorial>
+        <tutorial>install_on_windows</tutorial>
 
         <!-- keep name for historical reasons -->
         <tutorial>install</tutorial>
@@ -847,6 +867,7 @@
         <tutorial>friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
+        <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
       </tutorials>
@@ -920,6 +941,7 @@
         <tutorial>haptix_install</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
+        <tutorial>haptix_sim_api</tutorial>
         <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_optitrack</tutorial>

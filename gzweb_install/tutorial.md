@@ -21,7 +21,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use gzserver
     ~~~
 
     >We will install the nodejs package in the following step.
-  
+
  1. Next, install the dependencies from a terminal:
 
     ~~~
@@ -140,6 +140,11 @@ Gzweb is a graphical interface which communicates with gzserver. To use gzserver
         npm ERR! error installing websocket@1.0.8
         npm WARN This failure might be due to the use of legacy binary "node"
 
+    **Or along the lines of:**
+
+        /usr/bin/env: node: No such file or directory
+        There are node-gyp build errors, exiting.
+
     A: In Debian systems, the binary file "node" has been renamed to "nodejs" to avoid a name conflict. Try adding a symlink to the correct name:
 
         sudo ln -s /usr/bin/nodejs /usr/bin/node
@@ -157,4 +162,12 @@ Gzweb is a graphical interface which communicates with gzserver. To use gzserver
     A: There might be a conflict between the gyp version installed and the gyp version in node-gyp. Try removing gyp:
 
         sudo apt-get remove gyp
+
+ * **Q: When running `./deploy.sh`, I have problems finding GTS, like this:**
+
+        ~/gzweb/tools/gzcoarse.cc:18:17: fatal error: gts.h : no such file or directory, #include <gts.h>
+
+    A: It seems that your Gazebo installation didn't install GTS headers. Try installing them manually:
+
+        sudo apt-get install libgts-dev
 

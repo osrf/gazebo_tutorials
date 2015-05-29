@@ -78,8 +78,6 @@ element is a child of the surface XML element. The bitmask value may be specifie
 
 ### Default value
 
-Each geometry has a default value of 0x01 for its collide bitmask. Many
-people use the ground_plane model provided by Gazebo, so this model has
-a bitmask of 0xffff. This value makes it possible for most objects to
-collide with the ground plane. You may use the upper 16-bits for objects
-that you do not want to collide with the ground plane.
+Each geometry, including the ground plane, has a default value of 0xffff for
+its collide bitmask. You may use the upper 16-bits for objects that you do
+not want to collide with the ground plane, and other default objects.
