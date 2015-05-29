@@ -94,7 +94,7 @@ gazebo --verbose worlds/cessna_demo.world
 This world contains a model of the Cessna C-172 with three different plugin
 types:
 
-* [CessnaPlugin](http://gazebosim.org/api/code/devclassgazebo_1_1CessnaPlugin.html):
+* [CessnaPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1CessnaPlugin.html):
 This model plugin exposes the topic `~/cessna_c172/control` for controlling the
 thrust and control surfaces via Gazebo messages. It also publishes the state of
 the model into the topic `~/cessna_c172/state`. Please, read the documentation
@@ -116,7 +116,7 @@ required and optional parameters. Here is the plugin block included in our
   </plugin>
   ~~~
 
-* [CessnaGUIPlugin](http://gazebosim.org/api/code/devclassgazebo_1_1CessnaGUIPlugin.html):
+* [CessnaGUIPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1CessnaGUIPlugin.html):
 This GUI plugin publishes Cessna messages to modify the angle of the control
 surfaces and the thrust power. Next you can find the available Cessna control
 keys:
