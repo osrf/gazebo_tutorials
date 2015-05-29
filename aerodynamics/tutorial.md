@@ -209,7 +209,7 @@ should start spinning and the model should gain speed along the landing strip.
 Use the `Down-arrow key` to pitch up and take-off. Try to balance the plane
 on the air with the arrow keys.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/iMHGnEhOIhs" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" src="https://www.youtube.com/embed/iMHGnEhOIhs" frameborder="0" allowfullscreen></iframe>
 
 You can explore all the different control combinations detailed before while
 you are flying.
