@@ -63,6 +63,56 @@ as two lines.
 The same assumption is made about the relationship between angle of attack
 and drag coefficient.
 
+Note in this example, the airfoil has non-zero camber, and has a net
+positive lift at zero angle of attack.  To obtain equivalent representation
+using the current Gazebo `LiftDragPlugin` plugin parameters, shift the entire
+curve to the right such that the zero lift point corresponds to zero
+angle of attack. And we can label the original zero angle of attack
+location as `a0` in the shifted curve, i.e. `a0` is 5 degrees.
+Also shift the stall angle accordingly, i.e. `alpha_stall` is now
+19.2 degrees.
+
+Here is an example plugin that implements the lift coefficient
+values and stall angles from figure above,
+
+~~~
+      <plugin name="lifting_surface" filename="libLiftDragPlugin.so">
+
+        <!-- taken from the lift curve figure -->
+        <!-- alpha_0 is 5 degrees -->
+        <a0>0.08727</a0>
+        <!-- alpha_stall is 19.3 degrees -->
+        <alpha_stall>0.3368</alpha_stall>
+        <!-- slope of the lift curve to the left of the stall angle -->
+        <cla>5.418</cla>
+        <!-- slope of the lift curve to the right of the stall angle -->
+        <cla_stall>-2.1419</cla_stall>
+
+        <!-- below are just random values in this example -->
+        <cda>0.0</cda>
+        <cda_stall>0.0</cda_stall>
+        <cma>0.0</cma>
+        <cma_stall>0.0</cma_stall>
+        <area>3</area>
+        <fluid_density>1.2041</fluid_density>
+        <forward>-1 0 0</forward>
+        <upward>0 -1 0</upward>
+        <cp>0 0 1</cp>
+        <link_name>lifting_surface_link</link_name>
+        <radial_symmetry>false</radial_symmetry>
+      </plugin>
+~~~
+
+Further, the airfoil coordinate system is defined by graph below:
+
+[[file:files/airfoil_coordinates.png | 600px]]
+
+Note without simulating induced drag, the airfoil forward direction indicates the intended forward slight direction of the airfoil parallel to the chord line, and the upward direction is the direction perpendicular to the forward direction towards the lifting direction with positive angle of attack. By convention, Drag is opposite of the inertial velocity of the body, and lift is perpendicular to drag direction towards positive angle of attack.
+
+Lastly, the center of pressure is defined as an offset in the parent link frame. This is where the free stream velocity is measured, as well as where the computed lift, drag forces and moments are applied. See plot below:
+
+[[file:files/cp_location.png | 600px]]
+
 ## Input parameters
 
 The following parameters are used by the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
