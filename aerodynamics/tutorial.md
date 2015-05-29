@@ -31,7 +31,7 @@ the object's motion.
 
 [Angle of attack](http://en.wikipedia.org/wiki/Angle_of_attack), AOA, or alpha,
 is the angle between the direction of motion of the body and the reference
-plane. The reference plane is usually horizontal (perpendicular to gravity).
+plane. The reference plane is spanned by the `<forward>` vector and the spanwise direction vector (where spanwise direction = `<forward>` cross `<upward>`).
 
 [[file:files/angleOfAttack.jpg | 600px]]
 
