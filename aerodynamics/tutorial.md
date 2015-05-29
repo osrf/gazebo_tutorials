@@ -33,6 +33,8 @@ the object's motion.
 between the direction of motion of the body and the reference plane. The
 reference plane is usually horizontal (perpendicular to gravity).
 
+[[file:files/angleOfAttack.jpg | 600px]]
+
 When modeling aerodynamics, we must consider the relationship between angle of
 attack and coefficient of lift for a body:
 
