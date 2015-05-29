@@ -207,6 +207,96 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
+#### Install in a catkin workspace
+
+Another method for installing to a local directory is to use a
+[catkin workspace](http://wiki.ros.org/catkin/workspaces),
+which supports plain cmake packages as well as catkin packages.
+This allows multiple versions of gazebo to be compiled side-by-side.
+Environment variables do not need to be added to the `~/.bashrc`;
+rather they are set by sourcing the appropriate setup script.
+Using catkin requires the following python packages to be installed:
+
+~~~
+# Ubuntu
+sudo apt-get install python-catkin-pkg python-catkin-tools
+# Other platforms
+sudo pip install catkin-pkg catkin-tools
+~~~
+
+Here is an example for building gazebo against custom versions
+of sdformat, bullet, and DART.
+
+First, create a workspace folder.
+Since it is easy to use multiple catkin workspaces,
+it is convenient to place them in a single folder, such as `~/ws`.
+For this tutorial, the bash variable `WS` will be used to refer
+to the absolute path of the workspace folder.
+In this case, we will name the folder `gazebo_dart`:
+
+~~~
+export WS=$HOME/ws/gazebo_dart
+mkdir -p ${WS}/src
+~~~
+
+Clone catkin and the packages you want to build into this folder:
+
+~~~
+cd ${WS}/src
+git clone https://github.com/ros/catkin.git
+git clone https://github.com/bulletphysics/bullet3.git
+git clone https://github.com/dartsim/dart.git
+hg clone https://bitbucket.org/osrf/sdformat
+hg clone https://bitbucket.org/osrf/gazebo
+~~~
+
+Add [package.xml](http://wiki.ros.org/catkin/package.xml)
+files for the plain cmake packages:
+
+~~~
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml > ${WS}/src/bullet3/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
+~~~
+
+Initialize the catkin workspace:
+
+~~~
+cd ${WS}
+catkin init
+~~~
+
+Then build the workspace using `catkin build`.
+Note that bullet and DART have several important cmake options.
+Using bullet with gazebo requires `BUILD_SHARED_LIBS=ON`
+and has better accuracy if `USE_DOUBLE_PRECISION=ON`.
+Using DART with Gazebo is compatible with `BUILD_CORE_ONLY=ON`,
+which requires many fewer dependencies to be installed.
+For now, these options do not overlap, so they can be sent to
+all the packages:
+
+~~~
+cd ${WS}
+catkin build -vi --cmake-args \
+  -DBUILD_CORE_ONLY=ON \
+  -DBUILD_SHARED_LIBS=ON \
+  -DUSE_DOUBLE_PRECISION=ON
+~~~
+
+This will build all the packages in order with verbose output.
+Omit the `-vi` option to see less console output.
+
+Once the build has completed,
+source the setup file located in `${WS}/devel/setup.bash`
+to run gazebo:
+
+~~~
+. ${WS}/devel/setup.bash
+gazebo -e bullet
+gazebo -e dart
+~~~
+
 ### Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
