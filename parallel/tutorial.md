@@ -17,51 +17,9 @@ and analysis, please refer to the parallel physics reports on the Gazebo webpage
 The first strategy attempts to parallelize simulation of non-interacting entities.
 Simulated entities are interacting if they are connected by an articulated joint (such
 as a revolute or universal joint) or are connected via contact. Groups of interacting
-entities are clustered into“islands” that are mathematically decoupled from each other.
+entities are clustered into "islands" that are mathematically decoupled from each other.
 Thus each island can be simulated in parallel. After each step, the clustering of islands
 is recalculated.
-
-### Example Usage
-### Set up catkin workspace
-Currently, the sdformat needs to be build using a specific branch, we have to set up a
-catkin workspace to build gazebo and sdformat againt system installs of dependencies.
-
-Using catkin requires the python `catkin-pkg` to be installed:
-~~~
-# Ubuntu
-sudo apt-get install python-catkin-pkg
-# Others
-sudo pip install catkin-pkg
-~~~
-
-Here we create a `ws` folder as workspace under `HOME` directory. Then we clone
-catkin, gazebo and sdformat into the `ws/src` folder.
-~~~
-cd ~
-mkdir -p ws/src
-cd ws/src
-git clone https://github.com/ros/catkin.git
-hg clone https://bitbucket.org/osrf/gazebo
-hg clone https://bitbucket.org/osrf/sdformat
-~~~
-
-Then we update gazebo and sdformat to the diagnostics related branch:
-~~~
-cd gazebo
-hg update diagnostics_scpeters
-cd ../sdformat
-hg update island_threads
-~~~
-
-Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
-and [package_sdformat.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
-copy them to the cloned `gazebo` and `sdformat` source folder as `package.xml`
-~~~
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ~/ws/src/gazebo/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ~/ws/src/sdformat/package.xml
-~~~
-
-
 
 ## Position Error Correction Thread
 The second strategy attempts to speed up the constraint resolution algorithm within
@@ -78,3 +36,114 @@ while the velocity is updated without interpenetration error correction. These t
 equations can be solved in parallel, due to the independence between each other, two
 threads can be used simultaneously to do the computation, which comprises the second
 parallelization strategy.
+
+# Running the code
+Currently these parallelization strategies require building gazebo and sdformat from
+source.
+The following section provides instructions for doing this with a catkin workspace.
+
+## Set up catkin workspace
+Currently, the sdformat needs to be build using a specific branch, we have to set up a
+catkin workspace to build gazebo and sdformat againt system installs of dependencies.
+
+Using catkin requires the python `catkin-pkg` to be installed:
+
+~~~
+# Ubuntu
+sudo apt-get install python-catkin-pkg
+# Others
+sudo pip install catkin-pkg
+~~~
+
+Here we create a `ws` folder as workspace under `HOME` directory. Then we clone
+catkin, gazebo and sdformat into the `ws/src` folder.
+
+~~~
+export WS=${HOME}/ws/gazebo_parallel
+mkdir -p ${WS}/src
+cd ${WS}/src
+git clone https://github.com/ros/catkin.git
+hg clone https://bitbucket.org/osrf/gazebo
+hg clone https://bitbucket.org/osrf/sdformat
+~~~
+
+Then we update gazebo and sdformat to the diagnostics related branch:
+
+~~~
+cd ${WS}/src/gazebo
+hg update diagnostics_scpeters
+cd ${WS}/src/sdformat
+hg update island_threads
+~~~
+
+Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
+and [package_sdformat.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
+copy them to the cloned `gazebo` and `sdformat` source folder as `package.xml`
+
+~~~
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
+~~~
+
+Gazebo can then be built using the `catkin_make_isolated` command:
+
+~~~
+cd ${WS}
+./src/catkin/bin/catkin_make_isolated
+~~~
+
+If you want to use diagnostic timers to evaluate peformance,
+define the `ENABLE_DIAGNOSTICS` symbol during compilation.
+This will output the diagnostic timing data to the `~/.gazebo/diagnostics` folder.
+
+~~~
+cd ${WS}
+./src/catkin/bin/catkin_make_isolated -DENABLE_DIAGNOSTICS=1
+~~~
+
+## Run the code
+
+Threading is currently enabled using custom sdformat parameters
+on the [island_threads branch](https://bitbucket.org/osrf/sdformat/branches/compare/island_threads%0Ddefault#diff):
+
+* `island_threads`: integer number of threads to use for island threading
+* `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
+
+These flags have been added to [physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
+in several world files on the `diagnostics_scpeters` branch of gazebo:
+
+* [test/worlds/revolute_joint_test.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
+* [worlds/pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/pr2.world#cl-12)
+* [worlds/dual_pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/dual_pr2.world#cl-12)
+
+Simulate two pr2 robots without threading:
+
+~~~
+. ${WS}/devel_isolated/setup.bash
+gazebo --verbose -o unthrottled0 \
+  ${WS}/src/gazebo/worlds/dual_pr2.world
+~~~
+
+Simulate two pr2 robots with island threading:
+
+~~~
+. ${WS}/devel_isolated/setup.bash
+gazebo --verbose -o unthrottled2 \
+  ${WS}/src/gazebo/worlds/dual_pr2.world
+~~~
+
+Simulate two pr2 robots with threaded position error correction:
+
+~~~
+. ${WS}/devel_isolated/setup.bash
+gazebo --verbose -o split_unthrottled0 \
+  ${WS}/src/gazebo/worlds/dual_pr2.world
+~~~
+
+Simulate two pr2 robots with both types of threading:
+
+~~~
+. ${WS}/devel_isolated/setup.bash
+gazebo --verbose -o split_unthrottled2 \
+  ${WS}/src/gazebo/worlds/dual_pr2.world
+~~~
