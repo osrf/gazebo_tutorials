@@ -1,8 +1,8 @@
 # Overview
 
 This tutorial gives an overview of the physical phenomena of lift and drag
-and how they are implemented in Gazebo in the `LiftDragPlugin`. After this
-tutorial, you will be able to simulate underwater and aerodynamic robots.
+and how they are implemented in Gazebo in the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html). After this
+tutorial, you will be able to simulate aerodynamic robots.
 
 # Physics background
 
@@ -22,11 +22,13 @@ due to fluid flowing past the body in the component perpendicular to the flow
 direction.
 
 ## Drag
-[Drag](https://en.wikipedia.org/wiki/Drag_%28physics%29) forces are the forces
-on a body due to fluid flowing past the body that acts opposite to the object's
-motion.
+
+[Drag](https://en.wikipedia.org/wiki/Drag_%28physics%29) forces are the
+forces on a body due to fluid flowing past the body that acts opposite to
+the object's motion.
 
 ## Angle of attack and alpha slope
+
 [Angle of attack](http://en.wikipedia.org/wiki/Angle_of_attack) is the angle
 between the direction of motion of the body and the reference plane. The
 reference plane is usually horizontal (perpendicular to gravity).
@@ -49,7 +51,7 @@ when lift coefficient decreases as a function of angle of attack.
 
 # Using the `LiftDragPlugin`
 
-The `LiftDragPlugin` makes an important assumption about the
+The [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html) makes an important assumption about the
 relationship between angle of attack (or alpha) and lift coefficient.
 Instead of a smooth curve, the alpha/lift coefficient curve is simplified
 as two lines.
@@ -60,6 +62,8 @@ The same assumption is made about the relationship between angle of attack
 and drag coefficient.
 
 ## Input parameters
+
+The following parameters are used by the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
 
 * `link_name`: Name of the link affected by the group of lift/drag properties.
 * `air_density`: Density of the fluid this model is suspended in.
@@ -90,7 +94,7 @@ gazebo --verbose worlds/cessna_demo.world
 This world contains a model of the Cessna C-172 with three different plugin
 types:
 
-* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh):
+* [CessnaPlugin](http://gazebosim.org/api/code/devclassgazebo_1_1CessnaPlugin.html):
 This model plugin exposes the topic `~/cessna_c172/control` for controlling the
 thrust and control surfaces via Gazebo messages. It also publishes the state of
 the model into the topic `~/cessna_c172/state`. Please, read the documentation
@@ -112,7 +116,7 @@ required and optional parameters. Here is the plugin block included in our
   </plugin>
   ~~~
 
-* [CessnaGUIPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh):
+* [CessnaGUIPlugin](http://gazebosim.org/api/code/devclassgazebo_1_1CessnaGUIPlugin.html):
 This GUI plugin publishes Cessna messages to modify the angle of the control
 surfaces and the thrust power. Next you can find the available Cessna control
 keys:
@@ -131,7 +135,7 @@ keys:
   3         Preset for landing
 ~~~
 
-* [LiftDragPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/LiftDragPlugin):
+* [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html):
 We are using this plugin in some of the plane elements to generate lift and
 drag. The propeller will generate thrust according to its angular speed. The
 control surfaces will generate different forces according to their specific
@@ -147,9 +151,10 @@ gz topic -e /gazebo/default/cessna_c172/state
 In the Gazebo window, right click on the model and press `Follow`. The user
 camera will follow the plane during the flight and you will not loose it.
 
-Go ahead and press '1' to start the preset for take-off. The propeller
+Press '1' to start the preset for take-off. The propeller
 should start spinning and the model should gain speed along the landing strip.
-Use the `Down-key` smoothly to pitch up and take-off. Try to balance the plane
+
+Use the `Down-arrow key` to pitch up and take-off. Try to balance the plane
 on the air with the arrow keys.
 
 You can explore all the different control combinations detailed before while
