@@ -298,6 +298,10 @@ gazebo -e bullet
 gazebo -e dart
 ~~~
 
+Other packages can be added to the catkin workspace
+as long as they have a package.xml that
+lists their dependencies.
+
 ### Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
