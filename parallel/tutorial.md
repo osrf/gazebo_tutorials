@@ -112,7 +112,7 @@ on the [island_threads branch](https://bitbucket.org/osrf/sdformat/branches/comp
 These flags have been added to [physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
 in several world files on the `diagnostics_scpeters` branch of gazebo:
 
-* [test/worlds/revolute_joint_test.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
+* [test/worlds/revolute\_joint\_test.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
 * [worlds/pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/pr2.world#cl-12)
 * [worlds/dual_pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/dual_pr2.world#cl-12)
 
