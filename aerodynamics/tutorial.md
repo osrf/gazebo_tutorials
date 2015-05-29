@@ -108,6 +108,7 @@ Further, the airfoil coordinate system is defined by graph below:
 [[file:files/airfoil_coordinates.png | 600px]]
 
 Note without simulating induced drag, the airfoil `forward` direction indicates the intended forward flight direction of the airfoil parallel to the chord line, and the `upward` direction is the direction perpendicular to the `forward` direction towards the lifting direction corresponding to positive angle of attack. By convention, Drag is opposite of the inertial velocity of the body, and lift is perpendicular to drag direction towards positive angle of attack.
+The reference plane is spanned by the `<forward>` vector and the spanwise direction vector (where spanwise direction = `<forward>` cross `<upward>`).
 
 Lastly, the center of pressure is defined as an offset in the parent link frame. This is where the free stream velocity is measured, as well as where the computed lift, drag forces and moments are applied. See plot below:
 
