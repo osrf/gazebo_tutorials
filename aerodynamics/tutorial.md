@@ -90,12 +90,13 @@ gazebo --verbose worlds/cessna_demo.world
 This world contains a model of the Cessna C-172 with three different plugin
 types:
 
-* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh): This model plugin exposes the topic `~/cessna_c172/control`
-for controlling the thrust and control surfaces via Gazebo messages. It also
-publishes the state of the model into the topic `~/cessna_c172/state`.
-Please, read the documentation included in the header file of this plugin for a
-detailed explanation of its required and optional plugins. Here is the plugin
-block included in our `cessna_demo.world`:
+* [CessnaPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaPlugin.hh):
+This model plugin exposes the topic `~/cessna_c172/control` for controlling the
+thrust and control surfaces via Gazebo messages. It also publishes the state of
+the model into the topic `~/cessna_c172/state`. Please, read the documentation
+included in the header file of this plugin for a detailed explanation of its
+required and optional parameters. Here is the plugin block included in our
+`cessna_demo.world`:
 
   ~~~
   <!-- A plugin for controlling the thrust and control surfaces -->
@@ -111,24 +112,30 @@ block included in our `cessna_demo.world`:
   </plugin>
   ~~~
 
-* [CessnaGUIPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh): This GUI plugin publishes Cessna messages to modify the
-angle of the control surfaces and the thrust power. Next you can find the Cessna
-control keys:
+* [CessnaGUIPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/CessnaGUIPlugin.hh):
+This GUI plugin publishes Cessna messages to modify the angle of the control
+surfaces and the thrust power. Next you can find the available Cessna control
+keys:
 
 ~~~
-  a Increase thrust (+1 %)
-  z Decrease thrust (-1 %)
-  s Increase ailerons + flaps angle (+1 degree)
-  x Decrease ailerons + flaps angle (-1 degree)
-  d Increase elevators angle (+1 degree)
-  c Decrease elevators angle (-1 degree)
-  f Increase rudder angle (+1 degree)
-  v Decrease rudder angle (-1 degree)
+  w         Increase thrust (+10 %)
+  s         Decrease thrust (-10 %)
+  d         Increase rudder angle (+1 degree)
+  a         Decrease rudder angle (-1 degree)
+  Left-Key  Left roll (+1 degree)
+  Right-Key Right roll (+1 degree)
+  Up-Key    Pitch down (+1 degree)
+  Down-Key  Pitch up (+1 degree)
+  1         Preset for take-off
+  2         Preset for cruise
+  3         Preset for landing
 ~~~
 
 * [LiftDragPlugin](https://bitbucket.org/osrf/gazebo/raw/default/plugins/LiftDragPlugin):
-The propeller will generate thrust based on its angular speed. The control
-surfaces will generate different forces according to their specific angles.
+We are using this plugin in some of the plane elements to generate lift and
+drag. The propeller will generate thrust according to its angular speed. The
+control surfaces will generate different forces according to their specific
+angles and speed.
 
 Open a new terminal and execute the following command to visualize the state of
 the Cessna:
@@ -137,18 +144,15 @@ the Cessna:
 gz topic -e /gazebo/default/cessna_c172/state
 ~~~
 
-Go ahead and press 'a' to increase the thrust up to 50% (0.5). The propeller
+In the Gazebo window, right click on the model and press `Follow`. The user
+camera will follow the plane during the flight and you will not loose it.
+
+Go ahead and press '1' to start the preset for take-off. The propeller
 should start spinning and the model should gain speed along the landing strip.
+Use the `Down-key` smoothly to pitch up and take-off. Try to balance the plane
+on the air with the arrow keys.
 
-Press 'x' to change ailerons and flaps up to 30 degrees (0.52 rads). Your model
-should take off.
+You can explore all the different control combinations detailed before while
+you are flying.
 
-Restore ailerons and flaps to 0 degrees by pressing 's' to make the Cessna
-cruise.
-
-You can press 'f' and 'v' to change de rudder angle and make the plane to turn
-and face the landing strip.
-
-Shutdown the engine by pressing 'z' until the thrust is 0 and press 's' to set
-flaps and ailerons to 30 degrees again. If you're a good pilot you should be
-able to land on the ground.
+<iframe width="420" height="315" src="https://youtu.be/iMHGnEhOIhs" frameborder="0" allowfullscreen></iframe>
