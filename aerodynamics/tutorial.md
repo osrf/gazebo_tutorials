@@ -29,9 +29,9 @@ the object's motion.
 
 ## Angle of attack and alpha slope
 
-[Angle of attack](http://en.wikipedia.org/wiki/Angle_of_attack) is the angle
-between the direction of motion of the body and the reference plane. The
-reference plane is usually horizontal (perpendicular to gravity).
+[Angle of attack](http://en.wikipedia.org/wiki/Angle_of_attack), AOA, or alpha,
+is the angle between the direction of motion of the body and the reference
+plane. The reference plane is usually horizontal (perpendicular to gravity).
 
 [[file:files/angleOfAttack.jpg | 600px]]
 
