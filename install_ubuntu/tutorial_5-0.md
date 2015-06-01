@@ -20,7 +20,7 @@
 
 1. Setup keys
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        sudo apt-key adv --keyserver pgp.mit.edu --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 
 1. Install Gazebo.
 

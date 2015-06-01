@@ -29,8 +29,9 @@ If this is your first time installing the simulator, there's some system configu
 
 1. Retrieve and install the keys for the ROS and DRC repositories.
 
-        wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-        wget http://packages.osrfoundation.org/drc.key -O - | sudo apt-key add -
+        sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+        sudo apt-key adv --keyserver pgp.mit.edu --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
+
 
 1. Update apt-get and install the DRC Simulator.
 
@@ -94,7 +95,8 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 1. Configure your system to install packages from [ROS hydro](http://www.ros.org/wiki/hydro/Installation/Ubuntu).  E.g., on precise:
 
         sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
-        wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+        sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+
 
 1. Install compile-time prerequisites:
 
@@ -199,7 +201,7 @@ Here we'll explain how to build drcsim from source. You will need a working inst
 1. Configure your system to install packages from [ROS Indigo](http://www.ros.org/wiki/indigo/Installation/Ubuntu). E.g., on trusty:
 
         sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
-        wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+        sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 1. Install compile-time prerequisites:
 

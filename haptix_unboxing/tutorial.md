@@ -84,7 +84,7 @@ If this command does not work, you need to tell your computer it's okay to accep
 
 ~~~
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 sudo apt-get update
 sudo apt-get install handsim
 ~~~
