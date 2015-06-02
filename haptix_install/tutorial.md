@@ -190,6 +190,13 @@ package) is located at the bottom left of the on-screen GUI.
 
 In this case, the simulator version is 0.5.1.
 
+From 0.8.0 version on, the version number in the menu located at the right
+top corner of the hand GUI, after pressed the gear icon:
+
+[[file:files/haptix_version2.png|400px]]
+
+In this case, the simulator version is 0.8.1
+
 ###Client SDK version
 
 ####Windows
@@ -228,6 +235,7 @@ two packages.  The following table summarizes compatible combinations:
 
 Simulator Version : Client SDK Version
 
+* 0.8.x : 0.7.y
 * 0.7.x : 0.6.y
 * 0.6.x : 0.5.y
 

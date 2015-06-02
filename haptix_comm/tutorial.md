@@ -188,7 +188,8 @@ and Windows. In Windows this can be done from the Windows command line `echo %IG
 To be completely sure, logout from your user session, login again and open Visual Studio.
 
 **Third check:** Is the Windows firewall affecting the communication? It can be
-disabled from the Windows Control Panel and try to launch the Visual Studio
+disabled from the Windows Control Panel (remember that there are different profiles in
+the Windows firewall, be sure of disable them all) and try to launch the Visual Studio
 application again.
 
 **Fourth check:** Is the router cutting the communication? Several solutions:
@@ -196,6 +197,20 @@ Login into the router, disable any kind of firewall. If you can not do that,
 connect both machines using an ethernet cable directly. You will need to
 manually setup both in the same subnet (192.168.X.Y/255.255.255.0 and
 192.168.X.Y+1/255.255.255.0).
+
+### 'Error setting socket option <IP_MULTICAST_IF>'
+
+Probably you have an incorrect IP adress set in the `IGN_IP` variable.
+
+## The handsim simulator displays: 'NodeShared: no route to host'
+
+The error means that there is no connection from the Linux simulator back
+to the Windows system. It is probably because of the Windows Firewall.
+
+## The hand is moving in the simulator, but erratically, not smoothly
+
+If you are using a Wireless connection, it could happen that latency is
+making the interaction fail. Please try using a wired connection.
 
 ### In the Windows Firewall question, I clicked the wrong option (cancel)
 
