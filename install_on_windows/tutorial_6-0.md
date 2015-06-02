@@ -88,22 +88,26 @@ Windows `cmd` for configuring and building.  You might also need to
         cd ..\..\sdformat
         mkdir build       
         cd build
+        #if you want debug, run ..\configure Debug
         ..\configure
         nmake
         nmake install
 
-    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release.
+    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release or 
+    gz-ws/sdformat/build/install/Debug.
 
 1. In the same Windows shell, configure and build Gazebo:
 
         cd ..\..\gazebo
         mkdir build
         cd build
+        #if you want debug, run ..\configure Debug
         ..\configure
         nmake gzclient
         nmake gzserver
 
-    Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release.
+    Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release or
+    gz-ws/gazebo/build/install/Debug.
 
 ## Running
 
