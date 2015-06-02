@@ -91,7 +91,7 @@ Windows `cmd` for configuring and building.  You might also need to
         nmake gzclient
         nmake gzserver
 
-    Once this all works (which it currently does not, by a long shot): you should now have an installation of gazebo in gz-ws/gazebo/build/install/Release.
+    Once this all works you should now have an installation of gazebo in gz-ws/gazebo/build/install/Release.
 
 ## Running
 
@@ -153,7 +153,7 @@ If you run into issues, use --verbose to get more information.
 
 ### Running gzclient
 
-If you run into issues, use --verbose to get more information. A known issues is that it does not run on VirtualBox 3.4, with Ubuntu 15.04 Host. The current theory is that it does not support off-screen frame buffering. It has been confirmed to work on VMWare Player with windws 7 guest and Ubuntu 14.04 Host. More details will be added as testing continues.
+If you run into issues, use --verbose to get more information. A known issue is that it does not run on VirtualBox 3.4, with Ubuntu 15.04 Host. The current theory is that it does not support off-screen frame buffering. It has been confirmed to work on VMWare Player with windws 7 guest and Ubuntu 14.04 Host. More details will be added as testing continues.
 
 
 ### Building Ogre Examples
