@@ -4,9 +4,9 @@ Instrument tools are provided to dump physical data into [HDF5](https://www.hdfg
 format. The datasets, together with
 the [Benchmark Problems for Multibody Dynamis (BPMD)](https://grasp.robotics.cs.rpi.edu/bpmd/)
 framework are used to compare different methods in solving multibody systems with bilateral
-joints and unilateral frictional contacts in an unbiased way. These datasets will help analyze
-and construct new, better and faster solvers, let researchers concentrate on instead of the whole
-physics engine.
+joints and unilateral frictional contacts in an unbiased way. These datasets will help researchers
+to concentrate on analysis of existing methods and construction of more accurate solvers,
+without worrying about implementation of the whole physics engine.
 
 # Example Usage
 
