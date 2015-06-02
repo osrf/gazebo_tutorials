@@ -29,6 +29,8 @@ The elevator's control logic is:
 1. Close the door.
 1. Go to #1.
 
+Floor requests are not queued, and the elevator will complete its movement
+before responding to a new request.
 
 # Parameters
 
