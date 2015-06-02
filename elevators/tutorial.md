@@ -1,7 +1,7 @@
 # Overview
 
 This tutorial describes how to use elevators in Gazebo. An elevator in
-Gazebo consists of a car, that move up and down, with a door. Primatic joints control the car and door.
+Gazebo consists of a car, that moves up and down, with a door. Primatic joints control the car and door.
 
 # Functionality
 
