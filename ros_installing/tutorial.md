@@ -6,7 +6,8 @@ See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_ov
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Hydro](http://www.ros.org/wiki/hydro) and ROS [Indigo](http://www.ros.org/wiki/indigo).
+with ROS [Jade](http://www.ros.org/wiki/jade), ROS [Indigo](http://www.ros.org/wiki/indigo)
+and ROS [Hydro](http://www.ros.org/wiki/hydro), 
 It is recommended to first read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
@@ -17,7 +18,9 @@ You should understand the basic concepts of ROS and have gone through the [ROS T
 
 ### Install ROS
 
-We recommend for these ROS integration tutorials you install (`ros-hydro-desktop-full` or `ros-indigo-desktop-full`) so that you have all the necessary packages.
+We recommend for these ROS integration tutorials you install
+(`ros-jade-desktop-full`, `ros-indigo-desktop-full` or
+`ros-hydro-desktop-full`) so that you have all the necessary packages.
 
 See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for more details. Be sure to source your ROS setup.bash script by following the instructions on the ROS installation page.
 
@@ -70,11 +73,16 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
-* [ROS Hydro](http://ros.org/wiki/hydro):
+* [ROS Jade](http://ros.org/wiki/jade):
+
+Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
+released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
+to see the progress.
 
 ~~~
-sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
+sudo apt-get install ros-jade-gazebo-ros-pkgs 
 ~~~
+
 
 * [ROS Indigo](http://ros.org/wiki/indigo):
 
@@ -82,6 +90,11 @@ sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
 sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 ~~~
 
+* [ROS Hydro](http://ros.org/wiki/hydro):
+
+~~~
+sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
+~~~
 
 If this installation method ends successfully for you, jump to [testing gazebo with ROS](#Testing_Gazebo_with_ROS_Integration).
 
@@ -120,6 +133,45 @@ Make sure `git` is installed on your Ubuntu machine:
 ~~~
 sudo apt-get install git
 ~~~
+
+##### ROS Jade
+
+Jade is using the gazebo 5.x series, start by installing it:
+
+~~~
+sudo apt-get install -y libgazebo5-dev
+~~~
+
+Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
+
+~~~
+cd ~/catkin_ws/src
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b jade-devel
+~~~
+
+Check for any missing dependencies using rosdep:
+
+~~~
+rosdep update
+rosdep check --from-paths . --ignore-src --rosdistro jade
+~~~
+
+You can automatically install the missing dependencies using rosdep via debian install:
+
+~~~
+rosdep install --from-paths . --ignore-src --rosdistro jade -y
+~~~
+
+Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
+released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
+to see the progress. Meantime, we need to disable the gazebo-ros-control compilation:
+
+~~~
+touch gazebo_ros_pkgs/gazebo_ros_control/CATKIN_IGNORE
+~~~
+
+Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
+
 
 ##### ROS Indigo
 
