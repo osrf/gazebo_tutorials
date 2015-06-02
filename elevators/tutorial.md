@@ -64,6 +64,8 @@ This world has two floors and a single elevator. Place a simple shape on the
 landing in front of the elevator to trigger a floor request. This floor
 request takes place thanks to the Occupied Region Event, described next.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LuteVPy92-0" frameborder="0" allowfullscreen></iframe>
+
 # Occupied Region Event
 
 The elevator plugin works well the [OccupiedEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1OccupiedEventSource.html) component of the [SimEventPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html). The OccupiedEvent sends a message whenever a 3D region becomes occupied with a model. Refer to the [OccupiedEvent tutorial](http://gazebosim.org/tutorials?tut=occupiedevent&cat=plugins) for more information.
