@@ -21,8 +21,8 @@ Download listener.cc and CMakeLists.txt from the above link and put them into to
 ~~~
 mkdir ~/listener
 cd ~/listener
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
+wget https://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/stand_alone/listener/listener.cc
+wget https://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/stand_alone/listener/CMakeLists.txt
 mkdir build
 cd build
 cmake ..
