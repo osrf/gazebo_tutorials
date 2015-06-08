@@ -46,7 +46,7 @@ int main(int argc, char** argv)
   // Initialize sensor index to Lilypad motor index mapping
   // These sensor indices correspond to the JHU APL MPL arm
   std::map<int, char> sensorMotorIndexMapping;
-  for (unsigned int i = 0; i < robotInfo.contact_sensor_count; i++)
+  for (unsigned int i = 0; i < robotInfo.contact_sensor_count; ++i)
   {
     // Uninitialized
     sensorMotorIndexMapping[i] = '0';
