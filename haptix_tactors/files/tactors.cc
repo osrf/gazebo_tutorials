@@ -83,7 +83,7 @@ int main(int argc, char** argv)
     if (hx_read_sensors(&sensor) != hxOK)
       printf("hx_read_sensors(): Request error.\n");
 
-    for (unsigned int i = 0; i < robotInfo.contact_sensor_count; i++)
+    for (unsigned int i = 0; i < robotInfo.contact_sensor_count; ++i)
     {
       if (sensor.contact[i] > minContactForce)
       {
