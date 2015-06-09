@@ -192,7 +192,9 @@ keys:
 We are using this plugin in some of the plane elements to generate lift and
 drag. The propeller will generate thrust according to its angular speed. The
 control surfaces will generate different forces according to their specific
-angles and speed.
+angles and speed.  The [LiftDragPlugin aerodynamic parameters](https://bitbucket.org/osrf/gazebo/src/70d6c88e2486367659420743b25f5592ce4569df/worlds/cessna_demo.world?at=default#cl-105)
+were approximated using values from
+[jsbsim for Cessna 172P](https://github.com/tridge/jsbsim/blob/master/aircraft/c172p/c172p.xml).
 
 Open a new terminal and execute the following command to visualize the state of
 the Cessna:
