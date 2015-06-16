@@ -224,6 +224,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Aerodynamics" ref='aerodynamics'>
+      <markdown version="3.0+">aerodynamics/tutorial.md</markdown>
+      <description>Simulate aerodynamic robots and vehicles with the LiftDragPlugin.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Hydrodynamics" ref='hydrodynamics'>
       <markdown version="6.0+">hydrodynamics/tutorial.md</markdown>
       <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
@@ -242,6 +248,14 @@
       <description>Use the graphical interface to apply force and torque to your models.</description>
       <skill>beginner</skill>
     </tutorial>
+
+    <tutorial title="Instrument HDF5 Datasets" ref='instrument_hdf5_datasets'>
+      <markdown version="1.9+">instrument_hdf5_datasets/tutorial.md</markdown>
+      <description>How to dump simulation data into HDF5 format for benchmark.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+
 
     <tutorial title="Gazebo Components" ref="components">
       <markdown version="1.9+">components/tutorial.md</markdown>
@@ -293,6 +307,18 @@
 
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
+
+    <tutorial title="Elevators" ref='elevators'>
+      <markdown version="6.0+">elevators/tutorial.md</markdown>
+      <description>How to create and use elevators.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Occupied Event" ref='occupiedevent'>
+      <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
+      <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
 
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9">contact_sensor/tutorial.md</markdown>
@@ -369,6 +395,13 @@
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="Parallel physics" ref='parallel'>
+      <markdown version="6.0+">parallel/tutorial.md</markdown>
+      <description>Take advantage of improved physics performance with two different threading options.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
 
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
@@ -771,6 +804,7 @@
       <tutorials>
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
+        <tutorial>instrument_hdf5_datasets</tutorial>
       </tutorials>
     </category>
 
@@ -782,6 +816,16 @@
         <tutorial>plugins_world</tutorial>
         <tutorial>plugins_world_properties</tutorial>
         <tutorial>system_plugin</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Plugins" skill="intermediate" ref="plugins">
+      <description>The following tutorials describe how to use plugins that are available in Gazebo.</description>
+      <tutorials>
+        <tutorial>elevators</tutorial>
+        <tutorial>occupiedevent</tutorial>
+        <tutorial>aerodynamics</tutorial>
+        <tutorial>hydrodynamics</tutorial>
       </tutorials>
     </category>
 
@@ -858,9 +902,11 @@
         <tutorial>friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
+        <tutorial>aerodynamics</tutorial>
         <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
+        <tutorial>parallel</tutorial>
       </tutorials>
     </category>
 

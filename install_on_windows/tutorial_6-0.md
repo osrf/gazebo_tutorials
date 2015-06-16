@@ -10,7 +10,7 @@ sources together with all the dependencies and compilation artifacts.
 
 ## Supported compilers
 
-At this moment, compilation has been tested on Windows 7 and is supported when
+At this moment, compilation has been tested on Windows 7 and 8.1 and is supported when
 using [Visual Studio 2013](https://www.visualstudio.com/downloads/).
 Patches for other versions are welcome.
 
@@ -83,28 +83,31 @@ Windows `cmd` for configuring and building.  You might also need to
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
 
-
 1. In the same Windows shell, configure and build Sdformat
 
         cd ..\..\sdformat
         mkdir build       
         cd build
+        #if you want debug, run ..\configure Debug
         ..\configure
         nmake
         nmake install
 
-    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release.
+    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release or 
+    gz-ws/sdformat/build/install/Debug.
 
 1. In the same Windows shell, configure and build Gazebo:
 
         cd ..\..\gazebo
         mkdir build
         cd build
+        #if you want debug, run ..\configure Debug
         ..\configure
-        nmake
-        nmake install
+        nmake gzclient
+        nmake gzserver
 
-    Once this all works (which it currently does not, by a long shot): you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release.
+    Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release or
+    gz-ws/gazebo/build/install/Debug.
 
 ## Running
 
@@ -112,14 +115,21 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Adjust all paths to load dll
 
+    1. if in Debug
+
          cd gz-ws\gazebo\build
-         ..\win_addpath.bat Debug|Release
+         ..\win_addpath.bat Debug
+
+    2. if in Release
+
+         cd gz-ws\gazebo\build
+         ..\win_addpath.bat Release
 
 1. Create an ogre plugins.cfg file
 
     1. `cd gz-ws\gazebo\build\gazebo`
 
-    1. If in Debug: Copy in the following into `plugins.cfg`
+    1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
     
             # Define plugin folder
             PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
@@ -152,6 +162,19 @@ Windows `cmd` for configuring and building.  You might also need to
 ## Debugging
 
 Just in case that you need to debug problems on Gazebo
+
+### Running gzserver
+
+If you run into issues, use --verbose to get more information.
+
+### Running gzclient
+
+If you run into issues, use --verbose to get more information.
+A known issue is that it does not run on VirtualBox 3.4, with Ubuntu 15.04 Host.
+The current theory is that it does not support off-screen frame buffering.
+It has been confirmed to work on VMWare Player with windws 7 guest and Ubuntu 14.04 Host.
+More details will be added as testing continues.
+
 
 ### Building Ogre Examples
 
