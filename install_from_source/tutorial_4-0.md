@@ -205,7 +205,8 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
     sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
+see [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 #### Install in a catkin workspace
 
@@ -215,12 +216,20 @@ which supports plain cmake packages as well as catkin packages.
 This allows multiple versions of gazebo to be compiled side-by-side.
 Environment variables do not need to be added to the `~/.bashrc`;
 rather they are set by sourcing the appropriate setup script.
-Using catkin requires the following python packages to be installed:
+Using catkin requires the some extra python packages to be installed.
+If you are using Ubuntu and have configured your system
+to use the ROS package repository
+([see here for instructions](http://wiki.ros.org/jade/Installation/Ubuntu#Installation)),
+then you can use the following `apt-get` commands:
 
 ~~~
-# Ubuntu
 sudo apt-get install python-catkin-pkg python-catkin-tools
-# Other platforms
+~~~
+
+For other platforms, you can use `pip`
+(you can also use `pip` with Ubuntu, but `apt-get` is recommended):
+
+~~~
 sudo pip install catkin-pkg catkin-tools
 ~~~
 
