@@ -62,7 +62,11 @@ Gazebo supports multiple physics engines in addition to the modified version of 
 
   ***Bullet Support***
 
-  [Bullet](http://code.google.com/p/bullet/) version 2.82 is needed for Gazebo 4.0. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+  [Bullet](https://github.com/bulletphysics/bullet3) version 2.82 is needed for Gazebo 4.0.
+  In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package.
+  Be sure to follow Step 2 in the
+  [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu)
+  to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update        
         sudo apt-get install libbullet2.82-dev
@@ -205,7 +209,8 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
     sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
+1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
+see [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
 
 ### Uninstalling Source-based Install
 
