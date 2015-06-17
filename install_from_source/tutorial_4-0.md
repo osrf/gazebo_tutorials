@@ -217,7 +217,7 @@ see [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?cat=connect_ro
 Another method for installing to a local directory is to use a
 [catkin workspace](http://wiki.ros.org/catkin/workspaces),
 which supports plain cmake packages as well as catkin packages.
-This allows multiple versions of gazebo to be compiled side-by-side.
+This allows multiple versions of gazebo to be installed side-by-side.
 Environment variables do not need to be added to the `~/.bashrc`;
 rather they are set by sourcing the appropriate setup script.
 Using catkin requires the some extra python packages to be installed.
