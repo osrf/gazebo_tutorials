@@ -68,9 +68,9 @@ First see [Sim API tutorial Example section](http://gazebosim.org/tutorials?tut=
 
 Download tutorial files:
 
- - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/raw/world_sim_api/world_sim_api/files/custom_haptix.world)
+ - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
 
- - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/raw/world_sim_api/world_sim_api/files/custom_world.m)
+ - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
 To run the example, start gazebo in terminal:
 
