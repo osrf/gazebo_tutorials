@@ -21,13 +21,13 @@ the documentation for building a gazebo world can be found
 
 First, build a world using SDF:
 
-    <include lang='xml' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/> 
+<include lang='xml' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/> 
 
 Next, write a simple Octave/Matlab to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-    <include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/> 
+<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/> 
 
 ## Start Gazebo handsim simulation
 
