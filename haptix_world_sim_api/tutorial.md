@@ -60,11 +60,7 @@ it comes into contact with other objects:
 
 <include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/> 
 
-## Start Gazebo handsim simulation
-
-## Run the code: MATLAB, Octave on Linux
-
-First see [Sim API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix#Example) on how to run Matlab or Octave scripts.
+## Get the code:
 
 Download tutorial files:
 
@@ -72,11 +68,17 @@ Download tutorial files:
 
  - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
+## Start Gazebo handsim simulation
+
 To run the example, start gazebo in terminal:
 
 ~~~
 gazebo custom_haptix.world
 ~~~
+
+## Run the code: MATLAB, Octave on Linux
+
+First see [Sim API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix#Example) on how to run Matlab or Octave scripts.
 
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:
