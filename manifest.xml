@@ -717,6 +717,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Simulation API with Custom World Example" ref='haptix_world_sim_api'>
+      <markdown version="6.0+">haptix_world_sim_api/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state in a custom world.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
       <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
       <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
