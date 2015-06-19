@@ -26,8 +26,6 @@ First, build a world using SDF:
 Note that this world file is very similar to the default [arat.world](https://bitbucket.org/osrf/handsim/src/62b1deba4ab2f82b7910beb959042212c3c9bfae/worlds/arat.world?at=default), with the main difference being the addition of the `sphere_visual_model`:
 
 ~~~
-<include lang='xml' from='/sphere_visual_model/' to='/model/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/>
-
     <model name="sphere_visual_model">
       <pose>0.4 0.0 1.2 0 0 3.1416</pose>
       <link name="sphere_link">
