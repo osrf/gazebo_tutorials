@@ -151,7 +151,7 @@ AtlasErrorCode AtlasInterface::get_robot_ip_address(std::string& robot_ip_addres
 #endif
 
 AtlasErrorCode start(AtlasHydraulicMode desired_power_mode,
-		int64_t* packet_seq_id)
+    int64_t* packet_seq_id)
 {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   return NO_ERRORS;
@@ -573,7 +573,7 @@ AtlasErrorCode AtlasInterface::clear_faults(int64_t* packet_seq_id)
 
 #if ATLAS_SOFTWARE_VERSION_MAJOR >= 3 && ATLAS_SOFTWARE_VERSION_MINOR >= 0
 AtlasErrorCode download_robot_log_file(std::string dest_directory = "",
-		float duration = 300.0f, std::string filename = "")
+    float duration = 300.0f, std::string filename = "")
 {
   return NO_ERRORS;
 }
