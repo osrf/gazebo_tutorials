@@ -1,6 +1,82 @@
 # Introduction
 
-This page details how developers should go about creating and contributing code to Gazebo.
+Interested in developing new features, fixing bugs, or contributing code you
+have laying around? Read on to find out how.
+
+## Development process
+
+We follow a development process designed to reduce errors, encourage
+collaboration, and make high quality code. The process may seem rigid and
+tedious, but every step is worth the effort (especially if you like
+applications that work). 
+
+### Steps to follow
+
+We will use the Gazebo repository as an example, but the step apply equally
+well to other repositories maintained by OSRF.
+
+1. Are you sure?
+> Run through this mental checklist before getting started.
+>
+> 1. Has your idea already been done, or maybe someone is already working on it?
+>
+>     Check [answers.gazebosim.org](http://answers.gazebosim.org) and the [issue tracker](https://bitbucket.org/osrf/gazebo/issues).
+>
+> 1. Get feedback from the Gazebo core team.
+>     Send an email to the [mailing list](https://groups.google.com/a/osrfoundation.org/forum/#!forum/gazebo), post a question on [answers.gazebosim.org](http://answers.gazebosim.org), or use the [issue tracker](https://bitbucket.org/osrf/gazebo/issues) to get feedback from Gazebo developers.
+
+1. [Fork Gazebo](https://bitbucket.org/osrf/gazebo/fork)
+> This will create your own personal copy of Gazebo. All of your development should take place in your fork.
+
+1. Work out of a branch: `hg branch my_new_branch_name`
+> Always work out of a new branch, never off of default. This is a good habit to get in, and will make your life easier.
+
+1. Write your code.
+> This is the fun part.
+
+1. Write tests.
+> A pull request will only be accepted if it has tests.
+
+1. Compiler warnings. 
+>  Code must have zero compile warnings. This currently only applies to Linux.
+
+1. Style
+> A tool is provided in Gazebo (and other repositories) to check for correct style. Your code must have no errors after running the following command from the root of the source tree:
+>
+> `sh tools/code_check.sh`
+>
+> The tool does not catch all style errors. See the Style section below for more information.
+
+1. Tests pass
+> There must be no failing tests. You can check by running `make test` in your build directory.
+
+1. Documentation.
+> Document all your code. Every class, function, member variable must have doxygen comments. All code in source files must have documentation that describes the functionality. This will help reviewers, and future developers.
+
+1. Review your code.
+> Before submitting your code through a pull request, take some time to review everything line-by-line. The review process will go much faster if you make sure everything is perfect before other people look at your code. There is a bit of the human-condition involved here. Folks are less likely to spend time reviewing your code if it's bad.
+
+1. Small pull requests
+> A large pull request is hard to review, and will take a long time. It is worth your time to split a large pull request into multiple smaller pull requests. For reference, here are a few examples:
+>
+> [Small, very nice](https://bitbucket.org/osrf/gazebo/pull-request/1732)
+>
+> [Medium, still okay](https://bitbucket.org/osrf/gazebo/pull-request/1700/)
+>
+> [Too large](https://bitbucket.org/osrf/gazebo/pull-request/30)
+
+1. [Pull request](https://bitbucket.org/osrf/gazebo/pull-request/new)
+> Submit a pull request when you ready.
+
+1. Review
+> At least two other people have to approve your pull request before it can be merged. Please be responsive to any questions and comments.
+
+1. [Dashboard](http://gazebosim.org/dashboard)
+> We have a dashboard that lists all open pull requests. Only pull requests above the green line can be merged, and they must also have at least two approvals.
+> We do this to encourage the review of pull requests. If you submit a pull request, then try to review other open pull requests. This will reduce the time it takes for your code to get accepted, and also gets more eyes on more code.
+
+1. Done, phew.
+> Once you have met all the requirements, you're code will be merged. Thanks for improving Gazebo!
 
 # Reduce Code Duplication 
 
@@ -15,8 +91,8 @@ Before creating a new regressions test file, check the current test files. If on
 ## Gazebo assertions
 
 ### What is an assertion?
-An assertion is a check which produces a boolean result of true or false. Developers place them in code when they want to be sure that an assumption they have made is true.
-They are aimed at detecting programming errors and should check for impossible situations in the code. If the assertion check failed, the assertion will stop the program immediately.
+
+An assertion is a check, which always produce a boolean result, that developers place in the code when want to be sure that check is always true. They are aimed to detect programming errors and should check for impossible situations in the code. If the assertion check failed, the assertion will stop the program immediately.
 
      Object * p = some_crazy_function()
      GZ_ASSERT(p != NULL, “Object from some_crazy_function should never point to NULL”)
@@ -31,22 +107,22 @@ In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
 * '''condition-to-check:''' anything returning a boolean value that should always be true.
 * '''fail msg:''' message displaied when assertion is thrown
 
-### Benefits of assertions
+### Benefits of the assertions
 
-Some of the benefits of using assertions:
-* They are really useful for not having to debug all kind of weird and unexpected errors, especially during runtime. Exact failure point appears when pass by an assertion.
-* Developer can be sure that some conditions are met at a given code point. Code becomes more reliable.
-* They help to detect not-so-obvious errors happening (affecting performance for example)
+Some of the beneficts of using the assertions:
+* They are really useful for not having to debug all kind of weird and unexpected errors, especially in runtime. Exact failure point appears when pass by an assertion.
+* Developer can be sure that some conditions are met at a given code point. Code turns more reliable.
+* Help to detect no so obvious errors happening (affecting performance for example)
 
 ### Difference between Assertion and Exception
 
-While assertions are aimed at impossible situations generated from programming errors, exceptions handle all kinds of expected errors and unusual but logically possible code situations.
+While assertions are aimed to impossible situations generated from programming errors, the exceptions handle all kind of expected errors and unusual but logically possible code situations.
 
-Let's review an example: imagine we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
+Lets review an example: imaging we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
      
      double sqrt_for_positives(double number)
 
-So what might be an assertion or exception for our revolutionary function?
+So what could be an assertion and what an exception for our revolutionary function?
 
 * Exception: if the incoming number is negative (our function only accept positive numbers), then we will thrown an exception. It was an error by the user but we should consider it a possible scenario since we are offering a public interface.
 
@@ -56,16 +132,16 @@ So what might be an assertion or exception for our revolutionary function?
 
 ### Meaningful backtraces
 
-In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most situations. These are the three levels of traces which can be obtained:
+In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most of the situations. This are the three level of traces which can be obtained:
 
 '''Maximum level of debugging support'''
-:This only can be obtained by compiling Gazebo from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up no optimizations and debugging symbols. It can be required by developers in situations especially difficult to reproduce.
+:This only can be obtained compiling Gazebo from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up no optimizations and debugging symbols. It can be required by developers in situations specially difficult to reproduce.
 
 '''Medium level of debugging support'''
-:This can be obtained by installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
+:This can be obtained installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
 
 '''Minimum level of debugging support'''
-:This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. These traces are particularly difficult to follow.
+:This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. This traces are particularly difficult to follow.
 
 ## Code Check 
 
