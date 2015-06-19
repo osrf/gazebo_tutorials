@@ -46,7 +46,7 @@ Populate it with content from below:
     gedit examples/example.cpp
     ~~~
 
-Populate it with content from below:
+* Populate it with content from below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp' />
 
 * Also create a launch file [examples/example.launch](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch)
@@ -55,7 +55,7 @@ Populate it with content from below:
     gedit examples/example.launch
     ~~~
 
-Populate it with content from below:
+* Populate it with content from below:
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch' />
 
 * Update the [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/issue_24_atlas_robot_interface_drcsim_4/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt) to look like below:
