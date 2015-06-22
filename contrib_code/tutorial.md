@@ -32,10 +32,10 @@ well to other repositories maintained by OSRF.
 > Always work out of a new branch, never off of default. This is a good habit to get in, and will make your life easier.
 
 1. Write your code.
-> This is the fun part.
+> This is the fun part (hopefully).
 
 1. Write tests.
-> A pull request will only be accepted if it has tests.
+> A pull request will only be accepted if it has tests. The tests must have at least 90% functional coverage. See the Coverage section below for more information.
 
 1. Compiler warnings. 
 >  Code must have zero compile warnings. This currently only applies to Linux.
@@ -78,6 +78,17 @@ well to other repositories maintained by OSRF.
 1. Done, phew.
 > Once you have met all the requirements, you're code will be merged. Thanks for improving Gazebo!
 
+### Internal Developers
+
+This section is meant mostly for people who have commit access to the main repositories.
+
+When submitting a pull request include the following:
+
+1. Link to a [coverage report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-coverage-trusty-amd64/).
+1. Link to a passing [homebrew build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-homebrew-amd64/).
+1. Link to a passing [no-gpu build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-no-gpu/).
+1. Link to a passing [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
+1. A statement that confirms you have tried the code on Windows.
 
 # Style
 
@@ -96,11 +107,39 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 > If a block of code spans multiple lines and is part of a flow control statement, such as an `if`, then it must be wrapped in braces. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Base.cc#cl-249)
 
 1. **++ operator**
-> This occurs mostly in `for` loops. Prefix the `++` operator, which is [slightly more effecient than postfix in some cases](http://programmers.stackexchange.com/questions/59880/avoid-postfix-increment-operator).
+> This occurs mostly in `for` loops. Prefix the `++` operator, which is [slightly more efficient than postfix in some cases](http://programmers.stackexchange.com/questions/59880/avoid-postfix-increment-operator).
 
 1. **PIMPL/Opaque pointer**
 > If you are writing a new class, it must use a private data pointer. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/World.hh?at=default#cl-479), and you can read more [here](https://en.wikipedia.org/wiki/Opaque_pointer).  
 
+# Test coverage
+
+Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
+
+1. In your `build` folder, compile Gazebo with `-DCMAKE_BUILD_TYPE=Coverage`
+
+    ~~~
+    cmake -DCMAKE_BUILD_TYPE=Coverage ..\
+    make
+    ~~~
+
+1. Run a single test, or all the tests
+
+    ~~~
+    make test
+    ~~~
+
+1. Make the coverage report
+
+    ~~~
+    make coverage
+    ~~~
+
+1. View the coverage report
+
+    ~~~
+    firefox coverage/index.html
+    ~~~
 
 # Reduce Code Duplication 
 
@@ -129,11 +168,11 @@ In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
      GZ_ASSERT(<condition to check>,<fail msg>) 
 
 * '''condition-to-check:''' anything returning a boolean value that should always be true.
-* '''fail msg:''' message displaied when assertion is thrown
+* '''fail msg:''' message displayed when assertion is thrown
 
 ### Benefits of the assertions
 
-Some of the beneficts of using the assertions:
+Some of the benefits of using the assertions:
 * They are really useful for not having to debug all kind of weird and unexpected errors, especially in runtime. Exact failure point appears when pass by an assertion.
 * Developer can be sure that some conditions are met at a given code point. Code turns more reliable.
 * Help to detect no so obvious errors happening (affecting performance for example)
