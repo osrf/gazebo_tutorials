@@ -35,7 +35,7 @@ well to other repositories maintained by OSRF.
 > This is the fun part.
 
 1. Write tests.
-> A pull request will only be accepted if it has tests. The tests must have at least 90% functional coverage. See the Test Coverage section below for more information.
+> A pull request will only be accepted if it has tests. The new functions must have at least 90% coverage. See the Test Coverage section below for more information.
 
 1. Compiler warnings. 
 >  Code must have zero compile warnings. This currently only applies to Linux.
