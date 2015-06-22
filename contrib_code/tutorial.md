@@ -32,7 +32,7 @@ well to other repositories maintained by OSRF.
 > Always work out of a new branch, never off of default. This is a good habit to get in, and will make your life easier.
 
 1. Write your code.
-> This is the fun part (hopefully).
+> This is the fun part.
 
 1. Write tests.
 > A pull request will only be accepted if it has tests. The tests must have at least 90% functional coverage. See the Test Coverage section below for more information.
