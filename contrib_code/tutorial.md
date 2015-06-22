@@ -88,6 +88,7 @@ When submitting a pull request include the following:
 1. Link to a passing [homebrew build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-homebrew-amd64/).
 1. Link to a passing [no-gpu build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-no-gpu/).
 1. Link to a passing [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
+1. Link to a passing [ABI/API report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any_to_any-abichecker-trusty-amd64/) if the pull request is targeted to a release branch.
 1. A statement that confirms you have tried the code on Windows.
 
 # Style
