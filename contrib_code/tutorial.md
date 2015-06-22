@@ -48,7 +48,28 @@ well to other repositories maintained by OSRF.
 > The tool does not catch all style errors. See the Style section below for more information.
 
 1. Tests pass
-> There must be no failing tests. You can check by running `make test` in your build directory.
+> There must be no failing tests. There are several ways to run the tests:
+  The simplest way is to run `make test` in your build directory, which will run all tests.
+  Sometimes verbose consolue output is helpful to give more information about test failures.
+  To run all tests with verbose console output, try `make test ARGS="-VV"`.
+  To run a group of subset of tests, for example the `INTEGRATION_joint_*` tests, try `make test ARGS="-R INTEGRATION_joint_*"`.
+  The `ARGS` can be combined to run a subset of tests with verbose output: `make test ARGS="-VV -R INTEGRATION_joint_*"`.
+  It is often simpler to run a single test by running its executable from the command-line: `./gazebo/sensors/INTEGRATION_physics`.
+  For tests with many sub-tests, you can also use the
+  [googletest command-line arguments](https://code.google.com/p/googletest/wiki/AdvancedGuide#Running_Test_Programs:_Advanced_Options)
+  to see which sub-tests are available (`./test/integration/INTEGRATION_physics --gtest_list_tests`)
+  and run individual sub-tests: `./test/integration/INTEGRATION_physics --gtest_filter="*JointDamping*"`.
+  Some tests fail a percentage of the time.
+  Tests can be repeated using a bash loop that appends a time-stamp to an output file for each successful run.
+  The following loop does this and terminates on the first failure:
+
+~~~
+rm -f test_count.txt
+while ./test/integration/INTEGRATION_physics
+do
+  date >> test_count.txt
+done
+~~~
 
 1. Documentation.
 > Document all your code. Every class, function, member variable must have doxygen comments. All code in source files must have documentation that describes the functionality. This will help reviewers, and future developers.
