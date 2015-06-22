@@ -80,16 +80,25 @@ well to other repositories maintained by OSRF.
 
 ### Internal Developers
 
-This section is meant mostly for people who have commit access to the main repositories.
+This section is targetd mostly for people who have commit access to the main repositories.
 
-When submitting a pull request include the following:
+In addition to the general development process, please follow these steps
+before submitting a pull request. Each step is pass/fail, where the test or
+check must pass before continuing to the next step.
 
-1. Link to a [coverage report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-coverage-trusty-amd64/).
-1. Link to a passing [homebrew build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-homebrew-amd64/).
-1. Link to a passing [no-gpu build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-no-gpu/).
-1. Link to a passing [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
-1. Link to a passing [ABI/API report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any_to_any-abichecker-trusty-amd64/) if the pull request is targeted to a release branch.
-1. A statement that confirms you have tried the code on Windows.
+1. Test on Windows.
+1. Run the style checker on your personal computer.
+1. Run all, or only relevant, tests on your personal computer.
+1. Run your branch through a jenkins [no-gpu build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-no-gpu/).
+1. Run your branch through a jenkins [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
+1. Run your branch through the [ABI/API checker](http://build.osrfoundation.org/view/gazebo/job/gazebo-any_to_any-abichecker-trusty-amd64/), if targeting a release branch.
+1. Submit the pull request, and include the following:
+  1. Link to a [coverage report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-coverage-trusty-amd64/).
+  1. Link to a passing [homebrew build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-homebrew-amd64/).
+  1. Link to a passing [no-gpu build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-no-gpu/).
+  1. Link to a passing [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
+  1. Link to a passing [ABI/API report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any_to_any-abichecker-trusty-amd64/) if the pull request is targeted to a release branch.
+  1. A statement that confirms you have tried the code on Windows.
 
 # Style
 
