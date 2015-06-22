@@ -80,7 +80,7 @@ well to other repositories maintained by OSRF.
 
 ### Internal Developers
 
-This section is targetd mostly for people who have commit access to the main repositories.
+This section is targeted mostly for people who have commit access to the main repositories.
 
 In addition to the general development process, please follow these steps
 before submitting a pull request. Each step is pass/fail, where the test or
