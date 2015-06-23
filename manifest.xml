@@ -959,6 +959,7 @@
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
         <tutorial>drcsim_robotiq_hand</tutorial>
+        <tutorial>drcsim_atlas_robot_interface</tutorial>
       </tutorials>
     </category>
 
