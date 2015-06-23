@@ -524,6 +524,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="BDI Atlas Robot Interface 3.0.0 Stand-In Example" ref='drcsim_atlas_robot_interface'>
+      <markdown version="4.2+">drcsim_atlas_robot_interface/tutorial.md</markdown>
+      <description>A guide to compiling a stand-in for the AtlasRobotInterface library version 3.0.0.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Launchfile options" ref='drcsim_launchfiles'>
       <markdown version="4.2+">drcsim_launchfiles/tutorial.md</markdown>
       <description>A guide to launching DRCSim with different Atlas versions, hand options, and world files.</description>
@@ -953,6 +959,7 @@
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
         <tutorial>drcsim_robotiq_hand</tutorial>
+        <tutorial>drcsim_atlas_robot_interface</tutorial>
       </tutorials>
     </category>
 
