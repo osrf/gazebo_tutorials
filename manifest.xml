@@ -8,7 +8,7 @@
     <tutorial title="Ubuntu" ref='install_ubuntu'>
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
-      <description>Installation instructions for Ubuntu using packages</description>
+      <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
       </tags>
@@ -31,6 +31,15 @@
       <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Windows" ref='install_on_windows'>
+      <markdown version="6.0">install_on_windows/tutorial_6-0.md</markdown>
+      <description>Installation instructions for Windows.</description>
       <tags>
         <tag>install</tag>
       </tags>
@@ -122,7 +131,8 @@
     </tutorial>
 
     <tutorial title="Make a Simple Gripper" ref='simple_gripper'>
-      <markdown version="1.9+">simple_gripper/tutorial.md</markdown>
+      <markdown version="1.9-4.1">simple_gripper/tutorial_1-9.md</markdown>
+      <markdown version="5.0+">simple_gripper/tutorial.md</markdown>
       <description>Build a simple pinching gripper</description>
       <skill>beginner</skill>
     </tutorial>
@@ -183,8 +193,9 @@
     </tutorial>
 
     <tutorial title="Topics subscription" ref='topics_subscribed'>
-      <markdown version="1.9">topics_subscribe/tutorial.md</markdown>
-      <markdown version="2.2+">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="1.9">topics_subscribe/tutorial_1-9.md</markdown>
+      <markdown version="2.2">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="6+">topics_subscribe/tutorial.md</markdown>
       <description>How to subscribe to gazebo topics.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -202,12 +213,29 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Collide bitmask" ref='collide_bitmask'>
+      <markdown version="6.0+">collide_bitmask/tutorial.md</markdown>
+      <description>Learn how to control which geometries collide or do not collide with each other through the use of bitmasks.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Fluids" ref='fluids'>
       <markdown version="3.0+">fluids/tutorial.md</markdown>
       <description>Fluid simulation on the GPU using Fluidix library.</description>
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Aerodynamics" ref='aerodynamics'>
+      <markdown version="3.0+">aerodynamics/tutorial.md</markdown>
+      <description>Simulate aerodynamic robots and vehicles with the LiftDragPlugin.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="Hydrodynamics" ref='hydrodynamics'>
+      <markdown version="6.0+">hydrodynamics/tutorial.md</markdown>
+      <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
+      <skill>advanced</skill>
+    </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
@@ -215,6 +243,20 @@
       <description>How to filter a recorded state log file.</description>
       <skill>beginner</skill>
     </tutorial>
+
+    <tutorial title="Applying Force/Torque" ref='apply_force_torque'>
+      <markdown version="6.0+">apply_force_torque/tutorial.md</markdown>
+      <description>Use the graphical interface to apply force and torque to your models.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Instrument HDF5 Datasets" ref='instrument_hdf5_datasets'>
+      <markdown version="1.9+">instrument_hdf5_datasets/tutorial.md</markdown>
+      <description>How to dump simulation data into HDF5 format for benchmark.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+
 
     <tutorial title="Gazebo Components" ref="components">
       <markdown version="1.9+">components/tutorial.md</markdown>
@@ -240,8 +282,44 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model Editor" ref="model_editor">
+      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <description>Create and edit models within a model editor.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Extrude SVG files" ref="extrude_svg">
+      <markdown version="6+">extrude_svg/tutorial.md</markdown>
+      <description>Extrude 2D SVG files into 3D meshes to create robots.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Gzweb installation" ref='gzweb_install'>
+      <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
+      <description>Explains how to install and run the WebGL client for Gazebo.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Gzweb development" ref='gzweb_development'>
+      <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
+      <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
+
+    <tutorial title="Elevators" ref='elevators'>
+      <markdown version="6.0+">elevators/tutorial.md</markdown>
+      <description>How to create and use elevators.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Occupied Event" ref='occupiedevent'>
+      <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
+      <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
 
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9">contact_sensor/tutorial.md</markdown>
@@ -313,6 +391,19 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Manage physics profiles" ref='preset_manager'>
+      <markdown version="3.0+">preset_manager/tutorial.md</markdown>
+      <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Parallel physics" ref='parallel'>
+      <markdown version="6.0+">parallel/tutorial.md</markdown>
+      <description>Take advantage of improved physics performance with two different threading options.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
       <description>How to apply lightmaps to a model visual.</description>
@@ -355,8 +446,15 @@
     </tutorial>
 
     <tutorial title="Oculus Rift" ref='oculus'>
-      <markdown version="3.0+">oculus/tutorial.md</markdown>
+      <markdown version="3.0-5.0">oculus/tutorial_3.md</markdown>
+      <markdown version="6.0+">oculus/tutorial.md</markdown>
       <description>Using the Oculus Rift VR headset</description>
+      <skill>advanced</skill>
+    </tutorial>
+
+    <tutorial title="Stereo Glasses" ref='stereo_glasses'>
+      <markdown version="6.0+">stereo_glasses/tutorial.md</markdown>
+      <description>Setup Gazebo to generate a stereo images suitable for use with stereo glasses.</description>
       <skill>advanced</skill>
     </tutorial>
 
@@ -441,6 +539,12 @@
     <tutorial title="Atlas fake walking" ref='drcsim_fakewalking'>
       <markdown version="1.9+">drcsim_fakewalking/tutorial.md</markdown>
       <description>How to drive a simulated Atlas as if it were a wheeled robot.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Spawn Atlas into a custom world" ref='drcsim_create_atlas_world'>
+      <markdown version="4.2+">drcsim_create_atlas_world/tutorial.md</markdown>
+      <description>How to spawn Atlas into your own custom world.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -585,39 +689,58 @@
     </tutorial>
 
     <!-- HAPTIX -->
+    <tutorial title="HAPTIX environment setup" ref='haptix_unboxing'>
+      <markdown version="6.0+">haptix_unboxing/tutorial.md</markdown>
+      <description><![CDATA[Instructions for the hardware installation and
+        desktop environment configuration of a HAPTIX simulation system.
+        The HAPTIX simulation system is a specific hardware and
+        software configuration designed by OSRF for teams participating in
+        the <a href="https://www.fbo.gov/index?s=opportunity&mode=form&id=ccbc51af982e354304886e363e6c8404&tab=core&_cview=1">HAPTIX</a>
+        program.]]></description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="HAPTIX C API" ref='haptix_comm'>
-      <markdown version="4.0+">haptix_comm/tutorial.md</markdown>
-      <description>This tutorial describes how to use the C API for creating a
-        hand controller.</description>
+      <markdown version="6.0+">haptix_comm/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the C API, defined at <a href="/haptix/api">http://gazebosim.org/haptix/api</a> and implemented in the <a href="https://bitbucket.org/osrf/haptix-comm">haptix-comm</a> package, for creating a hand controller.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX software installation" ref='haptix_install'>
-      <markdown version="4.0+">haptix_install/tutorial.md</markdown>
-      <description>This tutorial describes how to install Gazebo and the client
-        libraries SDK for the HAPTIX project.</description>
+    <tutorial title="HAPTIX software install and update" ref='haptix_install'>
+      <markdown version="6.0+">haptix_install/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to install <a href="/">Gazebo</> and the HAPTIX client library, <a href='https://bitbucket.org/osrf/haptix-comm'>haptix-comm</a>. Also included are instructions for updating software after it has been installed.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Matlab API" ref='haptix_matlab'>
-      <markdown version="4.0+">haptix_matlab/tutorial.md</markdown>
-      <description>This tutorial describes how to use the Matlab interface for
-        creating a hand controller.</description>
+    <tutorial title="HAPTIX Matlab and Octave API" ref='haptix_matlab'>
+      <markdown version="6.0+">haptix_matlab/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the <a href="https://bitbucket.org/osrf/haptix-comm/src/default/matlab/">Matlab/Octave interface</a> for creating a hand controller. The Matlab/Octave interface is a wrapper around the <a href="/tutorials?cat=haptix&tut=haptix_comm">C-API</a>.]]></description>
       <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Simulation API" ref='haptix_sim_api'>
+      <markdown version="6.0+">haptix_sim_api/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state.]]></description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
-      <markdown version="4.0+">haptix_tactors/tutorial.md</markdown>
+      <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
       <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
       <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
-      <markdown version="4.0+">haptix_teleop/tutorial.md</markdown>
-      <description>This tutorial describes how to control arm position and grasps using a keyboard, mice, or mixer board.</description>
+      <markdown version="6.0+">haptix_teleop/tutorial.md</markdown>
+      <description>This tutorial describes how to control arm position and grasps using a keyboard, SpaceNav, or Razer Hydra.</description>
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="HAPTIX Optitrack Control" ref='haptix_optitrack'>
+      <markdown version="6.0+">haptix_optitrack/tutorial.md</markdown>
+      <description><![CDATA[How to configure the <a href="http://www.optitrack.com/products/v120-trio/">Optitrack V120 Trio</a> camera and the <a href="http://www.optitrack.com/products/motive/">Motive motion tracking software</a> to control the arm and viewpoint in <a href="/">Gazebo</a>.]]></description>
+      <skill>beginner</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -627,6 +750,7 @@
         <tutorial>install_ubuntu</tutorial>
         <tutorial>install_other_linux</tutorial>
         <tutorial>install_on_mac</tutorial>
+        <tutorial>install_on_windows</tutorial>
 
         <!-- keep name for historical reasons -->
         <tutorial>install</tutorial>
@@ -657,8 +781,17 @@
         <tutorial>add_laser</tutorial>
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
+        <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Model Editor" skill="beginner" ref="model_editor_top">
+      <description>The following tutorials describe how to build and modify robots using the model editor.</description>
+      <tutorials>
+        <tutorial>model_editor</tutorial>
+        <tutorial>extrude_svg</tutorial>
       </tutorials>
     </category>
 
@@ -677,6 +810,8 @@
       <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
       <tutorials>
         <tutorial>log_filtering</tutorial>
+        <tutorial>apply_force_torque</tutorial>
+        <tutorial>instrument_hdf5_datasets</tutorial>
       </tutorials>
     </category>
 
@@ -688,6 +823,16 @@
         <tutorial>plugins_world</tutorial>
         <tutorial>plugins_world_properties</tutorial>
         <tutorial>system_plugin</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Plugins" skill="intermediate" ref="plugins">
+      <description>The following tutorials describe how to use plugins that are available in Gazebo.</description>
+      <tutorials>
+        <tutorial>elevators</tutorial>
+        <tutorial>occupiedevent</tutorial>
+        <tutorial>aerodynamics</tutorial>
+        <tutorial>hydrodynamics</tutorial>
       </tutorials>
     </category>
 
@@ -724,6 +869,14 @@
       </tutorials>
     </category>
 
+    <category title="Web client (Gzweb)" skill="intermediate" ref="gzweb">
+      <description>Gzweb is a WebGL client for Gazebo. It lets you interact with the simulation from the comfort of a web browser.</description>
+      <tutorials>
+        <tutorial>gzweb_install</tutorial>
+        <tutorial>gzweb_development</tutorial>
+      </tutorials>
+    </category>
+
     <category title="Connect to ROS" skill="advanced" ref="connect_ros">
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
@@ -754,8 +907,13 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
+        <tutorial>aerodynamics</tutorial>
+        <tutorial>hydrodynamics</tutorial>
         <tutorial>clone_simulation</tutorial>
+        <tutorial>preset_manager</tutorial>
+        <tutorial>parallel</tutorial>
       </tutorials>
     </category>
 
@@ -764,6 +922,7 @@
       <tutorials>
         <tutorial>lightmap</tutorial>
         <tutorial>oculus</tutorial>
+        <tutorial>stereo_glasses</tutorial>
       </tutorials>
     </category>
 
@@ -781,6 +940,7 @@
       <tutorials>
         <tutorial>drcsim_install</tutorial>
         <tutorial>drcsim_launchfiles</tutorial>
+        <tutorial>drcsim_create_atlas_world</tutorial>
         <tutorial>drcsim_animate_joints</tutorial>
         <tutorial>drcsim_keyboard_teleop</tutorial>
         <tutorial>drcsim_atlas_mixer</tutorial>
@@ -814,12 +974,21 @@
     </category>
 
     <category title="HAPTIX" skill="advanced" ref="haptix">
-      <description>HAPTIX specific tutorials.</description>
+      <description><![CDATA[The following are tutorials designed for <a
+          href='https://www.fbo.gov/index?s=opportunity&mode=form&id=ccbc51af982e354304886e363e6c8404&tab=core&_cview=1'>HAPTIX</a>,
+        a <a href='http://www.darpa.mil'>DARPA</a> program designed to
+        develop new science and technology to achieve closed-loop control of
+        dexterous mechatronic prosthesesis. For more information, please visit <a href="/haptix">http://gazebosim.org/haptix</a>.
+      ]]>
+      </description>
       <tutorials>
         <tutorial>haptix_install</tutorial>
-        <tutorial>haptix_teleop</tutorial>
         <tutorial>haptix_comm</tutorial>
         <tutorial>haptix_matlab</tutorial>
+        <tutorial>haptix_sim_api</tutorial>
+        <tutorial>haptix_teleop</tutorial>
+        <tutorial>haptix_unboxing</tutorial>
+        <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
       </tutorials>
     </category>

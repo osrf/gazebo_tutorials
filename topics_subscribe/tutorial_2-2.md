@@ -4,7 +4,7 @@ Gazebo communicates on TCP/IP sockets, which allows separate programs to interfa
 
 The easiest way to communicate with Gazebo over TCP/IP sockets is to link against the Gazebo libraries, and use the provided functions.
 
-The Gazebo transport system is documented [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/group__gazebo__msgs.html).
+The Gazebo transport system is documented [here](http://gazebosim.org/api/code/dev/group__gazebo__transport.html)  and messages are documented [here](http://gazebosim.org/api/msgs/dev).
 
 A list of all the topics in use on a running system can be found with the following command (make sure Gazebo is running first):
 
@@ -14,15 +14,15 @@ gz topic -l
 
 # Example
 
-This example subscribes to a [WorldStatistics message](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/listener.cc?at=gazebo_4.0) and assumes that you can link against Gazebo.
+This example subscribes to a [WorldStatistics message](http://gazebosim.org/api/msgs/dev/world__stats_8proto.html) and assumes that you can link against Gazebo.
 
 Download listener.cc and CMakeLists.txt from the above link and put them into to a folder called listener at your home directory. Compile the example:
 
 ~~~
 mkdir ~/listener
 cd ~/listener
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
+wget https://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/stand_alone/listener/listener.cc
+wget https://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/stand_alone/listener/CMakeLists.txt
 mkdir build
 cd build
 cmake ..

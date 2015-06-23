@@ -30,7 +30,7 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. Cylinderical grasp
        1. Pinch grasp
 
-    To release the hand, press and hold SHIFT and the number key. 
+    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp. 
 
 1. **Arm position**
 
@@ -66,6 +66,20 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. C: Positive flexion
        1. SHIFT + C: Negative flexion
 
+### Arm teleop GUI options
+
+The GUI on the left side of the HAPTIX simulator has some options for controlling keyboard teleop.
+
+[[file:files/gui_teleop.png]]
+
+If the "Local frame" checkbox is checked, keyboard teleop will move the arm in the arm's local axes, which change as the arm rotates. If "Local frame" is unchecked, the keys will always move the arm in the same "global" coordinate system.
+
+The slider next to "Arm move speed" controls the speed of the arm under keyboard teleop.
+
+These options are only relevant for keyboard teleop control. They do not affect motion capture teleoperation or Spacenav.
+
+Press `Ctrl+R` to reset the arm position, viewpoint and the objects in the scene.
+
 ## Spacenav Control
 
 By default, the spacenav mouse controls the position and
@@ -92,18 +106,10 @@ Please follow the [hydra installation instructions](http://gazebosim.org/tutoria
 
 Once installed, the right paddle will perform the following actions:
 
-1. Middle button (between the 1 & 2 buttons): Enable/disable hydra control.
+1. Spacebar or letter `p` on the keyboard: Enable/disable hydra control.
 
-1. Move paddle to change arm position and orientation.
+1. Once enabled, move paddle to change arm position and orientation.
 
-1. Button 1: Change to spherical grasp.
+1. Button 1: Deadman switch for grasping with Trigger.
 
-1. Button 2: Change to cylinderical grasp.
-
-1. Button 3: Change to British pinch grasp.
-
-1. Button 4: Change to American pinch grasp.
-
-1. Trigger: Close/open grasp
-
-1. Bumper: Switch tasks
+1. Trigger:  While holding down Button 1, the Trigger closes and opens the grasp.

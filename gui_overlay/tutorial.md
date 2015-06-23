@@ -2,8 +2,9 @@
 
 The Gazebo GUI overlay can be thought of as a transparent 2D layer that sits
 on top of the render window. QT widgets can be added to this layer through
-a plugin interface. This tutorial describes how to create and use GUI
-overlay plugins to create custom interfaces for Gazebo.
+a plugin interface. You can show or hide all GUI overlays by clicking on
+`View->GUI Overlays` on the main Gazebo menu bar. This tutorial describes how to
+create and use GUI overlay plugins to create custom interfaces for Gazebo.
 
 Two examples will be used to demonstrate the GUI Overlay functionality. The
 first example creates a button that spawns a sphere, and the second displays
@@ -99,11 +100,11 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
             <?xml version="1.0" ?>
             <sdf version="1.5">
               <world name="default">
-            
+
                 <gui>
                   <plugin name="sample" filename="libgui_example_spawn_widget.so"/>
                 </gui>
-            
+
                 <!-- A global light source -->
                 <include>
                   <uri>model://sun</uri>

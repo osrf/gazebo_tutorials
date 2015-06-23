@@ -1,8 +1,8 @@
 # Introduction
 
-Gazebo supports the [Oculus Rift VR headset](http://www.oculusvr.com/). You
-will be able to attach a virtual Oculus Camera to one of the visual links of
-your model.
+Gazebo 6 and above supports the [Oculus Rift VR headset](http://www.oculusvr.com/) DK1 and DK2.
+
+After this tutorial, you will be able to attach a virtual Oculus Camera to one of the visual links of your model.
 
 # OculusVR SDK installation.
 
@@ -29,10 +29,10 @@ Follow [this](http://gazebosim.org/tutorials?tut=install_from_source&cat=install
 
 ~~~
 -- checking for module 'OculusVR'
---   found OculusVR, version 0.2.5
+--   found OculusVR, version 0.4.4
 ~~~
 
-# Configuring and running Gazebo with Oculus Rift support.
+# Configuration
 
 Before starting Gazebo, open up your favourite editor and edit the file `~/.gazebo/gui.ini` file with the following content:
 
@@ -64,13 +64,29 @@ visual=camera::link::visual
 autolaunch=0
 ~~~
 
-After plugging in and enable your Oculus Rift headset, go ahead and start Gazebo with a world containing a camera:
+# Running 
 
-~~~
-gazebo worlds/camera.world
-~~~
+1. Plug in and turn on your Oculus Rift headset.
 
-Once Gazebo is up and running, click on Window->Oculus Rift and you should be able to see the world from your Oculus headset.
+    > A new monitor will appear on Ubuntu. This new monitor will propbably have a rotation that is off by 90 degrees. Here is the fix:
+ 
+    > 1. Applications > System Tools > Preferences > Displays.
+    > 1. Select the Oculus display and set `Rotation` to `Counterclockwise`
+
+1. In a terminal, run the `oculusd` daemon.
+
+    ~~~
+    cd ~/oculussdk
+    ./oculusd
+    ~~~
+
+1. In a second terminal, run Gazebo
+
+    ~~~
+    gazebo worlds/camera.world
+    ~~~
+
+1. Once Gazebo is up and running, click on Window->Oculus Rift and you should be able to see the world from your Oculus headset.
 
 It is also possible to enable the Oculus window by default when starting Gazebo. Modify the `gui.ini` file and set `autolaunch=1`. Now, start gazebo and your Oculus Rift should be working without any intervention:
 

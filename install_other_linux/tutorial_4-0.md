@@ -1,7 +1,7 @@
 # Install Gazebo on Linux distributions (non Ubuntu)
 
 Gazebo is available to install on other Linux distributions different than Ubuntu 
-([Ubuntu install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=installation)
+([Ubuntu install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install)
 are hosted in a different tutorial). Linux distributions providing gazebo packages: 
 Debian, Fedora and Arch. 
 

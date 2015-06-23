@@ -13,7 +13,7 @@ atlas_msgs::AtlasCommand ac;
 atlas_msgs::AtlasState as;
 boost::mutex mutex;
 ros::Time t0;
-unsigned int numJoints = 28;
+unsigned int numJoints = 0;
 
 void SetAtlasState(const atlas_msgs::AtlasState::ConstPtr &_as)
 {
@@ -24,6 +24,17 @@ void SetAtlasState(const atlas_msgs::AtlasState::ConstPtr &_as)
   {
     boost::mutex::scoped_lock lock(mutex);
     as = *_as;
+
+    if (numJoints == 0 && as.position.size() != 0)
+    {
+      numJoints = as.position.size();
+      ac.position.resize(numJoints);
+      ac.k_effort.resize(numJoints);
+
+      // default values for AtlasCommand
+      for (unsigned int i = 0; i < numJoints; i++)
+        ac.k_effort[i]     = 255;
+    }
   }
 
   // uncomment to simulate state filtering
@@ -40,6 +51,9 @@ void Work()
       boost::mutex::scoped_lock lock(mutex);
       // for testing round trip time
       ac.header.stamp = as.header.stamp;
+
+      if (numJoints == 0)
+        continue;
     }
 
     // simulate working
@@ -79,13 +93,6 @@ int main(int argc, char** argv)
       wait = false;
   }
 
-  ac.position.resize(numJoints);
-  ac.k_effort.resize(numJoints);
-
-  // default values for AtlasCommand
-  for (unsigned int i = 0; i < numJoints; i++)
-    ac.k_effort[i]     = 255;
-
   // ros topic subscribtions
   ros::SubscribeOptions atlasStateSo =
     ros::SubscribeOptions::create<atlas_msgs::AtlasState>(
@@ -106,4 +113,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
