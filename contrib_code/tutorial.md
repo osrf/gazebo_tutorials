@@ -122,6 +122,21 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 1. **PIMPL/Opaque pointer**
 > If you are writing a new class, it must use a private data pointer. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/World.hh?at=default#cl-479), and you can read more [here](https://en.wikipedia.org/wiki/Opaque_pointer).  
 
+1. **const functions**
+> Any class function that does not change a member variable should be marked as `const`.
+
+1. **const parameters**
+> All parameters that are not modified by a function should be marked as `const`. This applies to parameters that are passed by reference, pointer, and value.
+
+1. **Pointer and reference variables**
+> Place the `*` and `&` next to the varaible name, not next to the type. For example: `int &variable` is good, but `int& variable` is not.
+
+1. **Class function names**
+> Class functions must start with a capital letter.
+
+1. **Camel case**
+> In general, everything should use camel case. Exceptions include SDF element names, and protobuf variable names.
+
 # Test coverage
 
 Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
