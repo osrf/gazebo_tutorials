@@ -35,7 +35,7 @@ well to other repositories maintained by OSRF.
 > This is the fun part.
 
 1. Write tests.
-> A pull request will only be accepted if it has tests. The new functions must have at least 90% coverage. See the Test Coverage section below for more information.
+> A pull request will only be accepted if it has tests. The new functions must have at least 90% function and branch coverage. See the Test Coverage section below for more information.
 
 1. Compiler warnings. 
 >  Code must have zero compile warnings. This currently only applies to Linux.
@@ -99,6 +99,7 @@ check must pass before continuing to the next step.
   1. Link to a passing [nvidia build](http://build.osrfoundation.org/view/gazebo/job/gazebo-any-devel-trusty-amd64-gpu-nvidia/).
   1. Link to a passing [ABI/API report](http://build.osrfoundation.org/view/gazebo/job/gazebo-any_to_any-abichecker-trusty-amd64/) if the pull request is targeted to a release branch.
   1. A statement that confirms you have tried the code on Windows.
+1. A set of jenkins jobs will run automatically once the pull request is created. Reviewers can reference these automatic jobs and the jenkins jobs listed in your pull request. 
 
 # Style
 
@@ -131,11 +132,26 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 1. **Pointer and reference variables**
 > Place the `*` and `&` next to the varaible name, not next to the type. For example: `int &variable` is good, but `int& variable` is not. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
 
-1. **Class function names**
-> Class functions must start with a capital letter. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
-
 1. **Camel case**
 > In general, everything should use camel case. Exceptions include SDF element names, and protobuf variable names. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
+
+1. **Class function names**
+> Class functions must start with a capital letter, and capitalize every word.
+>
+> `void MyFunction();` : Good
+>
+> `void myFunction();` : Bad
+>
+> `void my_function();` : Bad
+
+1. **Variable names**
+> Variables must start with a lower case letter, and capitalize every word thereafter.
+> 
+> `int myVariable;` : Good
+>
+> `int myvariable;` : Bad
+>
+> `int my_variable;` : Bad
 
 # Test coverage
 
