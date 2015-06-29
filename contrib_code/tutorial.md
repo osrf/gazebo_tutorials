@@ -123,19 +123,19 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 > If you are writing a new class, it must use a private data pointer. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/World.hh?at=default#cl-479), and you can read more [here](https://en.wikipedia.org/wiki/Opaque_pointer).  
 
 1. **const functions**
-> Any class function that does not change a member variable should be marked as `const`.
+> Any class function that does not change a member variable should be marked as `const`. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-175).
 
 1. **const parameters**
-> All parameters that are not modified by a function should be marked as `const`. This applies to parameters that are passed by reference, pointer, and value.
+> All parameters that are not modified by a function should be marked as `const`. This applies to parameters that are passed by reference, pointer, and value. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
 
 1. **Pointer and reference variables**
-> Place the `*` and `&` next to the varaible name, not next to the type. For example: `int &variable` is good, but `int& variable` is not.
+> Place the `*` and `&` next to the varaible name, not next to the type. For example: `int &variable` is good, but `int& variable` is not. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
 
 1. **Class function names**
-> Class functions must start with a capital letter.
+> Class functions must start with a capital letter. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
 
 1. **Camel case**
-> In general, everything should use camel case. Exceptions include SDF element names, and protobuf variable names.
+> In general, everything should use camel case. Exceptions include SDF element names, and protobuf variable names. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Entity.cc?at=default#cl-217).
 
 # Test coverage
 
