@@ -35,7 +35,7 @@ well to other repositories maintained by OSRF.
 > This is the fun part.
 
 1. Write tests.
-> A pull request will only be accepted if it has tests. The new functions must have at least 90% function and branch coverage. See the Test Coverage section below for more information.
+> A pull request will only be accepted if it has tests. See the `Test coverage` section below for more information.
 
 1. Compiler warnings. 
 >  Code must have zero compile warnings. This currently only applies to Linux.
@@ -155,6 +155,14 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 
 # Test coverage
 
+The goal is to achieve 100% line and branch coverage. However, this is not
+always possible due to complexity issues, analysis tools misreporting
+coverage, and time constraints. Coverage of 90% line and 75% branch coverage
+would be great, however this is not a hard requirement. Do not let those
+coverage numbers stop you from writing more complete tests. Try to write as
+complete of a test suite as possible, and use the coverage analysis tools as
+guide.
+
 Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
 
 1. In your `build` folder, compile Gazebo with `-DCMAKE_BUILD_TYPE=Coverage`
@@ -188,7 +196,7 @@ Check to make sure someone else is not currently working on the same feature, be
   
 # Write Tests
 
-All code should have a corresponding unit test. Gazebo uses [http://code.google.com/p/googletest/ GTest] for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`. 
+All code should have a corresponding unit test. Gazebo uses [GTest](http://code.google.com/p/googletest) for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`. 
 
 Before creating a new regressions test file, check the current test files. If one closely matches the topic of your new code, simply add a new test function to the file. Otherwise, create a new test file, and write your test. 
 
