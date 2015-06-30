@@ -1,16 +1,16 @@
 # Overview
 This tutorial demonstrates building a custom world using SDF.
 And provide a simple example on how to sense object interaction
-and manipulate object color using the world simulation API.
+and manipulate object color using the simulation world API.
 
 We assume that you have already completed the
 [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
 and the
-[sim API](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix)
+[world API](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix)
 tutorials.
 
 # Documentation
-The full sim API documentation can be found
+The full world API documentation can be found
 [here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.7.1/haptix__sim_8h.html).
 
 Using the [SDF format](http://www.sdformat.org/),
@@ -78,7 +78,7 @@ gazebo custom_haptix.world
 
 ## Run the code: MATLAB, Octave on Linux
 
-First see [sim API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix#Example) on how to run Matlab or Octave scripts.
+First see [world API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix#Example) on how to run Matlab or Octave scripts.
 
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:

@@ -5,12 +5,12 @@ We assume that you have already completed the
 [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
 
 # Documentation
-The full sim API documentation can be found
+The full world API documentation can be found
 [here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.7.1/haptix__sim_8h.html).
 
 ## Conventions and terminology
 
-A "transform" is a 3D position and rotation, also known as a pose. In the sim API,
+A "transform" is a 3D position and rotation, also known as a pose. In the world API,
 we represent rotations as [quaternions](http://en.wikipedia.org/wiki/Quaternion).
 
 Unless otherwise stated, all vectors and transforms are relative to a fixed world frame.
@@ -35,7 +35,7 @@ joint that allows the handle to turn.
 The doorway as a whole would be considered a model.
 
 # Example
-In our example, we will demonstrate how to use the sim API to manipulate
+In our example, we will demonstrate how to use the world API to manipulate
 objects in the ARAT world.
 
 ## Run the code: MATLAB

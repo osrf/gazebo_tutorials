@@ -718,9 +718,9 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Simulation API" ref='haptix_sim_api'>
+    <tutorial title="HAPTIX Simulation World API" ref='haptix_sim_api'>
       <markdown version="6.0+">haptix_sim_api/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state.]]></description>
+      <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state.]]></description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -742,9 +742,9 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Simulation API with Custom World Example" ref='haptix_world_sim_api'>
+    <tutorial title="HAPTIX Simulation World API with Custom World Example" ref='haptix_world_sim_api'>
       <markdown version="6.0+">haptix_world_sim_api/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state in a custom world.]]></description>
+      <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
       <skill>intermediate</skill>
     </tutorial>
   </tutorials>
