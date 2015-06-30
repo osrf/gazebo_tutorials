@@ -193,8 +193,9 @@
     </tutorial>
 
     <tutorial title="Topics subscription" ref='topics_subscribed'>
-      <markdown version="1.9">topics_subscribe/tutorial.md</markdown>
-      <markdown version="2.2+">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="1.9">topics_subscribe/tutorial_1-9.md</markdown>
+      <markdown version="2.2">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="6+">topics_subscribe/tutorial.md</markdown>
       <description>How to subscribe to gazebo topics.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -520,6 +521,12 @@
     <tutorial title="Clone a simulation" ref='clone_simulation'>
       <markdown version="5.0+">clone_simulation/tutorial.md</markdown>
       <description>This tutorial describes how to clone the current simulation.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="BDI Atlas Robot Interface 3.0.0 Stand-In Example" ref='drcsim_atlas_robot_interface'>
+      <markdown version="4.2+">drcsim_atlas_robot_interface/tutorial.md</markdown>
+      <description>A guide to compiling a stand-in for the AtlasRobotInterface library version 3.0.0.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -958,6 +965,7 @@
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
         <tutorial>drcsim_robotiq_hand</tutorial>
+        <tutorial>drcsim_atlas_robot_interface</tutorial>
       </tutorials>
     </category>
 
