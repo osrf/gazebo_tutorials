@@ -153,15 +153,29 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 >
 > `int my_variable;` : Bad
 
-# Test coverage
+# Reduce Code Duplication 
+
+Check to make sure someone else is not currently working on the same
+feature, before embarking on a project to add something to Gazebo. Simply
+send a quick email to the Gazebo mailing list expressing your interest and
+idea. Someone will get back to you shortly about your idea.
+  
+# Write Tests
+
+All code should have a corresponding unit test. Gazebo uses [GTest](http://code.google.com/p/googletest) for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`. 
+
+Before creating a new regressions test file, check the current test files.
+If one closely matches the topic of your new code, simply add a new test
+function to the file. Otherwise, create a new test file, and write your
+test. 
+
+## Test coverage
 
 The goal is to achieve 100% line and branch coverage. However, this is not
 always possible due to complexity issues, analysis tools misreporting
-coverage, and time constraints. Coverage of 90% line and 75% branch coverage
-would be great, however this is not a hard requirement. Do not let those
-coverage numbers stop you from writing more complete tests. Try to write as
-complete of a test suite as possible, and use the coverage analysis tools as
-guide.
+coverage, and time constraints. Try to write as complete of a test suite as
+possible, and use the coverage analysis tools as guide. If you have trouble
+writing a test please ask for help in your pull request.
 
 Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
 
@@ -190,21 +204,16 @@ Gazebo has a build target called `make coverage` that will produce a code covera
     firefox coverage/index.html
     ~~~
 
-# Reduce Code Duplication 
-
-Check to make sure someone else is not currently working on the same feature, before embarking on a project to add something to Gazebo. Simply send a quick email to the Gazebo mailing list expressing your interest and idea. Someone will get back to you shortly about your idea.
-  
-# Write Tests
-
-All code should have a corresponding unit test. Gazebo uses [GTest](http://code.google.com/p/googletest) for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`. 
-
-Before creating a new regressions test file, check the current test files. If one closely matches the topic of your new code, simply add a new test function to the file. Otherwise, create a new test file, and write your test. 
 
 ## Gazebo assertions
 
 ### What is an assertion?
 
-An assertion is a check, which always produce a boolean result, that developers place in the code when want to be sure that check is always true. They are aimed to detect programming errors and should check for impossible situations in the code. If the assertion check failed, the assertion will stop the program immediately.
+An assertion is a check, which always produce a boolean result, that
+developers place in the code when want to be sure that check is always true.
+They are aimed to detect programming errors and should check for impossible
+situations in the code. If the assertion check failed, the assertion will
+stop the program immediately.
 
      Object * p = some_crazy_function()
      GZ_ASSERT(p != NULL, “Object from some_crazy_function should never point to NULL”)
