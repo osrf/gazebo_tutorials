@@ -193,8 +193,9 @@
     </tutorial>
 
     <tutorial title="Topics subscription" ref='topics_subscribed'>
-      <markdown version="1.9">topics_subscribe/tutorial.md</markdown>
-      <markdown version="2.2+">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="1.9">topics_subscribe/tutorial_1-9.md</markdown>
+      <markdown version="2.2">topics_subscribe/tutorial_2-2.md</markdown>
+      <markdown version="6+">topics_subscribe/tutorial.md</markdown>
       <description>How to subscribe to gazebo topics.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -249,6 +250,14 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Instrument HDF5 Datasets" ref='instrument_hdf5_datasets'>
+      <markdown version="1.9+">instrument_hdf5_datasets/tutorial.md</markdown>
+      <description>How to dump simulation data into HDF5 format for benchmark.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+
+
     <tutorial title="Gazebo Components" ref="components">
       <markdown version="1.9+">components/tutorial.md</markdown>
       <description>Overview of the basic components in a Gazebo simulation.</description>
@@ -299,6 +308,18 @@
 
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
+
+    <tutorial title="Elevators" ref='elevators'>
+      <markdown version="6.0+">elevators/tutorial.md</markdown>
+      <description>How to create and use elevators.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Occupied Event" ref='occupiedevent'>
+      <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
+      <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
 
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9">contact_sensor/tutorial.md</markdown>
@@ -500,6 +521,12 @@
     <tutorial title="Clone a simulation" ref='clone_simulation'>
       <markdown version="5.0+">clone_simulation/tutorial.md</markdown>
       <description>This tutorial describes how to clone the current simulation.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="BDI Atlas Robot Interface 3.0.0 Stand-In Example" ref='drcsim_atlas_robot_interface'>
+      <markdown version="4.2+">drcsim_atlas_robot_interface/tutorial.md</markdown>
+      <description>A guide to compiling a stand-in for the AtlasRobotInterface library version 3.0.0.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -784,6 +811,7 @@
       <tutorials>
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
+        <tutorial>instrument_hdf5_datasets</tutorial>
       </tutorials>
     </category>
 
@@ -795,6 +823,16 @@
         <tutorial>plugins_world</tutorial>
         <tutorial>plugins_world_properties</tutorial>
         <tutorial>system_plugin</tutorial>
+      </tutorials>
+    </category>
+
+    <category title="Plugins" skill="intermediate" ref="plugins">
+      <description>The following tutorials describe how to use plugins that are available in Gazebo.</description>
+      <tutorials>
+        <tutorial>elevators</tutorial>
+        <tutorial>occupiedevent</tutorial>
+        <tutorial>aerodynamics</tutorial>
+        <tutorial>hydrodynamics</tutorial>
       </tutorials>
     </category>
 
@@ -921,6 +959,7 @@
         <tutorial>drcsim_set_joint_damping</tutorial>
         <tutorial>drcsim_bdi_examples</tutorial>
         <tutorial>drcsim_robotiq_hand</tutorial>
+        <tutorial>drcsim_atlas_robot_interface</tutorial>
       </tutorials>
     </category>
 

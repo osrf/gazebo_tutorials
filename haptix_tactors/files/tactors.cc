@@ -23,9 +23,8 @@
 
 int main(int argc, char** argv)
 {
-  hxDeviceInfo deviceInfo;
+  hxRobotInfo robotInfo;
   hxSensor sensor;
-  hxCommand cmd;
   const unsigned int sleeptime_us = 10000;
   const float minContactForce = 0;
 
@@ -38,16 +37,16 @@ int main(int argc, char** argv)
   }
 
   // Initialize haptix-comm
-  if (hx_getdeviceinfo(hxGAZEBO, &deviceInfo) != hxOK)
+  if (hx_robot_info(&robotInfo) != hxOK)
   {
-    printf("hx_getdeviceinfo(): Request error.\n");
+    printf("hx_robot_info(): Request error.\n");
     return -1;
   }
 
   // Initialize sensor index to Lilypad motor index mapping
   // These sensor indices correspond to the JHU APL MPL arm
   std::map<int, char> sensorMotorIndexMapping;
-  for (unsigned int i = 0; i < deviceInfo.ncontactsensor; i++)
+  for (unsigned int i = 0; i < robotInfo.contact_sensor_count; ++i)
   {
     // Uninitialized
     sensorMotorIndexMapping[i] = '0';
@@ -81,10 +80,10 @@ int main(int argc, char** argv)
   for (; ;)
   {
     // Get a sensor update from the simulator.
-    if (hx_update(hxGAZEBO, &cmd, &sensor) != hxOK)
-      printf("hx_update(): Request error.\n");
+    if (hx_read_sensors(&sensor) != hxOK)
+      printf("hx_read_sensors(): Request error.\n");
 
-    for (unsigned int i = 0; i < deviceInfo.ncontactsensor; i++)
+    for (unsigned int i = 0; i < robotInfo.contact_sensor_count; ++i)
     {
       if (sensor.contact[i] > minContactForce)
       {
