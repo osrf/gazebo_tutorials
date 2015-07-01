@@ -1,6 +1,6 @@
 # Overview
 This tutorial demonstrates building a custom world using SDF.
-And provide a simple example on how to sense object interaction
+It also provides a simple example on how to sense object interactions
 and manipulate object color using the simulation world API.
 
 We assume that you have already completed the
@@ -13,9 +13,7 @@ tutorials.
 The full world API documentation can be found
 [here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.7.1/haptix__sim_8h.html).
 
-Using the [SDF format](http://www.sdformat.org/),
-the documentation for building a gazebo world can be found
-[here](http://gazebosim.org/tutorials?cat=build_world).
+The documentation for building a Gazebo world using [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world).
 
 # Example
 
