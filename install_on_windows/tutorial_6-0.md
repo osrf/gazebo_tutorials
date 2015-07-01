@@ -155,6 +155,11 @@ Windows `cmd` for configuring and building.  You might also need to
             Plugin=Plugin_OctreeZone
             Plugin=Plugin_OctreeSceneManager
 
+    1. Copy this file into the `gui` directory
+
+            cp plugins.cfg gui/
+
+
 1. Run gzserver
 
         gzserver.exe ..\..\worlds\empty.world
