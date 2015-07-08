@@ -718,9 +718,9 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Simulation API" ref='haptix_sim_api'>
+    <tutorial title="HAPTIX Simulation World API" ref='haptix_sim_api'>
       <markdown version="6.0+">haptix_sim_api/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to use the Simulation API to manipulate the simulation state.]]></description>
+      <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state.]]></description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -740,6 +740,12 @@
       <markdown version="6.0+">haptix_optitrack/tutorial.md</markdown>
       <description><![CDATA[How to configure the <a href="http://www.optitrack.com/products/v120-trio/">Optitrack V120 Trio</a> camera and the <a href="http://www.optitrack.com/products/motive/">Motive motion tracking software</a> to control the arm and viewpoint in <a href="/">Gazebo</a>.]]></description>
       <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Simulation World API with Custom World Example" ref='haptix_world_sim_api'>
+      <markdown version="6.0+">haptix_world_sim_api/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
+      <skill>intermediate</skill>
     </tutorial>
   </tutorials>
 
@@ -991,6 +997,7 @@
         <tutorial>haptix_unboxing</tutorial>
         <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
+        <tutorial>haptix_world_sim_api</tutorial>
       </tutorials>
     </category>
 

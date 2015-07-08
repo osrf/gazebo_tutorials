@@ -1,0 +1,426 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <plugin name="HaptixWorldPlugin" filename="libHaptixWorldPlugin.so"/>
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>0 -0.6 1.3  0 0.4 1.57</pose>
+      </camera>
+
+      <plugin name="HaptixGUIPlugin" filename="libHaptixGUIPlugin.so">
+        <default_size>25 25</default_size>
+        <force_min>0.001</force_min>
+        <force_max>20</force_max>
+        <color_no_contact>255 255 255 0</color_no_contact>
+        <color_max>255 0 0 255</color_max>
+        <color_min>255 227 32 255</color_min>
+        <hand_side>right</hand_side>
+        <timer_topic>~/timer_control</timer_topic>
+
+        <contacts>
+          <contact name="mpl::rPalm0">
+            <pos>150 200</pos>
+            <index>0</index>
+            <size>50 100</size>
+          </contact>
+          <contact name="mpl::rPalm1">
+            <index>1</index>
+            <size>50 100</size>
+            <pos>85 200</pos>
+          </contact>
+
+          <contact name="mpl::rHandEdge">
+            <pos>10 235</pos>
+            <index>2</index>
+            <size>40 70</size>
+          </contact>
+          <contact name="mpl::rHandTop">
+            <pos>299 55</pos>
+            <index>3</index>
+            <size>25 31</size>
+          </contact>
+
+          <contact name="mpl::rThProximal1">
+            <pos>245 240</pos>
+            <index>4</index>
+          </contact>
+          <contact name="mpl::rThProximal2">
+            <pos>275 195</pos>
+            <index>5</index>
+          </contact>
+          <contact name="mpl::rThDistal">
+            <pos>302 130</pos>
+            <index>6</index>
+          </contact>
+
+          <contact name="mpl::rIndProximal">
+            <pos>218 116</pos>
+            <index>7</index>
+          </contact>
+          <contact name="mpl::rIndMedial">
+            <pos>233 43</pos>
+            <index>8</index>
+          </contact>
+          <contact name="mpl::rIndDistal">
+            <pos>248 -30</pos>
+            <index>9</index>
+          </contact>
+
+          <contact name="mpl::rMidProximal">
+            <pos>152 98</pos>
+            <index>10</index>
+          </contact>
+          <contact name="mpl::rMidMedial">
+            <pos>155 19</pos>
+            <index>11</index>
+          </contact>
+          <contact name="mpl::rMidDistal">
+            <pos>153 -60</pos>
+            <index>12</index>
+          </contact>
+
+          <contact name="mpl::rRingProximal">
+            <pos>84 101</pos>
+            <index>13</index>
+          </contact>
+          <contact name="mpl::rRingMedial">
+            <pos>74 41</pos>
+            <index>14</index>
+          </contact>
+          <contact name="mpl::rRingDistal">
+            <pos>64 -19</pos>
+            <index>15</index>
+          </contact>
+
+          <contact name="mpl::rLittleProximal">
+            <pos>35 156</pos>
+            <index>16</index>
+          </contact>
+          <contact name="mpl::rLittleMedial">
+            <pos>14 105</pos>
+            <index>17</index>
+          </contact>
+          <contact name="mpl::rLittleDistal">
+            <pos>-7 54</pos>
+            <index>18</index>
+          </contact>
+
+        </contacts>
+
+        <task_group name="Grasp">
+          <task id="grasp_1" name="Block 10cm">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grasp_1.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 10 cm block and place it on top of the box.
+            </instructions>
+          </task>
+
+          <task id="grasp_2" name="Block 2.5cm">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grasp_2.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 2.5 cm block and place it on top of the box.
+            </instructions>
+          </task>
+
+          <task id="grasp_3" name="Block 5cm">
+            <enabled>1</enabled>
+            <initial>1</initial>
+            <icon>file://media/gui/arat/arat_icons/grasp_3.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 5 cm block and place it on top of the box.
+            </instructions>
+          </task>
+
+          <task id="grasp_4" name="Block 7.5cm">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grasp_4.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 7.5 cm block and place it on top of the box.
+            </instructions>
+          </task>
+
+          <task id="grasp_5" name="Cricket ball">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grasp_5.jpg</icon>
+            <instructions>
+              Instructions: Pick up the cricket ball and place it on top of the box, inside of the tin lid.
+            </instructions>
+          </task>
+
+          <task id="grasp_6"name="Stone">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grasp_6.jpg</icon>
+            <instructions>
+              Instructions: Pick up the stone and place it on top of the box.
+            </instructions>
+          </task>
+        </task_group>
+
+        <task_group name="Grip">
+          <task id="grip_1" name="Cups">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grip_1.jpg</icon>
+            <instructions>
+              Instructions: Pour the marble from one cup into the other.
+            </instructions>
+          </task>
+
+          <task id="grip_2" name="Tube 2.25cm">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grip_2.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 2.25cm diameter tube and place it on the wooden peg.
+            </instructions>
+          </task>
+
+          <task id="grip_3" name="Tube 1cm">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grip_3.jpg</icon>
+            <instructions>
+              Instructions: Pick up the 1cm diameter tube and place it on the metal peg.
+            </instructions>
+          </task>
+
+          <task id="grip_4" name="Washer">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/grip_4.jpg</icon>
+            <instructions>
+              Instructions: Pick up the washer and place it on the metal peg.
+            </instructions>
+          </task>
+        </task_group>
+
+        <task_group name="Pinch">
+          <task id="pinch_1" name="Ball bearing">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/pinch_1.jpg</icon>
+            <instructions>
+              Instructions: Pick up the ball bearing and place it on top of the box, inside of the tin lid.
+            </instructions>
+          </task>
+
+          <task id="pinch_2" name="Marble">
+            <enabled>1</enabled>
+            <icon>file://media/gui/arat/arat_icons/pinch_2.jpg</icon>
+            <instructions>
+              Instructions:   Pick up the marble and place it on top of the box, inside of the tin lid.
+            </instructions>
+          </task>
+        </task_group>
+
+        <arm_keys>
+	  <!-- Indices 0-5 are: tx, ty, tz, rx, ry, rz -->
+          <arm inc_key="w" dec_key="s" index="0" increment=0.025></arm>
+          <arm inc_key="a" dec_key="d" index="1" increment=0.025></arm>
+          <arm inc_key="q" dec_key="e" index="2" increment=0.025></arm>
+          <arm inc_key="W" dec_key="S" index="3" increment=0.025></arm>
+          <arm inc_key="A" dec_key="D" index="4" increment=0.025></arm>
+          <arm inc_key="Q" dec_key="E" index="5" increment=0.025></arm>
+        </arm_keys>
+
+        <motor_keys>
+          <motor inc_key="z" dec_key="Z" index=0 increment=0.05></motor>
+          <motor inc_key="x" dec_key="X" index=1 increment=0.05></motor>
+          <motor inc_key="c" dec_key="C" index=2 increment=0.05></motor>
+          <motor inc_key="1" dec_key="!" index=3 increment=0.05></motor>
+          <motor inc_key="2" dec_key="@" index=4 increment=0.05></motor>
+          <motor inc_key="3" dec_key="#" index=5 increment=0.05></motor>
+          <motor inc_key="4" dec_key="$" index=6 increment=0.05></motor>
+          <motor inc_key="5" dec_key="%" index=7 increment=0.05></motor>
+          <motor inc_key="6" dec_key="^" index=8 increment=0.05></motor>
+	  <!-- I'm having trouble parsing "&" and "&amp;", so I'll just use
+	       "amp" and handle it in the code. -->
+          <motor inc_key="7" dec_key="amp" index=9 increment=0.05></motor>
+          <motor inc_key="8" dec_key="*" index=10 increment=0.05></motor>
+          <motor inc_key="9" dec_key="(" index=11 increment=0.05></motor>
+          <motor inc_key="0" dec_key=")" index=12 increment=0.05></motor>
+        </motor_keys>
+
+        <grasp_keys>
+          <grasp inc_key="1" dec_key="!" name="Spherical" increment="0.015"></grasp>
+          <grasp inc_key="2" dec_key="@" name="Cylindrical" increment="0.015"></grasp>
+          <grasp inc_key="3" dec_key="#" name="FinePinch(British)" increment="0.015"></grasp>
+          <grasp inc_key="4" dec_key="$" name="FinePinch(American)" increment="0.015"></grasp>
+          <grasp inc_key="5" dec_key="%" name="ThreeFingerPinch" increment="0.015"></grasp>
+          <grasp inc_key="6" dec_key="^" name="Palmar(Tray)" increment="0.015"></grasp>
+          <grasp inc_key="7" dec_key="amp" name="Hook" increment="0.015"></grasp>
+        </grasp_keys>
+
+      </plugin>
+
+      <plugin name="TimerGUIPlugin" filename="libTimerGUIPlugin.so">
+        <size>155 80</size>
+        <start_stop_button>1</start_stop_button>
+        <topic>~/timer_control</topic>
+      </plugin>
+
+    </gui>
+
+   <physics type="ode">
+      <gravity>0.000000 0.000000 -9.810000</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.000000</sor>
+        </solver>
+        <constraints>
+          <cfm>0.000000</cfm>
+          <erp>0.200000</erp>
+          <contact_max_correcting_vel>0.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.00000</contact_surface_layer>
+        </constraints>
+      </ode>
+      <bullet>
+        <solver>
+          <type>sequential_impulse</type>
+          <iters>100</iters>
+          <sor>1.000000</sor>
+        </solver>
+        <constraints>
+          <cfm>0.000000</cfm>
+          <erp>0.200000</erp>
+          <split_impulse>true</split_impulse>
+          <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </bullet>
+      <simbody>
+        <accuracy>0.001</accuracy>
+        <max_transient_velocity>0.01</max_transient_velocity>
+        <contact>
+          <stiffness>1e8</stiffness>
+          <dissipation>10</dissipation>
+          <static_friction>0.15</static_friction>
+          <dynamic_friction>0.1</dynamic_friction>
+          <viscous_friction>0.0</viscous_friction>
+        </contact>
+      </simbody>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001000</max_step_size>
+    </physics>
+    <!-- debug model for assumed screen
+         model in simulation frame,
+         used for debugging pose transforms
+         to check alignment of movement.
+    <model name="screen">
+      <pose>0 -0.65 1.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <pose>-0.25 -0.005 -0.1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.01 0.2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <static>true</static>
+    </model>
+    -->
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://table</uri>
+    </include>
+
+    <include>
+     <uri>model://mpl_haptix_right_forearm</uri>
+     <pose>0.4 -0.7 1.2 0 0 3.1416</pose>
+    </include>
+
+    <model name="polhemus_source">
+      <pose>-.5 260 1.3 0 3.1416 1.57</pose>
+      <link name="link">
+        <inertial>
+          <mass>0.25</mass>
+          <inertia>
+            <ixx>0.000104167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000104167</iyy>
+            <iyz>0</iyz>
+            <izz>0.000104167</izz>
+          </inertia>
+        </inertial>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>true</static>
+    </model>
+
+    <plugin name="arrange_polhemus" filename="libArrangePlugin.so">
+      <topic_name>~/arrange_polhemus</topic_name>
+      <model_name>polhemus_source</model_name>
+
+      <initial_arrangement>no_polhemus</initial_arrangement>
+      <arrangement name="no_polhemus">
+        <pose model="polhemus_source">-.5 260 1.3 0 3.1416 1.57</pose>
+      </arrangement>
+      <arrangement name="have_polhemus">
+        <pose model="polhemus_source">-.5 0 1.3 0 3.1416 1.57</pose>
+      </arrangement>
+    </plugin>
+
+    <plugin name="hydra" filename="libHydraPlugin.so">
+      <pivot>0.04 0 0</pivot>
+      <grab>0.12 0 0</grab>
+    </plugin>
+
+    <model name="sphere_visual_model">
+      <pose>0.4 0.0 1.2 0 0 3.1416</pose>
+      <link name="sphere_link">
+        <visual name="sphere_visual">
+          <geometry>
+            <sphere>
+              <radius>0.03</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Green</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="sphere_visual">
+          <geometry>
+            <sphere>
+              <radius>0.03</radius>
+            </sphere>
+          </geometry>
+        </collision>
+      </link>
+      <static>1</static>
+    </model>
+
+  </world>
+</sdf>
