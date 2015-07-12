@@ -435,6 +435,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Visibility layers" ref='visual_layers'>
+      <markdown version="6+">visual_layers/tutorial.md</markdown>
+      <description>Assign layers to visuals and toggle their visibility in the graphical interface.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -790,6 +796,7 @@
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
+        <tutorial>visual_layers</tutorial>
       </tutorials>
     </category>
 
