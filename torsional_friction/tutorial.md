@@ -1,4 +1,5 @@
-This tutorial is about torsional friction. For translational friction, see [this ](http://gazebosim.org/tutorials?tut=friction) tutorial.
+This tutorial is about torsional friction. For translational friction, see 
+[this](http://gazebosim.org/tutorials?tut=friction) tutorial.
 
 # Overview
 
@@ -17,7 +18,7 @@ decelerate the box. You can try it by yourself:
 
 1. Open Gazebo with the default physics engine and insert a box
 
-1. Choose "View -> Transparent" and then "View -> Contacts", so we can see the
+1. Choose `View -> Transparent` and then `View -> Contacts`, so we can see the
 contact points.
 
 1. Right-click the box and choose `Apply Force and Torque`
@@ -53,32 +54,34 @@ enable torsional friction.
 1. Right-click the sphere and choose `Edit model`, you'll enter the model
 editor.
 
-1. Double click the sphere to open its inspector. Go to the collision tab, then
+1. Double click the sphere to open its inspector. Go to the Collision tab, then
 find `Surface -> Friction`. There are a few parameters there which are important
 for torsional friction, they will be explained below. For now, we want to set
 `Use patch radius` to false and input the sphere's radius into `
 Curvature radius`, which is 0.5 m. Note that the torsional friction `mu3` is
 1.0 by default.
 
-1. Finally, we want to make the sphere very heavy so it presses against the
-ground and we see the effects of friction more quickly. So on the `Link` tab,
-set the mass to 10000 Kg. The heavier it is, the more it pressed against the
-ground and the higher the friction.
+1. Torsional friction is tipically very low because of the small contact area.
+For our experiment, we want a lot of friction so the sphere stops fast. One way
+to achieve this is to make the sphere very heavy so it presses against the
+ground. So let's go on the `Link` tab and set the mass to 10000 Kg. The heavier
+it is, the more it presses against the ground and the higher the friction.
 
 1. Now go to `File -> Exit Model Editor` and make sure you save the model.
 
-1. Back in the main window, repeat the same process above for the new sphere.
-Unlike the first sphere (which is still rotating, it will rotate forever), the
-new sphere quickly stops spinning when the torque is applied.
+1. Back in the main window, apply torque to the new sphere as you did for the
+old one. Unlike the first sphere (which is still rotating, it will rotate
+forever), the new sphere quickly stops spinning when the torque is applied.
 
 # How it works
 
 ## Torsional friction equation
 
-Torsional friction torque is computed based on contact depth and the surface
-radius as follows: (you can find more detailed calculations [here](http://nbviewer.ipython.org/github/osrf/collaboration/blob/master/Torsional%20Friction.ipynb))
+Torsional friction torque is computed based on contact depth and surface
+radius as follows: (you can find more detailed calculations 
+[here](http://nbviewer.ipython.org/github/osrf/collaboration/blob/master/Torsional%20Friction.ipynb))
 
-    T = 3 * &#960; * a * &#956;3 * N / 16
+    T = 3 * PI * a * mu3 * N / 16
 
 Where:
 
@@ -115,8 +118,8 @@ It also depends on the area of contact between surfaces.
 SDF offers two ways of parametrizing the contact surface. The user can either
 define a `patch_radius` (**a** above), which will be always the same
 independently of the contact depth or a `surface_radius` (**R** above), which
-is used together with contact depth. Note that in both cased, the user is
-specifying a single values for the whole surface, so picking values for
+is used together with contact depth. Note that in both cases, the user is
+specifying a single value for the whole surface, so picking values for
 non-spherical surfaces might require fine tuning.
 
 To choose between methods, you can set the `use_patch_radius` tag to true
@@ -126,12 +129,13 @@ for `patch_radius` and false to use `surface_radius`.
 
 * **mu3**: Like **mu** and **mu2**, **mu3** has a default value of 1.0.
 
-* **use\_patch\_radius**: False by default, so the `patch_radius` is used.
+* **use\_patch\_radius**: True by default, so the `patch_radius` is used.
 
-* **patch\_radius**: Zero by default, so even if though `mu3` is set, there will
+* **patch\_radius**: Zero by default, so even if `mu3` is set, there will
 be no torsional friction.
 
-* **surface_radius**: Zero by default.
+* **surface_radius**: Infinity by default (a plane surface), so even if `mu3`
+is set, there will be no torsional friction.
 
 ### Example
 
@@ -169,6 +173,9 @@ On SDF, the torsional friction for the sphere example would look as follows:
 Gazebo comes with a demo world which you can run as follows:
 
     gazebo -u worlds/torsional_friction_demo.world
+
+On the demo there are various models rotating. Models with higher friction stop
+first.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LveVKwiXlx0" frameborder="0" allowfullscreen></iframe>
 
