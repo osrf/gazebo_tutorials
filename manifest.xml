@@ -16,11 +16,12 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Debian, Fedora or Arch" ref='install_other_linux'>
-      <markdown version="4.0">install_other_linux/tutorial_4-0.md</markdown>
+    <tutorial title="Debian, Fedora, Arch or Gentoo" ref='install_other_linux'>
+      <markdown version="4.0">install_other_linux/tutorial.md</markdown>
+      <markdown version="5.0">install_other_linux/tutorial.md</markdown>
       <description>
 	Installation instructions for major linux distributions (non Ubuntu). Currently,
-	Debian, Fedora or Arch Linux.
+	Debian, Fedora, Arch Linux and Gentoo.
       </description>
       <tags>
         <tag>install</tag>
