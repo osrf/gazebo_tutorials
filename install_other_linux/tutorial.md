@@ -19,7 +19,7 @@ maintainer in Debian) which usually hosts the latest gazebo release.
 
 ## Fedora
 
-[Gazebo is Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
+[Gazebo in Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
 as an official package (the maintainer is Rich Mattes). Depending on the Fedora
 version, the version of Gazebo available is different:
 
