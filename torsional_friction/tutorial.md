@@ -1,4 +1,4 @@
-This tutorial is about torsional friction. For translational friction, see 
+This tutorial is about torsional friction. For translational friction, see
 [this](http://gazebosim.org/tutorials?tut=friction) tutorial.
 
 # Overview
@@ -58,8 +58,8 @@ editor.
 find `Surface -> Friction`. There are a few parameters there which are important
 for torsional friction, they will be explained below. For now, we want to set
 `Use patch radius` to false and input the sphere's radius into `
-Curvature radius`, which is 0.5 m. Note that the torsional friction `mu3` is
-1.0 by default.
+Curvature radius`, which is 0.5 m. Note that the torsional friction coefficient
+is 1.0 by default.
 
 1. Torsional friction is tipically very low because of the small contact area.
 For our experiment, we want a lot of friction so the sphere stops fast. One way
@@ -78,10 +78,10 @@ forever), the new sphere quickly stops spinning when the torque is applied.
 ## Torsional friction equation
 
 Torsional friction torque is computed based on contact depth and surface
-radius as follows: (you can find more detailed calculations 
+radius as follows: (you can find more detailed calculations
 [here](http://nbviewer.ipython.org/github/osrf/collaboration/blob/master/Torsional%20Friction.ipynb))
 
-    T = 3 * PI * a * mu3 * N / 16
+    T = 3 * PI * a * coefficient * N / 16
 
 Where:
 
@@ -89,8 +89,8 @@ Where:
 
 * **N**: Normal force at contact.
 
-* **mu3**: Coefficient of torsional friction. This is usually the same as the
-translational friction coefficients **mu** and **mu2**.
+* **coefficient**: Coefficient of torsional friction. This is usually the same
+as the translational friction coefficients **mu** and **mu2**.
 
 * **a**: Contact patch radius (`patch_radius` on SDF). This is the radius of
 the contact area between surfaces. A sphere on top of a plane generates a
@@ -127,15 +127,16 @@ for `patch_radius` and false to use `surface_radius`.
 
 ### Default values
 
-* **mu3**: Like **mu** and **mu2**, **mu3** has a default value of 1.0.
+* **coefficient**: Like **mu** and **mu2**, **coefficient** has a default value
+of 1.0.
 
 * **use\_patch\_radius**: True by default, so the `patch_radius` is used.
 
-* **patch\_radius**: Zero by default, so even if `mu3` is set, there will
+* **patch\_radius**: Zero by default, so even if `coefficient` is set, there will
 be no torsional friction.
 
-* **surface_radius**: Infinity by default (a plane surface), so even if `mu3`
-is set, there will be no torsional friction.
+* **surface_radius**: Infinity by default (a plane surface), so even if
+`coefficient` is set, there will be no torsional friction.
 
 ### Example
 
@@ -156,11 +157,11 @@ On SDF, the torsional friction for the sphere example would look as follows:
          ...
           <surface>
             <friction>
-              <ode>
-                <mu3>1.0</mu3>
+              <torsional>
+                <coefficient>1.0</coefficient>
                 <surface_radius>0.5</surface_radius>
                 <use_patch_radius>false</use_patch_radius>
-              </ode>
+              </torsional>
             </friction>
            ...
           </surface>
