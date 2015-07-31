@@ -8,6 +8,7 @@
     <tutorial title="Ubuntu" ref='install_ubuntu'>
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
+      <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -15,11 +16,12 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Debian, Fedora or Arch" ref='install_other_linux'>
-      <markdown version="4.0">install_other_linux/tutorial_4-0.md</markdown>
+    <tutorial title="Debian, Fedora, Arch or Gentoo" ref='install_other_linux'>
+      <markdown version="4.0">install_other_linux/tutorial.md</markdown>
+      <markdown version="5.0">install_other_linux/tutorial.md</markdown>
       <description>
 	Installation instructions for major linux distributions (non Ubuntu). Currently,
-	Debian, Fedora or Arch Linux.
+	Debian, Fedora, Arch Linux and Gentoo.
       </description>
       <tags>
         <tag>install</tag>
@@ -30,6 +32,7 @@
     <tutorial title="Mac" ref='install_on_mac'>
       <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
+      <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -435,6 +438,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Visibility layers" ref='visual_layers'>
+      <markdown version="6+">visual_layers/tutorial.md</markdown>
+      <description>Assign layers to visuals and toggle their visibility in the graphical interface.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -790,6 +799,7 @@
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
+        <tutorial>visual_layers</tutorial>
       </tutorials>
     </category>
 

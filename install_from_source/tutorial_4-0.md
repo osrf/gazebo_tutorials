@@ -264,6 +264,16 @@ hg clone https://bitbucket.org/osrf/sdformat
 hg clone https://bitbucket.org/osrf/gazebo
 ~~~
 
+Checkout the appropriate branch for each repository.
+For example, gazebo5 doesn't support dart5.
+
+~~~
+cd ${WS}/src/gazebo
+hg up gazebo5
+cd ${WS}/src/dart
+git checkout release-4.3
+~~~
+
 Add [package.xml](http://wiki.ros.org/catkin/package.xml)
 files for the plain cmake packages:
 
