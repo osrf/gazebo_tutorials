@@ -25,7 +25,7 @@ Note that this world file is very similar to the default [arat.world](https://bi
 
 ~~~
     <model name="sphere_visual_model">
-      <pose>0https://bitbucket.org/osrf/gazebo_tutorials/branch/hsu/.4 0.0 1.2 0 0 3.1416</pose>
+      <pose>0.4 0.0 1.2 0 0 3.1416</pose>
       <link name="sphere_link">
         <visual name="sphere_visual">
           <geometry>
@@ -83,7 +83,7 @@ and the sphere should change color from green to red as the hand passes through 
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
 
-Hint for linux users running octave, in octave or matlab prompt, add path to haptix scripts:
+Hint for linux users, at octave or matlab prompt, add path to haptix scripts:
 
 ~~~
 path('[replace with your path to install]/lib/x86_64-linux-gnu/haptix-comm/octave', path)
