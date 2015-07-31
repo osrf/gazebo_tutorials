@@ -83,3 +83,9 @@ and the sphere should change color from green to red as the hand passes through 
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
 
+Hint for linux users running octave, in octave or matlab prompt, add path to haptix scripts:
+~~~
+path('[replace with your path to install]/lib/x86_64-linux-gnu/haptix-comm/octave', path)
+path('[replace with path to your custom_world.m]', path)
+~~~
+before running `custom_world.m`.
