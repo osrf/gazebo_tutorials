@@ -81,7 +81,7 @@ First see [world API tutorial Example section](http://gazebosim.org/tutorials?tu
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:
 
-<iframe width="600" height="450" src="https://www.youtu.com/embed/bWaWNZu-0n4" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/bWaWNZu-0n4" frameborder="0" allowfullscreen></iframe>
 
 Hint for linux users, at octave or matlab prompt, add path to haptix scripts:
 
