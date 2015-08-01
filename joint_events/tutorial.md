@@ -33,6 +33,7 @@ on="1.5">
 
     <plugin name="SimEvents" filename="libSimEventsPlugin.so">
 
+
     <!-- Angle: must be in range -PI to PI  -->
     <event>
       <name>joint_angle</name>
@@ -41,37 +42,9 @@ on="1.5">
       <joint>joint</joint>
       <range>
         <type>normalized_angle</type>
-        <min>3</min>
-        <max>3.3</max>
+        <min>1.55</min>
+        <max>1.70</max>
       </range>
-    </event>
-
-    <!-- Velocity -->
-    <event>
-      <name>joint_velocity</name>
-      <type>joint</type>
-      <model>revoluter</model>
-      <joint>joint</joint>
-      <range>
-        <type>velocity</type>
-        <min>3</min>
-        <max>3.3</max>
-      </range>
-    </event>
-
-
-    <!-- Applied Force -->
-    <event>
-      <name>joint_force</name>
-      <type>joint</type>
-      <model>revoluter</model>
-      <joint>joint</joint>
-        <type>applied_force</type>
-        <range>
-          <type>applied_force</type>
-          <min>3</min>
-          <max>3.3</max>
-        </range>
     </event>
 
     <!-- Close the plugin element  -->
@@ -147,3 +120,40 @@ on="1.5">
 ~~~
 
 
+[[file:torque_needle.png|640px]]
+
+## Velocity
+
+~~~
+    <!-- Velocity -->
+    <event>
+      <name>joint_velocity</name>
+      <type>joint</type>
+      <model>revoluter</model>
+      <joint>joint</joint>
+      <range>
+        <type>velocity</type>
+        <min>3</min>
+        <max>3.3</max>
+      </range>
+    </event>
+~~~
+
+## Applied force
+
+~~~
+    <!-- Applied Force -->
+    <event>
+      <name>joint_force</name>
+      <type>joint</type>
+      <model>revoluter</model>
+      <joint>joint</joint>
+        <type>applied_force</type>
+        <range>
+          <type>applied_force</type>
+          <min>3</min>
+          <max>3.3</max>
+        </range>
+    </event>
+
+~~~
