@@ -18,7 +18,7 @@ cd joint_event
 
 Copy the world code and save it as joint_event.world
 
-<include lang='sdf' src='joint_event_position.world'/>
+<include lang='sdf' src='./joint_event_position.world'/>
 
 ~~~
 
