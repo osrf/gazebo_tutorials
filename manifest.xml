@@ -324,6 +324,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+      <tutorial title="Joint Events" ref='jointevents'> <markdown version="6.0+">joint_events/tutorial.md</markdown>
+      <description>Use the simEventsPlugin to send messages when a model joint changes.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9">contact_sensor/tutorial.md</markdown>
       <markdown version="4.0+">contact_sensor/tutorial_4-0.md</markdown>
