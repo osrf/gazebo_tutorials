@@ -265,11 +265,11 @@ hg clone https://bitbucket.org/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
-For example, gazebo5 doesn't support dart5.
+For example, gazebo_4.0 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up gazebo5
+hg up gazebo_4.0
 cd ${WS}/src/dart
 git checkout release-4.3
 ~~~

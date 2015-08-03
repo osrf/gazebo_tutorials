@@ -361,4 +361,3 @@ Version 1.9 can be installed using the gazebo formula, gazebo 2.2 using gazebo2,
 To install the latest version of gazebo's default branch:
 
         brew install gazebo4 --HEAD
-
