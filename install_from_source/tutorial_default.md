@@ -24,15 +24,11 @@ When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh<
 
 Install prerequisites.  A clean Ubuntu system will need:
 
-  **Trusty**
-
     wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
     ROS_DISTRO=dummy . /tmp/dependencies.sh
     sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
 
 ### Optional Physics Engines
-
-#### Trusty
 
 **Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
