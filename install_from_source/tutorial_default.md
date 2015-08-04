@@ -4,15 +4,18 @@
 
 ### Prerequisites
 
-Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
+For compiling the latest version of gazebo you will need an Ubuntu distribution
+equal to 14.04.2 (Trusty) or newer. Previous versions (Precise) suffer from
+missing dependencies and other requirements.
+
+Make sure you have removed the Ubuntu pre-compiled binaries before installing
+from source:
 
     sudo apt-get remove '.*gazebo.*' '.*sdformat.*'
 
-We also recommend ROS users remove older ROS versions of Gazebo:
-
-    sudo apt-get remove ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
-
-If you have previously installed from source, be sure you are installing to the same path location or that you have removed the previous installation from source version manually.
+If you have previously installed from source, be sure you are installing to the
+same path location or that you have removed the previous installation from
+source version manually.
 
 As a side note, default install locations:
 
@@ -22,13 +25,13 @@ As a side note, default install locations:
 
 ### ROS Users
 
-When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
+When building Gazebo, we recommend you do not have your */opt/ros/\*/setup.sh*
+file sourced, as it has been seen to add the wrong libraries to the Gazebo
+build.
 
 ### Install Required Dependencies
 
 Install prerequisites.  A clean Ubuntu system will need:
-
-  **Trusty**
 
     wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
     ROS_DISTRO=dummy . /tmp/dependencies.sh
@@ -36,52 +39,57 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 ### Optional Physics Engines
 
-#### Trusty
+**Release Note:** in order to use DART, a full compilation of Gazebo from
+source is needed (as detailed in this document). The .deb packages are
+shipping the ODE, Bullet, and Simbody physics engines.
 
-**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
+#### DART Support
 
-   ***DART Support***
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
+the default branch. In an Ubuntu system, several Personal Package Archives
+(PPA's) can be used to install the proper package and dependencies. Note that
+adding these PPA's may cause conflicts with ROS.
 
-   Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into the default branch. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
-
+        # Only needed on Trusty. Ubuntu packages since Utopic.
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
+
+        # Main repository
         sudo apt-add-repository ppa:dartsim
         sudo apt-get update
         sudo apt-get install libdart-core5-dev
 
-### Optional Dependencies ###
+### Optional Dependencies
 
-   ***GUI test Support*** (Optional)
+#### GUI test Support
 
-   To correctly parse the results of GUI regression tests, the xsltproc package is needed.
+To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
-        sudo apt-get install xsltproc
+    sudo apt-get install xsltproc
 
-   ***Man Page Support*** (Optional)
+#### Man Page Support
 
-   To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
+To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
 
-        sudo apt-get install ruby-ronn
+    sudo apt-get install ruby-ronn
 
-   ***Player Support*** (Optional)
+#### Player Support
 
-        sudo apt-get install robot-player-dev*
+    sudo apt-get install robot-player-dev*
 
 ### Build And Install SDFormat
 
 To install from source, you should first install the SDFormat package, then build Gazebo off of that:
 
-1. Clone the repository into a directory:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/sdformat
+        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        cd /tmp/sdformat
 
-1. Change directory into the sdformat repository and switch to the `default` branch:
-
-        cd ~/sdformat
-        hg up default
-
-     **Note:** the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to branch `sdf3` if you desire more stability
+     **Note:** the `default` branch is the development branch where you'll find
+the bleeding edge code, your cloned repository should be on this branch by
+default but we recommend you switch to branch `sdf3` if you desire more
+stability
 
 1. Create a build directory and go there:
 
@@ -96,16 +104,15 @@ To install from source, you should first install the SDFormat package, then buil
 
 ### Build And Install Gazebo
 
-1. Clone the repository into a directory in your home folder:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/gazebo
+        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        cd /tmp/gazebo
 
-1. Change directory in the Gazebo repository and switch to the default branch
-
-        cd ~/gazebo
-        hg up default
-
-     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the `gazebo6` branch if you desire more stability
+     **Note:** the `default` branch is the development branch where
+you'll find the bleeding edge code, your cloned repository should be on this
+branch by default but we recommend you switch to the `gazebo6` branch if you
+desire more stability
 
 1. Create a build directory and go there:
 
