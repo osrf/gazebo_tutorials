@@ -41,10 +41,16 @@ Install prerequisites.  A clean Ubuntu system will need:
 
    ***DART Support***
 
-   Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into the default branch. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
+the default branch. In an Ubuntu system, several Personal Package Archives
+(PPA's) can be used to install the proper package and dependencies. Note that
+adding these PPA's may cause conflicts with ROS.
 
+        # Only needed on Trusty. Ubuntu packages since Utopic.
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
+
+        # Main repository
         sudo apt-add-repository ppa:dartsim
         sudo apt-get update
         sudo apt-get install libdart-core5-dev
