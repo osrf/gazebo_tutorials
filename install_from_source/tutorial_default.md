@@ -25,7 +25,9 @@ As a side note, default install locations:
 
 ### ROS Users
 
-When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
+When building Gazebo, we recommend you do not have your */opt/ros/\*/setup.sh*
+file sourced, as it has been seen to add the wrong libraries to the Gazebo
+build.
 
 ### Install Required Dependencies
 
@@ -37,9 +39,11 @@ Install prerequisites.  A clean Ubuntu system will need:
 
 ### Optional Physics Engines
 
-**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
+**Release Note:** in order to use DART, a full compilation of Gazebo from
+source is needed (as detailed in this document). The .deb packages are
+shipping the ODE, Bullet, and Simbody physics engines.
 
-   ***DART Support***
+#### DART Support
 
 Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
 the default branch. In an Ubuntu system, several Personal Package Archives
@@ -55,7 +59,7 @@ adding these PPA's may cause conflicts with ROS.
         sudo apt-get update
         sudo apt-get install libdart-core5-dev
 
-### Optional Dependencies ###
+### Optional Dependencies
 
    ***GUI test Support*** (Optional)
 
