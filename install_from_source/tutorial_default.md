@@ -59,7 +59,6 @@ adding these PPA's may cause conflicts with ROS.
         sudo apt-get update
         sudo apt-get install libdart-core5-dev
 
-
 ### Optional Dependencies
 
 #### GUI test Support
@@ -77,7 +76,6 @@ To generate man-pages for the Gazebo executables, the ruby-ronn package is neede
 #### Player Support
 
     sudo apt-get install robot-player-dev*
-
 
 ### Build And Install SDFormat
 
@@ -106,16 +104,12 @@ stability
 
 ### Build And Install Gazebo
 
-1. Clone the repository into a directory in your home folder:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/gazebo
+        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        cd /tmp/gazebo
 
-1. Change directory in the Gazebo repository and switch to the default branch
-
-        cd ~/gazebo
-        hg up default
-
-     **Note:** the <tt>default</tt> branch is the development branch where
+     **Note:** the `default` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `gazebo6` branch if you
 desire more stability
