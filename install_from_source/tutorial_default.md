@@ -8,10 +8,6 @@ Make sure you have removed the Ubuntu pre-compiled binaries before installing fr
 
     sudo apt-get remove '.*gazebo.*' '.*sdformat.*'
 
-We also recommend ROS users remove older ROS versions of Gazebo:
-
-    sudo apt-get remove ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
-
 If you have previously installed from source, be sure you are installing to the same path location or that you have removed the previous installation from source version manually.
 
 As a side note, default install locations:
