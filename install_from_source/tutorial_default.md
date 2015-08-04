@@ -59,38 +59,39 @@ adding these PPA's may cause conflicts with ROS.
         sudo apt-get update
         sudo apt-get install libdart-core5-dev
 
+
 ### Optional Dependencies
 
-   ***GUI test Support*** (Optional)
+#### GUI test Support
 
-   To correctly parse the results of GUI regression tests, the xsltproc package is needed.
+To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
-        sudo apt-get install xsltproc
+    sudo apt-get install xsltproc
 
-   ***Man Page Support*** (Optional)
+#### Man Page Support
 
-   To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
+To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
 
-        sudo apt-get install ruby-ronn
+    sudo apt-get install ruby-ronn
 
-   ***Player Support*** (Optional)
+#### Player Support
 
-        sudo apt-get install robot-player-dev*
+    sudo apt-get install robot-player-dev*
+
 
 ### Build And Install SDFormat
 
 To install from source, you should first install the SDFormat package, then build Gazebo off of that:
 
-1. Clone the repository into a directory:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/sdformat
+        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        cd /tmp/sdformat
 
-1. Change directory into the sdformat repository and switch to the `default` branch:
-
-        cd ~/sdformat
-        hg up default
-
-     **Note:** the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to branch `sdf3` if you desire more stability
+     **Note:** the `default` branch is the development branch where you'll find
+the bleeding edge code, your cloned repository should be on this branch by
+default but we recommend you switch to branch `sdf3` if you desire more
+stability
 
 1. Create a build directory and go there:
 
@@ -114,7 +115,10 @@ To install from source, you should first install the SDFormat package, then buil
         cd ~/gazebo
         hg up default
 
-     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the `gazebo6` branch if you desire more stability
+     **Note:** the <tt>default</tt> branch is the development branch where
+you'll find the bleeding edge code, your cloned repository should be on this
+branch by default but we recommend you switch to the `gazebo6` branch if you
+desire more stability
 
 1. Create a build directory and go there:
 
