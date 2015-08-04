@@ -4,11 +4,18 @@
 
 ### Prerequisites
 
-Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
+For compiling the latest version of gazebo you will need an Ubuntu distribution
+equal to 14.04.2 (Trusty) or newer. Previous versions (Precise) suffer from
+missing dependencies and other requisites.
+
+Make sure you have removed the Ubuntu pre-compiled binaries before installing
+from source:
 
     sudo apt-get remove '.*gazebo.*' '.*sdformat.*'
 
-If you have previously installed from source, be sure you are installing to the same path location or that you have removed the previous installation from source version manually.
+If you have previously installed from source, be sure you are installing to the
+same path location or that you have removed the previous installation from
+source version manually.
 
 As a side note, default install locations:
 
