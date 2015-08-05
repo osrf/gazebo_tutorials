@@ -82,6 +82,7 @@
 
     <tutorial title="Plugins 101" ref='plugins_hello_world'>
       <markdown version="1.9+">plugins_hello_world/tutorial-2.2.md</markdown>
+      <markdown version="5+">plugins_hello_world/tutorial-5.md</markdown>
       <description>Overview of Gazebo plugins.</description>
       <skill>beginner</skill>
     </tutorial>
