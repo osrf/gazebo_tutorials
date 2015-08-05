@@ -132,6 +132,11 @@ $ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 Copy the following in CMakeLists.txt:
 <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
 
+New in `gazebo6`: c++11 flags are now required for all downstream software to compile against gazebo.
+This is done with the following line:
+<include from="/CXX_FLAGS/" to="/CXX_FLAGS/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
+
+
 Create the build directory
 
 ~~~
