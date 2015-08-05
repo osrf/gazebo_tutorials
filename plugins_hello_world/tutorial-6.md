@@ -50,10 +50,10 @@ Use a Sensor plugin to acquire sensor information and control sensor properties.
 Plugins are designed to be simple.
 A bare bones world plugin contains a class with a few member functions.
 
-First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a lower release than gazebo5, replace 5 with whatever version number you have.
+First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a lower release than gazebo6, replace 5 with whatever version number you have.
 
 ~~~
-sudo apt-get install libgazebo5-dev
+sudo apt-get install libgazebo6-dev
 ~~~
 
 Next, make a directory and a .cc file for the new plugin:
@@ -65,10 +65,10 @@ $ gedit hello_world.cc
 ~~~
 
 Copy the following into hello_world.cc:
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/hello_world/hello_world.cc' />
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/hello_world),
+[examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
@@ -80,7 +80,7 @@ namespace gazebo
 {
 ~~~
 
-The [gazebo/gazebo.hh](https://bitbucket.org/osrf/gazebo/src/gazebo5/gazebo/gazebo_core.hh)
+The [gazebo/gazebo.hh](https://bitbucket.org/osrf/gazebo/src/gazebo6/gazebo/gazebo_core.hh)
 file includes a core set of basic gazebo functions.
 It doesn't include `gazebo/physics/physics.hh`, `gazebo/rendering/rendering.hh`,
 or `gazebo/sensors/sensors.hh` as those should be included on a case by case basis.
@@ -130,7 +130,7 @@ $ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 ~~~
 
 Copy the following in CMakeLists.txt:
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/hello_world/CMakeLists.txt' />
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
 
 Create the build directory
 
@@ -167,8 +167,8 @@ Either the full path to the plugin is specified, or the plugin exists in
 one of the paths in the GAZEBO_PLUGIN_PATH environment variable.
 
 Example world file also found in
-[examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/hello_world/hello.world).
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/hello_world/hello.world' />
+[examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world/hello.world).
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
 
