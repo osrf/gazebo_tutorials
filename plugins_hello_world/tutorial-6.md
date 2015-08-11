@@ -190,12 +190,13 @@ $ gzserver ../hello.world --verbose
 You should see output similar to:
 
 ~~~
-Gazebo multi-robot simulator, version 1.9.5
-Copyright (C) 2013 Open Source Robotics Foundation.
+Gazebo multi-robot simulator, version 6.1.0
+Copyright (C) 2012-2015 Open Source Robotics Foundation.
 Released under the Apache 2 License.
 http://gazebosim.org
 
-Msg Waiting for master
-Msg Connected to gazebo master @ http://localhost:11345
+[Msg] Waiting for master.
+[Msg] Connected to gazebo master @ http://127.0.0.1:11345
+[Msg] Publicized address: 172.23.1.52
 Hello World!
 ~~~
