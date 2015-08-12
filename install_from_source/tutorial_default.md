@@ -4,15 +4,18 @@
 
 ### Prerequisites
 
-Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
+For compiling the latest version of gazebo you will need an Ubuntu distribution
+equal to 14.04.2 (Trusty) or newer. Previous versions (Precise) suffer from
+missing dependencies and other requirements.
 
-    sudo apt-get remove 'gazebo-*' 'sdformat-*'
+Make sure you have removed the Ubuntu pre-compiled binaries before installing
+from source:
 
-We also recommend ROS users remove older ROS versions of Gazebo:
+    sudo apt-get remove '.*gazebo.*' '.*sdformat.*'
 
-    sudo apt-get remove ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
-
-If you have previously installed from source, be sure you are installing to the same path location or that you have removed the previous installation from source version manually.
+If you have previously installed from source, be sure you are installing to the
+same path location or that you have removed the previous installation from
+source version manually.
 
 As a side note, default install locations:
 
@@ -22,104 +25,71 @@ As a side note, default install locations:
 
 ### ROS Users
 
-When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
+When building Gazebo, we recommend you do not have your */opt/ros/\*/setup.sh*
+file sourced, as it has been seen to add the wrong libraries to the Gazebo
+build.
 
 ### Install Required Dependencies
 
 Install prerequisites.  A clean Ubuntu system will need:
 
-  **Precise**
-
-        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
-
-  **Trusty**
-
-        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
-
+    wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+    ROS_DISTRO=dummy . /tmp/dependencies.sh
+    sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
 
 ### Optional Physics Engines
 
-#### Trusty
+**Release Note:** in order to use DART, a full compilation of Gazebo from
+source is needed (as detailed in this document). The .deb packages are
+shipping the ODE, Bullet, and Simbody physics engines.
 
-**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
+#### DART Support
 
-   ***DART Support***
- 
-   Support for [DART](http://dartsim.github.io/) version 4.1 is integrated into Gazebo 4.0. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
+the default branch. In an Ubuntu system, several Personal Package Archives
+(PPA's) can be used to install the proper package and dependencies. Note that
+adding these PPA's may cause conflicts with ROS.
 
+        # Only needed on Trusty. Ubuntu packages since Utopic.
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
+
+        # Main repository
         sudo apt-add-repository ppa:dartsim
         sudo apt-get update
-        sudo apt-get install libdart-core4-dev
+        sudo apt-get install libdart-core5-dev
 
+### Optional Dependencies
 
-#### Precise
+#### GUI test Support
 
-**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
+To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
-Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
+    sudo apt-get install xsltproc
 
-  ***Bullet Support***
+#### Man Page Support
 
-  [Bullet](https://github.com/bulletphysics/bullet3) version 2.82 is needed for Gazebo 4.0.
-  In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package.
-  Be sure to follow Step 2 in the
-  [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu)
-  to configure your computer to accept software from packages.osrfoundation.org
+To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
 
-        sudo apt-get update        
-        sudo apt-get install libbullet2.82-dev
+    sudo apt-get install ruby-ronn
 
-   ***Simbody Support***
-   
-   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
+#### Player Support
 
-        sudo apt-get update
-        sudo apt-get install libsimbody-dev
-
-   ***DART Support***
-   
-   Support for [DART](http://dartsim.github.io/) version 4.1 is integrated into Gazebo 4.0. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
-
-        sudo apt-add-repository ppa:libccd-debs
-        sudo apt-add-repository ppa:fcl-debs
-        sudo apt-add-repository ppa:dartsim
-        sudo apt-get update
-        sudo apt-get install libdart-core4-dev
-
-### Optional Dependencies ###
-
-   ***GUI test Support*** (Optional)
-  
-   To correctly parse the results of GUI regression tests, the xsltproc package is needed.
-
-        sudo apt-get install xsltproc
-
-   ***Man Page Support*** (Optional)
-   
-   To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
-
-        sudo apt-get install ruby-ronn
-
-   ***Player Support*** (Optional)
-
-        sudo apt-get install robot-player-dev*
+    sudo apt-get install robot-player-dev*
 
 ### Build And Install SDFormat
 
 To install from source, you should first install the SDFormat package, then build Gazebo off of that:
 
-1. Clone the repository into a directory:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/sdformat
+        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        cd /tmp/sdformat
 
-1. Change directory into the sdformat repository and switch to the 2.0 branch:
-
-        cd ~/sdformat
-        hg up sdf_2.0
-
-     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability
+     **Note:** the `default` branch is the development branch where you'll find
+the bleeding edge code, your cloned repository should be on this branch by
+default but we recommend you switch to branch `sdf3` if you desire more
+stability
 
 1. Create a build directory and go there:
 
@@ -129,21 +99,20 @@ To install from source, you should first install the SDFormat package, then buil
 1. Build and install:
 
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j4
+        make -j
         sudo make install
 
 ### Build And Install Gazebo
 
-1. Clone the repository into a directory in your home folder:
+1. Clone the repository into a directory and go into it:
 
-        cd ~; hg clone https://bitbucket.org/osrf/gazebo
+        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        cd /tmp/gazebo
 
-1. Change directory in the Gazebo repository and switch to the 4.0 branch
-
-        cd ~/gazebo
-        hg up gazebo_4.0
-
-     **Note:** the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 4.0 branch if you desire more stability
+     **Note:** the `default` branch is the development branch where
+you'll find the bleeding edge code, your cloned repository should be on this
+branch by default but we recommend you switch to the `gazebo6` branch if you
+desire more stability
 
 1. Create a build directory and go there:
 
@@ -151,33 +120,33 @@ To install from source, you should first install the SDFormat package, then buil
         cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below):
-   
+
     > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
-  
+
     >        cmake ../
-  
+
 
     >> Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
     >>        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-  
+
     > b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-  
+
     >        cmake -DCMAKE_BUILD_TYPE=Debug ../
-    
+
     > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the developemnt, you can use:
 
     >>        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
- 
+
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-          -- Install path: /home/$USER/local     
+          -- Install path: /home/$USER/local
 
 1. Build Gazebo:
 
-        make -j4
+        make -j
 
 1. Install Gazebo:
 
@@ -206,7 +175,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
 
   , then `/usr/local/lib` is not in load path (default behavior for Ubuntu). Run the following commands and then try running gazebo again:
 
-    echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
+    echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf
     sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
@@ -265,13 +234,13 @@ hg clone https://bitbucket.org/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
-For example, gazebo_4.0 doesn't support dart5.
+For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up gazebo_4.0
+hg up default
 cd ${WS}/src/dart
-git checkout release-4.3
+git checkout release-5.0
 ~~~
 
 Add [package.xml](http://wiki.ros.org/catkin/package.xml)
@@ -347,17 +316,10 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 4. Run the following commands:
 
         brew tap osrf/simulation
-        brew install gazebo4
+        brew install default
         gazebo
 
 ### Optional dependencies ###
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-        brew install gazebo4 --with-bullet --with-simbody
-
-### Versions ###
-The formula currently installs version 4.0 of gazebo.
-Version 1.9 can be installed using the gazebo formula, gazebo 2.2 using gazebo2, and gazebo 3 using gazebo3.
-To install the latest version of gazebo's default branch:
-
-        brew install gazebo4 --HEAD
+        brew install default --with-bullet --with-simbody
