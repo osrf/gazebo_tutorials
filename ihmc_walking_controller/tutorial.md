@@ -21,7 +21,8 @@ Install prerequesites
 
 ~~~
 sudo apt-get update
-sudo apt-get install drcsim-prerelease
+sudo apt-get install drcsim-prerelease python-pip openjdk-7-jdk
+pip install semantic_version
 ~~~
 
 Setup a catkin workspace
