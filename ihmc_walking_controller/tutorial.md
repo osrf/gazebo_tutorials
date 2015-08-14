@@ -51,7 +51,7 @@ Launch the simulator (be sure to first `source /usr/share/drcsim/setup.sh` as us
 roslaunch ihmc_gazebo ihmc_valkyrie_standing.launch extra_gazebo_args:="--verbose"
 ~~~
 
-Launch the controller
+Download the controller
 
 ~~~
 rosrun ihmc_valkyrie ihmc_dist_update.py
