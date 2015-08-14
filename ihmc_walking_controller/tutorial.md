@@ -5,7 +5,19 @@ dynamic balancing with the Atlas or Valkyrie robot.
 
 ## Setting Up Workspace
 
-Install prerequesites:
+Setup your computer to accept software from packages.osrfoundation.org.
+
+~~~
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
+~~~
+
+Setup keys
+
+~~~
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+~~~
+
+Install prerequesites
 
 ~~~
 sudo apt-get update
@@ -23,8 +35,8 @@ Checkout [ihmc_ros]() and [val_description]().
 
 ~~~
 cd ~/catkin/src
-git clone https://bitbucket.org/ihmcrobotics/ihmc_ros
-git clone https://github.com/NASA-JSC-Robotics/val_description
+git clone -b val_plugin_integration https://bitbucket.org/ihmcrobotics/ihmc_ros
+git clone -b develop https://github.com/NASA-JSC-Robotics/val_description
 ~~~
 
 Compile by running:
