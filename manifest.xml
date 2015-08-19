@@ -276,8 +276,7 @@
     </tutorial>
 
     <tutorial title="Population of models" ref="model_population">
-      <markdown version="5.0">model_population/tutorial_5-0.md</markdown>
-      <markdown version="6.0">model_population/tutorial.md</markdown>
+      <markdown version="5+">model_population/tutorial.md</markdown>
       <description>Automatically create a collection of identical models.</description>
       <skill>intermediate</skill>
     </tutorial>
