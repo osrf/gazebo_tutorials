@@ -181,12 +181,10 @@ Example world file also found in
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
 
-If you don't have the build directory in your `GAZEBO_PLUGIN_PATH`,
-then you must run the Gazebo server from your build directory:
-
 ~~~
-$ cd build
-$ gzserver ../hello.world --verbose
+$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
+$ cd ~/gazebo_plugin_tutorial
+$ gzserver hello.world --verbose
 ~~~
 
 You should see output similar to:
