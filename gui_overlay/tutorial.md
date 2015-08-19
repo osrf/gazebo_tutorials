@@ -42,7 +42,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > The rest of the plugin may contain any code that is required to make the plugin meet your needs. In this example, we will use a QT slot to receive button presses:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*\/\/\/ \\brief Callback triggered/' to='OnButton\(\);' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Callback triggered/' to='OnButton\(\);' />
 
     > We will also use Gazebo's factory functionality to send SDF spawn messages to gzserver:
 
@@ -56,11 +56,11 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > The constructor in this file uses QT to create a button and attach it to our `OnButton` callback:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*\\\\ Create a push/' to='/OnButton\(\)\)\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a push/' to='/OnButton\(\)\)\);/' />
 
     > The constructor also connects to Gazebo's transport mechanism and creates a factory publisher:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*\\\\ Create a node/' to='/factory\"\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a node/' to='/factory\"\);/' />
 
     > The `OnButton` callback creates a new sphere SDF string:
 
@@ -169,15 +169,15 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > We use `SetSimTime` signal as a thread safe mechanism to update the displayed simulation time.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*\\\\\\ \\brief A signal used/' to='/.*_string\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*A signal used/' to='/.*_string\);/' />
 
     > An `OnStats` callback is used to receive information from Gazebo.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*\\\\\\ \\brief Callback that/' to='/_msg\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Callback that/' to='/_msg\);/' />
 
     > We will also use Gazebo's transport mechanism to receive messages from Gazebo.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*\\\\\\ \\brief Node used to/' to='/statsSub;/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Node used to/' to='/statsSub;/' />
 
 1. Take a look at the source file.
 
@@ -187,11 +187,11 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > In the constructor, we create a QLabel to display the time, and connect it to the `SetSimeTime` signal.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*\\\\ Create a time label/' to='/QueuedConnection\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a time label/' to='/QueuedConnection\);/' />
 
     > The constructor also connects to Gazebo's `~/world_stats` topic.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*\\\\ Create a node for/' to='/this\);/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a node for/' to='/this\);/' />
 
     > When a message is received, the `OnStats` function is called and the displayed time is updated.
 
