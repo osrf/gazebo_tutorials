@@ -153,7 +153,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 ## Collision Map Creator Plugin
 
 This is the code for the custom Gazebo world plugin
-(~/collision_map_creator_plugin/collision_map_creator.cc).
+(`~/collision_map_creator_plugin/collision_map_creator.cc`).
 
 <include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
 
