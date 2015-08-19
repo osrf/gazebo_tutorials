@@ -105,7 +105,7 @@ appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
         wget https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
         ~~~
 
-    1. **GUI INI file:** Modify the ~/.gazebo/gui.ini file:
+    1. **GUI INI file:** Modify the `~/.gazebo/gui.ini` file so the plugin is loaded every time Gazebo is run:
 
         ~~~
         gedit ~/.gazebo/gui.ini
@@ -204,7 +204,7 @@ tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
     > **Tip:** You can add both plugins to `gui.ini` as follows:
 
     ~~~
-    > gedit ~/.gazebo/gui.ini
+    gedit ~/.gazebo/gui.ini
     ~~~
 
     > Change the `[overlay_plugins]` section to be:
