@@ -19,9 +19,11 @@ You should use a plugin when:
 *  you want to programmaticaly alter a simulation
 
    Ex: move models, respond to events, insert new models given a set of preconditions
+   
 *  you want a fast interface to gazebo, without the overhead of the transport layer
 
    Ex: No serialization and deserialization of messages.
+   
 *  you have some code that could benefit others and want to share it
 
 # Plugin Types
@@ -68,7 +70,7 @@ Copy the following into hello_world.cc:
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
+[examples/plugins/hello\_world/hello\_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
@@ -164,20 +166,17 @@ you can attach it to a world or model in an SDF file
 On startup, Gazebo parses the SDF file, locates the plugin, and loads the code.
 It is important that Gazebo is capable of finding the plugin.
 Either the full path to the plugin is specified, or the plugin exists in
-one of the paths in the GAZEBO_PLUGIN_PATH environment variable.
+one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
 Example world file also found in
 [examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world/hello.world).
 <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
-
-If you don't have the build directory in your `GAZEBO_PLUGIN_PATH`,
-then you must run the Gazebo server from your build directory:
+and open it with `gzserver`:
 
 ~~~
-$ cd build
-$ gzserver ../hello.world --verbose
+$ gzserver ~/gazebo_plugin_tutorial/hello.world --verbose
 ~~~
 
 You should see output similar to:
