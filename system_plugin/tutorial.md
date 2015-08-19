@@ -1,14 +1,20 @@
+#Prerequisites
+
+  [Overview / HelloWorld](http://gazebosim.org/tutorials?tut=plugins_hello_world) Plugin Tutorial
+
 # Overview
 
-This tutorial will create a source file that is a system plugin designed to save images into the director `/tmp/gazebo_frames`.
+Source: [gazebo/examples/plugins/system_gui_plugin](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/plugins/system_gui_plugin)
+
+This tutorial will create a source file that is a system plugin for gzclient
+designed to save images into the directory `/tmp/gazebo_frames`.
 
 # Source code
 
 We'll start with the source file. Create a file called `system_gui.cc` with the following contents:
 
 ~~~
-$ mkdir ~/system_plugin
-$ cd ~/system_plugin
+$ cd ~/gazebo_plugin_tutorial
 $ gedit system_gui.cc
 ~~~
 
@@ -23,57 +29,27 @@ On the first `Update`, we get a pointer to the user camera (the camera used in t
 1.  Get the user camera
 
         this->userCam = gui::get_active_camera();
+
 2.  Enable save frames
 
         this->userCam->EnableSaveFrame(true);
+
 3.  Set the location to save frames
 
         this->userCam->SetSaveFramePathname("/tmp/gazebo_frames");
 
 ## Compiling Camera Plugin
 
-Create a CMakeLists.txt 
+Assuming the reader has gone through the [Hello WorldPlugin tutorial](http://gazebosim.org/tutorials?tut=plugins_hello_world) all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+
+<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/plugins/system_gui_plugin/CMakeLists.txt' />
+
+Rebuild, and you should end up with a libsystem_gui.so library.
 
 ~~~
-$ gedit CMakeLists.txt 
-~~~
-
-and copy the following into the file:
-
-~~~
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-
-include (FindPkgConfig)
-if (PKG_CONFIG_FOUND)
-  pkg_check_modules(GAZEBO gazebo)
-  pkg_check_modules(OGRE OGRE)
-  pkg_check_modules(OGRE-Terrain OGRE-Terrain)
-endif()
-include_directories(${GAZEBO_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS} ${OGRE-Terrain_INCLUDE_DIRS})
-link_directories(${GAZEBO_LIBRARY_DIRS} ${OGRE_LIBRARY_DIRS})
-
-add_library(system_gui SHARED system_gui.cc)
-target_link_libraries(system_gui ${GAZEBO_libraries} ${OGRE_LIBRARIES})
-~~~
-
-Make a build directory, run cmake, and compile. You should end up with a libsystem_gui.so library.
-
-Create a `build` directory
-
-~~~
-$ mkdir build; cd build
-~~~
-
-Compile the plugin
-
-~~~
-$ cmake ../; make
-~~~
-
-Make sure the location of the plugin is in your `$GAZEBO_PLUGIN_PATH`
-
-~~~
-$ export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
+$ cd ~/gazebo_plugin_tutorial/build
+$ cmake ../
+$ make
 ~~~
 
 ## Running Plugin
