@@ -19,9 +19,11 @@ You should use a plugin when:
 *  you want to programmaticaly alter a simulation
 
    Ex: move models, respond to events, insert new models given a set of preconditions
+   
 *  you want a fast interface to gazebo, without the overhead of the transport layer
 
    Ex: No serialization and deserialization of messages.
+   
 *  you have some code that could benefit others and want to share it
 
 # Plugin Types
