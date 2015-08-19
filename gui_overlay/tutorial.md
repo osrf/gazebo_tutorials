@@ -42,7 +42,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > The rest of the plugin may contain any code that is required to make the plugin meet your needs. In this example, we will use a QT slot to receive button presses:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Callback triggered/' to='OnButton\(\);' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Callback trig/' to='OnButton\(\);' />
 
     > We will also use Gazebo's factory functionality to send SDF spawn messages to gzserver:
 
@@ -84,6 +84,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
 
     ~~~
+    cd ~/gazebo_gui_spawn/build
     export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
     ~~~
 
@@ -95,14 +96,14 @@ appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
 
     1. **SDF world file:** Modify a world SDF file to contain the GUI plugin. For example:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world'/>
+        <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world'/>
 
-        Tip: Download the world file above:
+        **Tip:** Download the world file above:
 
-            ~~~
-            cd ~/gazebo_gui_spawn
-            wget https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
-            ~~~
+        ~~~
+        cd ~/gazebo_gui_spawn
+        wget https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
+        ~~~
 
     1. **GUI INI file:** Modify the ~/.gazebo/gui.ini file:
 
@@ -203,7 +204,7 @@ tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
     > **Tip:** You can add both plugins to `gui.ini` as follows:
 
     ~~~
-    gedit ~/.gazebo/gui.ini
+    > gedit ~/.gazebo/gui.ini
     ~~~
 
     > Change the `[overlay_plugins]` section to be:
