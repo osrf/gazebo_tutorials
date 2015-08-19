@@ -13,7 +13,7 @@ Gazebo and receive data from Gazebo.
 
 # Example 1: Spawn spheres
 
-The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/default/examples/plugins/gui_overlay_plugin_spawn).
+The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_spawn).
 
 1. Start by creating a working directory
 
@@ -141,7 +141,7 @@ appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
 
 # Example 2: Display Simulation Time
 
-The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/default/examples/plugins/gui_overlay_plugin_time).
+The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_time).
 
 1. Start by creating a working directory
 
