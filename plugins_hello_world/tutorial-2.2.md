@@ -68,7 +68,7 @@ Copy the following into hello_world.cc:
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello_world/hello_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
+[examples/plugins/hello\_world/hello\_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
