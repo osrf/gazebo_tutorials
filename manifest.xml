@@ -662,7 +662,8 @@
     </tutorial>
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
-      <markdown version="5.0+">gui_overlay/tutorial.md</markdown>
+      <markdown version="5.0">gui_overlay/tutorial_5-0.md</markdown>
+      <markdown version="6.0">gui_overlay/tutorial.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
