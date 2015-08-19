@@ -50,16 +50,17 @@ Type in the following to publish a message:
 gazebo.publish('gazebo.msgs.WorldControl', '~/world_control', { pause: true});
 ~~~
 
-The arguments to publish are the message type, the topic name, and the message (in JSON format) .  Once published, the message is going to be received by each subscriber for this topic.
-
-
-Subscribers provide a callback function for a specific type of message on a certain topic. Each time a new message is published by a publisher, the callback is invoked for every subscriber to this topic.
-
-For example, this command displays the world_stats messages by subscribing to the `~/world_stats` topic with the `console.log` message, that prints the messages to the console. You can substitue `console.log` with any function that takes `(error, result)` as arguments.
+Type the following to subscribe to the `~/world_stats` topic and send the ouput to `console.log`.
 
 ~~~
 gazebo.subscribe('gazebo.msgs.WorldStatistics',  '~/world_stats', console.log)
 ~~~
+
+
+The arguments to publish are the message type, the topic name, and the message (in JSON format) .  Once published, the message is going to be received by each subscriber for this topic.
+
+
+Subscribers provide a callback function for a specific type of message on a certain topic. Each time a new message is published by a publisher, the callback is invoked for every subscriber to this topic.
 
 It is possible to unsubscribe to a topic. When `unsubscribe` is called, all subscriptions to that topic are removed.
 
