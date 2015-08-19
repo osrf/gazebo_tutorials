@@ -155,7 +155,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 This is the code for the custom Gazebo world plugin
 (~/collision_map_creator_plugin/collision_map_creator.cc).
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/collision_map_creator.cc' />
+<include src='http://bitbucket.org/brawner/collision_map_creator_plugin/raw/collision_map_creator.cc' />
 
 
 ### Code Explained
@@ -313,7 +313,7 @@ built message type. There are some extra steps that must be taken that
 aren't explained in plugin tutorials. You can see the source code by opening
 the file `~/collision_map_creator_plugin/request_publisher.cc`:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/request_publisher.cc' />
+<include src='http://bitbucket.org/brawner/collision_map_creator_plugin/raw/request_publisher.cc' />
 
 ### Code Explained ###
 
@@ -472,7 +472,7 @@ Before exiting, the program must call transport::fini() to tear it all down.
 
 Below you can find the CMakeLists.txt file required to compile the plugin and executable:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/CMakeLists.txt' />
+<include src='http://bitbucket.org/brawner/collision_map_creator_plugin/raw/CMakeLists.txt' />
 
 ### Code Explained
 
@@ -543,7 +543,7 @@ sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugin
 Assuming everything went fine, and that's probably a rough assumption
 (seriously this one was long), you need to run Gazebo with a custom wold file:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/map_creator.world' />
+<include src='http://bitbucket.org/brawner/collision_map_creator_plugin/raw/map_creator.world' />
 
 Run Gazebo with this world:
 
