@@ -173,13 +173,10 @@ Example world file also found in
 <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
-
-If you don't have the build directory in your `GAZEBO_PLUGIN_PATH`,
-then you must run the Gazebo server from your build directory:
+and open it with `gzserver`:
 
 ~~~
-$ cd build
-$ gzserver ../hello.world --verbose
+$ gzserver ~/gazebo_plugin_tutorial/hello.world --verbose
 ~~~
 
 You should see output similar to:

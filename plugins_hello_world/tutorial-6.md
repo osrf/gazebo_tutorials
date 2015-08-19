@@ -180,11 +180,10 @@ Example world file also found in
 <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
+and open it with `gzserver`:
 
 ~~~
-$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
-$ cd ~/gazebo_plugin_tutorial
-$ gzserver hello.world --verbose
+$ gzserver ~/gazebo_plugin_tutorial/hello.world --verbose
 ~~~
 
 You should see output similar to:
