@@ -173,7 +173,7 @@ you can attach it to a world or model in an SDF file
 On startup, Gazebo parses the SDF file, locates the plugin, and loads the code.
 It is important that Gazebo is capable of finding the plugin.
 Either the full path to the plugin is specified, or the plugin exists in
-one of the paths in the GAZEBO_PLUGIN_PATH environment variable.
+one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
 Example world file also found in
 [examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world/hello.world).
