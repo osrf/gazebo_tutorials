@@ -42,11 +42,11 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > The rest of the plugin may contain any code that is required to make the plugin meet your needs. In this example, we will use a QT slot to receive button presses:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*\\\\\\ \\brief Callback triggered/' to='OnButton\(\);' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*\/\/\/ \\brief Callback triggered/' to='OnButton\(\);' />
 
     > We will also use Gazebo's factory functionality to send SDF spawn messages to gzserver:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*\\\\\\ \\brief Node used/' to='/factoryPub;/' />
+    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Node used/' to='/factoryPub;/' />
 
 1. Take a look at the source file.
 
