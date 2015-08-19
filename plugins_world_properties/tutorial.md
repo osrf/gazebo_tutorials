@@ -49,11 +49,11 @@ This message is then published to the "~/physics" topic.
 
 # Build
 
-Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/world_edit.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/CMakeLists.txt' />
 
-Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libfactory.so`, that can be inserted in a Gazebo simulation.
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libworld_edit.so`, that can be inserted in a Gazebo simulation.
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial/build
