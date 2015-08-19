@@ -11,32 +11,26 @@ Source: [gazebo/examples/plugins/world_edit](https://bitbucket.org/osrf/gazebo/s
 
 Use the `gazebo_plugin_tutorial` from the previous plugin tutorials
 
-    ~~~
     $ mkdir ~/gazebo_plugin_tutorial; cd ~/gazebo_plugin_tutorial
-    ~~~
 
 Create a file called `~/gazebo_plugin_tutorial/world_edit.world`
 
-    ~~~
     $ gedit world_edit.world
-    ~~~
 
-    Add the following contents to it:
+Add the following contents to it:
 
-    <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.world' />
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.world' />
 
 
 # Code
 
-1.  Create a file called `~/gazebo_plugin_tutorial/world_edit.cc`:
+Create a file called `~/gazebo_plugin_tutorial/world_edit.cc`:
 
-    ~~~
     $ gedit world_edit.cc
-    ~~~
 
-    Add the following content to it:
+Add the following content to it:
 
-    <include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc'/>
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc'/>
 
 
 ## The Code Explained
