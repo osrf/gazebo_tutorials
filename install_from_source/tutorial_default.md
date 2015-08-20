@@ -5,13 +5,12 @@
 ### Prerequisites
 
 For compiling the latest version of gazebo you will need an Ubuntu distribution
-equal to 14.04.2 (Trusty) or newer. Previous versions (Precise) suffer from
-missing dependencies and other requirements.
+equal to 14.04.2 (Trusty) or newer.
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing
 from source:
 
-    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' 'libignition-math*'
+    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '*ignition-math*'
 
 If you have previously installed from source, be sure you are installing to the
 same path location or that you have removed the previous installation from
@@ -94,7 +93,7 @@ SDFormat and Gazebo depend on the ignition math library.
 1. Build and install:
 
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j
+        make -j4
         sudo make install
 
 
@@ -120,7 +119,7 @@ stability
 1. Build and install:
 
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j
+        make -j4
         sudo make install
 
 ### Build And Install Gazebo
@@ -167,7 +166,7 @@ desire more stability
 
 1. Build Gazebo:
 
-        make -j
+        make -j4
 
 1. Install Gazebo:
 
