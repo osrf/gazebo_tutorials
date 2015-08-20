@@ -2,7 +2,7 @@
 
 **Prerequisites:** [Attach a Mesh as Visual](http://gazebosim.org/tutorials/?tut=attach_meshes)
 
-This tutorials demonstrates how the user can create composite models directly from other models in the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) by using the `<include>` tags and [`<joint>`](http://gazebosim.org/sdf/1.4.html#joint309) to connect different components of a composite model.
+This tutorials demonstrates how the user can create composite models directly from other models in the [Gazebo Model Database](https://bitbucket.org/osrf/gazebo_models) by using the `<include>` tags and [`<joint>`](http://gazebosim.org/sdf/1.4.html#joint309) to connect different components of a composite model.
 
 ## Adding a Laser
 
