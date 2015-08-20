@@ -1,7 +1,7 @@
 # Introduction
 
 Gazebo topics communicate through Google protobuf messages. There is an
-extensive list of message types provided by Gazebo(http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html), for use with subscribing and publishing Gazebo topics. However, there are many situations where you want to
+extensive [list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html) of message types provided by Gazebo, for use with subscribing and publishing Gazebo topics. However, there are many situations where you want to
 build your own.
 
 This tutorial is an example of how to create your own custom messages, and how to subscribe and publish them in a Gazebo plug-in.
