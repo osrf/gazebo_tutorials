@@ -25,7 +25,7 @@ This mechanism allows for introspection of a running simulation,
 and provides a convenient mechanism to control aspects
 of Gazebo.
 
-## System 
+## System
 
 ### Gazebo Master
 
@@ -41,26 +41,26 @@ sensor generators, and GUIs.
  * **Internal API:** None
  * **Advertised Topics:** None
  * **Subscribed Topics:** None
- 
+
  This library is used by almost all subsequent libraries.
  It acts as the communication and transport mechanism for Gazebo.
  It currently supports only publish/subscribe,
  but it is possible to use
  [RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)
  with minimal effort.
- 
+
 ### Physics Library
  * **Dependencies:** Dynamics engine (with internal collision detection)
  * **External API:** Provides a simple and generic interface to physics simulation
  * **Internal API:** Defines a fundamental interface to the physics library for 3rd party dynamic engines.
- 
+
  The physics library provides a simple and generic interface to
  fundamental simulation components, including rigid bodies,
  collision shapes, and joints for representing articulation
  constraints.
  This interface has been integrated with four open-source
  physics engines:
- 
+
  * [Open Dynamics Engine (ODE)](http://ode.org)
  * [Bullet](http://bulletphysics.org)
  * [Simbody](https://simtk.org/home/simbody)
@@ -85,21 +85,21 @@ sensor generators, and GUIs.
 
 ### Sensor Generation
 
- * **Dependencies:** Rendering Library, Collision Library
+ * **Dependencies:** Rendering Library, Physics Library
  * **External API:** Provide functionality to initialize and run a set of sensors
  * **Internal API:** TBD
- 
+
  The sensor generation library implements all the various types of sensors,
  listens to world state updates from a physics simulator and
  produces output specified by the instantiated sensors.
- 
+
 ### GUI
 
- * **Dependencies:** Rendering Library, QT
+ * **Dependencies:** Rendering Library, Qt
  * **External API:** None
  * **Internal API:** None
 
- The GUI library uses QT to visualize the simulation and allow user interaction.
+ The GUI library uses Qt to create graphical widgets for users to interact with the simulation.
  The user may control the flow of time by pausing or changing time step size
  via GUI widgets.
  The user may also modify the scene by adding, modifying, or removing models.
@@ -110,4 +110,3 @@ sensor generators, and GUIs.
  The physics, sensor, and rendering libraries support plugins.
  These plugins provide users with access to the respective libraries
  without using the communication system.
- 

@@ -1,38 +1,36 @@
 This plugin example programmatically modifies gravity.
 
-**Prerequisite**: See the [Plugins Overview](http://gazebosim.org/tutorials/?tut=plugins_hello_world) tutorial.
+# Prerequisites:
 
-# Setup
+ * [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model) 
+ * [Plugin Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world)
+
+# Setup:
+
 Source: [gazebo/examples/plugins/world_edit](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/world_edit)
 
-1. Create a working directory
+Use the `gazebo_plugin_tutorial` from the previous plugin tutorials
 
-    ~~~
-    $ mkdir ~/world_edit; cd ~/world_edit
-    ~~~
+    $ mkdir ~/gazebo_plugin_tutorial; cd ~/gazebo_plugin_tutorial
 
-1. Create a file called `~/world_edit/world_edit.world`
+Create a file called `~/gazebo_plugin_tutorial/world_edit.world`
 
-    ~~~
     $ gedit world_edit.world
-    ~~~
 
-    Add the following contents to it:
+Add the following contents to it:
 
-    <include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.world' />
+<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.world' />
 
 
 # Code
 
-1.  Create a file called `~/world_edit/world_edit.cc`:
+Create a file called `~/gazebo_plugin_tutorial/world_edit.cc`:
 
-    ~~~
     $ gedit world_edit.cc
-    ~~~
 
-    Add the following content to it:
+Add the following content to it:
 
-    <include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc'/>
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/world_edit.cc'/>
 
 
 ## The Code Explained
@@ -50,25 +48,18 @@ A physics message is created, and the step time and gravity are altered.
 This message is then published to the "~/physics" topic.
 
 # Build
-Create a CMake script called `~/world_edit/CMakeLists.txt`:
+
+Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/world_edit.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+
+<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/CMakeLists.txt' />
+
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libworld_edit.so`, that can be inserted in a Gazebo simulation.
 
 ~~~
-$ gedit CMakeLists.txt
-~~~
-
-Copy the following content into it:
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/CMakeLists.txt' />
-
-Create a `build` directory
-
-~~~
-$ mkdir build; cd build
-~~~
-
-Compile the plugin
-
-~~~
-$ cmake ../; make
+$ mkdir ~/gazebo_plugin_tutorial/build
+$ cd ~/gazebo_plugin_tutorial/build
+$ cmake ../
+$ make
 ~~~
 
 # Run Tutorial
@@ -76,14 +67,14 @@ $ cmake ../; make
 First you need to add the folder to the `GAZEBO_PLUGIN_PATH` environment variable:
 
 ~~~
-export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/world_edit/build/
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build/
 ~~~
 
 Then in a terminal
 
 ~~~
-$ cd ~/world_edit/build
-$ gazebo ../world_edit.world
+$ cd ~/gazebo_plugin_tutorial
+$ gazebo world_edit.world
 ~~~
 
 You should see an empty world.
