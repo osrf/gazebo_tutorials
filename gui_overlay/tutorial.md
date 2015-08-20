@@ -111,7 +111,7 @@ appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
         gedit ~/.gazebo/gui.ini
         ~~~
 
-        Add the following lines
+        Add the following lines:
 
         ~~~
         [overlay_plugins]
