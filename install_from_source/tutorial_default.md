@@ -77,9 +77,30 @@ To generate man-pages for the Gazebo executables, the ruby-ronn package is neede
 
     sudo apt-get install robot-player-dev*
 
+### Build And Install ignition math
+
+SDFormat and Gazebo depend on the ignition math library.
+
+1. Clone the repository into a directory and go into it:
+
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        cd /tmp/ign-math
+
+1. Create a build directory and go there:
+
+        mkdir build
+        cd build
+
+1. Build and install:
+
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+        make -j
+        sudo make install
+
+
 ### Build And Install SDFormat
 
-To install from source, you should first install the SDFormat package, then build Gazebo off of that:
+Gazebo also depends on the SDFormat package. Let's build it, then build Gazebo off of that:
 
 1. Clone the repository into a directory and go into it:
 
