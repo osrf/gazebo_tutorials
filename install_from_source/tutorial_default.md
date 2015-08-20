@@ -100,7 +100,7 @@ SDFormat and Gazebo depend on the ignition math library.
 
 ### Build And Install SDFormat
 
-Gazebo also depends on the SDFormat package. Let's build it, then build Gazebo off of that:
+Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of that:
 
 1. Clone the repository into a directory and go into it:
 
