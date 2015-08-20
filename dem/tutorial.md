@@ -10,8 +10,6 @@ The main motivation to support DEMs in Gazebo is to be able to simulate a realis
 
 In order to work with DEM files you should install GDAL libraries.
 
-**On Ubuntu Trusty/Utopic:**
-
 ~~~
 $ sudo apt-get install gdal-bin libgdal-dev libgdal1h python-gdal
 ~~~
