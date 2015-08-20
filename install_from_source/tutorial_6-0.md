@@ -6,7 +6,7 @@
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing from source:
 
-    sudo apt-get remove 'gazebo-*' 'sdformat-*'
+    sudo apt-get remove 'gazebo-*' 'sdformat-*' 'libignition-math*'
 
 We also recommend ROS users remove older ROS versions of Gazebo:
 
@@ -28,10 +28,6 @@ When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh<
 
 Install prerequisites.  A clean Ubuntu system will need:
 
-  **Precise**
-
-        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
-
   **Trusty**
 
         sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev
@@ -44,7 +40,7 @@ Install prerequisites.  A clean Ubuntu system will need:
 **Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
 
    ***DART Support***
- 
+
    Support for [DART](http://dartsim.github.io/) version 4.1 is integrated into Gazebo 4.0. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
@@ -53,51 +49,17 @@ Install prerequisites.  A clean Ubuntu system will need:
         sudo apt-get update
         sudo apt-get install libdart-core4-dev
 
-
-#### Precise
-
-**Release Note:** in order to use DART, a full compilation of Gazebo from source is needed (as detailed in this document). The .deb packages are only shipping the ODE, Bullet, and Simbody physics engines.
-
-Gazebo supports multiple physics engines in addition to the modified version of ODE that is used internally.
-
-  ***Bullet Support***
-
-  [Bullet](https://github.com/bulletphysics/bullet3) version 2.82 is needed for Gazebo 4.0.
-  In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package.
-  Be sure to follow Step 2 in the
-  [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu)
-  to configure your computer to accept software from packages.osrfoundation.org
-
-        sudo apt-get update        
-        sudo apt-get install libbullet2.82-dev
-
-   ***Simbody Support***
-   
-   [Simbody](https://simtk.org/home/simbody/) version 3.3 is supported for Gazebo version 2.0.0 and later. In an Ubuntu system (precise - trusty) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debs section above](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
-
-        sudo apt-get update
-        sudo apt-get install libsimbody-dev
-
-   ***DART Support***
-   
-   Support for [DART](http://dartsim.github.io/) version 4.1 is integrated into Gazebo 4.0. In an Ubuntu system, several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
-
-        sudo apt-add-repository ppa:libccd-debs
-        sudo apt-add-repository ppa:fcl-debs
-        sudo apt-add-repository ppa:dartsim
-        sudo apt-get update
-        sudo apt-get install libdart-core4-dev
 
 ### Optional Dependencies ###
 
    ***GUI test Support*** (Optional)
-  
+
    To correctly parse the results of GUI regression tests, the xsltproc package is needed.
 
         sudo apt-get install xsltproc
 
    ***Man Page Support*** (Optional)
-   
+
    To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
 
         sudo apt-get install ruby-ronn
@@ -105,6 +67,10 @@ Gazebo supports multiple physics engines in addition to the modified version of 
    ***Player Support*** (Optional)
 
         sudo apt-get install robot-player-dev*
+
+### Build And Install ignition math
+
+explain here
 
 ### Build And Install SDFormat
 
@@ -151,29 +117,29 @@ To install from source, you should first install the SDFormat package, then buil
         cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below):
-   
+
     > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
-  
+
     >        cmake ../
-  
+
 
     >> Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
     >>        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-  
+
     > b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-  
+
     >        cmake -DCMAKE_BUILD_TYPE=Debug ../
-    
+
     > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the developemnt, you can use:
 
     >>        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
- 
+
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-          -- Install path: /home/$USER/local     
+          -- Install path: /home/$USER/local
 
 1. Build Gazebo:
 
@@ -206,7 +172,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
 
   , then `/usr/local/lib` is not in load path (default behavior for Ubuntu). Run the following commands and then try running gazebo again:
 
-    echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
+    echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf
     sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
