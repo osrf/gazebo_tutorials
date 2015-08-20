@@ -159,5 +159,9 @@ Each model requires a `model.sdf` file that contains the Simulator Description F
 
 Standard SDF file which can contain ruby code embedded. This option is used to
 programatically generate SDF files using [Embedded Ruby code](http://www.stuartellis.eu/articles/erb/)
-templates. Examples of `sdf.erb` files are available in the gazebo_model
-repository (some of them uses the deprecated suffix `.rsdf`).
+templates. Please note that the ruby conversion should be done manually (`erb
+model.sdf.erb > model.sdf`) and the final `model.sdf` file must be uploaded
+together with the `model.sdf.erb` (this one only for reference).
+
+Examples of `sdf.erb` files are available in the gazebo_model repository (some
+of them uses the deprecated suffix `.rsdf`).
