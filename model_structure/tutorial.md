@@ -36,7 +36,7 @@ The structure is as follows (in this example the database has only one model cal
     * *model_1* : A directory for model_1
         * *model.config* : Meta-data about model_1
         * *model.sdf* : SDF description of the model
-        * *model.rsdf* : Ruby embedded SDF model description
+        * *model.sdf.erb* : Ruby embedded SDF model description
         * *meshes* : A directory for all COLLADA and STL files 
         * *materials* : A directory which should only contain the `textures` and `scripts` subdirectories
             * *textures* : A directory for image files (jpg, png, etc).
@@ -155,8 +155,9 @@ The format of this `model.config` is:
 
 Each model requires a `model.sdf` file that contains the Simulator Description Format of the model. You can find more information on the [SDF website](http://sdformat.org).
 
-### Model RSDF
+### Model SDF.ERB
 
-Standard SDF file which can contain embbeded ruby code. This option is used to
-programatically generate SDF files using [embbeded ruby code](http://www.stuartellis.eu/articles/erb/)
-templates. Examples of rsdf files are available in the gazebo_model repository.
+Standard SDF file which can contain ruby code embedded. This option is used to
+programatically generate SDF files using [Embedded Ruby code](http://www.stuartellis.eu/articles/erb/)
+templates. Examples of `sdf.erb` files are available in the gazebo_model
+repository (some of them uses the deprecated suffix `.rsdf`).
