@@ -63,12 +63,8 @@
 
     <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
       <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
-<<<<<<< local
       <markdown version="6.0">install_from_source/tutorial_6-0.md</markdown>
-      <markdown version="default">install_from_source/tutorial_6-0.md</markdown>
-=======
       <markdown version="default">install_from_source/tutorial_default.md</markdown>
->>>>>>> other
       <description>
        Installation instructions for building a gazebo application using the
        source code. For user who want to contribute with code patches or pull
