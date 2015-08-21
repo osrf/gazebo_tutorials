@@ -233,11 +233,11 @@ Calculate your new `horisontal_fov` using following formula:
 * ![r = \frac{width}{height}](http://latex.codecogs.com/gif.download?r%20%3D%20%5Cfrac%7Bwidth%7D%7Bheight%7D) is aspect ratio of your frame;  
 * ![fun^{-1}](http://latex.codecogs.com/gif.download?fun%5E%7B-1%7D) is an inverse to `fun`. -->
 
-![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](file:files/dfov.gif)  
+![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](files/dfov.gif)  
 ###### where:
 * `dfov` is your diagonal FOV;  
-* ![r = \frac{width}{height}](file:files/r.gif) is aspect ratio of your frame;  
-* ![fun^{-1}](file:files/fun_inv.gif) is an inverse to `fun`.
+* ![r = \frac{width}{height}](files/r.gif) is aspect ratio of your frame;  
+* ![fun^{-1}](files/fun_inv.gif) is an inverse to `fun`.
 
 ### Should I use wideangle camera instead of regular camera?
 
