@@ -36,6 +36,7 @@ The structure is as follows (in this example the database has only one model cal
     * *model_1* : A directory for model_1
         * *model.config* : Meta-data about model_1
         * *model.sdf* : SDF description of the model
+        * *model.sdf.erb* : Ruby embedded SDF model description
         * *meshes* : A directory for all COLLADA and STL files 
         * *materials* : A directory which should only contain the `textures` and `scripts` subdirectories
             * *textures* : A directory for image files (jpg, png, etc).
@@ -116,7 +117,8 @@ The format of this `model.config` is:
 
    Version of this model. 
 
-   *Note:* This is not the version of [[sdf|SDF]] that the model uses. That information is kept in the `model.sdf` file.
+   *Note:* This is not the version of sdf that the model uses. That information
+   is kept in the `model.sdf` file.
 
 *  <*sdf*> *required*
 
@@ -152,3 +154,17 @@ The format of this `model.config` is:
 ### Model SDF
 
 Each model requires a `model.sdf` file that contains the Simulator Description Format of the model. You can find more information on the [SDF website](http://sdformat.org).
+
+### Model SDF.ERB
+
+Standard SDF file which can contain ruby code embedded. This option is used to
+programatically generate SDF files using [Embedded Ruby code](http://www.stuartellis.eu/articles/erb/)
+templates. Please note that the ruby conversion should be done manually (`erb
+model.sdf.erb > model.sdf`) and the final `model.sdf` file must be uploaded
+together with the `model.sdf.erb` (this one only for reference).
+
+Examples of `sdf.erb` files are available in the 
+[gazebo_models repository](https://bitbucket.org/osrf/gazebo_models/src) 
+(some of them use the deprecated suffix `.rsdf`). An easy ERB file is the
+[flocking.world.erb](https://bitbucket.org/osrf/gazebo/src/b54961341ffb938a9f99c9976aed50a771c95216/worlds/flocking.world.erb?at=default)
+which uses a simple loop.
