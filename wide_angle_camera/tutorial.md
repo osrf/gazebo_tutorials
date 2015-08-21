@@ -15,15 +15,15 @@ But if you need a camera with fisheye, or other type of wide-angle lens, whose f
 
 ## Try it!
 
-1. Create a new folder `wideanglecamera` in `~/.gazebo/models` directory.
+1. Create a new folder `fisheye-camera` in `~/.gazebo/models` directory.
   ~~~
-  mkdir -p ~/.gazebo/models/wideanglecamera
+  mkdir -p ~/.gazebo/models/fisheye-camera
   ~~~
 
 1. Create a new text file in it called `model.config`
 
   ~~~
-  gedit ~/.gazebo/models/wideanglecamera/model.sdf
+  gedit ~/.gazebo/models/fisheye-camera/model.sdf
   ~~~
 
   And paste the following content:
@@ -47,7 +47,7 @@ But if you need a camera with fisheye, or other type of wide-angle lens, whose f
 1. Create a second file in the same directory called `model.sdf`
 
   ~~~
-  gedit ~/.gazebo/models/wideanglecamera/model.sdf
+  gedit ~/.gazebo/models/fisheye-camera/model.sdf
   ~~~
 
   with the content:
