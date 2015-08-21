@@ -214,11 +214,11 @@ A new instance of `wideanglecamera` will be created, open it's topic visualisati
 
 ### What lens types are supported?
 
-gnomonical, stereographic, equidistant, equisolid_angle, orthographic
+`gnomonical`, `stereographic`, `equidistant`, `equisolid_angle`, `orthographic`
 
 ### How to choose cubemap texture resolution?
 
-It depends on your FOV, the value specified in env_texture_size is a number of pixels for 90° angle, so keep your pixel dencity in sane range.
+It depends on your FOV, the value specified in `env_texture_size` is a number of pixels for `90°` angle, so keep your pixel dencity in sane range.
 
 ### How to choose cut-off angle?
 
