@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This tutorial shows how to create use and setup wide anglecamera sensor.
-The difference between regular camera and wideangle is in projection types:
-The regular camera sensor uses only [pinhole projection](https://en.wikipedia.org/wiki/Pinhole_camera), while wideangle camera have much more options.
-For moderate view angles lens ditortions could be simulated, as described in [corresponding tutorial](http://gazebosim.org/tutorials?tut=camera_distortion).
-But if you need a camera with fisheye, or other type of wide angle lens, whose field of view is `120°`, `180°` or `270°` then you should use wide angle camera sensor.
+This tutorial shows how to create use and setup wide-angle camera sensor.
+The difference between regular camera and wide-angle is in projection types:
+The regular camera sensor uses only [pinhole projection](https://en.wikipedia.org/wiki/Pinhole_camera), while wide-anglecamera have much more options.
+For moderate view angle lens distortion could be simulated, as described in [corresponding tutorial](http://gazebosim.org/tutorials?tut=camera_distortion).
+But if you need a camera with fisheye, or other type of wide-angle lens, whose field of view is `120°`, `180°` or `270°` then you should use wide-angle camera sensor.
 
 ## What to know?
 
@@ -16,8 +16,17 @@ But if you need a camera with fisheye, or other type of wide angle lens, whose f
 ## Try it!
 
 1. Create a new folder `wideanglecamera` in `~/.gazebo/models` directory.
+  ~~~
+  mkdir -p ~/.gazebo/models/wideanglecamera
+  ~~~
 
-2. Create a new text file in it called `model.config` with the following content:
+1. Create a new text file in it called `model.config`
+
+  ~~~
+  gedit ~/.gazebo/models/wideanglecamera/model.sdf
+  ~~~
+
+  And paste the following content:
 
   ~~~
   <?xml version="1.0"?>
@@ -35,7 +44,13 @@ But if you need a camera with fisheye, or other type of wide angle lens, whose f
   </model>
   ~~~
 
-2. Create a second file in the same directory called `model.sdf` with the content:
+1. Create a second file in the same directory called `model.sdf`
+
+  ~~~
+  gedit ~/.gazebo/models/wideanglecamera/model.sdf
+  ~~~
+
+  with the content:
 
   ~~~
   <?xml version="1.0" ?>
@@ -86,24 +101,24 @@ But if you need a camera with fisheye, or other type of wide angle lens, whose f
   </sdf>
   ~~~
 
-4. Start Gazebo:
+1. Start Gazebo:
 
   ~~~
   gazebo
   ~~~
 
-5. Add several objects to the world, cubes, spheres, some objects from warehouse.
+1. Add several objects to the world, cubes, spheres, some objects from warehouse.
 In the `Insert` tab you should see your brand-new "Fisheye camera" model.
 Click on it and place anywhere in your world.
 
-6. Press `Ctrl+T` to open list of topics, find corresponding element in `ImageStamped` section and start visualisation.  
+1. Press `Ctrl+T` to open list of topics, find corresponding element in `ImageStamped` section and start visualization.  
 What you should see is exactly the same what you'd see using a regular camera sensor.
 
 ### Lets make things more interesting
 
 * Increase `horizontal_fov` value to `3.1415`, in your `model.sdf` and change `type` to `stereographic`. Save it.
-* Add a new instance of Fisheye camera. A new topic will be added.
-* Switch to the topic corresponding to your second camera in visualisation window.
+* Add a new instance of `Fisheye camera`. A new topic will be added.
+* Switch to the topic corresponding to your second camera in visualization window.
 
 * Now change lens `type` to `custom` and add following code to the `lens` section of `model.sdf`:
 
@@ -119,14 +134,14 @@ What you should see is exactly the same what you'd see using a regular camera se
 * set `cutoff_angle` to `3.1415`
 * `horizontal_fov` value to `6.2831`
 
-Add one more camera. In topic visualisation for this camera you should now see a whole `360°` degree image of the world:
+Add one more camera. In topic visualization for this camera you should now see a whole `360°` degree image of the world:
 
 ![360](files/360.png)
 
 ## What is going on?
 
 ~~~
-// You should be already familiar with sdf definition of the `camera` sensor, the only difference is that you change it's `type` to `wideanglecamera`
+<!-- You should be already familiar with sdf definition of the `camera` sensor, the only difference is that you change it's `type` to `wideanglecamera` -->
 <sensor name="camera" type="wideanglecamera">
   <camera>
     <horizontal_fov>6.283</horizontal_fov>
@@ -152,7 +167,7 @@ Add one more camera. In topic visualisation for this camera you should now see a
         <fun>tan</fun>  <!-- one of sin,tan,id -->
       </custom_function>
 
-      <!-- if it is set to `true` your horisontal FOV will ramain as defined, othervise it depends on lens type and custom function if there is one -->
+      <!-- if it is set to `true` your horizontal FOV will ramain as defined, othervise it depends on lens type and custom function if there is one -->
       <scale_to_hfov>true</scale_to_hfov>
       <!-- clip everything that is outside of this angle -->
       <cutoff_angle>3.1415</cutoff_angle>
@@ -168,8 +183,8 @@ Add one more camera. In topic visualisation for this camera you should now see a
 
 # Plugin Example
 
-It is possible play a bit with different wideangle camera lens settings with a plugin.
-The followind section requires you to build a plugin from source.
+It is possible play a bit with different `wideanglecamera` `lens` settings with a plugin.
+The following section requires you to build a plugin from source.
 You will need Gazebo headers to build it.
 If you install Gazebo from source then you should already have the necessary files.
 If you install the Gazebo binary deb version,
@@ -186,29 +201,42 @@ then you'll need to install dev packages according to your Gazebo and sdformat v
   curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/mainwindow.ui
   ~~~
 
-2. Configure and build plugin
+1. Create a build directory
+
+  ~~~
+  mkdir build
+  cd build
+  ~~~
+
+1. Create symlink to a UI file used by a plugin
+
+  ~~~
+  ln -s ../mainwindow.ui mainwindow.ui
+  ~~~
+
+1. Configure and build plugin
 
   ~~~
   cmake ..
   make
   ~~~
 
-3. Tell Gazebo to search for plugins in current directory
+1. Tell Gazebo to search for plugins in current directory
 
   ~~~
   export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
   ~~~
 
-4. Start Gazebo with the example world
+1. Start Gazebo with the example world
 
   ~~~
-  gazebo ./example.world
+  gazebo ../example.world
   ~~~
 
-5. Now add some objects to the world and click `Spawn` button in GUI overlay window.
-A new instance of `wideanglecamera` will be created, open it's topic visualisation.
+1. Now add some objects to the world and click `Spawn` button in GUI overlay window.
+A new instance of `wideanglecamera` will be created, open it's topic visualization.
 
-6. Select `wideanglecamera_0`, now you can control lens properties interactively with provided controls.
+1. Select `wideanglecamera_0`, now you can modify lens properties interactively with the provided controls.
 
 # FAQ
 
@@ -218,23 +246,24 @@ A new instance of `wideanglecamera` will be created, open it's topic visualisati
 
 ### How to choose cubemap texture resolution?
 
-It depends on your FOV, the value specified in `env_texture_size` is a number of pixels for `90°` angle, so keep your pixel dencity in sane range.
+It depends on your FOV, the value specified in `env_texture_size` is a number of pixels for `90°` angle, so keep your pixel density in sane range.
 
 ### How to choose cut-off angle?
 
-Normaly keep it twice as low as HFOV for circular image, for full-frame you may not to specify it at all. If you disable scaling, it's up to you.
+Normally keep it twice as low as HFOV for circular image, for full-frame you may not to specify it at all. If you disable scaling, it's up to you.
 
 ### I want a full-frame image with diagonal FOV!
 
 Do not specify cut-off angle, it will be set to `180°`.
-Calculate your new `horisontal_fov` using following formula:
+Calculate your new `horizontal_fov` using following formula:
 
-![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](files/dfov.gif)  
+[[file::files/dfov.gif|600px]]
+
 ###### where:
-* `dfov` is your diagonal FOV;  
-* ![r = \frac{width}{height}](files/r.gif) is aspect ratio of your frame;  
-* ![fun^{-1}](files/fun_inv.gif) is an inverse to `fun`.
+* `dfov` is your diagonal FOV;
+* [[file:files/r.gif]] is aspect ratio of your frame;
+* [[file:files/fun_inv.gif]] is an inverse to `fun`.
 
-### Should I use wideangle camera instead of regular camera?
+### Should I use wide-angle camera instead of a regular camera?
 
-If regular camera sensor is sufficent for your needs then use it, Wideangle camera sensor gives a significant performance hit on slow hardware.
+If regular camera sensor is sufficent for your needs then use it, wide-angle camera sensor gives a significant performance hit on slow hardware.
