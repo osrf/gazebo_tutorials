@@ -120,6 +120,10 @@ What you should see is exactly the same what you'd see using a regular camera se
 * Add a new instance of `Fisheye camera`. A new topic will be added.
 * Switch to the topic corresponding to your second camera in visualization window.
 
+Now you shold have something like this (except for the sky, if you don't enable it):
+
+[[file:files/180.png|600px]]
+
 * Now change lens `type` to `custom` and add following code to the `lens` section of `model.sdf`:
 
 ~~~
@@ -136,7 +140,7 @@ What you should see is exactly the same what you'd see using a regular camera se
 
 Add one more camera. In topic visualization for this camera you should now see a whole `360°` degree image of the world:
 
-![360](files/360.png)
+[[file:files/360.png|600px]]
 
 ## What is going on?
 
@@ -257,7 +261,7 @@ Normally keep it twice as low as HFOV for circular image, for full-frame you may
 Do not specify cut-off angle, it will be set to `180°`.
 Calculate your new `horizontal_fov` using following formula:
 
-[[file::files/dfov.gif|600px]]
+[[file::files/dfov.gif]]
 
 ###### where:
 * `dfov` is your diagonal FOV;
