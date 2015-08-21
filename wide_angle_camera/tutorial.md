@@ -6,12 +6,15 @@ The regular camera sensor uses only [pinhole projection](https://en.wikipedia.or
 For moderate view angle lens distortion could be simulated, as described in [corresponding tutorial](http://gazebosim.org/tutorials?tut=camera_distortion).
 But if you need a camera with fisheye, or other type of wide-angle lens, whose field of view is `120°`, `180°` or `270°` then you should use wide-angle camera sensor.
 
+
 ## What to know?
 
 * You should already know how to use camera sensor.
 * Be familiar with plugins.
 
+
 ## Try it!
+
 ### Create a model
 
 1.  Create a new folder `fisheye-camera` in `~/.gazebo/models` directory
@@ -106,6 +109,7 @@ Click on it and place anywhere in your world.
 1.  Press `Ctrl+T` to open list of topics, find corresponding element in `ImageStamped` section and start visualization.  
 What you should see is exactly the same what you'd see using a regular camera sensor.
 
+
 ### Lets make things more interesting
 
 *   Increase `horizontal_fov` value to `3.1415`, in your `model.sdf` and change `type` to `stereographic`. Save it.
@@ -116,7 +120,7 @@ Now you shold have something like this (except for the sky, if you don't enable 
 
 [[file:files/180.png|600px]]
 
-*   Now change lens `type` to `custom` and add following code to the `lens` section of `model.sdf`:
+*   Now change lens's `<type>` to `custom` and add following code to the `<lens>` section of `model.sdf`:
 
     ~~~
     <custom_function>
@@ -127,8 +131,8 @@ Now you shold have something like this (except for the sky, if you don't enable 
     </custom_function>
     ~~~
 
-*   `horizontal_fov` value to `6.2831`
-*   set `cutoff_angle` to `3.1415`
+*   set `<horizontal_fov>` value to `6.2831`
+*   `<cutoff_angle>` to `3.1415`
 
 %%%
 <sensor name="camera" type="wideanglecamera">
@@ -147,13 +151,13 @@ Now you shold have something like this (except for the sky, if you don't enable 
       <far>100</far>
     </clip>
     <lens>
-      <type>gnomonical</type>
-      <scale_to_hfov>true</scale_to_hfov>
 %%%
 ~~~
+      <type>gnomonical</type>
       <cutoff_angle>3.1415</cutoff_angle>
 ~~~
 %%%
+      <scale_to_hfov>true</scale_to_hfov>
       <env_texture_size>512</env_texture_size>
     </lens>
   </camera>
@@ -165,6 +169,7 @@ Now you shold have something like this (except for the sky, if you don't enable 
 Add one more camera. In topic visualization for this camera you should now see a whole `360°` degree image of the world:
 
 [[file:files/360.png|600px]]
+
 
 ## What is going on?
 
@@ -196,7 +201,8 @@ Add one more camera. In topic visualization for this camera you should now see a
         <fun>tan</fun>  <!-- one of sin,tan,id -->
       </custom_function>
 
-      <!-- if it is set to `true` your horizontal FOV will ramain as defined, othervise it depends on lens type and custom function if there is one -->
+      <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
+      <!-- othervise it depends on lens type and custom function, if there is one -->
       <scale_to_hfov>true</scale_to_hfov>
       <!-- clip everything that is outside of this angle -->
       <cutoff_angle>3.1415</cutoff_angle>
@@ -210,9 +216,10 @@ Add one more camera. In topic visualization for this camera you should now see a
 </link>
 ~~~
 
+
 ## Plugin Example
 
-It is possible play a bit with different `wideanglecamera` `lens` settings with a plugin.
+It is possible play a bit with different camera's `lens` settings with a plugin.
 The following section requires you to build a plugin from source.
 You will need Gazebo headers to build it.
 If you install Gazebo from source then you should already have the necessary files.
@@ -237,7 +244,7 @@ then you'll need to install dev packages according to your Gazebo and sdformat v
     cd build
     ~~~
 
-1.  Create symlink to a UI file used by a plugin
+1.  Create a symlink to the UI file used by a plugin
 
     ~~~
     ln -s ../mainwindow.ui mainwindow.ui
@@ -264,6 +271,7 @@ A new instance of `wideanglecamera` will be created, open it's topic visualizati
 
 1.  Select `wideanglecamera_0`, now you can modify lens properties interactively with the provided controls.
 
+
 ## FAQ
 
 ### What lens types are supported?
@@ -281,7 +289,7 @@ Normally keep it twice as low as HFOV for circular image, for full-frame you may
 ### I want a full-frame image with diagonal FOV!
 
 Do not specify cut-off angle, it will be set to `180°`.
-Calculate your new `horizontal_fov` using following formula:
+Calculate your new `<horizontal_fov>` using following formula:
 
 [[file:files/dfov.gif]]
 
