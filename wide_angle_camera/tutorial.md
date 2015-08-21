@@ -20,7 +20,7 @@ But if you need a camera with fisheye, or other type of wide-angle lens, whose f
   mkdir -p ~/.gazebo/models/fisheye-camera
   ~~~
 
-1. Create a new text file in it called `model.config`
+1. Create a new text file in it named `model.config`
 
   ~~~
   gedit ~/.gazebo/models/fisheye-camera/model.sdf
@@ -44,7 +44,7 @@ But if you need a camera with fisheye, or other type of wide-angle lens, whose f
   </model>
   ~~~
 
-1. Create a second file in the same directory called `model.sdf`
+1. Create a second file in the same directory named `model.sdf`
 
   ~~~
   gedit ~/.gazebo/models/fisheye-camera/model.sdf
@@ -158,7 +158,7 @@ Add one more camera. In topic visualization for this camera you should now see a
       <far>100</far>
     </clip>
 
-     <!-- A new section called `lens`. -->
+     <!-- A new section named `lens`. -->
     <lens>
       <!-- type element is mandatory -->
       <type>custom</type>
