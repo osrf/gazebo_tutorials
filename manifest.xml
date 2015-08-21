@@ -320,6 +320,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Joint Events" ref='joint_events'>
+      <markdown version="6.0+">joint_events/tutorial.md</markdown>
+      <description>Use the SimEvents plugin to send messages when a joint state changes.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Occupied Event" ref='occupiedevent'>
       <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
       <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
