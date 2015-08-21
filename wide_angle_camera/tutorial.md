@@ -116,8 +116,7 @@ What you should see is exactly the same what you'd see using a regular camera se
 </custom_function>
 ~~~
 
-<!-- * change `scale_to_hfov` to `false` -->
-* `cutoff_angle` to `3.1415`
+* set `cutoff_angle` to `3.1415`
 
 Add one more camera. In topic visualisation for this camera you should now see a whole `360°` degree image of the world.
 
@@ -226,12 +225,6 @@ Normaly keep it twice as low as HFOV for circular image, for full-frame you may 
 
 Do not specify cut-off angle, it will be set to 180°.
 Calculate your new `horisontal_fov` using following formula:
-
-<!-- ![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](http://latex.codecogs.com/gif.download?hfov%20%3D%202c_2%5Ccdot%20fun%5E%7B-1%7D%28fun%28%5Cfrac%7Bdfov%7D%7B2c_2%7D%29%5Ccdot%20%5Csqrt%7B1+r%5E2%7D%29%3B)  
-###### where:
-* `dfov` is your diagonal FOV;  
-* ![r = \frac{width}{height}](http://latex.codecogs.com/gif.download?r%20%3D%20%5Cfrac%7Bwidth%7D%7Bheight%7D) is aspect ratio of your frame;  
-* ![fun^{-1}](http://latex.codecogs.com/gif.download?fun%5E%7B-1%7D) is an inverse to `fun`. -->
 
 ![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](files/dfov.gif)  
 ###### where:
