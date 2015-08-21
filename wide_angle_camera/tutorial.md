@@ -226,7 +226,7 @@ Normaly keep it twice as low as HFOV for circular image, for full-frame you may 
 
 ### I want a full-frame image with diagonal FOV!
 
-Do not specify cut-off angle, it will be set to 180°.
+Do not specify cut-off angle, it will be set to `180°`.
 Calculate your new `horisontal_fov` using following formula:
 
 ![hfov = 2c_2\cdot fun^{-1}(fun(\frac{dfov}{2c_2})\cdot \sqrt{1+r^2});](files/dfov.gif)  
