@@ -118,7 +118,9 @@ What you should see is exactly the same what you'd see using a regular camera se
 
 * set `cutoff_angle` to `3.1415`
 
-Add one more camera. In topic visualisation for this camera you should now see a whole `360°` degree image of the world.
+Add one more camera. In topic visualisation for this camera you should now see a whole `360°` degree image of the world:
+
+![360](files/360.png)
 
 ## What is going on?
 
