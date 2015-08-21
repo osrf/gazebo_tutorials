@@ -120,7 +120,7 @@ on="1.5">
 ~~~
 
 
-[[file:torque_needle.png|640px]]
+[[file:./torque_needle.png|640px]]
 
 ## Velocity
 
