@@ -5,10 +5,6 @@ This page explains how to create publishers and subscribers to Gazebo topics in 
 
 ## Project setup
 
-Also, because the code tries to connect to the running simulation server, launch Gazebo in a separate terminal (if it is not already running) and verify that the simulation is running (and Sim Time is increasing):
-
-    gazebo
-
 Unlike software packages that are installed once per machine, NodeJs packages like Gazebojs are installed inside each node project. Create a NodeJS project for this tutorial, and install a local copy of the gazebojs package with npm:
 
     mkdir gazeboJsPubSub
@@ -29,12 +25,13 @@ Publishers allow clients and servers to initiate communication, using typed mess
 
 ### Node session
 
-Start gazebo
+Because the code tries to connect to the running simulation server, launch Gazebo in a separate terminal (if it is not already running) and verify that the simulation is running (and Sim Time is increasing):
 
     gazebo
 
 In a separate terminal, from the gazeboJsPubSub directory, start a node interactive session:
 
+    cd gazeboJsPubSub
     node
 
 And type in the following two lines to load the Gazebo C++ module into the Node V8 script engine, and crate an instance of the Gazebo class.
