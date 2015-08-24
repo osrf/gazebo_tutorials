@@ -88,7 +88,10 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
     export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
     ~~~
 
-    Note that the command above works only for the current shell. To make sure the plugin will work when opening new terminals, install the plugin into a common search path, such as `/usr/local/lib`, or into one of the paths specified by the `GAZEBO_PLUGIN_PATH` library.
+    Note that the command above works only for the current shell. To make sure
+    the plugin will work when opening new terminals, install the plugin into a
+    common search path, such as `/usr/local/lib`, or into one of the paths
+    specified by the `GAZEBO_PLUGIN_PATH` library.
 
 1. We also need to tell Gazebo that it should load the overlay plugin.
 
