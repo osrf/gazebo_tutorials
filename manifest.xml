@@ -503,7 +503,8 @@
     </tutorial>
 
     <tutorial title="Capture screenshot" ref='screenshot'>
-      <markdown version="1.9+">screenshot/tutorial.md</markdown>
+      <markdown version="1.9">screenshot/tutorial_1-9.md</markdown>
+      <markdown version="6+">screenshot/tutorial.md</markdown>
       <description>Shows how to capture a screen shot of Gazebo's render window.</description>
       <skill>beginner</skill>
       <tags>
