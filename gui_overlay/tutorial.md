@@ -81,7 +81,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
     ~~~
 
 1. Now we need to make sure Gazebo can find the plugin. You can do this by
-appending the `build` directory the `GAZEBO_PLUGIN_PATH` environment variable:
+appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable:
 
     ~~~
     cd ~/gazebo_gui_spawn/build
