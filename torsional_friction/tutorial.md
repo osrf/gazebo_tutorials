@@ -37,8 +37,8 @@ by default.
 
 The box has a large surface with several points of contact with the ground, you
 can see them masked as blue spheres on the image above. Each contact point has
-not only angular velocity but also linear velocity perpendicular to the contact
-normal, which triggers translational friction.
+both angular and linear velocity perpendicular to the contact normal. The
+presence of linear velocity triggers translational friction.
 
 On the other hand, the sphere's single point of contact doesn't have a linear
 velocity, so translational friction doesn't act on it. If we want the sphere to
@@ -58,7 +58,7 @@ editor.
 find `Surface -> Friction`. There are a few parameters there which are important
 for torsional friction, they will be explained below. For now, we want to set
 `Use patch radius` to false and input the sphere's radius into `
-Curvature radius`, which is 0.5 m. Note that the torsional friction coefficient
+Surface radius`, which is 0.5 m. Note that the torsional friction coefficient
 is 1.0 by default.
 
 1. Torsional friction is tipically very low because of the small contact area.
@@ -67,7 +67,8 @@ to achieve this is to make the sphere very heavy so it presses against the
 ground. So let's go on the `Link` tab and set the mass to 10000 Kg. The heavier
 it is, the more it presses against the ground and the higher the friction.
 
-1. Now go to `File -> Exit Model Editor` and make sure you save the model.
+1. Apply your changes, close the inspector and  go to `File -> Exit Model Editor`.
+Make sure you save the new model.
 
 1. Back in the main window, apply torque to the new sphere as you did for the
 old one. Unlike the first sphere (which is still rotating, it will rotate
@@ -135,8 +136,8 @@ of 1.0.
 * **patch\_radius**: Zero by default, so even if `coefficient` is set, there will
 be no torsional friction.
 
-* **surface_radius**: Infinity by default (a plane surface), so even if
-`coefficient` is set, there will be no torsional friction.
+* **surface_radius**: Zero by default, so even if `coefficient` is set, there
+will be no torsional friction.
 
 ### Example
 
