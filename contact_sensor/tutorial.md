@@ -64,7 +64,7 @@ Copy the following code into `contact.world`
 </sdf>
 ~~~
 
-The contact sensor is attaced to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
+The contact sensor is attached to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
 
 # Print Contact Values
 

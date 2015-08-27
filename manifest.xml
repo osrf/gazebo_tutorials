@@ -8,6 +8,7 @@
     <tutorial title="Ubuntu" ref='install_ubuntu'>
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
+      <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -15,11 +16,12 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Debian, Fedora or Arch" ref='install_other_linux'>
-      <markdown version="4.0">install_other_linux/tutorial_4-0.md</markdown>
+    <tutorial title="Debian, Fedora, Arch or Gentoo" ref='install_other_linux'>
+      <markdown version="4.0">install_other_linux/tutorial.md</markdown>
+      <markdown version="5.0">install_other_linux/tutorial.md</markdown>
       <description>
 	Installation instructions for major linux distributions (non Ubuntu). Currently,
-	Debian, Fedora or Arch Linux.
+	Debian, Fedora, Arch Linux and Gentoo.
       </description>
       <tags>
         <tag>install</tag>
@@ -30,6 +32,7 @@
     <tutorial title="Mac" ref='install_on_mac'>
       <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
+      <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -60,6 +63,7 @@
 
     <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
       <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
+      <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
        Installation instructions for building a gazebo application using the
        source code. For user who want to contribute with code patches or pull
@@ -78,7 +82,8 @@
     </tutorial>
 
     <tutorial title="Plugins 101" ref='plugins_hello_world'>
-      <markdown version="1.9+">plugins_hello_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_hello_world/tutorial-2.2.md</markdown>
+      <markdown version="6+">plugins_hello_world/tutorial-6.md</markdown>
       <description>Overview of Gazebo plugins.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -424,7 +429,7 @@
 
     <tutorial title="System Plugin" ref='system_plugin'>
       <markdown version="3.0">system_plugin/tutorial_3-0.md</markdown>
-      <markdown version="4.0+">system_plugin/tutorial.md</markdown>
+      <markdown version="5+">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -504,7 +509,8 @@
     </tutorial>
 
     <tutorial title="Capture screenshot" ref='screenshot'>
-      <markdown version="1.9+">screenshot/tutorial.md</markdown>
+      <markdown version="1.9">screenshot/tutorial_1-9.md</markdown>
+      <markdown version="6+">screenshot/tutorial.md</markdown>
       <description>Shows how to capture a screen shot of Gazebo's render window.</description>
       <skill>beginner</skill>
       <tags>

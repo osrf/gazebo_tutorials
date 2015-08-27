@@ -10,27 +10,27 @@ The main motivation to support DEMs in Gazebo is to be able to simulate a realis
 
 In order to work with DEM files you should install GDAL libraries.
 
-**On Ubuntu Trusty/Utopic:**
-
 ~~~
 $ sudo apt-get install gdal-bin libgdal-dev libgdal1h python-gdal
 ~~~
 
-**On Ubuntu Precise:**
-
-~~~
-$ sudo apt-get install gdal-bin libgdal1-1.7.0 libgdal1-dev python-gdal
-~~~
-
 # DEM file and the definition into SDF format
 
-There are several organizations that provide elevation data. As an example, let's download a DEM file of Mount St. Helens [before](http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip) or [after](http://extract.cr.usgs.gov/public/NED/mtsthelens_after.zip) its eruption back in the '80s. Unzip the file and rename it `mtsthelens.dem`.
+There are several organizations that provide elevation data. As an example,
+let's download a DEM file of Mount St. Helens
+[before](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip)
+or
+[after](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_after.zip)
+its eruption back in the '80s. These files are in public domain and are
+distributed by [USGS](http://ned.usgs.gov/historic.html).
+
+Unzip the file and rename it `mtsthelens.dem` as follows:
 
 ~~~
-$ cd ~/Downloads
-$ wget http://extract.cr.usgs.gov/public/NED/mtsthelens_before.zip
-$ unzip ~/Downloads/mtsthelens_before.zip -d /tmp
-$ mv /tmp/30.1.1.1282760.dem /tmp/mtsthelens.dem
+cd ~/Downloads
+wget https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip
+unzip ~/Downloads/mtsthelens_before.zip -d /tmp
+mv /tmp/30.1.1.1282760.dem /tmp/mtsthelens.dem
 ~~~
 
 Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo `media/dem/` directory.
@@ -40,7 +40,7 @@ $ mkdir -p /tmp/media/dem/
 $ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 ~~~
 
-A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
+A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in `/tmp`.
 
 <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/volcano.world' />
 
@@ -66,7 +66,7 @@ Next, we are going to describe one method for obtaining a DEM file of a specific
 
 [QGIS](http://www.qgis.org/) is a cross-platform open source geographic information system program that provides data viewing, editing, and analysis capabilities. Download QGIS following the [instructions detailed on the QGIS website](http://www.qgis.org/en/site/forusers/download.html).
 
-Open up QGIS, click on the left column icon labeled `WMS/WMTS layer`, click on `Add default servers`, select `Lizardtech server`, and then, press the `connect` button. Select the `MODIS` value and press `Add`. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [this shapefile](http://landsat.usgs.gov/documents/wrs2_descending.zip) and decompress it in any folder. Go back to QGIS and press `Add Vector Layer` (left column icon). Press `Browse`, and select your previously uncompressed wrs2_descending.shp file. Press OK in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
+Open up QGIS, click on the left column icon labeled `WMS/WMTS layer`, click on `Add default servers`, select `Lizardtech server`, and then, press the `connect` button. Select the `MODIS` value and press `Add`. Close the pop-up window. The next step is to add another layer with all the different patches available. Download [this shapefile](http://landsat.usgs.gov/documents/wrs2_descending.zip) and decompress it in any folder. Go back to QGIS and press `Add Vector Layer` (left column icon). Press `Browse`, and select your previously uncompressed wrs2_descending.shp file. Press `Open` in the window that opens. Now, you'll see both layers on the main window. Let's change the transparency of the wrs2_descending layer to be able to see both layers at the same time. Double click on wrs2_descending layer, and then, modify its transparency value to something around 85%.
 
 [[file:files/qgis.png|640px]]
 

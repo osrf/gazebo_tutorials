@@ -465,21 +465,25 @@ The corresponding laser view from Rviz:
 To run with RRBot, open <tt>rrbot.gazebo</tt> and change the following two lines.
 
 replace
+
 ~~~
     <sensor type="gpu_ray" name="head_hokuyo_sensor">
 ~~~
 
 with
+
 ~~~
     <sensor type="ray" name="head_hokuyo_sensor">
 ~~~
 
 and replace
+
 ~~~
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
 ~~~
 
 with
+
 ~~~
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
 ~~~
