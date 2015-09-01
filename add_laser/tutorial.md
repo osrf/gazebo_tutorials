@@ -6,9 +6,9 @@ This tutorials demonstrates how the user can create composite models directly
 from other models in the
 [Gazebo Model Database](https://bitbucket.org/osrf/gazebo_models/src)
 by using the
-[`<include>`](http://sdformat.org/spec?ver=1.5&elem=world#world_include)
+[<include>](http://sdformat.org/spec?ver=1.5&elem=world#world_include)
 tags and
-[`<joint>`](http://sdformat.org/spec?ver=1.5&elem=joint)
+[<joint>](http://sdformat.org/spec?ver=1.5&elem=joint)
 to connect different components of a composite model.
 
 ## Adding a Laser
