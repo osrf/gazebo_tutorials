@@ -10,7 +10,7 @@ equal to 14.04.2 (Trusty) or newer.
 Make sure you have removed the Ubuntu pre-compiled binaries before installing
 from source:
 
-    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '*ignition-math*'
+    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*'
 
 If you have previously installed from source, be sure you are installing to the
 same path location or that you have removed the previous installation from
