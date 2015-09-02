@@ -5,13 +5,12 @@
 ### Prerequisites
 
 For compiling the latest version of gazebo you will need an Ubuntu distribution
-equal to 14.04.2 (Trusty) or newer. Previous versions (Precise) suffer from
-missing dependencies and other requirements.
+equal to 14.04.2 (Trusty) or newer.
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing
 from source:
 
-    sudo apt-get remove '.*gazebo.*' '.*sdformat.*'
+    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*'
 
 If you have previously installed from source, be sure you are installing to the
 same path location or that you have removed the previous installation from
@@ -77,9 +76,36 @@ To generate man-pages for the Gazebo executables, the ruby-ronn package is neede
 
     sudo apt-get install robot-player-dev*
 
+### Build And Install ignition math
+
+SDFormat and Gazebo depend on the ignition math library.
+
+1. Clone the repository into a directory and go into it:
+
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        cd /tmp/ign-math
+
+     **Note:** the `default` branch is the development branch where
+you'll find the bleeding edge code, your cloned repository should be on this
+branch by default but we recommend you switch to the `ign-math2` branch if you
+desire more stability (with the `hg up ign-math2` command).
+
+
+1. Create a build directory and go there:
+
+        mkdir build
+        cd build
+
+1. Build and install:
+
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+        make -j4
+        sudo make install
+
+
 ### Build And Install SDFormat
 
-To install from source, you should first install the SDFormat package, then build Gazebo off of that:
+Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of that:
 
 1. Clone the repository into a directory and go into it:
 
@@ -99,7 +125,7 @@ stability
 1. Build and install:
 
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j
+        make -j4
         sudo make install
 
 ### Build And Install Gazebo
@@ -146,7 +172,7 @@ desire more stability
 
 1. Build Gazebo:
 
-        make -j
+        make -j4
 
 1. Install Gazebo:
 
