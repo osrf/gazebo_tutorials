@@ -39,7 +39,7 @@ Parameters:
 
 Gazebo uses the ROS parameter server to notify other applications, particularly Rviz, if simulation time should be used via the <tt>/use\_sim\_time</tt> parameter. This should be set automatically by Gazebo as true when you start <tt>gazebo_ros</tt>
 
-<tt>/use\_sim\_time</tt> is true if gazebo_ros is publishing to the ROS <tt>/clock</tt> topic in order to provide a ROS system with simulation-synchronized time. For more info on simulation time, see [http://www.ros.org/wiki/roscpp/Overview/Time ROS C++ Time].
+<tt>/use\_sim\_time</tt> is true if gazebo_ros is publishing to the ROS <tt>/clock</tt> topic in order to provide a ROS system with simulation-synchronized time. For more info on simulation time, see [ROS C++ Time](http://www.ros.org/wiki/roscpp/Overview/Time).
 
 ### Checking the value
 
@@ -52,8 +52,10 @@ rosparam get /use_sim_time
 ## Gazebo Subscribed Topics
 
 Topics:
-; ~/set\_link\_state :gazebo_msgs/LinkState - Sets the state (pose/twist) of a link.
-; ~/set\_model\_state :gazebo_msgs/ModelState - Sets the state (pose/twist) of a model.
+
+~/set\_link\_state :gazebo_msgs/LinkState - Sets the state (pose/twist) of a link.
+
+~/set\_model\_state :gazebo_msgs/ModelState - Sets the state (pose/twist) of a model.
 
 ### Set Model Pose and Twist in Simulation via Topics
 
@@ -78,7 +80,7 @@ You should see the coke can hovering in front of the RRBot, just asking to be hi
 
 Topics:
 
-/clock :rosgraph\_msgs/Clock - Publish simulation time, to be used with `/use\_sim\_time` parameter.
+/clock :rosgraph\_msgs/Clock - Publish simulation time, to be used with `/use_sim_time` parameter.
 
 
 ~/link\_states :gazebo_msgs/LinkStates - Publishes states of all the links in simulation.
@@ -215,7 +217,7 @@ These services allow the user to retrieve state and property information about s
 
 ~/get\_link\_state :gazebo_msgs/GetLinkState - This service returns the states of a link in simulation.
 
-~/get\_physics_properties :gazebo_msgs/GetPhysicsProperties - This service returns the properties of the physics engine used in simulation.
+~/get\_physics\_properties :gazebo_msgs/GetPhysicsProperties - This service returns the properties of the physics engine used in simulation.
 
 ~/link\_states :gazebo_msgs/LinkStates - Publish complete link states in world frame
 
