@@ -192,7 +192,7 @@ Additionally, the near and far clips are simulation-specific parameters that giv
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 ~~~
 
-This is where the actual <tt>gazebo_ros/gazebo_ros_camera.cpp</tt> file is linked to, as a shared object.
+This is where the actual `gazebo_ros/gazebo_ros_camera.cpp` file is linked to, as a shared object.
 
 ~~~
         <cameraName>rrbot/camera1</cameraName>
@@ -215,14 +215,14 @@ The coordinate frame the image is published under in the tf tree.
 
 ### Running the RRBot Example
 
-After you have saved both <tt>rrbot.xacro</tt> and <tt>rrbot.gazebo</tt>, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot_world.launch
 roslaunch rrbot_description rrbot_rviz.launch
 ~~~
 
-In Rviz, add a ''Camera'' display and under ''Image Topic'' set it to <tt>/rrbot/camera1/image_raw</tt>.
+In Rviz, add a ''Camera'' display and under ''Image Topic'' set it to `/rrbot/camera1/image_raw`.
 
 You should see a camera view of your Gazebo environment. In the following two pictures, a soda can was added to the environment for better visuals.
 
@@ -237,7 +237,7 @@ The corresponding camera view after the pendulum has fallen:
 
 ## Multicamera
 
-**Description:** synchronizes multiple camera's shutters such that they publish their images together. Typically used for stereo cameras, uses a very similar interface as the plain <tt>Camera</tt> plugin
+**Description:** synchronizes multiple camera's shutters such that they publish their images together. Typically used for stereo cameras, uses a very similar interface as the plain `Camera` plugin
 
 **Note**: currently only supports stereo cameras. See [Github issue](https://github.com/osrf/gazebo_ros_pkgs/issues/13).
 
@@ -379,7 +379,7 @@ See the RRBot Example for adding a Camera to RRBot before reviewing this example
   </link>
 ~~~
 
-Now we'll add the plugin information to <tt>rrbot.gazebo</tt>, again as we did for the camera example:
+Now we'll add the plugin information to `rrbot.gazebo`, again as we did for the camera example:
 
 ~~~
   <!-- hokuyo -->
@@ -428,7 +428,7 @@ Most of the properties are self-explanatory, but we'll review some below:
 
 When true, a semi-translucent laser ray is visualized within the scanning zone of the gpu laser. This can be an informative visualization, or an nuisance.
 
-More documentation on the <tt><sensor></tt> and <tt><ray></tt> elements can be found in the [SDF Documentation](http://gazebosim.org/sdf/dev.html#sensor225).
+More documentation on the `<sensor>` and `<ray>` elements can be found in the [SDF Documentation](http://gazebosim.org/sdf/dev.html#sensor225).
 
 ~~~
 <topicName>/rrbot/laser/scan</topicName>
@@ -439,14 +439,14 @@ Set these to the ROS topic name you would like to publish the laser scans to, an
 
 ### Running the RRBot Example
 
-After you have saved both <tt>rrbot.xacro</tt> and <tt>rrbot.gazebo</tt>, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot.launch
 roslaunch rrbot_description rrbot_rviz.launch
 ~~~
 
-In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to <tt>/rrbot/camera1/image_raw</tt>.
+In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to `/rrbot/camera1/image_raw`.
 
 You should see a faint laser scan line in your Gazebo environment. While the pendulum is swinging, you should also see the laser scan swing. If the scan is too faint, you can up the size of the laser scan in the properties of the LaserScan display in Rviz. A size of 1m is very easy to see. In the following two pictures, a house and construction barrel was added to the environment for better visuals.
 
@@ -460,9 +460,9 @@ The corresponding laser view from Rviz:
 
 ## Laser
 
-**Description:** the non-GPU version of <tt>GPU Laser</tt>, but essentially uses the same code. See GPU Laser for documentation.
+**Description:** the non-GPU version of `GPU Laser`, but essentially uses the same code. See GPU Laser for documentation.
 
-To run with RRBot, open <tt>rrbot.gazebo</tt> and change the following two lines.
+To run with RRBot, open `rrbot.gazebo` and change the following two lines.
 
 replace
 
@@ -665,5 +665,5 @@ Here is a full URDF example that demonstrates how to control a floating box insi
 
 # Next Steps
 
-Next we will analyze the <tt>ros_control</tt> packages integrated with Gazebo for tight controller/actuator/simulator integration
+Next we will analyze the `ros_control` packages integrated with Gazebo for tight controller/actuator/simulator integration
 [Actuators, controllers, and ros_control](http://gazebosim.org/tutorials/?tut=ros_control).

@@ -8,7 +8,7 @@ To achieve ROS integration with stand-alone Gazebo, a new set of ROS packages na
 - Builds with [catkin](http://www.ros.org/wiki/catkin)
 - Treats URDF and [SDF](http://gazebosim.org/sdf.html) as equally as possible
 - Reduces code duplication with Gazebo
-- Improves out of the box support for controllers using <tt>ros_control</tt>
+- Improves out of the box support for controllers using `ros_control`
 - Integrates real time controller efficiency improvements from the DARPA Robotics Challenge
 - Cleans up old code from previous versions of ROS and Gazebo
 
@@ -18,11 +18,11 @@ An overview of the new interface is in the following diagram:
 
 ## Upgrading from simulator_gazebo
 
-The following guidelines will help you upgrade your Gazebo-dependent packages from <tt>simulator_gazebo</tt> for use in your ROS packages:
+The following guidelines will help you upgrade your Gazebo-dependent packages from `simulator_gazebo` for use in your ROS packages:
 
 ### Catkin
 
-Your previous packages for interfacing with Gazebo with the old <tt>simulator_gazebo</tt> stack are likely still using the [rosbuild](http://www.ros.org/wiki/rosbuild) build system. With gazebo_ros_pkgs in ROS Hydro, you will first need to "catkinize" your packages to begin migration. See the [Catkin Tutorials](http://www.ros.org/wiki/catkin/Tutorials).
+Your previous packages for interfacing with Gazebo with the old `simulator_gazebo` stack are likely still using the [rosbuild](http://www.ros.org/wiki/rosbuild) build system. With gazebo_ros_pkgs in ROS Hydro, you will first need to "catkinize" your packages to begin migration. See the [Catkin Tutorials](http://www.ros.org/wiki/catkin/Tutorials).
 
 ### Launch Files
 
@@ -30,7 +30,7 @@ Some changes are required in previously created roslaunch files for starting Gaz
 
 - Within roslaunch files, `pkg="gazebo"` needs to be now renamed to `pkg="gazebo_ros"`
 - `gazebo_worlds` package has been removed. Most of the world files were rarely used and were not maintained with changes in SDF XML formats. Thus, all worlds have been centralized within the Gazebo project itself, including `empty.world`.
-- The best way to use Gazebo launch files is to simply inherent/include the master "empty world" launch file located in the <tt>gazebo_ros</tt> package.
+- The best way to use Gazebo launch files is to simply inherent/include the master "empty world" launch file located in the `gazebo_ros` package.
 
 ### CMakeLists.txt
 

@@ -44,7 +44,7 @@ The first step to getting your robot working in Gazebo is to have a working URDF
 
 RRBot, or ''Revolute-Revolute Manipulator Robot'', is a simple 3-linkage, 2-joint arm that we will use to demonstrate various features of Gazebo and URDFs. It essentially a [double inverted pendulum](http://en.wikipedia.org/wiki/Double_inverted_pendulum) and demonstrates some fun control concepts within a simulator.
 
-To get RRBot, clone the Github repo into the <tt>/src</tt> folder of your catkin workspace and rebuild your workspace:
+To get RRBot, clone the Github repo into the `/src` folder of your catkin workspace and rebuild your workspace:
 
 <pre>
 cd ~/catkin_ws/src/
@@ -66,7 +66,7 @@ And you should see our little bot like so:
 
 [[file:figs/Rrbot_rviz.png|700px]]
 
-If you do not get this, try killing all old roscore processes with <tt>killall roscore</tt> and relaunching RViz.
+If you do not get this, try killing all old roscore processes with `killall roscore` and relaunching RViz.
 
 
 You should also be able to play with the slider bars in the Joint State Publisher window to move the two joints.
@@ -85,8 +85,8 @@ rosed rrbot_description rrbot.xacro
 
 Note that we are using [Xacro](http://ros.org/wiki/xacro) to make some of the link and joint calculations easier. We are also including two additional files:
 
-- <tt>rrbot.gazebo</tt> a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
-- <tt>materials.xacro</tt> a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
+- `rrbot.gazebo` a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
+- `materials.xacro` a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
 
 ### View in Gazebo
 
@@ -122,7 +122,7 @@ You can remove them. All you need in your root element tag is the name of the ro
 
 ### `<gazebo>` element for the <robot> tag
 
-If a `<gazebo>` element is used without a <tt>reference=""</tt> property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
+If a `<gazebo>` element is used without a `reference=""` property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
 
 <table border="1">
 <tr>
@@ -209,7 +209,7 @@ A standard URDF can specify colors using a tag such as in the RRBot:
 <material name="orange"/>
 ~~~
 
-With the color orange defined separately such as in the file <tt>materials.xacro</tt>:
+With the color orange defined separately such as in the file `materials.xacro`:
 
 ~~~
   <material name="orange">
@@ -225,9 +225,9 @@ Unfortunately, this method of specifying link colors does not work in Gazebo as 
   </gazebo>
 ~~~
 
-As mentioned earlier, in the RRBot example we have chosen to include all Gazebo-specific tag in a secondary file called <tt>rrbot.gazebo</tt>. You can find the <link> and <material> elements there.
+As mentioned earlier, in the RRBot example we have chosen to include all Gazebo-specific tag in a secondary file called `rrbot.gazebo`. You can find the <link> and <material> elements there.
 
-The default available materials in Gazebo can be found in the Gazebo source code at <tt>gazebo/media/materials/scripts/gazebo.material</tt>.
+The default available materials in Gazebo can be found in the Gazebo source code at `gazebo/media/materials/scripts/gazebo.material`.
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
@@ -356,7 +356,7 @@ Make sure you are familiar with the [URDF joint documentation](http://www.ros.or
 
 * The `<origin>`, `<parent>` and `<child>` are required
 * `<calibration>` and `<safety_controller>` are ignored
-* In the `<dynamics>` tag, only the <tt>damping</tt> property is used
+* In the `<dynamics>` tag, only the `damping` property is used
 * All of properties in the `<limit>` tag are optional
 
 ### RRBot Example
@@ -442,9 +442,9 @@ Note: in Gazebo version 1.9 and greater, some of the debug info has been moved t
 
 ## Viewing the URDF In Gazebo
 
-Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named <tt>MYROBOT_description</tt> in the subfolder <tt>/urdf</tt>. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
+Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
 
-From that tutorial you should have two ROS packages for your custom robot: <tt>MYROBOT_description</tt> and <tt>MYROBOT_gazebo</tt>. To view your robot and test it in Gazebo, you should be able to now run something like:
+From that tutorial you should have two ROS packages for your custom robot: `MYROBOT_description` and `MYROBOT_gazebo`. To view your robot and test it in Gazebo, you should be able to now run something like:
 
 <pre>
 roslaunch MYROBOT_gazebo MYROBOT.launch
