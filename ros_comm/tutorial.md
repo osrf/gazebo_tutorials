@@ -19,13 +19,13 @@ You may occasionally need to restart Gazebo after different commands listed belo
 
 In the following context, the pose and twist of a rigid body object is referred to as its '''state''. An object also has intrinsic '''properties''', such as mass and friction coefficients. In Gazebo, a '''body''' refers to a rigid body, synonymous to '''link''' in the URDF context. A Gazebo '''model''' is a conglomeration of bodies connected by '''joints'''.
 
-## About the gazebo_ros_api_plugin
+## About the gazebo\_ros\_api_plugin
 
 The <tt>gazebo\_ros\_api\_plugin</tt> plugin, located with the <tt>gazebo\_ros</tt> package, initializes a ROS node called "gazebo". It integrates the ROS callback scheduler (message passing) with Gazebo's internal scheduler to provide the ROS interfaces described below. This ROS API enables a user to manipulate the properties of the simulation environment over ROS, as well as spawn and introspect on the state of models in the environment.
 
 This plugin is only loaded with <tt>gzserver</tt>.
 
-## About the gazebo_ros_paths_plugin
+## About the gazebo\_ros\_paths_plugin
 
 A secondary plugin named <tt>gazebo\_ros\_paths\_plugin</tt> is available in the <tt>gazebo\_ros</tt> package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names.
 
