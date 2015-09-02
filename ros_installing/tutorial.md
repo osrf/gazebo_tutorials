@@ -118,7 +118,7 @@ cd ~/catkin_ws
 catkin_make
 ~~~
 
-Then add to your <tt>.bashrc</tt> file a source to the setup scripts:
+Then add to your `.bashrc` file a source to the setup scripts:
 
 ~~~
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
