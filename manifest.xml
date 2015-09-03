@@ -219,7 +219,7 @@
     </tutorial>
 
     <tutorial title="Torsional friction" ref='torsional_friction'>
-      <markdown version="1.9+">torsional_friction/tutorial.md</markdown>
+      <markdown version="7+">torsional_friction/tutorial.md</markdown>
       <description>How to setup torsional friction properties.</description>
       <skill>intermediate</skill>
     </tutorial>

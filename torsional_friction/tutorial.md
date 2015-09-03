@@ -12,7 +12,7 @@ set it up from the GUI or SDF.
 
 ## Behaviour without torsional friction
 
-When a is box rotating on top of a plane, there's a large surface of contact
+When a box is rotating on top of a plane, there's a large surface of contact
 between them. At each point of contact, translational friction acts to
 decelerate the box. You can try it by yourself:
 
@@ -61,7 +61,7 @@ for torsional friction, they will be explained below. For now, we want to set
 Surface radius`, which is 0.5 m. Note that the torsional friction coefficient
 is 1.0 by default.
 
-1. Torsional friction is tipically very low because of the small contact area.
+1. Torsional friction is typically very low because of the small contact area.
 For our experiment, we want a lot of friction so the sphere stops fast. One way
 to achieve this is to make the sphere very heavy so it presses against the
 ground. So let's go on the `Link` tab and set the mass to 10000 Kg. The heavier
@@ -82,9 +82,11 @@ Torsional friction torque is computed based on contact depth and surface
 radius as follows: (you can find more detailed calculations
 [here](http://nbviewer.ipython.org/github/osrf/collaboration/blob/master/Torsional%20Friction.ipynb))
 
-    T = 3 * PI * a * coefficient * N / 16
+    T = 3*PI/16 * a * coefficient * N
 
 Where:
+
+* **3 PI / 16**: coefficient approximately equal to 0.589
 
 * **T**: Torque due to torsional friction.
 
@@ -93,7 +95,7 @@ Where:
 * **coefficient**: Coefficient of torsional friction. This is usually the same
 as the translational friction coefficients **mu** and **mu2**.
 
-* **a**: Contact patch radius (`patch_radius` on SDF). This is the radius of
+* **a**: Contact patch radius (`patch_radius` in SDF). This is the radius of
 the contact area between surfaces. A sphere on top of a plane generates a
 circular patch area which depends on the sphere radius and the contact depth as
 seen below.
@@ -106,7 +108,7 @@ The patch is calculated as:
 
 Where:
 
-* **R**: Surface radius at contact point (`surface_radius` on SDF).
+* **R**: Surface radius at contact point (`surface_radius` in SDF).
 
 * **d**: Contact depth.
 
