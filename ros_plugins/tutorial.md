@@ -13,7 +13,7 @@ catkin_create-pkg gazebo_tutorials gazebo_ros roscpp
 
 ## Create the Plugin
 
-Create a very simple plugin as described [here](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) and save the file as <tt>gazebo_tutorials/src/simple_world_plugin.cpp</tt>:
+Create a very simple plugin as described [here](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) and save the file as `gazebo_tutorials/src/simple_world_plugin.cpp`:
 
 ~~~
 #include <gazebo/common/Plugin.hh>
@@ -48,7 +48,7 @@ GZ_REGISTER_WORLD_PLUGIN(WorldPluginTutorial)
 
 ## Update CMakeLists.txt
 
-Open <tt>gazebo_tutorials/CMakeLists.txt</tt> and replace it with the following:
+Open `gazebo_tutorials/CMakeLists.txt` and replace it with the following:
 
 ~~~
 cmake_minimum_required(VERSION 2.8.3)
@@ -78,7 +78,7 @@ catkin_package(
 
 ## Update package.xml
 
-Update <tt>gazebo_tutorials/package.xml</tt> by adding the following line within the <tt><export></export></tt> tags (or add the <tt><export></export></tt> tags also).
+Update `gazebo_tutorials/package.xml` by adding the following line within the `<export></export>` tags (or add the `<export></export>` tags also).
 
 ~~~
   <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
@@ -95,7 +95,7 @@ catkin_make
 
 ## Creating a World file
 
-Save the following file as <tt>gazebo_tutorials/worlds/hello.world</tt>:
+Save the following file as `gazebo_tutorials/worlds/hello.world`:
 
 ~~~
 <?xml version="1.0" ?>
@@ -154,7 +154,7 @@ To make your plugin do something useful with Gazebo and ROS, we suggest you read
 
 ## ROS Node Note
 
-All gazebo-ros plugins should check if the ROS node has already been initialized in their <tt>Load()</tt> function, as discussed in this [issue](http://answers.gazebosim.org/question/1493/rosinit-needed-for-ros-gazebo-plugin/). The initialization of the ROS node is performed automatically when you run <pre>rosrun gazebo_ros gazebo</pre> or use the generic empty.world launch file. The <pre>gazebo_ros/src/gazebo_ros_api_plugin.cpp</pre> should be the only place in Gazebo that calls <pre>ros::init()</pre>.
+All gazebo-ros plugins should check if the ROS node has already been initialized in their `Load()` function, as discussed in this [issue](http://answers.gazebosim.org/question/1493/rosinit-needed-for-ros-gazebo-plugin/). The initialization of the ROS node is performed automatically when you run <pre>rosrun gazebo_ros gazebo</pre> or use the generic empty.world launch file. The <pre>gazebo_ros/src/gazebo_ros_api_plugin.cpp</pre> should be the only place in Gazebo that calls <pre>ros::init()</pre>.
 
 ## Next Steps
 

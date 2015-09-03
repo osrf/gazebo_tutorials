@@ -19,17 +19,17 @@ You may occasionally need to restart Gazebo after different commands listed belo
 
 In the following context, the pose and twist of a rigid body object is referred to as its '''state''. An object also has intrinsic '''properties''', such as mass and friction coefficients. In Gazebo, a '''body''' refers to a rigid body, synonymous to '''link''' in the URDF context. A Gazebo '''model''' is a conglomeration of bodies connected by '''joints'''.
 
-## About the gazebo\_ros\_api_plugin
+## About the gazebo\_ros\_api\_plugin
 
-The <tt>gazebo\_ros\_api\_plugin</tt> plugin, located with the <tt>gazebo\_ros</tt> package, initializes a ROS node called "gazebo". It integrates the ROS callback scheduler (message passing) with Gazebo's internal scheduler to provide the ROS interfaces described below. This ROS API enables a user to manipulate the properties of the simulation environment over ROS, as well as spawn and introspect on the state of models in the environment.
+The `gazebo_ros_api_plugin` plugin, located with the `gazebo_ros` package, initializes a ROS node called "gazebo". It integrates the ROS callback scheduler (message passing) with Gazebo's internal scheduler to provide the ROS interfaces described below. This ROS API enables a user to manipulate the properties of the simulation environment over ROS, as well as spawn and introspect on the state of models in the environment.
 
-This plugin is only loaded with <tt>gzserver</tt>.
+This plugin is only loaded with `gzserver`.
 
 ## About the gazebo\_ros\_paths_plugin
 
-A secondary plugin named <tt>gazebo\_ros\_paths\_plugin</tt> is available in the <tt>gazebo\_ros</tt> package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names.
+A secondary plugin named `gazebo_ros_paths_plugin` is available in the `gazebo_ros` package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names. 
 
-This plugin is loaded with both <tt>gzserver</tt> and <tt>gzclient</tt>.
+This plugin is loaded with both `gzserver` and `gzclient`.
 
 ## Gazebo Published Parameters
 
@@ -65,7 +65,7 @@ Topics:
 rosrun gazebo_ros spawn_model -database coke_can -gazebo -model coke_can -y 1
 ~~~
 
-and set the pose of the coke can by publishing on the <tt>/gazebo/set\_model\_state</tt> topic:
+and set the pose of the coke can by publishing on the `/gazebo/set_model_state` topic:
 
 ~~~
 rostopic pub -r 20 /gazebo/set_model_state gazebo_msgs/ModelState '{model_name: coke_can, pose: { position: { x: 1, y: 0, z: 2 }, orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, twist: { linear: { x: 0, y: 0, z: 0 }, angular: { x: 0, y: 0, z: 0}  }, reference_frame: world }'
@@ -89,7 +89,7 @@ Topics:
 
 ### Retrieving Model and Link States Using Topics
 
-Gazebo publishes <tt>/gazebo/link\_states</tt> and <tt>/gazebo/model\_states</tt> topics, containing pose and twist information of objects in simulation with respect to the gazebo world frame. You can see these in action by running:
+Gazebo publishes `/gazebo/link_states` and `/gazebo/model_states` topics, containing pose and twist information of objects in simulation with respect to the gazebo world frame. You can see these in action by running:
 
 ~~~
 rostopic echo -n 1 /gazebo/model_states
@@ -114,7 +114,7 @@ These services allow the user to spawn and destroy models dynamically in simulat
 
 ### Spawn Model
 
-A helper script called <tt>spawn\_model</tt> is provided for calling the model spawning services offered by <tt>gazebo\_ros</tt>. The most practical method for spawning a model using the service call method is with a <tt>roslaunch</tt> file. Details are provided in the tutorial [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials/?tut=ros_roslaunch). There are many ways to use spawn_model to add URDFs and SDFs to Gazebo. The following are a few of the examples:
+A helper script called `spawn_model` is provided for calling the model spawning services offered by `gazebo_ros`. The most practical method for spawning a model using the service call method is with a `roslaunch` file. Details are provided in the tutorial [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials/?tut=ros_roslaunch). There are many ways to use spawn_model to add URDFs and SDFs to Gazebo. The following are a few of the examples:
 
 Spawn a URDF from file - first convert .xacro file to .xml then spawn:
 
@@ -138,7 +138,7 @@ SDF from the online model database:
 rosrun gazebo_ros spawn_model -database coke_can -sdf -model coke_can3 -y 2.2 -x -0.3
 ~~~
 
-To see all of the available arguments for <tt>spawn_model</tt> including namespaces, trimesh properties, joint positions and RPY orientation run:
+To see all of the available arguments for `spawn_model` including namespaces, trimesh properties, joint positions and RPY orientation run:
 
 ~~~
 rosrun gazebo_ros spawn_model -h
@@ -173,7 +173,7 @@ These services allow the user to set state and property information about simula
 
 ### Set Model State Example
 
-Let's have some fun and have the RRBot hit a coke can using the <tt>/gazebo/set\_model\_state</tt> service.
+Let's have some fun and have the RRBot hit a coke can using the `/gazebo/set_model_state` service.
 
 If you have not already added a coke can to your simulation run
 
@@ -225,7 +225,7 @@ These services allow the user to retrieve state and property information about s
 
 ### Note:
 
-<tt>link\_names</tt> are in gazebo scoped name notation, <tt>[model_name::body_name]</tt>
+`link_names` are in gazebo scoped name notation, `[model_name::body_name]`
 
 ### Get Model State Example
 
@@ -316,7 +316,7 @@ To demonstrate wrench applications on a Gazebo body, let's spawn an object with 
 rosrun gazebo_ros spawn_model -database coke_can -gazebo -model coke_can -y 1
 ~~~
 
-Then to turn off gravity send a service call to <tt>/gazebo/set\_physics\_properties</tt> with no gravity in any of the axis:
+Then to turn off gravity send a service call to `/gazebo/set_physics_properties` with no gravity in any of the axis:
 
 ~~~
 rosservice call /gazebo/set_physics_properties "
@@ -339,7 +339,7 @@ ode_config:
   max_contacts: 20"
 ~~~
 
-Apply a 0.01 Nm torque at the coke can origin for 1 second duration by calling the <tt>/gazebo/apply\_body\_wrench</tt> service, and you should see the coke can spin up along the positive x-axis:
+Apply a 0.01 Nm torque at the coke can origin for 1 second duration by calling the `/gazebo/apply_body_wrench` service, and you should see the coke can spin up along the positive x-axis:
 
 ~~~
 rosservice call /gazebo/apply_body_wrench '{body_name: "coke_can::link" , wrench: { torque: { x: 0.01, y: 0 , z: 0 } }, start_time: 10000000000, duration: 1000000000 }'
@@ -363,7 +363,7 @@ rosservice call /gazebo/clear_body_wrenches '{body_name: "coke_can::link"}'
 
 ### Apply Efforts to Joints in Simulation
 
-Call <tt>/gazebo/apply\_joint\_effort</tt> to apply torque to the joint
+Call `/gazebo/apply_joint_effort` to apply torque to the joint
 
 ~~~
 rosservice call /gazebo/apply_joint_effort "joint_name: 'joint2'

@@ -79,7 +79,7 @@ As a side note, default install locations:
 
 ## ROS Users
 
-When building Gazebo, we recommend you do not have your <tt>/opt/ros/*/setup.sh</tt> file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
+When building Gazebo, we recommend you do not have your `/opt/ros/*/setup.sh` file sourced, as it has been seen to add the wrong libraries to the Gazebo build.
 
 
 ## Install Dependencies
@@ -114,7 +114,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd sdformat
         hg up sdf_1.4
 
-   *Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability*
+   *Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability*
 
 1. Create a build directory and go there
 
@@ -139,7 +139,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd gazebo
         hg up gazebo_1.9
 
-   *Note: the <tt>default</tt> branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.9 branch if you desire more stability*
+   *Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.9 branch if you desire more stability*
 
 1. Create a build directory and go there
 
