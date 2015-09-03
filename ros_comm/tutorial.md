@@ -27,7 +27,7 @@ This plugin is only loaded with `gzserver`.
 
 ## About the gazebo\_ros\_paths_plugin
 
-A secondary plugin named `gazebo_ros_paths_plugin` is available in the `gazebo_ros` package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names. 
+A secondary plugin named `gazebo_ros_paths_plugin` is available in the `gazebo_ros` package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names.
 
 This plugin is loaded with both `gzserver` and `gzclient`.
 
@@ -35,11 +35,11 @@ This plugin is loaded with both `gzserver` and `gzclient`.
 
 Parameters:
 
-/use\_sim\_time :Bool - Notifies ROS to use published `/clock` topic for ROS time.
+`/use_sim_time` : `Bool` - Notifies ROS to use published `/clock` topic for ROS time.
 
-Gazebo uses the ROS parameter server to notify other applications, particularly Rviz, if simulation time should be used via the <tt>/use\_sim\_time</tt> parameter. This should be set automatically by Gazebo as true when you start <tt>gazebo_ros</tt>
+Gazebo uses the ROS parameter server to notify other applications, particularly Rviz, if simulation time should be used via the `/use_sim_time` parameter. This should be set automatically by Gazebo as true when you start `gazebo_ros`
 
-<tt>/use\_sim\_time</tt> is true if gazebo_ros is publishing to the ROS <tt>/clock</tt> topic in order to provide a ROS system with simulation-synchronized time. For more info on simulation time, see [ROS C++ Time](http://www.ros.org/wiki/roscpp/Overview/Time).
+`/use_sim_time` is true if gazebo_ros is publishing to the ROS `/clock` topic in order to provide a ROS system with simulation-synchronized time. For more info on simulation time, see [ROS C++ Time](http://www.ros.org/wiki/roscpp/Overview/Time).
 
 ### Checking the value
 
@@ -53,9 +53,9 @@ rosparam get /use_sim_time
 
 Topics:
 
-~/set\_link\_state :gazebo_msgs/LinkState - Sets the state (pose/twist) of a link.
+`~/set_link_state` : `gazebo_msgs/LinkState` - Sets the state (pose/twist) of a link.
 
-~/set\_model\_state :gazebo_msgs/ModelState - Sets the state (pose/twist) of a model.
+`~/set\_model\_state` : `gazebo_msgs/ModelState` - Sets the state (pose/twist) of a model.
 
 ### Set Model Pose and Twist in Simulation via Topics
 
@@ -83,9 +83,9 @@ Topics:
 /clock :rosgraph\_msgs/Clock - Publish simulation time, to be used with `/use_sim_time` parameter.
 
 
-~/link\_states :gazebo_msgs/LinkStates - Publishes states of all the links in simulation.
+`~/link_states` : `gazebo_msgs/LinkStates` - Publishes states of all the links in simulation.
 
-~/model\_states :gazebo_msgs/ModelStates - Publishes states of all the models in simulation.
+`~/model_states` : `gazebo_msgs/ModelStates` - Publishes states of all the models in simulation.
 
 ### Retrieving Model and Link States Using Topics
 
@@ -106,11 +106,11 @@ To reiterate, a '''link''' is defined as a rigid body with given inertial, visua
 ## Services: Create and destroy models in simulation
 These services allow the user to spawn and destroy models dynamically in simulation:
 
-~/spawn\_urdf\_model :gazebo_msgs/SpawnModel - Use this service to spawn a Universal Robotic Description Format (URDF)
+`~/spawn_urdf_model` : `gazebo_msgs/SpawnModel` - Use this service to spawn a Universal Robotic Description Format (URDF)
 
-~/spawn\_sdf\_model :gazebo_msgs/SpawnModel - Use this service to spawn a model written in Gazebo Simulation Description Format (SDF)
+`~/spawn_sdf_model` : `gazebo_msgs/SpawnModel` - Use this service to spawn a model written in Gazebo Simulation Description Format (SDF)
 
-~/delete\_model :gazebo_msgs/DeleteModel - This service allows the user to delete a model from simulation.
+`~/delete_model` : `gazebo_msgs/DeleteModel` - This service allows the user to delete a model from simulation.
 
 ### Spawn Model
 
@@ -155,21 +155,21 @@ rosservice call gazebo/delete_model '{model_name: rrbot1}'
 ## Services: State and property setters
 These services allow the user to set state and property information about simulation and objects in simulation:
 
-~/set\_link\_properties :gazebo_msgs/SetLinkProperties
+`~/set_link_properties` : `gazebo_msgs/SetLinkProperties`
 
-~/set\_physics\_properties :gazebo_msgs/SetPhysicsProperties
+`~/set_physics_properties` : `gazebo_msgs/SetPhysicsProperties`
 
-~/set\_model\_state :gazebo_msgs/SetModelState
+`~/set_model_state` : `gazebo_msgs/SetModelState`
 
-~/set\_model\_configuration :gazebo_msgs/SetModelConfiguration - This service allows the user to set model joint positions without invoking dynamics.
+`~/set_model_configuration` : `gazebo_msgs/SetModelConfiguration` - This service allows the user to set model joint positions without invoking dynamics.
 
-~/set\_joint\_properties :gazebo_msgs/SetJointProperties
+`~/set_joint_properties` : gazebo_msgs/SetJointProperties`
 
-~/set\_link\_state :gazebo_msgs/SetLinkState
+`~/set_link_state` : `gazebo_msgs/SetLinkState`
 
-~/set\_link\_state :gazebo_msgs/LinkState
+`~/set_link_state` : `gazebo_msgs/LinkState`
 
-~/set\_model\_state :gazebo_msgs/ModelState
+`~/set_model_state` : `gazebo_msgs/ModelState`
 
 ### Set Model State Example
 
@@ -205,23 +205,23 @@ With luck you'll have the coke can launched some variable distance :) If it fumb
 
 These services allow the user to retrieve state and property information about simulation and objects in simulation:
 
-~/get\_model\_properties :gazebo_msgs/GetModelProperties- This service returns the properties of a model in simulation.
+`~/get_model_properties` : `gazebo_msgs/GetModelProperties`- This service returns the properties of a model in simulation.
 
-~/get\_model\_state :gazebo_msgs/GetModelState - This service returns the states of a model in simulation.
+`~/get_model_state` : `gazebo_msgs/GetModelState` - This service returns the states of a model in simulation.
 
-~/get\_world\_properties :gazebo_msgs/GetWorldProperties - This service returns the properties of the simulation world.
+`~/get_world_properties` : `gazebo_msgs/GetWorldProperties` - This service returns the properties of the simulation world.
 
-~/get\_joint\_properties :gazebo_msgs/GetJointProperties - This service returns the properties of a joint in simulation.
+`~/get_joint_properties` : `gazebo_msgs/GetJointProperties` - This service returns the properties of a joint in simulation.
 
-~/get\_link\_properties :gazebo_msgs/GetLinkProperties - This service returns the properties of a link in simulation.
+`~/get_link_properties` : `gazebo_msgs/GetLinkProperties` - This service returns the properties of a link in simulation.
 
-~/get\_link\_state :gazebo_msgs/GetLinkState - This service returns the states of a link in simulation.
+`~/get_link_state` : `gazebo_msgs/GetLinkState` - This service returns the states of a link in simulation.
 
-~/get\_physics\_properties :gazebo_msgs/GetPhysicsProperties - This service returns the properties of the physics engine used in simulation.
+`~/get_physics_properties` : `gazebo_msgs/GetPhysicsProperties` - This service returns the properties of the physics engine used in simulation.
 
-~/link\_states :gazebo_msgs/LinkStates - Publish complete link states in world frame
+`~/link_states` : `gazebo_msgs/LinkStates` - Publish complete link states in world frame
 
-~/model\_states :gazebo_msgs/ModelStates - Publish complete model states in world frame
+`~/model_states` : `gazebo_msgs/ModelStates` - Publish complete model states in world frame
 
 ### Note:
 
@@ -300,13 +300,13 @@ status_message: GetModelProperties: got properties
 
 These services allow the user to apply wrenches and forces to bodies and joints in simulation:
 
-~/apply\_body\_wrench :gazebo_msgs/ApplyBodyWrench - Apply wrench to a body in simulation.  All active wrenches applied to the same body are cumulative.
+`~/apply_body_wrench` : `gazebo_msgs/ApplyBodyWrench` - Apply wrench to a body in simulation.  All active wrenches applied to the same body are cumulative.
 
-~/apply\_joint\_effort :gazebo_msgs/ApplyJointEffort - Apply effort to a joint in simulation.  All active efforts applied to the same joint are cumulative.
+`~/apply_joint_effort` : `gazebo_msgs/ApplyJointEffort` - Apply effort to a joint in simulation.  All active efforts applied to the same joint are cumulative.
 
-~/clear\_joint\_forces :gazebo_msgs/ClearJointForces - Clear applied efforts to a joint.
+`~/clear_joint_forces` : `gazebo_msgs/ClearJointForces` - Clear applied efforts to a joint.
 
-~/clear\_body\_wrenches :gazebo_msgs/ClearBodyWrenches - Clear applied wrench to a body.
+`~/clear_body_wrenches` : `gazebo_msgs/ClearBodyWrenches` - Clear applied wrench to a body.
 
 ### Apply Wrenches to Links
 
@@ -388,13 +388,13 @@ rosservice call /gazebo/clear_joint_forces '{joint_name: joint2}'
 ## Services: Simulation control
 These services allow the user to pause and unpause physics in simulation:
 
-~/pause\_physics :std_srvs/Empty - Pause physics updates.
+`~/pause_physics` : `std_srvs/Empty` - Pause physics updates.
 
-~/unpause\_physics :std_srvs/Empty - Resume physics updates.
+`~/unpause_physics` : `std_srvs/Empty` - Resume physics updates.
 
-~/reset\_simulation :std_srvs/Empty - Resets the model's poses
+`~/reset_simulation` : `std_srvs/Empty` - Resets the model's poses
 
-~/reset\_world :std_srvs/Empty - Resets the entire simulation including the time
+`~/reset_world` : `std_srvs/Empty` - Resets the entire simulation including the time
 
 ### Pausing and Unpausing Physics
 
