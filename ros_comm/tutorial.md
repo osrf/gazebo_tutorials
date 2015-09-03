@@ -59,7 +59,7 @@ Topics:
 
 ### Set Model Pose and Twist in Simulation via Topics
 
-[Topics](http://www.ros.org/wiki/Topics) can be used to set the pose and twist of a model rapidly without waiting for the pose setting action to complete. To do so, publish the desired [model state message](http://www.ros.org/doc/api/gazebo/html/msg/ModelState.html) to <tt>/gazebo/set\_model\_state</tt> topic. For example, to test pose setting via topics, add a coke can to the simulation by spawning a new model from the online database:
+[Topics](http://www.ros.org/wiki/Topics) can be used to set the pose and twist of a model rapidly without waiting for the pose setting action to complete. To do so, publish the desired [model state message](http://www.ros.org/doc/api/gazebo/html/msg/ModelState.html) to `/gazebo/set_model_state` topic. For example, to test pose setting via topics, add a coke can to the simulation by spawning a new model from the online database:
 
 ~~~
 rosrun gazebo_ros spawn_model -database coke_can -gazebo -model coke_can -y 1
@@ -80,7 +80,7 @@ You should see the coke can hovering in front of the RRBot, just asking to be hi
 
 Topics:
 
-/clock :rosgraph\_msgs/Clock - Publish simulation time, to be used with `/use_sim_time` parameter.
+`/clock` : `rosgraph_msgs/Clock` - Publish simulation time, to be used with `/use_sim_time` parameter.
 
 
 `~/link_states` : `gazebo_msgs/LinkStates` - Publishes states of all the links in simulation.
