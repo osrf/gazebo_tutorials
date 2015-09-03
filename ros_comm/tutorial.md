@@ -55,7 +55,7 @@ Topics:
 
 `~/set_link_state` : `gazebo_msgs/LinkState` - Sets the state (pose/twist) of a link.
 
-`~/set\_model\_state` : `gazebo_msgs/ModelState` - Sets the state (pose/twist) of a model.
+`~/set_model_state` : `gazebo_msgs/ModelState` - Sets the state (pose/twist) of a model.
 
 ### Set Model Pose and Twist in Simulation via Topics
 
