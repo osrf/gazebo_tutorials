@@ -86,7 +86,7 @@ radius as follows: (you can find more detailed calculations
 
 Where:
 
-* **3 PI / 16**: coefficient approximately equal to 0.589
+* **3 PI / 16**: constant approximately equal to 0.589
 
 * **T**: Torque due to torsional friction.
 
