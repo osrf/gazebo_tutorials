@@ -120,7 +120,7 @@ Spawn a URDF from file - first convert .xacro file to .xml then spawn:
 
 ~~~
 rosrun xacro xacro `rospack find rrbot_description`/urdf/rrbot.xacro >> `rospack find rrbot_description`/urdf/rrbot.xml
-rosrun gazebo_ros spawn\_model -file `rospack find rrbot_description`/urdf/rrbot.xml -urdf -y 1 -model rrbot1 -robot_namespace rrbot1
+rosrun gazebo_ros spawn_model -file `rospack find rrbot_description`/urdf/rrbot.xml -urdf -y 1 -model rrbot1 -robot_namespace rrbot1
 ~~~
 
 URDF from parameter server using roslaunch and xacro:
