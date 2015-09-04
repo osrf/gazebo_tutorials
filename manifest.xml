@@ -218,6 +218,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Torsional friction" ref='torsional_friction'>
+      <markdown version="7+">torsional_friction/tutorial.md</markdown>
+      <description>How to setup torsional friction properties.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Collide bitmask" ref='collide_bitmask'>
       <markdown version="6.0+">collide_bitmask/tutorial.md</markdown>
       <description>Learn how to control which geometries collide or do not collide with each other through the use of bitmasks.</description>
@@ -926,6 +932,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>torsional_friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
         <tutorial>aerodynamics</tutorial>
