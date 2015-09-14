@@ -47,6 +47,11 @@ Gazebo ships different Ubuntu debian packages following the [official packaging 
 ***Note:*** prereleases and nightlies are unsupported packages, they should
 only be used for development proposes.
 
+Gazebo nightly and prereleases repositories are extensions to the stable 
+repo which will add unstable builds to be installed by using `apt-get`
+in the same way than stable releases. These repositories rely on the
+presence of gazebo-stable repository into the system.
+
 ### Gazebo prerelease repo
 
 Gazebo prerelease versions are those released to test an upcoming release
