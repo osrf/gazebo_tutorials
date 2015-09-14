@@ -13,10 +13,10 @@
 ## Step-by-step Install
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
-    
+
     ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
 1. Setup keys
 
@@ -40,4 +40,33 @@
 Gazebo ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
 
  * Use Gazebo as an application: for the users that just run Gazebo simulator with the provided plugins and models and do not plan on developing on top of gazebo its own custom software. To use Gazebo 6.0, please install the package called ***gazebo6***.
- * Use Gazebo to develop software using Gazebo libraries: for users that develop plugins or any other kind of software that needs Gazebo headers and libraries. In this case, together with gazebo6 package, please install ***libgazebo6-dev***. 
+ * Use Gazebo to develop software using Gazebo libraries: for users that develop plugins or any other kind of software that needs Gazebo headers and libraries. In this case, together with gazebo6 package, please install ***libgazebo6-dev***.
+
+## Experimental gazebo packages (prereleases and nightly builds)
+
+***Note:*** prereleases and nightlies are unsupported packages, they should
+only be used for development proposes.
+
+### Gazebo prerelease repo
+
+Gazebo prerelease versions are those released to test an upcoming release
+mainly for testing proposes. To install the prerelease, first use the
+instructions above to install the stable repository and after it add the
+prerelease repository:
+
+        # Be sure to install the stable repo first !!
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
+        sudo apt-get update
+        sudo apt-get install gazebo7 (might not be released)
+
+### Gazebo nightly repo
+
+Gazebo nightlies are packages released every night which can be for different
+proposes like testing the last feature added to gazebo code. To install the
+nightlies, first use the instructions above to install the stable repository
+and after it add the nightly repository:
+
+        # Be sure to install the stable repo first !!
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
+        sudo apt-get update
+        sudo apt-get install gazebo7
