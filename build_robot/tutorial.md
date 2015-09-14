@@ -109,7 +109,9 @@ It is important to start simple, and build up a model in steps. The first step i
 
     Here we have created a `box` with a size of `0.4 x 0.2 x 0.1` meters. The `collision` element specifies the shape used by the collision detection engine. The `visual` element specifies the shape used by the rendering engine. For most use cases the `collision` and `visual` elements are the same. The most common use for different `collision` and `visual` elements is to have a simplified `collision` element paired with a `visual` element that uses a complex mesh. This will help improve performance.
 
-1.  Try out your model by running gazebo, and importing your model through the [[insert_model_gui | Insert Model]] interface on the GUI.
+1.  Try out your model by running gazebo, and importing your model through the
+    [Insert Model](http://gazebosim.org/tutorials?tut=build_world&cat=build_world#AddingModelfromtheModelDatabase)
+    interface on the GUI.
 
         gazebo
 
