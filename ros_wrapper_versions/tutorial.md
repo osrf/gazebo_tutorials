@@ -12,12 +12,12 @@ to use a specific version of Gazebo, you should proceed with the
 tutorial which explains how to install the fully supported version of gazebo
 by ROS.
 
-Warning: note that using a different gazebo version than the official delievered from the ROS
+Warning: note that using a different gazebo version than the official version delivered from the ROS
 repositories could end up in conflicts or other integration problems with ROS packages.
 
 # Gazebo versions and ROS integration
 
-Gazebo is an independent project and software from ROS, like boost, ogre or
+Gazebo is an independent project like boost, ogre or
 any other project used by ROS. Usually, the latest major version of gazebo
 available at the beginning of every ROS release cycle (for example `gazebo5`
 for ROS Jade) is selected as the official one to be fully integrated and
@@ -145,7 +145,7 @@ Dart still requires gazebo installation from source (starting from `gazebo3`),
 If you need some features only present in version 4.x, 5.x or 6.x of Gazebo,
 there is a way of installing `gazebo4`, `gazebo5` or `gazebo6` and ROS Indigo.
 Please follow the instructions about how to use ROS with gazebo4, gazebo5 or
-gazebo6 which are in this same docuement.
+gazebo6 which are in this same document.
 
 #### I need to use gazebo6 and ROS Jade, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Jade package
