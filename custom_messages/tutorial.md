@@ -1,10 +1,14 @@
 # Introduction
 
 Gazebo topics communicate through Google protobuf messages. There is an
-extensive [list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html) of message types provided by Gazebo, for use with subscribing and publishing Gazebo topics. However, there are many situations where you want to
-build your own.
+extensive
+[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html)
+of message types provided by Gazebo, for use with subscribing and publishing
+Gazebo topics. However, there are many situations where you want to build
+your own.
 
-This tutorial is an example of how to create your own custom messages, and how to subscribe and publish them in a Gazebo plug-in.
+This tutorial is an example of how to create your own custom messages, and
+how to subscribe and publish them in a Gazebo plug-in.
 
 ## About this code
 
@@ -31,9 +35,9 @@ subscriber/publisher message into one of Gazebo's already available message
 types. Furthermore, you can combine many different message types if you want
 to make complicated messages. Gazebo contains a library of messages already.
 The installed messages can be found in
-/usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian installs.
- This tutorial makes use of the
-[vector2d.proto message](https://bitbucket.org/osrf/gazebo/src/8b0c2de0886a61a862036f7e7fe1d4b7b8b4651c/gazebo/msgs/vector2d.proto?at=gazebo_1.9).
+/usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
+installs.  This tutorial makes use of the [vector2d.proto
+message](https://bitbucket.org/osrf/gazebo/src/8b0c2de0886a61a862036f7e7fe1d4b7b8b4651c/gazebo/msgs/vector2d.proto?at=gazebo_1.9).
 
 You can see how a custom message is declared by looking into
 `~/collision_map_creator_plugin/msgs/collision_map_request.proto`.
@@ -83,7 +87,8 @@ Declare each message field with:
 ["optional"/"required"] [field type] [field name] = [enum];
 </pre>
 
-Each enum must be a unique number. Note also that the full package name must be used to specify external messages (gazebo.msgs in our case).
+Each enum must be a unique number. Note also that the full package name must
+be used to specify external messages (gazebo.msgs in our case).
 <pre>
   required gazebo.msgs.Vector2d   upperLeft  = 1;
   required gazebo.msgs.Vector2d   upperRight = 2;
@@ -93,7 +98,8 @@ Each enum must be a unique number. Note also that the full package name must be 
   required double                 resolution = 6;
 </pre>
 
-Messages can contain optional fields. Optional fields can contain default values if they aren't specified. This is an example of how to do that.
+Messages can contain optional fields. Optional fields can contain default
+values if they aren't specified. This is an example of how to do that.
 <pre>
   optional string filename   = 7 [default = ""];
   optional int32  threshold  = 8 [default = 255];
@@ -101,8 +107,9 @@ Messages can contain optional fields. Optional fields can contain default values
 
 ## CMakeLists for custom messages
 
-In this tutorial we also provide the `~/collision_map_creator/msgs/CMakeLists.txt`
-that will generate your C++ code from your protobuf message definition:
+In this tutorial we also provide the
+`~/collision_map_creator/msgs/CMakeLists.txt` that will generate your C++
+code from your protobuf message definition:
 
 ### Code explained
 
@@ -112,8 +119,12 @@ Tells CMake to include the Protobuf package
 find_package(Protobuf REQUIRED)
 ~~~
 
-This section finds where the messages are installed. The message files are stored in `/usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto` for debian installs,
-but the user may have installed elsewhere. This code searches for the `gazebo-X.X` folder and sets the `PROTOBUF_IMPORT_DIRS` variable accordingly. The `PROTOBUF_IMPORT_DIRS` specifies the location of extra message files.
+This section finds where the messages are installed. The message files are
+stored in `/usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto` for
+debian installs, but the user may have installed elsewhere. This code
+searches for the `gazebo-X.X` folder and sets the `PROTOBUF_IMPORT_DIRS`
+variable accordingly. The `PROTOBUF_IMPORT_DIRS` specifies the location of
+extra message files.
 
 ~~~
 set(PROTOBUF_IMPORT_DIRS)
@@ -124,7 +135,9 @@ foreach(ITR ${GAZEBO_INCLUDE_DIRS})
 endforeach()
 ~~~
 
-Creates a list called `msgs` with the vector2d.proto message, its dependencies `time.proto` and `header.proto`, and the `collision_map_request.proto` message.
+Creates a list called `msgs` with the vector2d.proto message, its
+dependencies `time.proto` and `header.proto`, and the
+`collision_map_request.proto` message.
 
 ~~~
 set (msgs
@@ -181,7 +194,8 @@ These are the necessary Gazebo headers we'll need.
 #include "collision_map_request.pb.h"
 ~~~
 
-In order to make use of our collision_map_request message, we need to include it's generated header file.
+In order to make use of our collision_map_request message, we need to
+include it's generated header file.
 
 ~~~
 #include "collision_map_request.pb.h"
@@ -201,13 +215,16 @@ namespace gazebo
 {
 ~~~
 
-This is the object that will be sent to our callback method. It's convenient to create a typedef for it.
+This is the object that will be sent to our callback method. It's convenient
+to create a typedef for it.
 
 ~~~
 typedef const boost::shared_ptr<const collision_map_creator_msgs::msgs::CollisionMapRequest> CollisionMapRequestPtr;
 ~~~
 
-Creating a derived class of the Gazebo WorldPlugin. It needs to hold on to the NodePtr, PublisherPtr, SubcriberPtr and WorldPtr, so they must be added as class variables.
+Creating a derived class of the Gazebo WorldPlugin. It needs to hold on to
+the NodePtr, PublisherPtr, SubcriberPtr and WorldPtr, so they must be added
+as class variables.
 
 ~~~
 class CollisionMapCreator : public WorldPlugin
@@ -218,7 +235,8 @@ class CollisionMapCreator : public WorldPlugin
   physics::WorldPtr world;
 ~~~
 
-The World Plugin's Load method. It sets up the node, the world, the subscriber and the publisher.
+The World Plugin's Load method. It sets up the node, the world, the
+subscriber and the publisher.
 
 ~~~
 public: void Load(physics::WorldPtr _parent, sdf::ElementPtr _sdf)
@@ -230,7 +248,9 @@ public: void Load(physics::WorldPtr _parent, sdf::ElementPtr _sdf)
   std::cout << "Subscribing to: " << "~/collision_map/command" << std::endl;
 ~~~
 
-The node->Subscribe is called with the topic, callback function, and a pointer to this plugin object. The node->Advertise, requires a template argument of the message type, and a parameter of the topic to advertise.
+The node->Subscribe is called with the topic, callback function, and
+a pointer to this plugin object. The node->Advertise, requires a template
+argument of the message type, and a parameter of the topic to advertise.
 
 ~~~
         commandSubscriber = node->Subscribe("~/collision_map/command", &CollisionMapCreator::create, this);
@@ -243,13 +263,17 @@ This is the callback method. It contains the typedef we used earlier. The callba
 public: void create(CollisionMapRequestPtr &msg)
 ~~~
 
-The CollisionMapRequestPtr is a boost shared_ptr, so to get the actual fields you need to use a structure de-reference ('->') instead of the structure reference ('.') like I have below. To get the fields of an object, you need to call its get function (e.g. field())
+The CollisionMapRequestPtr is a boost shared_ptr, so to get the actual
+fields you need to use a structure de-reference ('->') instead of the
+structure reference ('.') like I have below. To get the fields of an object,
+          you need to call its get function (e.g. field())
 
 ~~~
         double z = msg->height();
 ~~~
 
-But wait you ask, why can you directly reference a subfield? That's because they aren't shared_ptrs inside, the message we were sent is.
+But wait you ask, why can you directly reference a subfield? That's because
+they aren't shared_ptrs inside, the message we were sent is.
 
 ~~~
         double dX_vertical = msg->upperleft().x() - msg->lowerleft().x();
@@ -260,7 +284,9 @@ But wait you ask, why can you directly reference a subfield? That's because they
 ~~~
 
 
-This is an example of how to call the used physics engine to do a single ray trace. This code was pulled from gazebo::physics::World::GetEntityBelowPoint(Vector3)
+This is an example of how to call the used physics engine to do a single ray
+trace. This code was pulled from
+gazebo::physics::World::GetEntityBelowPoint(Vector3)
 
 ~~~
         gazebo::physics::PhysicsEnginePtr engine = world->GetPhysicsEngine();
@@ -270,7 +296,8 @@ This is an example of how to call the used physics engine to do a single ray tra
 ~~~
 
 
-Rasterizing over the grid to determine where there are objects and where there is not.
+Rasterizing over the grid to determine where there are objects and where
+there is not.
 
 ~~~
         for (int i = 0; i < count_vertical; ++i)
@@ -284,7 +311,8 @@ Rasterizing over the grid to determine where there are objects and where there i
         }
 ~~~
 
-This creates an Image msg and fills the necessary fields. Notice that the setter methods for each field is formatted like 'set_field(something)'
+This creates an Image msg and fills the necessary fields. Notice that the
+setter methods for each field is formatted like 'set_field(something)'
 
 ~~~
         msgs::Image image;
@@ -346,7 +374,8 @@ This is the header associated with our custom message types.
 #include "collision_map_request.pb.h"
 ~~~
 
-This function parses a string of coordinates as defined by "(x1,y1)(x2,y2)(x3,y3)(x4,y4)" into a deque of Vector2d messages.
+This function parses a string of coordinates as defined by
+"(x1,y1)(x2,y2)(x3,y3)(x4,y4)" into a deque of Vector2d messages.
 
 ~~~
 bool createVectorArray(const char * vectorString,
@@ -369,7 +398,8 @@ Iterate through the corners deque
     }
 ~~~
 
-For this corner Vector2d, we set the X and Y by converting the found string for each x and y into a float.
+For this corner Vector2d, we set the X and Y by converting the found string
+for each x and y into a float.
 
 ~~~
         (*it)->set_x(atof(x.c_str()));
@@ -385,7 +415,8 @@ int main(int argc, char * argv[])
 }
 ~~~
 
-This executable requires a number of arguments, only proceed if we at least four.
+This executable requires a number of arguments, only proceed if we at least
+four.
 
 ~~~
     if (argc > 4)
@@ -394,7 +425,9 @@ This executable requires a number of arguments, only proceed if we at least four
     }
 ~~~
 
-Create a CollisionMapRequest message. We need to fill this message before sending it. Also, we initialize a deque of Vector2d messages, so we can pass them to the createVectorArray function.
+Create a CollisionMapRequest message. We need to fill this message before
+sending it. Also, we initialize a deque of Vector2d messages, so we can pass
+them to the createVectorArray function.
 
 ~~~
         collision_map_creator_msgs::msgs::CollisionMapRequest request;
@@ -402,7 +435,11 @@ Create a CollisionMapRequest message. We need to fill this message before sendin
 ~~~
 
 
-If a message field is simple, (double, int32, string) it can be set directly by its associated 'set_field()' method. If the field is a message type itself, it must be accessed through its mutable_field() method. Because the Vector2d is itself a separate message, we must first get the pointer from the mutable function call, like we have here.
+If a message field is simple, (double, int32, string) it can be set directly
+by its associated 'set_field()' method. If the field is a message type
+itself, it must be accessed through its mutable_field() method. Because the
+Vector2d is itself a separate message, we must first get the pointer from
+the mutable function call, like we have here.
 
 ~~~
         corners.push_back(request.mutable_upperleft());
@@ -411,7 +448,9 @@ If a message field is simple, (double, int32, string) it can be set directly by 
         corners.push_back(request.mutable_lowerleft());
 ~~~
 
-Pass the deque of Vector2d pointers and the first argv string to the createVectorArray. If it fails, then the input was probably formatted incorrectly. Exit the program in this case.
+Pass the deque of Vector2d pointers and the first argv string to the
+createVectorArray. If it fails, then the input was probably formatted
+incorrectly. Exit the program in this case.
 
 ~~~
         if (!createVectorArray(argv[1],corners))
@@ -420,7 +459,8 @@ Pass the deque of Vector2d pointers and the first argv string to the createVecto
         }
 ~~~
 
-For the simple fields, we can set their values directly by calling their set_field methods.
+For the simple fields, we can set their values directly by calling their
+set_field methods.
 
 ~~~
         request.set_height(atof(argv[2]));
@@ -428,7 +468,8 @@ For the simple fields, we can set their values directly by calling their set_fie
         request.set_filename(argv[4]);
 ~~~
 
-For our optional threshold field, we set that if it was specified in the command arguments.
+For our optional threshold field, we set that if it was specified in the
+command arguments.
 
 ~~~
         if (argc == 6)
@@ -437,7 +478,10 @@ For our optional threshold field, we set that if it was specified in the command
         }
 ~~~
 
-This is a super important part of the main method. This initializes the gazebo transport system. For plugins, Gazebo already takes care of this, but for our own executable we have to do it ourself. Also notice we're not using the gazebo namespace so we must be explicit.
+This is a super important part of the main method. This initializes the
+gazebo transport system. For plugins, Gazebo already takes care of this, but
+for our own executable we have to do it ourself. Also notice we're not using
+the gazebo namespace so we must be explicit.
 
 ~~~
         gazebo::transport::init();
@@ -454,7 +498,8 @@ This initializes the Request Publisher on the topic "~/collision_map/command".
                                                             "~/collision_map/command");
 ~~~
 
-To publish our message, we must first wait for the publisher to be connected to the master. Then we can directly publish our message.
+To publish our message, we must first wait for the publisher to be connected
+to the master. Then we can directly publish our message.
 
 ~~~
         imagePub->WaitForConnection();
@@ -470,19 +515,22 @@ Before exiting, the program must call transport::fini() to tear it all down.
 
 ## CMakeLists for Plugin and Executable
 
-Below you can find the CMakeLists.txt file required to compile the plugin and executable:
+Below you can find the CMakeLists.txt file required to compile the plugin
+and executable:
 
 <include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
 
 ### Code Explained
 
-Boost is required for in our callback function in the plug-in. Not to mention, it's also used for the image writer.
+Boost is required for in our callback function in the plug-in. Not to
+mention, it's also used for the image writer.
 
 ~~~
 FIND_PACKAGE( Boost 1.40 COMPONENTS system REQUIRED )
 ~~~
 
-The msgs directory needs to be added to the include directories because we use them in both the executable and the plugin.
+The msgs directory needs to be added to the include directories because we
+use them in both the executable and the plugin.
 
 ~~~
 include_directories(
@@ -491,14 +539,19 @@ include_directories(
   )
 ~~~
 
-Besides the standard GAZEBO_LIBRARY_DIRS, we also need to link against the msgs directory. The add_subdirectory directive tells CMake to look in it for a CMakeLists.txt file.
+Besides the standard GAZEBO_LIBRARY_DIRS, we also need to link against the
+msgs directory. The add_subdirectory directive tells CMake to look in it for
+a CMakeLists.txt file.
 
 ~~~
 link_directories(${GAZEBO_LIBRARY_DIRS} ${SDF_LIBRARY_DIRS} ${CMAKE_CURRENT_BINARY_DIR}/msgs)
 add_subdirectory(msgs)
 ~~~
 
-Add the executable request_publisher to the makefile. We must link it against the collision_map_creator_msgs, the GAZEBO_LIBRARIES and Boost_LIBRARIES. The add_dependencies directive tells CMake to build collision_map_creator_msgs first.
+Add the executable request_publisher to the makefile. We must link it
+against the collision_map_creator_msgs, the GAZEBO_LIBRARIES and
+Boost_LIBRARIES. The add_dependencies directive tells CMake to build
+collision_map_creator_msgs first.
 
 ~~~
 add_executable (request_publisher request_publisher.cc)
@@ -506,7 +559,9 @@ target_link_libraries(request_publisher collision_map_creator_msgs ${GAZEBO_LIBR
 add_dependencies(request_publisher collision_map_creator_msgs)
 ~~~
 
-This builds our plugin, and is very similar to your standard WorldPlugin CMakeLists.txt, except we must link it against the collision_map_creator_msgs and add that as a dependency as well.
+This builds our plugin, and is very similar to your standard WorldPlugin
+CMakeLists.txt, except we must link it against the
+collision_map_creator_msgs and add that as a dependency as well.
 
 ~~~
 add_library(collision_map_creator SHARED collision_map_creator.cc )
@@ -526,7 +581,8 @@ cmake ../
 make
 </pre>
 
-This plugin needs to be added to the gazebo plugin path. You can either change your environment variable to refer to this build directory,
+This plugin needs to be added to the gazebo plugin path. You can either
+change your environment variable to refer to this build directory,
 
 <pre>
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:collision_map_creator_plugin/build
@@ -551,7 +607,8 @@ Run Gazebo with this world:
 gazebo ~/collision_map_creator_plugin/map_creator.world
 </pre>
 
-In a separate terminal, run the executable and tell it to build a 20m x 20m map with a 1cm resolution.
+In a separate terminal, run the executable and tell it to build a 20m x 20m
+map with a 1cm resolution.
 
 <pre>
 ~/collision_map_creator_plugin/build/request_publisher "(-10,10)(10,10)(10,-10)(-10,-10)" 10 0.01 ~/map.png
@@ -563,4 +620,3 @@ and run a percent complete stat until it finishes. Your map.png should look
 like this below.
 
 [[file:files/map.png|800px]]
-
