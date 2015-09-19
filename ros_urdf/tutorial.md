@@ -152,7 +152,7 @@ If a `<gazebo>` element is used without a `reference=""` property, it is assumed
 
 <style>
 th {padding: 5px;}
-tr {padding: 5px;}
+td {padding: 5px;}
 </style>
 <table border="1">
 <tr>
