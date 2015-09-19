@@ -1,6 +1,11 @@
 # Tutorial: Using a URDF in Gazebo
 
-The [http://www.ros.org/wiki/urdf Universal Robotic Description Format] (URDF) is an XML file format used in ROS to describe all elements of a robot. To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo. This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo, saving you from having to create a separate SDF file from scratch and duplicating description formats. Under the hood, Gazebo will then convert the URDF to SDF automatically.
+The [Universal Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
+is an XML file format used in ROS to describe all elements of a robot.
+To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo.
+This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo,
+saving you from having to create a separate SDF file from scratch and duplicating description formats.
+Under the hood, Gazebo will then convert the URDF to SDF automatically.
 
 ## Background
 
@@ -8,7 +13,13 @@ While URDFs are a useful and standardized format in ROS, they are lacking many f
 
 On the implementation side, the URDF syntax breaks proper formatting with heavy use of XML attributes, which in turn makes URDF more inflexible. There is also no mechanism for backward compatibility.
 
-To deal with this issue, a new format called the [Simulator Description Format](http://gazebosim.org/sdf.html) (SDF) was created for use in Gazebo to solve the shortcomings of URDF. SDF is a complete description for everything from the world level down to the robot level. It is scalable, and makes it easy to add and modify elements. The SDF format is itself described using XML, which facilitates a simple upgrade tool to migrate old versions to new versions. It is also self-descriptive.
+To deal with this issue, a new format called the
+[Simulation Description Format](http://sdformat.org) (SDF)
+was created for use in Gazebo to solve the shortcomings of URDF.
+SDF is a complete description for everything from the world level down to the robot level.
+It is scalable, and makes it easy to add and modify elements.
+The SDF format is itself described using XML, which facilitates a simple upgrade tool to migrate old versions to new versions.
+It is also self-descriptive.
 
 It is the intention of this author to make URDFs as fully documented and supported in Gazebo as possible, but it is relevant to the reader to understand why the two formats exist and the shortcomings of both. It would be nice if more work was put into URDFs to update them to the current needs of robotics.
 
@@ -34,7 +45,11 @@ There are several steps to get a URDF robot properly working in Gazebo. The foll
 
 ## The `<gazebo>` Element
 
-The `<gazebo>` element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo. It allows you to specify the properties found in the SDF format that are not by default in the URDF format. None of the elements within a `<gazebo>` element are required because default values will be automatically included. There are three different types of `<gazebo>` elements - one for the `<robot>` tag, one for `<link>` tags, and one for `<joint>` tags.  We will discuss the attributes and elements within each type of `<gazebo>` element throughout this tutorial.
+The `<gazebo>` element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo.
+It allows you to specify the properties found in the SDF format that are not included in the URDF format.
+None of the elements within a `<gazebo>` element are required because default values will be automatically included.
+There are three different types of `<gazebo>` elements - one for the `<robot>` tag, one for `<link>` tags, and one for `<joint>` tags.
+We will discuss the attributes and elements within each type of `<gazebo>` element throughout this tutorial.
 
 ## Prerequisites
 
@@ -44,7 +59,9 @@ The first step to getting your robot working in Gazebo is to have a working URDF
 
 RRBot, or ''Revolute-Revolute Manipulator Robot'', is a simple 3-linkage, 2-joint arm that we will use to demonstrate various features of Gazebo and URDFs. It essentially a [double inverted pendulum](http://en.wikipedia.org/wiki/Double_inverted_pendulum) and demonstrates some fun control concepts within a simulator.
 
-To get RRBot, clone the Github repo into the `/src` folder of your catkin workspace and rebuild your workspace:
+To get RRBot, clone the
+[gazebo\_ros\_demos Github repo](https://github.com/ros-simulation/gazebo_ros_demos.git)
+into the `/src` folder of your catkin workspace and rebuild your workspace:
 
 <pre>
 cd ~/catkin_ws/src/
@@ -73,11 +90,18 @@ You should also be able to play with the slider bars in the Joint State Publishe
 
 Its important that while converting your robot to work in Gazebo, you don't break Rviz or other ROS-application functionality, so its nice to occasionally test your robot in Rviz to make sure everything still works.
 
-In the [gazebo_ros_control](http://gazebosim.org/tutorials?tut=ros_control) tutorial we'll go over how to use Rviz to monitor the state of your simulated robot by publishing /joint_states directly from Gazebo. In this previous example the RRBot in Rviz is getting its /joint_states from a fake joint_states_publisher node (the window with the slider bars).
+The [gazebo\_ros\_control](http://gazebosim.org/tutorials?tut=ros_control)
+tutorial will explain how to use Rviz to monitor the state of your simulated
+robot by publishing `/joint_states` directly from Gazebo.
+In the previous example, the RRBot in Rviz is getting its `/joint_states`
+from a fake `joint_states_publisher` node (the window with the slider bars).
 
 ### Examine the RRBot URDF
 
-For the rest of this tutorial, we'll refer to various aspects of the RRBot's URDF. Go ahead and view the file now:
+The rest of this tutorial will refer to various aspects of the RRBot URDF.
+Go ahead and view the
+[rrbot.xacro file](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.xacro)
+now:
 
 <pre>
 rosed rrbot_description rrbot.xacro
@@ -85,8 +109,10 @@ rosed rrbot_description rrbot.xacro
 
 Note that we are using [Xacro](http://ros.org/wiki/xacro) to make some of the link and joint calculations easier. We are also including two additional files:
 
-- `rrbot.gazebo` a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
-- `materials.xacro` a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
+- [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo)
+a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
+- [materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/materials.xacro)
+a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
 
 ### View in Gazebo
 
