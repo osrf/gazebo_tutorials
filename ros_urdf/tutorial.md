@@ -401,7 +401,8 @@ Make sure you are familiar with the [URDF joint documentation](http://www.ros.or
 
 * The `<origin>`, `<parent>` and `<child>` are required
 * `<calibration>` and `<safety_controller>` are ignored
-* In the `<dynamics>` tag, only the `damping` property is used
+* In the `<dynamics>` tag, only the `damping` property is used for gazebo4 and earlier.
+Gazebo5 and up also uses the `friction` property.
 * All of properties in the `<limit>` tag are optional
 
 ### RRBot Example
@@ -420,7 +421,7 @@ The following is a joint used in the RRBot:
 
 Notice the dynamics element with a viscous damping coefficient of 0.7 N*m*s/rad, damping is simply the amount of opposing force to any joint velocity (in this case torque per angular velocity) that is used to "slow" a moving joint towards rest.
 
-The value of 0.7 N*m*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
+The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
 
 ### `<gazebo>` Elements For Joints
 
