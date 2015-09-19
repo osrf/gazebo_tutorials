@@ -419,7 +419,7 @@ The following is a joint used in the RRBot:
   </joint>
 ~~~
 
-Notice the dynamics element with a viscous damping coefficient of 0.7 N*m*s/rad, damping is simply the amount of opposing force to any joint velocity (in this case torque per angular velocity) that is used to "slow" a moving joint towards rest.
+Notice the dynamics element with a viscous damping coefficient of 0.7 N\*m\*s/rad, damping is simply the amount of opposing force to any joint velocity (in this case torque per angular velocity) that is used to "slow" a moving joint towards rest.
 
 The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
 
