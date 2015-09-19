@@ -88,7 +88,9 @@ If you do not get this, try killing all old roscore processes with `killall rosc
 
 You should also be able to play with the slider bars in the Joint State Publisher window to move the two joints.
 
-Its important that while converting your robot to work in Gazebo, you don't break Rviz or other ROS-application functionality, so its nice to occasionally test your robot in Rviz to make sure everything still works.
+It is important that while converting your robot to work in Gazebo,
+you don't break Rviz or other ROS-application functionality,
+so its nice to occasionally test your robot in Rviz to make sure everything still works.
 
 The [gazebo\_ros\_control](http://gazebosim.org/tutorials?tut=ros_control)
 tutorial will explain how to use Rviz to monitor the state of your simulated
@@ -225,7 +227,10 @@ As per ROS [REP 103: Standard Units of measure and Coordinate Conventions](http:
 
 ### `<collision>` and `<visual>` elements
 
-These tags work essentially the same in Gazebo as in Rviz. Its important that you specify both though, because unlike some ROS applications, Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a <collision> element. Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
+These tags work essentially the same in Gazebo as in Rviz.
+It is important that you specify both though, because unlike some ROS applications,
+Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a `<collision>` element.
+Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
 
 #### Simplify collision model
 
@@ -239,7 +244,8 @@ A standard URDF can specify colors using a tag such as in the RRBot:
 <material name="orange"/>
 ~~~
 
-With the color orange defined separately such as in the file `materials.xacro`:
+With the color orange defined separately such as in the file
+[materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/materials.xacro#L20-L22):
 
 ~~~
   <material name="orange">
@@ -255,13 +261,17 @@ Unfortunately, this method of specifying link colors does not work in Gazebo as 
   </gazebo>
 ~~~
 
-As mentioned earlier, in the RRBot example we have chosen to include all Gazebo-specific tag in a secondary file called `rrbot.gazebo`. You can find the <link> and <material> elements there.
+As mentioned earlier, in the RRBot example we have chosen to include all
+Gazebo-specific tag in a secondary file called
+[rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo).
+You can find the `<link>` and `<material>` elements there.
 
-The default available materials in Gazebo can be found in the Gazebo source code at `gazebo/media/materials/scripts/gazebo.material`.
+The default available materials in Gazebo can be found in the Gazebo source code at
+[gazebo/media/materials/scripts/gazebo.material](https://bitbucket.org/osrf/gazebo/src/default/media/materials/scripts/gazebo.material).
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
-- [The <material> SDF documentation](http://gazebosim.org/sdf/dev.html#material179)
+- [The `<material>` SDF documentation](http://gazebosim.org/sdf/dev.html#material179)
 - [OGRE materials documentation](http://www.ogre3d.org/tikiwiki/Materials)
 
 #### STL and Collada files
@@ -329,7 +339,10 @@ List of elements that are individually parsed:
 <tr>
 <td>mu1</td>
 <td rowspan="2">double</td>
-<td rowspan="2">Friction coefficients μ for the principle contact directions along the contact surface as defined by the [ODE](http://www.ros.org/wiki/opende)</td>
+<td rowspan="2">Friction coefficients μ for the principal contact directions along the contact surface as defined by the
+  <a href="http://www.ros.org/wiki/opende">Open Dynamics Engine (ODE)</a>
+  (see parameter descriptions in <a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE's user guide</a>)
+</td>
 </tr>
 <tr>
 <td>mu2</td>
@@ -341,13 +354,15 @@ List of elements that are individually parsed:
 </tr>
 <tr>
 <td>kp</td>
-<td>double</td>
-<td>Contact stiffness k_p for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses cfm)</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Contact stiffness k_p and damping k_d for rigid body contacts as defined by ODE
+  (<a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE uses erp and cfm</a>
+  but there is a
+  <a href="https://bitbucket.org/osrf/gazebo/src/b4d836c3ab3b0a/gazebo/physics/ode/ODEJoint.cc#ODEJoint.cc-982">mapping between erp/cfm and stiffness/damping</a>)
+</td>
 </tr>
 <tr>
 <td>kd</td>
-<td>double</td>
-<td>Contact damping k_d for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses erp)</td>
 </tr>
 <tr>
 <td>selfCollide</td>
