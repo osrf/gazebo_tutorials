@@ -150,7 +150,7 @@ You can remove them. All you need in your root element tag is the name of the ro
 
 If a `<gazebo>` element is used without a `reference=""` property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
 
-<table border="1" cellpadding="5">
+<table border="1" style="padding:5">
 <tr>
 <th>Name</th>
 <th>Type</th>
