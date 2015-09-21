@@ -62,7 +62,7 @@ gazebo animated_box.world
 In another terminal, use "gz topic" user interface to view the pose:
 
 ~~~
-gz topic -v /gazebo/animated_box_world/pose/local/info
+gz topic -v /gazebo/animated_box_world/pose/info
 ~~~
 
 You should see a graphical interface that displays the pose of the box.
