@@ -432,24 +432,12 @@ The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damp
 <th>Description</th>
 </tr>
 <tr>
-<td>kp</td>
-<td>double</td>
-<td>Contact stiffness k_p for rigid body contacts as defined by ODE (ODE uses cfm)</td>
-</tr>
-<tr>
-<td>kd</td>
-<td>double</td>
-<td>Contact damping k_d for rigid body contacts as defined by ODE (ODE uses erp)</td>
-</tr>
-<tr>
 <td>stopCfm</td>
-<td>double</td>
-<td>Constraint force mixing used when not at a stop</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Joint stop constraint force mixing (cfm) and error reduction parameter (erp) used by ODE</td>
 </tr>
 <tr>
 <td>stopErp</td>
-<td>double</td>
-<td>Error reduction parameter used by the joint stop</td>
 </tr>
 <tr>
 <td>provideFeedback</td>
@@ -457,9 +445,15 @@ The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damp
 <td>Allows joints to publish their wrench data (force-torque) via a Gazebo plugin</td>
 </tr>
 <tr>
+<td>implicitSpringDamper</td>
+<td rowspan="2">bool</td>
+<td>If this flag is set to true, ODE will use ERP and CFM to simulate damping.
+This is a more stable numerical method for damping than the default damping tag.
+The cfmDamping element is deprecated and should be changed to implicitSpringDamper.
+</td>
+</tr>
+<tr>
 <td>cfmDamping</td>
-<td>bool</td>
-<td>If cfm damping is set to true, ODE will use CFM to simulate damping, allows for infinite damping, and one additional constraint row (previously used for joint limit) is always active. This is a more stable numerical method for damping than the default damping tag.</td>
 </tr>
 <tr>
 <td>fudgeFactor</td>
