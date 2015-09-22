@@ -36,7 +36,10 @@ For the purposes of gazebo\_ros\_control in its current implementation, the only
 
  * `<joint name="">` - the name must correspond to a joint else where in your URDF
  * `<type>` - the type of transmission. Currently only "transmission_interface/SimpleTransmission" is implemented. (feel free to add more)
- * `<hardwareInterface>` - within the `<actuator>` tag, this tells the gazebo\_ros\_control plugin what hardware interface to load (position, velocity or effort interfaces). Currently only effort interfaces are implemented. (feel free to add more)
+ * `<hardwareInterface>` - within the `<actuator>` and `<joint>` tags,
+this tells the gazebo\_ros\_control plugin what hardware interface to load
+(position, velocity or effort interfaces).
+Currently only effort interfaces are implemented. (feel free to add more)
 
 The rest of the names and elements are currently ignored.
 
