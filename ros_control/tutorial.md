@@ -95,12 +95,17 @@ For example, the following XML will load the default plugin (same behavior as wh
 ## RRBot Example
 
 We add a `<transmission>` block similar to the following for every joint that we wish to have Gazebo actuate.
+Note that the `<hardwareInterface>` must be included in both the `<joint>`
+and `<actuator>` tags
+(see [ros\_control issue here](https://github.com/ros-controls/ros_control/issues/177)).
 Open your `rrbot.xacro` file and at the bottom of the file you should see:
 
 ~~~
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint1"/>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
     <actuator name="motor1">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
@@ -109,7 +114,9 @@ Open your `rrbot.xacro` file and at the bottom of the file you should see:
 
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint2"/>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
     <actuator name="motor2">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
