@@ -447,7 +447,7 @@ The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damp
 <tr>
 <td>implicitSpringDamper</td>
 <td rowspan="2">bool</td>
-<td>If this flag is set to true, ODE will use ERP and CFM to simulate damping.
+<td rowspan="2">If this flag is set to true, ODE will use ERP and CFM to simulate damping.
 This is a more stable numerical method for damping than the default damping tag.
 The cfmDamping element is deprecated and should be changed to implicitSpringDamper.
 </td>
