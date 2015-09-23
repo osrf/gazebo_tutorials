@@ -304,13 +304,49 @@ Calculate your new `<horizontal_fov>` using following formula:
 *   [[file:files/r.gif]] is aspect ratio of your frame;
 *   [[file:files/fun_inv.gif]] is an inverse to `fun`;
 *   [[file:files/c_2.gif]] is a parameter from explicit mapping function definition, if you use one of the predefined lens types pick your parameters from the following table
-    | type            | [[file:files/c_1.gif]] | [[file:files/c_2.gif]] | [[file:files/f.gif]] | [[file:files/fun.gif]] |
-    | --------------- |:---:|:---:|:---:|:---:|
-    |`gnomonical`     |`1`  |`1`  |`1`  |`tan`|
-    |`stereographic`  |`2`  |`2`  |`1`  |`tan`|
-    |`equdistant`     |`1`  |`1`  |`1`  |`id` |
-    |`equisolid_angle`|`2`  |`2`  |`1`  |`sin`|
-    |`orthographic`   |`1`  |`1`  |`1`  |`sin`|
+
+    <table border="1">
+    <tr>
+    <th>type</th>
+    <th>[[file:files/c_1.gif]]</th>
+    <th>[[file:files/c_2.gif]]</th>
+    <th>[[file:files/f.gif]]</th>
+    <th>[[file:files/fun.gif]]</th>
+    </tr>
+    <tr>
+    <td>`gnomonical`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`tan`</td>
+    </tr>
+    <tr>
+    <td>`stereographic`</td>
+    <td>`2`</td>
+    <td>`2`</td>
+    <td>`1`</td>
+    <td>`tan`</td>
+    </tr>
+    <tr>
+    <td>`equidistant`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`id`</td>
+    </tr>
+    <td>`equisolid_angle`</td>
+    <td>`2`</td>
+    <td>`2`</td>
+    <td>`1`</td>
+    <td>`sin`</td>
+    </tr>
+    <td>`orthographic`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`1`</td>
+    <td>`sin`</td>
+    </tr>
+    </table>
 
 ### Should I use wide-angle camera instead of a regular camera?
 
