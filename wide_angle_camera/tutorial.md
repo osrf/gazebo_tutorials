@@ -153,7 +153,13 @@ Now you shold have something like this (except for the sky, if you don't enable 
     <lens>
 %%%
 ~~~
-      <type>gnomonical</type>
+      <type>custom</type>
+      <custom_function>
+        <c1>1.05</c1>
+        <c2>4</c2>
+        <f>1.0</f>
+        <fun>tan</fun>
+      </custom_function>
       <cutoff_angle>3.1415</cutoff_angle>
 ~~~
 %%%
