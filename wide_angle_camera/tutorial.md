@@ -300,17 +300,17 @@ Calculate your new `<horizontal_fov>` using following formula:
 [[file:files/dfov.gif]]
 
 ###### where:
-*   `dfov` is your diagonal FOV;
+*   [[file:files/dfov2.gif]] is your diagonal FOV;
 *   [[file:files/r.gif]] is aspect ratio of your frame;
 *   [[file:files/fun_inv.gif]] is an inverse to `fun`;
 *   [[file:files/c_2.gif]] is a parameter from explicit mapping function definition, if you use one of the predefined lens types pick your parameters from the following table
-    | type            | [[file:files/c_1.gif]] | [[file:files/c_2.gif]] | f   | fun |
+    | type            | [[file:files/c_1.gif]] | [[file:files/c_2.gif]] | [[file:files/f.gif]] | [[file:files/fun.gif]] |
     | --------------- |:---:|:---:|:---:|:---:|
-    |`gnomonical     `|`1`  |`1`  |`1`  |`tan`|
-    |`stereographic  `|`2`  |`2`  |`1`  |`tan`|
-    |`equdistant     `|`1`  |`1`  |`1`  |`id` |
+    |`gnomonical`     |`1`  |`1`  |`1`  |`tan`|
+    |`stereographic`  |`2`  |`2`  |`1`  |`tan`|
+    |`equdistant`     |`1`  |`1`  |`1`  |`id` |
     |`equisolid_angle`|`2`  |`2`  |`1`  |`sin`|
-    |`orthographic   `|`1`  |`1`  |`1`  |`sin`|
+    |`orthographic`   |`1`  |`1`  |`1`  |`sin`|
 
 ### Should I use wide-angle camera instead of a regular camera?
 
