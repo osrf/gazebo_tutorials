@@ -271,7 +271,7 @@ The default available materials in Gazebo can be found in the Gazebo source code
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
-- [The `<material>` SDF documentation](http://gazebosim.org/sdf/dev.html#material179)
+- [The `<material>` SDF documentation](http://sdformat.org/spec?ver=1.5&elem=material)
 - [OGRE materials documentation](http://www.ogre3d.org/tikiwiki/Materials)
 
 #### STL and Collada files
@@ -340,7 +340,7 @@ List of elements that are individually parsed:
 <td>mu1</td>
 <td rowspan="2">double</td>
 <td rowspan="2">Friction coefficients μ for the principal contact directions along the contact surface as defined by the
-  <a href="http://www.ros.org/wiki/opende">Open Dynamics Engine (ODE)</a>
+  <a href="http://www.ode.org">Open Dynamics Engine (ODE)</a>
   (see parameter descriptions in <a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE's user guide</a>)
 </td>
 </tr>
@@ -498,7 +498,13 @@ If your robot model behaves unexpectedly within Gazebo, it is likely because you
 
 ## Sharing your robot with the world
 
-If you have a common robot that other's might want to use in Gazebo, you are encouraged to add your URDF to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html). It is an online server that Gazebo connects to to pull down models from the internet. Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models). See [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation for how to submit a pull request to have your robot added to the database.
+If you have a common robot that other's might want to use in Gazebo,
+you are encouraged to add your URDF to the
+[Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
+It is an online server that Gazebo connects to to pull down models from the internet.
+Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models).
+See [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
+documentation for how to submit a pull request to have your robot added to the database.
 
 ## Next steps
 
