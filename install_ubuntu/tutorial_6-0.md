@@ -75,3 +75,18 @@ and after it add the nightly repository:
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
         sudo apt-get update
         sudo apt-get install gazebo7
+
+### Remove prereleases and nightly installed packages
+
+To back to use stable releases, the first step is to disable the repositories
+and update the apt cache.
+
+       # Uninstall repositorioes
+       sudo rm -f /etc/apt/sources.list.d/gazebo-{nightly,prerelease}.list
+       sudo apt-get update
+
+As a second, an optional step, it is possible to remove installed packages from those repositories:
+
+       sudo apt-get install aptitude
+       sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF nightly*")')
+       sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF prerelease*")')
