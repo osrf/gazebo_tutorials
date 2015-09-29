@@ -53,6 +53,8 @@ As a second, an optional step, it is possible to remove installed packages from 
 
 ## Versioning in nightly and prerelease
 
+### Version schemes
+
 Prerelease versioning scheme: `{upcoming_version}~pre{prerelease_version}`
 
  * `upcoming_version:` upstream version target for current prerelease series
@@ -71,28 +73,32 @@ Nightly use the following versioning scheme: `{current_relased_version}+hg{date}
 
  * `nighlty_revision`:  revision number to apply to the nightly
 
+### Versions when mixing repositories
+
 How does work a prerelease + stable repositories setup?
 
- * packageA version: 1.0.0-1 (stable)
- * packageA prerelease: 1.0.1-1~pre1 (prerelease)
- * packageA prerelease: 1.0.1-1~pre2 (prerelease)
- * packageA version: 1.0.1-1 (stable)
- * Order: 1.0.1-1 > 1.0.1-1~pre2 > 1.0.1-1~pre1 > 1.0.0
+ * packageA version: `1.0.0-1` (stable)
+ * packageA prerelease: `1.0.1-1~pre1` (prerelease)
+ * packageA prerelease: `1.0.1-1~pre2` (prerelease)
+ * packageA version: `1.0.1-1` (stable)
+
+ * Order: `1.0.1-1` > `1.0.1-1~pre2` > `1.0.1-1~pre1` > `1.0.0`
 
 How does work a nightly + stable repositories setup?
 
- * packageA version: 0.99.99+hg20150101r2212b5136299-1 (nightly)
- * packageA version: 1.0.0-1 (stable)
- * packageA version: 1.0.0-1+hg20150303r6912b5136236-1 (nightly)
- * packageA version: 1.0.1-1 (stable)
- * Order: 1.0.1-1 > 1.0.0-1+hg20150303r6912b5136236-1 > 1.0.0-1 > 0.99.99+hg20150101r2212b5136299-1
+ * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
+ * packageA version: `1.0.0-1` (stable)
+ * packageA version: `1.0.0-1+hg20150303r6912b5136236-1` (nightly)
+ * packageA version: `1.0.1-1` (stable)
+
+ * Order: `1.0.1-1` > `1.0.0-1+hg20150303r6912b5136236-1` > `1.0.0-1` > `0.99.99+hg20150101r2212b5136299-1`
 
 How does work a nightly + prerelease + stable repositories setup?
 
- * packageA version: 0.99.99+hg20150101r2212b5136299-1 (nightly)
- * packageA prerelease: 1.0.0-1~pre1 (prerelease)
- * packageA version: 1.0.0-1~pre1+hg20150101r2212b5136299-1 (nightly)
- * packageA prerelease: 1.0.0-1~pre2 (prerelease)
- * packageA version: 1.0.0-1 (stable)
+ * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
+ * packageA prerelease: `1.0.0-1~pre1` (prerelease)
+ * packageA version: `1.0.0-1~pre1+hg20150101r2212b5136299-1` (nightly)
+ * packageA prerelease: `1.0.0-1~pre2` (prerelease)
+ * packageA version: `1.0.0-1` (stable)
 
- * Order: 1.0.0-1 > 1.0.0-1~pre2 > 1.0.0-1~pre1+hg20150101r2212b5136299-1 > 1.0.0-1~pre1 > 0.99.99+hg20150101r2212b5136299-1
+ * Order: `1.0.0-1` > `1.0.0-1~pre2` > `1.0.0-1~pre1+hg20150101r2212b5136299-1` > `1.0.0-1~pre1` > `0.99.99+hg20150101r2212b5136299-1`
