@@ -22,9 +22,9 @@ Feel free to submit issues or pull-requests for improvements.
 
 You can download the source code using mercurial:
 
-<pre>
+~~~
 hg clone https://bitbucket.org/brawner/collision_map_creator_plugin
-</pre>
+~~~
 
 or copy and paste the code into files as instructed below.
 
@@ -83,27 +83,29 @@ message CollisionMapRequest
 
 Declare each message field with:
 
-<pre>
+~~~
 ["optional"/"required"] [field type] [field name] = [enum];
-</pre>
+~~~
 
 Each enum must be a unique number. Note also that the full package name must
 be used to specify external messages (gazebo.msgs in our case).
-<pre>
+
+~~~
   required gazebo.msgs.Vector2d   upperLeft  = 1;
   required gazebo.msgs.Vector2d   upperRight = 2;
   required gazebo.msgs.Vector2d   lowerRight = 3;
   required gazebo.msgs.Vector2d   lowerLeft  = 4;
   required double                 height     = 5;
   required double                 resolution = 6;
-</pre>
+~~~
 
 Messages can contain optional fields. Optional fields can contain default
 values if they aren't specified. This is an example of how to do that.
-<pre>
+
+~~~
   optional string filename   = 7 [default = ""];
   optional int32  threshold  = 8 [default = 255];
-</pre>
+~~~
 
 ## CMakeLists for custom messages
 
@@ -194,7 +196,7 @@ These are the necessary Gazebo headers we'll need.
 #include "collision_map_request.pb.h"
 ~~~
 
-In order to make use of our collision_map_request message, we need to
+In order to make use of our `collision_map_request` message, we need to
 include it's generated header file.
 
 ~~~
@@ -223,8 +225,8 @@ typedef const boost::shared_ptr<const collision_map_creator_msgs::msgs::Collisio
 ~~~
 
 Creating a derived class of the Gazebo WorldPlugin. It needs to hold on to
-the NodePtr, PublisherPtr, SubcriberPtr and WorldPtr, so they must be added
-as class variables.
+the `NodePtr`, `PublisherPtr`, `SubcriberPtr` and `WorldPtr`, so they must be
+added as class variables.
 
 ~~~
 class CollisionMapCreator : public WorldPlugin
@@ -235,7 +237,7 @@ class CollisionMapCreator : public WorldPlugin
   physics::WorldPtr world;
 ~~~
 
-The World Plugin's Load method. It sets up the node, the world, the
+The World Plugin's `Load` method. It sets up the node, the world, the
 subscriber and the publisher.
 
 ~~~
@@ -248,8 +250,8 @@ public: void Load(physics::WorldPtr _parent, sdf::ElementPtr _sdf)
   std::cout << "Subscribing to: " << "~/collision_map/command" << std::endl;
 ~~~
 
-The node->Subscribe is called with the topic, callback function, and
-a pointer to this plugin object. The node->Advertise, requires a template
+The `node->Subscribe` is called with the topic, callback function, and
+a pointer to this plugin object. The `node->Advertise`, requires a template
 argument of the message type, and a parameter of the topic to advertise.
 
 ~~~
@@ -257,16 +259,17 @@ argument of the message type, and a parameter of the topic to advertise.
         imagePub = node->Advertise<msgs::Image>("~/collision_map/image");
 ~~~
 
-This is the callback method. It contains the typedef we used earlier. The callback is passed a reference, so be sure to use the &msg.
+This is the callback method. It contains the typedef we used earlier. The
+callback is passed a reference, so be sure to use the `&msg`.
 
 ~~~
 public: void create(CollisionMapRequestPtr &msg)
 ~~~
 
-The CollisionMapRequestPtr is a boost shared_ptr, so to get the actual
+The `CollisionMapRequestPtr` is a boost shared_ptr, so to get the actual
 fields you need to use a structure de-reference ('->') instead of the
 structure reference ('.') like I have below. To get the fields of an object,
-          you need to call its get function (e.g. field())
+you need to call its get function (e.g. `field()`)
 
 ~~~
         double z = msg->height();
@@ -286,7 +289,7 @@ they aren't shared_ptrs inside, the message we were sent is.
 
 This is an example of how to call the used physics engine to do a single ray
 trace. This code was pulled from
-gazebo::physics::World::GetEntityBelowPoint(Vector3)
+`gazebo::physics::World::GetEntityBelowPoint(Vector3)`
 
 ~~~
         gazebo::physics::PhysicsEnginePtr engine = world->GetPhysicsEngine();
@@ -312,7 +315,7 @@ there is not.
 ~~~
 
 This creates an Image msg and fills the necessary fields. Notice that the
-setter methods for each field is formatted like 'set_field(something)'
+setter methods for each field is formatted like `set_field(something)`
 
 ~~~
         msgs::Image image;
@@ -427,7 +430,7 @@ four.
 
 Create a CollisionMapRequest message. We need to fill this message before
 sending it. Also, we initialize a deque of Vector2d messages, so we can pass
-them to the createVectorArray function.
+them to the `createVectorArray` function.
 
 ~~~
         collision_map_creator_msgs::msgs::CollisionMapRequest request;
@@ -436,8 +439,8 @@ them to the createVectorArray function.
 
 
 If a message field is simple, (double, int32, string) it can be set directly
-by its associated 'set_field()' method. If the field is a message type
-itself, it must be accessed through its mutable_field() method. Because the
+by its associated `set_field()` method. If the field is a message type
+itself, it must be accessed through its `mutable_field()` method. Because the
 Vector2d is itself a separate message, we must first get the pointer from
 the mutable function call, like we have here.
 
@@ -460,7 +463,7 @@ incorrectly. Exit the program in this case.
 ~~~
 
 For the simple fields, we can set their values directly by calling their
-set_field methods.
+`set_field` methods.
 
 ~~~
         request.set_height(atof(argv[2]));
@@ -490,7 +493,7 @@ the gazebo namespace so we must be explicit.
         node->Init("default");
 ~~~
 
-This initializes the Request Publisher on the topic "~/collision_map/command".
+This initializes the Request Publisher on the topic `~/collision_map/command`.
 
 ~~~
         gazebo::transport::PublisherPtr imagePub =
@@ -506,7 +509,7 @@ to the master. Then we can directly publish our message.
         imagePub->Publish(request);
 ~~~
 
-Before exiting, the program must call transport::fini() to tear it all down.
+Before exiting, the program must call `transport::fini()` to tear it all down.
 
 ~~~
         gazebo::transport::fini();
@@ -539,7 +542,7 @@ include_directories(
   )
 ~~~
 
-Besides the standard GAZEBO_LIBRARY_DIRS, we also need to link against the
+Besides the standard `GAZEBO_LIBRARY_DIRS`, we also need to link against the
 msgs directory. The add_subdirectory directive tells CMake to look in it for
 a CMakeLists.txt file.
 
@@ -548,10 +551,10 @@ link_directories(${GAZEBO_LIBRARY_DIRS} ${SDF_LIBRARY_DIRS} ${CMAKE_CURRENT_BINA
 add_subdirectory(msgs)
 ~~~
 
-Add the executable request_publisher to the makefile. We must link it
-against the collision_map_creator_msgs, the GAZEBO_LIBRARIES and
-Boost_LIBRARIES. The add_dependencies directive tells CMake to build
-collision_map_creator_msgs first.
+Add the executable `request_publisher` to the makefile. We must link it
+against the `collision_map_creator_msgs`, the `GAZEBO_LIBRARIES` and
+`Boost_LIBRARIES`. The `add_dependencies` directive tells CMake to build
+`collision_map_creator_msgs` first.
 
 ~~~
 add_executable (request_publisher request_publisher.cc)
@@ -561,7 +564,7 @@ add_dependencies(request_publisher collision_map_creator_msgs)
 
 This builds our plugin, and is very similar to your standard WorldPlugin
 CMakeLists.txt, except we must link it against the
-collision_map_creator_msgs and add that as a dependency as well.
+`collision_map_creator_msgs` and add that as a dependency as well.
 
 ~~~
 add_library(collision_map_creator SHARED collision_map_creator.cc )
@@ -573,26 +576,26 @@ add_dependencies(collision_map_creator collision_map_creator_msgs)
 
 To build this project, create a build directory, run CMake and then make.
 
-<pre>
+~~~
 cd ~/collision_map_creator_plugin
 mkdir build
 cd build
 cmake ../
 make
-</pre>
+~~~
 
 This plugin needs to be added to the gazebo plugin path. You can either
 change your environment variable to refer to this build directory,
 
-<pre>
+~~~
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:collision_map_creator_plugin/build
-</pre>
+~~~
 
 or you can copy the plugin to your plugin directory.
 
-<pre>
+~~~
 sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugins/
-</pre>
+~~~
 
 ## Running
 
@@ -603,16 +606,16 @@ Assuming everything went fine, and that's probably a rough assumption
 
 Run Gazebo with this world:
 
-<pre>
+~~~
 gazebo ~/collision_map_creator_plugin/map_creator.world
-</pre>
+~~~
 
 In a separate terminal, run the executable and tell it to build a 20m x 20m
 map with a 1cm resolution.
 
-<pre>
+~~~
 ~/collision_map_creator_plugin/build/request_publisher "(-10,10)(10,10)(10,-10)(-10,-10)" 10 0.01 ~/map.png
-</pre>
+~~~
 
 Your executable terminal should show it connecting to Gazebo and display the
 request message. You should see your gazebo terminal display some messages
