@@ -61,7 +61,8 @@ message CollisionMapRequest
 
 ### Code explained ###
 
-First we declare the namespace this message lives in, with the 'package' declaration.
+First we declare the namespace this message lives in, with the `package`
+declaration.
 
 ~~~
 package collision_map_creator_msgs.msgs;
@@ -452,7 +453,7 @@ the mutable function call, like we have here.
 ~~~
 
 Pass the deque of Vector2d pointers and the first argv string to the
-createVectorArray. If it fails, then the input was probably formatted
+`createVectorArray`. If it fails, then the input was probably formatted
 incorrectly. Exit the program in this case.
 
 ~~~
