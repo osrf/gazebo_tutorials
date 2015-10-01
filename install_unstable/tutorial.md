@@ -1,4 +1,4 @@
-# Unstable packages: prelease and nightly (Ubuntu)
+# Unstable packages: prerelease and nightly (Ubuntu)
 
 ## Experimental gazebo packages
 
@@ -19,10 +19,12 @@ To install the prerelease, first use the
 instructions above to install the stable repository and after it add the
 prerelease repository:
 
-        # Be sure to install the stable repo first !!
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
-        sudo apt-get update
-        sudo apt-get install gazebo7 # (might not be released)
+```
+# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
+sudo apt-get update
+sudo apt-get install gazebo7 # (might not be released)
+```
 
 ### Gazebo nightly repo
 
@@ -31,25 +33,31 @@ proposes like testing the last feature added to gazebo code. To install the
 nightlies, first use the instructions above to install the stable repository
 and after it add the nightly repository:
 
-        # Be sure to install the stable repo first !!
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
-        sudo apt-get update
-        sudo apt-get install gazebo7
+```
+# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
+sudo apt-get update
+sudo apt-get install gazebo7
+```
 
 ### Remove prereleases and nightly installed packages
 
-To back to use stable releases, the first step is to disable the repositories
+To go back to stable releases, first disable the relevant repositories
 and update the apt cache.
 
-       # Uninstall repositorioes
-       sudo rm -f /etc/apt/sources.list.d/gazebo-{nightly,prerelease}.list
-       sudo apt-get update
+```
+# Uninstall repositories
+sudo rm -f /etc/apt/sources.list.d/gazebo-{nightly,prerelease}.list
+sudo apt-get update
+```
 
 As a second, an optional step, it is possible to remove installed packages from those repositories:
 
-       sudo apt-get install aptitude
-       sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF nightly*")')
-       sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF prerelease*")')
+```
+sudo apt-get install aptitude
+sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF nightly*")')
+sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF prerelease*")')
+```
 
 ## Versioning in nightly and prerelease
 
@@ -58,11 +66,11 @@ As a second, an optional step, it is possible to remove installed packages from 
 Prerelease versioning scheme: `{upcoming_version}~pre{prerelease_version}`
 
  * `upcoming_version:` upstream version target for current prerelease series
- * `prerelease_version`: prerelease version number in the serie
+ * `prerelease_version`: prerelease version number in the series
 
-Nightly use the following versioning scheme: `{current_relased_version}+hg{date}r{hash}-{nighlty_revision}`
+Nightly use the following versioning scheme: `{current_released_version}+hg{date}r{hash}-{nightly_revision}`
 
- * `current_relased_version:` will be the lastest version released available in
+ * `current_released_version:` will be the latest version released available in
    the changelog file of the corresponding -release repo. If the nightly is
    used for an upcoming release (lets say gazebo7) then R-1.99.99-1
    (gazebo7_6.99.99-1) form will be used until prereleases or final release.
@@ -71,7 +79,7 @@ Nightly use the following versioning scheme: `{current_relased_version}+hg{date}
 
  * `hash`: mercurial hash corresponding to code HEAD used in the nightly build
 
- * `nighlty_revision`:  revision number to apply to the nightly
+ * `nightly_revision`:  revision number to apply to the nightly
 
 ### Versions when mixing repositories
 
