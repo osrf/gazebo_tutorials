@@ -4,28 +4,34 @@ This document provides an overview about the options to use different versions o
  in combination with different versions of Gazebo.
 It is recommended to read it before installing the Gazebo ROS wrappers.
 
-# Short version for quick decision
+# Important! simple analysis for a quick and correct decision
 
 If you are planning on using a specific version of ROS and don't have a reason
- to use a specific version of Gazebo,
- you can proceed with the
- [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
- tutorial.
+to use a specific version of Gazebo, you should proceed with the
+[Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+tutorial which explains how to install the fully supported version of gazebo
+by ROS.
+
+Warning: note that using a different gazebo version than the official version delivered from the ROS
+repositories could end up in conflicts or other integration problems with ROS packages.
 
 # Gazebo versions and ROS integration
 
-Since ROS Hydro, Gazebo is considered a system package instead of ROS package,
- which means that one major version of gazebo (for example `gazebo2` for ROS Indigo)
- is selected at the beginning of the ROS release cycle
- and will be kept during the whole life of the ROS distribution.
-Gazebo development is independent from ROS, so each new major version of Gazebo
- must be released before being used in a ROS distribution.
-The following sections cover how to use ROS with different versions of Gazebo.
+Gazebo is an independent project like boost, ogre or
+any other project used by ROS. Usually, the latest major version of gazebo
+available at the beginning of every ROS release cycle (for example `gazebo5`
+for ROS Jade) is selected as the official one to be fully integrated and
+supported and will be kept during the whole life of the ROS distribution.
+
+Gazebo development is not synced with ROS, so each new major version of Gazebo
+must be released before being used in a ROS distribution.  The following
+sections cover how to use ROS with different versions of Gazebo.
 
 Note that Gazebo ABI stability policy follows the
- [semantic versioning](http://semver.org/) philosophy, in which all versions that have the
- same major number (`gazebo_2.0.0`, `gazebo_2.1.0`, `gazebo_2.0.1`, ...)
- are binary compatible and thus interchangeable when using the same ROS distro.
+[semantic versioning](http://semver.org/) philosophy, in which all versions
+that have the same major number (`gazebo_6.0.0`, `gazebo_6.1.0`,
+`gazebo_6.0.1`, ...) are binary compatible and thus interchangeable when using
+the same ROS distro.
 
 ## Installing Gazebo
 
@@ -34,14 +40,12 @@ Note that Gazebo ABI stability policy follows the
 The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `osrfoundation.packages.org`. At the time of writing:
 
  * ***packages.ros.org***
-  *  Hydro: hosts gazebo version 1.x package.
   *  Indigo: host gazebo version 2.x package.
   *  Jade: host gazebo version 5.x package.
  * ***packages.osrfoundation.org***
-  * gazebo 1.x series (package name `gazebo`)
-  * gazebo 2.x series (package name `gazebo-current` or `gazebo2` in saucy/trusty)
   * gazebo 4.x series (package name `gazebo4`)
   * gazebo 5.x series (package name `gazebo5`)
+  * gazebo 6.x series (package name `gazebo6`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
@@ -81,24 +85,25 @@ For a fully-integrated ROS system, we recommend using the 2.x version of Gazebo.
 The way to proceed is just to use the ROS repository (it will automatically install `gazebo2`)
  and do ***not*** use the osrfoundation repository.
 
-### Hydro
-
-ROS Hydro hosts the 1.9.x version of Gazebo.
-For a fully-integrated ROS system, we recommend using the 1.9.x version of Gazebo.
-The way to proceed is just to use the ROS repository (it will automatically install `gazebo`)
- and do ***not*** use the osrfoundation repository.
-
 ## Using a specific Gazebo version with ROS
-***Warning!: Using this option,
- you won't be able to use any ROS Ubuntu package related to Gazebo from ROS deb repository.
-The equivalent of `gazebo_ros_pkgs` can be installed from debian packages,
- but all other software (such as [turtlebot_gazebo](http://wiki.ros.org/turtlebot_gazebo))
- must be built from source.
-Thanks to
- [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
- this is quite easy to do.***
+***Warning!: Using this option, you won't be able to use any ROS Ubuntu package
+related to Gazebo from ROS deb repository.  The equivalent of `gazebo_ros_pkgs`
+can be installed from debian packages, but all other software (such as
+[turtlebot_gazebo](http://wiki.ros.org/turtlebot_gazebo)) must be built from
+source.  Thanks to [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
+this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
+
+### Gazebo 6.x series
+
+The OSRF repository provides `-gazebo6-` versions of ROS/Indigo and ROS/Jade
+gazebo wrappers (`gazebo6_ros_pkgs`) which are built on top of the `gazebo6`
+package.  The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-$ROS_DISTRO-gazebo6-ros-pkgs` from the osrfoundation repository, which will install the `gazebo6` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 5.x series
 
@@ -112,35 +117,15 @@ The steps to use them are:
 
 ### Gazebo 4.x series
 
-The OSRF repository provides `-gazebo4-` versions of ROS/Indigo and ROS/Hydro gazebo wrappers
+The OSRF repository provides `-gazebo4-` versions of ROS/Indigo gazebo wrappers
  (`gazebo4_ros_pkgs`) which are built on top of the `gazebo4` package.
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-$distro-gazebo4-ros-pkgs` from the osrfoundation repository, which will install the `gazebo4` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
-### Gazebo 2.x series
-
-The OSRF repository provides `-current` versions of ROS/Hydro and ROS/Groovy gazebo wrappers
- (`gazebo_ros_pkgs-current`) which are built on top of the `gazebo-current` package.
-The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-$distro-gazebo-ros-pkgs-current` from the osrfoundation repository, which will install the `gazebo-current` package.
+ * Install `ros-indigo-gazebo4-ros-pkgs` from the osrfoundation repository, which will install the `gazebo4` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ## FAQ
-
-#### I am a DARPA Robotics Challenge participant, which version should I use?
-
-Starting from `drcsim-4.0`, `gazebo4` is the one to use. The old `drcsim-3.2` is built
-on top of `gazebo3`.
-
-DRCSim package can not use `gazebo5` since Ubuntu Precise is one of the
-supported platforms and lacks of `gazebo5` support. Participants using
-Ubuntu Trusty can use `gazebo5` but `drcsim` needs to be compiled from
-source.
 
 #### I am not using ROS at all, which version should I use?
 
@@ -154,15 +139,31 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
 
-#### I need to use gazebo4/gazebo5 and ROS Indigo, what can I do?
+#### I need to use gazebo4/gazebo5/gazebo6 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 4.x or 5.x of Gazebo, there
-is a way of installing `gazebo4` or `gazebo5` and ROS Indigo. Please follow the
-instructions about how to use ROS with gazebo4 package or gazebo5 which are in 
-this same docuement.
+If you need some features only present in version 4.x, 5.x or 6.x of Gazebo,
+there is a way of installing `gazebo4`, `gazebo5` or `gazebo6` and ROS Indigo.
+Please follow the instructions about how to use ROS with gazebo4, gazebo5 or
+gazebo6 which are in this same document.
 
-#### I need to use gazebo3 and ROS Indigo, what can I do?
-***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
+#### I need to use gazebo6 and ROS Jade, what can I do?
+***Warning!: Using this option, you won't be able to use any ROS Jade package
+related to Gazebo from ROS deb repository. The way to go is to build them from
+source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 3.x of Gazebo, there is a way of installing `gazebo3` and ROS Indigo. Please follow the [instructions about how to use ROS with gazebo3 package](#Gazebo 3.x series) which are in this page.
+If you need some features only present in version 6.x of Gazebo,
+there is a way of installing `gazebo6` and ROS Jade. Please
+follow the instructions about how to use ROS with gazebo6 package
+which are in this same docuement.
+
+#### Some ROS packages conflict with GazeboX ROS Wrappers!
+
+Note that each ROS distribution is designed to be used with an specific version
+of Gazebo (`gazebo5` in Jade). When someone chooses to use a different version
+of Gazebo than the one recommended in the ROS distribution, problems may appear
+and some of them could be unsolvable.
+
+If you a find a dependency conflict (for example with RVIZ) after trying to
+install one of the versions described in this document, you will need to
+probably install ROS or Gazebo from source.
