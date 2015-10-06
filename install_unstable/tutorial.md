@@ -42,21 +42,23 @@ sudo apt-get install gazebo7
 
 ### Remove prereleases and nightly installed packages
 
-To go back to stable releases, first disable the relevant repositories
-and update the apt cache.
+Removing the packages installed from the nightly or prerelease repositories
+can be accomplished by running:
+
+```
+# Remove packages installed from nightly/prerelease repositories
+sudo apt-get install aptitude
+sudo apt-get remove $(aptitude search -F '%p' '~S ~i ?origin("OSRF nightly*")')
+sudo apt-get remove $(aptitude search -F '%p' '~S ~i ?origin("OSRF prerelease*")')
+```
+
+For disabling the repositories completely they need to be removed
+from the apt sources.list and the package cache updated:
 
 ```
 # Uninstall repositories
 sudo rm -f /etc/apt/sources.list.d/gazebo-{nightly,prerelease}.list
 sudo apt-get update
-```
-
-As a second, an optional step, it is possible to remove installed packages from those repositories:
-
-```
-sudo apt-get install aptitude
-sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF nightly*")')
-sudo apt-get remove -s $(aptitude search -F '%p' '~S ~i ?origin("OSRF prerelease*")')
 ```
 
 ## Versioning in nightly and prerelease
