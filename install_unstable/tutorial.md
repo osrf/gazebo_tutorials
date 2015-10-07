@@ -85,7 +85,7 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 
 ### Versions when mixing repositories
 
-How does work a prerelease + stable repositories setup?
+Which version has priority when using prerelease and stable repositories?
 
  * packageA version: `1.0.0-1` (stable)
  * packageA prerelease: `1.0.1-1~pre1` (prerelease)
@@ -94,7 +94,7 @@ How does work a prerelease + stable repositories setup?
 
  * Order: `1.0.1-1` > `1.0.1-1~pre2` > `1.0.1-1~pre1` > `1.0.0`
 
-How does work a nightly + stable repositories setup?
+Which version has priority when using nightly and stable repositories?
 
  * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
  * packageA version: `1.0.0-1` (stable)
@@ -103,7 +103,7 @@ How does work a nightly + stable repositories setup?
 
  * Order: `1.0.1-1` > `1.0.0-1+hg20150303r6912b5136236-1` > `1.0.0-1` > `0.99.99+hg20150101r2212b5136299-1`
 
-How does work a nightly + prerelease + stable repositories setup?
+Which version has priority when using nightly, prerelease and stable repositories?
 
  * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
  * packageA prerelease: `1.0.0-1~pre1` (prerelease)
