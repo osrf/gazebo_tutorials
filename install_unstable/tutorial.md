@@ -15,8 +15,9 @@ presence of gazebo-stable repository in the system.
 ### Gazebo prerelease repo
 
 Gazebo prerelease versions are those released to test an upcoming release.
-To install the prerelease, first use the
-instructions above to install the stable repository and after it add the
+To install the prerelease, first use the instructions in the
+[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
+to install the stable repository and after it add the
 prerelease repository:
 
 ```
@@ -30,7 +31,9 @@ sudo apt-get install gazebo7 # (might not be released)
 
 Gazebo nightlies are packages released every night which can be used for different
 purposes like testing the last feature added to gazebo code. To install the
-nightlies, first use the instructions above to install the stable repository
+nightlies, first use the instructions in the 
+[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
+to install the stable repository
 and then add the nightly repository:
 
 ```
