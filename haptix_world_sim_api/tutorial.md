@@ -15,7 +15,7 @@ The full world API documentation can be found
 
 The documentation for building a Gazebo world using [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world).
 
-# Example
+# Matlab Example
 
 First, build a world using SDF:
 
@@ -66,7 +66,18 @@ Download tutorial files:
 
  - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
-## Start Gazebo handsim simulation
+# Matlab Example
+
+
+
+
+
+
+
+
+
+
+# Start Gazebo handsim simulation
 
 To run the example, start gazebo in terminal:
 
@@ -83,3 +94,4 @@ and the sphere should change color from green to red as the hand passes through 
 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
 
+## Run the code: Using C-API on Linux
