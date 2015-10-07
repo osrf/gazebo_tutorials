@@ -1,6 +1,11 @@
 # Tutorial: Using a URDF in Gazebo
 
-The [http://www.ros.org/wiki/urdf Universal Robotic Description Format] (URDF) is an XML file format used in ROS to describe all elements of a robot. To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo. This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo, saving you from having to create a separate SDF file from scratch and duplicating description formats. Under the hood, Gazebo will then convert the URDF to SDF automatically.
+The [Universal Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
+is an XML file format used in ROS to describe all elements of a robot.
+To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo.
+This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo,
+saving you from having to create a separate SDF file from scratch and duplicating description formats.
+Under the hood, Gazebo will then convert the URDF to SDF automatically.
 
 ## Background
 
@@ -8,7 +13,13 @@ While URDFs are a useful and standardized format in ROS, they are lacking many f
 
 On the implementation side, the URDF syntax breaks proper formatting with heavy use of XML attributes, which in turn makes URDF more inflexible. There is also no mechanism for backward compatibility.
 
-To deal with this issue, a new format called the [Simulator Description Format](http://gazebosim.org/sdf.html) (SDF) was created for use in Gazebo to solve the shortcomings of URDF. SDF is a complete description for everything from the world level down to the robot level. It is scalable, and makes it easy to add and modify elements. The SDF format is itself described using XML, which facilitates a simple upgrade tool to migrate old versions to new versions. It is also self-descriptive.
+To deal with this issue, a new format called the
+[Simulation Description Format](http://sdformat.org) (SDF)
+was created for use in Gazebo to solve the shortcomings of URDF.
+SDF is a complete description for everything from the world level down to the robot level.
+It is scalable, and makes it easy to add and modify elements.
+The SDF format is itself described using XML, which facilitates a simple upgrade tool to migrate old versions to new versions.
+It is also self-descriptive.
 
 It is the intention of this author to make URDFs as fully documented and supported in Gazebo as possible, but it is relevant to the reader to understand why the two formats exist and the shortcomings of both. It would be nice if more work was put into URDFs to update them to the current needs of robotics.
 
@@ -34,7 +45,11 @@ There are several steps to get a URDF robot properly working in Gazebo. The foll
 
 ## The `<gazebo>` Element
 
-The `<gazebo>` element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo. It allows you to specify the properties found in the SDF format that are not by default in the URDF format. None of the elements within a `<gazebo>` element are required because default values will be automatically included. There are three different types of `<gazebo>` elements - one for the `<robot>` tag, one for `<link>` tags, and one for `<joint>` tags.  We will discuss the attributes and elements within each type of `<gazebo>` element throughout this tutorial.
+The `<gazebo>` element is an extension to the URDF used for specifying additional properties needed for simulation purposes in Gazebo.
+It allows you to specify the properties found in the SDF format that are not included in the URDF format.
+None of the elements within a `<gazebo>` element are required because default values will be automatically included.
+There are three different types of `<gazebo>` elements - one for the `<robot>` tag, one for `<link>` tags, and one for `<joint>` tags.
+We will discuss the attributes and elements within each type of `<gazebo>` element throughout this tutorial.
 
 ## Prerequisites
 
@@ -44,7 +59,9 @@ The first step to getting your robot working in Gazebo is to have a working URDF
 
 RRBot, or ''Revolute-Revolute Manipulator Robot'', is a simple 3-linkage, 2-joint arm that we will use to demonstrate various features of Gazebo and URDFs. It essentially a [double inverted pendulum](http://en.wikipedia.org/wiki/Double_inverted_pendulum) and demonstrates some fun control concepts within a simulator.
 
-To get RRBot, clone the Github repo into the <tt>/src</tt> folder of your catkin workspace and rebuild your workspace:
+To get RRBot, clone the
+[gazebo\_ros\_demos Github repo](https://github.com/ros-simulation/gazebo_ros_demos.git)
+into the `/src` folder of your catkin workspace and rebuild your workspace:
 
 <pre>
 cd ~/catkin_ws/src/
@@ -66,18 +83,27 @@ And you should see our little bot like so:
 
 [[file:figs/Rrbot_rviz.png|700px]]
 
-If you do not get this, try killing all old roscore processes with <tt>killall roscore</tt> and relaunching RViz.
+If you do not get this, try killing all old roscore processes with `killall roscore` and relaunching RViz.
 
 
 You should also be able to play with the slider bars in the Joint State Publisher window to move the two joints.
 
-Its important that while converting your robot to work in Gazebo, you don't break Rviz or other ROS-application functionality, so its nice to occasionally test your robot in Rviz to make sure everything still works.
+It is important that while converting your robot to work in Gazebo,
+you don't break Rviz or other ROS-application functionality,
+so its nice to occasionally test your robot in Rviz to make sure everything still works.
 
-In the [gazebo_ros_control](http://gazebosim.org/tutorials?tut=ros_control) tutorial we'll go over how to use Rviz to monitor the state of your simulated robot by publishing /joint_states directly from Gazebo. In this previous example the RRBot in Rviz is getting its /joint_states from a fake joint_states_publisher node (the window with the slider bars).
+The [gazebo\_ros\_control](http://gazebosim.org/tutorials?tut=ros_control)
+tutorial will explain how to use Rviz to monitor the state of your simulated
+robot by publishing `/joint_states` directly from Gazebo.
+In the previous example, the RRBot in Rviz is getting its `/joint_states`
+from a fake `joint_states_publisher` node (the window with the slider bars).
 
 ### Examine the RRBot URDF
 
-For the rest of this tutorial, we'll refer to various aspects of the RRBot's URDF. Go ahead and view the file now:
+The rest of this tutorial will refer to various aspects of the RRBot URDF.
+Go ahead and view the
+[rrbot.xacro file](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.xacro)
+now:
 
 <pre>
 rosed rrbot_description rrbot.xacro
@@ -85,8 +111,10 @@ rosed rrbot_description rrbot.xacro
 
 Note that we are using [Xacro](http://ros.org/wiki/xacro) to make some of the link and joint calculations easier. We are also including two additional files:
 
-- <tt>rrbot.gazebo</tt> a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
-- <tt>materials.xacro</tt> a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
+- [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo)
+a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
+- [materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/materials.xacro)
+a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
 
 ### View in Gazebo
 
@@ -122,8 +150,12 @@ You can remove them. All you need in your root element tag is the name of the ro
 
 ### `<gazebo>` element for the <robot> tag
 
-If a `<gazebo>` element is used without a <tt>reference=""</tt> property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
+If a `<gazebo>` element is used without a `reference=""` property, it is assumed the `<gazebo>` element is for the whole robot model. The elements for a `<robot>` inside the `<gazebo>` tag are listed in the following table:
 
+<style>
+th {padding: 5px;}
+td {padding: 5px;}
+</style>
 <table border="1">
 <tr>
 <th>Name</th>
@@ -195,7 +227,10 @@ As per ROS [REP 103: Standard Units of measure and Coordinate Conventions](http:
 
 ### `<collision>` and `<visual>` elements
 
-These tags work essentially the same in Gazebo as in Rviz. Its important that you specify both though, because unlike some ROS applications, Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a <collision> element. Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
+These tags work essentially the same in Gazebo as in Rviz.
+It is important that you specify both though, because unlike some ROS applications,
+Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a `<collision>` element.
+Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
 
 #### Simplify collision model
 
@@ -209,7 +244,8 @@ A standard URDF can specify colors using a tag such as in the RRBot:
 <material name="orange"/>
 ~~~
 
-With the color orange defined separately such as in the file <tt>materials.xacro</tt>:
+With the color orange defined separately such as in the file
+[materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/materials.xacro#L20-L22):
 
 ~~~
   <material name="orange">
@@ -225,13 +261,17 @@ Unfortunately, this method of specifying link colors does not work in Gazebo as 
   </gazebo>
 ~~~
 
-As mentioned earlier, in the RRBot example we have chosen to include all Gazebo-specific tag in a secondary file called <tt>rrbot.gazebo</tt>. You can find the <link> and <material> elements there.
+As mentioned earlier, in the RRBot example we have chosen to include all
+Gazebo-specific tag in a secondary file called
+[rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo).
+You can find the `<link>` and `<material>` elements there.
 
-The default available materials in Gazebo can be found in the Gazebo source code at <tt>gazebo/media/materials/scripts/gazebo.material</tt>.
+The default available materials in Gazebo can be found in the Gazebo source code at
+[gazebo/media/materials/scripts/gazebo.material](https://bitbucket.org/osrf/gazebo/src/default/media/materials/scripts/gazebo.material).
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
-- [The <material> SDF documentation](http://gazebosim.org/sdf/dev.html#material179)
+- [The `<material>` SDF documentation](http://sdformat.org/spec?ver=1.5&elem=material)
 - [OGRE materials documentation](http://www.ogre3d.org/tikiwiki/Materials)
 
 #### STL and Collada files
@@ -299,7 +339,10 @@ List of elements that are individually parsed:
 <tr>
 <td>mu1</td>
 <td rowspan="2">double</td>
-<td rowspan="2">Friction coefficients μ for the principle contact directions along the contact surface as defined by the [ODE](http://www.ros.org/wiki/opende)</td>
+<td rowspan="2">Friction coefficients μ for the principal contact directions along the contact surface as defined by the
+  <a href="http://www.ode.org">Open Dynamics Engine (ODE)</a>
+  (see parameter descriptions in <a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE's user guide</a>)
+</td>
 </tr>
 <tr>
 <td>mu2</td>
@@ -311,13 +354,15 @@ List of elements that are individually parsed:
 </tr>
 <tr>
 <td>kp</td>
-<td>double</td>
-<td>Contact stiffness k_p for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses cfm)</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Contact stiffness k_p and damping k_d for rigid body contacts as defined by ODE
+  (<a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE uses erp and cfm</a>
+  but there is a
+  <a href="https://bitbucket.org/osrf/gazebo/src/b4d836c3ab3b0a/gazebo/physics/ode/ODEJoint.cc#ODEJoint.cc-982">mapping between erp/cfm and stiffness/damping</a>)
+</td>
 </tr>
 <tr>
 <td>kd</td>
-<td>double</td>
-<td>Contact damping k_d for rigid body contacts as defined by [ODE](http://opende.sourceforge.net/) (ODE uses erp)</td>
 </tr>
 <tr>
 <td>selfCollide</td>
@@ -356,7 +401,8 @@ Make sure you are familiar with the [URDF joint documentation](http://www.ros.or
 
 * The `<origin>`, `<parent>` and `<child>` are required
 * `<calibration>` and `<safety_controller>` are ignored
-* In the `<dynamics>` tag, only the <tt>damping</tt> property is used
+* In the `<dynamics>` tag, only the `damping` property is used for gazebo4 and earlier.
+Gazebo5 and up also uses the `friction` property.
 * All of properties in the `<limit>` tag are optional
 
 ### RRBot Example
@@ -373,9 +419,9 @@ The following is a joint used in the RRBot:
   </joint>
 ~~~
 
-Notice the dynamics element with a viscous damping coefficient of 0.7 N*m*s/rad, damping is simply the amount of opposing force to any joint velocity (in this case torque per angular velocity) that is used to "slow" a moving joint towards rest.
+Notice the dynamics element with a viscous damping coefficient of 0.7 N\*m\*s/rad, damping is simply the amount of opposing force to any joint velocity (in this case torque per angular velocity) that is used to "slow" a moving joint towards rest.
 
-The value of 0.7 N*m*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
+The value of 0.7 N\*m\*s/rad was decided on by testing different amounts of damping and watching how "realistic" the swinging pendulum appeared. We encourage you to play with this value now (increase/decrease it) to get a feel for how it affects the physics engine.
 
 ### `<gazebo>` Elements For Joints
 
@@ -386,24 +432,12 @@ The value of 0.7 N*m*s/rad was decided on by testing different amounts of dampin
 <th>Description</th>
 </tr>
 <tr>
-<td>kp</td>
-<td>double</td>
-<td>Contact stiffness k_p for rigid body contacts as defined by ODE (ODE uses cfm)</td>
-</tr>
-<tr>
-<td>kd</td>
-<td>double</td>
-<td>Contact damping k_d for rigid body contacts as defined by ODE (ODE uses erp)</td>
-</tr>
-<tr>
 <td>stopCfm</td>
-<td>double</td>
-<td>Constraint force mixing used when not at a stop</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Joint stop constraint force mixing (cfm) and error reduction parameter (erp) used by ODE</td>
 </tr>
 <tr>
 <td>stopErp</td>
-<td>double</td>
-<td>Error reduction parameter used by the joint stop</td>
 </tr>
 <tr>
 <td>provideFeedback</td>
@@ -411,9 +445,15 @@ The value of 0.7 N*m*s/rad was decided on by testing different amounts of dampin
 <td>Allows joints to publish their wrench data (force-torque) via a Gazebo plugin</td>
 </tr>
 <tr>
+<td>implicitSpringDamper</td>
+<td rowspan="2">bool</td>
+<td rowspan="2">If this flag is set to true, ODE will use ERP and CFM to simulate damping.
+This is a more stable numerical method for damping than the default damping tag.
+The cfmDamping element is deprecated and should be changed to implicitSpringDamper.
+</td>
+</tr>
+<tr>
 <td>cfmDamping</td>
-<td>bool</td>
-<td>If cfm damping is set to true, ODE will use CFM to simulate damping, allows for infinite damping, and one additional constraint row (previously used for joint limit) is always active. This is a more stable numerical method for damping than the default damping tag.</td>
 </tr>
 <tr>
 <td>fudgeFactor</td>
@@ -442,9 +482,9 @@ Note: in Gazebo version 1.9 and greater, some of the debug info has been moved t
 
 ## Viewing the URDF In Gazebo
 
-Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named <tt>MYROBOT_description</tt> in the subfolder <tt>/urdf</tt>. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
+Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
 
-From that tutorial you should have two ROS packages for your custom robot: <tt>MYROBOT_description</tt> and <tt>MYROBOT_gazebo</tt>. To view your robot and test it in Gazebo, you should be able to now run something like:
+From that tutorial you should have two ROS packages for your custom robot: `MYROBOT_description` and `MYROBOT_gazebo`. To view your robot and test it in Gazebo, you should be able to now run something like:
 
 <pre>
 roslaunch MYROBOT_gazebo MYROBOT.launch
@@ -458,7 +498,13 @@ If your robot model behaves unexpectedly within Gazebo, it is likely because you
 
 ## Sharing your robot with the world
 
-If you have a common robot that other's might want to use in Gazebo, you are encouraged to add your URDF to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html). It is an online server that Gazebo connects to to pull down models from the internet. Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models). See [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation for how to submit a pull request to have your robot added to the database.
+If you have a common robot that other's might want to use in Gazebo,
+you are encouraged to add your URDF to the
+[Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
+It is an online server that Gazebo connects to to pull down models from the internet.
+Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models).
+See [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
+documentation for how to submit a pull request to have your robot added to the database.
 
 ## Next steps
 

@@ -24,7 +24,7 @@ Assuming the reader has gone through the [Hello WorldPlugin tutorial](http://gaz
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/CMakeLists.txt' />
 
-Compiling this code will result in a shared library, ~/gazebo_plugin_tutorial/build/libmodel_push.so, that can be inserted in a Gazebo simulation.
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libmodel_push.so`, that can be inserted in a Gazebo simulation.
 
 ~~~
 $ cd ~/gazebo_plugin_tutorial/build

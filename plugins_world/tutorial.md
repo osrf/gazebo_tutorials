@@ -34,7 +34,7 @@ The first part of the code creates a world plugin.
 Within the `Load` function are three different methods for model insertion.
 
 
-The first method uses a World method to load a model based on a file in the resource path defined by the GAZEBO_MODEL_PATH environment variable.
+The first method uses a World method to load a model based on a file in the resource path defined by the `GAZEBO_MODEL_PATH` environment variable.
 
 <include from="/...Option 1:/" to="/\/\/box"\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/factory.cc' />
 
@@ -53,7 +53,7 @@ Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazeb
 
 <include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/factory/CMakeLists.txt' />
 
-Compiling this code will result in a shared library, ~/gazebo_plugin_tutorial/build/libfactory.so, that can be inserted in a Gazebo simulation.
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libfactory.so`, that can be inserted in a Gazebo simulation.
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial/build
@@ -191,7 +191,7 @@ Copy the following into model.config
 
 ## Run the code
 
-Make sure your $GAZEBO_MODEL_PATH refers to your new models directory
+Make sure your `$GAZEBO_MODEL_PATH` refers to your new models directory
 
 ~~~
 $ export GAZEBO_MODEL_PATH=$HOME/gazebo_plugin_tutorial/models:$GAZEBO_MODEL_PATH
@@ -203,7 +203,7 @@ Add your library path to the `GAZEBO_PLUGIN_PATH`:
 $ export GAZEBO_PLUGIN_PATH=$HOME/gazebo_plugin_tutorial/build:$GAZEBO_PLUGIN_PATH
 ~~~
 
-Create a world SDF file called ~/gazebo_plugin_tutorial/factory.world
+Create a world SDF file called `~/gazebo_plugin_tutorial/factory.world`
 
 ~~~
 $ cd ~/gazebo_plugin_tutorial

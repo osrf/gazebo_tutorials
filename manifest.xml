@@ -63,6 +63,7 @@
 
     <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
       <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
+      <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
        Installation instructions for building a gazebo application using the
        source code. For user who want to contribute with code patches or pull
@@ -215,6 +216,12 @@
       <markdown version="1.9+">friction/tutorial.md</markdown>
       <description>How to setup friction properties.</description>
       <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Torsional friction" ref='torsional_friction'>
+      <markdown version="7+">torsional_friction/tutorial.md</markdown>
+      <description>How to setup torsional friction properties.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Collide bitmask" ref='collide_bitmask'>
@@ -422,7 +429,7 @@
 
     <tutorial title="System Plugin" ref='system_plugin'>
       <markdown version="3.0">system_plugin/tutorial_3-0.md</markdown>
-      <markdown version="4.0+">system_plugin/tutorial.md</markdown>
+      <markdown version="5+">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -502,7 +509,8 @@
     </tutorial>
 
     <tutorial title="Capture screenshot" ref='screenshot'>
-      <markdown version="1.9+">screenshot/tutorial.md</markdown>
+      <markdown version="1.9">screenshot/tutorial_1-9.md</markdown>
+      <markdown version="6+">screenshot/tutorial.md</markdown>
       <description>Shows how to capture a screen shot of Gazebo's render window.</description>
       <skill>beginner</skill>
       <tags>
@@ -924,6 +932,7 @@
       <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
+        <tutorial>torsional_friction</tutorial>
         <tutorial>collide_bitmask</tutorial>
         <tutorial>fluids</tutorial>
         <tutorial>aerodynamics</tutorial>
