@@ -28,10 +28,10 @@ sudo apt-get install gazebo7 # (might not be released)
 
 ### Gazebo nightly repo
 
-Gazebo nightlies are packages released every night which can be for different
-proposes like testing the last feature added to gazebo code. To install the
+Gazebo nightlies are packages released every night which can be used for different
+purposes like testing the last feature added to gazebo code. To install the
 nightlies, first use the instructions above to install the stable repository
-and after it add the nightly repository:
+and then add the nightly repository:
 
 ```
 # Be sure to install the stable repo first !!
