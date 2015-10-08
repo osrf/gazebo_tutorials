@@ -17,6 +17,8 @@ The documentation for building a Gazebo world using [SDF format](http://www.sdfo
 
 # Matlab Example
 
+## Intoduction
+
 First, build a world using SDF:
 
 <include lang='xml' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/> 
@@ -68,7 +70,16 @@ Download tutorial files:
 
 # Matlab Example
 
+## Intoduction
 
+
+## Get the code:
+
+Download tutorial files:
+
+ - [hx_controller.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/hx_controller.c)
+
+ - [custom_world.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
 
 
 
