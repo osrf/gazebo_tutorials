@@ -178,6 +178,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Wide-Angle Camera" ref='wide_angle_camera'>
+      <markdown version="6.1+">wide_angle_camera/tutorial.md</markdown>
+      <description>How to create and setup wide-angle cameras.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Building a world" ref='build_world'>
       <markdown version="1.9">build_world/tutorial_1.9.md</markdown>
       <markdown version="2.2+">build_world/tutorial.md</markdown>
@@ -867,6 +873,7 @@
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
         <tutorial>camera_distortion</tutorial>
+        <tutorial>wide_angle_camera</tutorial>
       </tutorials>
     </category>
 
@@ -949,6 +956,7 @@
         <tutorial>lightmap</tutorial>
         <tutorial>oculus</tutorial>
         <tutorial>stereo_glasses</tutorial>
+        <tutorial>wide_angle_camera</tutorial>
       </tutorials>
     </category>
 
