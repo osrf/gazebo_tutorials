@@ -77,7 +77,7 @@ and write a simple C code to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-<include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c'/> 
+<include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/3ae012b18a18195648635c412336d5f396bea426/haptix_world_sim_api/files/custom_world.c'/> 
 
 Build `custom_world.c` as you would with any Haptix C API code shown in [this tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix).
 
