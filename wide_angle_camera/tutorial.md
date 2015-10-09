@@ -11,7 +11,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 ## What to know?
 
 * You should already know how to use camera sensor.
-* Be familiar with [plugins](http://gazebosim.org/tutorials?cat=plugins).
+* Be familiar with [plugins](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin)
 
 ## Try it!
 
@@ -100,19 +100,19 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
 1.  Start Gazebo:
 
-        gazebo
+        gazebo &
 
 1.  Add several objects to the world, cubes, spheres, some objects from warehouse.
 In the `Insert` tab you should see your brand-new "Fisheye camera" model.
 Click on it and place anywhere in your world.
 
-1.  Press `Ctrl+T` to open list of topics, find corresponding element in `ImageStamped` section and start visualization.  
+1.  Press `Ctrl+T` to open list of topics, find corresponding element in `ImageStamped` section and start visualization.
 What you should see is exactly the same what you'd see using a regular camera sensor.
 
 
 ### Lets make things more interesting
 
-*   Increase `horizontal_fov` value to `3.1415`, in your `model.sdf` and change `type` to `stereographic`. Save it.
+*   In your `model.sdf`'s `<lens>` element,  increase `<horizontal_fov>` to `3.1415` and change the `<type>` to `stereographic`. Save it.
 *   Add a new instance of `Fisheye camera`. A new topic will be added.
 *   Switch to the topic corresponding to your second camera in visualization window.
 
@@ -133,6 +133,8 @@ Now you shold have something like this (except for the sky, if you don't enable 
 
 *   set `<horizontal_fov>` value to `6.2831`
 *   `<cutoff_angle>` to `3.1415`
+
+The SDF should be looking like this:
 
 %%%
 <sensor name="camera" type="wideanglecamera">
@@ -172,16 +174,21 @@ Now you shold have something like this (except for the sky, if you don't enable 
 </sensor>
 %%%
 
-Add one more camera. In topic visualization for this camera you should now see a whole `360°` degree image of the world:
+Add one more camera. In topic visualization for this camera you should now see
+a whole `360°` degree image of the world:
 
 [[file:files/360.png|600px]]
 
 
 ## What is going on?
 
+You should already be familiar with the SDF definition of a `camera` sensor.
+Here, you must change its `type` to `wideanglecamera`.
+
 ~~~
-<!-- You should be already familiar with sdf definition of the `camera` sensor, the only difference is that you change it's `type` to `wideanglecamera` -->
 <sensor name="camera" type="wideanglecamera">
+  <always_on>1</always_on>
+  <update_rate>30</update_rate>
   <camera>
     <horizontal_fov>6.283</horizontal_fov>
     <image>
@@ -192,32 +199,47 @@ Add one more camera. In topic visualization for this camera you should now see a
       <near>0.1</near>
       <far>100</far>
     </clip>
+~~~
 
-     <!-- A new section named `lens`. -->
+We add a new section named `lens` where the type element is mandatory:
+
+~~~
     <lens>
-      <!-- type element is mandatory -->
       <type>custom</type>
+~~~
 
-      <!-- manually defined mapping function r = c1*f*fun(theta/c2 + c3) -->
-      <!-- More information here: https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function -->
+For custom lenses, we can manually define the mapping function `r = c1*f*fun(theta/c2 + c3)`.
+(More information [here](https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function))
+
+~~~
       <custom_function>
         <c1>1.05</c1>   <!-- linear scaling -->
         <c2>4</c2>      <!-- angle scaling -->
         <f>1.0</f>      <!-- one more scaling parameter -->
         <fun>tan</fun>  <!-- one of sin,tan,id -->
       </custom_function>
+~~~
 
-      <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
-      <!-- othervise it depends on lens type and custom function, if there is one -->
+If `scale_to_hfov` is set to `true` your horizontal FOV will ramain as defined.
+Otherwise it depends on lens type and custom function, if there is one.
+
+~~~
       <scale_to_hfov>true</scale_to_hfov>
-      <!-- clip everything that is outside of this angle -->
+~~~
+
+Clip everything that is outside of the `cutoff_angle`.
+
+~~~
       <cutoff_angle>3.1415</cutoff_angle>
-      <!-- resolution of the cubemap texture, the highter it is - the sharper is your image -->
+~~~
+
+Sets the resolution of the cubemap texture, the highter it is - the sharper is
+your image.
+
+~~~
       <env_texture_size>512</env_texture_size>
     </lens>
   </camera>
-  <always_on>1</always_on>
-  <update_rate>30</update_rate>
 </sensor>
 </link>
 ~~~
@@ -229,8 +251,8 @@ It is possible to adjust the `lens` settings from a plugin.  This section
 requires you to build a plugin from source.  You will need Gazebo headers to
 build it.  If you install Gazebo from source then you should already have
 the necessary files.  If you installed the Gazebo binary deb version, then
-you'll need to install dev packages according to your Gazebo and sdformat
-versions.
+you'll need to [install](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install)
+`-dev` packages according to your Gazebo and sdformat versions.
 
 1.  Create directory and pull source files:
 
@@ -250,7 +272,7 @@ versions.
     cd build
     ~~~
 
-1.  Create a symlink to the UI file used by a plugin
+1.  Create a symlink to the UI file used by the plugin
 
     ~~~
     ln -s ../mainwindow.ui mainwindow.ui
@@ -310,7 +332,7 @@ Do not specify cut-off angle, it will be set to `180°`.  Calculate your new
 *   [[file:files/fun_inv.gif]] is an inverse to `fun`;
 *   [[file:files/c_2.gif]] is a parameter from explicit mapping function definition, if you use one of the predefined lens types pick your parameters from the following table
 
-    <table border="1">
+    <table border="1" cellpadding="10">
     <tr>
     <th>type</th>
     <th>[[file:files/c_1.gif]]</th>
@@ -319,42 +341,42 @@ Do not specify cut-off angle, it will be set to `180°`.  Calculate your new
     <th>[[file:files/fun.gif]]</th>
     </tr>
     <tr>
-    <td>`gnomonical`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`tan`</td>
+    <td>gnomonical</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>tan</td>
     </tr>
     <tr>
-    <td>`stereographic`</td>
-    <td>`2`</td>
-    <td>`2`</td>
-    <td>`1`</td>
-    <td>`tan`</td>
+    <td>stereographic</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+    <td>tan</td>
     </tr>
     <tr>
-    <td>`equidistant`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`id`</td>
+    <td>equidistant</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>id</td>
     </tr>
-    <td>`equisolid_angle`</td>
-    <td>`2`</td>
-    <td>`2`</td>
-    <td>`1`</td>
-    <td>`sin`</td>
+    <td>equisolid_angle</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+    <td>sin</td>
     </tr>
-    <td>`orthographic`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`1`</td>
-    <td>`sin`</td>
+    <td>orthographic</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>sin</td>
     </tr>
     </table>
 
 ### Should I use wide-angle camera instead of a regular camera?
 
 If a regular camera sensor is sufficent for your needs then use it.
-Wide-angle camera sensor gives a significant performance hit on slow
+Wide-angle camera sensors give significant performance hit on slow
 hardware.
