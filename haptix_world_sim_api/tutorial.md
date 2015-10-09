@@ -79,7 +79,7 @@ it comes into contact with other objects:
 
 <include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/3ae012b18a18195648635c412336d5f396bea426/haptix_world_sim_api/files/custom_world.c'/> 
 
-Build `custom_world.c` as you would with any Haptix C API code shown in [this tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix).
+Build `custom_world.c` as you would with any Haptix C API code as shown in [Compile section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Compileyourcontroller).
 
 ## Get the code:
 
@@ -104,9 +104,10 @@ First see [world API tutorial Example section](http://gazebosim.org/tutorials?tu
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
-
 ## Run the code: Using C-API on Linux
 
-Review the [world API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix)
-on how to run code compiled against the Haptix C API.
+Run compiled binary from `custom_world.c` as you would with any Haptix C API code as shown in [Running the simulation section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Runningthesimulationwithyourcontroller).
+
+## Example Video
+<iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
+
