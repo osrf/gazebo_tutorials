@@ -58,7 +58,7 @@ Next, write a simple Octave/Matlab to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/> 
+<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/>
 
 ## Get the code:
 
@@ -68,25 +68,26 @@ Download tutorial files:
 
  - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
-# Matlab Example
+# Haptix C-API Example
 
 ## Intoduction
 
+Using the same world as the Matlab example above,
+and write a simple C code to sense contact state on the visual
+sphere model, and change the color of the sphere from green to red when
+it comes into contact with other objects:
+
+<include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c'/> 
+
+Build `custom_world.c` as you would with any Haptix C API code shown in [this tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix).
 
 ## Get the code:
 
 Download tutorial files:
 
- - [hx_controller.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/hx_controller.c)
+ - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
 
  - [custom_world.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
-
-
-
-
-
-
-
 
 # Start Gazebo handsim simulation
 
@@ -106,3 +107,6 @@ and the sphere should change color from green to red as the hand passes through 
 <iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
 
 ## Run the code: Using C-API on Linux
+
+Review the [world API tutorial Example section](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix)
+on how to run code compiled against the Haptix C API.
