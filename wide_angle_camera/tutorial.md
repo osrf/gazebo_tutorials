@@ -209,6 +209,7 @@ We add a new section named `lens` where the type element is mandatory:
 ~~~
 
 For custom lenses, we can manually define the mapping function `r = c1*f*fun(theta/c2 + c3)`.
+
 (More information [here](https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function))
 
 ~~~
@@ -233,7 +234,7 @@ Clip everything that is outside of the `cutoff_angle`.
       <cutoff_angle>3.1415</cutoff_angle>
 ~~~
 
-Sets the resolution of the cubemap texture, the highter it is - the sharper is
+Set the resolution of the cubemap texture: the highter it is, the sharper is
 your image.
 
 ~~~
@@ -247,11 +248,13 @@ your image.
 
 ## Plugin Example
 
-It is possible to adjust the `lens` settings from a plugin.  This section
-requires you to build a plugin from source.  You will need Gazebo headers to
-build it.  If you install Gazebo from source then you should already have
-the necessary files.  If you installed the Gazebo binary deb version, then
-you'll need to [install](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install)
+It is possible to adjust the `lens` settings from a plugin.
+
+> **Note**: This section requires you to build a plugin from source.  You will
+need Gazebo headers to build it.  If you install Gazebo from source then you
+should already have the necessary files.  If you installed the Gazebo binary
+deb version, then you'll need to
+[install](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install)
 `-dev` packages according to your Gazebo and sdformat versions.
 
 1.  Create directory and pull source files:
