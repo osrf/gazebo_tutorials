@@ -396,7 +396,7 @@
     </plugin>
 
     <model name="sphere_visual_model">
-      <pose>0.4 0.0 1.2 0 0 3.1416</pose>
+      <pose>0.3 0.0 1.35 0 0 3.1416</pose>
       <link name="sphere_link">
         <visual name="sphere_visual">
           <geometry>

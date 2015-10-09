@@ -104,10 +104,18 @@ First see [world API tutorial Example section](http://gazebosim.org/tutorials?tu
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:
 
+Hint for linux users, at octave or matlab prompt, add path to haptix scripts:
+
+~~~
+path('[replace with your path to install]/lib/x86_64-linux-gnu/haptix-comm/octave', path)
+path('[replace with path to your custom_world.m]', path)
+~~~
+
+before running `custom_world.m`.
+
 ## Run the code: Using C-API on Linux
 
 Run compiled binary from `custom_world.c` as you would with any Haptix C API code as shown in [Running the simulation section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Runningthesimulationwithyourcontroller).
 
 ## Example Video
-<iframe width="600" height="450" src="https://www.youtube.com/embed/0R_xmgG_jBI" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="600" height="450" src="https://www.youtube.com/embed/bWaWNZu-0n4" frameborder="0" allowfullscreen></iframe>
