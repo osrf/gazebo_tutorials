@@ -416,6 +416,23 @@ The disadvantage of this method is that your packaged `MYROBOT_description` and 
 are not as easily portable between computers - you first have to set the `GAZEBO_MODEL_PATH`
 on any new system before being able to use these ROS packages.
 
+* Exporting model paths from a pcakage.xml
+
+The useful info would be the format for exporting model paths from a package.xml:
+
+~~~
+<export>
+  <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  <gazebo_ros gazebo_media_path="${prefix}/models"/>
+</export>
+~~~
+  
+The '${prefix}` is something that new users might not immediately know about either, and necessary here.
+
+Also would be useful to have some info on how to debug these paths from the ROS side, 
+e.g. that you can use `rospack plugins --attrib="gazebo_media_path" gazebo_ros`
+To check the media path that will be picked up by gazebo.
+
 ## Next Steps
 
 Now that you know how to create `roslaunch` files that open Gazebo, world files and URDF models, you are now ready to create your own Gazebo-ready URDF model in the tutorial [Using A URDF In Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf)
