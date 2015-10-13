@@ -50,7 +50,7 @@ etc.), as well as send new joint commands and receive the hand state.
 
 ## Installing on Windows
 
-We currently support Windows 7, Visual Studio 2013, and Matlab R2014b, all
+We currently support Windows 7, Visual Studio 2013, and Matlab R2014b or newer, all
 64-bit (you can determine the Matlab version by selecting `Help`->`About
 MATLAB` from the main menu).  We are working on 32-bit versions; they will be
 available soon.
