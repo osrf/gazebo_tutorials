@@ -779,6 +779,13 @@
       <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX logging" ref='haptix_logging'>
+      <markdown version="6.0+">haptix_logging/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the World API and
+        the Gazebo GUI for creating and playing back a log file.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
