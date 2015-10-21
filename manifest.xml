@@ -1040,6 +1040,7 @@
         <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
         <tutorial>haptix_world_sim_api</tutorial>
+        <tutorial>haptix_logging</tutorial>
       </tutorials>
     </category>
 

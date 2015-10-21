@@ -6,7 +6,7 @@ afterwards.
 
 We assume that you have already done the
 [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
-and you are also familiar with the Swarm API.
+and you are also familiar with the HAPTIX API.
 
 # A Gazebo log file
 
@@ -21,16 +21,12 @@ the initial world description, and a time series of state.
 Start Gazebo and click on the top right icon of the menu bar when you are ready
 to start your logging.
 
-%%%
 [[file:files/logging_1.png|800px]]
-%%%
 
 A new pop-up window will appear. Click on the red record button to start the log.
-Click on the same icon again when needed for stop logging.
+Click on the same icon again when needed to stop logging.
 
-%%%
 [[file:files/logging_2.png|800px]]
-%%%
 
 A new time stamped directory should exist in `~/.gazebo/log` with one
 subdirectory and a `state.log` file. Here is an example:
@@ -47,10 +43,10 @@ for compiling a program using your favorite operating system. Copy the code from
 [**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
 and paste it in your current project.
 
-Uncomment the following blocks for enable logging:
+Uncomment the following blocks to enable logging:
 
 ~~~
-// Uncomment this block for start logging.
+// Uncomment this block to start logging.
 // if (hxs_start_logging("/tmp") != hxOK)
 //   printf("hxs_start_logging(): error.\n");
 ~~~
@@ -58,7 +54,7 @@ Uncomment the following blocks for enable logging:
 and:
 
 ~~~
-// Uncomment this block for stop logging.
+// Uncomment this block to stop logging.
 // if (hxs_stop_logging() != hxOK)
 //   printf("hxs_stop_logging(): error.\n");
 ~~~
@@ -72,17 +68,17 @@ Follow the
 [HAPTIX Matlab and Octave API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_matlab)
 and load the `hx_matlab_controller` in Octave or MATLAB.
 
-Uncomment the following blocks for enable logging:
+Uncomment the following blocks to enable logging:
 
 ~~~
-% Uncomment this block for start logging.
+% Uncomment this block to start logging.
 % hxs_start_logging('/tmp/log/')
 ~~~
 
 and:
 
 ~~~
-% Uncomment this block for stop logging.
+% Uncomment this block to stop logging.
 % hxs_stop_logging()
 ~~~
 
@@ -96,5 +92,5 @@ Follow the next steps for replaying your previously recorded log file in Gazebo:
 Open a new terminal and run:
 
 ~~~
-gazebo -p /tmp/log/state.log
+gazebo -u -p /tmp/log/state.log
 ~~~
