@@ -1,15 +1,20 @@
 # Overview
 
-This tutorial will explain how to use the Gazebo logging capabilities for saving your simulation episode on disk and being able to reproduce it afterwards.
+This tutorial will explain how to use the Gazebo logging capabilities for
+saving your simulation episode on disk and being able to reproduce it
+afterwards.
 
-We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix) and you are also familiar with the Swarm API.
+We assume that you have already done the
+[installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
+and you are also familiar with the Swarm API.
 
 # A Gazebo log file
 
 A Gazebo log file is a collection of State logs. State logs are recordings of
 world state information from Gazebo. State includes pose, velocity, acceleration,
 and forces applied to all links of all models. Gazebo will only record state
-information for models that change over time. A state log file contains a header, the initial world description, and a time series of state.
+information for models that change over time. A state log file contains a header,
+the initial world description, and a time series of state.
 
 # Enable Gazebo logging from the GUI
 
@@ -36,8 +41,11 @@ subdirectory and a `state.log` file. Here is an example:
 
 # Enable Gazebo logging from your C++ program
 
-Follow the steps described in the [HAPTIX C-API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_comm) for compiling a program
-using your favorite operating system. Copy the code from [**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c) and paste it in your current project.
+Follow the steps described in the
+[HAPTIX C-API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_comm)
+for compiling a program using your favorite operating system. Copy the code from
+[**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
+and paste it in your current project.
 
 Uncomment the following blocks for enable logging:
 
@@ -60,8 +68,9 @@ When executed, this example should create a `/tmp/log/` directory containing a
 
 # Enable Gazebo logging from your MATLAB/Octave program
 
-Follow the [HAPTIX Matlab and Octave API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_matlab) and load the `hx_matlab_controller` in
-Octave or MATLAB.
+Follow the
+[HAPTIX Matlab and Octave API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_matlab)
+and load the `hx_matlab_controller` in Octave or MATLAB.
 
 Uncomment the following blocks for enable logging:
 
