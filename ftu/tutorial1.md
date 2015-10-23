@@ -1,19 +1,25 @@
 # Beginner Module
 
-## Introduction
+### Introduction
 
-Welcome to the Beginner Module! This section will guide you through the most basic features of Gazebo, with each tutorial building upon the last. For more tutorials, check out the other modules and tutorials in the left column.
+Welcome to the Beginner Module! This section will guide you through the most basic features of Gazebo, with each tutorial building upon the last. For more tutorials, 
+check out the other modules and tutorials in the left column.
 
 **Audience**
 
-Those new to Gazebo and/or folks with no programming experience. 
+Intended for those new to Gazebo and/or folks with **no programming experience**. 
 
-**
+**Module Goal**
 
+You'll learn about Gazebo's Graphical User Interface (GUI) while building a simple, wheeled robot that follows a person.
 
-"MODULE OVERVIEW
+**Table of Content**
+* Gazebo Overview
+* Graphical User Interface (GUI)
+* Model Editor
+* Importing .svg files 
+* Building Editor
+* Using Plugins
+* Logging and Playback
+* Wrap-up
 
-• What's a module? What's the difference between a module and the other tutorials?
-• FTU Intended audience, audience technical experience
-• Module goal
-• Module Table of Contents"
