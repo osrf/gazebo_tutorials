@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the Beginner Module! This section will guide you through the most basic features of Gazebo, with each tutorial building upon the last. 
+Welcome to the Beginner Module! This section will guide you through the most basic features of Gazebo, with each tutorial building upon the last. We recommend following the tutorials in order. 
 
 **Audience**
 
