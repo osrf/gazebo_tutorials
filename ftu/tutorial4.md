@@ -6,16 +6,16 @@ To construct the robot,  we'll use the Model Editor which lets us construct simp
 But for now, we can do everything in the Gazebo GUI!
 
 
-* Model Editor user interface
+### Model Editor user interface
 
 (include limitations of ME, show examples of models made with ME)
 
-* Vehicle construction
+### Vehicle construction
 
 (give exact dimensions where possible, use align and snap tools)
 
-* Adding a plugin
+### Adding a plugin
 
 (add a blob tracker to the front; explain that plugins are usually more complex and require code; link to Plugins "Topic of Interest")
 
-* Save your model
+### Save your model
