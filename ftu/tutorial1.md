@@ -13,13 +13,20 @@ Intended for those new to Gazebo and/or folks with **no programming experience**
 
 You'll learn about Gazebo's Graphical User Interface (GUI) while building a simple, wheeled robot that follows a person.
 
-**Table of Content**
+**Table of Contents**
 * Gazebo Overview
+
 * Graphical User Interface (GUI)
+
 * Model Editor
+
 * Importing .svg files 
+
 * Building Editor
+
 * Using Plugins
+
 * Logging and Playback
+
 * Wrap-up
 
