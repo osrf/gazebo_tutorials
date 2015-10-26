@@ -23,14 +23,14 @@ place in the application GUI, between the toolbars and panels.
 image
 ~~~
 
-#### The Panels
+### The Panels
 
 Both side panels, right and left, can be displayed, hidden or resized by
 pulling the bar that separates them from the scene.
 
 # [[file:files/gazebo-boot-screen-panels.png|600px]]
 
-##### Left panel
+#### Left panel
 
 The left panel appears by default when launching gazebo application and provides
 the abilitiy to interact with the simulator in different ways from the tabs 
@@ -51,7 +51,7 @@ available:
   help organizing the visuals of the simulation but the tab can be empty in most
   of the cases.
 
-##### Right panel (hidden by default)
+#### Right panel (hidden by default)
 
 The right panel is hidden by default, pull from the bar to open it. The right
 panel can be used to interact with some of the different mobile parts of a
@@ -93,7 +93,7 @@ duplicated into the toolbars or right click context menu.
 image
 ~~~
 
-### Mouse Controls
+## Mouse Controls
 
 • Scene navigation, basic controls (Undo), etc.
 
