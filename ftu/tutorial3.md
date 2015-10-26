@@ -4,7 +4,7 @@ This is an overview of the Gazebo Graphical User Interface. We're not going to
 make our simple robot quite yet, but we'll become familiar with the tools we'll
 need to do so in the next tutorial.
 
-### GUI
+## GUI
 
 This is the gazebo screen just after invoke the simulator:
 
@@ -15,8 +15,13 @@ turorial will give a quick look into every of them:
 
 ### The Scene
 
-The scene is the main part of the simulator where the action happens. It 
-takes the 
+The scene is the main part of the simulator where the simulated objects are
+animated and the user can interact with the enviroment. It takes the central
+place in the application GUI, between the toolbars and panels.
+
+~~~
+image
+~~~
 
 #### The Panels
 
@@ -25,7 +30,7 @@ pulling the bar that separates them from the scene.
 
 # [[file:files/gazebo-boot-screen-panels.png|600px]]
 
-#### Left panel
+##### Left panel
 
 The left panel appears by default when launching gazebo application and provides
 the abilitiy to interact with the simulator in different ways from the tabs 
@@ -46,7 +51,7 @@ available:
   help organizing the visuals of the simulation but the tab can be empty in most
   of the cases.
 
-#### Right panel (hidden by default)
+##### Right panel (hidden by default)
 
 The right panel is hidden by default, pull from the bar to open it. The right
 panel can be used to interact with some of the different mobile parts of a
@@ -58,7 +63,7 @@ the panel does not display any information.
 The gazebo screen present two different toolbars located just above and below
 of the Scene part.
 
-### Upper toolbar
+#### Upper toolbar
 
 The main gazebo toolbar includes some of the most used actions when interacting
 with the simulator such as: selection, move, rotate and scale objects; create 
@@ -68,8 +73,7 @@ simple static shapes or copy/paste.
 image
 ~~~
 
-### Bottom bar
-----------
+#### Bottom bar
 
 The bottom toolbar displays data about the simulation, specially the simulation
 time and its relationship with the real life time. This is known as real time
@@ -79,12 +83,15 @@ factor.
 image
 ~~~
 
-MENU
------
+### The Menu 
 
-Like most of applications into your system, gazebo displays
+Like most of applications into the system gazebo has an application menu 
+integrated into the windows system. Some of the menu options are also 
+duplicated into the toolbars or right click context menu.
 
-explain default Gazebo: Toolbar, scene tree, bottom bar, menus, etc.
+~~~
+image
+~~~
 
 ### Mouse Controls
 
