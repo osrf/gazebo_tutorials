@@ -8,7 +8,7 @@ need to do so in the next tutorial.
 
 This is the gazebo screen just after invoke the simulator:
 
-# [[file:files/gazebo-boot-screen.png|600px]]
+[[file:files/gazebo-boot-screen.png|600px]]
 
 Note that gazebo is composed of several parts in this main screen. This
 turorial will give a quick look into every of them:
@@ -28,7 +28,7 @@ image: main gazebo screen with scene marked somehow
 Both side panels, right and left, can be displayed, hidden or resized by
 pulling the bar that separates them from the scene.
 
-# [[file:files/gazebo-boot-screen-panels.png|600px]]
+[[file:files/gazebo-boot-screen-panels.png|600px]]
 
 #### Left panel
 
