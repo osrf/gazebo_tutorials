@@ -20,7 +20,7 @@ animated and the user can interact with the enviroment. It takes the central
 place in the application GUI, between the toolbars and panels.
 
 ~~~
-image
+image: main gazebo screen with scene marked somehow
 ~~~
 
 ### The Panels
@@ -70,7 +70,7 @@ with the simulator such as: selection, move, rotate and scale objects; create
 simple static shapes or copy/paste.
 
 ~~~
-image
+image: toobar with items explained in few words
 ~~~
 
 #### Bottom bar
@@ -80,7 +80,7 @@ time and its relationship with the real life time. This is known as real time
 factor.
 
 ~~~
-image
+image: toobar with items explained in few words
 ~~~
 
 ### The Menu 
@@ -90,11 +90,18 @@ integrated into the windows system. Some of the menu options are also
 duplicated into the toolbars or right click context menu.
 
 ~~~
-image
+image: menu with items explained in few words
 ~~~
 
 ## Mouse Controls
 
-• Scene navigation, basic controls (Undo), etc.
+The mouse can be specially useful when navigating in 3D through the scene.
+This are the basic operations that can be done using the mouse to command
+the movements and actions into the scene:
+
+~~~
+image: mouse gestures schema
+~~~
+
 
 
