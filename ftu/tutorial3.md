@@ -20,9 +20,8 @@ animated and the user can interact with the enviroment. It takes the central
 place in the application GUI, between the toolbars and panels.
 
 **TODO: mark the scene in the image**
-~~~
+
 [[file:files/gazebo-boot-screen-panels.png|600px]]
-~~~
 
 ### The Panels
 
@@ -30,6 +29,7 @@ Both side panels, right and left, can be displayed, hidden or resized by
 pulling the bar that separates them from the scene.
 
 **TODO: mark the panels in the image**
+
 [[file:files/gazebo-boot-screen-panels.png|600px]]
 
 #### Left panel
@@ -72,6 +72,7 @@ with the simulator such as: selection, move, rotate and scale objects; create
 simple static shapes or copy/paste.
 
 **TODO: add description to options**
+
 [[file:files/gazebo-upper-toolbar.png|600px]]
 
 #### Bottom bar
@@ -81,6 +82,7 @@ time and its relationship with the real life time. This is known as real time
 factor.
 
 **TODO: add description to options**
+
 [[file:files/gazebo-bottom-toolbar.png|600px]]
 
 ### The Menu 
@@ -90,6 +92,7 @@ integrated into the windows system. Some of the menu options are also
 duplicated into the toolbars or right click context menu.
 
 **TODO: add description to options**
+
 [[file:files/gazebo-menu.png|600px]]
 
 ## Mouse Controls
@@ -99,6 +102,7 @@ This are the basic operations that can be done using the mouse to command
 the movements and actions into the scene:
 
 **TODO: include here a good schema about mouse gestures**
+
 ~~~
 image: mouse gestures schema
 ~~~
