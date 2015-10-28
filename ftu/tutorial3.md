@@ -19,8 +19,9 @@ The scene is the main part of the simulator where the simulated objects are
 animated and the user can interact with the enviroment. It takes the central
 place in the application GUI, between the toolbars and panels.
 
+**TODO: mark the scene in the image**
 ~~~
-image: main gazebo screen with scene marked somehow
+[[file:files/gazebo-boot-screen-panels.png|600px]]
 ~~~
 
 ### The Panels
@@ -28,6 +29,7 @@ image: main gazebo screen with scene marked somehow
 Both side panels, right and left, can be displayed, hidden or resized by
 pulling the bar that separates them from the scene.
 
+**TODO: mark the panels in the image**
 [[file:files/gazebo-boot-screen-panels.png|600px]]
 
 #### Left panel
@@ -69,9 +71,8 @@ The main gazebo toolbar includes some of the most used actions when interacting
 with the simulator such as: selection, move, rotate and scale objects; create 
 simple static shapes or copy/paste.
 
-~~~
-image: toobar with items explained in few words
-~~~
+**TODO: add description to options**
+[[file:files/gazebo-upper-toolbar.png|600px]]
 
 #### Bottom bar
 
@@ -79,9 +80,8 @@ The bottom toolbar displays data about the simulation, specially the simulation
 time and its relationship with the real life time. This is known as real time
 factor.
 
-~~~
-image: toobar with items explained in few words
-~~~
+**TODO: add description to options**
+[[file:files/gazebo-bottom-toolbar.png|600px]]
 
 ### The Menu 
 
@@ -89,9 +89,8 @@ Like most of applications into the system gazebo has an application menu
 integrated into the windows system. Some of the menu options are also 
 duplicated into the toolbars or right click context menu.
 
-~~~
-image: menu with items explained in few words
-~~~
+**TODO: add description to options**
+[[file:files/gazebo-menu.png|600px]]
 
 ## Mouse Controls
 
@@ -99,9 +98,8 @@ The mouse can be specially useful when navigating in 3D through the scene.
 This are the basic operations that can be done using the mouse to command
 the movements and actions into the scene:
 
+**TODO: include here a good schema about mouse gestures**
 ~~~
 image: mouse gestures schema
 ~~~
-
-
 
