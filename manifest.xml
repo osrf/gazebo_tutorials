@@ -624,7 +624,7 @@
 
     <tutorial title="Animate joints" ref='drcsim_animate_joints'>
       <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
-      <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
+      <description>How to move a robot in simulation without dynamics through the use of a model plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
 

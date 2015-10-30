@@ -314,7 +314,7 @@ The second method of spawning robots into Gazebo allows you to include your robo
 
 To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation to understand why these steps are required.
 
-We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a `model.config` file is addded to your `MYROBOT_description` package like so:
+We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a `model.config` file is added to your `MYROBOT_description` package like so:
 
 ~~~
 ../catkin_ws/src
