@@ -266,6 +266,7 @@ deb version, then you'll need to
     wget https://bitbucket.org/osrf/gazebo/raw/default/examples/plugins/camera_lens_control/CameraLensControlExample.cc
     wget https://bitbucket.org/osrf/gazebo/raw/default/examples/plugins/camera_lens_control/example.world
     wget https://bitbucket.org/osrf/gazebo/raw/default/examples/plugins/camera_lens_control/mainwindow.ui
+    wget https://bitbucket.org/osrf/gazebo/raw/default/examples/plugins/camera_lens_control/resources.qrc
     ~~~
 
 1.  Create a build directory
