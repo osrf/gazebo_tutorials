@@ -664,7 +664,7 @@ Here is a full URDF example that demonstrates how to control a floating box insi
 
 # Issue report, contribution
 
-Gazebo-ROS plugins are ROS packages. See http://wiki.ros.org/gazebo_plugins about how you can contribute.
+Gazebo-ROS plugins are stored in a ROS package. See [gazebo_plugins wiki page](http://wiki.ros.org/gazebo_plugins) about how you can contribute.
 
 # Next Steps
 
