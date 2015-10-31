@@ -662,6 +662,9 @@ Here is a full URDF example that demonstrates how to control a floating box insi
 
 **Description:** an example c++ plugin template for anyone who wants to write their own plugin.
 
+# Issue report, contribution
+
+Gazebo-ROS plugins are ROS packages. See http://wiki.ros.org/gazebo_plugins about how you can contribute.
 
 # Next Steps
 
