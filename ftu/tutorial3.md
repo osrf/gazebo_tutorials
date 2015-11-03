@@ -1,23 +1,21 @@
 # User Interface
 
-This is an overview of the Gazebo Graphical User Interface. We're not going to
-make our simple robot quite yet, but we'll become familiar with the tools we'll
-need to do so in the next tutorial.
+This is an introduction to the Gazebo Graphical User Interface, or GUI. We will learn interface basics like what the buttons do and how to navigate in the scene. 
+
+Start by double-clicking on the Gazebo icon to open Gazebo. 
 
 ## GUI
 
-This is the gazebo screen just after invoke the simulator:
+This is what you should see:
 
 [[file:files/gazebo-boot-screen.png|600px]]
 
-Note that gazebo is composed of several parts in this main screen. This
-turorial will give a quick look into every of them:
+Note that the Gazebo interface consists of multiple sections, explained below. 
 
 ### The Scene
 
-The scene is the main part of the simulator where the simulated objects are
-animated and the user can interact with the enviroment. It takes the central
-place in the application GUI, between the toolbars and panels.
+The Scene is the main part of the simulator. This is where the simulated objects are
+animated and you interact with the environment. 
 
 **TODO: mark the scene in the image**
 
@@ -25,61 +23,56 @@ place in the application GUI, between the toolbars and panels.
 
 ### The Panels
 
-Both side panels, right and left, can be displayed, hidden or resized by
-pulling the bar that separates them from the scene.
+Both side panels—right and left—can be displayed, hidden or resized by
+dragging the bar that separates them from the scene.
 
 **TODO: mark the panels in the image**
 
 [[file:files/gazebo-boot-screen-panels.png|600px]]
 
-#### Left panel
+#### Left Panel
 
-The left panel appears by default when launching gazebo application and provides
-the abilitiy to interact with the simulator in different ways from the tabs 
-available:
+The left panel appears by default when you launch Gazebo. There are three tabs in the panel:
 
-* **WORLD** tab: The world tab allows the user to check out and modify a good
-  part of the parameteres that affects your simulation. The whole list of the
-  simulated objects (models) can be explored, the physics parameters can be
-  adjusted or the user main view on the scene (meny entry GUI > Camera) can be
+* **WORLD** tab: The World tab displays the models that are currently in the scene, and allows you to view and modify the models' parameters, like their physics properties. WHAT DOES THIS MEAN?: Or the user main view on the scene (menu entry GUI > Camera) can be
   moved.
 
-* **INSERT** tab: The insert tab allows the user to interactively add new
-  objects (models) to the simulation by drag and drop them into the simulation
-  screen.
+* **INSERT** tab: The Insert tab is where you add new objects (models) to the simulation. Click (and release) on the model you want to insert, and click again in the Scene to add it.
 
-* **LAYERS** tab: The layers tab displays the different visualization groups
-  that are available in the simulation, if any. This is an optional feature to
-  help organizing the visuals of the simulation but the tab can be empty in most
-  of the cases.
 
-#### Right panel (hidden by default)
+* **LAYERS** tab: The Layers tab organizes and displays the different visualization groups
+  that are available in the simulation, if any. WHAT IS A VSUALIZATION GROUP? This is an optional feature, so this tab will be empty in most cases.
 
-The right panel is hidden by default, pull from the bar to open it. The right
-panel can be used to interact with some of the different mobile parts of a
-robot (the joints). If there is no object or static objects in the simulator 
+#### Right Panel (hidden by default)
+
+The right panel is hidden by default. Click and drag the bar to open it. The right
+panel can be used to interact with the mobile parts of a
+model (the joints). If there are no models, or only static models (meaning they don't have joints) in the Scene, 
 the panel does not display any information.
 
 ### The Toolbars
 
-The gazebo screen present two different toolbars located just above and below
-of the Scene part.
+The Gazebo interface has two Toolbars. One is located just above the Scene, and the other is just below.
 
-#### Upper toolbar
+#### Upper Toolbar
 
-The main gazebo toolbar includes some of the most used actions when interacting
-with the simulator such as: selection, move, rotate and scale objects; create 
-simple static shapes or copy/paste.
+The main Toolbar includes some of the most-used options for interacting
+with the simulator, such as buttons to: select, move, rotate, and scale objects; create 
+simple static shapes (models with no moving parts IS THIS AN ACCURATE DEFINITION?); and copy/paste. Go ahead and play around with each button to see how it behaves.
 
 **TODO: add description to options**
 
 [[file:files/gazebo-upper-toolbar.png|600px]]
 
-#### Bottom bar
+#### Bottom Toolbar
 
-The bottom toolbar displays data about the simulation, specially the simulation
-time and its relationship with the real life time. This is known as real time
-factor.
+The Bottom Toolbar displays data about the simulation, like the simulation
+time and its relationship to real-life time. "Simulation time" refers to how quickly time is passing in the simulator when a simulation is running. 
+Simulation can be slower or faster than real time, depending on how much computation is required to run the simulation. 
+
+"Real time" refers to the actual time that is passing in real life as the 
+simulator runs. The relationship between the simulation time and real time is known as the "real time factor." 
+It's the ratio of simulation time to real time.   IS THIS ACCURATE? GIVE AN EXAMPLE?
 
 **TODO: add description to options**
 
@@ -87,9 +80,9 @@ factor.
 
 ### The Menu 
 
-Like most of applications into the system gazebo has an application menu 
-integrated into the windows system. Some of the menu options are also 
-duplicated into the toolbars or right click context menu.
+Like most applications, Gazebo has an application menu 
+up top. Some of the menu options are 
+duplicated in the Toolbars or as right-click context menu options in the Scene. Check out the various menus to familiarize yourself. 
 
 **TODO: add description to options**
 
@@ -97,9 +90,10 @@ duplicated into the toolbars or right click context menu.
 
 ## Mouse Controls
 
-The mouse can be specially useful when navigating in 3D through the scene.
-This are the basic operations that can be done using the mouse to command
-the movements and actions into the scene:
+The mouse is very useful when navigating in the Scene. We highly reccomend using a mouse with a scroll wheel. 
+Below are the basic mouse operations for navigating in the Scene and changing the view angle.
+
+Right-clicking on models will open a context menu with various options. Right-click on a model now to see what's available. 
 
 **TODO: include here a good schema about mouse gestures**
 
