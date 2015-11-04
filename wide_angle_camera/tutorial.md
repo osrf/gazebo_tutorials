@@ -27,21 +27,21 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
     And paste the following content:
 
-    ~~~
-    <?xml version="1.0"?>
-    <model>
-      <name>Fisheye Camera</name>
-      <version>1.0</version>
-      <sdf version="1.5">model.sdf</sdf>
-      <author>
-        <name>My name</name>
-        <email>e-mail@example.com</email>
-      </author>
-      <description>
-        A simple fish-eye camera with a box for visualization.
-      </description>
-    </model>
-    ~~~
+      ~~~
+      <?xml version="1.0"?>
+      <model>
+        <name>Fisheye Camera</name>
+        <version>1.0</version>
+        <sdf version="1.5">model.sdf</sdf>
+        <author>
+          <name>My name</name>
+          <email>e-mail@example.com</email>
+        </author>
+        <description>
+          A simple fish-eye camera with a box for visualization.
+        </description>
+      </model>
+      ~~~
 
 1.  Create a second file in the same directory named `model.sdf`
 
