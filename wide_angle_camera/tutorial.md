@@ -118,14 +118,12 @@ Now you shold have something like this (except for the sky, if you don't enable 
 
 *   Now change lens's `<type>` to `custom` and add following code to the `<lens>` section of `model.sdf`:
 
-    ~~~
     <custom_function>
       <c1>1.05</c1>
       <c2>4</c2>
       <f>1.0</f>
       <fun>tan</fun>
     </custom_function>
-    ~~~
 
 *   set `<horizontal_fov>` value to `6.2831`
 *   `<cutoff_angle>` to `3.1415`
