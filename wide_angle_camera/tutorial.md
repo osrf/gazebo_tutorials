@@ -27,7 +27,6 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
     And paste the following content:
 
-        ~~~
         <?xml version="1.0"?>
         <model>
           <name>Fisheye Camera</name>
@@ -41,7 +40,6 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
             A simple fish-eye camera with a box for visualization.
           </description>
         </model>
-        ~~~
 
 1.  Create a second file in the same directory named `model.sdf`
 
@@ -49,54 +47,52 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
     With the content:
 
-~~~
-    <?xml version="1.0" ?>
-    <sdf version="1.5">
-      <model name="wideanglecamera">
-        <pose>0 0 0.05 0 0 0</pose>
-        <link name="link">
-          <inertial>
-            <mass>0.1</mass>
-          </inertial>
-          <collision name="collision">
-            <geometry>
-              <box>
-                <size>0.1 0.1 0.1</size>
-              </box>
-            </geometry>
-          </collision>
-          <visual name="visual">
-            <geometry>
-              <box>
-                <size>0.1 0.1 0.1</size>
-              </box>
-            </geometry>
-          </visual>
-          <sensor name="camera" type="wideanglecamera">
-            <camera>
-              <horizontal_fov>1.047</horizontal_fov>
-              <image>
-                <width>320</width>
-                <height>240</height>
-              </image>
-              <clip>
-                <near>0.1</near>
-                <far>100</far>
-              </clip>
-              <lens>
-                <type>gnomonical</type>
-                <scale_to_hfov>true</scale_to_hfov>
-                <cutoff_angle>1.5707</cutoff_angle>
-                <env_texture_size>512</env_texture_size>
-              </lens>
-            </camera>
-            <always_on>1</always_on>
-            <update_rate>30</update_rate>
-          </sensor>
-        </link>
-      </model>
-    </sdf>
-~~~
+        <?xml version="1.0" ?>
+        <sdf version="1.5">
+          <model name="wideanglecamera">
+            <pose>0 0 0.05 0 0 0</pose>
+            <link name="link">
+              <inertial>
+                <mass>0.1</mass>
+              </inertial>
+              <collision name="collision">
+                <geometry>
+                  <box>
+                    <size>0.1 0.1 0.1</size>
+                  </box>
+                </geometry>
+              </collision>
+              <visual name="visual">
+                <geometry>
+                  <box>
+                    <size>0.1 0.1 0.1</size>
+                  </box>
+                </geometry>
+              </visual>
+              <sensor name="camera" type="wideanglecamera">
+                <camera>
+                  <horizontal_fov>1.047</horizontal_fov>
+                  <image>
+                    <width>320</width>
+                    <height>240</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                  </clip>
+                  <lens>
+                    <type>gnomonical</type>
+                    <scale_to_hfov>true</scale_to_hfov>
+                    <cutoff_angle>1.5707</cutoff_angle>
+                    <env_texture_size>512</env_texture_size>
+                  </lens>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+              </sensor>
+            </link>
+          </model>
+        </sdf>
 
 1.  Start Gazebo:
 
