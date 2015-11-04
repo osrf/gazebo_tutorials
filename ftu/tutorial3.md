@@ -84,6 +84,8 @@ Like most applications, Gazebo has an application menu
 up top. Some of the menu options are 
 duplicated in the Toolbars or as right-click context menu options in the Scene. Check out the various menus to familiarize yourself. 
 
+NOTE: Some versions of Ubuntu hide application menus. If you don't see the menus, move your cursor to the top of the application window, and the menus should appear. 
+
 **TODO: add description to options**
 
 [[file:files/gazebo-menu.png|600px]]
