@@ -27,7 +27,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
     And paste the following content:
 
-    ~~~
+~~~
     <?xml version="1.0"?>
     <model>
       <name>Fisheye Camera</name>
@@ -41,7 +41,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
         A simple fish-eye camera with a box for visualization.
       </description>
     </model>
-    ~~~
+~~~
 
 1.  Create a second file in the same directory named `model.sdf`
 
@@ -49,7 +49,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
     With the content:
 
-    ~~~
+~~~
     <?xml version="1.0" ?>
     <sdf version="1.5">
       <model name="wideanglecamera">
@@ -96,7 +96,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
         </link>
       </model>
     </sdf>
-    ~~~
+~~~
 
 1.  Start Gazebo:
 
