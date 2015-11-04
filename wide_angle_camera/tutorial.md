@@ -11,7 +11,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 ## What to know?
 
 * You should already know how to use camera sensor.
-* Be familiar with [plugins](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin)
+* Be familiar with [plugins](http://gazebosim.org/tutorials?cat=write_plugin)
 
 ## Try it!
 
@@ -100,7 +100,7 @@ view is `120°`, `180°` or `270°` will require a wide-angle camera sensor.
 
 1.  Start Gazebo:
 
-        gazebo &
+        gazebo
 
 1.  Add several objects to the world, cubes, spheres, some objects from warehouse.
 In the `Insert` tab you should see your brand-new "Fisheye camera" model.
@@ -134,7 +134,7 @@ Now you shold have something like this (except for the sky, if you don't enable 
 *   set `<horizontal_fov>` value to `6.2831`
 *   `<cutoff_angle>` to `3.1415`
 
-The SDF should be looking like this:
+The SDF should look similar to this:
 
 %%%
 <sensor name="camera" type="wideanglecamera">
@@ -187,8 +187,6 @@ Here, you must change its `type` to `wideanglecamera`.
 
 ~~~
 <sensor name="camera" type="wideanglecamera">
-  <always_on>1</always_on>
-  <update_rate>30</update_rate>
   <camera>
     <horizontal_fov>6.283</horizontal_fov>
     <image>
@@ -199,52 +197,35 @@ Here, you must change its `type` to `wideanglecamera`.
       <near>0.1</near>
       <far>100</far>
     </clip>
-~~~
-
-We add a new section named `lens` where the type element is mandatory:
-
-~~~
+    
+    <!-- A new section named `lens`. -->
     <lens>
+      <!-- type element is mandatory -->
       <type>custom</type>
-~~~
-
-For custom lenses, we can manually define the mapping function `r = c1*f*fun(theta/c2 + c3)`.
-
-(More information [here](https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function))
-
-~~~
+    
+      <!-- manually defined mapping function r = c1*f*fun(theta/c2 + c3) -->
+      <!-- More information here: https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function -->
       <custom_function>
         <c1>1.05</c1>   <!-- linear scaling -->
         <c2>4</c2>      <!-- angle scaling -->
         <f>1.0</f>      <!-- one more scaling parameter -->
         <fun>tan</fun>  <!-- one of sin,tan,id -->
       </custom_function>
-~~~
-
-If `scale_to_hfov` is set to `true` your horizontal FOV will ramain as defined.
-Otherwise it depends on lens type and custom function, if there is one.
-
-~~~
+    
+      <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
+      <!-- othervise it depends on lens type and custom function, if there is one -->
       <scale_to_hfov>true</scale_to_hfov>
-~~~
-
-Clip everything that is outside of the `cutoff_angle`.
-
-~~~
+      <!-- clip everything that is outside of this angle -->
       <cutoff_angle>3.1415</cutoff_angle>
-~~~
-
-Set the resolution of the cubemap texture: the highter it is, the sharper is
-your image.
-
-~~~
+      <!-- resolution of the cubemap texture, the highter it is - the sharper is your image -->
       <env_texture_size>512</env_texture_size>
     </lens>
   </camera>
+  <always_on>1</always_on>
+  <update_rate>30</update_rate>
 </sensor>
 </link>
 ~~~
-
 
 ## Plugin Example
 
@@ -254,7 +235,7 @@ It is possible to adjust the `lens` settings from a plugin.
 need Gazebo headers to build it.  If you install Gazebo from source then you
 should already have the necessary files.  If you installed the Gazebo binary
 deb version, then you'll need to
-[install](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install)
+[install](http://gazebosim.org/install)
 `-dev` packages according to your Gazebo and sdformat versions.
 
 1.  Create directory and pull source files:
