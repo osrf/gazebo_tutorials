@@ -44,7 +44,7 @@ You should see the arm move like in the controller visualization video below.
 First, install Octave if you haven't already:
 
 ~~~
-sudo apt-get install octave
+sudo apt-get install octave liboctave-dev
 ~~~
 
 Then, change directories to the `octave` subdirectory of the `haptix-comm` install directory.
