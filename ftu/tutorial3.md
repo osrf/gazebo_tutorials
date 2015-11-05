@@ -37,18 +37,21 @@ in the panel:
 
 * **WORLD** tab: The World tab displays the models that are currently in the
   scene, and allows you to view and modify the models' parameters, like their
-physics properties. WHAT DOES THIS MEAN?: Or the user main view on the scene
-(select the GUI option and it will display the camera parameters) can be moved.
+  physics properties. You can also change the camera view angle by expanding the
+  "GUI" option and tweaking the camera pose. 
 
 * **INSERT** tab: The Insert tab is where you add new objects (models) to the
   simulation. Click (and release) on the model you want to insert, and click
-again in the Scene to add it.
+  again in the Scene to add it.
 
 
 * **LAYERS** tab: The Layers tab organizes and displays the different
-  visualization groups that are available in the simulation, if any. WHAT IS A
-VSUALIZATION GROUP? This is an optional feature, so this tab will be empty in
-most cases.
+  visualization groups that are available in the simulation, if any. A layer
+  may contain one or more models. Toggling a layer on or off will display
+  or hide the models in that layer. 
+  
+  This is an optional feature, so this tab will be empty in
+  most cases.
 
 #### Right Panel (hidden by default)
 
@@ -66,9 +69,8 @@ the other is just below.
 
 The main Toolbar includes some of the most-used options for interacting with
 the simulator, such as buttons to: select, move, rotate, and scale objects;
-create simple static shapes (models with no moving parts IS THIS AN ACCURATE
-DEFINITION?); and copy/paste. Go ahead and play around with each button to see
-how it behaves.
+create simple shapes (e.g. cube, sphere, cylinder); and copy/paste. Go ahead and play 
+around with each button to see how it behaves.
 
 **TODO: add description to options**
 
@@ -84,8 +86,9 @@ required to run the simulation.
 
 "Real time" refers to the actual time that is passing in real life as the
 simulator runs. The relationship between the simulation time and real time is
-known as the "real time factor." It's the ratio of simulation time to real
-time.   IS THIS ACCURATE? GIVE AN EXAMPLE?
+known as the "real time factor" (RTF). It's the ratio of simulation time to real
+time. The RTF is a measure of how fast or slow your simulation is running
+compared to real time. 
 
 **TODO: add description to options**
 
