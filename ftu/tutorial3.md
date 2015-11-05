@@ -104,7 +104,16 @@ NOTE: Some Linux desktops hide application menus. If you don't see the
 menus, move your cursor to the top of the application window, and the menus
 should appear. 
 
-**TODO: add description to options**
+FILE
+Save World (Save the world as-is)
+
+Save World As (Save the world as-is & provide a name)
+
+Save Configuration (Save your Gazebo interface configuration)
+
+Clone world (Start new simulation from the current state)
+
+Quit (Quit/close Gazebo)
 
 [[file:files/gazebo-menu.png|600px]]
 
