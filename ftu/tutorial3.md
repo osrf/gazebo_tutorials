@@ -38,7 +38,7 @@ in the panel:
 * **WORLD** tab: The World tab displays the models that are currently in the
   scene, and allows you to view and modify the models' parameters, like their
 physics properties. WHAT DOES THIS MEAN?: Or the user main view on the scene
-(menu entry GUI > Camera) can be moved.
+(select the GUI option and it will display the camera parameters) can be moved.
 
 * **INSERT** tab: The Insert tab is where you add new objects (models) to the
   simulation. Click (and release) on the model you want to insert, and click
