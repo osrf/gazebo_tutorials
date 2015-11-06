@@ -39,9 +39,7 @@ subdirectory and a `state.log` file. Here is an example:
 
 Follow the steps described in the
 [HAPTIX C-API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_comm)
-for compiling a program using your favorite operating system. Copy the code from
-[**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
-and paste it in your current project.
+for compiling a program using your favorite operating system.
 
 Uncomment the following blocks to enable logging:
 
