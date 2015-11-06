@@ -8,7 +8,7 @@ Start by double-clicking on the Gazebo icon to open Gazebo.
 
 This is what you should see:
 
-[[file:files/gazebo-boot-screen.png|600px]]
+[[file:files/ftu3-boot-screen.png|600px]]
 
 Note that the Gazebo interface consists of multiple sections, explained below. 
 
@@ -17,18 +17,14 @@ Note that the Gazebo interface consists of multiple sections, explained below.
 The Scene is the main part of the simulator. This is where the simulated
 objects are animated and you interact with the environment. 
 
-**TODO: mark the scene in the image**
-
-[[file:files/gazebo-boot-screen-panels.png|600px]]
+[[file:files/ftu3-scene.png|600px]]
 
 ### The Panels
 
 Both side panels—right and left—can be displayed, hidden or resized by dragging
 the bar that separates them from the scene.
 
-**TODO: mark the panels in the image**
-
-[[file:files/gazebo-boot-screen-panels.png|600px]]
+[[file:files/ftu3-panels.png|600px]]
 
 #### Left Panel
 
@@ -72,9 +68,7 @@ the simulator, such as buttons to: select, move, rotate, and scale objects;
 create simple shapes (e.g. cube, sphere, cylinder); and copy/paste. Go ahead and play 
 around with each button to see how it behaves.
 
-**TODO: add description to options**
-
-[[file:files/gazebo-upper-toolbar.png|600px]]
+[[file:files/ftu3-top-toolbar.png|600px]]
 
 #### Bottom Toolbar
 
@@ -90,9 +84,7 @@ known as the "real time factor" (RTF). It's the ratio of simulation time to real
 time. The RTF is a measure of how fast or slow your simulation is running
 compared to real time. 
 
-**TODO: add description to options**
-
-[[file:files/gazebo-bottom-toolbar.png|600px]]
+[[file:files/ftu3-bottom-toolbar.png|600px]]
 
 ### The Menu 
 
@@ -115,7 +107,7 @@ Clone world (Start new simulation from the current state)
 
 Quit (Quit/close Gazebo)
 
-[[file:files/gazebo-menu.png|600px]]
+[[file:files/ftu3-gazebo-menu.png|600px]]
 
 ## Mouse Controls
 
@@ -126,7 +118,5 @@ navigating in the Scene and changing the view angle.
 Right-clicking on models will open a context menu with various options.
 Right-click on a model now to see what's available. 
 
-**TODO: include here a good schema about mouse gestures**
 
-~~~ image: mouse gestures schema ~~~
-
+[[file:files/ftu3-mouse-controls.png|600px]]
