@@ -666,6 +666,11 @@ Here is a full URDF example that demonstrates how to control a floating box insi
 
 Gazebo-ROS plugins are stored in a ROS package. See [gazebo_plugins wiki page](http://wiki.ros.org/gazebo_plugins) about how you can contribute.
 
+# 3rd party plugins
+
+In addition to the plugins explained above, there are also a quite number of 3rd party Gazebo-ROS plugins. Some of them are found on ros.org ([example of search keyword](https://www.google.com/search?client=ubuntu&channel=fs&q=site%3Aros.org+*_gazebo_plugins&ie=utf-8&oe=utf-8)).
+If 3rd party a plugin is useful and generic enough, please consider pulling it into the official [gazebo_plugins wiki page](http://wiki.ros.org/gazebo_plugins) package by opening a suggestion at the issue tracker of each repository.
+
 # Next Steps
 
 Next we will analyze the `ros_control` packages integrated with Gazebo for tight controller/actuator/simulator integration
