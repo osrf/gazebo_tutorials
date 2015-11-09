@@ -46,15 +46,17 @@ in the panel:
   may contain one or more models. Toggling a layer on or off will display
   or hide the models in that layer. 
   
-  This is an optional feature, so this tab will be empty in
-  most cases.
+      This is an optional feature, so this tab will be empty in
+      most cases. To learn more about Layers, check out the 
+      [Visibility Layers](http://gazebosim.org/tutorials?tut=visual_layers&cat=build_robot) 
+      tutorial. 
 
 #### Right Panel (hidden by default)
 
 The right panel is hidden by default. Click and drag the bar to open it. The
 right panel can be used to interact with the mobile parts of a model (the
-joints). If there are no models, or only static models (meaning they don't have
-joints) in the Scene, the panel does not display any information.
+joints). If there are no models, or only static models (meaning they are not affected
+by physics) in the Scene, the panel does not display any information.
 
 ### The Toolbars
 
@@ -96,22 +98,11 @@ NOTE: Some Linux desktops hide application menus. If you don't see the
 menus, move your cursor to the top of the application window, and the menus
 should appear. 
 
-FILE
-Save World (Save the world as-is)
-
-Save World As (Save the world as-is & provide a name)
-
-Save Configuration (Save your Gazebo interface configuration)
-
-Clone world (Start new simulation from the current state)
-
-Quit (Quit/close Gazebo)
-
 [[file:files/ftu3-gazebo-menu.png|600px]]
 
 ## Mouse Controls
 
-The mouse is very useful when navigating in the Scene. We highly reccomend
+The mouse is very useful when navigating in the Scene. We highly recommend
 using a mouse with a scroll wheel.  Below are the basic mouse operations for
 navigating in the Scene and changing the view angle.
 
