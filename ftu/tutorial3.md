@@ -53,10 +53,9 @@ in the panel:
 
 #### Right Panel (hidden by default)
 
-The right panel is hidden by default. Click and drag the bar to open it. The
-right panel can be used to interact with the mobile parts of a model (the
-joints). If there are no models, or only static models (meaning they are not affected
-by physics) in the Scene, the panel does not display any information.
+The right panel is hidden by default. Click and drag the bar to open it. The right panel can 
+be used to interact with the mobile parts of a selected model (the joints). If there are no 
+models selected in the Scene, the panel does not display any information.
 
 ### The Toolbars
 
