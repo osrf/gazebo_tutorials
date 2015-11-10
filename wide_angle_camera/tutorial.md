@@ -2,7 +2,7 @@
 
 This tutorial shows how to use a wide-angle camera sensor.  A regular camera
 uses a [pinhole projection](https://en.wikipedia.org/wiki/Pinhole_camera),
-while a wide-anglecamera haa more options. Distortion for a moderate view
+while a wide-angle camera has more options. Distortion for a moderate view
 angle lens can be simulated according to [this
 tutorial](http://gazebosim.org/tutorials?tut=camera_distortion). But
 a camera with a fisheye, or other type of wide-angle lens whose field of
@@ -206,7 +206,7 @@ Here, you must change its `type` to `wideanglecamera`.
         <fun>tan</fun>  <!-- one of sin,tan,id -->
       </custom_function>
     
-      <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
+      <!-- if it is set to `true` your horizontal FOV will remain as defined -->
       <!-- othervise it depends on lens type and custom function, if there is one -->
       <scale_to_hfov>true</scale_to_hfov>
       <!-- clip everything that is outside of this angle -->
