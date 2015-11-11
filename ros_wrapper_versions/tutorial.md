@@ -37,7 +37,7 @@ the same ROS distro.
 
 ### Gazebo Ubuntu packages
 
-The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `osrfoundation.packages.org`. At the time of writing:
+The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
 
  * ***packages.ros.org***
   *  Indigo: host gazebo version 2.x package.
@@ -155,7 +155,7 @@ source. Thanks to catkin workspaces this is quite easy to do.***
 If you need some features only present in version 6.x of Gazebo,
 there is a way of installing `gazebo6` and ROS Jade. Please
 follow the instructions about how to use ROS with gazebo6 package
-which are in this same docuement.
+which are in this same document.
 
 #### Some ROS packages conflict with GazeboX ROS Wrappers!
 

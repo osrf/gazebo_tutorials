@@ -1,6 +1,24 @@
 <?xml version='1.0'?>
 <content>
   <tutorials>
+    <!-- ****************** -->
+    <!-- Guided tutorials -->
+
+    <tutorial title="First Time User" ref='ftu1'>
+      <markdown version="1.0">ftu/tutorial1.md</markdown>
+    </tutorial>
+
+    <tutorial title="First Time User" ref='ftu2'>
+      <markdown version="1.0">ftu/tutorial2.md</markdown>
+    </tutorial>
+
+    <tutorial title="First Time User" ref='ftu3'>
+      <markdown version="1.0">ftu/tutorial3.md</markdown>
+    </tutorial>
+
+    <tutorial title="First Time User" ref='ftu4'>
+      <markdown version="1.0">ftu/tutorial4.md</markdown>
+    </tutorial>
 
     <!-- ****************** -->
     <!-- Beginner tutorials -->
@@ -49,16 +67,18 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="Old versions (prior to gazebo4)" ref='install'>
-      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
-      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
-      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
-      <markdown version="4.0">install_old_versions/tutorial_4-0.md</markdown>
-      <description>Installation instructions for version prior to 4.0 of Gazebo</description>
+    <tutorial title="Unstable packages: prerelease and nightly (Ubuntu)" ref='install_unstable'>
+      <markdown version="7.0+">install_unstable/tutorial.md</markdown>
+      <description>
+        How to install and uninstall the unstable Ubuntu packages. Prereleases
+        and nightly releases are designed for users who wants to contribute
+        to gazebo developement or testing. Don't use them unless you have a
+        good reason for it.
+      </description>
       <tags>
         <tag>install</tag>
       </tags>
-      <skill>beginner</skill>
+      <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
@@ -69,6 +89,18 @@
        source code. For user who want to contribute with code patches or pull
        requests.
       </description>
+      <tags>
+        <tag>install</tag>
+      </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Old versions (prior to gazebo4)" ref='install'>
+      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
+      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
+      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
+      <markdown version="4.0">install_old_versions/tutorial_4-0.md</markdown>
+      <description>Installation instructions for version prior to 4.0 of Gazebo</description>
       <tags>
         <tag>install</tag>
       </tags>
@@ -593,7 +625,7 @@
 
     <tutorial title="Animate joints" ref='drcsim_animate_joints'>
       <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
-      <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
+      <description>How to move a robot in simulation without dynamics through the use of a model plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -766,6 +798,13 @@
       <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX logging" ref='haptix_logging'>
+      <markdown version="6.0+">haptix_logging/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the World API and
+        the Gazebo GUI for creating and playing back a log file.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -781,6 +820,7 @@
         <tutorial>install</tutorial>
 
         <tutorial>install_from_source</tutorial>
+        <tutorial>install_unstable</tutorial>
       </tutorials>
     </category>
 
@@ -1019,6 +1059,7 @@
         <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
         <tutorial>haptix_world_sim_api</tutorial>
+        <tutorial>haptix_logging</tutorial>
       </tutorials>
     </category>
 

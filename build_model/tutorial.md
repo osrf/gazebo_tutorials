@@ -26,7 +26,7 @@ SDF Models can range from simple shapes to complex robots. It refers to the `<mo
 
 This step involves gathering all the necessary 3D mesh files that are required to build your model. Gazebo provides a set of simple shapes: box, sphere, and cylinder. If your model needs something more complex, then continue reading.
 
-Meshes come from a number of places. [Google's 3D wharehouse](http://sketchup.google.com/3dwarehouse/) is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [Blender](http://blender.org) or [Sketchup](http://sketchup.google.com).
+Meshes come from a number of places. [Google's 3D warehouse](http://sketchup.google.com/3dwarehouse/) is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [Blender](http://blender.org) or [Sketchup](http://sketchup.google.com).
 
 Gazebo requires that mesh files be formatted as STL or Collada, with Collada being the preferred format.
 

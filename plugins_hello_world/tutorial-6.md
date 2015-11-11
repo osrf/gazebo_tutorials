@@ -16,7 +16,7 @@ include in their simulations.
 
 You should use a plugin when:
 
-*  you want to programmaticaly alter a simulation
+*  you want to programmatically alter a simulation
 
    Ex: move models, respond to events, insert new models given a set of preconditions
    
