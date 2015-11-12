@@ -235,6 +235,7 @@ two packages.  The following table summarizes compatible combinations:
 
 Simulator Version : Client SDK Version
 
+* 0.9.x : 0.8.y
 * 0.8.x : 0.7.y
 * 0.7.x : 0.6.y
 * 0.6.x : 0.5.y

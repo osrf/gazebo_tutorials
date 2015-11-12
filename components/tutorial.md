@@ -36,7 +36,7 @@ Here are the variables:
 
 `GAZEBO_PLUGIN_PATH`: colon-separated set of directories where Gazebo will search for the plugin shared libraries at runtime.
 
-`GAZEBO_MODEL_DATABASE`: URI of the online model database where Gazebo will download models from.
+`GAZEBO_MODEL_DATABASE_URI`: URI of the online model database where Gazebo will download models from.
 
 These defaults are also included in a shell script:
 
