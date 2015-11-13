@@ -371,7 +371,7 @@
       <skill>intermediate</skill>
     </tutorial>
     <tutorial title="Random Velocity Plugin" ref='plugins_random_velocity'>
-    	<markdown version="6">plugins_random_velocity/tutorial.md</markdown>
+    	<markdown version="6.0">plugins_random_velocity/tutorial-6.md</markdown>
     	<description>Use this for random walks of any link.</description>
     	<skill>intermediate</skill>
     </tutorial>
