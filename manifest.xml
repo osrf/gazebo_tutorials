@@ -370,6 +370,11 @@
       <description>How to create and get data from contact sensors.</description>
       <skill>intermediate</skill>
     </tutorial>
+    <tutorial title="Random Velocity Plugin" ref='plugins_random_velocity'>
+    	<markdown version="6">plugins_random_velocity/tutorial.md</markdown>
+    	<description>Use this for random walks of any link.</description>
+    	<skill>intermediate</skill>
+    </tutorial>
 
     <tutorial title="ROS overview" ref='ros_overview'>
       <markdown version="1.9+">ros_overview/tutorial.md</markdown>
