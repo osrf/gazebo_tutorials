@@ -347,6 +347,7 @@ void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
 RandomVelocityPluginPrivate.cc contains the private data pointer, in accordance with the [PIMPL idiom](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style) implementation(opaque pointers).
 The default initial values of all variables are set in it only.
 All other #includes are necessary for various parts of code for example
+
 1. <ignition/math/Rand.hh> for "ignition::math::Rand::DblUniform(-1, 1)"
 
 2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
@@ -407,6 +408,7 @@ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 
 Similar to what we did in Hello World we create function RandomVelocityPlugin::Load()
 Parameters passed in this are:
+
 1. [physics::ModelPtr](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/namespacegazebo_1_1physics.html#ab9c6a161b32573a45586f808c39afe72): A model is a collection of links, joints, and plugins.
 
 2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html) 
@@ -500,6 +502,7 @@ void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
 }
 ~~~
 This is the update function invoked above, [UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1common_1_1UpdateInfo.html#details) &_info primarily contain three information:
+
 1. Real time (realTime)
 
 2. Current simulation time (simTime)
@@ -507,6 +510,7 @@ This is the update function invoked above, [UpdateInfo](https://osrf-distributio
 3. Name of the world (worldName)
 
 Other important functions and classes used are: 
+
 1.[DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
 
 2. [Normalize()](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1math_1_1Vector3.html#afce261908c53f06a41a81752cdbfb373) : Normalizes the vector length by returning a unit lenght vector.
