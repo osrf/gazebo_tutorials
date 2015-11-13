@@ -152,9 +152,12 @@ Now comes the actual usage of the plugin.
 
 1. Plugin name is "random" and its corresponding shared object file(.so) is libRandomVelocityPlugin.so.
    .so files are dynamically linked at runtime.
+
 2. You can externally apply an initial velocity to the link, using initial_velocity tag.
+
 3. Velocity_factor is the magnitude of new velocities which would be generated after each time period equal to update time.
    Direction would be random but magnitude would remain constant.
+
 4. Clamping indicates that a range is set, maximum velocity in y direction cannot exceed the max_y and 
    minimum cannot be lesser than min_y.
    
@@ -345,9 +348,10 @@ RandomVelocityPluginPrivate.cc contains the private data pointer, in accordance 
 The default initial values of all variables are set in it only.
 All other #includes are necessary for various parts of code for example
 1. <ignition/math/Rand.hh> for "ignition::math::Rand::DblUniform(-1, 1)"
-2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
-3. <gazebo/physics/Model.hh> for "physics::ModelPtr _model"
 
+2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
+
+3. <gazebo/physics/Model.hh> for "physics::ModelPtr _model"
 
 ~~~
 using namespace gazebo;
@@ -404,6 +408,7 @@ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 Similar to what we did in Hello World we create function RandomVelocityPlugin::Load()
 Parameters passed in this are:
 1. [physics::ModelPtr](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/namespacegazebo_1_1physics.html#ab9c6a161b32573a45586f808c39afe72): A model is a collection of links, joints, and plugins.
+
 2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html) 
 
 The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement] (http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
@@ -496,14 +501,20 @@ void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
 ~~~
 This is the update function invoked above, [UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1common_1_1UpdateInfo.html#details) &_info primarily contain three information:
 1. Real time (realTime)
+
 2. Current simulation time (simTime)
+
 3. Name of the world (worldName)
 
 Other important functions and classes used are: 
 1.[DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
+
 2. [Normalize()](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1math_1_1Vector3.html#afce261908c53f06a41a81752cdbfb373) : Normalizes the vector length by returning a unit lenght vector.
+
 3. [ignition::math::vector3d](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html)
+
 4. [Clamp](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/namespaceignition_1_1math.html#a8a8c9d2bdc3f41ea0e71639b59b22a48)
+
 5. [SetLinearVelocity](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html#acb848e605587a69dfc0c5342905f1e3c)
 
 You can try modifying the plugin by involving angular acceleration, linear acceleration and can have keep them random or fixed and see the results accordingly.
