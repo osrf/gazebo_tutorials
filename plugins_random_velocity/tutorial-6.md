@@ -11,83 +11,15 @@ Once you have set the magnitude of velocity, direction is set on its own (by ran
 [Hello World Plugin](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin)
 
 # Example
-1. Change your current working directory to location of worlds folder in your gazebo source.
+1. Change your current working directory to location of worlds folder in your gazebo source(path is the path to your Gazebo source).
 2. Open random_velocity.world in your default editor.
 
 ~~~
-$ cd $(locate worlds)
+$ cd path/worlds
 $ gedit random_velocity.world
 ~~~
 
-You will observe a code like this :
-
-~~~
-<?xml version="1.0" ?>
-<sdf version="1.5">
-  <world name="default">
-    <!-- A global light source -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <!-- A ground plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <model name="box">
-      <pose>0 0 0.5 0 0 0</pose>
-      <link name="link">
-        <kinematic>true</kinematic>
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0.0</mu>
-                <mu2>0.0</mu2>
-              </ode>
-            </friction>
-          </surface>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-        </visual>
-      </link>
-
-      <!-- Apply a random velocity to the specified link-->
-      <!-- In this example, we move a box around. A key property of the link
-           is the frictionless surface -->
-      <plugin name="random" filename="libRandomVelocityPlugin.so">
-
-        <!-- Name of the link in this model that receives the velocity -->
-        <link>link</link>
-
-        <!-- Initial velocity that is applied to the link -->
-        <initial_velocity>0 0.5 0</initial_velocity>
-
-        <!-- Scaling factor that is used to compute a new velocity -->
-        <velocity_factor>0.5</velocity_factor>
-
-        <!-- Time, in seconds, between new velocities -->
-        <update_period>5</update_period>
-
-        <!-- Clamp the Z velocity value to zero. You can also clamp x and
-             y values -->
-        <min_z>0</min_z>
-        <max_z>0</max_z>
-      </plugin>
-    </model>
-  </world>
-</sdf>
-~~~
+You will observe a code like this : [gazebo/worlds/random_velocity.world](https://bitbucket.org/osrf/gazebo/src/fcb305874afb41aa9868747c1a993b8c5e6b259d/worlds/random_velocity.world?fileviewer=file-view-default)
 
 ## Code Explained
 
@@ -161,13 +93,15 @@ Now comes the actual usage of the plugin.
 4. Clamping indicates that a range is set, maximum velocity in y direction cannot exceed the max_y and 
    minimum cannot be lesser than min_y.
    
-Default value for scale is 1, update time is 10 and the (min_i, max_i) is (-1.79769e+308,1.79769e+308). 
+Default value for scale is 1, update time is 10 and the (min\_i, max\_i) is (-1.79769e+308,1.79769e+308). 
 1.79769e+308 is the maximum allowed value of float by Ignition math libraries.
 
 You can run it using 
+
 ~~~
-gazebo worlds/random_velocity.world
+gazebo worlds/random\_velocity.world
 ~~~
+
 You can play with the values of initial velocity, velocity_factor,update period etc and observe how that affects the simulation.
 
 ## Plugin Source
@@ -175,12 +109,14 @@ You can play with the values of initial velocity, velocity_factor,update period 
 The source code of this plugin is available on [bitbucket](https://bitbucket.org/osrf/gazebo/pull-requests/1823/random-velocity-plugin-merge-after-600/commits).
 
 If you have installed Gazebo from source then you can find this file where you downloaded the repository.
+
 ~~~
 $ cd /YourPath/gazebo/plugins/RandomVelocityPlugin.cc
 ~~~
 
 If you have installed from debian, then you can only locate header(.hh) and not (.cc).
 You can try finding the location using,
+
 ~~~
 $ locate RandomVelocityPlugin.hh
 ~~~
@@ -242,7 +178,7 @@ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   }
 
   // Get the link;
-  this->dataPtr->link = _model->GetLink(_sdf->Get<std::string>("link"));
+  this->dataPtr->link = \_model->GetLink(_sdf->Get<std::string>("link"));
   if (!this->dataPtr->link)
   {
     gzerr << "Unable to find link[" << _sdf->Get<std::string>("link") << "] "
@@ -253,36 +189,36 @@ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 
   // Get x clamping values
   if (_sdf->HasElement("min_x"))
-    this->dataPtr->xRange.X(_sdf->Get<double>("min_x"));
+    this->dataPtr->xRange.X(\_sdf->Get<double>("min_x"));
   if (_sdf->HasElement("max_x"))
-    this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));
+    this->dataPtr->xRange.Y(\_sdf->Get<double>("max_x"));
 
   // Get y clamping values
-  if (_sdf->HasElement("min_y"))
-    this->dataPtr->yRange.X(_sdf->Get<double>("min_y"));
-  if (_sdf->HasElement("max_y"))
-    this->dataPtr->yRange.Y(_sdf->Get<double>("max_y"));
+  if (\_sdf->HasElement("min_y"))
+    this->dataPtr->yRange.X(\_sdf->Get<double>("min_y"));
+  if (\_sdf->HasElement("max_y"))
+    this->dataPtr->yRange.Y(\_sdf->Get<double>("max_y"));
 
   // Get z clamping values
-  if (_sdf->HasElement("min_z"))
-    this->dataPtr->zRange.X(_sdf->Get<double>("min_z"));
-  if (_sdf->HasElement("max_z"))
-    this->dataPtr->zRange.Y(_sdf->Get<double>("max_z"));
+  if (\_sdf->HasElement("min_z"))
+    this->dataPtr->zRange.X(\_sdf->Get<double>("min_z"));
+  if (\_sdf->HasElement("max_z"))
+    this->dataPtr->zRange.Y(\_sdf->Get<double>("max_z"));
 
   // Set the initial velocity, if present
-  if (_sdf->HasElement("initial_velocity"))
+  if (\_sdf->HasElement("initial_velocity"))
   {
     this->dataPtr->velocity =
-      _sdf->Get<ignition::math::Vector3d>("initial_velocity");
+      \_sdf->Get<ignition::math::Vector3d>("initial_velocity");
   }
 
   // Set the velocity factor
-  if (_sdf->HasElement("velocity_factor"))
-    this->dataPtr->velocityFactor = _sdf->Get<double>("velocity_factor");
+  if (\_sdf->HasElement("velocity_factor"))
+    this->dataPtr->velocityFactor = \_sdf->Get<double>("velocity_factor");
 
   // Set the update period
-  if (_sdf->HasElement("update_period"))
-    this->dataPtr->updatePeriod = _sdf->Get<double>("update_period");
+  if (\_sdf->HasElement("update_period"))
+    this->dataPtr->updatePeriod = \_sdf->Get<double>("update_period");
 
   // Connect to the world update signal
   this->dataPtr->updateConnection = event::Events::ConnectWorldUpdateBegin(
@@ -396,7 +332,7 @@ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   }
 
   // Get the link;
-  this->dataPtr->link = _model->GetLink(_sdf->Get<std::string>("link"));
+  this->dataPtr->link = \_model->GetLink(_sdf->Get<std::string>("link"));
   if (!this->dataPtr->link)
   {
     gzerr << "Unable to find link[" << _sdf->Get<std::string>("link") << "] "
@@ -413,7 +349,7 @@ Parameters passed in this are:
 
 2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html) 
 
-The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement] (http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
+The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
 
 ~~~
 
@@ -424,25 +360,25 @@ if (_sdf->HasElement("max_x"))
    this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));
 ~~~
 
-If min_x exists for _sdf then,xRange.X is set to min_x.
-similarly for max_y.
+If min_x exists for _sdf then,xRange.X is set to min\_x.
+similarly for max\_y.
 x/y/zRange.X indicate min value and x/y/zRange.Y indicate max value.
 Their default values are set in RandomVelocityPluginPrivate.cc.
 
 ~~~
 // Set the initial velocity, if present
-  if (_sdf->HasElement("initial_velocity"))
+  if (\_sdf->HasElement("initial_velocity"))
   {
     this->dataPtr->velocity =
-      _sdf->Get<ignition::math::Vector3d>("initial_velocity");
+      \_sdf->Get<ignition::math::Vector3d>("initial_velocity");
   }
 // Set the velocity factor
-  if (_sdf->HasElement("velocity_factor"))
-    this->dataPtr->velocityFactor = _sdf->Get<double>("velocity_factor");
+  if (\_sdf->HasElement("velocity_factor"))
+    this->dataPtr->velocityFactor = \_sdf->Get<double>("velocity_factor");
 
   // Set the update period
-  if (_sdf->HasElement("update_period"))
-    this->dataPtr->updatePeriod = _sdf->Get<double>("update_period");
+  if (\_sdf->HasElement("update_period"))
+    this->dataPtr->updatePeriod = \_sdf->Get<double>("update_period");
 ~~~
 
 ignition::math::Vector3d can be understood from [here](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html).
@@ -457,7 +393,7 @@ This updates the connection of simulator with the world.
 An [Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgazebo_1_1event_1_1Event.html) class is to get notifications for simulator events. 
 [ConnectWorldUpdateBegin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1event_1_1Events.html#a441fb0fe08d924ab99b7255215e7502e) takes in the subscriber to this event and returns a connection.
 'bind' is a c++ standard function, it generates a forward calling wrapper, calling bind is equivalent to invoking 'Update',with arguments as 
-placeholders::_1.
+placeholders::\_1.
 The std::placeholders namespace contains the placeholder objects [_1, . . . _N] where N is an implementation defined maximum number. 
 
 ~~~
@@ -511,7 +447,7 @@ This is the update function invoked above, [UpdateInfo](https://osrf-distributio
 
 Other important functions and classes used are: 
 
-1.[DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
+1. [DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
 
 2. [Normalize()](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1math_1_1Vector3.html#afce261908c53f06a41a81752cdbfb373) : Normalizes the vector length by returning a unit lenght vector.
 
