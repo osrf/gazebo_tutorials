@@ -57,6 +57,8 @@ The Model Editor supports most of the basic model building tasks that be done by
 
 ## Vehicle construction
 
+### Creating a vehicle
+
 (give exact dimensions where possible, use align and snap tools)
 
 This section will provide you step by step instructions on creating a simple vehicle model in the Model Editor.
