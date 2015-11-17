@@ -67,7 +67,7 @@ This section will provide you step by step instructions on creating a simple veh
 
 1. Now flatten the chassis also with the Scale tool. Click and drag the blue arrow down so that the chassis is approximately half of its original size.
 
-[[file:files/ftu4/ftu4-chassis_scale.png|600px]]
+    [[file:files/ftu4/ftu4-chassis_scale.png|600px]]
 
 1. We want to lower the chassis closer to the ground. To give exact measurements, we will use the Link Inspector. Double click on the box to bring up the Inspsector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m. Click `OK` to save the changes and close the inspector.
 
@@ -75,17 +75,17 @@ This section will provide you step by step instructions on creating a simple veh
 
 1. The cylinder in it default orientation will not roll very well. Let's rotate it along the X axis using the Link Inspector. Double click on the cylinder, scroll to the bottom, and change `Roll` to 1.5707 radians (90 degrees) and hit the Enter key on the keyboard. Do not close the inspector just yet.
 
-[[file:files/ftu4/ftu4-wheel_rotate.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_rotate.png|600px]]
 
 1. Next, resize wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only by one. Expand the visual item by clicking on the small arrow next to the `visual` text label to expose its parameters. Scroll down to the `Geometry` section and change the `Radius` to 0.3m and `Length` to 0.25m. Hit Enter when done.
 
-[[file:files/ftu4/ftu4-wheel_visual.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_visual.png|600px]]
 
 1. You should now see in the Scene that a smaller cylinder appears inside the bigger cylinder. This is expected as we have only changed the visual geometry but not the collision. A visual is a graphical representation of the link and does not affect the physics simulation. To also update the wheel's the physics representation, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m.
 
 1. Now that we have the created our very first wheel, we'll use it as a template and make another three more. Select the wheel to highlight it and click on the Copy icon in the top Toolbar.
 
-[[file:files/ftu4/ftu4-wheel_copy.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_copy.png|600px]]
 
 1. Click on the Paste icon and move mouse back to the Scene to insert it. Repeat the process until there are four wheels in the Scene.
 
@@ -93,17 +93,17 @@ This section will provide you step by step instructions on creating a simple veh
 
 1. Move the mouse to one of the wheels; a line should now extend from the origin of the chassis to the end of the mouse. Click on the wheel to set it as the child of the joint. A new joint is created. By default it is a revolute joint which just happens to be the joint type we want.
 
-[[file:files/ftu4/ftu4-wheel_joint.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_joint.png|600px]]
 
 1. Next, we need to configure the axis of rotation of the wheel. We do this by double clicking on the joint (orange line) that connects between the chassis and the wheel to bring up the Joint Inspector. Scroll down to `Axis1`'s `Xyz` parameter, and change the axis to be `Z` (0, 0, 1). Pay attention to the RGB joint visual on the wheel. You should see that a yellow ring now apears over the blue arrow of the joint visual to indicate that it is the axis of rotation.
 
-[[file:files/ftu4/ftu4-wheel_copy.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_copy.png|600px]]
 
 1. Repeat the joint creation process and axis configuration for the remaining three wheels, make sure that a) the chassis is the parent of the joint and the wheel is the child, and b) the axis rotation is set to Z.
 
 1. To position the the wheel next to the chassis we show you two tools. First, we will use the Snap tool to position the wheel flush against the chassis. Select the Snap icon in the top Toolbar and click on the flat side of the cylinder to indicate that it will be moved during the snap action.
 
-[[file:files/ftu4/ftu4-wheel_snap.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_snap.png|600px]]
 
 1. Orient the user camera to see the side of the chassis and click on it to attach the wheel to the chassis. Do not worry about its position for now.
 
