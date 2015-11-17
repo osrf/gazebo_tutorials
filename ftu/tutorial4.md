@@ -10,7 +10,7 @@ But for now, we can do everything in the Gazebo GUI!
 
 To enter the model editor, click on `Edit` in the menu bar and select `Model Editor`. Alternatively, use the hotkeys, Ctrl+M, to switch from the Simulation mode to the Model Editor mode. The simulation will be paused as soon as you are in the Model Editor.
 
-The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain different widgets focused on editing and creating parts of the model. The bottom Toolbar that display simulation statistics data is hidden since the simulation is now paused.
+The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that display simulation statistics data is hidden since the simulation is now paused.
 
 #### Left Panel
 
@@ -33,11 +33,11 @@ The left panel, also known as the **Palette**, has two tabs.
 
 * **Settings** tab: The Settings tab allows you to set the name and basic parameters of the model you
 are building. It also displays a list of links, joints, nested models, and plugins that are currently
-part of the model. You can view and modify the part's parameters, like their poses, via its inspector by double clicking on the name of a part or by right clicking and select Open Inspector.
+part of the model. You can view and modify the part's parameters, like their poses, via its inspector by double clicking on the name of a part or by right clicking and selecting Open Inspector from the context menu.
 
 #### Toolbar
 
-Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene, such as buttons to: select, move, rotate, and scale objects. You can also copy/paste, align, and snap objects. A new Joint Creation tool is now available, which is used to create various types of links between two links in the model.
+Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene, such as buttons to: select, move, rotate, and scale objects. You can also copy/paste, align, and snap objects. A new Joint Creation tool is available. It is used for creating various types of joints between links in the model.
 
 #### Limitations
 
@@ -53,7 +53,7 @@ The Model Editor supports most of the basic model building tasks that be done by
 
 * support for heightmaps.
 
-* support for CAD functionalities.
+* CAD functionalities.
 
 ## Vehicle construction
 
@@ -128,4 +128,4 @@ This section will provide you step by step instructions on creating a simple veh
 
 1. Exit the Model Editor by going to `File` and select `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to continue running the simulation. If you want to edit the model again later, just right click on it and select `Edit Model` from the context menu.
 
-1. Feel free to play around with the Joint controller on the right panel to move the vehicle.
+1. Feel free to play around with the Joint Controller on the right panel to move the vehicle.
