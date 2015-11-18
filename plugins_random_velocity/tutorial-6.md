@@ -1,4 +1,4 @@
-# Overview 
+# Overview
 
 Random Velocity Plugin allows you to assign random velocity to a link in a world.
 
@@ -27,7 +27,7 @@ The above code is just an example of usage of Random Velocity Plugin.
 
 First, we create a model and a link, in this case our model is a cube of unit dimensions, which follows all kinematics rules.
 The surface is frictionless, since the coefficient of friction (mu) is set to zero.
-<include from='/</model/' to='/<link>/' src='https://bitbucket.org/osrf/gazebo/src/gazebo6/worlds/random_velocity.world?fileviewer=file-view-default' /> 
+<include from='/<model/' to='/</model>/' src='https://bitbucket.org/osrf/gazebo/src/gazebo6/worlds/random_velocity.world?fileviewer=file-view-default' />
 ~~~
 <model name="box">
       <pose>0 0 0.5 0 0 0</pose>
@@ -90,13 +90,13 @@ Now comes the actual usage of the plugin.
 3. Velocity\_factor is the magnitude of new velocities which would be generated after each time period equal to update time.
    Direction would be random but magnitude would remain constant.
 
-4. Clamping indicates that a range is set, maximum velocity in y direction cannot exceed the max\_y and 
+4. Clamping indicates that a range is set, maximum velocity in y direction cannot exceed the max\_y and
    minimum cannot be lesser than min\_y.
-   
-Default value for scale is 1, update time is 10 and the ``(min\_i, max\_i)`` is (-1.79769e+308,1.79769e+308). 
+
+Default value for scale is 1, update time is 10 and the ``(min\_i, max\_i)`` is (-1.79769e+308,1.79769e+308).
 1.79769e+308 is the maximum allowed value of float by ``Ignition math libraries``.
 
-You can run it using 
+You can run it using
 
 ~~~
 gazebo worlds/random_velocity.world
@@ -202,7 +202,7 @@ Parameters passed in this are:
 
 1. [physics::ModelPtr](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/namespacegazebo_1_1physics.html#ab9c6a161b32573a45586f808c39afe72): A model is a collection of links, joints, and plugins.
 
-2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html) 
+2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html)
 
 The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
 
@@ -245,11 +245,11 @@ this->dataPtr->updateConnection = event::Events::ConnectWorldUpdateBegin(
 ~~~
 
 This updates the connection of simulator with the world.
-An [Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgazebo_1_1event_1_1Event.html) class is to get notifications for simulator events. 
+An [Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgazebo_1_1event_1_1Event.html) class is to get notifications for simulator events.
 [ConnectWorldUpdateBegin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1event_1_1Events.html#a441fb0fe08d924ab99b7255215e7502e) takes in the subscriber to this event and returns a connection.
-'bind' is a c++ standard function, it generates a forward calling wrapper, calling bind is equivalent to invoking 'Update',with arguments as 
+'bind' is a c++ standard function, it generates a forward calling wrapper, calling bind is equivalent to invoking 'Update',with arguments as
 placeholders::\_1.
-The std::placeholders namespace contains the placeholder objects [_1, . . . _N] where N is an implementation defined maximum number. 
+The std::placeholders namespace contains the placeholder objects [_1, . . . _N] where N is an implementation defined maximum number.
 
 ~~~
 void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
@@ -300,7 +300,7 @@ This is the update function invoked above, [UpdateInfo](https://osrf-distributio
 
 3. Name of the world (worldName)
 
-Other important functions and classes used are: 
+Other important functions and classes used are:
 
 1. [DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
 
