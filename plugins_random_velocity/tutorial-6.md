@@ -27,7 +27,7 @@ The above code is just an example of usage of Random Velocity Plugin.
 
 First, we create a model and a link, in this case our model is a cube of unit dimensions, which follows all kinematics rules.
 The surface is frictionless, since the coefficient of friction (mu) is set to zero.
-<include from='/<model/' to='/</model>/' src='https://bitbucket.org/osrf/gazebo/src/gazebo6/worlds/random_velocity.world?fileviewer=file-view-default' />
+<include from='/    <model/' to='/</link>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 ~~~
 <model name="box">
       <pose>0 0 0.5 0 0 0</pose>
