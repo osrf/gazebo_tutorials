@@ -1014,6 +1014,7 @@
       <description>Gazebo scripting interface: NodeJS bindings for the Gazebo simulator.</description>
       <tutorials>
         <tutorial>gazebojs_install</tutorial>
+        <tutorial>gazebojs_install_mac</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
         <tutorial>gazebojs_models</tutorial>
