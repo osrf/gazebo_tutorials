@@ -65,7 +65,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 1. First,  we'll create the vehicle chassis. In the Insert tab in the left panel, click once on the Box icon, move the cursor to anywhere in the Scene,
    and click again to release the box.
 
-    [[file:files/ftu4/ftu4-editor_box.png|600px]]
+    [[file:files/ftu4/ftu4-editor_box.png|200px]]
 
 1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this using the Scale tool located on the top Toolbar.
    Select the box in the Scene, and a RGB-colored marker should appear over the box. The red color arrow represents the X axis, green is Y, and blue is Z.
@@ -101,7 +101,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Now that we have created our first wheel, we'll use it as a template and make three more. Select the wheel and click on the Copy icon in the top Toolbar.
 
-    [[file:files/ftu4/ftu4-wheel_copy.png|100px]]
+    [[file:files/ftu4/ftu4-wheel_copy.png|200px]]
 
 1. Click on the Paste icon and move the mouse back to the Scene to insert the copy. Repeat the process until there are four wheels in the Scene.
 
