@@ -65,12 +65,14 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 1. First,  we'll create the vehicle chassis. In the Insert tab in the left panel, click once on the Box icon, move the cursor to anywhere in the Scene,
    and click again to release the box.
 
-    [[file:files/ftu4/ftu4-editor_box.png|200px]]
+    [[file:files/ftu4/ftu4-editor_box.png|400px]]
 
 1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this using the Scale tool located on the top Toolbar.
    Select the box in the Scene, and a RGB-colored marker should appear over the box. The red color arrow represents the X axis, green is Y, and blue is Z.
    Move the mouse over the red arrow to highlight it, then click and drag to make the chassis longer along the X axis. Scale the chassis so it is roughly 2
    meters long. You can estimate this by looking at the 1x1 meter grids on the ground.
+
+    [[file:files/ftu4/ftu4-scale_tool.png|200px]]
 
 1. Now flatten the chassis with the Scale tool. Click and drag the blue arrow down so that the chassis is approximately half of its original size.
 
@@ -101,7 +103,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Now that we have created our first wheel, we'll use it as a template and make three more. Select the wheel and click on the Copy icon in the top Toolbar.
 
-    [[file:files/ftu4/ftu4-wheel_copy.png|200px]]
+    [[file:files/ftu4/ftu4-copy_tool.png|200px]]
 
 1. Click on the Paste icon and move the mouse back to the Scene to insert the copy. Repeat the process until there are four wheels in the Scene.
 
@@ -139,13 +141,11 @@ This section provides step-by-step instructions on creating a simple vehicle mod
    on the chassis to select it. Hold the Ctrl key to enable multi-selection and click on the wheel that is attached to it - you should see that both objects
    are now selected.
 
-    [[file:files/ftu4/ftu4-wheel_chassis_align.png|600px]]
-
 1. Click on the Align tool to bring up a sub-menu consisting of different alignment options. In our example, we want to align in the X axis so hover over
    either the `X Align Max` or `X Align Min` option to see a preview of the alignment result. The cylinder should be aligned to the front or rear end of
    the box. Click on the the alignment option to fix the configuration.
 
-    [[file:files/ftu4/ftu4-wheel_paste.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_chassis_align.png|600px]]
 
 1. To position the cylinder back above the ground, open the Link Inspector, scroll down to the `Pose` section, and change the `Z` position to 0.3m
    (same value as the cylinder radius).
