@@ -69,7 +69,7 @@ the simulator, such as buttons to: select, move, rotate, and scale objects;
 create simple shapes (e.g. cube, sphere, cylinder); and copy/paste. Go ahead and play 
 around with each button to see how it behaves.
 
-[[file:files/ftu3-top-toolbar.png|600px]]
+[[file:files/ftu3-top-toolbar.png|800px]]
 
 #### Bottom Toolbar
 
@@ -85,7 +85,7 @@ known as the "real time factor" (RTF). It's the ratio of simulation time to real
 time. The RTF is a measure of how fast or slow your simulation is running
 compared to real time. 
 
-[[file:files/ftu3-bottom-toolbar.png|600px]]
+[[file:files/ftu3-bottom-toolbar.png|800px]]
 
 ### The Menu 
 
@@ -93,11 +93,13 @@ Like most applications, Gazebo has an application menu up top. Some of the menu
 options are duplicated in the Toolbars or as right-click context menu options
 in the Scene. Check out the various menus to familiarize yourself. 
 
+[[file:files/ftu3-gazebo-menu.png|800px]]
+
 NOTE: Some Linux desktops hide application menus. If you don't see the
 menus, move your cursor to the top of the application window, and the menus
 should appear. 
 
-[[file:files/ftu3-gazebo-menu.png|600px]]
+[[file:files/ftu3-gazebo-menu.png|800px]]
 
 ## Mouse Controls
 
