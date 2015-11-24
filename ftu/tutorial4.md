@@ -65,6 +65,8 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 1. First,  we'll create the vehicle chassis. In the Insert tab in the left panel, click once on the Box icon, move the cursor to anywhere in the Scene,
    and click again to release the box.
 
+    [[file:files/ftu4/ftu4-editor_box.png|600px]]
+
 1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this using the Scale tool located on the top Toolbar.
    Select the box in the Scene, and a RGB-colored marker should appear over the box. The red color arrow represents the X axis, green is Y, and blue is Z.
    Move the mouse over the red arrow to highlight it, then click and drag to make the chassis longer along the X axis. Scale the chassis so it is roughly 2
@@ -77,6 +79,8 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 1. We want to lower the chassis closer to the ground. To give exact measurements, we will use the Link Inspector. Double-click on the box to bring up the
    Inspsector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m. Click `OK` to save the changes and close
    the Inspector.
+
+    [[file:files/ftu4/ftu4-chassis_height.png|600px]]
 
 1. Let's move on to the wheels. Start by inserting a cylinder from the Insert tab on the left panel.
 
@@ -97,9 +101,11 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Now that we have created our first wheel, we'll use it as a template and make three more. Select the wheel and click on the Copy icon in the top Toolbar.
 
-    [[file:files/ftu4/ftu4-wheel_copy.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_copy.png|100px]]
 
 1. Click on the Paste icon and move the mouse back to the Scene to insert the copy. Repeat the process until there are four wheels in the Scene.
+
+    [[file:files/ftu4/ftu4-wheel_paste.png|600px]]
 
 1. The chassis and the wheels are currently free-moving bodies. To constrain their motion, we'll add joints between each wheel and the chassis. Begin by
    clicking on the Joint Creation icon in the top Toolbar. Move the mouse over the chassis to see it highlighted, and click on it to set it as the parent
@@ -115,10 +121,12 @@ This section provides step-by-step instructions on creating a simple vehicle mod
    joint visual on the wheel. You should see that a yellow ring now apears over the blue arrow of the joint visual to indicate that it is the axis of
    rotation.
 
-    [[file:files/ftu4/ftu4-wheel_copy.png|600px]]
+    [[file:files/ftu4/ftu4-wheel_rotation_axis.png|600px]]
 
 1. Repeat the joint creation process and axis configuration for the remaining three wheels, make sure that a) the chassis is the parent of the joint and the
    wheel is the child, and b) the axis of rotation is set to Z.
+
+    [[file:files/ftu4/ftu4-wheel_joints.png|600px]]
 
 1. To position the wheel next to the chassis we'll use two tools. First, we will use the Snap tool to position the wheel flush against the chassis.
    Select the Snap icon in the top Toolbar and click on the flat side of the cylinder to indicate that it will be moved during the snap action.
@@ -131,15 +139,21 @@ This section provides step-by-step instructions on creating a simple vehicle mod
    on the chassis to select it. Hold the Ctrl key to enable multi-selection and click on the wheel that is attached to it - you should see that both objects
    are now selected.
 
+    [[file:files/ftu4/ftu4-wheel_chassis_align.png|600px]]
+
 1. Click on the Align tool to bring up a sub-menu consisting of different alignment options. In our example, we want to align in the X axis so hover over
    either the `X Align Max` or `X Align Min` option to see a preview of the alignment result. The cylinder should be aligned to the front or rear end of
    the box. Click on the the alignment option to fix the configuration.
+
+    [[file:files/ftu4/ftu4-wheel_paste.png|600px]]
 
 1. To position the cylinder back above the ground, open the Link Inspector, scroll down to the `Pose` section, and change the `Z` position to 0.3m
    (same value as the cylinder radius).
 
 1. Repeat the Snap and Alignment process for the remaining three wheels. Make sure to set the wheel position so that it sits on the ground. Once done,
    we have a vehicle with differential drive capability!
+
+    [[file:files/ftu4/ftu4-wheels_aligned.png|600px]]
 
 
 ### Adding a plugin
@@ -150,7 +164,12 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Save the model by going to the `File` menu and select `Save Model`. Enter a name for the model and click `Save`.
 
+    [[file:files/ftu4/ftu4-vehicle_save.png|600px]]
+
 1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to
    continue running the simulation. If you want to edit the model again later, just right-click on it and select `Edit Model` from the context menu.
+
+    [[file:files/ftu4/ftu4-vehicle_done.png|600px]]
+
 
 1. Feel free to play around with the Joint Controller on the right panel to move the vehicle.
