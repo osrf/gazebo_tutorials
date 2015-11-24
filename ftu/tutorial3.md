@@ -93,7 +93,7 @@ Like most applications, Gazebo has an application menu up top. Some of the menu
 options are duplicated in the Toolbars or as right-click context menu options
 in the Scene. Check out the various menus to familiarize yourself. 
 
-[[file:files/ftu3-gazebo-menu.png|800px]]
+[[file:files/ftu3-menu-options.png|800px]]
 
 NOTE: Some Linux desktops hide application menus. If you don't see the
 menus, move your cursor to the top of the application window, and the menus
