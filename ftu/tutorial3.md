@@ -8,7 +8,7 @@ Start by double-clicking on the Gazebo icon to open Gazebo.
 
 This is what you should see:
 
-[[file:files/ftu3-boot-screen.png|600px]]
+[[file:files/ftu3-boot-screen.png|800px]]
 
 Note that the Gazebo interface consists of multiple sections, explained below. 
 
@@ -17,14 +17,14 @@ Note that the Gazebo interface consists of multiple sections, explained below.
 The Scene is the main part of the simulator. This is where the simulated
 objects are animated and you interact with the environment. 
 
-[[file:files/ftu3-scene.png|600px]]
+[[file:files/ftu3-scene.png|800px]]
 
 ### The Panels
 
 Both side panels—right and left—can be displayed, hidden or resized by dragging
 the bar that separates them from the scene.
 
-[[file:files/ftu3-panels.png|600px]]
+[[file:files/ftu3-panels.png|800px]]
 
 #### Left Panel
 
@@ -111,4 +111,4 @@ Right-clicking on models will open a context menu with various options.
 Right-click on a model now to see what's available. 
 
 
-[[file:files/ftu3-mouse-controls.png|600px]]
+[[file:files/ftu3-mouse-controls.png|800px]]
