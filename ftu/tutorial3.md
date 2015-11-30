@@ -85,6 +85,13 @@ known as the "real time factor" (RTF). It's the ratio of simulation time to real
 time. The RTF is a measure of how fast or slow your simulation is running
 compared to real time. 
 
+The state of the world in Gazebo is calculated once per iteration. You can
+see the number of iterations on the right side of the bottom toolbar. Each
+iteration advances simulation by a fixed number of seconds, called the step
+size. By default, the step size is 1 ms. You can press
+the pause button to pause the simulation and step through a few steps at
+a time using the step button.
+
 [[file:files/ftu3-bottom-toolbar.png|1200px]]
 
 ### The Menu 
