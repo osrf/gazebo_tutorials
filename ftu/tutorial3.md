@@ -32,8 +32,8 @@ The left panel appears by default when you launch Gazebo. There are three tabs
 in the panel:
 
 * **WORLD** tab: The World tab displays the models that are currently in the
-  scene, and allows you to view and modify the models' parameters, like their
-  poses. You can also change the camera view angle by expanding the
+  scene, and allows you to view and modify model parameters, like their
+  pose. You can also change the camera view angle by expanding the
   "GUI" option and tweaking the camera pose. 
 
 * **INSERT** tab: The Insert tab is where you add new objects (models) to the
