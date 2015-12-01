@@ -5,19 +5,19 @@
     <!-- Guided tutorials -->
 
     <tutorial title="First Time User" ref='ftu1'>
-      <markdown version="1.0">ftu/tutorial1.md</markdown>
+      <markdown version="7.0">ftu/tutorial1.md</markdown>
     </tutorial>
 
     <tutorial title="First Time User" ref='ftu2'>
-      <markdown version="1.0">ftu/tutorial2.md</markdown>
+      <markdown version="7.0">ftu/tutorial2.md</markdown>
     </tutorial>
 
     <tutorial title="First Time User" ref='ftu3'>
-      <markdown version="1.0">ftu/tutorial3.md</markdown>
+      <markdown version="7.0">ftu/tutorial3.md</markdown>
     </tutorial>
 
     <tutorial title="First Time User" ref='ftu4'>
-      <markdown version="1.0">ftu/tutorial4.md</markdown>
+      <markdown version="7.0">ftu/tutorial4.md</markdown>
     </tutorial>
 
     <!-- ****************** -->
