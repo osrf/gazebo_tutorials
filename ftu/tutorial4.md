@@ -8,7 +8,7 @@ But for now, we can do everything right in the Gazebo GUI!
 
 ## Model Editor User Interface
 
-To enter the Model Editor, click on `Edit` in the menu bar and select `Model Editor`. Or, use the hotkeys, Ctrl+M. The simulation will be paused as soon as you are in the Model Editor.
+To enter the Model Editor, click on `Edit` in the menu bar and select `Model Editor`. Or, use the hotkeys, Ctrl+M. **Physics and the simulation will be paused** as soon as you are in the Model Editor.
 
 The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
 
@@ -115,6 +115,8 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Move the mouse to one of the wheels; a line should now extend from the origin of the chassis to the end of the mouse. Click on the wheel to set it as
    the child of the joint. A new joint is created. By default it is a revolute joint which just happens to be the joint type we want.
+   
+   Note: You may find it useful to change the view angle at this point. This can be done in the Upper Toolbar; click the cube icon with an orange side.  
 
     [[file:files/ftu4/ftu4-wheel_joint.png|600px]]
 
