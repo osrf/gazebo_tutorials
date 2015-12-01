@@ -20,6 +20,11 @@
       <markdown version="7.0">ftu/tutorial4.md</markdown>
     </tutorial>
 
+    <tutorial title="First Time User" ref='ftu5'>
+      <markdown version="7.0">ftu/tutorial5.md</markdown>
+    </tutorial>
+
+
     <!-- ****************** -->
     <!-- Beginner tutorials -->
 
