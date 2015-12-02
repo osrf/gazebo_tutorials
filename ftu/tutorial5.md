@@ -16,6 +16,50 @@ There are many SVG editors. For this tutorial, we will use the Open Source
  Inkscape program (see
 [installation instructions](https://inkscape.org/en/download) ).
 
+### Inkscape preparation
+
+Start Inkscape. This will create a blank document. First, lets change the
+ document size to better accomodate our wheel: under the `File->Document
+ properties menu`, select the `Page` tab and change the document size to a
+ custom size of 100.0 x 100.0 mm.
+
+[[file:files/ftu5-inkscape-page-tab.png|800px]]
+
+Then, in the same dialog, select the `Grids`
+ tab, press the `New` button to create a custom grid. Then, check the`Enabled`,
+`Visible`, and `Snap to visible grid lines only` options.
+
+[[file:files/ftu5-inkscape-grids-tab.png|800px]]
+
+You should end up with a document looking like this:
+
+[[file:files/ftu5-inkscape-blank.png|800px]]
+
+### Draw
+
+You can use the different tools (pen, text, stars and shapes, etc...) to create
+ your geometry. In this example, the wheel is made from circles (pressing the
+ Shift Key you can start your circle from the center, and using the CTRL key
+ allows you to keep the roudness of the shape). It is possible to combine
+ shapes together, the only rule is that the paths must be closed and the
+ part should have thickness. For example, a stick figure or two circles that
+ touch each other would not result in valid Gazebo models.
+
+[[file:files/ftu5-inkscape-simple-wheel.png|800px]]
+
+Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
+ to a path. Select `Select All` from the `Edit` menu. Then select
+`Path -> Object to Path` menu item. This will transform every object into
+ separate paths and subpaths. This transformation is irreversible, so if you
+ transform text into paths, you won't be able to alter the text.
+
+[[file:files/ftu5-inkscape-select-all.png|800px]]
+
+### Import
+
+Gazebo does not support SVG directly, it only supports 2D polylines. That's OK
+ because the Gazebo Model Editor has an import mechanism that extract the
+ polylines from SVG files and provides a preview.
 
 
 
