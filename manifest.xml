@@ -4,20 +4,44 @@
     <!-- ****************** -->
     <!-- Guided tutorials -->
 
-    <tutorial title="First Time User" ref='ftu1'>
-      <markdown version="7.0">ftu/tutorial1.md</markdown>
+    <!-- Beginner tutorials -->
+    <tutorial title="Beginner: Overview" ref='guided_b1'>
+      <markdown version="7.0">guided_b/tutorial1.md</markdown>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu2'>
-      <markdown version="7.0">ftu/tutorial2.md</markdown>
+    <tutorial title="Beginner: GUI" ref='guided_b2'>
+      <markdown version="7.0">guided_b/tutorial2.md</markdown>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu3'>
-      <markdown version="7.0">ftu/tutorial3.md</markdown>
+    <tutorial title="Beginner: Model Editor" ref='guided_b3'>
+      <markdown version="7.0">guided_b/tutorial3.md</markdown>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu4'>
-      <markdown version="7.0">ftu/tutorial4.md</markdown>
+
+    <!-- Intermediate tutorials -->
+    <tutorial title="Intermediate: 1" ref='guided_i1'>
+      <markdown version="7.0">guided_i/tutorial1.md</markdown>
+    </tutorial>
+
+    <tutorial title="Intermediate: 2" ref='guided_i2'>
+      <markdown version="7.0">guided_i/tutorial2.md</markdown>
+    </tutorial>
+
+    <tutorial title="Intermediate: 3" ref='guided_i3'>
+      <markdown version="7.0">guided_i/tutorial3.md</markdown>
+    </tutorial>
+
+    <!-- Advanced tutorials -->
+    <tutorial title="Intermediate: 1" ref='guided_a1'>
+      <markdown version="7.0">guided_a/tutorial1.md</markdown>
+    </tutorial>
+
+    <tutorial title="Intermediate: 2" ref='guided_a2'>
+      <markdown version="7.0">guided_a/tutorial2.md</markdown>
+    </tutorial>
+
+    <tutorial title="Intermediate: 3" ref='guided_a3'>
+      <markdown version="7.0">guided_a/tutorial3.md</markdown>
     </tutorial>
 
     <!-- ****************** -->
