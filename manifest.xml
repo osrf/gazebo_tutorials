@@ -4,20 +4,16 @@
     <!-- ****************** -->
     <!-- Guided tutorials -->
 
-    <tutorial title="Beginner: Intro" ref='ftu1'>
+    <tutorial title="Beginner: Overview" ref='ftu1'>
       <markdown version="7.0">ftu/tutorial1.md</markdown>
     </tutorial>
 
-    <tutorial title="Beginner: Overview" ref='ftu2'>
+    <tutorial title="Beginner: GUI" ref='ftu2'>
       <markdown version="7.0">ftu/tutorial2.md</markdown>
     </tutorial>
 
-    <tutorial title="Beginner: GUI" ref='ftu3'>
+    <tutorial title="Beginner: Model Editor" ref='ftu3'>
       <markdown version="7.0">ftu/tutorial3.md</markdown>
-    </tutorial>
-
-    <tutorial title="Beginner: Model Editor" ref='ftu4'>
-      <markdown version="7.0">ftu/tutorial4.md</markdown>
     </tutorial>
 
     <!-- ****************** -->
