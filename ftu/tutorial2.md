@@ -1,6 +1,4 @@
-# Gazebo Overview & Installation
-
-## What is Gazebo? ##
+# What is Gazebo? #
 
 Gazebo is a 3D dynamic simulator with the ability to accurately and
 efficiently simulate populations of robots in complex indoor and outdoor
@@ -26,7 +24,7 @@ A few key features of Gazebo include:
 
 * convenient programmatic and graphical interfaces
 
-## System requirements ##
+# System requirements #
 
 Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a flavor of [Linux](https://en.wikipedia.org/wiki/Linux). You will need a computer that has:
 
@@ -36,7 +34,7 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 * At least 500MB of free disk space,
 * Ubuntu Trusty or later installed.
 
-## Installation Instructions for Ubuntu ##
+# Installation Instructions for Ubuntu #
 
 1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo6_install.sh).
 
@@ -68,7 +66,7 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 1. Wait until the window disappears.
 
-## Run Gazebo ##
+# Run Gazebo #
 
 1. Press Alt-F2
 2. Type "gazebo", and press Enter.
