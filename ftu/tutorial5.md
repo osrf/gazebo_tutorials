@@ -51,15 +51,40 @@ Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
  to a path. Select `Select All` from the `Edit` menu. Then select
 `Path -> Object to Path` menu item. This will transform every object into
  separate paths and subpaths. This transformation is irreversible, so if you
- transform text into paths, you won't be able to alter the text.
+ transform text into paths, you will not be able to alter the text.
 
 [[file:files/ftu5-inkscape-select-all.png|800px]]
 
-### Import
+### Create a Gazebo Model
 
-Gazebo does not support SVG directly, it only supports 2D polylines. That's OK
- because the Gazebo Model Editor has an import mechanism that extract the
- polylines from SVG files and provides a preview.
+[SDFormat](http://sdformat.org) does not support SVG directly, it supports 2D
+ polylines. The Gazebo Model Editor has an import mechanism that extract the
+ polylines from SVG files, and save it them an SDF model file.
+
+
+Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
+ Gazebo Model Editor mode (as opposed to the simulation mode). Then, set the
+ thickness of the wheel to 0.025 m, and press `OK`. Your new link should
+ appear in the 3D view.
+The dialog also allows you to set the number of segments for each SVG spline.
+
+[[file:files/ftu5-extrude-link.png|800px]]
+
+Your wheel is now ready, and it comes with a default collision shape that is
+a copy of the generated 3D mesh.
+
+[[file:files/ftu5-custom-wheel.png|800px]]
+
+Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
+ to save the new model to disk. Press the "Save and Exit" button on the Exit
+ dialog, and the "Save Model" dialog will appear.
+
+[[file:files/ftu5-save-model.png|800px]]
+
+Set the name of the new model to "HollowWheel", and fill the information under
+ the `Advanced Options` section. Press the `Save` button. Your new Gazebo model  is ready to roll.
+
+### Add the wheel to your Car
 
 
 
