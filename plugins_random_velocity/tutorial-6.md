@@ -27,10 +27,10 @@ The above code is just example usage of the Random Velocity Plugin.
 
 First, we create a model and a link. In this case, our model is a cube of unit dimensions, which follows all kinematics rules.
 The surface is frictionless, since the coefficient of friction (mu) is set to zero.
-<include from='/    <model/' to='/</link>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
+<include from='/<model/' to='/</link>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 Now comes the actual usage of the plugin.
-<include from='/    <plugin name/' to='/</plugin>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
+<include from='/<plugin name/' to='/</plugin>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 1. Plugin name is "random" and its corresponding shared object file(.so) is ``libRandomVelocityPlugin.so``.
    .so files are dynamically linked at runtime.
@@ -115,7 +115,7 @@ RandomVelocityPlugin::~RandomVelocityPlugin()
 The first one is the constructor function that initializes the data objects using Private class RandomVelocityPluginPrivate.
 The second one is the destructor function that deletes the pointer pointing to current/[this](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style) instance's data.
 
-<include from='/   void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not fuction.\n";
+<include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not fuction.\n";
     return;/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 Similar to what we did in Hello World, we create function RandomVelocityPlugin::Load()
@@ -127,14 +127,14 @@ Parameters passed in are:
 
 The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a), link.
 
-<include from='/    // Get x clamping values/' to='this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/ // Get x clamping values/' to='this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 If min_x exists for _sdf then, xRange.X is set to min\_x.
 The same goes for max\_y.
 x/y/zRange.X indicate min value and x/y/zRange.Y indicate max value.
 Their default values are set in RandomVelocityPluginPrivate.cc.
 
-<include from='/    // Set the initial velocity/' to='/_sdf->Get<double>("update_period");/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/ // Set the initial velocity/' to='/_sdf->Get<double>("update_period");/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 You can learn about ignition::math::Vector3d [here](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html).
 The other two are simple setter functions.
@@ -151,7 +151,7 @@ An [Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgaze
 placeholders::\_1.
 The std::placeholders namespace contains the placeholder objects [_1, . . . _N] where N is an implementation-defined maximum number.
 
-<include from='/    void RandomVelocityPlugin/' to='/(this->dataPtr->velocity)/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/void RandomVelocityPlugin/' to='/(this->dataPtr->velocity)/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 This is the update function invoked above. [UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1common_1_1UpdateInfo.html#details) &_info primarily contain three pieces of information:
 
@@ -174,8 +174,8 @@ Other important functions and classes used are:
 5. [SetLinearVelocity](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html#acb848e605587a69dfc0c5342905f1e3c)
 
 You can modify the plugin by involving angular acceleration, linear acceleration, and you can have keep them random or fixed.
-You can also play with the relative velocity of two links by making it constant, and applying random velocity to one link and to see how the other functions to satisfy the constraints.
-You can also involve external force factors.
+You can also play with the relative velocity of two links by making it constant, and applying random velocity to one link and to see how the velocity of the other link changes to maintain that relative velocity.
+Or you may involve external force factors.
 
 
 
