@@ -127,7 +127,7 @@ Parameters passed in are:
 
 The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a), link.
 
-<include from='/ // Get x clamping values/' to='this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/ // Get x clamping values/' to='(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 If min_x exists for _sdf then, xRange.X is set to min\_x.
 The same goes for max\_y.
