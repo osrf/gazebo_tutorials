@@ -1,4 +1,4 @@
-# Install Gazebo using Ubuntu packages
+# Install Gazebo using Ubuntu packagesy
 
 ## One-line install
 
