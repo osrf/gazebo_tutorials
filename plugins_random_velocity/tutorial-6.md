@@ -91,7 +91,7 @@ All other #includes are necessary for various parts of code. For example:
 using namespace gazebo;
 ~~~
 
-To avoid writing gazebo repeatedly, before all Gazebo API.
+To avoid writing gazebo repeatedly, before using Gazebo routines, structures or object classes.
 
 ~~~
 GZ_REGISTER_MODEL_PLUGIN(RandomVelocityPlugin)
@@ -112,8 +112,8 @@ RandomVelocityPlugin::~RandomVelocityPlugin()
 }
 ~~~
 
-The first one is the constructor function that initializes the data objects using Private class RandomVelocityPluginPrivate.
-The second one is the destructor function that deletes the pointer pointing to current/[this](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style) instance's data.
+The first function is a constructor function that initializes the data objects using Private class RandomVelocityPluginPrivate.
+The second function is a destructor function that deletes the pointer pointing to current/[this](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style) instance's data.
 
 <include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not fuction.\n";
     return;/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
@@ -125,8 +125,7 @@ Parameters passed in are:
 
 2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html)
 
-The function checks that ModelPtr is not null and sdf::ElementPtr [HasElement](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a), link.
-
+The function checks that ModelPtr is not null and sdf::ElementPtr [has the element](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
 <include from='/ // Get x clamping values/' to='(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 If min_x exists for _sdf then, xRange.X is set to min\_x.
