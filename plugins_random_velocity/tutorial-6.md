@@ -82,7 +82,7 @@ The default initial values of all variables are set in it only.
 All other #includes are necessary for various parts of code. For example:
 
 1. <ignition/math/Rand.hh> for "ignition::math::Rand::DblUniform(-1, 1)"
-		
+
 2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
 
 3. <gazebo/physics/Model.hh> for "physics::ModelPtr _model"
