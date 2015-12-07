@@ -82,7 +82,7 @@ The default initial values of all variables are set in it only.
 All other #includes are necessary for various parts of code. For example:
 
 1. <ignition/math/Rand.hh> for "ignition::math::Rand::DblUniform(-1, 1)"
-
+		
 2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
 
 3. <gazebo/physics/Model.hh> for "physics::ModelPtr _model"
@@ -126,14 +126,35 @@ Parameters passed in are:
 2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html)
 
 The function checks that ModelPtr is not null and sdf::ElementPtr [has the element](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a),link.
-<include from='/ // Get x clamping values/' to='(_sdf->Get<double>("max_x"));/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+
+~~~
+// Get x clamping values
+  if (_sdf->HasElement("min_x"))
+    this->dataPtr->xRange.X(_sdf->Get<double>("min_x"));
+  if (_sdf->HasElement("max_x"))
+    this->dataPtr->xRange.Y(_sdf->Get<double>("max_x"));
+~~~
 
 If min_x exists for _sdf then, xRange.X is set to min\_x.
 The same goes for max\_y.
 x/y/zRange.X indicate min value and x/y/zRange.Y indicate max value.
 Their default values are set in RandomVelocityPluginPrivate.cc.
 
-<include from='/ // Set the initial velocity/' to='/_sdf->Get<double>("update_period");/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+~~~
+// Set the initial velocity, if present
+  if (_sdf->HasElement("initial_velocity"))
+  {
+    this->dataPtr->velocity =
+      _sdf->Get<ignition::math::Vector3d>("initial_velocity");
+  }
+// Set the velocity factor
+  if (_sdf->HasElement("velocity_factor"))
+    this->dataPtr->velocityFactor = _sdf->Get<double>("velocity_factor");
+
+  // Set the update period
+  if (_sdf->HasElement("update_period"))
+    this->dataPtr->updatePeriod = _sdf->Get<double>("update_period");
+~~~
 
 You can learn about ignition::math::Vector3d [here](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html).
 The other two are simple setter functions.
@@ -150,7 +171,47 @@ An [Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgaze
 placeholders::\_1.
 The std::placeholders namespace contains the placeholder objects [_1, . . . _N] where N is an implementation-defined maximum number.
 
-<include from='/void RandomVelocityPlugin/' to='/(this->dataPtr->velocity)/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+~~~
+void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
+{
+  GZ_ASSERT(this->dataPtr->link, "<link> in RandomVelocity plugin is null");
+
+  // Short-circuit in case the link is invalid.
+  if (!this->dataPtr->link)
+    return;
+
+  // Change direction when enough time has elapsed
+  if (_info.simTime - this->dataPtr->prevUpdate > this->dataPtr->updatePeriod)
+  {
+    // Get a random velocity value.
+    this->dataPtr->velocity.Set(
+        ignition::math::Rand::DblUniform(-1, 1),
+        ignition::math::Rand::DblUniform(-1, 1),
+        ignition::math::Rand::DblUniform(-1, 1));
+
+    // Apply scaling factor
+    this->dataPtr->velocity.Normalize();
+    this->dataPtr->velocity *= this->dataPtr->velocityFactor;
+
+    // Clamp X value
+    this->dataPtr->velocity.X(ignition::math::clamp(this->dataPtr->velocity.X(),
+        this->dataPtr->xRange.X(), this->dataPtr->xRange.Y()));
+
+    // Clamp Y value
+    this->dataPtr->velocity.Y(ignition::math::clamp(this->dataPtr->velocity.Y(),
+        this->dataPtr->yRange.X(), this->dataPtr->yRange.Y()));
+
+    // Clamp Z value
+    this->dataPtr->velocity.Z(ignition::math::clamp(this->dataPtr->velocity.Z(),
+        this->dataPtr->zRange.X(), this->dataPtr->zRange.Y()));
+
+    this->dataPtr->prevUpdate = _info.simTime;
+  }
+
+  // Apply velocity
+  this->dataPtr->link->SetLinearVel(this->dataPtr->velocity);
+}
+~~~
 
 This is the update function invoked above. [UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1common_1_1UpdateInfo.html#details) &_info primarily contain three pieces of information:
 
