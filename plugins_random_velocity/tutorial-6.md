@@ -24,16 +24,16 @@ in your Gazebo source (use the path to your Gazebo source).
     $ gedit random_velocity.world
     ~~~
 
-You will observe code like this :
+3. You will observe code like this :
 [gazebo/worlds/random_velocity.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/worlds/random_velocity.world)
 
-## Code Explained
+## World File Explained
 
 The above code is just example usage of the Random Velocity Plugin.
 
 First, we create a model and a link. In this case, our model is a cube of unit
-dimensions, which follows all kinematics rules.
-The surface is frictionless, since the coefficient of friction (mu) is set to zero.
+dimensions. The cube's surface is frictionless, since the coefficient of
+friction (mu) is set to zero.
 <include from='/    <model/' to='/</link>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 Now comes the actual usage of the plugin.
@@ -100,11 +100,11 @@ implementation (opaque pointers).
 The default initial values of all variables are set in it only.
 All other `#include`s are necessary for various parts of code. For example:
 
-1. <ignition/math/Rand.hh> for "ignition::math::Rand::DblUniform(-1, 1)"
+1. `<ignition/math/Rand.hh>` for `ignition::math::Rand::DblUniform(-1, 1)`
 
-2. <gazebo/common/Assert.hh> for "GZ_ASSERT"
+2. `<gazebo/common/Assert.hh>` for `GZ_ASSERT`
 
-3. <gazebo/physics/Model.hh> for "physics::ModelPtr _model"
+3. `<gazebo/physics/Model.hh>` for `physics::ModelPtr _model`
 
 ~~~
 using namespace gazebo;
@@ -146,12 +146,14 @@ Similar to what we did in Hello World, we create function
 `RandomVelocityPlugin::Load()`
 Parameters passed in are:
 
-1. [physics::ModelPtr](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/namespacegazebo_1_1physics.html#ab9c6a161b32573a45586f808c39afe72): A model is a collection of links, joints, and plugins.
+1. [physics::ModelPtr](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/namespacegazebo_1_1physics.html#ab9c6a161b32573a45586f808c39afe72):
+A model is a collection of links, joints, and plugins.
 
-2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.1/classsdf_1_1Element.html)
+2. [sdf::ElementPtr](http://osrf-distributions.s3.amazonaws.com/sdformat/api/dev/classsdf_1_1Element.html):
+A pointer to the SDF element for the plugin in the world file.
 
 The function checks that `ModelPtr` is not null and `sdf::ElementPtr`
-[has the accepted elements](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.3.0/classsdf_1_1Element.html#aee65641faa3f98cf2c62e31fd4021b0a).
+has the elements elements which are accepted by the plugin.
 
 ~~~
   // Get x clamping values
