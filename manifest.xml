@@ -7,14 +7,17 @@
     <!-- Beginner tutorials -->
     <tutorial title="Beginner: Overview" ref='guided_b1'>
       <markdown version="7.0">guided_b/tutorial1.md</markdown>
+      <description>Overview and installation instructions</description>
     </tutorial>
 
     <tutorial title="Beginner: GUI" ref='guided_b2'>
       <markdown version="7.0">guided_b/tutorial2.md</markdown>
+      <description>Introduction to the graphical interface.</description>
     </tutorial>
 
     <tutorial title="Beginner: Model Editor" ref='guided_b3'>
       <markdown version="7.0">guided_b/tutorial3.md</markdown>
+      <description>How to make or edit a model.</description>
     </tutorial>
 
 
