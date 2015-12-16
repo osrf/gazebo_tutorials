@@ -44,6 +44,8 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 # Installation Instructions for Ubuntu #
 
+If you run into problems during the install, please see the [complete install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install).
+
 1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo6_install.sh).
 
 1. Copy the following text:
