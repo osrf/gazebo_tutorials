@@ -79,7 +79,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4/ftu4-chassis_scale.png|600px]]
 
 1. We want to lower the chassis closer to the ground. To give exact measurements, we will use the Link Inspector. Double-click on the box to bring up the
-   Inspsector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m. Click `OK` to save the changes and close
+   Inspector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m. Click `OK` to save the changes and close
    the Inspector.
 
     [[file:files/ftu4/ftu4-chassis_height.png|600px]]
@@ -118,7 +118,7 @@ gm
 
     [[file:files/ftu4/ftu4-wheel_joint.png|600px]]
 
-1. Next, we need to configure the axis of rotation of the wheel. In the Joint Creation dialog. find the `Joint axis` section and change the axis to be `Z` (0, 0, 1). Pay attention to the RGB joint visual on the wheel. You should see that a yellow ring now apears over the blue arrow of the joint visual to indicate that it is the axis of rotation.
+1. Next, we need to configure the axis of rotation of the wheel. In the Joint Creation dialog. find the `Joint axis` section and change the axis to be `Z` (0, 0, 1). Pay attention to the RGB joint visual on the wheel. You should see that a yellow ring now appears over the blue arrow of the joint visual to indicate that it is the axis of rotation.
 
     [[file:files/ftu4/ftu4-wheel_rotation_axis.png|600px]]
 
@@ -131,7 +131,7 @@ gm
 
     [[file:files/ftu4/ftu4-wheel_align_y_reverse.png|600px]]
 
-1. To position the wheel above the ground, we can use the `Relative Pose` section at the bottom of the dialog to move the child link (wheel) relative to the parent link (chassis). Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, simple math calucation will show that we need to place the wheel at -0.1m relative to the chassis. So go ahead and change the `Z` position to -0.1m.
+1. To position the wheel above the ground, we can use the `Relative Pose` section at the bottom of the dialog to move the child link (wheel) relative to the parent link (chassis). Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, simple math calculation will show that we need to place the wheel at -0.1m relative to the chassis. So go ahead and change the `Z` position to -0.1m.
 
     [[file:files/ftu4/ftu4-wheel_pose_z.png|600px]]
 
@@ -141,31 +141,31 @@ gm
 
     [[file:files/ftu4/ftu4-wheel_joints.png|600px]]
 
-**Castor Wheel**
+**caster Wheel**
 
-1. To make a castor wheel for the vehicle, click on the Sphere button on left panel and insert it into the scene.
+1. To make a caster wheel for the vehicle, click on the Sphere button on left panel and insert it into the scene.
 
-    [[file:files/ftu4/ftu4-castor_sphere.png|600px]]
+    [[file:files/ftu4/ftu4-caster_sphere.png|600px]]
 
 1. Resize the sphere by giving it exact dimensions in the same way as you did for the front wheels. Go to the Visual tab to see the list of visuals in this link, expand the only visual item, scroll down to the `Geometry` section and change the `Radius` to 0.2m. Make sure to also do the same to the collision in the Collision tab.
 
-    [[file:files/ftu4/ftu4-castor_resize.png|600px]]
+    [[file:files/ftu4/ftu4-caster_resize.png|600px]]
 
-1. To create a joint between the castor wheel and the chassis, bring up the Joint Creation dialog by clicking on the Joint icon in the top toolbar. Move the mouse to the scene and select the chassis as the parent link and the sphere as the child link.
+1. To create a joint between the caster wheel and the chassis, bring up the Joint Creation dialog by clicking on the Joint icon in the top toolbar. Move the mouse to the scene and select the chassis as the parent link and the sphere as the child link.
 
-    [[file:files/ftu4/ftu4-castor_joint.png|600px]]
+    [[file:files/ftu4/ftu4-caster_joint.png|600px]]
 
-1. Unlike the front wheel joints, a castor wheel rolls in all directions and does not have a specific axis of rotation. In Gazebo, this is simulated using a ball joint. So under the `Joint types` section, select the `Ball` joint option. You should see the joint visual in the scene change color to indicate a different joint type has been set.
+1. Unlike the front wheel joints, a caster wheel rolls in all directions and does not have a specific axis of rotation. In Gazebo, this is simulated using a ball joint. So under the `Joint types` section, select the `Ball` joint option. You should see the joint visual in the scene change color to indicate a different joint type has been set.
 
-    [[file:files/ftu4/ftu4-castor_joint_ball.png|600px]]
+    [[file:files/ftu4/ftu4-caster_joint_ball.png|600px]]
 
-1. Next align the castor wheel so that it is centered with the chassis and positioned at the rear end. In the Align links section, select the `Y Align Center` option to center the two links in the `Y` axis, and select the `X Align Min` option to move the castor wheel so it is placed right at the back of the vehicle.
+1. Next align the caster wheel so that it is centered with the chassis and positioned at the rear end. In the Align links section, select the `Y Align Center` option to center the two links in the `Y` axis, and select the `X Align Min` option to move the caster wheel so it is placed right at the back of the vehicle.
 
-    [[file:files/ftu4/ftu4-castor_align.png|600px]]
+    [[file:files/ftu4/ftu4-caster_align.png|600px]]
 
-1. Finally, position the castor wheel so that it sits just above the ground. Do this by setting the `Z` position in the Relative Pose section to -0.3m.
+1. Finally, position the caster wheel so that it sits just above the ground. Do this by setting the `Z` position in the Relative Pose section to -0.3m.
 
-    [[file:files/ftu4/ftu4-castor_joint_z.png|600px]]
+    [[file:files/ftu4/ftu4-caster_joint_z.png|600px]]
 
 1. Press the `Create` button to finish the joint creation process.
 
