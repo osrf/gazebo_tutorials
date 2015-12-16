@@ -141,7 +141,7 @@ gm
 
     [[file:files/ftu4/ftu4-wheel_joints.png|600px]]
 
-**caster Wheel**
+**Caster Wheel**
 
 1. To make a caster wheel for the vehicle, click on the Sphere button on left panel and insert it into the scene.
 
