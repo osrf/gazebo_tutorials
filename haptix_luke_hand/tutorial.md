@@ -19,5 +19,27 @@ The model file will be provided in a zipped file that look like
    `Luke_Hand_Gazebo_vXX.X.zip` with corresponding documentation file in
    another zip file named `Luke_Hand_Gazebo_Doc_vXX.X.zip`.
 
-#
+## Installing Gazebo DEKA Luke hand model for handsim
 
+~~~
+unzip Luke_Hand_Gazebo_v1.0.zip -d ~/.gazebo/models/
+~~~
+
+## Installing documentation for Gazebo DEKA Luke hand model
+
+~~~
+unzip Luke_Hand_Gazebo_Doc_v1.0.zip -d /tmp/
+~~~
+
+To view documentation, open the following link in a browser:
+
+[file:///tmp/haptix_wiki/haptix/index.html](file:///tmp/haptix_wiki/haptix/index.html)
+
+# Running handsim with DEKA Luke hand model
+
+To start handsim with the DEKA Luke hand model, type the following commands
+  in a terminal:
+
+~~~
+gazebo --verbose worlds/luke_hand.world
+~~~
