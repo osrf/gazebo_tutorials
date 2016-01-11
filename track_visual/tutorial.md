@@ -84,14 +84,14 @@ Finally, we introduce the `<relative>` tag whose default value is `true`. When t
       </camera>
     </gui>
 
-Relaunch Gazebo. The camera now stays at 10 meters above the origin.
+Relaunch Gazebo. The camera is now staying 10 meters above the origin.
 
 To illustrate the last element, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<relative>` are set to `true`:
 
     <gui>
       <camera name="user_camera">
         <track_visual>
-          <name>box</name>
+          <name>sphere</name>
           <static>true</static>
           <relative>true</relative>
           <xyz>2 0 1</xyz>
@@ -106,7 +106,7 @@ To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
     <gui>
       <camera name="user_camera">
         <track_visual>
-          <name>box</name>
+          <name>sphere</name>
           <static>true</static>
           <relative>true</relative>
           <inherit_yaw>false</inherit_yaw>
