@@ -42,7 +42,7 @@ Within the `track_visual` tag, you can see how to select a visual by specifying 
 
 <include from='/          <static/' to='/</max_dist>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/track_visual/files/track_visual.world' />
 
-Because `<static>` is set to `false`, the position of the camera may vary but the distance between the camera and the model will depend on the value of the `min_dist` and `max_dist` elements.
+Because `<static>` is set to `false`, the position of the camera may vary but the distance between the camera and the model origin will depend on the value of the `min_dist` and `max_dist` elements.
 
 Now change `<static>` to `true`:
 
