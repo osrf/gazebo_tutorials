@@ -46,7 +46,6 @@ Because `<static>` is set to `false`, the position of the camera may vary but th
 
 Now change `<static>` to `true`:
 
-    ~~~
     <gui>
       <camera name="user_camera">
         <track_visual>
@@ -55,13 +54,11 @@ Now change `<static>` to `true`:
         </track_visual>
       </camera>
     </gui>
-    ~~~
 
 Relaunch Gazebo. The position of the camera is now fixed relatively to the model being tracked.
 
 By default, the camera is located 5 meters behind and 1 meter above the model. Try changing its location by specifying a `<xyz>` tag:
 
-    ~~~
     <gui>
       <camera name="user_camera">
         <track_visual>
@@ -71,13 +68,11 @@ By default, the camera is located 5 meters behind and 1 meter above the model. T
         </track_visual>
       </camera>
     </gui>
-    ~~~
 
 Relaunch Gazebo. The camera is now located 3 meters in front, 2 meters to the left, and 5 meters above the tracked model.
 
 Finally, we introduce the `<relative>` tag whose default value is `true`. When the `<static>` tag is `true`, this element specifies whether the coordinates provided by `<xyz>` are relative to the model reference frame or the world reference frame. Try changing the value of the `<relative>` tag:
 
-    ~~~
     <gui>
       <camera name="user_camera">
         <track_visual>
@@ -88,13 +83,11 @@ Finally, we introduce the `<relative>` tag whose default value is `true`. When t
         </track_visual>
       </camera>
     </gui>
-    ~~~
 
 Relaunch Gazebo. The camera now stays at 10 meters above the origin.
 
 To illustrate the last element, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<relative>` are set to `true`:
 
-    ~~~
     <gui>
       <camera name="user_camera">
         <track_visual>
@@ -105,13 +98,11 @@ To illustrate the last element, we will track a sphere instead of a cube. Change
         </track_visual>
       </camera>
     </gui>
-    ~~~
 
 Relaunch Gazebo. You should now see the camera following the sphere. But there is one issue: the camera jumps back and forth whenever the sphere makes a half turn. That is because, by default, the camera is configured to inherit the yaw rotation of the tracked visual.
 
 To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
 
-    ~~~
     <gui>
       <camera name="user_camera">
         <track_visual>
@@ -123,7 +114,6 @@ To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
         </track_visual>
       </camera>
     </gui>
-    ~~~
 
 Relaunch Gazebo. The camera should now follow the sphere flawlessly.
 
