@@ -40,7 +40,7 @@ Let's go further and understand the different elements of the `track_visual.worl
 
 Within the `track_visual` tag, you can see how to select a visual by specifying a `<name>` tag. The visual will be tracked from startup. The camera will follow the model by changing its orientation.
 
-<include from='/    <static/' to='/</max_dist>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/track_visual/files/track_visual.world' />
+<include from='/          <static/' to='/</max_dist>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/track_visual/files/track_visual.world' />
 
 Because `<static>` is set to `false`, the position of the camera may vary but the distance between the camera and the model will depend on the value of the `min_dist` and `max_dist` elements.
 
