@@ -86,7 +86,7 @@ Finally, we introduce the `<relative>` tag whose default value is `true`. When t
 
 Relaunch Gazebo. The camera is now staying 10 meters above the origin.
 
-To illustrate the last element, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<relative>` are set to `true`:
+To illustrate the last element `<inherit_yaw>`, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<relative>` are set to `true`:
 
     <gui>
       <camera name="user_camera">
