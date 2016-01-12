@@ -1,5 +1,6 @@
 # Overview
-This tutorial gives an overview of the haptix-comm simulation-specific API.
+This tutorial describes how to install the DEKA Luke hand model and how to start
+the simulation environment with this limb.
 
 We assume that you have already completed the
 [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).

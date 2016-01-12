@@ -828,6 +828,13 @@
         the Gazebo GUI for creating and playing back a log file.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX DEKA Luke hand installation" ref='haptix_luke_hand'>
+      <markdown version="6.0+">haptix_luke_hand/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to install the DEKA Luke
+        hand model and use it in Gazebo.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -1083,6 +1090,7 @@
         <tutorial>haptix_tactors</tutorial>
         <tutorial>haptix_world_sim_api</tutorial>
         <tutorial>haptix_logging</tutorial>
+        <tutorial>haptix_luke_hand</tutorial>
       </tutorials>
     </category>
 
