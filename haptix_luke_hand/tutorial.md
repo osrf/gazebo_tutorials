@@ -38,7 +38,7 @@ To view documentation, open the following link in a browser:
 
 # Running handsim with DEKA Luke hand model
 
-To start handsim with the DEKA Luke hand model, type the following command
+To start Gazebo with the DEKA Luke hand model, type the following command
   in a terminal:
 
 ~~~
