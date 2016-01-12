@@ -6,7 +6,7 @@ We assume that you have already completed the
 
 # Documentation
 The full world API documentation can be found
-[here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.8.2/index.html).
+[here](http://gazebosim.org/haptix/api).
 
 # Getting the DEKA Luke hand model and documentation
 
@@ -15,7 +15,7 @@ All performer team leads should have received a download link
 If you believe you should have received a copy but did not,
   please contact `haptix@osrfoundation.org` for help.
 
-The model file will be provided in a zipped file that look like
+The model file will be provided in a zipped file that looks like
    `Luke_Hand_Gazebo_vXX.X.zip` with corresponding documentation file in
    another zip file named `Luke_Hand_Gazebo_Doc_vXX.X.zip`.
 
@@ -37,7 +37,7 @@ To view documentation, open the following link in a browser:
 
 # Running handsim with DEKA Luke hand model
 
-To start handsim with the DEKA Luke hand model, type the following commands
+To start handsim with the DEKA Luke hand model, type the following command
   in a terminal:
 
 ~~~
