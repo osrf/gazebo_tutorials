@@ -107,7 +107,7 @@ gm
 
 1. The chassis and the wheels are currently free-moving bodies. To constrain their motion, we'll add joints between each wheel and the chassis. Begin by clicking on the Joint icon in the top Toolbar to bring up the Joint Creation dialog.
 
-    [[file:files/ftu4-joint_dialog.png|600px]]
+    [[file:files/ftu4-joint_dialog.png|300px]]
 
 1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis to see it highlighted, and click on it to set it as the parent of the joint.
 
@@ -174,11 +174,11 @@ The sensor we will be adding to the car is a depth camera sensor which is going 
 
 1. Go the left panel, or the Palette, select the `Insert` tab to see a list of models available in the `Model Database` section.
 
-    [[file:files/ftu4-insert_tab.png|150px]]
+    [[file:files/ftu4-insert_tab.png|300px]]
 
 1. The models in the lists are organized by the path that they are located in. As you can see, the first two lists contain models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from the online model database yet. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available on the online model database.
 
-    [[file:files/ftu4-model_database.png|150px]]
+    [[file:files/ftu4-model_database.png|300px]]
 
 1. The models are arranged in alphabetical order. Find Depth Camera in the list and click on it to start downloading the model. This may take a few seconds depending on the network connectivity.
 
@@ -204,7 +204,7 @@ The vehicle have built so far is complete with all the physical and sensor compo
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
-    [[file:files/ftu4-model_tree.png|150px]]
+    [[file:files/ftu4-model_tree.png|300px]]
 
 1. Under `Model Plugins`, you should see an `Add` button. Click on it to bring up a Model Plugin Inspector that lets you add a new plugin to the model.
 
@@ -215,13 +215,13 @@ The vehicle have built so far is complete with all the physical and sensor compo
 
 1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin stored on your local machine. It exists in the form of a dynamic shared library, hence the naming convention and the extension `.so` (on linux). Don not worry if you are using Gazebo on other operating systems as the extension gets automatically replaced with the correct one.
 
-    [[file:files/ftu4-model_plugin_inspector_done.png|600px]]
+    [[file:files/ftu4-model_plugin_inspector_done.png|400px]]
 
 1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires names of joints controlling the left and right wheels so it can move the vehicle in the right direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
 
 1. Click `OK` to add the plugin. The plugin should now appear under `Model Plugins` in the left panel.
 
-    [[file:files/ftu4-follower_plugin.png|150px]]
+    [[file:files/ftu4-follower_plugin.png|300px]]
 
 ### Save your model
 
