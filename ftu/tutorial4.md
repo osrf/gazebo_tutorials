@@ -172,33 +172,31 @@ gm
 
 The sensor we will be adding to the car is a depth camera sensor which is going to help us detect objects in front of the car. In this tutorial, we will insert an existing sensor model from the model database.
 
-1. Go the left panel, or the Palette, select the `Insert` tab to see a list of models available in the `Model Database`.
+1. Go the left panel, or the Palette, select the `Insert` tab to see a list of models available in the `Model Database` section.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-insert_tab.png|150px]]
 
 1. The models in the lists are organized by the path that they are located in. As you can see, the first two lists contain models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from the online model database yet. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available on the online model database.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-model_database.png|150px]]
 
 1. The models are arranged in alphabetical order. Find Depth Camera in the list and click on it to start downloading the model. This may take a few seconds depending on the network connectivity.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
-
 1. Once the download is complete, you should see the depth camera model appear in the Scene on the right. Move the mouse over to the Scene and click on an empty space in front of the car to insert the depth camera.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-depth_camera.png|600px]]
 
 1. Select the Translate tool in the top Toolbar and move the depth camera so that it is roughly centered with the car and sits on top of the chassis.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-depth_camera_translate.png|600px]]
 
 1. Next, fix the depth camera to the chassis. Click on the Joint icon in the top Toolbar to open the Joint Creation dialog. Move the mouse to the Scene and select the chassis as the parent link and the depth camera as the child link.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-depth_camera_joint.png|600px]]
 
 1. In the Joint Creation dialog under the `Joint Types` section, select the `Fixed` joint option, and click on `Create` to finish creating the joint.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-depth_camera_joint_fixed.png|600px]]
 
 ### Adding a plugin
 
@@ -206,36 +204,37 @@ The vehicle have built so far is complete with all the physical and sensor compo
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-model_tree.png|150px]]
 
 1. Under `Model Plugins`, you should see an `Add` button. Click on it to bring up a Model Plugin Inspector that lets you add a new plugin to the model.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-model_plugin_inspector.png|600px]]
 
 1. First, give the plugin a name. Enter `follower` in the `Plugin Name` field. The plugin name has to be unique within this model.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
 
 1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin stored on your local machine. It exists in the form of a dynamic shared library, hence the naming convention and the extension `.so` (on linux). Don not worry if you are using Gazebo on other operating systems as the extension gets automatically replaced with the correct one.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-model_plugin_inspector_done.png|600px]]
 
 1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires names of joints controlling the left and right wheels so it can move the vehicle in the right direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
 
-1. Click `OK` to add the plugin. Now you have an autonomous object following vehicle!
+1. Click `OK` to add the plugin. The plugin should now appear under `Model Plugins` in the left panel.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-follower_plugin.png|150px]]
 
 ### Save your model
 
-1. Save the model by going to the `File` menu and select `Save Model`. Enter a name for the model and click `Save`.
+1. Save the model by going to the `File` menu and select `Save As`. Enter a name for the model and click `Save`.
 
-    [[file:files/ftu4/ftu4-vehicle_save.png|600px]]
+    [[file:files/ftu4/ftu4-save_as.png|600px]]
 
-1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to continue running the simulation. If you want to edit the model again later, just right-click on it and select `Edit Model` from the context menu.
+1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to continue running the simulation.
 
-    [[file:files/ftu4/ftu4-vehicle_done.png|600px]]
+    [[file:files/ftu4/ftu4-exit.png|600px]]
 
 1. To test that the plugin is working, insert a box in front of the car and see it slowly move towards it.
 
-    [[file:files/ftu4/ftu4-??.png|600px]]
+    [[file:files/ftu4/ftu4-follow.png|600px]]
+
+If you want to edit the model again later, just right-click on it and select `Edit Model` from the context menu.
