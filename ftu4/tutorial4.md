@@ -109,7 +109,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-joint_dialog.png|400px]]
 
-1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis to see it highlighted, and click on it to set it as the parent of the joint.
+1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis in the Scene to see it highlighted, and click on it to set it as the parent of the joint.
 
 1. Move the mouse to the left front wheel; a line should now extend from the origin of the chassis to the end of the mouse. Click on the wheel to set it as the child of the joint. A new joint is created. By default it is a revolute joint (as indicated in under `Joint Types` section in the dialog) which just happens to be the joint type we want.
 
@@ -176,7 +176,7 @@ The sensor we will be adding to the car is a depth camera sensor which is going 
 
     [[file:files/ftu4-insert_tab.png|300px]]
 
-1. The models in the lists are organized by the path that they are located in. As you can see, the first two lists contain models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from the online model database yet. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available on the online model database.
+1. The models in the lists are organized by the path that they are located in. As you can see, the first lists contains models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from the online model database. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available from the online model database.
 
     [[file:files/ftu4-model_database.png|300px]]
 
@@ -186,7 +186,7 @@ The sensor we will be adding to the car is a depth camera sensor which is going 
 
     [[file:files/ftu4-depth_camera.png|600px]]
 
-1. Select the Translate tool in the top Toolbar and move the depth camera so that it is roughly centered with the car and sits on top of the chassis.
+1. Select the Translate tool in the top Toolbar and move the depth camera so that it sits on top of the chassis at the front of the vehicle and roughly centered in the `Y` axis.
 
     [[file:files/ftu4-depth_camera_translate.png|600px]]
 
@@ -200,7 +200,7 @@ The sensor we will be adding to the car is a depth camera sensor which is going 
 
 ### Adding a plugin
 
-The vehicle have built so far is complete with all the physical and sensor components. However, it does not really do much other than staying still and generating depth data. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note it is possible to create your own plugins but it requires writing code.
+The vehicle have built so far is complete with all the physical and sensor components. However, it will not really do much other than staying still and generating depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note it is possible to create your own plugins but it requires writing code.
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
@@ -213,11 +213,11 @@ The vehicle have built so far is complete with all the physical and sensor compo
 1. First, give the plugin a name. Enter `follower` in the `Plugin Name` field. The plugin name has to be unique within this model.
 
 
-1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin stored on your local machine. It exists in the form of a dynamic shared library, hence the naming convention and the extension `.so` (on linux). Don not worry if you are using Gazebo on other operating systems as the extension gets automatically replaced with the correct one.
+1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin library stored on your local machine. It exists in the form of a dynamically linked shared object library, hence the naming convention and the extension `.so` (on linux). Do not worry if you are using Gazebo on other operating systems as the extension will be automatically replaced with the correct one.
 
     [[file:files/ftu4-model_plugin_inspector_done.png|400px]]
 
-1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires names of joints controlling the left and right wheels so it can move the vehicle in the right direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
+1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires specifying the name of joints controlling the left and right wheels so it can move the vehicle in the right direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
 
 1. Click `OK` to add the plugin. The plugin should now appear under `Model Plugins` in the left panel.
 
@@ -229,12 +229,12 @@ The vehicle have built so far is complete with all the physical and sensor compo
 
     [[file:files/ftu4-save_as.png|400px]]
 
-1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to continue running the simulation.
+1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to run the simulation.
 
     [[file:files/ftu4-exit.png|600px]]
 
-1. To test that the plugin is working, insert a box in front of the car and see it slowly move towards it.
+1. To test that the plugin is working, insert a box in front of the car and see the car move slowly towards it.
 
     [[file:files/ftu4-follow.png|600px]]
 
-If you want to edit the model again later, just right-click on it and select `Edit Model` from the context menu.
+If you want to edit the model again later, just right-click on it and select `Edit Model` in the context menu.
