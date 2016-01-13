@@ -17,7 +17,7 @@
     </tutorial>
 
     <tutorial title="First Time User" ref='ftu4'>
-      <markdown version="1.0">ftu/tutorial4.md</markdown>
+      <markdown version="1.0">ftu4/tutorial4.md</markdown>
     </tutorial>
 
     <!-- ****************** -->
