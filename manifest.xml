@@ -304,6 +304,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Tracking visuals" ref='track_visual'>
+      <markdown version="7.0+">track_visual/tutorial.md</markdown>
+      <description>Use the graphical interface or SDF files to track visuals with the user camera.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Instrument HDF5 Datasets" ref='instrument_hdf5_datasets'>
       <markdown version="1.9+">instrument_hdf5_datasets/tutorial.md</markdown>
       <description>How to dump simulation data into HDF5 format for benchmark.</description>
@@ -888,6 +894,7 @@
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
+        <tutorial>track_visual</tutorial>
       </tutorials>
     </category>
 
