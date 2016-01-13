@@ -117,6 +117,16 @@ To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
 
 Relaunch Gazebo. The camera should now follow the sphere flawlessly.
 
+Below is the complete list of elements that can be set within `<track_visual>`:
+
+* `<name>`: Name of the tracked visual. If no name is provided, the remaining settings will be applied whenever tracking is triggered in the GUI. This parameter is never ignored.
+* `<static>`: If set to `true`, the position of the camera is fixed relatively to the model or to the world, depending on the value of the `<use_model_frame>` element. Otherwise, the position of the camera may vary but the distance between the camera and the model will depend on the value of the `<min_dist>` and `<max_dist>` elements. In any case, the camera will always follow the model by changing its orientation. This parameter is never ignored.
+* `<min_dist>`: Minimum distance between the camera and the tracked visual. This parameter is ignored when `<static>` is `true`.
+* `<max_dist>`: Maximum distance between the camera and the tracked visual. This parameter is ignored when `<static>` is `true`.
+* `<use_model_frame>`: If set to `true`, the position of the camera is relative to the model reference frame, which means that its position relative to the model will not change. Otherwise, the position of the camera is relative to the world reference frame, which means that its position relative to the world will not change. This parameter is ignored when `<static>` is `false`.
+* `<xyz>`: The position of the camera's reference frame. If `<use_model_frame>` is set to `true`, the position is relative to the model reference frame, otherwise it represents world coordinates. This parameter is ignored when `<static>` is `false`.
+* `<inherit_yaw>`: If set to `true`, the camera will inherit the yaw rotation of the tracked model. This parameter is ignored when `<static>` is `false` or when `<use_model_frame>` is `false`. In other words, it is only used if `<static>` and `<use_model_frame>` are both `true`.
+
 ## Dynamic Reconfigure
 
 The camera properties can be adjusted dynamically within Gazebo.
