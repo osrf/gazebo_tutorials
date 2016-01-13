@@ -75,7 +75,7 @@ By default, the camera is located 5 meters behind and 1 meter above the model. T
 
 Relaunch Gazebo. The camera is now located 3 meters in front, 2 meters to the left, and 5 meters above the tracked model.
 
-Finally, we introduce the `<relative>` tag whose default value is `true`. When the `<static>` tag is `true`, this element specifies whether the coordinates provided by `<xyz>` are relative to the model reference frame or the world reference frame. Try changing the value of the `<relative>` tag:
+Finally, we introduce the `<use_model_frame>` tag whose default value is `true`. When the `<static>` tag is `true`, this element specifies whether the coordinates provided by `<xyz>` are relative to the model reference frame or the world reference frame. Try changing the value of the `<use_model_frame>` tag:
 
     ~~~
     <gui>
@@ -83,7 +83,7 @@ Finally, we introduce the `<relative>` tag whose default value is `true`. When t
         <track_visual>
           <name>box</name>
           <static>true</static>
-          <relative>false</relative>
+          <use_model_frame>false</use_model_frame>
           <xyz>0 0 10</xyz>
         </track_visual>
       </camera>
@@ -92,7 +92,7 @@ Finally, we introduce the `<relative>` tag whose default value is `true`. When t
 
 Relaunch Gazebo. The camera now stays at 10 meters above the origin.
 
-To illustrate the last element, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<relative>` are set to `true`:
+To illustrate the last element, we will track a sphere instead of a cube. Change `<name>` to `sphere` and make sure that `<static>` and `<use_model_frame>` are set to `true`:
 
     ~~~
     <gui>
@@ -100,7 +100,7 @@ To illustrate the last element, we will track a sphere instead of a cube. Change
         <track_visual>
           <name>box</name>
           <static>true</static>
-          <relative>true</relative>
+          <use_model_frame>true</use_model_frame>
           <xyz>2 0 1</xyz>
         </track_visual>
       </camera>
@@ -117,7 +117,7 @@ To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
         <track_visual>
           <name>box</name>
           <static>true</static>
-          <relative>true</relative>
+          <use_model_frame>true</use_model_frame>
           <inherit_yaw>false</inherit_yaw>
           <xyz>2 0 1</xyz>
         </track_visual>
