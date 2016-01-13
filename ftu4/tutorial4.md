@@ -98,7 +98,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 1. You should now see in the Scene that a smaller cylinder appears inside the bigger cylinder. This is expected as we have only changed the visual geometry but not the collision. A 'visual' is the graphical representation of the link and does not affect the physics simulation. On the other hand, a 'collision' is used by the physics engine for collision checking. To also update the wheel's collision, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m.
 
 1. Now that we have created our first wheel, we'll use it as a template and make another one. Select the wheel and click on the Copy icon in the top Toolbar.
-gm
+
     [[file:files/ftu4-copy_tool.png|200px]]
 
 1. Click on the Paste icon and move the mouse back to the Scene to insert the copy.
@@ -107,7 +107,7 @@ gm
 
 1. The chassis and the wheels are currently free-moving bodies. To constrain their motion, we'll add joints between each wheel and the chassis. Begin by clicking on the Joint icon in the top Toolbar to bring up the Joint Creation dialog.
 
-    [[file:files/ftu4-joint_dialog.png|300px]]
+    [[file:files/ftu4-joint_dialog.png|400px]]
 
 1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis to see it highlighted, and click on it to set it as the parent of the joint.
 
@@ -227,7 +227,7 @@ The vehicle have built so far is complete with all the physical and sensor compo
 
 1. Save the model by going to the `File` menu and select `Save As`. Enter a name for the model and click `Save`.
 
-    [[file:files/ftu4-save_as.png|600px]]
+    [[file:files/ftu4-save_as.png|400px]]
 
 1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to continue running the simulation.
 
