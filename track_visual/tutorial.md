@@ -94,14 +94,12 @@ To illustrate the last element `<inherit_yaw>`, we will track a sphere instead o
           <name>sphere</name>
           <static>true</static>
           <use_model_frame>true</use_model_frame>
-          <xyz>2 0 1</xyz>
+          <xyz>-3 0 0</xyz>
         </track_visual>
       </camera>
     </gui>
 
-Relaunch Gazebo. You should now see the camera following the sphere. But there is one issue: the camera jumps back and forth whenever the sphere makes a half turn. That is because, by default, the camera is configured to inherit the yaw rotation of the tracked visual.
-
-To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
+Relaunch Gazebo. You should now see a sphere rotating in front of the camera. By default, the camera is configured to ignore the pitch, roll and yaw of the model. To inherit the yaw rotation of the visual, simply set the `<inherit_yaw>` tag to `true`:
 
     <gui>
       <camera name="user_camera">
@@ -109,13 +107,13 @@ To prevent this behaviour, simply set the `<inherit_yaw>` tag to `false`:
           <name>sphere</name>
           <static>true</static>
           <use_model_frame>true</use_model_frame>
-          <inherit_yaw>false</inherit_yaw>
-          <xyz>2 0 1</xyz>
+          <xyz>-3 0 0</xyz>
+          <inherit_yaw>true</inherit_yaw>
         </track_visual>
       </camera>
     </gui>
 
-Relaunch Gazebo. The camera should now follow the sphere flawlessly.
+Relaunch Gazebo. The camera should now rotate around the sphere as it turns around.
 
 Below is the complete list of elements that can be set within `<track_visual>`:
 

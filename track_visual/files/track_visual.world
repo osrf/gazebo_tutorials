@@ -74,7 +74,7 @@
     </model>
 
     <model name="sphere">
-      <pose>0 2 0.5 0 0 0</pose>
+      <pose>4 2 0.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -92,27 +92,9 @@
         </visual>
       </link>
 
-      <!-- Apply a random velocity to the specified link-->
-      <!-- In this example, we move a sphere around. A key property of the link
-           is the frictionless surface -->
-      <plugin name="random" filename="libRandomVelocityPlugin.so">
-
-        <!-- Name of the link in this model that receives the velocity -->
-        <link>link</link>
-
-        <!-- Initial velocity that is applied to the link -->
-        <initial_velocity>0 0.5 0</initial_velocity>
-
-        <!-- Scaling factor that is used to compute a new velocity -->
-        <velocity_factor>0.5</velocity_factor>
-
-        <!-- Time, in seconds, between new velocities -->
-        <update_period>5</update_period>
-
-        <!-- Clamp the Z velocity value to zero. You can also clamp x and
-             y values -->
-        <min_z>0</min_z>
-        <max_z>0</max_z>
+      <plugin name="initial" filename="libInitialVelocityPlugin.so">
+        <linear>0 0 0</linear>
+        <angular>0 0 1</angular>
       </plugin>
     </model>
   </world>
