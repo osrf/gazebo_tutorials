@@ -57,7 +57,7 @@ Now, instruct MeshLab to recompute the geometrical measures again, et voilà, th
 
 ## Calculating Simple Inertia Tensors
 
-If you're curious about the math behind the inertia matrix, or just want an easy way to calculate the tensor for simple shapes, [this wikipedia entry is a great resource](https://en.wikipedia.org/wiki/List_of_moments_of_inertia)
+If you're curious about the math behind the inertia matrix, or just want an easy way to calculate the tensor for simple shapes, [this wikipedia entry is a great resource](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
 
 # Filling in the tags in URDF/SDF
 
