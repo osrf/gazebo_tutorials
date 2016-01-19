@@ -73,6 +73,7 @@ The format of this `database.config` is:
 *  <*name*>
  
    The name of the database. This is used by the GUI and other tools.
+   
 *  <*license*> 
 
    The license for the models within the database. We highly recommend the
@@ -81,6 +82,7 @@ The format of this `database.config` is:
 *  <*models*>
 
    A listing of all the model URIs within the database.
+   
    * <*uri*>
 
      The URI for a model, this should be `file://model_directory_name`
@@ -113,6 +115,7 @@ The format of this `model.config` is:
 *  <*name*> *required*
 
    Name of the model.
+   
 *  <*version*> *required*
 
    Version of this model. 
@@ -128,6 +131,7 @@ The format of this `model.config` is:
    *  <*name*> *required*
 
       Name of the model author.
+      
    *  <*email*> *required*
 
       Email address of the author.
