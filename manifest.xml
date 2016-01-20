@@ -20,6 +20,11 @@
       <description>How to make or edit a model.</description>
     </tutorial>
 
+    <tutorial title="Joints" ref='guided_b4'>
+	    <markdown version="7.0">guided_b/tutorial4.md</markdown>
+	    <description>Defining Joints and how to use them.</description>
+    </tutorial>
+
 
     <!-- Intermediate tutorials
     <tutorial title="Intermediate: 1" ref='guided_i1'>
