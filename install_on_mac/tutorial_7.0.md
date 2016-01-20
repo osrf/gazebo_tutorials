@@ -13,7 +13,7 @@ For purposes of this tutorial, I will assume OS X 10.9 or greater is in use.
 
 1. Install
 
-        curl -ssL https://bitbucket.org/osrf/release-tools/raw/default/one-line-installations/gazebo.sh | sh 
+        curl -ssL http://get.gazebosim.org | sh
 
 2. Run
 

@@ -4,7 +4,7 @@
 
 1. Install
 
-        curl -ssL https://bitbucket.org/osrf/release-tools/raw/default/one-line-installations/gazebo.sh | sh 
+        curl -ssL http://get.gazebosim.org | sh
 
 2. Run
 
