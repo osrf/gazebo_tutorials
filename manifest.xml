@@ -20,8 +20,8 @@
       <description>How to make or edit a model.</description>
     </tutorial>
 
-    <tutorial title="Beginner: Model Structure" ref='guided_b4'>
-	    <markdown version="7.0">guided_b/tutorial4.md</markdown>
+    <tutorial title="Beginner: Model Structure" ref='models'>
+	    <markdown version="6.0+">models/tutorial.md</markdown>
 	    <description>Understanding the Model Structure.</description>
     </tutorial>
 
