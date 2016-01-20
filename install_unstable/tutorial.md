@@ -21,7 +21,7 @@ to install the stable repository and after it add the
 prerelease repository:
 
 ```
-# Be sure to install the stable repo first !!
+# Be sure to install the prerelease repo first !!
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
 sudo apt-get update
 sudo apt-get install gazebo7 # (might not be released)
@@ -37,7 +37,7 @@ to install the stable repository
 and then add the nightly repository:
 
 ```
-# Be sure to install the stable repo first !!
+# Be sure to install the nightly repo first !!
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
 sudo apt-get update
 sudo apt-get install gazebo7
