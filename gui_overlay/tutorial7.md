@@ -212,16 +212,16 @@ tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
 
     > **Tip:** You can add both plugins to `gui.ini` as follows:
 
-    ~~~
-    gedit ~/.gazebo/gui.ini
-    ~~~
+      ~~~
+      gedit ~/.gazebo/gui.ini
+      ~~~
 
     > Change the `[overlay_plugins]` section to be:
 
-    ~~~
-    [overlay_plugins]
-    filenames=libgui_example_spawn_widget.so:libgui_example_time_widget.so
-    ~~~
+      ~~~
+      [overlay_plugins]
+      filenames=libgui_example_spawn_widget.so:libgui_example_time_widget.so
+      ~~~
 
     > This will load both the spawn sphere plugin from the previous example and the time plugin from this example.
 
