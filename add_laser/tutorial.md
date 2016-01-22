@@ -46,7 +46,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
     hokuyo laser forward and above the robot.  The `<uri>` block tells gazebo
     where to find the model inside its model database (note, you can see a
     listing of the model database uri used by these tutorials
-    [here](http://gazebosim.org/models/), and at the corresponding [mercurial
+    [here](http://models.gazebosim.org/), and at the corresponding [mercurial
     repository](https://bitbucket.org/osrf/gazebo_models)).
 
     The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint has and `<upper>` and `<lower>` limit of zero to prevent it from moving.
