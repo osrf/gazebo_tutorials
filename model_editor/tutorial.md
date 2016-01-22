@@ -14,7 +14,7 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 1. On the `Edit` menu, go to `Model Editor`, or hit `Ctrl+M` to open the editor.
 
-    [[file:files/empty_editor.png|800px]]
+    [[file:files/empty_editor_7.png|800px]]
 
 ## Graphical user interface
 
@@ -45,7 +45,7 @@ click/release anywhere to add it to the model.
     > **Tip:** You can press `Esc` to cancel adding the current
     link attached to the mouse cursor.
 
-    [[file:files/model_editor_simple_shapes.png|640]]
+    [[file:files/model_editor_simple_shapes_7.png|640]]
 
 ## Add meshes
 
@@ -61,30 +61,29 @@ currently only supports importing COLLADA (dae) and STereoLithography (stl) file
 
 1. Click `Import` to load the mesh file. Then, add it to the 3D view.
 
-    [[file:files/model_editor_insert_mesh.png|640]]
+    [[file:files/model_editor_insert_mesh_7.png|640]]
 
 # Create Joints
 
 The model editor supports creating several types of joints between links in the
 model being edited. To create a joint:
 
-1. Click on the `joint` icon on the tool bar. This defaults to a `revolute`
-joint which you can edit its type later. Alternatively, click on the
-small arrow at the bottom right corner of the joint icon to choose a specific
-joint type.
+1. Click on the `joint` icon on the tool bar. This brings up the Joint Creation
+Dialog which allows you to specify different properties of the joint you
+want to create. As you can see in the dialog, the default joint types is
+a `revolute` joint.
 
-1. Once the joint type is selected, move your mouse over the link you wish to
-create a joint for to see it being highlighted and click on it. This link
-will be the parent link of the joint.
+1. Begin by moving your mouse over the link you wish to create a joint for to
+see it being highlighted and click on it. This link will be the parent link of
+the joint.
 
 1. Next, move your mouse to the link which you would like to be the child link
-of the joint. Click on it to finalize the joint creation process and see a
-colored line connecting the two links and a joint visual attached
-to the child link.
+of the joint. Click on it to see a colored line connecting the two links and
+a joint visual attached to the child link.
 
     > **Tip:** You can press `Esc` to cancel the joint creation process.
 
-    [[file:files/model_editor_joint.png|800px]]
+    [[file:files/model_editor_joint_7.png|800px]]
 
 The line representing the joint is color-coded. Play around with different
 joint types to see the colors.
@@ -93,6 +92,10 @@ The joint visual consists of RGB axes which help to give an idea of the
 coordinate frame of the joint. The yellow arrow indicates the primary axis of
 the joint. For example, in the case of a revolute joint, this is the axis of
 rotation.
+
+1. Once you have specified all the desired properties of the joint in the
+Joint Creation Dialog, click on the `Create` button at the bottom to finalize
+joint creation.
 
 # Edit your model
 
@@ -105,7 +108,7 @@ rotation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:**  Gazebo 6 supports editing
+> **Note:**  Gazebo 6+ supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
@@ -116,7 +119,7 @@ To edit a link's properties: Double-click on the link or right click and select
 As an example, try changing the link pose and visual colors. Once you are done, click on
 `OK` to close the inspector.
 
-[[file:files/model_editor_inspector.png|640px]]
+[[file:files/model_editor_inspector_7.png|640px]]
 
 ## Edit joints
 
@@ -129,7 +132,7 @@ on it and select `Open Joint Inspector`. The joint inspector will appear.
 As an example, try changing the joint pose and joint type. Once you are done, click on
 `OK` to close the inspector.
 
-[[file:files/model_editor_joint_inspector.png|300px]]
+[[file:files/model_editor_joint_inspector_7.png|300px]]
 
 # Saving your model
 
@@ -141,19 +144,20 @@ chassis with a revolute joint:
 
 [[file:files/model_editor_car.png|800px]]
 
-Once you're happy with the model you created. Let's save it.
-
-Before saving, give your model a name on the Palette.
+Once you're happy with the model you created, go to the `Model` tab in the left
+panel and give it a name.
 
 [[file:files/model_editor_edit_name.png|200px]]
 
-On the top menu, choose `File`, then `Save As` (or hit `Ctrl+S`). A dialog will come up where you can choose the location for your model.
+To save the model, choose `File`, then `Save As` (or hit `Ctrl+S`) in the top
+menu. A dialog will come up where you can choose the location for your model.
 
 [[file:files/model_editor_save_dialog.png|300px]]
 
 # Exit
 
-When you're done creating your model and you've saved it, go to `File` and then `Exit Model Editor`.
+When you're done creating the model and you've saved it, go to `File` and then
+`Exit Model Editor`.
 
 Your model will show up in the main window.
 
