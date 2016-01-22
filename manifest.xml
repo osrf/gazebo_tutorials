@@ -211,7 +211,7 @@
 
     <tutorial title="Sensor Noise Model" ref='sensor_noise'>
       <markdown version="1.9-6.0">sensor_noise/tutorial.md</markdown>
-      <markdown version="7.0+">sensor_noise/tutorial_7-0.md</markdown>
+      <markdown version="7.0+">sensor_noise/tutorial-7_0.md</markdown>
       <description>How to add noise to sensors</description>
       <skill>beginner</skill>
     </tutorial>
