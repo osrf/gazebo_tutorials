@@ -91,11 +91,11 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 Which version has priority when using prerelease and stable repositories?
 
  * packageA version: `1.0.0-1` (stable)
- * packageA prerelease: `1.0.1-1~pre1` (prerelease)
- * packageA prerelease: `1.0.1-1~pre2` (prerelease)
+ * packageA prerelease: `1.0.1~pre1-1` (prerelease)
+ * packageA prerelease: `1.0.1~pre2-1` (prerelease)
  * packageA version: `1.0.1-1` (stable)
 
- * Order: `1.0.1-1` > `1.0.1-1~pre2` > `1.0.1-1~pre1` > `1.0.0`
+ * Order: `1.0.1-1` > `1.0.1~pre2-1` > `1.0.1~pre1-1` > `1.0.0`
 
 Which version has priority when using nightly and stable repositories?
 
@@ -109,9 +109,9 @@ Which version has priority when using nightly and stable repositories?
 Which version has priority when using nightly, prerelease and stable repositories?
 
  * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
- * packageA prerelease: `1.0.0-1~pre1` (prerelease)
- * packageA version: `1.0.0-1~pre1+hg20150101r2212b5136299-1` (nightly)
- * packageA prerelease: `1.0.0-1~pre2` (prerelease)
+ * packageA prerelease: `1.0.0~pre1` (prerelease)
+ * packageA version: `1.0.0~pre1+hg20150101r2212b5136299-1` (nightly)
+ * packageA prerelease: `1.0.0~pre2-1` (prerelease)
  * packageA version: `1.0.0-1` (stable)
 
- * Order: `1.0.0-1` > `1.0.0-1~pre2` > `1.0.0-1~pre1+hg20150101r2212b5136299-1` > `1.0.0-1~pre1` > `0.99.99+hg20150101r2212b5136299-1`
+ * Order: `1.0.0-1` > `1.0.0~pre2-1` > `1.0.0~pre1+hg20150101r2212b5136299-1` > `1.0.0~pre1-1` > `0.99.99+hg20150101r2212b5136299-1`
