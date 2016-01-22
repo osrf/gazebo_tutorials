@@ -337,7 +337,8 @@
     </tutorial>
 
     <tutorial title="Model Editor" ref="model_editor">
-      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <markdown version="6+">model_editor/tutorial_6.md</markdown>
+      <markdown version="7+">model_editor/tutorial.md</markdown>
       <description>Create and edit models within a model editor.</description>
       <skill>beginner</skill>
     </tutorial>
