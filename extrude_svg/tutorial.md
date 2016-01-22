@@ -12,6 +12,8 @@ This tutorial will show you how to make a custom wheel as an .svg in Inkscape,
 
 ### Using the Inkscape SVG editor
 
+[[file:files/inkscape_logo.jpg]]
+
 There are many SVG editors. For this tutorial, we will use the Open Source
  Inkscape program (see
 [installation instructions](https://inkscape.org/en/download) ).
