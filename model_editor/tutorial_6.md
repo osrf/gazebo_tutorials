@@ -26,7 +26,7 @@ the scene to build the model.
 * The **3D View** on the right where you can see a preview of your model and
 interact with it to edit its properties and create joints between links.
 
-The GUI tools on the top toolbar can be used to manipulate joints and links in the 3D
+The GUI tools on the top toolbar can be used to manipulate and links in the 3D
 View.
 
 # Add Links
@@ -57,9 +57,9 @@ that lets you find the mesh you want to add.
 1. Click on `Browse` button and use the file browser to find the mesh file
 on your local machine. If you know the path of the mesh file, you can enter it
 directly in the text field box next to the `Browse` button. Note Gazebo
-currently only supports importing COLLADA (dae) and STereoLithography (stl) files.
+currently only supports importing collada (dae) and stl files.
 
-1. Click `Import` to load the mesh file. Then, add it to the 3D view.
+1. Click `Import` to load the mesh file then add it to the 3D view.
 
     [[file:files/model_editor_insert_mesh.png|640]]
 
@@ -105,7 +105,7 @@ rotation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:**  Gazebo 6 supports editing
+> **Note:**  The current version (gazebo 6) supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
@@ -113,7 +113,8 @@ To edit a link's properties: Double-click on the link or right click and select
 `Open Link Inspector`. A dialog window will appear which contains
 `Link`, `Visual`, and `Collision` property tabs.
 
-As an example, try changing the link pose and visual colors. Once you are done, click on
+As an example, try changing the link pose and visual colors. Click on `Apply`
+to see the changes reflected in the 3D view. Once you are done, click on
 `OK` to close the inspector.
 
 [[file:files/model_editor_inspector.png|640px]]
@@ -124,9 +125,10 @@ As mentioned earlier, joint properties can also be edited. These are properties
 that you would find in the joint SDF.
 
 To edit a joint: Double-click on the line connecting the links or right click
-on it and select `Open Joint Inspector`. The joint inspector will appear.
+on it and select `Open Joint Inspector`. The joint inspector will appear
 
-As an example, try changing the joint pose and joint type. Once you are done, click on
+As an example, try changing the joint pose and joint type. Click on `Apply`
+to see the changes reflected in the 3D view. Once you are done, click on
 `OK` to close the inspector.
 
 [[file:files/model_editor_joint_inspector.png|300px]]
