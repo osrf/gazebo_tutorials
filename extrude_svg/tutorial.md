@@ -19,6 +19,8 @@ There are many SVG editors. For this tutorial, we will use the Open Source
  This is the wheel
 [SVG file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
  used in this tutorial.
+
+
 [[file:files/wheel.svg|100px]]
 
 
@@ -53,7 +55,7 @@ You can use the different tools (pen, text, stars and shapes, etc...) to create
  **Note**: a stick figure or two circles that  touch each other would not
  result in valid Gazebo models.
 
-[[file:files/ftu5-inkscape-simple-wheel.png|800px]]
+[[file:files/inkscape-simple-wheel.png|800px]]
 
 Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
  to a path. Select `Select All` from the `Edit` menu. Then select
@@ -61,7 +63,7 @@ Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
  separate paths and sub paths. This transformation is irreversible, so if you
  transform text into paths, you will not be able to alter the text.
 
-[[file:files/ftu5-inkscape-select-all.png|800px]]
+[[file:files/inkscape-select-all.png|800px]]
 
 Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
  separate groups of paths.
@@ -108,7 +110,7 @@ Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
  to save the new model to disk. Press the `Save and Exit` button on the Exit
  dialog, and the `Save Model` dialog will appear.
 
-[[file:files/ftu5-save-model.png|800px]]
+[[file:files/save-model.png|800px]]
 
 Set the name of the new model to "HollowWheel", and fill the information under
  the `Advanced Options` section. Press the `Save` button.
