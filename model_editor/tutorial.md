@@ -70,8 +70,8 @@ model being edited. To create a joint:
 
 1. Click on the `joint` icon on the tool bar. This brings up the Joint Creation
 Dialog which allows you to specify different properties of the joint you
-want to create. As you can see in the dialog, the default joint types is
-a `revolute` joint.
+want to create. As you can see in the dialog, the default joint type is
+a `Revolute` joint.
 
 1. Begin by moving your mouse over the link you wish to create a joint for to
 see it being highlighted and click on it. This link will be the parent link of
@@ -81,14 +81,12 @@ the joint.
 of the joint. Click on it to see a colored line connecting the two links and
 a joint visual attached to the child link.
 
-    > **Tip:** You can press `Esc` to cancel the joint creation process.
-
     [[file:files/model_editor_joint_7.png|800px]]
 
-The line representing the joint is color-coded. Play around with different
+    The line representing the joint is color-coded. Play around with different
 joint types to see the colors.
 
-The joint visual consists of RGB axes which help to give an idea of the
+    The joint visual consists of RGB axes which help to give an idea of the
 coordinate frame of the joint. The yellow arrow indicates the primary axis of
 the joint. For example, in the case of a revolute joint, this is the axis of
 rotation.
@@ -96,6 +94,8 @@ rotation.
 1. Once you have specified all the desired properties of the joint in the
 Joint Creation Dialog, click on the `Create` button at the bottom to finalize
 joint creation.
+
+    > **Tip:** You can press `Esc` any time to cancel the joint creation process.
 
 # Edit your model
 
