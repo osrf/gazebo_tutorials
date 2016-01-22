@@ -66,7 +66,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
 
     [[file:files/Add_laser_pioneer.png]]
 
-5.  (Optional)  Try adding a camera to the robot. The camera's model URI is `model://camera`, it should have been locally caches for you in:
+1.  (Optional)  Try adding a camera to the robot. The camera's model URI is `model://camera`, it should have been locally caches for you in:
 
         ls ~/.gazebo/models/camera/
 
