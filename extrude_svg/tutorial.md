@@ -99,7 +99,8 @@ The dialog also allows you to set parameters of the extrusions:
  the curved paths in the SVG. The more segments, the more complex your link
  will be. It doesn't change anything for straight paths.
 
-On the right, you can see the path extracted from your SVG. The chassis
+On the right, you can see the path extracted from your SVG. The red points are
+ the summit of the triangulation of the extruded 3D model.
 
 [[file:files/extrude-link.png|400px]]
 
