@@ -1,47 +1,85 @@
 # Overview
 
-This tutorial describes the process of extruding SVG files, which are 2D images, to create 3D meshes for your robots in Gazebo.
+This tutorial describes the process of extruding SVG files, which are 2D
+ images, to create 3D meshes for your robots in Gazebo. It is Sometimes
+ easier to design part of a model in a program like Inkscape or Illustrator.
 
-Before starting, make sure you're familiar with the [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
+Before starting, make sure you're familiar with the
+ [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
 
-# Prepare SVG files
+This tutorial will show you how to make a custom wheel as an .svg in Inkscape,
+ import it into Gazebo, so that it can be attached to a robot.
 
-Using a program such as [Inkscape](https://inkscape.org/), draw paths for each
- of the meshes you'll be extruding and save them separately. As an example,
- here are two images which will be used to make a simple car: a
- [chassis](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/chassis.svg)
- and a [wheel](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
+### Using the Inkscape SVG editor
 
-[[file:files/chassis.svg|100px]]
+There are many SVG editors. For this tutorial, we will use the Open Source
+ Inkscape program (see
+[installation instructions](https://inkscape.org/en/download) ).
+
+ This is the wheel
+[SVG file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg).
+ used in this tutorial.
 [[file:files/wheel.svg|100px]]
 
-> **Tip**: If you're using Inkscape, display the units in meters so you can
- easily import it into Gazebo without changing the resolution.
 
-> **Note**: Currently Gazebo will take the center of the path's bounding box as
- the origin.
+### Document preparation
 
-> **Note**: Gazebo is not able to import SVG files that contain very complex
- shapes or files containing crossed paths.
+Start Inkscape. This will create a blank document. First, lets change the
+ document size to better accommodate our wheel: under the `File->Document
+ properties menu`, select the `Page` tab and change the document size to a
+ custom size of 100.0 x 100.0 mm.
 
-> **Note**: Some SVG editors might have features which are not supported, such
- as special ready-made shapes and transformations. If your path doesn't look
- like how you expected in the *Extrude Link* dialog, try converting all
- objects to paths from the SVG editor.
+[[file:files/inkscape-page-tab.png|800px]]
 
-# Extruding the SVG
+Then, in the same dialog, select the `Grids`
+ tab, press the `New` button to create a custom grid. Then, check the`Enabled`,
+`Visible`, and `Snap to visible grid lines only` options.
 
-We will be using the Model Editor to make links out of extruded SVGs.
+[[file:files/inkscape-grids-tab.png|800px]]
 
-In the Model Editor, press the `Add` button under "Custom Shapes", you'll see
- the *Import Link* dialog.
+You should end up with a document looking like this:
 
-[[file:files/import_link.png|400px]]
+[[file:files/inkscape-blank.png|800px]]
 
-Choose the `chassis.svg` file and hit `Import`. If you picked a valid SVG file,
- the *Extrude Link* dialog will come up.
+### Draw
 
-[[file:files/extrude_link.png|600px]]
+You can use the different tools (pen, text, stars and shapes, etc...) to create
+ your geometry. In this example, the wheel is made from circles (pressing the
+ Shift Key you can start your circle from the center, and using the CTRL key
+ allows you to keep the roundness of the shape). It is possible to combine
+ shapes together, making sure that paths are closed and that the part has
+ a proper thickness.
+
+ **Note**: a stick figure or two circles that  touch each other would not
+ result in valid Gazebo models.
+
+[[file:files/ftu5-inkscape-simple-wheel.png|800px]]
+
+Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
+ to a path. Select `Select All` from the `Edit` menu. Then select
+`Path -> Object to Path` menu item. This will transform every object into
+ separate paths and sub paths. This transformation is irreversible, so if you
+ transform text into paths, you will not be able to alter the text.
+
+[[file:files/ftu5-inkscape-select-all.png|800px]]
+
+Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
+ separate groups of paths.
+
+
+### Create a Gazebo Model
+
+[SDFormat](http://sdformat.org) does not support SVG directly, it supports 2D
+ poly lines. The Gazebo Model Editor has an import mechanism that extract the
+ poly lines from SVG files, and save it them an SDF model file.
+
+Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
+ Gazebo Model Editor mode (as opposed to the simulation mode). Then, set the
+ thickness of the wheel to 0.025 m, and press `OK`. Your new link should
+ appear in the 3D view.
+
+The dialog also allows you to set parameters of the extrusions:
+
 
 * **Thickness**: How thick the link will be. This corresponds to the extrusion
  height in the `z` axis. For the SVG path shown on the right, the axis of
@@ -58,27 +96,23 @@ Choose the `chassis.svg` file and hit `Import`. If you picked a valid SVG file,
  will be. It doesn't change anything for straight paths.
 
 On the right, you can see the path extracted from your SVG. The chassis
- contains 12 points and is about 1 m wide. The origin is indicated by the blue
- cross.
 
-Press `Ok` to accept the settings, the extruded link will show up in the scene
- and in the list of links on the left.
+[[file:files/extrude-link.png|800px]]
 
-> **Note**: If nothing happens after you pressed Ok, your SVG path was probably
- too complex to be imported. Try simplifying it with Inkscape: select the path
- and press `Ctrl+L` as many times as necessary.
+Your wheel is now ready, and it comes with a default collision shape that is
+a copy of the generated 3D mesh.
 
-[[file:files/extruded_chassis.png|400px]]
+[[file:files/custom-wheel.png|800px]]
 
-The link consists of a visual and a collision, both having the same geometry,
- which is an extruded polyline. A
- [polyline geometry](http://sdformat.org/spec?ver=1.5&elem=geometry#geometry_polyline)
- consists of a list of points and an extrusion height, all generated from the
- SVG. When your model is saved to SDF, the SVG file is not needed or
- referenced.
+Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
+ to save the new model to disk. Press the `Save and Exit` button on the Exit
+ dialog, and the `Save Model` dialog will appear.
 
-Now go ahead and extrude the wheel, in this example it was extruded to 0.2 m.
- Copy and paste it 3 times, position the wheels, add joints and your car made
- out of extruded parts is ready!
+[[file:files/ftu5-save-model.png|800px]]
 
-[[file:files/extruded_car.png|800px]]
+Set the name of the new model to "HollowWheel", and fill the information under
+ the `Advanced Options` section. Press the `Save` button.
+
+> Your new Gazebo model is now ready to roll ;-)
+
+
