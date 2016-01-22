@@ -109,7 +109,7 @@ joint creation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:**  Gazebo 6+ supports editing
+> **Note:**  Gazebo 6\+ supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
