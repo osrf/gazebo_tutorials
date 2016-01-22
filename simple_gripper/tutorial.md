@@ -1,7 +1,9 @@
 # Overview
 
 This tutorial describes how to make a simple two-bar pinching gripper by
-editing SDF files. For editing models graphically, see the
+editing SDF files.
+
+For editing models graphically, see the
 [Model Editor](http://gazebosim.org/tutorials?tut=model_editor&cat=build_robot)
 tutorial.
 
@@ -34,7 +36,7 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
 1. Create a [model.config](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config) file:
 
-    gedit model.config
+        gedit model.config
 
 1. And copy the following contents:
 
@@ -44,7 +46,7 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 [simple_gripper.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf)
 file:
 
-    gedit simple_gripper.sdf
+        gedit simple_gripper.sdf
 
 1. And copy the following code into it:
 
