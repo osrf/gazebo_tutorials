@@ -141,7 +141,7 @@ Copy the following into `model.sdf`
 
 ~~~
 <?xml version='1.0'?>
-<sdf version ='1.4'>
+<sdf version ='1.6'>
   <model name ='cylinder'>
     <pose>1 2 0 0 0 0</pose>
     <link name ='link'>
