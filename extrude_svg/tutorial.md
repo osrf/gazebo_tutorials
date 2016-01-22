@@ -31,13 +31,14 @@ There are many SVG editors. For this tutorial, we will use the Open Source
 Start Inkscape. This will create a blank document. First, lets change the
  document size to better accommodate our wheel: under the `File->Document
  properties menu`, select the `Page` tab and change the document size to a
- custom size of 100.0 x 100.0 mm.
+ custom size of 100.0 x 100.0 px.
 
 [[file:files/inkscape-page-tab.png|400px]]
 
 Then, in the same dialog, select the `Grids`
- tab, press the `New` button to create a custom grid. Then, check the`Enabled`,
-`Visible`, and `Snap to visible grid lines only` options.
+ tab, press the `New` button to create a custom grid. Then, check the `Enabled`,
+`Visible`, and `Snap to visible grid lines only` options. Change 
+`Spacing X` and `Spacing Y` to be 10.
 
 [[file:files/inkscape-grids-tab.png|400px]]
 
