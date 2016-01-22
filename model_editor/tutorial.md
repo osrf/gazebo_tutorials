@@ -20,14 +20,15 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 The editor is composed of the following 2 areas:
 
-* The **Palette** on the left where you can select links and insert them into
-the scene to build the model.
+* The **Palette** on the left has two tabs. The `Insert` tab lets you insert
+parts (links and other models) into the scene to build the model. The `Model`
+tab displays a list of all the parts that make up the model you are building.
 
 * The **3D View** on the right where you can see a preview of your model and
 interact with it to edit its properties and create joints between links.
 
-The GUI tools on the top toolbar can be used to manipulate joints and links in the 3D
-View.
+The GUI tools on the top toolbar can be used to manipulate joints and links in
+the 3D View.
 
 # Add Links
 
