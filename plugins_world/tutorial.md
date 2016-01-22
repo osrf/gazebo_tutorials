@@ -36,15 +36,15 @@ Within the `Load` function are three different methods for model insertion.
 
 The first method uses a World method to load a model based on a file in the resource path defined by the `GAZEBO_MODEL_PATH` environment variable.
 
-<include from="/    Option 1:/" to="/\/\/box"\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 1:/" to="/\/\/box"\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
 
 The second method uses a World method to load a model based on string data.
 
-<include from="/    Option 2:/" to="/sphereSDF\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 2:/" to="/sphereSDF\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
 
 The third method uses the message passing mechanism to insert a model. This method is most useful for stand alone applications that communicate with Gazebo over a network connection.
 
-<include from="!//    Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
 
 
 ## Compile
