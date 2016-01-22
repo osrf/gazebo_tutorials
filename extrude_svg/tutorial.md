@@ -21,7 +21,7 @@ There are many SVG editors. For this tutorial, we will use the Open Source
  used in this tutorial.
 
 
-[[file:files/wheel.svg|100px]]
+[[file:files/wheel.svg|200px]]
 
 
 ### Document preparation
@@ -31,17 +31,17 @@ Start Inkscape. This will create a blank document. First, lets change the
  properties menu`, select the `Page` tab and change the document size to a
  custom size of 100.0 x 100.0 mm.
 
-[[file:files/inkscape-page-tab.png|800px]]
+[[file:files/inkscape-page-tab.png|400px]]
 
 Then, in the same dialog, select the `Grids`
  tab, press the `New` button to create a custom grid. Then, check the`Enabled`,
 `Visible`, and `Snap to visible grid lines only` options.
 
-[[file:files/inkscape-grids-tab.png|800px]]
+[[file:files/inkscape-grids-tab.png|400px]]
 
 You should end up with a document looking like this:
 
-[[file:files/inkscape-blank.png|800px]]
+[[file:files/inkscape-blank.png|400px]]
 
 ### Draw
 
@@ -55,7 +55,7 @@ You can use the different tools (pen, text, stars and shapes, etc...) to create
  **Note**: a stick figure or two circles that  touch each other would not
  result in valid Gazebo models.
 
-[[file:files/inkscape-simple-wheel.png|800px]]
+[[file:files/inkscape-simple-wheel.png|400px]]
 
 Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
  to a path. Select `Select All` from the `Edit` menu. Then select
@@ -63,7 +63,7 @@ Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
  separate paths and sub paths. This transformation is irreversible, so if you
  transform text into paths, you will not be able to alter the text.
 
-[[file:files/inkscape-select-all.png|800px]]
+[[file:files/inkscape-select-all.png|400px]]
 
 Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
  separate groups of paths.
@@ -99,18 +99,18 @@ The dialog also allows you to set parameters of the extrusions:
 
 On the right, you can see the path extracted from your SVG. The chassis
 
-[[file:files/extrude-link.png|800px]]
+[[file:files/extrude-link.png|400px]]
 
 Your wheel is now ready, and it comes with a default collision shape that is
 a copy of the generated 3D mesh.
 
-[[file:files/custom-wheel.png|800px]]
+[[file:files/custom-wheel.png|400px]]
 
 Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
  to save the new model to disk. Press the `Save and Exit` button on the Exit
  dialog, and the `Save Model` dialog will appear.
 
-[[file:files/save-model.png|800px]]
+[[file:files/save-model.png|400px]]
 
 Set the name of the new model to "HollowWheel", and fill the information under
  the `Advanced Options` section. Press the `Save` button.
