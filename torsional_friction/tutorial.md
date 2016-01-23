@@ -64,11 +64,13 @@ is 1.0 by default.
 1. Torsional friction is typically very low because of the small contact area.
 For our experiment, we want a lot of friction so the sphere stops fast. One way
 to achieve this is to make the sphere very heavy so it presses against the
-ground. So let's go on the `Link` tab and set the mass to 1000 Kg. The heavier
+ground. So let's go on the `Link` tab and set the mass to 10000 Kg. The heavier
 it is, the more it presses against the ground and the higher the friction.
 
 1. Apply your changes, close the inspector and  go to `File -> Exit Model Editor`.
 Make sure you save the new model.
+> **Tip:** The simulation stays paused after returning from the Model Editor.
+Make sure that you click the play button before continuing.
 
 1. Back in the main window, apply torque to the new sphere as you did for the
 old one. Unlike the first sphere (which is still rotating, it will rotate
