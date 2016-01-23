@@ -23,7 +23,7 @@ In the following world example
 the `ode_70iters` profile is set as the default, and the `ode_200iters`
 profile will be available via the C++ API or the `gz` command line tool. The following is an excerpt from the downloadable world example that shows the values for `ode_70iters` and `ode_200iters`.
 
-<include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
+<include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
