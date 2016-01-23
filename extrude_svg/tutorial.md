@@ -78,8 +78,8 @@ Save your drawing to an SVG file you can use later in Gazebo. Use the `Save`
 ### Create a Gazebo Model
 
 [SDFormat](http://sdformat.org) does not support SVG directly, it supports 2D
- poly lines. The Gazebo Model Editor has an import mechanism that extract the
- poly lines from SVG files, and save it them an SDF model file.
+ poly lines. The Gazebo Model Editor has an import mechanism that extracts the
+ poly lines from SVG files, and saves them an SDF model file.
 
 Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
  Gazebo Model Editor mode (as opposed to the simulation mode).
