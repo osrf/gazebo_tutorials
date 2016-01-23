@@ -69,8 +69,9 @@ it is, the more it presses against the ground and the higher the friction.
 
 1. Apply your changes, close the inspector and  go to `File -> Exit Model Editor`.
 Make sure you save the new model.
-> **Tip:** The simulation stays paused after returning from the Model Editor.
-Make sure that you click the play button before continuing.
+
+    > **Tip:** The simulation stays paused after returning from the Model Editor.
+    Make sure that you click the play button before continuing.
 
 1. Back in the main window, apply torque to the new sphere as you did for the
 old one. Unlike the first sphere (which is still rotating, it will rotate
