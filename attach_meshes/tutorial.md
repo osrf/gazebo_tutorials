@@ -50,7 +50,7 @@ The most common use case for a mesh is to create a realistic looking visual.
     Or manually download the model files to your local cache:
 
         cd ~/.gazebo/models
-        wget -R *index.html*,*.tar.gz --no-parent -r -x -nH http://models.gazebosim.org/pioneer2dx/
+        wget -q -R *index.html*,*.tar.gz --no-parent -r -x -nH http://models.gazebosim.org/pioneer2dx/
 
 1.  In Gazebo, drag the `My Robot` model in the world. The visual for the chassis will look like a pioneer2dx.
 
