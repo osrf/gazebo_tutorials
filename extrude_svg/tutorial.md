@@ -2,7 +2,7 @@
 
 This tutorial describes the process of extruding SVG files, which are 2D
  images, to create 3D meshes for your robots in Gazebo. It is sometimes
- easier to design part of a model in a program like [Inkscape]((https://inkscape.org/) or [Illustrator](www.adobe.com/Illustrator).
+ easier to design part of a model in a program like [Inkscape](https://inkscape.org/) or [Illustrator](www.adobe.com/Illustrator).
 
 Before starting, make sure you're familiar with the
  [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
