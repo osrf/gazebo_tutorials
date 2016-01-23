@@ -313,6 +313,7 @@
     <tutorial title="Joints" ref='joints'>
 	    <markdown version="7.0+">joints/tutorial.md</markdown>
 	    <description>Defining Joints and how to use them.</description>
+      <skill>beginner</skill>
     </tutorial>
 
 
