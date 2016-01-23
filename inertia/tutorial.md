@@ -1,14 +1,59 @@
 # Overview
 
-For physically plausible behavior of the model you need to correctly set up
-the inertia matrix, the center of mass and the weight of all links.
-This tutorial will guide you through the process of obtaining and filling in
-these information if you don't have them (and you have 3D models of the links).
+An accurate simulation requires physically plausible inertial parameters:
+the mass, center of mass location,
+and the moment of inertia matrix of all links.
+This tutorial will guide you through the process of obtaining and setting
+these parameters if you have 3D models of the links.
 
-This tutorial shows how to obtain inertial data using the free software MeshLab (assuming homogeneous bodies).
+Assuming homogeneous bodies (uniform mass density),
+it is shown how to obtain inertial data using the free software MeshLab.
 You can also use the commercial product SolidWorks to compute these information.
 For a guide on using SolidWorks, plese refer to
 [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)
+
+# Summary of inertial parameters
+
+## Mass
+
+The mass is most easily measured by weighing an object.
+It is a scalar with default units in Gazebo of kilograms (kg).
+For a 3D uniform mesh, mass is computed by
+calculating the geometric volume [length^3]
+and multiplying by density [mass / length^3].
+
+## [Center of Mass](https://en.wikipedia.org/wiki/Center_of_mass)
+
+The center of mass is the point where the sum of weighted mass moments is zero.
+For a uniform body, this is equivalent to the geometric centroid.
+This parameter is a Vector3 with units of position [length].
+
+## Moment of Inertia Matrix
+
+The [moments of inertia](https://en.wikipedia.org/wiki/Moment_of_inertia)
+represent the spatial distribution of mass in a rigid body.
+It depends on the mass, size, and shape of a body
+with units of [mass * length^2].
+The moments of inertia can be expressed as the components
+of a symmetric positive-definite 3x3 matrix,
+with 3 diagonal elements, and 3 unique off-diagonal elements.
+Each inertia matrix is defined relative to a coordinate frame
+or set of axes.
+Diagonalizing the matrix
+yields its principal moments of inertia (the eigenvalues)
+and the orientation of its principal axes (the eigenvectors).
+
+The moments of inertia are proportional to mass
+but vary in a non-linear manner with respect to size.
+Additionally, there are [constraints on the relative values
+of the principal moments](http://physics.stackexchange.com/a/48273)
+that typically make it much more difficult to estimate moments of inertia
+than mass or center of mass location.
+This difficulty motivates the use of software tools for computing
+moment of inertia.
+
+If you're curious about the math behind the inertia matrix, or just want an easy way to calculate the tensor for simple shapes,
+[this wikipedia entry is a great resource](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
 
 # Preparation
 
@@ -21,16 +66,109 @@ Once installed, you can view your meshes in MeshLab (both DAE and STL formats ar
 
 # Computing the inertial parameters
 
-## First try in MeshLab
+## Computing inertia of sphere
 
 Open the mesh file in MeshLab.
+For this example, a
+[sphere.dae](https://github.com/assimp/assimp/raw/master/test/models/Collada/sphere.dae)
+mesh is used.
 To compute the inertial parameters, you first need to display the Layers dialog - `View->Show Layer Dialog`.
 A panel opens in the right part of the window which is split in half - we're interested in the lower part containing text output.
 
 Next, command MeshLab to compute the inertial parameters.
 Choose `Filters->Quality Measure and Computations->Compute Geometric Measures` from the menu.
 The lower part of the Layers dialog should now show some info about the inertial measures.
-An example output:
+The sphere gives the following output:
+
+    Mesh Bounding Box Size 2.000000 2.000000 2.000000
+    Mesh Bounding Box Diag 3.464102
+    Mesh Volume is 4.094867
+    Mesh Surface is 12.425012
+    Thin shell barycenter -0.000000 -0.000000 -0.000000
+    Center of Mass is -0.000000 0.000000 -0.000000
+    Inertia Tensor is :
+    | 1.617916 -0.000000 0.000000 |
+    | -0.000000 1.604620 -0.000000 |
+    | 0.000000 -0.000000 1.617916 |
+    Principal axes are :
+    | 0.000000 1.000000 0.000000 |
+    | -0.711101 -0.000000 0.703089 |
+    | -0.703089 0.000000 -0.711101 |
+    axis momenta are :
+    | 1.604620 1.617916 1.617916 |
+
+The bounding box of the sphere is a cube with side length 2.0,
+which implies that the sphere has a radius of 1.0.
+A sphere of radius 1.0 should have a volume of `4/3*PI` (4.189),
+which is close to the computed value of 4.095.
+It is not exact since it is a triangular approximation.
+The surface area should be `4*PI` (12.566),
+which is close to the computed value of 12.425.
+The center of mass is given as the origin (0,0,0).
+The inertia matrix (aka inertia tensor) should be diagonal
+with [principal moments of `2/5 mass` since `radius = 1`](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
+It is not explicitly stated in the output, but the mass
+is equal to the volume (implicitly using a density of 1),
+so we would expect `8/15*PI` (1.676).
+The computed inertia tensor appears diagonal
+for the given precision with principal moments
+ranging from [1.604,1.618], which is close to the expected value.
+
+## Duplicate faces
+
+One thing to keep in mind is that duplicate faces within a mesh will affect
+the calculation of volume and moment of inertia.
+For example, consider another spherical mesh:
+[ball.dae](https://bitbucket.org/osrf/gazebo_models/raw/9f0a80a06cf3/robocup_3Dsim_ball/meshes/ball.dae).
+Meshlab gives the following output for this mesh:
+
+    Mesh Bounding Box Size 1.923457 1.990389 1.967965
+    Mesh Bounding Box Diag 3.396207
+    Mesh Volume is 7.690343
+    Mesh Surface is 23.967396
+    Thin shell barycenter 0.000265 0.000185 0.000255
+    Center of Mass is 0.000257 0.000195 0.000292
+    Inertia Tensor is :
+    | 2.912301 0.001190 0.000026 |
+    | 0.001190 2.903731 0.002124 |
+    | 0.000026 0.002124 2.906963 |
+    Principal axes are :
+    | 0.108262 -0.895479 0.431738 |
+    | -0.120000 0.419343 0.899862 |
+    | 0.986853 0.149229 0.062058 |
+    axis momenta are :
+    | 2.902563 2.907949 2.912483 |
+
+This mesh is approximately the same size,
+with bounding box dimensions in the range [1.92,1.99],
+but its calculations are different by nearly double:
+
+* volume: 7.69 vs. 4.09
+* principal moments: [2.90,2.91] vs. [1.60,1.62]
+
+There is a clue to the difference when you look at the numbers
+of vertices and faces (listed in the bottom of the MeshLab window):
+
+* sphere.dae: 382 vertices, 760 faces
+* ball.dae: 362 vertices, 1440 faces
+
+Each mesh has a similar number of vertices, but `ball.dae` has
+roughtly twice as many faces.
+Running the command
+`Filters` `->` `Cleaning and Repairing` `->` `Remove Duplicate Faces`
+reduces the number of faces in `ball.dae` to 720 and gives
+more reasonable values for the volume (3.84)
+and principal moments of inertia (1.45).
+It makes sense that these values are slightly smaller
+since the bounding box is slightly smaller as well.
+
+## Scaling to increase numerical precision
+
+Meshlab currently prints the geometric information
+with 6 digits of fixed point precision.
+If your mesh is too small, this may substantially
+limit the precision of the inertia tensor,
+for example:
 
     Mesh Bounding Box Size 0.044000 0.221000 0.388410
     Mesh Bounding Box Diag 0.449043
@@ -52,14 +190,21 @@ An example output:
 It seems like we have what we were seeking for.
 But when you look thoroughly, you will see one bad thing - the output is written out only up to 6 decimal digits.
 As a consequence, we lose most of the valuable information in the inertia tensor.
+To overcome lack of precision in the Inertia Tensor,
+you can scale up the model so that the magnitude of the inertia is increased.
+The model can be scaled using `Filters->Normals, Curvatures and Orientation->Transform: Scale`.
+Enter a scale in the dialog and hit `Apply`.
 
-Now comes the time to explain what does the MeshLab output mean.
-In MeshLab, there is no way to tell what the mass of the model is.
-Therefore, MeshLab has to use some other number in place of the mass.
-What makes sense in such case is to take the volume of the model (thus assuming unit density of the material).
-The `Mesh Volume` entry is present in the text output (and is expressed in some "generic" units corresponding to the units used for length).
+To decide the scaling factor `s` to choose, recall that MeshLab uses the volume
+as a proxy for mass, which will vary as `s^3`.
+Furthermore, the inertia has an addition dependence on `length^2`,
+so the moment of inertia will change according to `s^5`.
+Since there is such a large dependence on `s`,
+scaling by a factor of 10 or 100 may be sufficient.
 
-[[file:files/meshlab.jpg|800px]]
+Now, instruct MeshLab to recompute the geometrical measures again,
+and the `Inertia Tensor` entry should have more precision.
+Then multiply the inertia tensor by `1/s^5` to undo the scaling.
 
 ## Getting the Center of Mass
 
@@ -70,21 +215,17 @@ You can e.g. compute the bounding box size in your desired units and compare to 
 Multiply the `Center of Mass` entry with the computed ratio and you have the coordinates of the Center of Mass of your mesh.
 However, if the link you are modelling is not homogeneous, you will have to compute the Center of Mass using other methods (most probably by real experiments).
 
-## Getting the Inertia Tensor
+## Rescaling the moment of inertia values
 
-How to overcome the problem with low precision of the Inertia Tensor floats in the text output? You can scale up the model so that all the numbers grow sufficiently large for not being cropped.
-The model can be scaled using `Filters->Normals, Curvatures and Orientation->Transform: Scale`.
-Enter a scale in the dialog and hit `Apply`.
-What scale to choose? It is reasonable to scale the model in such way that it has unit volume in MeshLab.
-That is done using a scale of `1/Mesh Volume` with the Mesh Volume read from the text output in Layers Dialog.
+Just like the center of mass location must be scaled to the correct units,
+the moment inertia should be scaled as well,
+though the scale factor should be squared to account for the
+`length^2` dependence in the moment of inertia.
+In addition, the inertia should be multiplied by
+the measured `mass` and divided by the computed volume from
+the text output.
 
-Now, instruct MeshLab to recompute the geometrical measures again, et voilà, the `Inertia Tensor` entry looks much better now.
-The only thing that remains is to copy the inertia tensor into a mathematical software and multiply it by `1/s^2` where `s` is the reciprocal of the scale used for upscaling the model.
-
-## Calculating Simple Inertia Tensors
-
-If you're curious about the math behind the inertia matrix, or just want an easy way to calculate the tensor for simple shapes,
-[this wikipedia entry is a great resource](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
+[[file:files/meshlab.jpg|800px]]
 
 # Filling in the tags in URDF/SDF
 
@@ -135,7 +276,7 @@ or like this one (in URDF):
 The `<mass>` should be entered in kilograms and you have to find it out experimentally (or from specifications).
 
 The `<origin>` or `<pose>` are used to enter the Center of Mass position (relative to the link's origin; especially not relative to the link's visual or collision origin).
-The rotational elements will be ignored.
+The rotational elements can define a different coordinate from for the moment of inertia axes.
 If you've found out the center of mass experimentally, fill in this value, otherwise fill in the correctly scaled value computed by MeshLab.
 
 The `<inertia>` tag contains the inertia tensor you have computed in the previous step.
@@ -149,8 +290,9 @@ The mapping from MeshLab's output is the following:
 As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values and be positive, and the off-diagonal numbers should more or less approach zero.
 
 Precisely, the matrix has to be positive definite (use your favorite maths tool to verify that).
-Its diagonal entries also have to satisfy the triangle inequality, ie.
-`ixx + iyy >= izz`, `ixx + izz >= iyy` and `iyy + izz >= ixx`.
+Its diagonal entries also have to
+[satisfy the triangle inequality](http://physics.stackexchange.com/a/48273),
+ie. `ixx + iyy >= izz`, `ixx + izz >= iyy` and `iyy + izz >= ixx`.
 
 # Checking in Gazebo
 
@@ -165,6 +307,7 @@ Then spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobo
 SDF model:
 
     rosrun gazebo_ros spawn_model -sdf -file `rospack find my_robot_description`/urdf/my_robot.sdf -model MyRobot
+
 URDF model:
 
     rosrun gazebo_ros spawn_model -urdf -file `rospack find my_robot_description`/urdf/my_robot.urdf -model MyRobot
@@ -183,7 +326,7 @@ This way you can easily detect problems like misplaced Center of Mass or wrongly
 Do not forget to enter the correct masses when you finish debugging.
 
 To fix a wrongly rotated Inertia Matrix (which in fact happens often), just swap the ixx, iyy, izz entries in the model file until the purple box aligns with its link.
-Then you obviously also have to appropriately swap the ixy, ixz and iyz values (when you swap ixx<->iyy, then you should negate ixy and swap ixz<->iyz).
+Then you obviously also have to appropriately swap the ixy, ixz and iyz values (when you swap ixx`<->`iyy, then you should negate ixy and swap ixz`<->`iyz).
 
 [[file:files/gazebo_inertia.jpg|800px]]
 
@@ -211,4 +354,6 @@ The only other solution would be to find out the inertia tensor experimentally, 
 
 # Conclusion
 
-We have shown the process of getting the correct inertia parameters for your robot model, the way how to enter them in a URDF/SDF file, and also the way how to make sure the parameters are entered correctly.
+We have shown the process of getting the correct inertia parameters for your robot model,
+the way how to enter them in a URDF/SDF file,
+and also the way how to make sure the parameters are entered correctly.
