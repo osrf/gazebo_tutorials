@@ -167,20 +167,19 @@ Your model will show up in the main window.
 
 # Edit existing models
 
-Rather than creating a model from the ground up with simple shapes and meshes,
+Rather than creating a model from the ground up;
 you can also edit existing models that are already in the simulation.
 
 To edit an existing model:
 
-* Make sure you have saved the model you've created and are now back to the
-normal gazebo mode. Alternatively, start from a fresh gazebo instance.
+* Make sure you have saved the model you created, and you have exited the model editor. Alternatively, start from a fresh Gazebo instance.
 
-* Insert a model from the `Insert` tab of the left. For example, let's
+* Insert a model from the `Insert` tab on the left. For example, let's
 insert a `Simple Arm`.
 
 * Right click on the model you just inserted and select `Edit Model`.
 
-[[file:files/model_editor_existing_model.png|800px]]
+    [[file:files/model_editor_existing_model.png|800px]]
 
-Now you are in the model editor mode and you are free to add new links to the
+Now you are in the model editor and you are free to add new links to the
 model or edit existing ones.
