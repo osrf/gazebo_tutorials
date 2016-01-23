@@ -36,8 +36,9 @@ Start Inkscape. This will create a blank document. First, lets change the
 [[file:files/inkscape-page-tab.png|400px]]
 
 Then, in the same dialog, select the `Grids`
- tab, press the `New` button to create a custom grid. Then, check the`Enabled`,
-`Visible`, and `Snap to visible grid lines only` options.
+ tab, press the `New` button to create a custom grid. Then, check the `Enabled`,
+ `Visible`, and `Snap to visible grid lines only` options. Change
+ `Spacing X` and `Spacing Y` to be 10.
 
 [[file:files/inkscape-grids-tab.png|400px]]
 
@@ -70,6 +71,10 @@ Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
 Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
  separate groups of paths.
 
+### Save your drawing
+
+Save your drawing to an SVG file you can use later in Gazebo. Use the `Save`
+ menu from the `File` menu.
 
 ### Create a Gazebo Model
 
@@ -78,11 +83,24 @@ Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
  poly lines from SVG files, and save it them an SDF model file.
 
 Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
- Gazebo Model Editor mode (as opposed to the simulation mode). Then, set the
- thickness of the wheel to 0.025 m, and press `OK`. Your new link should
- appear in the 3D view.
+ Gazebo Model Editor mode (as opposed to the simulation mode).
 
-The dialog also allows you to set parameters of the extrusions:
+
+Then press the `Add` button on the `Custom Shapes` from the `Insert` tab.
+
+[[file:files/add-custom-shape.png|400px]]
+
+This will open the `Import Link` dialog from where you can select the SVG file
+ by pressing the `Browse` button.
+
+[[file:files/import-link.png|400px]]
+
+Once the file has been selected, press the `Import` button to open the
+ `Extrude Link` dialog.
+
+[[file:files/extrude-link.png|400px]]
+
+The dialog allows you to set parameters of the extrusions:
 
 
 * **Thickness**: How thick the link will be. This corresponds to the extrusion
@@ -102,9 +120,10 @@ The dialog also allows you to set parameters of the extrusions:
 On the right, you can see the path extracted from your SVG. The red points are
  the summit of the triangulation of the extruded 3D model.
 
-[[file:files/extrude-link.png|400px]]
+Set the thickness of the wheel to 0.025 m, and press `OK`. Your new link should
+ appear in the 3D view.
 
-Your wheel is now ready, and it comes with a default collision shape that is
+A new link is created, and it comes with a default collision shape that is
 a copy of the generated 3D mesh.
 
 [[file:files/custom-wheel.png|400px]]
