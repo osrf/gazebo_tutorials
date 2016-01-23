@@ -154,7 +154,7 @@ panel and give it a name.
 To save the model, choose `File`, then `Save As` (or hit `Ctrl+S`) in the top
 menu. A dialog will come up where you can choose the location for your model.
 
-[[file:files/model_editor_save_dialog.png|300px]]
+[[file:files/model_editor_save_dialog_7.png|300px]]
 
 # Exit
 
