@@ -138,7 +138,8 @@
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
-      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
+      <markdown version="7+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
