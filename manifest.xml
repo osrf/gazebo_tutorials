@@ -4,21 +4,32 @@
     <!-- ****************** -->
     <!-- Guided tutorials -->
 
-    <tutorial title="First Time User" ref='ftu1'>
-      <markdown version="1.0">ftu/tutorial1.md</markdown>
+    <!-- Beginner tutorials -->
+    <tutorial title="Beginner: Overview" ref='guided_b1'>
+      <markdown version="7.0">guided_b/tutorial1.md</markdown>
+      <description>Overview and installation instructions</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu2'>
-      <markdown version="1.0">ftu/tutorial2.md</markdown>
+    <tutorial title="Beginner: GUI" ref='guided_b2'>
+      <markdown version="7.0">guided_b/tutorial2.md</markdown>
+      <description>Introduction to the graphical interface.</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu3'>
-      <markdown version="1.0">ftu/tutorial3.md</markdown>
+    <tutorial title="Beginner: Model Editor" ref='guided_b3'>
+      <markdown version="7.0">guided_b/tutorial3.md</markdown>
+      <description>How to make or edit a model.</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu4'>
-      <markdown version="1.0">ftu/tutorial4.md</markdown>
-    </tutorial>
+
+    <!-- Intermediate tutorials
+    <tutorial title="Intermediate: 1" ref='guided_i1'>
+      <markdown version="7.0">guided_i/tutorial1.md</markdown>
+    </tutorial>-->
+
+    <!-- Advanced tutorials
+    <tutorial title="Advanced: 1" ref='guided_a1'>
+      <markdown version="7.0">guided_a/tutorial1.md</markdown>
+    </tutorial> -->
 
     <!-- ****************** -->
     <!-- Beginner tutorials -->
@@ -127,14 +138,16 @@
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
-      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
+      <markdown version="7+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
       <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
-      <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
+      <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
+      <markdown version="7+">plugins_world_properties/tutorial.md</markdown>
       <description>Modify world properties, such as ambient color and the physics time step.</description>
       <tags>
         <tag>plugin</tag>
@@ -326,7 +339,8 @@
     </tutorial>
 
     <tutorial title="Model Editor" ref="model_editor">
-      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <markdown version="6+">model_editor/tutorial_6.md</markdown>
+      <markdown version="7+">model_editor/tutorial.md</markdown>
       <description>Create and edit models within a model editor.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -420,8 +434,8 @@
     </tutorial>
 
     <tutorial title="Animated Box" ref='animated_box'>
-      <markdown version="4.0">animated_box/tutorial_4.md</markdown>
-      <markdown version="5.0+">animated_box/tutorial.md</markdown>
+      <markdown version="4.0-5.0">animated_box/tutorial_4.md</markdown>
+      <markdown version="6.0+">animated_box/tutorial.md</markdown>
       <description>Animate the pose of box.</description>
       <skill>intermediate</skill>
       <tags>

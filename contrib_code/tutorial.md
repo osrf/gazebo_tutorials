@@ -231,6 +231,7 @@ In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
 ### Benefits of the assertions
 
 Some of the benefits of using the assertions:
+
 * They are really useful for not having to debug all kind of weird and unexpected errors, especially in runtime. Exact failure point appears when pass by an assertion.
 * Developer can be sure that some conditions are met at a given code point. Code turns more reliable.
 * Help to detect no so obvious errors happening (affecting performance for example)
@@ -239,7 +240,7 @@ Some of the benefits of using the assertions:
 
 While assertions are aimed to impossible situations generated from programming errors, the exceptions handle all kind of expected errors and unusual but logically possible code situations.
 
-Lets review an example: imaging we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
+Lets review an example: suppose we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
      
      double sqrt_for_positives(double number)
 

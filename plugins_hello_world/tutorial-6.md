@@ -19,22 +19,23 @@ You should use a plugin when:
 *  you want to programmatically alter a simulation
 
    Ex: move models, respond to events, insert new models given a set of preconditions
-   
+
 *  you want a fast interface to gazebo, without the overhead of the transport layer
 
    Ex: No serialization and deserialization of messages.
-   
+
 *  you have some code that could benefit others and want to share it
 
 # Plugin Types
 
-There are currently 5 types of plugins
+There are currently 6 types of plugins
 
 1.  World
 1.  Model
 1.  Sensor
-1.  System.
-1.  Visual.
+1.  System
+1.  Visual
+1.  GUI
 
 Each plugin type is managed by a different component of Gazebo.
 For example, a Model plugin is attached to and controls a specific model in Gazebo.

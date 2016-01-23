@@ -16,22 +16,22 @@ and print out the location and timestamp of the box.
 Create a working directory.
 
 ~~~
-mkdir ~/gazebo_animatebox_tutorial
-cd ~/gazebo_animatebox_tutorial
+mkdir ~/gazebo_animatedbox_tutorial
+cd ~/gazebo_animatedbox_tutorial
 ~~~
 
 # Animate box code
 
-Copy [animate_box.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6_6.1.0/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6_6.1.0/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6_6.1.0/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/gazebo6_6.1.0/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://bitbucket.org/osrf/gazebo/src/gazebo6_6.1.0/examples/stand_alone/animated_box/animated_box.world) into the current directory.
+Copy [animated_box.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/stand_alone/animated_box/animated_box.world) into the current directory.
 
 On OS X, you can replace `wget` with `curl -O`.
 
 ~~~
-wget https://bitbucket.org/osrf/gazebo/raw/gazebo6_6.1.0/examples/stand_alone/animated_box/animated_box.cc
-wget https://bitbucket.org/osrf/gazebo/raw/gazebo6_6.1.0/examples/stand_alone/animated_box/independent_listener.cc
-wget https://bitbucket.org/osrf/gazebo/raw/gazebo6_6.1.0/examples/stand_alone/animated_box/integrated_main.cc
-wget https://bitbucket.org/osrf/gazebo/raw/gazebo6_6.1.0/examples/stand_alone/animated_box/CMakeLists.txt
-wget https://bitbucket.org/osrf/gazebo/raw/gazebo6_6.1.0/examples/stand_alone/animated_box/animated_box.world
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/stand_alone/animated_box/animated_box.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/stand_alone/animated_box/independent_listener.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/stand_alone/animated_box/integrated_main.cc
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/stand_alone/animated_box/CMakeLists.txt
+wget http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/stand_alone/animated_box/animated_box.world
 ~~~
 
 Build the plugin

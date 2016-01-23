@@ -15,7 +15,9 @@ The full world API documentation can be found
 
 The documentation for building a Gazebo world using [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world).
 
-# Example
+# Matlab Example
+
+## Intoduction
 
 First, build a world using SDF:
 
@@ -56,7 +58,7 @@ Next, write a simple Octave/Matlab to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/> 
+<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/>
 
 ## Get the code:
 
@@ -66,7 +68,28 @@ Download tutorial files:
 
  - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
-## Start Gazebo handsim simulation
+# Haptix C-API Example
+
+## Intoduction
+
+Using the same world as the Matlab example above,
+and write a simple C code to sense contact state on the visual
+sphere model, and change the color of the sphere from green to red when
+it comes into contact with other objects:
+
+<include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/3ae012b18a18195648635c412336d5f396bea426/haptix_world_sim_api/files/custom_world.c'/> 
+
+Build `custom_world.c` as you would with any Haptix C API code as shown in [Compile section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Compileyourcontroller).
+
+## Get the code:
+
+Download tutorial files:
+
+ - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
+
+ - [custom_world.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
+
+# Start Gazebo handsim simulation
 
 To run the example, start gazebo in terminal:
 
@@ -81,8 +104,6 @@ First see [world API tutorial Example section](http://gazebosim.org/tutorials?tu
 Next, invoke the `custom_world.m` script in Matlab or Octave command prompt
 and the sphere should change color from green to red as the hand passes through it:
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/bWaWNZu-0n4" frameborder="0" allowfullscreen></iframe>
-
 Hint for linux users, at octave or matlab prompt, add path to haptix scripts:
 
 ~~~
@@ -91,3 +112,10 @@ path('[replace with path to your custom_world.m]', path)
 ~~~
 
 before running `custom_world.m`.
+
+## Run the code: Using C-API on Linux
+
+Run compiled binary from `custom_world.c` as you would with any Haptix C API code as shown in [Running the simulation section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Runningthesimulationwithyourcontroller).
+
+## Example Video
+<iframe width="600" height="450" src="https://www.youtube.com/embed/bWaWNZu-0n4" frameborder="0" allowfullscreen></iframe>
