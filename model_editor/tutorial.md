@@ -58,7 +58,8 @@ that lets you find the mesh you want to add.
 1. Click on `Browse` button and use the file browser to find the mesh file
 on your local machine. If you know the path of the mesh file, you can enter it
 directly in the text field box next to the `Browse` button. Note Gazebo
-currently only supports importing COLLADA (dae) and STereoLithography (stl) files.
+currently only supports importing COLLADA (dae), STereoLithography (stl),
+and Scalar Vector Graphics (svg) files.
 
 1. Click `Import` to load the mesh file. Then, add it to the 3D view.
 
