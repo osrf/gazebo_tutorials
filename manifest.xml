@@ -20,11 +20,6 @@
       <description>How to make or edit a model.</description>
     </tutorial>
 
-    <tutorial title="Joints" ref='guided_b4'>
-	    <markdown version="7.0">guided_b/tutorial4.md</markdown>
-	    <description>Defining Joints and how to use them.</description>
-    </tutorial>
-
 
     <!-- Intermediate tutorials
     <tutorial title="Intermediate: 1" ref='guided_i1'>
@@ -313,6 +308,11 @@
       <markdown version="1.9+">instrument_hdf5_datasets/tutorial.md</markdown>
       <description>How to dump simulation data into HDF5 format for benchmark.</description>
       <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Joints" ref='joints'>
+	    <markdown version="7.0+">joints/tutorial.md</markdown>
+	    <description>Defining Joints and how to use them.</description>
     </tutorial>
 
 
