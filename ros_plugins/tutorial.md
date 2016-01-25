@@ -8,7 +8,7 @@ Create a new ROS package in your catkin workspace:
 
 ~~~
 cd ~/catkin_ws
-catkin_create-pkg gazebo_tutorials gazebo_ros roscpp
+catkin_create_pkg gazebo_tutorials gazebo_ros roscpp
 ~~~
 
 ## Create the Plugin
