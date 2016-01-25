@@ -1,7 +1,8 @@
 # Overview
 
-This tutorial will explain how to use the Gazebo logging capabilities for
-recording your simulation and being able to reproduce it afterwards.
+This tutorial will explain how to use the Gazebo logging capabilities to
+record your simulation and then reproduce it afterwards, using either the GUI
+or the command line.
 
 # Gazebo log files
 
@@ -9,19 +10,23 @@ Gazebo log files are compressed `.log` files which contain an initial full
 description of the whole world, followed by a series of "world states".
 
 The initial description contains complete information about everything in the
-world. Each state following that contains information about changes in the
-world, such as:
+world, from the scene to the entities present.
+
+After that, every time something moves in simulation, a new world state is
+recorded. World states are much simpler, as they only contain information about
+what changed, such as:
 
 * Simulation stats such as the current simulation time and the number of physics
 iterations.
 
 * Current state of each model in the scene, as well as the state of each link
-and joint in the model. It includes information such as instantaneous pose,
+and joint in the model. This includes information such as instantaneous pose,
 velocity, acceleration and forces.
 
 * Current pose of each light in the world.
 
-> **Tip**: You can find the whole spec for the world state [here](http://sdformat.org/spec?ver=1.5&elem=state).
+> **Tip**: You can find the whole spec for the world state
+[here](http://sdformat.org/spec?ver=1.6&elem=state).
 
 In this tutorial we will record a few log files and then take a peak inside
 them in the end.
@@ -52,21 +57,25 @@ increase.
 1. Expand `Recordings` to see the path to the `state.log` file which was
 generated. It will be inside a time-stamped directory.
 
-[[file:files/recordings.png|800px]]
+[[file:files/recordings.png|400px]]
 
 ## Logging from the command line
 
 From the command line, it is possible to log the whole simulation from the
 moment Gazebo starts running until it stops, or to trigger logging from an
-arbritary time.
+arbitary time.
 
 ### Logging the whole simulation
 
-As an example, we will record the `random_velocity.world` as follows:
+As an example, you can record the `random_velocity.world` as follows:
 
     gazebo -r --record_path ~/logs/random_velocity worlds/random_velocity.world
 
-The log file will only be terminated when Gazebo is closed.
+The log file will only be terminated when Gazebo is closed. You can check the
+file was created by looking into the path given:
+
+    $ ls ~/logs/random_velocity/
+    state.log
 
 Here are some logging options. You can check what options there are running
 `gazebo --help`.
@@ -102,9 +111,9 @@ ways.
 
 Currently, it is not possible to open a log file from the GUI, so playback must
 be started from the command line. Simply start Gazebo using the `-p` option
-to specify a log file, such as:
+to specify a log file, such as the one we recorded earlier:
 
-    gazebo -u -p ~/logs/pendulum/2016-01-25T13\:55\:16.923263/gzserver/state.log
+    gazebo -u -p ~/logs/double_pendulum/2016-01-25T15\:09\:49.677400/gzserver/state.log
 
 > **Tip**: The `-u` option starts the log paused.
 
@@ -118,11 +127,11 @@ the playback. It's also possible to input a specific time to jump to.
 As mentioned above, the `gz log` tool provides several options for introspecting
 your log file. Check out
 [this](http://gazebosim.org/tutorials?tut=log_filtering&cat=tools_utilities)
-tutorial for log filtering.
+tutorial for log filtering, for example.
 
 Here, let's quickly go over how you would take a look at the recorded states.
 
-We'll use `-s` to step through a recorded files, like this:
+We'll use `-s` to step through a recorded file, like this:
 
     gz log -s -f ~/.gazebo/log/2016-01-25T14\:23\:13.042235/gzserver/state.log
 
