@@ -7,7 +7,7 @@ In this tutorial we'll walk through creating a very basic Gazebo plugin that is 
 Create a new ROS package in your catkin workspace:
 
 ~~~
-cd ~/catkin_ws
+cd ~/catkin_ws/src
 catkin_create_pkg gazebo_tutorials gazebo_ros roscpp
 ~~~
 
@@ -128,6 +128,12 @@ Create the following launch file gazebo_tutorials/launch/hello.launch:
     <!-- more default parameters can be changed here -->
   </include>
 </launch>
+~~~
+
+Before continuing source your new setup.*sh file:
+
+~~~
+source devel/setup.bash
 ~~~
 
 ## Run the Plugin
