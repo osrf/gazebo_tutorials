@@ -293,6 +293,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Logging and playback" ref='logging_playback'>
+      <markdown version="7.0+">logging_playback/tutorial.md</markdown>
+      <description>Record and playback your simulation, via the GUI or command line.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -891,6 +897,7 @@
     <category title="Tools and utilities" skill="beginner" ref="tools_utilities">
       <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
       <tutorials>
+        <tutorial>logging_playback</tutorial>
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
