@@ -73,7 +73,7 @@ As an example, you can record the `random_velocity.world` as follows:
 
     gazebo -r --record_path ~/logs/random_velocity worlds/random_velocity.world
 
-> Here are some logging options. You can check which options are running
+> You can see a list of all of the available logging options by running
 > `gazebo --help`.
 
 > * **-p [--play] arg**: Play a log file.
