@@ -6,6 +6,10 @@ State logs are recordings of world state information from Gazebo. State includes
 
 ## Step 1: Create a state log file
 
+> **Tip**: Check out the
+[tutorial](http://gazebosim.org/tutorials?tut=logging_playback)
+on logging and playback for an overview of ways to record a log.
+
 Start by removing old log files
 
 ~~~
