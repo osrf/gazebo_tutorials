@@ -1,6 +1,6 @@
 # Overview
 
-This tutorial will explain how to use the Gazebo logging capabilities to
+This tutorial explains how to use the Gazebo logging capabilities to
 record your simulation and then reproduce it afterwards, using either the GUI
 or the command line.
 
@@ -28,8 +28,8 @@ velocity, acceleration and forces.
 > **Tip**: You can find the whole spec for the world state
 [here](http://sdformat.org/spec?ver=1.6&elem=state).
 
-In this tutorial we will record a few log files and then take a peak inside
-them in the end.
+In this tutorial we will record a few log files and then take a peek inside
+them at the end.
 
 # Record a log
 
@@ -73,7 +73,7 @@ As an example, you can record the `random_velocity.world` as follows:
 
     gazebo -r --record_path ~/logs/random_velocity worlds/random_velocity.world
 
-> Here are some logging options. You can check what options there are running
+> Here are some logging options. You can check which options are running
 > `gazebo --help`.
 
 > * **-p [--play] arg**: Play a log file.
@@ -104,7 +104,7 @@ And to stop:
 
 Check out `gz log --help` for other options.
 
-# Playback a log file
+# Play back a log file
 
 Once you have a log file, you can replay it visually or introspect it in several
 ways.
