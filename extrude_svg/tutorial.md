@@ -1,20 +1,20 @@
 # Overview
 
 This tutorial describes the process of extruding SVG files, which are 2D
- images, to create 3D meshes for your robots in Gazebo. It is sometimes
+ images, to create 3D meshes for your models in Gazebo. It is sometimes
  easier to design part of a model in a program like [Inkscape](https://inkscape.org/) or [Illustrator](www.adobe.com/Illustrator).
 
 Before starting, make sure you're familiar with the
  [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
 
 This tutorial will show you how to make a custom wheel as an .svg in Inkscape,
- import it into Gazebo, so that it can be attached to a robot.
+ and import it into Gazebo so that it can be attached to a robot.
 
 ### Using the Inkscape SVG editor
 
 [[file:files/inkscape_logo.jpg]]
 
-There are many SVG editors. For this tutorial, we will use the Open Source
+There are many SVG editors. For this tutorial, we will use the open source
  Inkscape program (see
 [installation instructions](https://inkscape.org/en/download) ).
 
@@ -47,20 +47,20 @@ You should end up with a document looking like this:
 
 ### Draw
 
-You can use the different tools (pen, text, stars and shapes, etc...) to create
+You can use the different tools (pen, text, stars and shapes, etc.) to create
  your geometry. In this example, the wheel is made from circles (pressing the
  Shift Key you can start your circle from the center, and using the CTRL key
  allows you to keep the roundness of the shape). It is possible to combine
  shapes together, making sure that paths are closed and that the part has
  a proper thickness.
 
- **Note**: a stick figure or two circles that  touch each other would not
+ **Note**: a stick figure or two circles that touch each other would not
  result in valid Gazebo models.
 
 [[file:files/inkscape-simple-wheel.png|400px]]
 
-Gazebo only imports `paths`, but it easy with Inkscape to transform any shape
- to a path. Select `Select All` from the `Edit` menu. Then select
+Gazebo only imports `paths`, but it's easy with Inkscape to transform any shape
+ to a path. Select `Select All` from the `Edit` menu. Then select the
 `Path -> Object to Path` menu item. This will transform every object into
  separate paths and sub paths. This transformation is irreversible, so if you
  transform text into paths, you will not be able to alter the text.
@@ -73,11 +73,11 @@ Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
 ### Save your drawing
 
 Save your drawing to an SVG file you can use later in Gazebo. Use the `Save`
- menu from the `File` menu.
+ option from the `File` menu.
 
 ### Create a Gazebo Model
 
-[SDFormat](http://sdformat.org) does not support SVG directly, it supports 2D
+[SDFormat](http://sdformat.org) does not support SVG directly; it supports 2D
  poly lines. The Gazebo Model Editor has an import mechanism that extracts the
  poly lines from SVG files, and saves them as an SDF model file.
 
@@ -85,7 +85,7 @@ Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
  Gazebo Model Editor mode (as opposed to the simulation mode).
 
 
-Then press the `Add` button on the `Custom Shapes` from the `Insert` tab.
+Then press the `Add` button in the `Custom Shapes` section of the `Insert` tab.
 
 [[file:files/add-custom-shape.png|400px]]
 
@@ -112,7 +112,7 @@ The dialog allows you to set parameters of the extrusions:
  shows up the size you'd like in Inkscape when you display the units as meters,
  you shouldn't change the resolution value.
 
-* **Samples per segment**: This indicates how many segments to divide each of
+* **Samples per segment**: This indicates into how many segments to divide each of
  the curved paths in the SVG. The more segments, the more complex your link
  will be. It doesn't change anything for straight paths.
 
@@ -133,7 +133,7 @@ Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
 
 [[file:files/save-model.png|400px]]
 
-Set the name of the new model to "HollowWheel", and fill the information under
+Set the name of the new model to "HollowWheel", and fill in the information under
  the `Advanced Options` section. Press the `Save` button.
 
 > Your new Gazebo model is now ready to roll ;-)
