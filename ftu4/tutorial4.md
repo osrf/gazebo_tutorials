@@ -2,7 +2,7 @@
 
 Now we'll construct our simple robot. We'll make a wheeled vehicle and add a sensor that allows us to make the robot follow a blob (person).
 
-The Model Editor lets us construct simple models right in the GUI. For more complex models, you'll need to learn how to write SDF (XML-based) files [link to tutorial].
+The Model Editor lets us construct simple models right in the GUI. For more complex models, you'll need to learn how to write SDF (XML-based) files (see tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot)).
 But for now, we can do everything right in the Gazebo GUI!
 
 
@@ -38,7 +38,7 @@ right-clicking and selecting Open Inspector from the context menu in the Scene.
 
 #### Toolbar
 
-Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (link to previous tutorial).
+Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorials?cat=ftu&tut=ftu3 tutorial).
 A new Joint Creation tool is available; it is used to create joints between links in the model.
 
 #### Limitations
@@ -69,7 +69,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-editor_box.png|400px]]
 
 1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this using the Scale tool located on the top Toolbar.
-   Select the box in the Scene, and a RGB-colored marker should appear over the box. The red marker represents the X axis, green is Y, and blue is Z. Move the mouse over the red marker to highlight it, then click and drag to make the chassis longer along the X axis. Scale the chassis 
+   Select the box in the Scene, and a RGB-colored marker should appear over the box. The red marker represents the X axis, green is Y, and blue is Z. Move the mouse over the red marker to highlight it, then click and drag to make the chassis longer along the X axis. Scale the chassis
    so it is roughly 2 meters long. You can estimate this by looking at the 1x1 meter grids on the ground.
 
     [[file:files/ftu4-scale_tool.png|200px]]
@@ -96,8 +96,8 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-wheel_visual.png|600px]]
 
-1. You should now see in the Scene that a smaller cylinder appears inside the bigger cylinder. This is expected as we have only changed the visual geometry but not the collision. A 'visual' is the graphical representation of the link and does not affect the physics simulation. On the other hand, a 'collision' 
-   is used by the physics engine for collision checking. To also update the wheel's collision, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m. Close the Inspector. 
+1. You should now see in the Scene that a smaller cylinder appears inside the bigger cylinder. This is expected as we have only changed the visual geometry but not the collision. A 'visual' is the graphical representation of the link and does not affect the physics simulation. On the other hand, a 'collision'
+   is used by the physics engine for collision checking. To also update the wheel's collision, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m. Close the Inspector.
 
 1. Now that we have created our first wheel, we'll use it as a template and make another one. Select the wheel and click on the Copy icon in the top Toolbar.
 
@@ -111,33 +111,33 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-joint_dialog.png|400px]]
 
-1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis in the Scene to see it highlighted, and click on it to set it as the 
+1. The Joint Creation dialog contains joint properties that are commonly specified for a joint. Before configuring any of the properties, you are prompted to select the parent and child links of the joint. Move the mouse over the chassis in the Scene to see it highlighted, and click on it to set it as the
    parent of the joint.
 
-1. Move the mouse to the left front wheel; a line should now extend from the origin of the chassis to the end of the mouse. Click on the wheel to set it as the child of the joint. A new joint is created. By default it is a revolute joint (as indicated in the `Joint Types` section in the dialog) which just 
+1. Move the mouse to the left front wheel; a line should now extend from the origin of the chassis to the end of the mouse. Click on the wheel to set it as the child of the joint. A new joint is created. By default it is a revolute joint (as indicated in the `Joint Types` section in the dialog) which just
    happens to be the joint type we want.
 
     Note: You may find it useful to change the view angle at this point. This can be done in the Upper Toolbar; click the cube icon with an orange side.
 
     [[file:files/ftu4-wheel_joint.png|600px]]
 
-1. Next, we need to configure the axis of rotation of the wheel. In the Joint Creation dialog, find the `Joint axis` section and change the axis to be `Z` (0, 0, 1). Pay attention to the RGB joint visual on the wheel. You should see that a yellow ring now appears over the blue arrow of the joint visual to 
+1. Next, we need to configure the axis of rotation of the wheel. In the Joint Creation dialog, find the `Joint axis` section and change the axis to be `Z` (0, 0, 1). Pay attention to the RGB joint visual on the wheel. You should see that a yellow ring now appears over the blue arrow of the joint visual to
    indicate that it is the axis of rotation.
 
     [[file:files/ftu4-wheel_rotation_axis.png|600px]]
 
-1. To align the wheel next to the chassis, we will use the different alignment options in the `Align links` section in the Joint Creation dialog. First we will align in the X axis, so click on the `X Align Max` option to see the result of the alignment. The cylinder should be highlighted to indicate that its 
+1. To align the wheel next to the chassis, we will use the different alignment options in the `Align links` section in the Joint Creation dialog. First we will align in the X axis, so click on the `X Align Max` option to see the result of the alignment. The cylinder should be highlighted to indicate that its
    pose has changed.
 
 
     [[file:files/ftu4-wheel_align_x.png|600px]]
 
-1. In our example, we want to position the wheel flush against the chassis. To bring the wheel closer, click the `Y Align Max` option. However, it is not quite what we want yet. Click the `Reverse` option next the Y alignment options to align the wheel's minimum (reverse of maximum) to the chassis's maximum. 
+1. In our example, we want to position the wheel flush against the chassis. To bring the wheel closer, click the `Y Align Max` option. However, it is not quite what we want yet. Click the `Reverse` option next the Y alignment options to align the wheel's minimum (reverse of maximum) to the chassis's maximum.
    Note that the `Reverse` option is applied to the child link since the default alignment configuration shown in the drop down list below is `Child to Parent`.  If `Parent to Child` configuration is set, the `Reverse` option will be applied to the parent link.
 
     [[file:files/ftu4-wheel_align_y_reverse.png|600px]]
 
-1. To position the wheel above the ground, we can use the `Relative Pose` section at the bottom of the dialog to move the child link (wheel) relative to the parent link (chassis). Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, a simple math calculation will show that we need 
+1. To position the wheel above the ground, we can use the `Relative Pose` section at the bottom of the dialog to move the child link (wheel) relative to the parent link (chassis). Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, a simple math calculation will show that we need
    to place the wheel at -0.1m relative to the chassis. So go ahead and change the `Z` position to -0.1m.
 
     [[file:files/ftu4-wheel_pose_z.png|600px]]
@@ -154,7 +154,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-caster_sphere.png|600px]]
 
-1. Resize the sphere by giving it exact dimensions in the same way you did for the front wheels. Go to the Visual tab to see the list of visuals in this link, expand the only visual item, scroll down to the `Geometry` section and change the `Radius` to 0.2m. Make sure to also do the same to the collision in the 
+1. Resize the sphere by giving it exact dimensions in the same way you did for the front wheels. Go to the Visual tab to see the list of visuals in this link, expand the only visual item, scroll down to the `Geometry` section and change the `Radius` to 0.2m. Make sure to also do the same to the collision in the
    Collision tab.
 
     [[file:files/ftu4-caster_resize.png|600px]]
@@ -163,7 +163,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-caster_joint.png|600px]]
 
-1. Unlike the front wheel joints, a caster wheel rolls in all directions and does not have a specific axis of rotation. In Gazebo, this is simulated using a ball joint. So under the `Joint types` section, select the `Ball` joint option. You should see the joint visual in the scene change color to indicate a 
+1. Unlike the front wheel joints, a caster wheel rolls in all directions and does not have a specific axis of rotation. In Gazebo, this is simulated using a ball joint. So under the `Joint types` section, select the `Ball` joint option. You should see the joint visual in the scene change color to indicate a
    different joint type has been set.
 
     [[file:files/ftu4-caster_joint_ball.png|600px]]
@@ -186,7 +186,7 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 
     [[file:files/ftu4-insert_tab.png|300px]]
 
-1. The models in the lists are organized by the path in which they are located. As you can see, the first list contains models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from 
+1. The models in the lists are organized by the path in which they are located. As you can see, the first list contains models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from
    the online model database. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available from the online model database.
 
     [[file:files/ftu4-model_database.png|300px]]
@@ -211,8 +211,8 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 
 ### Adding a plugin
 
-The vehicle we have built so far is complete with all of the physical and sensor components. However, it will not really do much but stay still and generate depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data 
-   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code (link to tutorial).
+The vehicle we have built so far is complete with all of the physical and sensor components. However, it will not really do much but stay still and generate depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data
+   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code. See [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
@@ -225,12 +225,12 @@ The vehicle we have built so far is complete with all of the physical and sensor
 1. First, give the plugin a name. Enter `follower` in the `Plugin Name` field. The plugin name has to be unique within this model.
 
 
-1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin library stored on your local machine. It exists in the form of a dynamically linked shared object library, hence the naming convention and the 
+1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin library stored on your local machine. It exists in the form of a dynamically linked shared object library, hence the naming convention and the
    extension `.so` (on linux). Do not worry if you are using Gazebo on other operating systems as the extension will be automatically replaced with the correct one.
 
     [[file:files/ftu4-model_plugin_inspector_done.png|400px]]
 
-1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires specifying the name of joints controlling the 
+1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires specifying the name of joints controlling the
    left and right wheels so it can move the vehicle in the correct direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
 
 1. Click `OK` to add the plugin. The plugin should now appear under `Model Plugins` in the left panel.
