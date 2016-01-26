@@ -52,7 +52,8 @@ bytes in your log file increasing on the right.
 
     > **Note**: For efficiency, only models and lights which move over time are
     logged. If your scene is static, the number of bytes in your log file will
-    not increase.
+    not increase. This also means that the number of samples in your log file
+    may be different from the number of iterations in simulation.
 
 1. Click on the red button again to stop logging.
 
@@ -128,8 +129,9 @@ the playback.
 
 * Use `Rewind` / `Forward` to skip to the beginning / end of the file.
 
-* Use `Step back` / `Step forward` to skip iterations. The number of iterations
+* Use `Step back` / `Step forward` to skip samples. The number of samples
 skipped each time you press a step button can be changed in the box below.
+Samples might be any number of iterations and seconds apart.
 
 * Drag the current time marker and drop it to skip through the log.
 
