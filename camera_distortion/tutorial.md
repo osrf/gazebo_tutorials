@@ -2,7 +2,7 @@
 
 Cameras lenses typically exhibit some degree of optical distortions, which result in warping of images. An example is a fisheye camera that is commonly used in robotics applications to obtain a wider field of view of the environment for object recognition or navigation tasks.
 
-Using camera calibration tools such as Matlab or OpenCV, it is possible to extract distortion coefficients along with other camera intrinsic parameters. With these distortion coeffient, users can now create a distorted camera sensor in Gazebo.
+Using camera calibration tools such as Matlab or OpenCV, it is possible to extract distortion coefficients along with other camera intrinsic parameters. With these distortion coefficient, users can now create a distorted camera sensor in Gazebo.
 
 ## Current Implementation
 

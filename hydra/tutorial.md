@@ -7,11 +7,13 @@ models in Gazebo.
 
 # Razer Hydra configuration.
 
-Create a file called `90-hydra.rules`:
+Open a terminal (CTRL-ALT-T), and run the following command:
 
 ~~~
 echo -e "ATTRS{idProduct}==\"0300\",ATTRS{idVendor}==\"1532\",ATTR{bInterfaceNumber}==\"00\",TAG=\"hydra-tracker\"\nSUBSYSTEM==\"hidraw\",TAGS==\"hydra-tracker\", MODE=\"0666\", SYMLINK+=\"hydra\"" > 90-hydra.rules
 ~~~
+
+This will Create a file called `90-hydra.rules`.
 
 We need to be able to access to the controller without root access.
 

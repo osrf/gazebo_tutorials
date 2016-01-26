@@ -176,7 +176,7 @@ namespace gazebo
     /// \param[in] _sdf SDF element that describes the plugin.
     public: virtual void Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf);
 
-    /// \brief Callback that recieves the contact sensor's update signal.
+    /// \brief Callback that receives the contact sensor's update signal.
     private: virtual void OnUpdate();
 
     /// \brief Pointer to the contact sensor

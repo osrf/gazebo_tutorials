@@ -115,7 +115,7 @@ These nodes are better documented in the tutorial
 
 ## Tutorials
 
-Tutorials from ros.org have been almost entirely removed and re-written from scratch on this website to reflect the many changes that have occured over the course of Gazebo's history.
+Tutorials from ros.org have been almost entirely removed and re-written from scratch on this website to reflect the many changes that have occurred over the course of Gazebo's history.
 We've done our best to thoroughly document how to get your URDF-based robot running smoothly in Gazebo.
 If you have any question please see [answers.ros.org](http://answers.ros.org/).
 

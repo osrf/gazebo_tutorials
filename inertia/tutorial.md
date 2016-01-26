@@ -2,7 +2,7 @@
 
 For physically plausible behavior of the model you need to correctly set up the inertia matrix, the center of mass and the weight of all links. This tutorial will guide you through the process of obtaining and filling in these information if you don't have them (and you have 3D models of the links).
 
-This tutorial shows how to obtain inertial data using the free software MeshLab (assuming homogeneous bodies). You can also use the commercial product SolidWorks to compute these information. For a guide on using SolidWorks, plese refer to [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)   
+This tutorial shows how to obtain inertial data using the free software MeshLab (assuming homogeneous bodies). You can also use the commercial product SolidWorks to compute these information. For a guide on using SolidWorks, plese refer to [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)
 
 # Preparation
 
@@ -21,7 +21,7 @@ Open the mesh file in MeshLab. To compute the inertial parameters, you first nee
 Next, command MeshLab to compute the inertial parameters. Choose `Filters->Quality Measure and Computations->Compute Geometric Measures` from the menu. The lower part of the Layers dialog should now show some info about the inertial measures. An example output:
 
     Mesh Bounding Box Size 0.044000 0.221000 0.388410
-    Mesh Bounding Box Diag 0.449043 
+    Mesh Bounding Box Diag 0.449043
     Mesh Volume is 0.001576
     Mesh Surface is 0.136169
     Thin shell barycenter -0.021954 0.008976 0.012835
@@ -45,15 +45,19 @@ Now comes the time to explain what does the MeshLab output mean. In MeshLab, the
 
 ## Getting the Center of Mass
 
-It is not always the case that MeshLab uses the same length units as you'd want (meters for Gazebo). However, you can easily tell the ratio of MeshLab units to your desired units by looking at the `Mesh Bounding Box Size` entry. You can e.g. compute the bounding box size in your desired units and compare to the MeshLab's one. 
+It is not always the case that MeshLab uses the same length units as you'd want (meters for Gazebo). However, you can easily tell the ratio of MeshLab units to your desired units by looking at the `Mesh Bounding Box Size` entry. You can e.g. compute the bounding box size in your desired units and compare to the MeshLab's one.
 
-Multiply the `Center of Mass` entry with the computed ratio and you have the coordinates of the Center of Mass of your mesh. However, if the link you are modelling is not homogeneous, you will have to compute the Center of Mass using other methods (most probably by real experiments). 
+Multiply the `Center of Mass` entry with the computed ratio and you have the coordinates of the Center of Mass of your mesh. However, if the link you are modelling is not homogeneous, you will have to compute the Center of Mass using other methods (most probably by real experiments).
 
 ## Getting the Inertia Tensor
 
-How to overcome the problem with low precision of the Inertia Tensor floats in the text output? You can scale up the model so that all the numbers grow sufficiently large for not being cropped. The model can be scaled using `Filters->Normals, Curvatures and Orientation->Transform: Scale`. Enter a scale in the dialog and hit `Apply`. What scale to choose? It is reasonable to scale the model in such way that it has unit volume in MeshLab. That is done using a scale of `1/Mesh Volume` with the Mesh Volume read from the text output in Layers Dialog.  
+How to overcome the problem with low precision of the Inertia Tensor floats in the text output? You can scale up the model so that all the numbers grow sufficiently large for not being cropped. The model can be scaled using `Filters->Normals, Curvatures and Orientation->Transform: Scale`. Enter a scale in the dialog and hit `Apply`. What scale to choose? It is reasonable to scale the model in such way that it has unit volume in MeshLab. That is done using a scale of `1/Mesh Volume` with the Mesh Volume read from the text output in Layers Dialog.
 
 Now, instruct MeshLab to recompute the geometrical measures again, et voilà, the `Inertia Tensor` entry looks much better now. The only thing that remains is to copy the inertia tensor into a mathematical software and multiply it by `1/s^2` where `s` is the reciprocal of the scale used for upscaling the model.
+
+## Calculating Simple Inertia Tensors
+
+If you're curious about the math behind the inertia matrix, or just want an easy way to calculate the tensor for simple shapes, [this wikipedia entry is a great resource](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
 
 # Filling in the tags in URDF/SDF
 
@@ -81,7 +85,7 @@ In each link you should have the `<inertial>` tag. It should look like the follo
         ...
       </visual>
       ...
-    </link> 
+    </link>
 
 or like this one (in URDF):
 
@@ -109,7 +113,7 @@ The `<inertia>` tag contains the inertia tensor you have computed in the previou
     | ixy iyy iyz |
     | ixz iyz izz |
 
-As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values and be positive, and the off-diagonal numbers should more or less approach zero. 
+As a quick check that the matrix is sane, you can use the rule that the diagonal entries should have the largest values and be positive, and the off-diagonal numbers should more or less approach zero.
 
 Precisely, the matrix has to be positive definite (use your favorite maths tool to verify that). Its diagonal entries also have to satisfy the triangle inequality, ie. `ixx + iyy >= izz`, `ixx + izz >= iyy` and `iyy + izz >= ixx`.
 
@@ -119,7 +123,7 @@ To check if everything is done correctly, you can use Gazebo's GUI client. We'll
 
     roslaunch gazebo_ros empty_world.launch
 
-Then spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobot` with your robot's package/name): 
+Then spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobot` with your robot's package/name):
 
 SDF model:
 
@@ -134,7 +138,7 @@ Go to the Gazebo menu and select `View->Center of Mass / Inertia`. Every link sh
 
 You can temporarily set all the links to have a mass of 1.0 (by editing the URDF/SDF). Then all the purple boxes should have more or less the same shapes as the bounding boxes of their links. This way you can easily detect problems like misplaced Center of Mass or wrongly rotated Inertia Matrix. Do not forget to enter the correct masses when you finish debugging.
 
-To fix a wrongly rotated Inertia Matrix (which in fact happens often), just swap the ixx, iyy, izz entries in the model file until the purple box aligns with its link. Then you obviously also have to appropriately swap the ixy, ixz and iyz values (when you swap ixx<->iyy, then you should negate ixy and swap ixz<->iyz). 
+To fix a wrongly rotated Inertia Matrix (which in fact happens often), just swap the ixx, iyy, izz entries in the model file until the purple box aligns with its link. Then you obviously also have to appropriately swap the ixy, ixz and iyz values (when you swap ixx<->iyy, then you should negate ixy and swap ixz<->iyz).
 
 [[file:files/gazebo_inertia.jpg|800px]]
 

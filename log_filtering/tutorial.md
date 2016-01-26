@@ -36,7 +36,10 @@ gazebo -p ~/.gazebo/log/*/gzserver/state.log
 
 ## Step 2: Filter a state log file
 
-The [[Tools#Data_Log_Tool | `gzlog`]] command line tool provides mechanisms for stepping through a log file and echoing the contents of a log file to screen. The echo to screen feature can be combined with a filter to produce a log file that contains specific information such as just the pose of models and links.
+The `gzlog`
+command line tool provides mechanisms for stepping through a log file and echoing the contents of a log file to screen.
+The echo to screen feature can be combined with a filter to produce a log file
+that contains specific information such as just the pose of models and links.
 
 Try echoing the recorded state log file to screen.
 
@@ -52,7 +55,7 @@ Now let's remove all velocity, acceleration, and force information from the log 
 gzlog echo ~/.gazebo/log/*/gzserver/state.log --filter *.pose/*.pose
 ~~~
 
-The `--filter` option is a flexible command line argument to extract information from a log file. More information can be found [[Tools#Data_Log_Tool | here]].
+The `--filter` option is a flexible command line argument to extract information from a log file.
 
 It is also possible to filter based on simulation time using a Hz filter.
 For example, we can output state information at 30 Hz using:

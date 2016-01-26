@@ -8,7 +8,7 @@ create and use GUI overlay plugins to create custom interfaces for Gazebo.
 
 Two examples will be used to demonstrate the GUI Overlay functionality. The
 first example creates a button that spawns a sphere, and the second displays
-the current simulation time. These two exmamples show how to send data to
+the current simulation time. These two examples show how to send data to
 Gazebo and receive data from Gazebo.
 
 # Example 1: Spawn spheres
