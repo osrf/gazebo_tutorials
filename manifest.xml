@@ -211,6 +211,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+     <tutorial title="Nested model" ref='nested_model'>
+      <markdown version="7+">nested_model/tutorial.md</markdown>
+      <description>Describes how to create an assembly of models.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Sensor Noise Model" ref='sensor_noise'>
       <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
       <description>How to add noise to sensors</description>
@@ -862,6 +868,7 @@
         <tutorial>add_laser</tutorial>
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
+        <tutorial>nested_model</tutorial>
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
