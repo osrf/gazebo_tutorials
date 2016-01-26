@@ -71,7 +71,7 @@ self-collide just like other links within the same model. On the GUI client,
 you will see a sphere and a box sitting side-by-side and should not notice
 any visual difference between nested models and links.
 
-[[file:files/nested_model.png]]
+[[file:files/nested_model.png|640px]]
 
 # Joints
 
@@ -94,7 +94,7 @@ element. A revolute joint is then created between the sphere and the box links.
 Pay attention to the scoping of `<parent>` and `<child>` names; references to
 nested model links need to be scoped but minus the top level model name prefix.
 
-[[file:files/nested_model_joint.png]]
+[[file:files/nested_model_joint.png|640px]]
 
 ## Note on the <include> SDF element
 
