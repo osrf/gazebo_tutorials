@@ -96,7 +96,7 @@ nested model links need to be scoped but minus the top level model name prefix.
 
 [[file:files/nested_model_joint.png|640px]]
 
-# Note on the include SDF element
+# Note on the \<include\> SDF element
 
 Another approach for nesting models is demonstrated in the
 [Add a Sensor to a Robot](http://gazebosim.org/tutorials?tut=add_laser) tutorial
