@@ -63,7 +63,7 @@ Here is a basic example of a nested model SDF:
 ~~~
 
 This model SDF is composed of a link (`link_00`), and a nested model
-(`model_01`) with another link. Since a model in Gazebo is just an
+(`model_01`) with another link (`link_01`). Since a model in Gazebo is just an
 abstract container for a group of objects, loading this model in Gazebo will
 result in just two rigid bodies being created in the physics engine; one for the
 sphere link and the other for the nested box link. By default, they will not
@@ -78,7 +78,7 @@ any visual difference between nested models and links.
 Joints can also be created between links in nested models. Here is an example
 of a joint that can be added to the model SDF above:
 
-%%%
+~~~
       <joint name="joint_00" type="revolute">
         <parent>link_00</parent>
         <child>model_01::link_01</child>
@@ -87,7 +87,7 @@ of a joint that can be added to the model SDF above:
           <xyz>1.0 0.0 0.0</xyz>
         </axis>
       </joint>
-%%%
+~~~
 
 This joint SDF element can be added to either the top level or nested `<model>`
 element. A revolute joint is then created between the sphere and the box links.
@@ -96,7 +96,7 @@ nested model links need to be scoped but minus the top level model name prefix.
 
 [[file:files/nested_model_joint.png|640px]]
 
-## Note on the <include> SDF element
+# Note on the `<include>` SDF element
 
 Another approach for nesting models is demonstrated in the
 [Add a Sensor to a Robot](http://gazebosim.org/tutorials?tut=add_laser) tutorial
