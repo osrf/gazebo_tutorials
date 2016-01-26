@@ -1,8 +1,10 @@
 # Intro
 
 Welcome to the Beginner Module! This module will guide you through the most
-basic features of Gazebo, with each tutorial building upon the last. We
-recommend following the tutorials in order. 
+basic features of Gazebo. We will build a simple vehicle to demonstrate these
+features. 
+
+Each tutorial builds upon the last, so we recommend following the tutorials in order. 
 
 These tutorials are intended for those new to Gazebo and/or folks with **no programming or Linux experience**.
 
