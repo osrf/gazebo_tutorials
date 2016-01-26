@@ -38,7 +38,8 @@ right-clicking and selecting Open Inspector from the context menu in the Scene.
 
 #### Toolbar
 
-Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorialsnew?cat=guided_b&tut=guided_b2).
+Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorialsnew?cat=guided_b&tut=guided_b2) tutorial).
+
 A new Joint Creation tool is available; it is used to create joints between links in the model.
 
 #### Limitations
@@ -212,7 +213,7 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 ### Adding a plugin
 
 The vehicle we have built so far is complete with all of the physical and sensor components. However, it will not really do much but stay still and generate depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data
-   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code. See [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
+   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code, see the [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
