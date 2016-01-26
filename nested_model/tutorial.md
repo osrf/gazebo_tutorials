@@ -21,7 +21,7 @@ Here is a basic example of a nested model SDF:
   <model name="model_00">
     <pose>0 0 0.5 0 0 0</pose>
     <link name="link_00">
-      <pose>0.25 0 0 0 0 0</pose>
+      <pose>0.0 0 0 0 0 0</pose>
       <collision name="collision_00">
         <geometry>
           <sphere>
@@ -39,7 +39,7 @@ Here is a basic example of a nested model SDF:
     </link>
 
     <model name="model_01">
-      <pose>1.25 0 0.0 0 0 0</pose>
+      <pose>1.0 0 0.0 0 0 0</pose>
       <link name="link_01">
         <pose>0.25 0 0.0 0 0 0</pose>
         <collision name="collision_01">
