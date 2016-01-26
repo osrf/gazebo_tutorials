@@ -19,11 +19,11 @@ If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following world example
-([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)),
+([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world)),
 the `ode_70iters` profile is set as the default, and the `ode_200iters`
 profile will be available via the C++ API or the `gz` command line tool. The following is an excerpt from the downloadable world example that shows the values for `ode_70iters` and `ode_200iters`.
 
-<include from=' <sdf version="1.5">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world'/>
+<include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
@@ -91,13 +91,13 @@ To start the `preset_example` world we made above with a non-default profile,
 start gazebo with:
 
 ```
-gazebo preset_example.world --profile ode_200iters
+gazebo preset_example_sdf1_6.world --profile ode_200iters
 ```
 
 For a shortcut, use `-o`:
 
 ```
-gazebo preset_world.world -o ode_200iters
+gazebo preset_example_sdf1_6.world -o ode_200iters
 ```
 
 You can also substitute `gazebo` with `gzserver` to run Gazebo headless
@@ -114,12 +114,12 @@ gz physics -o ode_200iters
 # Example
 
 Download the
-[world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example.world)
-`preset_example.world` (same as the SDF example shown above) and the
-[bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh)
-`switch_profiles.sh`.
+[world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world)
+`preset_example_sdf1_6.world` (same as the SDF example shown above) and the
+[bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles_sdf1_6.sh)
+`switch_profiles_sdf1_6.sh`.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles.sh'/>
+<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles_sdf1_6.sh'/>
 
 The script launches Gazebo with the `ode_70iters` profile and switches between
 the two world profiles 5 times, pausing for 5 seconds between each switch.

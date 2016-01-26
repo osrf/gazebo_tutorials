@@ -22,7 +22,7 @@ let's download a DEM file of Mount St. Helens
 or
 [after](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_after.zip)
 its eruption back in the '80s. These files are in public domain and are
-distributed by [USGS](http://ned.usgs.gov/historic.html).
+distributed by [USGS](http://nationalmap.gov/elevation.html).
 
 Unzip the file and rename it `mtsthelens.dem` as follows:
 

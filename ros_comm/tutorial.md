@@ -392,9 +392,9 @@ These services allow the user to pause and unpause physics in simulation:
 
 `~/unpause_physics` : `std_srvs/Empty` - Resume physics updates.
 
-`~/reset_simulation` : `std_srvs/Empty` - Resets the model's poses
+`~/reset_simulation` : `std_srvs/Empty` - Resets the entire simulation including the time
 
-`~/reset_world` : `std_srvs/Empty` - Resets the entire simulation including the time
+`~/reset_world` : `std_srvs/Empty` - Resets the model's poses
 
 ### Pausing and Unpausing Physics
 

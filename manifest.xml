@@ -4,21 +4,32 @@
     <!-- ****************** -->
     <!-- Guided tutorials -->
 
-    <tutorial title="First Time User" ref='ftu1'>
-      <markdown version="1.0">ftu/tutorial1.md</markdown>
+    <!-- Beginner tutorials -->
+    <tutorial title="Beginner: Overview" ref='guided_b1'>
+      <markdown version="7.0">guided_b/tutorial1.md</markdown>
+      <description>Overview and installation instructions</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu2'>
-      <markdown version="1.0">ftu/tutorial2.md</markdown>
+    <tutorial title="Beginner: GUI" ref='guided_b2'>
+      <markdown version="7.0">guided_b/tutorial2.md</markdown>
+      <description>Introduction to the graphical interface.</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu3'>
-      <markdown version="1.0">ftu/tutorial3.md</markdown>
+    <tutorial title="Beginner: Model Editor" ref='guided_b3'>
+      <markdown version="7.0">guided_b/tutorial3.md</markdown>
+      <description>How to make or edit a model.</description>
     </tutorial>
 
-    <tutorial title="First Time User" ref='ftu4'>
-      <markdown version="1.0">ftu/tutorial4.md</markdown>
-    </tutorial>
+
+    <!-- Intermediate tutorials
+    <tutorial title="Intermediate: 1" ref='guided_i1'>
+      <markdown version="7.0">guided_i/tutorial1.md</markdown>
+    </tutorial>-->
+
+    <!-- Advanced tutorials
+    <tutorial title="Advanced: 1" ref='guided_a1'>
+      <markdown version="7.0">guided_a/tutorial1.md</markdown>
+    </tutorial> -->
 
     <!-- ****************** -->
     <!-- Beginner tutorials -->
@@ -27,6 +38,7 @@
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
       <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
+      <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -127,14 +139,16 @@
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
-      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
+      <markdown version="7+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
       <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
-      <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
+      <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
+      <markdown version="7+">plugins_world_properties/tutorial.md</markdown>
       <description>Modify world properties, such as ambient color and the physics time step.</description>
       <tags>
         <tag>plugin</tag>
@@ -195,6 +209,12 @@
     <tutorial title="How to contribute a model" ref='model_contrib'>
       <markdown version="1.9+">model_contrib/tutorial.md</markdown>
       <description>Describes how add a new model to the Gazebo model database.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
+     <tutorial title="Nested model" ref='nested_model'>
+      <markdown version="7+">nested_model/tutorial.md</markdown>
+      <description>Describes how to create an assembly of models.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -326,7 +346,8 @@
     </tutorial>
 
     <tutorial title="Model Editor" ref="model_editor">
-      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <markdown version="6+">model_editor/tutorial_6.md</markdown>
+      <markdown version="7+">model_editor/tutorial.md</markdown>
       <description>Create and edit models within a model editor.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -369,6 +390,11 @@
       <markdown version="4.0+">contact_sensor/tutorial_4-0.md</markdown>
       <description>How to create and get data from contact sensors.</description>
       <skill>intermediate</skill>
+    </tutorial>
+    <tutorial title="Random Velocity Plugin" ref='plugins_random_velocity'>
+    	<markdown version="6.0">plugins_random_velocity/tutorial-6.md</markdown>
+    	<description>Use this for random walks of any link.</description>
+    	<skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="ROS overview" ref='ros_overview'>
@@ -420,7 +446,8 @@
     </tutorial>
 
     <tutorial title="Animated Box" ref='animated_box'>
-      <markdown version="4.0+">animated_box/tutorial.md</markdown>
+      <markdown version="4.0-5.0">animated_box/tutorial_4.md</markdown>
+      <markdown version="6.0+">animated_box/tutorial.md</markdown>
       <description>Animate the pose of box.</description>
       <skill>intermediate</skill>
       <tags>
@@ -435,7 +462,8 @@
     </tutorial>
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
-      <markdown version="3.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
+      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -624,7 +652,7 @@
 
     <tutorial title="Animate joints" ref='drcsim_animate_joints'>
       <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
-      <description>How to move a robot in simulation withoud dynamics through the use of a model plugin and ROS.</description>
+      <description>How to move a robot in simulation without dynamics through the use of a model plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -701,7 +729,8 @@
     </tutorial>
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
-      <markdown version="5.0+">gui_overlay/tutorial.md</markdown>
+      <markdown version="5.0-6.0">gui_overlay/tutorial.md</markdown>
+      <markdown version="7.0+">gui_overlay/tutorial7.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -797,6 +826,13 @@
       <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX logging" ref='haptix_logging'>
+      <markdown version="6.0+">haptix_logging/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the World API and
+        the Gazebo GUI for creating and playing back a log file.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
   </tutorials>
 
   <categories>
@@ -838,6 +874,7 @@
         <tutorial>add_laser</tutorial>
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
+        <tutorial>nested_model</tutorial>
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
         <tutorial>inertia</tutorial>
@@ -1051,6 +1088,7 @@
         <tutorial>haptix_optitrack</tutorial>
         <tutorial>haptix_tactors</tutorial>
         <tutorial>haptix_world_sim_api</tutorial>
+        <tutorial>haptix_logging</tutorial>
       </tutorials>
     </category>
 

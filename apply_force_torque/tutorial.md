@@ -12,7 +12,7 @@ Let's go through an example of applying force and torque to simple models. Open 
 
 We want to apply force to a specific link in the `Simple Arm` model. On the World tree, right-click `arm_wrist_lift` and choose `Apply Force/Torque`. A dialog will pop up and you'll see a straight arrow and a curved arrow attach to the arm.
 
-On the dialog, write `100 N` on the `Y` field under `Force` and press `Enter`, the arm will start rotating slightly. The force was applied in the link's `Y` direction for a single time-step, which is in the order of miliseconds, thus the need for such a large force.
+On the dialog, write `100 N` on the `Y` field under `Force` and press `Enter`, the arm will start rotating slightly. The force was applied in the link's `Y` direction for a single time-step, which is in the order of milliseconds, thus the need for such a large force.
 
 [[file:files/apply_force.png|800px]]
 
@@ -46,7 +46,7 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
     > **Tip**: Right-click the model and choose `View -> Center of mass` to see its position. You might want to also make the model transparent for that.
 
-* **Apply Force**: Click this to apply only force for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large forces are needed in order to apply a significant impulse.
+* **Apply Force**: Click this to apply only force for one time step. Keep in mind that time steps are in the order of milliseconds, so relatively large forces are needed in order to apply a significant impulse.
 
 ## Torque
 
@@ -56,7 +56,7 @@ Under `Force`, type `1000 N` on the `X` field. Then under `Application point`, p
 
 * **Clear**: Pressing this button will zero the `X`, `Y`, `Z` and `Mag` fields.
 
-* **Apply Torque**: Click this to apply only torque for one time step. Keep in mind that time steps are in the order of miliseconds, so relatively large torques are needed in order to apply a significant angular impulse.
+* **Apply Torque**: Click this to apply only torque for one time step. Keep in mind that time steps are in the order of milliseconds, so relatively large torques are needed in order to apply a significant angular impulse.
 
     > **Note**: Torque is always applied about the center of mass.
 

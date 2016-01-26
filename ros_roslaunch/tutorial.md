@@ -314,7 +314,7 @@ The second method of spawning robots into Gazebo allows you to include your robo
 
 To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation to understand why these steps are required.
 
-We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a `model.config` file is addded to your `MYROBOT_description` package like so:
+We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a `model.config` file is added to your `MYROBOT_description` package like so:
 
 ~~~
 ../catkin_ws/src
@@ -415,6 +415,23 @@ roslaunch MYROBOT_gazebo MYROBOT.launch
 The disadvantage of this method is that your packaged `MYROBOT_description` and `MYROBOT_gazebo`
 are not as easily portable between computers - you first have to set the `GAZEBO_MODEL_PATH`
 on any new system before being able to use these ROS packages.
+
+## Exporting model paths from a pcakage.xml
+
+The useful info would be the format for exporting model paths from a package.xml:
+
+~~~
+<export>
+  <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  <gazebo_ros gazebo_media_path="${prefix}/models"/>
+</export>
+~~~
+  
+The '${prefix}` is something that new users might not immediately know about either, and necessary here.
+
+Also would be useful to have some info on how to debug these paths from the ROS side, 
+e.g. that you can use `rospack plugins --attrib="gazebo_media_path" gazebo_ros`
+To check the media path that will be picked up by gazebo.
 
 ## Next Steps
 

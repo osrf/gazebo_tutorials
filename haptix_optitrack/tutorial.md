@@ -125,6 +125,6 @@ You should not need to modify the configuration in the future unless you change 
 Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
 by double-clicking on the `haptixStart` desktop icon.
 
-Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press spacebar to unpause simulation. Wave your arm around to control the simulated arm.
+Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press `v`, `b` or `n` to unpause simulation. Wave your arm around to control the simulated arm.
 
 [[file:files/armcloseup.png]]

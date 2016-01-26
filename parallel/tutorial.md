@@ -92,7 +92,7 @@ cd ${WS}
 ./src/catkin/bin/catkin_make_isolated
 ~~~
 
-If you want to use diagnostic timers to evaluate peformance,
+If you want to use diagnostic timers to evaluate performance,
 define the `ENABLE_DIAGNOSTICS` symbol during compilation.
 This will output the diagnostic timing data to the `~/.gazebo/diagnostics` folder.
 

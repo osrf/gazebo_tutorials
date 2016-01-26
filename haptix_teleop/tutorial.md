@@ -30,11 +30,11 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
        1. Cylinderical grasp
        1. Pinch grasp
 
-    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp. 
+    To release the hand incrementally, press and hold `SHIFT` and the number key for that grasp.
 
 1. **Arm position**
 
-    Use the WASDQE keys to move the position of the arm in a 2D plane. The plane is defined by the local coordinate frame of the arm. This means the hand will "fly" like a plane, and is most noticable if you change the arm's orientation. 
+    Use the WASDQE keys to move the position of the arm in a 2D plane. The plane is defined by the local coordinate frame of the arm. This means the hand will "fly" like a plane, and is most noticable if you change the arm's orientation.
 
        1. W: Move forward (along the positive X axis: toward the finger tips)
        1. A: Move left (along the positive Y axis: toward the thumb)
@@ -48,8 +48,8 @@ A set of keys, as shown in the above figure, are mapped to arm and hand control.
 
     Use SHIFT + WASDQE keys to change the orientation of the arm. This will affect the plane along which the hand will move when changing its position.
 
-       1. SHIFT + W: pitch the arm down 
-       1. SHIFT + A: roll the thumb down 
+       1. SHIFT + W: pitch the arm down
+       1. SHIFT + A: roll the thumb down
        1. SHIFT + S: pitch the arm up
        1. SHIFT + D: roll the thumb up
        1. SHIFT + Q: yaw toward the thumb
@@ -85,7 +85,7 @@ Press `Ctrl+R` to reset the arm position, viewpoint and the objects in the scene
 By default, the spacenav mouse controls the position and
 orientation of the viewpoint. Press the button the left side of the mouse
 to change control to the arm. Once in this mode, the mouse will change the
-position and orientation of the arm. 
+position and orientation of the arm.
 
 If the Spacenav is not working, try running:
 
@@ -106,7 +106,7 @@ Please follow the [hydra installation instructions](http://gazebosim.org/tutoria
 
 Once installed, the right paddle will perform the following actions:
 
-1. Spacebar or letter `p` on the keyboard: Enable/disable hydra control.
+1. Letters `p`, `v`, `b` or `n` on the keyboard: Enable/disable hydra control.
 
 1. Once enabled, move paddle to change arm position and orientation.
 

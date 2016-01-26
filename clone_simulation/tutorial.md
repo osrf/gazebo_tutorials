@@ -74,7 +74,7 @@ world.
 
     [[file:files/sidebyside.png|640px]]
 
-1. Once the new server is cloned, it's totally detached from the orginal one, so
+1. Once the new server is cloned, it's totally detached from the original one, so
 you will need to kill it manually:
 
     ~~~
