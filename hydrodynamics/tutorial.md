@@ -4,7 +4,8 @@ This tutorial describes how to use the [BuoyancyPlugin](http://gazebosim.org/api
 [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html) to simulate the behavior of underwater objects.
 
 # Prerequisites
-See [this tutorial](http://gazebosim.org/tutorials?tut=lift_drag&cat=physics)
+See [this
+tutorial](http://gazebosim.org/tutorials?tut=aerodynamics&cat=physics)
 for an overview of the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
 
 # Background

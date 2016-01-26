@@ -140,14 +140,16 @@
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
-      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
+      <markdown version="7+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
       <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
-      <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
+      <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
+      <markdown version="7+">plugins_world_properties/tutorial.md</markdown>
       <description>Modify world properties, such as ambient color and the physics time step.</description>
       <tags>
         <tag>plugin</tag>
@@ -339,7 +341,8 @@
     </tutorial>
 
     <tutorial title="Model Editor" ref="model_editor">
-      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <markdown version="6+">model_editor/tutorial_6.md</markdown>
+      <markdown version="7+">model_editor/tutorial.md</markdown>
       <description>Create and edit models within a model editor.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -433,7 +436,8 @@
     </tutorial>
 
     <tutorial title="Animated Box" ref='animated_box'>
-      <markdown version="4.0+">animated_box/tutorial.md</markdown>
+      <markdown version="4.0-5.0">animated_box/tutorial_4.md</markdown>
+      <markdown version="6.0+">animated_box/tutorial.md</markdown>
       <description>Animate the pose of box.</description>
       <skill>intermediate</skill>
       <tags>
@@ -448,7 +452,8 @@
     </tutorial>
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
-      <markdown version="3.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
+      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -714,7 +719,8 @@
     </tutorial>
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
-      <markdown version="5.0+">gui_overlay/tutorial.md</markdown>
+      <markdown version="5.0-6.0">gui_overlay/tutorial.md</markdown>
+      <markdown version="7.0+">gui_overlay/tutorial7.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
