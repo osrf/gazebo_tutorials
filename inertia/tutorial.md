@@ -9,7 +9,7 @@ these parameters if you have 3D models of the links.
 Assuming homogeneous bodies (uniform mass density),
 it is shown how to obtain inertial data using the free software MeshLab.
 You can also use the commercial product SolidWorks to compute these information.
-For a guide on using SolidWorks, plese refer to
+For a guide on using SolidWorks, please refer to
 [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)
 
 # Summary of inertial parameters
@@ -19,8 +19,8 @@ For a guide on using SolidWorks, plese refer to
 The mass is most easily measured by weighing an object.
 It is a scalar with default units in Gazebo of kilograms (kg).
 For a 3D uniform mesh, mass is computed by
-calculating the geometric volume [length^3]
-and multiplying by density [mass / length^3].
+calculating the geometric volume [length<sup>3</sup>]
+and multiplying by density [mass / length<sup>3</sup>].
 
 ## [Center of Mass](https://en.wikipedia.org/wiki/Center_of_mass)
 
@@ -33,7 +33,7 @@ This parameter is a Vector3 with units of position [length].
 The [moments of inertia](https://en.wikipedia.org/wiki/Moment_of_inertia)
 represent the spatial distribution of mass in a rigid body.
 It depends on the mass, size, and shape of a body
-with units of [mass * length^2].
+with units of [mass * length<sup>2</sup>].
 The moments of inertia can be expressed as the components
 of a symmetric positive-definite 3x3 matrix,
 with 3 diagonal elements, and 3 unique off-diagonal elements.
@@ -106,7 +106,7 @@ The surface area should be `4*PI` (12.566),
 which is close to the computed value of 12.425.
 The center of mass is given as the origin (0,0,0).
 The inertia matrix (aka inertia tensor) should be diagonal
-with [principal moments of `2/5 mass` since `radius = 1`](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
+with [principal moments](https://en.wikipedia.org/wiki/List_of_moments_of_inertia) of `2/5 mass` since `radius = 1`.
 It is not explicitly stated in the output, but the mass
 is equal to the volume (implicitly using a density of 1),
 so we would expect `8/15*PI` (1.676).
@@ -153,7 +153,7 @@ of vertices and faces (listed in the bottom of the MeshLab window):
 * ball.dae: 362 vertices, 1440 faces
 
 Each mesh has a similar number of vertices, but `ball.dae` has
-roughtly twice as many faces.
+roughly twice as many faces.
 Running the command
 `Filters` `->` `Cleaning and Repairing` `->` `Remove Duplicate Faces`
 reduces the number of faces in `ball.dae` to 720 and gives
@@ -196,15 +196,15 @@ The model can be scaled using `Filters->Normals, Curvatures and Orientation->Tra
 Enter a scale in the dialog and hit `Apply`.
 
 To decide the scaling factor `s` to choose, recall that MeshLab uses the volume
-as a proxy for mass, which will vary as `s^3`.
-Furthermore, the inertia has an addition dependence on `length^2`,
-so the moment of inertia will change according to `s^5`.
+as a proxy for mass, which will vary as <span class='typ'>s<sup>3</sup></span>.
+Furthermore, the inertia has an addition dependence on <span class='typ'>length<sup>2</sup></span>,
+so the moment of inertia will change according to <span class='typ'>s<sup>5</sup></span>.
 Since there is such a large dependence on `s`,
 scaling by a factor of 10 or 100 may be sufficient.
 
 Now, instruct MeshLab to recompute the geometrical measures again,
 and the `Inertia Tensor` entry should have more precision.
-Then multiply the inertia tensor by `1/s^5` to undo the scaling.
+Then multiply the inertia tensor by <span class='typ'>1/s<sup>5</sup></span> to undo the scaling.
 
 ## Getting the Center of Mass
 
@@ -213,31 +213,31 @@ However, you can easily tell the ratio of MeshLab units to your desired units by
 You can e.g. compute the bounding box size in your desired units and compare to the MeshLab's one.
 
 Multiply the `Center of Mass` entry with the computed ratio and you have the coordinates of the Center of Mass of your mesh.
-However, if the link you are modelling is not homogeneous, you will have to compute the Center of Mass using other methods (most probably by real experiments).
+However, if the link you are modeling is not homogeneous, you will have to compute the Center of Mass using other methods (most probably by real experiments).
 
 ## Rescaling the moment of inertia values
 
 Just like the center of mass location must be scaled to the correct units,
 the moment inertia should be scaled as well,
 though the scale factor should be squared to account for the
-`length^2` dependence in the moment of inertia.
+<span class='typ'>length<sup>2</sup></span> dependence in the moment of inertia.
 In addition, the inertia should be multiplied by
 the measured `mass` and divided by the computed volume from
 the text output.
 
 [[file:files/meshlab.jpg|800px]]
 
-# Filling in the tags in URDF/SDF
+# Filling in the tags in URDF or [SDF](http://sdformat.org)
 
-The next step is to record the computed values to the URDF/SDF file containing your robot (it is assumed you've already had the robot model; if not, follow the tutorial
+The next step is to record the computed values to the URDF or [SDF](http://sdformat.org) file containing your robot (it is assumed you already have the robot model; if not, follow the tutorial
 [Make a Model](http://gazebosim.org/tutorials?tut=build_model&cat=build_robot)).
 
 In each link you should have the `<inertial>` tag.
-It should look like the following (in SDF):
+It should look like the following (in [SDF](http://sdformat.org)):
 
     <link name='antenna'>
       <inertial>
-        <pose>-0.022 0.0203 0.02917 0 -0 0</pose>
+        <pose>-0.022 0.0203 0.02917 0 0 0</pose>
         <mass>0.56</mass>
         <inertia>
           <ixx>0.004878</ixx>
@@ -297,22 +297,28 @@ ie. `ixx + iyy >= izz`, `ixx + izz >= iyy` and `iyy + izz >= ixx`.
 # Checking in Gazebo
 
 To check if everything is done correctly, you can use Gazebo's GUI client.
-We'll cover the case where Gazebo is used together with ROS.
-First, run Gazebo:
 
-    roslaunch gazebo_ros empty_world.launch
+* Using Gazebo standalone
+  1. Run Gazebo
 
-Then spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobot` with your robot's package/name):
+            gazebo
+  1. Spawn your robot
 
-SDF model:
+            gz model -f my_robot.sdf
 
-    rosrun gazebo_ros spawn_model -sdf -file `rospack find my_robot_description`/urdf/my_robot.sdf -model MyRobot
+* Using Gazebo with ROS
+  1. Run Gazebo
 
-URDF model:
+            roslaunch gazebo_ros empty_world.launch
+  1. Spawn your robot (substitute `my_robot`, `my_robot_description` and `MyRobot` with your robot's package/name):
+      * [SDF](http://sdformat.org) model:
 
-    rosrun gazebo_ros spawn_model -urdf -file `rospack find my_robot_description`/urdf/my_robot.urdf -model MyRobot
+                rosrun gazebo_ros spawn_model -sdf -file `rospack find my_robot_description`/urdf/my_robot.sdf -model MyRobot
+      * URDF model:
 
-and as soon as it loads, pause the world and delete the ground_plane (this is not needed, but it usually makes debugging easier).
+                rosrun gazebo_ros spawn_model -urdf -file `rospack find my_robot_description`/urdf/my_robot.urdf -model MyRobot
+
+As soon as your model loads, pause the world and delete the ground_plane (this is not needed, but it usually makes debugging easier).
 
 Go to the Gazebo menu and select `View->Center of Mass / Inertia`.
 Every link should now display a purple box with green axes.
@@ -320,7 +326,7 @@ The center of each box is aligned with the specified center of mass of its link.
 The sizes and orientations of the boxes correspond to unit-mass boxes with the same inertial behavior as their corresponding links.
 This is useful for debugging the inertial parameters, but we can make one more thing to have the debugging easier.
 
-You can temporarily set all the links to have a mass of 1.0 (by editing the URDF/SDF).
+You can temporarily set all the links to have a mass of 1.0 (by editing the URDF or [SDF](http://sdformat.org) file).
 Then all the purple boxes should have more or less the same shapes as the bounding boxes of their links.
 This way you can easily detect problems like misplaced Center of Mass or wrongly rotated Inertia Matrix.
 Do not forget to enter the correct masses when you finish debugging.
@@ -355,5 +361,5 @@ The only other solution would be to find out the inertia tensor experimentally, 
 # Conclusion
 
 We have shown the process of getting the correct inertia parameters for your robot model,
-the way how to enter them in a URDF/SDF file,
+the way how to enter them in a URDF or [SDF](http://sdformat.org) file,
 and also the way how to make sure the parameters are entered correctly.
