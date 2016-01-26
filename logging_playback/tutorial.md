@@ -12,12 +12,12 @@ description of the whole world, followed by a series of "world states".
 The initial description contains complete information about everything in the
 world, from the scene to the entities present.
 
-After that, every time something moves in simulation, a new world state is
+After that, every time something changes in simulation, a new world state is
 recorded. World states are much simpler, as they only contain information about
 what changed, such as:
 
-* Simulation stats such as the current simulation time and the number of physics
-iterations.
+* Simulation statistics such as the current simulation time and the number
+of physics iterations.
 
 * Current state of each model in the scene, as well as the state of each link
 and joint in the model. This includes information such as instantaneous pose,
