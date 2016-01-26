@@ -12,13 +12,17 @@ View the help information using:
 gz help log
 ~~~
 
-or 
+or
 
 ~~~
 gz log -h
 ~~~
 
 # Example Usage
+
+> **Tip**: Check out the
+[tutorial](http://gazebosim.org/tutorials?tut=logging_playback)
+on logging and playback for an overview of ways to record a log.
 
 ## Step 1: Create a state log file
 
