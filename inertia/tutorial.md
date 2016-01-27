@@ -97,20 +97,29 @@ The sphere gives the following output:
     axis momenta are :
     | 1.604620 1.617916 1.617916 |
 
+### Radius
 The bounding box of the sphere is a cube with side length 2.0,
 which implies that the sphere has a radius of 1.0.
+
+### Volume
 A sphere of radius 1.0 should have a volume of `4/3*PI` (4.189),
 which is close to the computed value of 4.095.
 It is not exact since it is a triangular approximation.
+
+### Surface Area
 The surface area should be `4*PI` (12.566),
 which is close to the computed value of 12.425.
+
+### Center of Mass
 The center of mass is given as the origin (0,0,0).
-The inertia matrix (aka inertia tensor) should be diagonal with
-[principal moments](https://en.wikipedia.org/wiki/List_of_moments_of_inertia)
+
+### Inertia matrix
+The inertia matrix (aka inertia tensor) of a sphere should be diagonal with
+[principal moments of inertia](https://en.wikipedia.org/wiki/List_of_moments_of_inertia)
 of `2/5 mass` since `radius = 1`.
 It is not explicitly stated in the output, but the mass
 is equal to the volume (implicitly using a density of 1),
-so we would expect `8/15*PI` (1.676).
+so we would expect diagonal matrix entries of `8/15*PI` (1.676).
 The computed inertia tensor appears diagonal
 for the given precision with principal moments
 ranging from [1.604,1.618], which is close to the expected value.
@@ -196,6 +205,8 @@ you can scale up the model so that the magnitude of the inertia is increased.
 The model can be scaled using `Filters->Normals, Curvatures and Orientation->Transform: Scale`.
 Enter a scale in the dialog and hit `Apply`.
 
+[[file:files/meshlab.jpg|800px]]
+
 To decide the scaling factor `s` to choose, recall that MeshLab uses the volume
 as a proxy for mass, which will vary as <span class='typ'>s<sup>3</sup></span>.
 Furthermore, the inertia has an addition dependence on <span class='typ'>length<sup>2</sup></span>,
@@ -219,14 +230,12 @@ However, if the link you are modeling is not homogeneous, you will have to compu
 ## Rescaling the moment of inertia values
 
 Just like the center of mass location must be scaled to the correct units,
-the moment inertia should be scaled as well,
+the moment of inertia should be scaled as well,
 though the scale factor should be squared to account for the
 <span class='typ'>length<sup>2</sup></span> dependence in the moment of inertia.
 In addition, the inertia should be multiplied by
 the measured `mass` and divided by the computed volume from
 the text output.
-
-[[file:files/meshlab.jpg|800px]]
 
 # Filling in the tags in URDF or [SDF](http://sdformat.org)
 
