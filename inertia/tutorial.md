@@ -330,7 +330,7 @@ To check if everything is done correctly, you can use Gazebo's GUI client.
 
 As soon as your model loads, pause the world and delete the ground_plane (this is not needed, but it usually makes debugging easier).
 
-Go to the Gazebo menu and select `View->Center of Mass / Inertia`.
+Go to the Gazebo menu and select `View->Inertia`.
 Every link should now display a purple box with green axes.
 The center of each box is aligned with the specified center of mass of its link.
 The sizes and orientations of the boxes correspond to unit-mass boxes with the same inertial behavior as their corresponding links.
@@ -345,8 +345,6 @@ To fix a wrongly rotated Inertia Matrix (which in fact happens often), just swap
 Then you obviously also have to appropriately swap the ixy, ixz and iyz values (when you swap ixx`<->`iyy, then you should negate ixy and swap ixz`<->`iyz).
 
 [[file:files/gazebo_inertia.jpg|800px]]
-
-If your model has a lot of links and the Gazebo image becomes a mess, you can always delete the links you do not need at the moment (by selecting them on the World tab and pressing Delete on your keyboard).
 
 # Further improvements
 
