@@ -2,7 +2,7 @@
 
 Now we'll construct our simple robot. We'll make a wheeled vehicle and add a sensor that allows us to make the robot follow a blob (person).
 
-The Model Editor lets us construct simple models right in the GUI. For more complex models, you'll need to learn how to write SDF (XML-based) files (see tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot)).
+The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, see tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot).
 But for now, we can do everything right in the Gazebo GUI!
 
 
@@ -11,6 +11,8 @@ But for now, we can do everything right in the Gazebo GUI!
 To enter the Model Editor, click on `Edit` in the menu bar and select `Model Editor`. Or, use the hotkeys, Ctrl+M. **Physics and the simulation will be paused** as soon as you are in the Model Editor.
 
 The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
+
+[[file:files/ftu4-model_editor.png|800px]]
 
 #### Left Panel
 
@@ -31,7 +33,7 @@ The left panel, also known as the **Palette**, has two tabs.
       building. We refer to them as *Nested Models*.
 
 
-* **MODEL** tab: The Settings tab allows you to set the name and basic parameters of the model you
+* **MODEL** tab: The Model tab allows you to set the name and basic parameters of the model you
 are building. It also displays a list of the links, joints, nested models, and plugins that are currently
 part of the model. You can view and modify a part's parameters, like its pose, in two ways: 1) by double-clicking on the part in the list, or 2) by
 right-clicking and selecting Open Inspector from the context menu in the Scene.
@@ -98,7 +100,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-wheel_visual.png|600px]]
 
 1. You should now see a smaller cylinder inside a bigger cylinder. This is expected as we have only changed the visual geometry but not the collision. A 'visual' is the graphical representation of the link and does not affect the physics simulation. On the other hand, a 'collision'
-   is used by the physics engine for collision checking. To also update the wheel's collision, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m. Close the Inspector.
+   is used by the physics engine for collision checking. To also update the wheel's collision, go to the Collision tab, expand the only collision item, and enter the same Geometry dimensions. `Radius`: 0.3m and `Length`: 0.25m. Click on `OK` to save the changes and close the Inspector.
 
 1. Now that we have created our first wheel, we'll use it as a template and make another one. Select the wheel and click on the Copy icon in the top Toolbar.
 
