@@ -363,7 +363,6 @@ To test the IMU noise model:
             <always_on>1</always_on>
             <update_rate>1000</update_rate>
           </sensor>
-          Laser
         </link>
       </model>
     </sdf>
