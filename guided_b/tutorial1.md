@@ -48,12 +48,12 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 If you run into problems during the install, please see the [complete install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install).
 
-1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo6_install.sh).
+1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo7_install.sh).
 
 1. Copy the following text:
 
     ```
-    chmod +x ~/Downloads/gazebo6_install.sh
+    chmod +x ~/Downloads/gazebo7_install.sh
     ```
 
 1. Press Alt-F2
@@ -65,7 +65,7 @@ If you run into problems during the install, please see the [complete install in
 1. Copy in the following:
 
     ```
-    gnome-terminal --working-directory="~" -e "./Downloads/gazebo6_install.sh"
+    gnome-terminal --working-directory="~" -e "./Downloads/gazebo7_install.sh"
     ```
 
 1. Press Alt-F2
