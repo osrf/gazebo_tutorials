@@ -104,15 +104,15 @@ To test the ray noise model:
 
 1. Insert a noisy laser: in the left pane, select the "Insert" tab, then click on "Noisy laser".  Drop your laser somewhere in the world.
 
-[[file:files/Noisy_laser_inserted.png|640px]]
+    [[file:files/Noisy_laser_inserted.png|640px]]
 
 1. Visualize the noisy laser: click on Window->Topic Visualization (or press Ctrl-T) to bring up the Topic Selector.
 
-[[file:files/Topic_visualizer.png|640px]]
+    [[file:files/Topic_visualizer.png|640px]]
 
 1. Find the the topic with a name like "/gazebo/default/hokuyo/link/laser/scan" and click on it, then click "Okay".  You'll get get a Laser View window that shows you the laser data.
 
-[[file:files/Noisy_laser_visualizer.png|640px]]
+    [[file:files/Noisy_laser_visualizer.png|640px]]
 
 As you can see, the scan is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`, where the units are meters:
 
@@ -222,7 +222,7 @@ To test the camera noise model:
 
 1. Find the the topic with a name like "/gazebo/default/camera/link/camera/image" and click on it, then click "Okay".  You'll get get a Image View window that shows you the image data.
 
-[[file:files/Noisy_camera_visualizer.png|640px]]
+    [[file:files/Noisy_camera_visualizer.png|640px]]
 
 If you look closely, you can see that the image is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`.  These are unitless values; the noise will be added to each color channel within the range [0.0,1.0].
 
