@@ -462,9 +462,9 @@
       </tags>
     </tutorial>
 
-    <tutorial title="Find out inertial parameters" ref='inertia'>
+    <tutorial title="Inertial parameters of triangle meshes" ref='inertia'>
       <markdown version="1.9+">inertia/tutorial.md</markdown>
-      <description>Fill in the inertial parameters so that the model behaves plausibly.</description>
+      <description>Identify reasonable inertial parameters for a model composed of triangle meshes.</description>
       <skill>intermediate</skill>
     </tutorial>
 
