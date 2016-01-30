@@ -71,6 +71,18 @@ around with each button to see how it behaves.
 
 [[file:files/ftu3-top-toolbar.png|1200px]]
 
+Select mode: Navigate in the scene
+Translate mode: Select models you want to move
+Rotate mode: Select models you want to rotate 
+Scale mode: Select models you want to scale
+Undo/Redo: Undo/redo actions in the scene
+Simple shapes: Insert simple shapes into the scene
+Lights: Add lights to the scene
+Copy/paste: Copy/paste models in the scene
+Align: Align models to one another
+Snap: Snap one model to another
+Change view: View the scene from various angles
+
 #### Bottom Toolbar
 
 The Bottom Toolbar displays data about the simulation, like the simulation time
