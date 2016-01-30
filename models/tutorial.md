@@ -12,7 +12,7 @@ robot applications in mind. Over the years, SDF has become a stable, robust, and
 capable of describing all aspects of robots, static and dynamic objects, lighting, terrain, and
 even physics. It is used for simulation, visualization, motion planning, and robot control. The
 format of SDF is described by [XML](https://en.wikipedia.org/wiki/XML), which facilitates updates and
-allows conversion from previous versions. Learn how to build a simple model [here](http://gazebosim.org/tutorials?tut=build_model). 
+allows conversion from previous versions. Learn how to programmatically build a simple model [here](http://gazebosim.org/tutorials?tut=build_model). 
 
 #What’s in a model?
 As can be seen [here](http://sdformat.org/spec?ver=1.5&elem=model), models are made up of quite a few components :
