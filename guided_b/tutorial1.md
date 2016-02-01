@@ -48,9 +48,9 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 If you run into problems during the install, please see the [complete install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install).
 
-1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo7_install.sh).
+1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo7_install.sh). If a window opens, you can close it again.
 
-1. Copy the following text:
+1. Copy the following text by pressing Ctrl-C:
 
     ```
     chmod +x ~/Downloads/gazebo7_install.sh
@@ -58,11 +58,13 @@ If you run into problems during the install, please see the [complete install in
 
 1. Press Alt-F2
   * A window with a prompt should appear in the upper left
+  
 
-1. Press Ctrl-V, and press Enter
+1. Press Ctrl-V to paste the text, and press Enter
   * The window will disappear
+  
  
-1. Copy in the following:
+1. Copy the following by pressing Ctrl-C:
 
     ```
     gnome-terminal --working-directory="~" -e "./Downloads/gazebo7_install.sh"
@@ -70,13 +72,17 @@ If you run into problems during the install, please see the [complete install in
 
 1. Press Alt-F2
   * A window with a prompt should appear in the upper left
+  
 
-1. Press Ctrl-V, and press Enter
+1. Press Ctrl-V to paste the text, and press Enter
   * A new window will appear with a password prompt.
+  
 
-1. Enter your password, and press enter
+1. Enter your password, and press Enter
 
-1. Wait until the window disappears.
+1. If prompted, press Y to continue
+
+1. Wait until the window disappears
 
 # Run Gazebo #
 
