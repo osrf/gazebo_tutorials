@@ -29,7 +29,7 @@ To test the ray noise model:
     <model>
       <name>Noisy laser</name>
       <version>1.0</version>
-      <sdf version='1.4'>model.sdf</sdf>
+      <sdf version='1.6'>model.sdf</sdf>
 
       <author>
        <name>My Name</name>
@@ -52,7 +52,7 @@ To test the ray noise model:
 
     ~~~
     <?xml version="1.0" ?>
-    <sdf version="1.4">
+    <sdf version="1.6">
       <model name="hokuyo">
         <link name="link">
           <gravity>false</gravity>
@@ -88,7 +88,6 @@ To test the ray noise model:
                 <stddev>0.01</stddev>
               </noise>
             </ray>
-
             <plugin name="laser" filename="libRayPlugin.so" />
             <always_on>1</always_on>
             <update_rate>30</update_rate>
@@ -105,15 +104,15 @@ To test the ray noise model:
 
 1. Insert a noisy laser: in the left pane, select the "Insert" tab, then click on "Noisy laser".  Drop your laser somewhere in the world.
 
-[[file:files/Noisy_laser_inserted.png|640px]]
+    [[file:files/Noisy_laser_inserted.png|640px]]
 
 1. Visualize the noisy laser: click on Window->Topic Visualization (or press Ctrl-T) to bring up the Topic Selector.
 
-[[file:files/Topic_visualizer.png|640px]]
+    [[file:files/Topic_visualizer.png|640px]]
 
 1. Find the the topic with a name like "/gazebo/default/hokuyo/link/laser/scan" and click on it, then click "Okay".  You'll get get a Laser View window that shows you the laser data.
 
-[[file:files/Noisy_laser_visualizer.png|640px]]
+    [[file:files/Noisy_laser_visualizer.png|640px]]
 
 As you can see, the scan is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`, where the units are meters:
 
@@ -149,7 +148,7 @@ To test the camera noise model:
     <model>
       <name>Noisy camera</name>
       <version>1.0</version>
-      <sdf version='1.4'>model.sdf</sdf>
+      <sdf version='1.6'>model.sdf</sdf>
 
       <author>
        <name>My Name</name>
@@ -172,7 +171,7 @@ To test the camera noise model:
 
     ~~~
     <?xml version="1.0" ?>
-    <sdf version="1.4">
+    <sdf version="1.6">
       <model name="camera">
         <link name="link">
           <gravity>false</gravity>
@@ -223,7 +222,7 @@ To test the camera noise model:
 
 1. Find the the topic with a name like "/gazebo/default/camera/link/camera/image" and click on it, then click "Okay".  You'll get get a Image View window that shows you the image data.
 
-[[file:files/Noisy_camera_visualizer.png|640px]]
+    [[file:files/Noisy_camera_visualizer.png|640px]]
 
 If you look closely, you can see that the image is noisy.  To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`.  These are unitless values; the noise will be added to each color channel within the range [0.0,1.0].
 
@@ -265,7 +264,7 @@ To test the IMU noise model:
     <model>
       <name>Noisy IMU</name>
       <version>1.0</version>
-      <sdf version='1.4'>model.sdf</sdf>
+      <sdf version='1.6'>model.sdf</sdf>
 
       <author>
        <name>My Name</name>
@@ -286,7 +285,7 @@ To test the IMU noise model:
 
     ~~~
     <?xml version="1.0" ?>
-    <sdf version="1.4">
+    <sdf version="1.6">
       <model name="imu">
         <link name="link">
           <inertial>
@@ -308,21 +307,58 @@ To test the IMU noise model:
           </collision>
           <sensor name="imu" type="imu">
             <imu>
-              <noise>
-                <type>gaussian</type>
-                <rate>
-                  <mean>0.0</mean>
-                  <stddev>2e-4</stddev>
-                  <bias_mean>0.0000075</bias_mean>
-                  <bias_stddev>0.0000008</bias_stddev>
-                </rate>
-                <accel>
-                  <mean>0.0</mean>
-                  <stddev>1.7e-2</stddev>
-                  <bias_mean>0.1</bias_mean>
-                  <bias_stddev>0.001</bias_stddev>
-                </accel>
-              </noise>
+              <angular_velocity>
+                <x>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                  </noise>
+                </x>
+                <y>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                  </noise>
+                </y>
+                <z>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                  </noise>
+                </z>
+              </angular_velocity>
+              <linear_acceleration>
+                <x>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                  </noise>
+                </x>
+                <y>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                  </noise>
+                </y>
+                <z>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                  </noise>
+                </z>
+              </linear_acceleration>
             </imu>
             <always_on>1</always_on>
             <update_rate>1000</update_rate>
@@ -347,21 +383,58 @@ It can be difficult to appreciate noise on a high-rate sensor like an IMU, espec
 To adjust the noise, simply play with the mean and standard deviation values in the `model.sdf`.  Units for rate noise and rate bias are rad/s, for accel noise and accel bias are m/s^2.
 
 ~~~
-<noise>
-  <type>gaussian</type>
-  <rate>
-    <mean>0.0</mean>
-    <stddev>2e-4</stddev>
-    <bias_mean>0.0000075</bias_mean>
-    <bias_stddev>0.0000008</bias_stddev>
-  </rate>
-  <accel>
-    <mean>0.0</mean>
-    <stddev>1.7e-2</stddev>
-    <bias_mean>0.1</bias_mean>
-    <bias_stddev>0.001</bias_stddev>
-  </accel>
-</noise>
+<angular_velocity>
+  <x>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>2e-4</stddev>
+      <bias_mean>0.0000075</bias_mean>
+      <bias_stddev>0.0000008</bias_stddev>
+    </noise>
+  </x>
+  <y>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>2e-4</stddev>
+      <bias_mean>0.0000075</bias_mean>
+      <bias_stddev>0.0000008</bias_stddev>
+    </noise>
+  </y>
+  <z>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>2e-4</stddev>
+      <bias_mean>0.0000075</bias_mean>
+      <bias_stddev>0.0000008</bias_stddev>
+    </noise>
+  </z>
+</angular_velocity>
+<linear_acceleration>
+  <x>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>1.7e-2</stddev>
+      <bias_mean>0.1</bias_mean>
+      <bias_stddev>0.001</bias_stddev>
+    </noise>
+  </x>
+  <y>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>1.7e-2</stddev>
+      <bias_mean>0.1</bias_mean>
+      <bias_stddev>0.001</bias_stddev>
+    </noise>
+  </y>
+  <z>
+    <noise type="gaussian">
+      <mean>0.0</mean>
+      <stddev>1.7e-2</stddev>
+      <bias_mean>0.1</bias_mean>
+      <bias_stddev>0.001</bias_stddev>
+    </noise>
+  </z>
+</linear_acceleration>
 ~~~
 
 These are reasonable values for a high-quality IMU.
