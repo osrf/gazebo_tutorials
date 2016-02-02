@@ -55,7 +55,9 @@ You can use the different tools (pen, text, stars and shapes, etc.) to create
  a proper thickness.
 
  **Note**: a stick figure or two circles that touch each other would not
- result in valid Gazebo models.
+ result in valid Gazebo models. The SVG paths must create an closed contour with
+ holes, where the holes cannot touch the contour or other holes. Holes inside
+ holes are treated as solid parts (and they can have holes, too).
 
 [[file:files/inkscape-simple-wheel.png|400px]]
 
