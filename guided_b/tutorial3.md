@@ -95,7 +95,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-wheel_rotate.png|600px]]
 
-1. Next, resize the wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only be one. Expand the visual item by clicking on the small arrow next to the `visual` text label. Scroll down to the `Geometry` section and change the `Radius` 
+1. Next, resize the wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only be one. Expand the visual item by clicking on the small arrow next to the `visual` text label. Scroll down to the `Geometry` section and change the `Radius`
    to 0.3m and `Length` to 0.25m. Hit Enter when done.
 
     [[file:files/ftu4-wheel_visual.png|600px]]
@@ -137,14 +137,12 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-wheel_align_x.png|600px]]
 
 1. In our example, we want to position the wheel flush against the chassis. To bring the wheel closer, click the `Y Align Max` option. However, it is not quite what we want yet. Click the `Reverse` option next the Y alignment options to align the wheel's minimum (reverse of maximum) to the chassis's maximum.
-   Note that the `Reverse` option is applied to the child link since the default alignment configuration shown in the drop down list below is `Child to Parent`.  If `Parent to Child` configuration is set, the `Reverse` option will be applied to the parent link. Press `Create`. 
+   Note that the `Reverse` option is applied to the child link since the default alignment configuration shown in the drop down list below is `Child to Parent`.  If `Parent to Child` configuration is set, the `Reverse` option will be applied to the parent link. Press `Create`.
 
     [[file:files/ftu4-wheel_align_y_reverse.png|600px]]
 
-1. To position the wheel above the ground, open the Link Inspector by double-clicking on the wheel. We can use the `Pose` section at the bottom of the dialog to move the wheel. Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, 
-   we need to place the wheel at 0.3 m relative to the chassis. So go ahead and change the `Z` position to 0.3m, and press `Ok`.
+1. To position the wheel above the ground, open the Link Inspector by double-clicking on the wheel. We can use the `Pose` section at the bottom of the dialog to move the wheel. Given that the wheel has a radius of 0.3m, go ahead and change the `Z` position to 0.3m to place on the ground, and press `Ok`.
 
-    [[file:files/ftu4-wheel_pose_z.png|600px]]
 
 1. Repeat the joint creation process and axis configuration for the other front wheel, make sure that a) the chassis is the parent of the joint and the wheel is the child, b) the axis of rotation is set to `Z`, and c) use the `Y Align Min` option to align the right wheel as it is on the other side of the chassis.
 
@@ -170,15 +168,11 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-caster_joint_ball.png|600px]]
 
-1. Next, align the caster wheel so that it is centered with the chassis and positioned at the rear end. In the Align links section, select the `Y Align Center` option to center the two links in the `Y` axis, and select the `X Align Min` option to move the caster wheel so it is placed right at the back of the vehicle.
+1. Next, align the caster wheel so that it is centered with the chassis and positioned at the rear end. In the Align links section, select the `Y Align Center` option to center the two links in the `Y` axis, and select the `X Align Min` option to move the caster wheel so it is placed right at the back of the vehicle. Press the `Create` button to finish the joint creation process.
 
     [[file:files/ftu4-caster_align.png|600px]]
 
-1. Finally, position the caster wheel so that it sits just above the ground. Do this by setting the `Z` position in the Relative Pose section to -0.3m.
-
-    [[file:files/ftu4-caster_joint_z.png|600px]]
-
-1. Press the `Create` button to finish the joint creation process.
+1. Finally, position the caster wheel so that it sits just above the ground. Do this by opening the Link Inspector and setting the `Z` position to 0.2m.
 
 ### Adding a sensor
 
