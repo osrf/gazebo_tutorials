@@ -2,7 +2,7 @@
 
 Now we'll construct our simple robot. We'll make a wheeled vehicle and add a sensor that allows us to make the robot follow a blob (person).
 
-The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, see tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot).
+The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, and check out the tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot).
 But for now, we can do everything right in the Gazebo GUI!
 
 
@@ -28,7 +28,7 @@ The left panel, also known as the **Palette**, has two tabs.
       * Model Database: Located in the bottom half of the Palette is a
       list of *models*. These are models on your local computer or models
       available for download from the online model database.
-      They can be inserted into the editor in the same way as simple shapes
+      They can be inserted into the Model Editor in the same way as simple shapes
       and custom meshes. Once inserted, they become a part of the model you are
       building. We refer to them as *Nested Models*.
 
@@ -36,7 +36,7 @@ The left panel, also known as the **Palette**, has two tabs.
 * **MODEL** tab: The Model tab allows you to set the name and basic parameters of the model you
 are building. It also displays a list of the links, joints, nested models, and plugins that are currently
 part of the model. You can view and modify a part's parameters, like its pose, in two ways: 1) by double-clicking on the part in the list, or 2) by
-right-clicking and selecting Open Inspector from the context menu in the Scene.
+right-clicking on the part and selecting Open Inspector from the context menu in the Scene.
 
 #### Toolbar
 
@@ -71,7 +71,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-editor_box.png|400px]]
 
-1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this using the Scale tool located on the top Toolbar.
+1. Next, resize the box so that it looks more like the shape of a car chassis. We can do this by selecting the Scale tool located on the top Toolbar.
    Select the box in the Scene, and a RGB-colored marker should appear over the box. The red marker represents the X axis, green is Y, and blue is Z. Move the mouse over the red marker to highlight it, then click and drag to make the chassis longer along the X axis. Scale the chassis
    so it is roughly 2 meters long. You can estimate this by looking at the 1x1 meter grids on the ground.
 
@@ -91,11 +91,12 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Let's move on to the front wheels. Start by inserting a cylinder from the Insert tab on the left panel.
 
-1. The cylinder in its default orientation will not roll very well. Let's rotate it along the X axis using the Link Inspector. Double-click on the cylinder, scroll to the bottom, and change `Roll` to 1.5707 radians (90 degrees) and hit the Enter key on the keyboard. Do not close the Inspector just yet.
+1. The cylinder in its default orientation will not roll very well. Let's rotate it along the X axis using the Link Inspector. Double-click on the cylinder, scroll to the Pose section at the bottom, and change `Roll` to 1.5707 radians (90 degrees) and hit the Enter key on the keyboard. Do not close the Inspector just yet.
 
     [[file:files/ftu4-wheel_rotate.png|600px]]
 
-1. Next, resize the wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only be one. Expand the visual item by clicking on the small arrow next to the `visual` text label. Scroll down to the `Geometry` section and change the `Radius` to 0.3m and `Length` to 0.25m. Hit Enter when done.
+1. Next, resize the wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only be one. Expand the visual item by clicking on the small arrow next to the `visual` text label. Scroll down to the `Geometry` section and change the `Radius` 
+   to 0.3m and `Length` to 0.25m. Hit Enter when done.
 
     [[file:files/ftu4-wheel_visual.png|600px]]
 
@@ -136,16 +137,14 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-wheel_align_x.png|600px]]
 
 1. In our example, we want to position the wheel flush against the chassis. To bring the wheel closer, click the `Y Align Max` option. However, it is not quite what we want yet. Click the `Reverse` option next the Y alignment options to align the wheel's minimum (reverse of maximum) to the chassis's maximum.
-   Note that the `Reverse` option is applied to the child link since the default alignment configuration shown in the drop down list below is `Child to Parent`.  If `Parent to Child` configuration is set, the `Reverse` option will be applied to the parent link.
+   Note that the `Reverse` option is applied to the child link since the default alignment configuration shown in the drop down list below is `Child to Parent`.  If `Parent to Child` configuration is set, the `Reverse` option will be applied to the parent link. Press `Create`. 
 
     [[file:files/ftu4-wheel_align_y_reverse.png|600px]]
 
-1. To position the wheel above the ground, we can use the `Relative Pose` section at the bottom of the dialog to move the child link (wheel) relative to the parent link (chassis). Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, a simple math calculation will show that we need
-   to place the wheel at -0.1m relative to the chassis. So go ahead and change the `Z` position to -0.1m.
+1. To position the wheel above the ground, open the Link Inspector by double-clicking on the wheel. We can use the `Pose` section at the bottom of the dialog to move the wheel. Given that the wheel has a radius of 0.3m and the chassis is at 0.4m above the ground, 
+   we need to place the wheel at 0.3 m relative to the chassis. So go ahead and change the `Z` position to 0.3m, and press `Ok`.
 
     [[file:files/ftu4-wheel_pose_z.png|600px]]
-
-1. Press the `Create` button when done. This will finalize the joint and close the Joint Creation dialog.
 
 1. Repeat the joint creation process and axis configuration for the other front wheel, make sure that a) the chassis is the parent of the joint and the wheel is the child, b) the axis of rotation is set to `Z`, and c) use the `Y Align Min` option to align the right wheel as it is on the other side of the chassis.
 
