@@ -96,7 +96,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-wheel_rotate.png|600px]]
 
 1. Next, resize the wheel by giving it exact dimensions. Go to the Visual tab to see the list of visuals in this link. There should only be one. Expand the visual item by clicking on the small arrow next to the `visual` text label. Scroll down to the `Geometry` section and change the `Radius`
-   to 0.3m and `Length` to 0.25m. Hit Enter when done.
+   to 0.3m and `Length` to 0.25m. 
 
     [[file:files/ftu4-wheel_visual.png|600px]]
 
@@ -182,14 +182,14 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 
     [[file:files/ftu4-insert_tab.png|300px]]
 
-1. The models in the lists are organized by the path in which they are located. As you can see, the first list contains models available on your local machine as indicated by the path in the title. If you are a first time user, you may not see many models in the lists. More will appear as you download them from
+1. The models in the lists are organized by the path in which they are located. As you can see, the first list contains models available on your local machine as indicated by the path in the title. If you are a first-time user, you may not see many models in the lists. More will appear as you download them from
    the online model database. Find the list with the path `http://gazebosim.org/models/` and expand it to see models available from the online model database.
 
     [[file:files/ftu4-model_database.png|300px]]
 
 1. The models are arranged in alphabetical order. Find Depth Camera in the list and click on it to start downloading the model. This may take a few seconds depending on the network connectivity.
 
-1. Once the download is complete, you should see the depth camera model appear in the Scene on the right. Move the mouse over to the Scene and click on an empty space in front of the car to insert the depth camera.
+1. Once the download is complete, you should see the depth camera model appear in the Scene. It looks like a small cube. Move the mouse over to the Scene and click on an empty space in front of the car to insert the depth camera.
 
     [[file:files/ftu4-depth_camera.png|600px]]
 
@@ -208,7 +208,7 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 ### Adding a plugin
 
 The vehicle we have built so far is complete with all of the physical and sensor components. However, it will not really do much but stay still and generate depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data
-   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code, see the [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
+   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code. See the [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 
@@ -222,12 +222,12 @@ The vehicle we have built so far is complete with all of the physical and sensor
 
 
 1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin library stored on your local machine. It exists in the form of a dynamically linked shared object library, hence the naming convention and the
-   extension `.so` (on linux). Do not worry if you are using Gazebo on other operating systems as the extension will be automatically replaced with the correct one.
+   extension `.so` (on Linux). Do not worry if you are using Gazebo on other operating systems as the extension will be automatically replaced with the correct one.
 
     [[file:files/ftu4-model_plugin_inspector_done.png|400px]]
 
 1. The `follower` plugin does not require any additional parameters so you can leave the `Innerxml` field empty. Note: This is a simple plugin for demonstration purposes. Plugins typically have various parameters associated, e.g. a differential drive plugin requires specifying the name of joints controlling the
-   left and right wheels so it can move the vehicle in the correct direction. In the case of the `follower` plugin, it makes many assumptions on the the type of model it is attached to and tries to find the joints and sensor automatically.
+   left and right wheels so it can move the vehicle in the correct direction. In the case of the `follower` plugin, it makes many assumptions on the type of model it is attached to and tries to find the joints and sensor automatically.
 
 1. Click `OK` to add the plugin. The plugin should now appear under `Model Plugins` in the left panel.
 
@@ -235,7 +235,7 @@ The vehicle we have built so far is complete with all of the physical and sensor
 
 ### Save your model
 
-1. Save the model by going to the `File` menu and select `Save As`. Enter a name for the model and click `Save`.
+1. Save the model by going to the `File` menu and selecting `Save As`. Enter a name for the model and click `Save`.
 
     [[file:files/ftu4-save_as.png|400px]]
 
