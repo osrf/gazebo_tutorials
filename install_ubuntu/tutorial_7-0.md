@@ -1,16 +1,16 @@
 # Install Gazebo using Ubuntu packages
 
-## One-line install
+## Default installation: one-liner
 
 1. Install
 
-        wget -O /tmp/gazebo7_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo7_install.sh; sudo sh /tmp/gazebo7_install.sh
+        curl -ssL http://get.gazebosim.org | sh
 
 2. Run
 
         gazebo
 
-## Step-by-step Install
+## Alternative installation: step-by-step
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
@@ -37,7 +37,16 @@
 
 ## Gazebo in different deb packages
 
-Gazebo ships different Ubuntu debian packages following the [official packaging guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes brings an option about how to install gazebo:
+Gazebo ships different Ubuntu debian packages following the [official packaging
+guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes
+brings an option about how to install gazebo:
 
- * Use Gazebo as an application: for the users that just run Gazebo simulator with the provided plugins and models and do not plan on developing on top of gazebo its own custom software. To use Gazebo 6.0, please install the package called ***gazebo7***.
- * Use Gazebo to develop software using Gazebo libraries: for users that develop plugins or any other kind of software that needs Gazebo headers and libraries. In this case, together with gazebo7 package, please install ***libgazebo7-dev***.
+ * Use Gazebo as an application: for the users that just run Gazebo simulator
+   with the provided plugins and models and do not plan on developing on top of
+   gazebo its own custom software. To use Gazebo 7.0, please install the package
+   called ***gazebo7***.
+
+ * Use Gazebo to develop software using Gazebo libraries: for users that
+   develop plugins or any other kind of software that needs Gazebo headers and
+   libraries. In this case, together with gazebo7 package, please install
+   ***libgazebo7-dev***.
