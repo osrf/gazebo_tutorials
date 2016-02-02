@@ -748,6 +748,12 @@
           <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
           <skill>advanced</skill>
     </tutorial>
+    <tutorial title="GazeboJs installation on Mac" ref='gazebojs_install_mac'>
+          <markdown version="6.0">gazebojs_install_mac/tutorial.md</markdown>
+          <description>Explains how to install the javascript NodeJs bindings to Gazebo on OSX.</description>
+          <skill>advanced</skill>
+    </tutorial>
+
 
     <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
         <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
@@ -1078,6 +1084,7 @@
       <description>Gazebo scripting interface: NodeJS bindings for the Gazebo simulator.</description>
       <tutorials>
         <tutorial>gazebojs_install</tutorial>
+        <tutorial>gazebojs_install_mac</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
         <tutorial>gazebojs_models</tutorial>
