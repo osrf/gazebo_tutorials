@@ -506,6 +506,13 @@ save, then launch the same launch files as for GPU Laser.
 
 **Description:** simulates [imu_node](http://ros.org/wiki/microstrain_3dmgx2_imu)
 
+## IMU sensor (GazeboRosImuSensor)
+
+**Description:** simulates an Inertial Motion Unit sensor, the main differences from **IMU** (GazeboRosIMU) are:
+  - inheritance from SensorPlugin instead of ModelPlugin,
+  - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
+  - gravity is included in inertial measurements.
+
 ## Joint Pose Trajectory
 
 **Description:** listens to a joint_trajectory_action and plays back the set of joint positions. Sets the set of joints to exact positions without regards to simulated physics and forces.
