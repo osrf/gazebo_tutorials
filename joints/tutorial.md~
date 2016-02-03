@@ -57,7 +57,7 @@ This is an utility cart, the two cubes shown are brake pedal and gas pedal,
 they are connected with the cart using prismatic joint, on applying force on any pedal, 
 the pedal slides on the cart and consequently the cart accelerates or decelerates.
 
-[[file:files/prismatic.gif|320px]]
+[[file:files/prismatic.gif|640px]]
 Another example of prismatic is in simple arm.
 On applying force on the lower â€˜arm_wrist_rollâ€™ of the model, it slides inside the â€˜arm_wrist_liftâ€™.
 
