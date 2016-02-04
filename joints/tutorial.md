@@ -4,7 +4,7 @@ A parent and child relationship is established along with other
 parameters such as axis of rotation, and joint limits. 
 Various parameters used in describing any joint can be looked upon, from [here](http://sdformat.org/spec?ver=1.5&elem=joint#joint_parent).
 
-# The various types of joints are: 
+## The various types of joints are: 
 
 # 1. Revolute
 A hinge joint that rotates on a single axis with either a fixed or continuous range of motion.
@@ -67,6 +67,9 @@ This allows only rotatinal motion of the hinged part.
 
 [[file:files/ball.gif|320px]]
 
+Here, we have modified the joint connecting one leg and hip of a ragdoll to ball joint.
+Observe when force is applied it freely rotates about its own axis and also makes
+the leg rotate with itself. (Ofcourse not a good application of ball joint!!!)
 
 # 7. Fixed
 This can be said as the most simplest of all joints.
