@@ -96,7 +96,7 @@ sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
 ~~~
 
-If this installation method ends successfully for you, jump to [testing gazebo with ROS](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros#TestingGazebowithROSIntegration).
+If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
 
 ### B. Install from Source (on Ubuntu)
 
