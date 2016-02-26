@@ -53,7 +53,7 @@ It can be installed from the ros repository.
 ### Gazebo built from source
 
 If you have compiled a gazebo version from source, note that depending on the
-repository branch used (`gazebo_6.0`,`gazebo_7.0`,...) your gazebo will be
+repository branch used (`gazebo6`,`gazebo7`,...) your gazebo will be
 binary compatible with the `gazebo_ros_pkgs` (and all other ROS packages compiled
 on top of gazebo) only if the major version matches your local branch
 repository and the gazebo version used in your ROS distro.  For example, if you
