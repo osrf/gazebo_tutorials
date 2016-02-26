@@ -70,7 +70,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
 
     [[file:files/velodyne_drawing.png|800px]]
   
-    1. Copy the following into the SDF world file directly before the `</sdf>` tag.
+    1. Copy the following into the SDF world file directly before the `</world>` tag.
 
         ```
         <model name="velodyne_hdl-32">
@@ -311,9 +311,7 @@ The `<horizontal>` component defines rays that fan out in a horizontal
 plane, and the `<vertical>` component defines rays that fan out in
 a vertical plane.
 
-The Velodyne sensor requires vertical rays, that then rotate.
-The Velodyne specification indicates that the HDL-32 has 32 rays with
-a vertical field of view between +10.67 and -30.67 degrees.
+The Velodyne sensor requires vertical rays, that then rotate. We will simulated this as rotated horizontal fan. We're taking this approach because it will be a bit easier to visualize the data in Gazebo.  The Velodyne specification indicates that the HDL-32 has 32 rays with a vertical field of view between +10.67 and -30.67 degrees.
 
 1. We will add the ray sensor to the top link. Copy the following into the
    `<link name="top">` element in the `velodyne.world` file.
@@ -322,8 +320,10 @@ a vertical field of view between +10.67 and -30.67 degrees.
     <!-- Add a ray sensor, and give it a name -->
     <sensor type="ray" name="sensor">
     
-      <!-- Position the ray sensor based on the specification -->
-      <pose>0 0 0.03214 0 0 0</pose>
+      <!-- Position the ray sensor based on the specification. Also rotate
+           it by 90 degrees around the X-axis so that the <horizontal> rays
+           become vertical -->
+      <pose>0 0 0.03214 1.5707 0 0</pose>
     
       <!-- Enable visualization to see the rays in the GUI -->
       <visualize>true</visualize>
@@ -338,36 +338,27 @@ a vertical field of view between +10.67 and -30.67 degrees.
     ```
     <ray>
     
-      <!-- The scan element contains the horizontal and vertical beams -->
+      <!-- The scan element contains the horizontal and vertical beams.
+           We are leaving out the vertical beams for this tutorial. -->
       <scan>
     
         <!-- The horizontal beams -->
         <horizontal>
-          <!-- The velodyne has one vertical fan, so we just need one 
-                horizontal beam -->
-          <samples>1</samples>
-          <resolution>1</resolution>
-          <min_angle>0</min_angle>
-          <max_angle>0</max_angle>
-        </horizontal>
-    
-        <!-- The vertical beams -->
-        <vertical>
-          <!-- The velodyne has 32 vertical beams(samples) -->
+          <!-- The velodyne has 32 beams(samples) -->
           <samples>32</samples>
-    
+
           <!-- Resolution is multiplied by samples to determine number of
                simulated beams vs interpolated beams. See:
                http://sdformat.org/spec?ver=1.6&elem=sensor#horizontal_resolution
                -->
           <resolution>1</resolution>
-    
+
           <!-- Minimum angle in radians -->
           <min_angle>-0.53529248</min_angle>
     
           <!-- Maximum angle in radians -->
           <max_angle>0.18622663</max_angle>
-        </vertical>
+        </horizontal>
       </scan>
     
       <!-- Range defines characteristics of an individual beam -->
