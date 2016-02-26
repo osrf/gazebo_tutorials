@@ -384,7 +384,7 @@ a vertical field of view between +10.67 and -30.67 degrees.
 
 1. Start up simulation again, and you should see the 32 sensor beams.
 
-    [[file:files/velodyne_rays.png|800px]]
+    [[file:files/velodyne_rays.jpg|800px]]
 
 # Next Up
 
