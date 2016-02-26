@@ -35,6 +35,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
 1. Create a new world file.
 
     ```
+    cd
     gedit velodyne.world
     ```
 
@@ -57,81 +58,89 @@ Based on the Velodyne documentation, we will create a sensor that has:
     </sdf>
     ```
 
-1. Next, we will add the basics of the Velodyn LiDAR. Use the Velodyne sensor
-   dimensions to construct a base cylinder and a top cylinder. Below is an
-   screenshot of the [Velodyne 2D
+1. Next, we will add the basics of the Velodyn LiDAR to the SDF world file.
+   We will Use the Velodyne sensor dimensions to construct a base cylinder and
+   a top cylinder. Below is an screenshot of the [Velodyne 2D
    drawing](http://velodynelidar.com/lidar/hdldownloads/86-0106%20REV%20A%20OUTLINE%20DRAWING%20HDL-32E.pdf).
 
     [[file:files/velodyne_drawing.png|800px]]
   
-   Copy the following into the SDF world file directly before the `</sdf>` tag.
+    1. Copy the following into the SDF world file directly before the `</sdf>` tag.
 
-```
-<model name="velodyne">
-  <link name="base">
-    <collision name="collision">
-      <geometry>
-        <cylinder>
-          <!-- Radius and length provided by Velodyne -->
-          <radius>.04267</radius>
-          <length>.05867</length>
-        </cylinder>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <geometry>
-        <cylinder>
-          <radius>.04267</radius>
-          <length>.05867</length>
-        </cylinder>
-      </geometry>
-    </visual>
-  </link>
+        ```
+        <model name="velodyne_hdl-32">
+          <!-- Give the base link a unique name -->
+          <link name="base">
+            <collision name="collision">
+              <geometry>
+                <cylinder>
+                  <!-- Radius and length provided by Velodyne -->
+                  <radius>.04267</radius>
+                  <length>.05867</length>
+                </cylinder>
+              </geometry>
+            </collision>
 
-  <link name="top">
-    <!-- Vertically offset the top cylinder by the length of the bottom
-        cylinder and half the length of this cylinder. -->
-    <pose>0 0 0.095455 0 0 0</pose>
-    <collision name="collision">
-      <geometry>
-        <cylinder>
-          <!-- Radius and length provided by Velodyne -->
-          <radius>0.04267</radius>
-          <length>0.07357</length>
-        </cylinder>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <geometry>
-        <cylinder>
-          <radius>0.04267</radius>
-          <length>0.07357</length>
-        </cylinder>
-      </geometry>
-    </visual>
-  </link>
-</model>
-```
+            <!-- The visual is mostly a copy of the collision -->
+            <visual name="visual">
+              <geometry>
+                <cylinder>
+                  <radius>.04267</radius>
+                  <length>.05867</length>
+                </cylinder>
+              </geometry>
+            </visual>
+          </link>
+        
+          <!-- Give the base link a unique name -->
+          <link name="top">
 
-When building a new model, it is a good idea to periodically try out small
-changes. During the development process, start Gazebo paused so that you can
+            <!-- Vertically offset the top cylinder by the length of the bottom
+                cylinder and half the length of this cylinder. -->
+            <pose>0 0 0.095455 0 0 0</pose>
+            <collision name="collision">
+              <geometry>
+                <cylinder>
+                  <!-- Radius and length provided by Velodyne -->
+                  <radius>0.04267</radius>
+                  <length>0.07357</length>
+                </cylinder>
+              </geometry>
+            </collision>
+
+            <!-- The visual is mostly a copy of the collision -->
+            <visual name="visual">
+              <geometry>
+                <cylinder>
+                  <radius>0.04267</radius>
+                  <length>0.07357</length>
+                </cylinder>
+              </geometry>
+            </visual>
+          </link>
+        </model>
+        ```
+
+1. When building a new model, it is a good idea to periodically try out small
+changes. Start Gazebo paused so that you can
 view the model without the physics engine altering the model's pose. There
-are also a few graphical tool that can assist the development process.
+are also a few other graphical tools that can assist the development process, which we will cover over the course of this tutorial.
 
 1. Run the Velodyne world paused (the -u argument).
 
-```
-gazebo velodyne.world -u
-```
+    ```
+    cd
+    gazebo velodyne.world -u
+    ```
 
 1. By default, you will see the `<visual>` elements in a model, which define
    how a model looks. The `<collision>` elements, on the other hand, define
    how the model will behave when colliding with other models. To see, and
-   debug, the `<collision>` elements Right-click on a model, and choose
+   debug, the `<collision>` elements `Right-click` on a model, and choose
    `View->Collsions`. Try this now, and you should see two orange cylinders
    (that look like a single cylinder due to their proximity).
 
-   TODO: MAKE AN IMAGE
+    [[file:files/velodyne_collisions.jpg|800px]]
 
 ## Step 3: Add inertia
 
