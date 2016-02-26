@@ -127,23 +127,16 @@ models, and the ability to share models via an online model database. Review
           </visual>
     
           <sensor type="ray" name="sensor">
-            <pose>0 0 0.03214 0 0 0</pose>
+            <pose>0 0 0.03214 1.5707 0 0</pose>
             <visualize>true</visualize>
             <ray>
               <scan>
                 <horizontal>
-                  <samples>1</samples>
-                  <resolution>1</resolution>
-                  <min_angle>0</min_angle>
-                  <max_angle>0</max_angle>
-                </horizontal>
-    
-                <vertical>
                   <samples>32</samples>
                   <resolution>1</resolution>
                   <min_angle>-0.53529248</min_angle>
                   <max_angle>0.18622663</max_angle>
-                </vertical>
+                </horizontal>
               </scan>
     
               <range>
