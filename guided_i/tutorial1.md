@@ -390,3 +390,5 @@ a vertical field of view between +10.67 and -30.67 degrees.
 
 In the next section we will modify the Velodyne model so that it can be
 easily shared and reused.
+
+[Next Section](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i2)
