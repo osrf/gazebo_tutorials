@@ -50,15 +50,16 @@ Based on the Velodyne documentation, we will create a sensor that has:
     <sdf version="1.5">
       <world name="default">
     
-      <!-- A global light source -->
-      <include>
-        <uri>model://sun</uri>
-      </include>
+        <!-- A global light source -->
+        <include>
+          <uri>model://sun</uri>
+        </include>
     
-      <!-- A ground plane -->
-      <include> 
-        <uri>model://ground_plane</uri>
-      </include>
+        <!-- A ground plane -->
+        <include> 
+          <uri>model://ground_plane</uri>
+        </include>
+      </world>
     </sdf>
     ```
 
@@ -75,6 +76,9 @@ Based on the Velodyne documentation, we will create a sensor that has:
         <model name="velodyne_hdl-32">
           <!-- Give the base link a unique name -->
           <link name="base">
+
+            <!-- Offset the base by half the lenght of the cylinder -->
+            <pose>0 0 0.029335 0 0 0</pose>
             <collision name="collision">
               <geometry>
                 <cylinder>
@@ -196,7 +200,6 @@ oversized, which is due to our model lacking inertia information.
 
     ````
      <link name="top">
-       <!-- How to come up with these numbers -->
        <pose>0 0 0.095455 0 0 0</pose>
        <inertial>
          <mass>0.1</mass>
