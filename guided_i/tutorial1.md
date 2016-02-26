@@ -142,7 +142,7 @@ are also a few other graphical tools that can assist the development process, wh
 
     [[file:files/velodyne_collisions.jpg|800px]]
 
-## Step 3: Add inertia
+## Step 2: Add inertia
 
 At this point, we have a Velodyne model that lacks dynamic properties such
 as moments of inertia. The physics engine uses inertia information to
@@ -153,62 +153,64 @@ incorrect, or no, inertia values will behave in a strange manner.
    right-click on the Velodyne and select ```View->Interia```. This will
    causes two purple boxes to appear.
 
-   TODO: INERTIA IMAGE BAD
+    [[file:files/velodyne_inertia.jpg|800px]]
 
-Generally, each purple box should roughly match the size of the link it
+    > Generally, each purple box should roughly match the size of the link it
 is associated with. You'll notice that the current interia boxes are grossly
 oversized, whch is due to our model lacking inertia information.
 
 1. We can add inertia to a link by specifing both the mass and inertia
    matrix. We are basing the mass on the specified mass of the Velodyne,
-   which is 1.3kg, and giving the base link a majority. The moment of inertia
-   matrix can be computed using equations found on
+   which is 1.3kg, and giving the base link a majority (this distribution is
+   a guess on our part). The moment of inertia matrix can be computed
+   using equations found on
    [Wikipedia](https://en.wikipedia.org/wiki/List_of_moments_of_inertia). 
 
-   Here is the inertia values for the `base` link:
+    > The following are the inertia values for the `base` link. Copy the
+    > `<inertial>` block into the indicated location.
 
-   ````
-   <model name="velodyne">
-     <link name="base">
-       <pose>0 0 0.029335 0 0 0</pose>
+    ````
+    <model name="velodyne">
+      <link name="base">
+        <pose>0 0 0.029335 0 0 0</pose>
+        <inertial>
+          <mass>1.2</mass>
+          <inertia>
+            <ixx>0.001087473</ixx>
+            <iyy>0.001087473</iyy>
+            <izz>0.001092437</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+
+    ````
+
+    > and the inertia values for the `top` link. Copy the
+    > `<inertial>` block into the indicated location.
+
+    ````
+     <link name="top">
+       <!-- How to come up with these numbers -->
+       <pose>0 0 0.095455 0 0 0</pose>
        <inertial>
-         <mass>1.2</mass>
+         <mass>0.1</mass>
          <inertia>
-           <ixx>0.001087473</ixx>
-           <iyy>0.001087473</iyy>
-           <izz>0.001092437</izz>
+           <ixx>0.000090623</ixx>
+           <iyy>0.000090623</iyy>
+           <izz>0.000091036</izz>
            <ixy>0</ixy>
            <ixz>0</ixz>
            <iyz>0</iyz>
          </inertia>
        </inertial>
-
-   ````
-
-   and the inertia values for the `top` link:
-
-   ````
-    <link name="top">
-      <!-- How to come up with these numbers -->
-      <pose>0 0 0.095455 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-        <inertia>
-          <ixx>0.000090623</ixx>
-          <iyy>0.000090623</iyy>
-          <izz>0.000091036</izz>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-        </inertia>
-      </inertial>
-   ````
+    ````
 
 1. With the inertia values in place, visualization should be similar to the
    following image.
 
-   TODO: INERTIA IMAGE GOOD
-
+    [[file:files/velodyne_inertia_good.jpg|800px]]
 
 At this point in the model creation process, you should have a model that
 has correct visual, collision, and inertia properties. We will now move onto
