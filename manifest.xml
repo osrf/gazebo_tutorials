@@ -24,12 +24,17 @@
     <!-- Intermediate tutorials -->
     <tutorial title="Intermediate: 1" ref='guided_i1'>
       <markdown version="7.0">guided_i/tutorial1.md</markdown>
-    </tutorial>-
+    </tutorial>
 
     <tutorial title="Intermediate: Model Appearance" ref='guided_i3'>
       <markdown version="7.0">guided_i/tutorial3.md</markdown>
       <description>How to add meshes to a model to improve visual appearance.</description>
-    </tutorial>-
+    </tutorial>
+
+    <tutorial title="Intermediate: Sensor Noise" ref='guided_i4'>
+      <markdown version="7.0">guided_i/tutorial4.md</markdown>
+      <description>How to add noise to a sensor.</description>
+    </tutorial>
 
     <!-- Advanced tutorials
     <tutorial title="Advanced: 1" ref='guided_a1'>
