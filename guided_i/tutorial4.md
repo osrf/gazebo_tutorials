@@ -52,7 +52,7 @@ noise.
 
         [[file:files/velodyne_vis_no_noise.png]]
 
-    1. Notice the nice smooth arc of the outptut.
+    1. Notice the nice smooth lines of the outptut.
 
 ## Step 2: Add noise to the sensor
 
