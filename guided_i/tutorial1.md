@@ -323,7 +323,7 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
       <!-- Position the ray sensor based on the specification. Also rotate
            it by 90 degrees around the X-axis so that the <horizontal> rays
            become vertical -->
-      <pose>0 0 0.03214 1.5707 0 0</pose>
+      <pose>0 0 -0.004645 1.5707 0 0</pose>
     
       <!-- Enable visualization to see the rays in the GUI -->
       <visualize>true</visualize>
@@ -365,7 +365,7 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
       <range>
         
         <!-- Minimum distance of the beam -->
-        <min>1.0</min>
+        <min>0.05</min>
     
         <!-- Maximum distance of the beam -->
         <max>70</max>
