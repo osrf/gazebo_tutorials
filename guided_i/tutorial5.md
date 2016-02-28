@@ -561,8 +561,11 @@ plugin.
 
 1. You can now dynamically set the velocity of the Velodyne senor.
 
-# Conclusion
+# Next up
 
-Congratulations, you now have the tools to build custom models, share your
-models, and generate a public API. Have fun, and happy simulating!
+The final tutorial in this series discusses how to connect this plugin to
+ROS.
+
+[Connect to ROS](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i6)
+
 

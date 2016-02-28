@@ -106,7 +106,7 @@ Gazebo's noise model can be accessed using the `<noise>` tag. See
 
 # Next up
 
-The final tutorial in this series will add a plugin to the Velodyne sensor.
+The next tutorial in this series will add a plugin to the Velodyne sensor.
 This plugin will control the rotation of the sensor's upper portion.
 
 [Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)

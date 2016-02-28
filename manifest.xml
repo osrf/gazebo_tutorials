@@ -47,6 +47,11 @@
       <description>How to control a sensor using a plugin.</description>
     </tutorial>
 
+    <tutorial title="Intermediate: Connect to ROS" ref='guided_i6'>
+      <markdown version="7.0">guided_i/tutorial6.md</markdown>
+      <description>How to control a plugin using ROS.</description>
+    </tutorial>
+
     <!-- Advanced tutorials
     <tutorial title="Advanced: 1" ref='guided_a1'>
       <markdown version="7.0">guided_a/tutorial1.md</markdown>

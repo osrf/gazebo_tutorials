@@ -327,13 +327,15 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
     
       <!-- Enable visualization to see the rays in the GUI -->
       <visualize>true</visualize>
-    
+
+      <!-- Set the update rate of the sensor -->
+      <update_rate>30</update_rate>
     </sensor>
     ```
 
 1. Next, we will add the `<ray>` element, which defines the `<scan>`
    and `<range>` elements. Place the following SDF within the `<sensor>`
-   element.
+   element (directly below the `<update_rate>` element works well).
 
     ```
     <ray>
