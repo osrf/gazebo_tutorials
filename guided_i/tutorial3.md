@@ -82,7 +82,7 @@ file and then add it to our model.
    translate this mesh so that the bottom is on the XY-plane. Use the
    `Translate` button in the upper left (click on it twice to open a dialog in the lower left)  to move the model down the Z-axis by -0.06096. 
 
-    [[file:files/blender_translate.png|800px]]
+    [[file:files/blender_translate.png]]
    
 At this point You should have two collada files: `velodyne_base.dae` and `velodyne_top.dae`. These two files are also available from the following links:
 
