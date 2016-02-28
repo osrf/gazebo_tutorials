@@ -8,7 +8,7 @@ the sensor through the addition of noise.
 # Sensor Noise
 
 Every, or nearly every, sensor has noise in the output. Cameras can have
-chromatic abberations, sonars multi-path effects, and lasers incorrect
+chromatic aberrations, sonars multi-path effects, and lasers incorrect
 distance readings. In order to more closely match the type of data a real
 sensors generates, we have to add noise to the data generated in simulation.
 
@@ -35,7 +35,7 @@ noise.
 
     1. Select the Box icon in the toolbar above the render window.
 
-    1. Left click in fron the laser beams to place the box.
+    1. Left click in front the laser beams to place the box.
 
         [[file:files/box_no_noise.jpg|800px]]
 

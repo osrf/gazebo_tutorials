@@ -2,7 +2,7 @@
 
 At this point we have an almost fully functional sensor. The model
 components are in place, it's been added to Gazebo's online database, and
-a Gaussian noise model has been applied. The final compoment to add is
+a Gaussian noise model has been applied. The final component to add is
 a plugin that controls the sensor's one degree of freedom.
 
 # Plugin overview
@@ -203,7 +203,7 @@ public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   this->model = _model;
 
   // Get the first joint. We are making an assumption about the model
-  // haveing one joint that is the rotational joint.
+  // having one joint that is the rotational joint.
   this->joint = _model->GetJoints()[0];
 
   // Setup a P-controller, with a gain of 0.1.
@@ -341,7 +341,7 @@ simultaneously.
         /// \brief A subscriber to a named topic.
         private: transport::SubscriberPtr sub;
         ```
-    1. Instantiate the Node and subscrber at the end of `Load` function. 
+    1. Instantiate the Node and subscriber at the end of `Load` function. 
 
         ```
         // Create the node
@@ -413,7 +413,7 @@ simultaneously.
           this->model = _model;
     
           // Get the first joint. We are making an assumption about the model
-          // haveing one joint that is the rotational joint.
+          // having one joint that is the rotational joint.
           this->joint = _model->GetJoints()[0];
     
           // Setup a P-controller, with a gain of 0.1.
@@ -494,7 +494,7 @@ plugin.
     gedit vel.cc
     ```
 
-1. Add thie following code. Comments in the code explain what is going on.
+1. Add the following code. Comments in the code explain what is going on.
 
     ```
     #include <gazebo/gazebo_client.hh>
@@ -528,14 +528,12 @@ plugin.
       // Send the message
       pub->Publish(msg);
     
-      gazebo::common::Time::MSleep(1000);
-    
       // Make sure to shut everything down.
       gazebo::client::shutdown();
     }
     ````
 
-1. Add a coupld line to the `CMakeLists.txt` file in your workspace, to
+1. Add a couple line to the `CMakeLists.txt` file in your workspace, to
    build the new `vel` program.
 
     ```

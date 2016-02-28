@@ -3,12 +3,12 @@
 Models with textures and 3D meshes can improve your visual experience, and
 more importantly improve the realism of an environment. Simulated cameras
 that feed information to vision processing algorithms will benefit from
-models that appear realisitic as well.
+models that appear realistic as well.
 
 In this section, we will use 3D meshes available on the Velodyne website to
-improve the visual apperance of our model. More manufactures are making 3D
-meshes available, however it can sometimes be difficult to find an exisitng
-mesh.  In thses cases you can try your hand at mesh creation, work with an
+improve the visual appearance of our model. More manufactures are making 3D
+meshes available, however it can sometimes be difficult to find an existing
+mesh.  In these cases you can try your hand at mesh creation, work with an
 artist, or contact the manufacturer directly.
 
 Velodyne has a [STEP file](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) for the HDL-32 located on [their
@@ -142,7 +142,7 @@ section, we will add the two mesh files, `velodyne_base.dae` and
         [[file:files/velodyne_top_visual_unrotated.jpg|800px]]
 
     1. Notice that the visual is rotated incorrectly and has a vertical
-       offset. These errors occurr because the mesh's coordinate frame
+       offset. These errors occur because the mesh's coordinate frame
        does not exactly match up with the coordinate frame of the SDF
        link. You can either edit the mesh in Blender to move the mesh, or
        you can apply a transform in SDF. Let's use the second option.
