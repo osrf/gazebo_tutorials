@@ -36,6 +36,11 @@
       <description>How to add noise to a sensor.</description>
     </tutorial>
 
+    <tutorial title="Intermediate: Control plugin" ref='guided_i5'>
+      <markdown version="7.0">guided_i/tutorial5.md</markdown>
+      <description>How to control a sensor using a plugin.</description>
+    </tutorial>
+
     <!-- Advanced tutorials
     <tutorial title="Advanced: 1" ref='guided_a1'>
       <markdown version="7.0">guided_a/tutorial1.md</markdown>
