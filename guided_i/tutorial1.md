@@ -320,7 +320,7 @@ a vertical field of view between +10.67 and -30.67 degrees.
     <sensor type="ray" name="sensor">
     
       <!-- Position the ray sensor based on the specification -->
-      <pose>0 0 0.03214 0 0 0</pose>
+      <pose>0 0 -0.004645 1.5707 0 0</pose>
     
       <!-- Enable visualization to see the rays in the GUI -->
       <visualize>true</visualize>
@@ -371,7 +371,7 @@ a vertical field of view between +10.67 and -30.67 degrees.
       <range>
         
         <!-- Minimum distance of the beam -->
-        <min>1.0</min>
+        <min>0.05</min>
     
         <!-- Maximum distance of the beam -->
         <max>70</max>
