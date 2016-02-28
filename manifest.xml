@@ -21,10 +21,11 @@
     </tutorial>
 
 
-    <!-- Intermediate tutorials
-    <tutorial title="Intermediate: 1" ref='guided_i1'>
+    <!-- Intermediate tutorials -->
+    <tutorial title="Intermediate: Velodyne" ref='guided_i1'>
       <markdown version="7.0">guided_i/tutorial1.md</markdown>
-    </tutorial>-->
+      <description>How to construct a Velodyne model.</description>
+    </tutorial>-
 
     <!-- Advanced tutorials
     <tutorial title="Advanced: 1" ref='guided_a1'>
