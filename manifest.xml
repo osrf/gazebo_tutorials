@@ -25,7 +25,12 @@
     <tutorial title="Intermediate: Velodyne" ref='guided_i1'>
       <markdown version="7.0">guided_i/tutorial1.md</markdown>
       <description>How to construct a Velodyne model.</description>
-    </tutorial>-
+    </tutorial>
+
+    <tutorial title="Intermediate: Upload Velodyne Model" ref='guided_i2'>
+      <markdown version="7.0">guided_i/tutorial2.md</markdown>
+      <description>How to upload a model to the model database.</description>
+    </tutorial>
 
     <!-- Advanced tutorials
     <tutorial title="Advanced: 1" ref='guided_a1'>
