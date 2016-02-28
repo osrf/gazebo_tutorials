@@ -8,6 +8,8 @@ ROS ecosystem.
 
 # Create a ROS plugin
 
+# Control Velodyne from ROS
+
 # Conclusion
 
 Congratulations, you now have the tools to build custom models, share your

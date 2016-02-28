@@ -57,7 +57,7 @@ namespace gazebo
   class VelodynePlugin : public ModelPlugin
   {
     /// \brief Constructor
-    public: VelodynePlugin() = default;
+    public: VelodynePlugin() {}
 
     /// \brief The load function is called by Gazebo when the plugin is
     /// inserted into simulation
@@ -393,7 +393,7 @@ simultaneously.
       class VelodynePlugin : public ModelPlugin
       {
         /// \brief Constructor
-        public: VelodynePlugin() = default;
+        public: VelodynePlugin() {}
     
         /// \brief The load function is called by Gazebo when the plugin is
         /// inserted into simulation
@@ -497,15 +497,27 @@ plugin.
 1. Add the following code. Comments in the code explain what is going on.
 
     ```
-    #include <gazebo/gazebo_client.hh>
+    #include <gazebo/gazebo_config.h>
     #include <gazebo/transport/transport.hh>
     #include <gazebo/msgs/msgs.hh>
+    
+    // Gazebo's API has changed between major releases. These changes are
+    // accounted for with #if..#endif blocks in this file.
+    #if GAZEBO_MAJOR_VERSION < 6
+    #include <gazebo/gazebo.hh>
+    #else
+    #include <gazebo/gazebo_client.hh>
+    #endif
     
     /////////////////////////////////////////////////
     int main(int _argc, char **_argv)
     {
       // Load gazebo as a client
+    #if GAZEBO_MAJOR_VERSION < 6
+      gazebo::setupClient(_argc, _argv);
+    #else
       gazebo::client::setup(_argc, _argv);
+    #endif
     
       // Create our node for communication
       gazebo::transport::NodePtr node(new gazebo::transport::Node());
@@ -522,23 +534,39 @@ plugin.
       gazebo::msgs::Vector3d msg;
     
       // Set the velocity in the x-component
-      gazebo::msgs::Set(&msg, ignition::math::Vector3d(
-            std::atof(_argv[1]), 0, 0));
+    #if GAZEBO_MAJOR_VERSION < 6
+      gazebo::msgs::Set(&msg, gazebo::math::Vector3(std::atof(_argv[1]), 0, 0));
+    #else
+      gazebo::msgs::Set(&msg, ignition::math::Vector3d(std::atof(_argv[1]), 0, 0));
+    #endif
     
       // Send the message
       pub->Publish(msg);
     
       // Make sure to shut everything down.
+    #if GAZEBO_MAJOR_VERSION < 6
+      gazebo::shutdown();
+    #else
       gazebo::client::shutdown();
+    #endif
     }
-    ````
+    ```
 
 1. Add a couple line to the `CMakeLists.txt` file in your workspace, to
    build the new `vel` program.
 
     ```
+    # Build the stand-alone test program
     add_executable(vel vel.cc)
-    target_link_libraries(vel ${GAZEBO_LIBRARIES})
+    
+    if (${gazebo_VERSION_MAJOR} LESS 6)
+      # These two
+      include(FindBoost)
+      find_package(Boost ${MIN_BOOST_VERSION} REQUIRED system filesystem regex)
+      target_link_libraries(vel ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
+    else()
+      target_link_libraries(vel ${GAZEBO_LIBRARIES})
+    endif()
     ```
 
 1. Compile and run simulation
