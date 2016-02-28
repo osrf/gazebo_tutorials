@@ -79,7 +79,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
 
             <!-- Offset the base by half the lenght of the cylinder -->
             <pose>0 0 0.029335 0 0 0</pose>
-            <collision name="collision">
+            <collision name="base_collision">
               <geometry>
                 <cylinder>
                   <!-- Radius and length provided by Velodyne -->
@@ -90,7 +90,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
             </collision>
 
             <!-- The visual is mostly a copy of the collision -->
-            <visual name="visual">
+            <visual name="base_visual">
               <geometry>
                 <cylinder>
                   <radius>.04267</radius>
@@ -106,7 +106,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
             <!-- Vertically offset the top cylinder by the length of the bottom
                 cylinder and half the length of this cylinder. -->
             <pose>0 0 0.095455 0 0 0</pose>
-            <collision name="collision">
+            <collision name="top_collision">
               <geometry>
                 <cylinder>
                   <!-- Radius and length provided by Velodyne -->
@@ -117,7 +117,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
             </collision>
 
             <!-- The visual is mostly a copy of the collision -->
-            <visual name="visual">
+            <visual name="top_visual">
               <geometry>
                 <cylinder>
                   <radius>0.04267</radius>

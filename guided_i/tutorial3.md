@@ -29,7 +29,7 @@ file and then add it to our model.
 1. Select the base of Velodyne, by clicking on "HDL32 OUTLINE MODEL" in the
    left-hand `Labels & Attributes` panel.
 
-    [[file://files/freecad_base.png|800px]]
+    [[file:files/freecad_base.png|800px]]
 
 1. Export to Collada, into a file called `velodyne_base.dae`.
 

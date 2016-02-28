@@ -78,7 +78,7 @@ models, and the ability to share models via an online model database. Review
               <iyz>0</iyz>
             </inertia>
           </inertial>
-          <collision name="collision">
+          <collision name="base_collision">
             <geometry>
               <cylinder>
                 <radius>.04267</radius>
@@ -86,7 +86,7 @@ models, and the ability to share models via an online model database. Review
               </cylinder>
             </geometry>
           </collision>
-          <visual name="visual">
+          <visual name="base_visual">
             <geometry>
               <cylinder>
                 <radius>.04267</radius>
@@ -109,7 +109,7 @@ models, and the ability to share models via an online model database. Review
               <iyz>0</iyz>
             </inertia>
           </inertial>
-          <collision name="collision">
+          <collision name="top_collision">
             <geometry>
               <cylinder>
                 <radius>0.04267</radius>
@@ -117,7 +117,7 @@ models, and the ability to share models via an online model database. Review
               </cylinder>
             </geometry>
           </collision>
-          <visual name="visual">
+          <visual name="top_visual">
             <geometry>
               <cylinder>
                 <radius>0.04267</radius>
@@ -127,9 +127,17 @@ models, and the ability to share models via an online model database. Review
           </visual>
     
           <sensor type="ray" name="sensor">
-            <pose>0 0 0.03214 1.5707 0 0</pose>
+            <pose>0 0 -0.004645 1.5707 0 0</pose>
             <visualize>true</visualize>
+            <update_rate>30</update_rate>
+
             <ray>
+              <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.1</stddev>
+              </noise>
+
               <scan>
                 <horizontal>
                   <samples>32</samples>
@@ -138,13 +146,14 @@ models, and the ability to share models via an online model database. Review
                   <max_angle>0.18622663</max_angle>
                 </horizontal>
               </scan>
-    
+
               <range>
-                <min>1.0</min>
+                <min>0.1</min>
                 <max>70</max>
                 <resolution>0.02</resolution>
               </range>
             </ray>
+
           </sensor>
         </link>
     
