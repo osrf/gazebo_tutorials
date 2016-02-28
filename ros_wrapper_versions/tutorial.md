@@ -43,9 +43,9 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
   *  Indigo: host gazebo version 2.x package.
   *  Jade: host gazebo version 5.x package.
  * ***packages.osrfoundation.org***
-  * gazebo 4.x series (package name `gazebo4`)
   * gazebo 5.x series (package name `gazebo5`)
   * gazebo 6.x series (package name `gazebo6`)
+  * gazebo 7.x series (package name `gazebo7`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
@@ -53,7 +53,7 @@ It can be installed from the ros repository.
 ### Gazebo built from source
 
 If you have compiled a gazebo version from source, note that depending on the
-repository branch used (`gazebo_4.0`,`gazebo_5.0`,...) your gazebo will be
+repository branch used (`gazebo6`,`gazebo7`,...) your gazebo will be
 binary compatible with the `gazebo_ros_pkgs` (and all other ROS packages compiled
 on top of gazebo) only if the major version matches your local branch
 repository and the gazebo version used in your ROS distro.  For example, if you
@@ -95,6 +95,16 @@ this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
+### Gazebo 7.x series
+
+The OSRF repository provides `-gazebo7-` versions of ROS/Indigo and ROS/Jade
+gazebo wrappers (`gazebo7_ros_pkgs`) which are built on top of the `gazebo7`
+package.  The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` from the osrfoundation repository, which will install the `gazebo7` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
+
 ### Gazebo 6.x series
 
 The OSRF repository provides `-gazebo6-` versions of ROS/Indigo and ROS/Jade
@@ -115,16 +125,6 @@ The steps to use them are:
  * Install `ros-indigo-gazebo5-ros-pkgs` from the osrfoundation repository, which will install the `gazebo5` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
-### Gazebo 4.x series
-
-The OSRF repository provides `-gazebo4-` versions of ROS/Indigo gazebo wrappers
- (`gazebo4_ros_pkgs`) which are built on top of the `gazebo4` package.
-The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-indigo-gazebo4-ros-pkgs` from the osrfoundation repository, which will install the `gazebo4` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
 ## FAQ
 
 #### I am not using ROS at all, which version should I use?
@@ -139,21 +139,21 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
 
-#### I need to use gazebo4/gazebo5/gazebo6 and ROS Indigo, what can I do?
+#### I need to use gazebo5/gazebo6/gazebo7 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 4.x, 5.x or 6.x of Gazebo,
-there is a way of installing `gazebo4`, `gazebo5` or `gazebo6` and ROS Indigo.
+If you need some features only present in version 5.x, 6.x or 7.x of Gazebo,
+there is a way of installing `gazebo5`, `gazebo6` or `gazebo7` and ROS Indigo.
 Please follow the instructions about how to use ROS with gazebo4, gazebo5 or
 gazebo6 which are in this same document.
 
-#### I need to use gazebo6 and ROS Jade, what can I do?
+#### I need to use gazebo6/gazebo7 and ROS Jade, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Jade package
 related to Gazebo from ROS deb repository. The way to go is to build them from
 source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 6.x of Gazebo,
-there is a way of installing `gazebo6` and ROS Jade. Please
+If you need some features only present in versions 6.x/7.x of Gazebo,
+there is a way of installing `gazebo6` or `gazebo7` and ROS Jade. Please
 follow the instructions about how to use ROS with gazebo6 package
 which are in this same document.
 
