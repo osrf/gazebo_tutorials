@@ -114,6 +114,7 @@ your system.
         ```
 
     1. Your `CMakeLists.txt` should now look like this.
+
         ```
         cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
@@ -147,7 +148,7 @@ your system.
 1. Recompile the plugin.
 
     ```
-    cd build
+    cd ~/velodyne_plugin/build
     cmake ../
     make
     ```
@@ -161,7 +162,7 @@ Velodyne's rotational speed.
 1. Start Gazebo
 
     ```
-    cd build
+    cd ~/velodyne_plugin/build
     gazebo ../worlds/velodyne.world
     ```
 
