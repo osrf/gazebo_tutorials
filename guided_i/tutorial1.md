@@ -384,7 +384,14 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
 
 # Next Up
 
-In the next section we will modify the Velodyne model so that it can be
-easily shared and reused.
+Now that we have a Velodyne LiDAR model, we can improve it in three ways:
 
-[Next Section](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i2)
+1. Add 3D meshes to improve visual appearance
+
+1. Add sensor noise to improve data realism
+
+1. Add a plugin to control the sensor.
+
+The first improvement will be addressed in the next tutorial.
+
+[Next Tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i2)

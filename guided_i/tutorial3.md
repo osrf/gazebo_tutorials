@@ -1,9 +1,8 @@
 # Recap
 
-The previous three tutorials have led us through the process of creating
-a sensor model, contributing the sensor to an online database, and improving
-the model's visual appearance. This tutorial will improve the output from
-the sensor through the addition of noise.
+The previous tutorials have led us through the process of creating a sensor
+model, and improving the model's visual appearance. This tutorial will
+improve the output from the sensor through the addition of noise.
 
 # Sensor Noise
 
@@ -106,7 +105,7 @@ Gazebo's noise model can be accessed using the `<noise>` tag. See
 
 # Next up
 
-The next tutorial in this series will add a plugin to the Velodyne sensor.
-This plugin will control the rotation of the sensor's upper portion.
+In the next section we will modify the Velodyne model so that it can be
+easily shared and reused.
 
-[Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)
+[Next Section](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i4)

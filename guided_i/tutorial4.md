@@ -1,7 +1,7 @@
 # Re-cap
 
-In the [previous tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i1) we created an SDF world file with a model of the
-Velodyne HDL-32 LiDAR.
+We have created an SDF model of the Velodyne HDL-32 LiDAR that has visual
+meshes and generates data with a noise model.
 
 In this section, we will modify the model structure so that it is a stand-alone
 model that can be shared and reused.
@@ -241,15 +241,7 @@ people can use your model.
 
 # Next Up
 
-Now that we have a stand-along Velodyne LiDAR model, we can improve it in
-three ways:
+The next tutorial in this series will add a plugin to the Velodyne sensor.
+This plugin will control the rotation of the sensor's upper portion.
 
-1. Add 3D meshes to improve visual appearance
-
-1. Add sensor noise to improve data realism
-
-1. Add a plugin to control the sensor.
-
-The first improvement will be addressed in the next tutorial.
-
-[Next Tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i3)
+[Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)

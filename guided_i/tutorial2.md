@@ -206,4 +206,4 @@ In the next tutorial we will add noise to the sensor reading. By default
 simulation will provide near-perfect data, and this does not match the data
 received in the real world.
 
-[Sensor Noise](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i4)
+[Sensor Noise](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i3)
