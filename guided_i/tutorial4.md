@@ -6,7 +6,7 @@ meshes and generates data with a noise model.
 In this section, we will modify the model structure so that it is a stand-alone
 model that can be shared and reused.
 
-# Create the model structure
+# Step 1: Create the model structure
 
 Gazebo has defined a model directory structure that supports stand-alone
 models, and the ability to share models via an online model database. Review
@@ -51,6 +51,8 @@ models, and the ability to share models via an online model database. Review
 
 1. Notice that the `model.config` file references a `model.sdf` file. This
    `model.sdf` file will contain the description of the Velodyne laser.
+
+# Step 2: Add the SDF model
 
 1. Create the `model.sdf` file.
 
@@ -185,7 +187,7 @@ models, and the ability to share models via an online model database. Review
 
     [[file:files/velodyne_insertion.png|800px]]
 
-# Contribute the model to the online-database
+# Step 3: Contribute the model to the online-database
 
 Contributing our model to Gazebo's online-databse benefits you and every
 other user of Gazebo. When the model is hosted on the database, Gazebo will
