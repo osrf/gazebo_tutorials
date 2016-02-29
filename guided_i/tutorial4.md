@@ -1,112 +1,255 @@
-# Recap
+# Re-cap
 
-The previous three tutorials have led us through the process of creating
-a sensor model, contributing the sensor to an online database, and improving
-the model's visual appearance. This tutorial will improve the output from
-the sensor through the addition of noise.
+In the [previous tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i1) we created an SDF world file with a model of the
+Velodyne HDL-32 LiDAR.
 
-# Sensor Noise
+In this section, we will modify the model structure so that it is a stand-alone
+model that can be shared and reused.
 
-Every, or nearly every, sensor has noise in the output. Cameras can have
-chromatic aberrations, sonars multi-path effects, and lasers incorrect
-distance readings. In order to more closely match the type of data a real
-sensors generates, we have to add noise to the data generated in simulation.
+# Create the model structure
 
-Gazebo has a built in noise model that can apply Gaussian noise to a variety
-of sensors. While Gaussian noise may not be super realistic, it is better
-than nothing and serves as a good first-pass approximation of noise.
-Gaussian noise is also relatively easy to apply to data streams.
+Gazebo has defined a model directory structure that supports stand-alone
+models, and the ability to share models via an online model database. Review
+[this tutorial](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot) for more information.
 
-For more information on Gazebo's sensor noise model, visit [this tutorial](http://gazebosim.org/tutorials?tut=sensor_noise&cat=sensors).
+1. Create a new directory to hold the Velodyne model. We will place the
+   directory in `~/.gazebo/models`, since Gazebo knows to look there for
+   models and this will speed the developement process.
 
-## Step 1: Visualize the sensor data
+    ```
+    mkdir ~/.gazebo/models/velodyne_hdl32
+    ```
 
-Let's start by looking at the current Velodyne output, and then we can add
-noise.
+1. Create the `model.config` file. Each model requires some meta information
+   that describes the model, the author, and any dependencies.
 
-1. Open Gazebo, and insert the Velodyne sensor.
+    ```
+    gedit ~/.gazebo/models/velodyne_hdl32/model.config
+    ```
 
-    1. ```gazebo```
-    1. Select the Insert Tab near the upper left.
-    1. Scroll down and select the Velodyne HDL-32 model.
-    1. Click on a location in the render window. 
+1. Copy the following into the `model.config` file.
 
-1. Add a Box in front of the laser beams, so that we get useful data.
+    ```
+    <?xml version="1.0"?>
+    
+    <model>
+      <name>Velodyne HDL-32</name>
+      <version>1.0</version>
+      <sdf version="1.5">model.sdf</sdf>
+    
+      <author>
+        <name>Optional: YOUR NAME</name>
+        <email>Optional: YOUR EMAIL</email>
+      </author>
+    
+      <description>
+        A model of a Velodyne HDL-32 LiDAR sensor.
+      </description>
+    
+    </model>
+    ```
 
-    1. Select the Box icon in the toolbar above the render window.
+1. Notice that the `model.config` file references a `model.sdf` file. This
+   `model.sdf` file will contain the description of the Velodyne laser.
 
-    1. Left click in front the laser beams to place the box.
-
-        [[file:files/box_no_noise.jpg|800px]]
-
-1. We can get a closer look at the sensor data through Gazebo's topic
-   visualizer.
-
-    1. Press Ctrl-t, to open the topic selector. Find the
-       `/gazebo/default/velodyne/top/sensor/scan` topic.
-
-        [[file:files/topic_selector.png]]
-
-    1. Select the `/gazebo/default/velodyne/top/sensor/scan` topic, and
-       press Okay to open a laser visualizer.
-
-        [[file:files/velodyne_vis_no_noise.png]]
-
-    1. Notice the nice smooth lines of the outptut.
-
-## Step 2: Add noise to the sensor
-
-Gazebo's noise model can be accessed using the `<noise>` tag. See
-[sdformat.org/spec](http://sdformat.org/spec) for more information.
-
-1. Open the Velodyne model.
+1. Create the `model.sdf` file.
 
     ```
     gedit ~/.gazebo/models/velodyne_hdl32/model.sdf
     ```
 
-1. Add a `<noise>` element as a child of the `<ray>` element. We will apply
-   a large amount of noise at first so that the effects are readily visible.
+1. Copy the Velodyne description from the `velodyne.world` file,
+   created in the previous tutorial, or copy the model from below.
 
     ```
-    <sensor type="ray" name="sensor">
-      <pose>0 0 -0.004645 1.5707 0 0</pose>
-      <visualize>true</visualize>
-      <ray>
-        <noise>
-          <!-- Use gaussian noise -->
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.1</stddev>
-        </noise>
+    <?xml version="1.0" ?>
+    <sdf version="1.5">
+      <model name="velodyne">
+        <link name="base">
+          <pose>0 0 0.029335 0 0 0</pose>
+          <inertial>
+            <mass>1.2</mass>
+            <inertia>
+              <ixx>0.001087473</ixx>
+              <iyy>0.001087473</iyy>
+              <izz>0.001092437</izz>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyz>0</iyz>
+            </inertia>
+          </inertial>
+          <collision name="base_collision">
+            <geometry>
+              <cylinder>
+                <radius>.04267</radius>
+                <length>.05867</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="base_visual">
+            <pose>0 0 -0.029335 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+        </link>
+        
+        <link name="top">
+          <pose>0 0 0.095455 0 0 0</pose>
+          <inertial>
+            <mass>0.1</mass>
+            <inertia>
+              <ixx>0.000090623</ixx>
+              <iyy>0.000090623</iyy>
+              <izz>0.000091036</izz>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyz>0</iyz>
+            </inertia>
+          </inertial>
+          <collision name="top_collision">
+            <geometry>
+              <cylinder>
+                <radius>0.04267</radius>
+                <length>0.07357</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="top_visual">
+            <pose>0 0 -0.0376785 0 0 1.5707</pose>
+            <geometry>
+              <mesh>
+                <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+    
+          <sensor type="ray" name="sensor">
+            <pose>0 0 -0.004645 1.5707 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>30</update_rate>
+            <ray>
+              <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.1</stddev>
+              </noise>
+    
+              <scan>
+                <horizontal>
+                  <samples>32</samples>
+                  <resolution>1</resolution>
+                  <min_angle>-0.53529248</min_angle>
+                  <max_angle>0.18622663</max_angle>
+                </horizontal>
+              </scan>
+    
+              <range>
+                <min>0.1</min>
+                <max>70</max>
+                <resolution>0.02</resolution>
+              </range>
+            </ray>
+          </sensor>
+        </link>
+    
+        <joint type="revolute" name="joint">
+          <pose>0 0 -0.036785 0 0 0</pose>
+          <parent>base</parent>
+          <child>top</child>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>-10000000000000000</lower>
+              <upper>10000000000000000</upper>
+            </limit>
+          </axis>
+        </joint>
+    
+      </model>
+    </sdf>
     ```
 
-1. Once again, add the Velodyne sensor to Gazebo, and insert a box in front
-   of the beams. 
+1. At this point, we should be able to start Gazebo, and dynamically insert
+   the Velodyne model.
 
-1. Open the topic visualizer (Ctrl-t), and select the Velodyne laser scan
-   topic. The output should look very noisy.
+    1. ```gazebo```
 
-    [[file:files/velodyne_noisy.png]]
+    1. Select the `Insert` tab on the left, and scroll down to find the
+       `Velodyne HDL-32` entry.
 
-1. Now let's reduce the noise to something reasonable.
+    1. Click on the `Velodyne HDL-32` and then left-click in the render window
+       to spawn the model.
+
+    [[file:files/velodyne_insertion.png|800px]]
+
+# Contribute the model to the online-database
+
+Contributing our model to Gazebo's online-databse benefits you and every
+other user of Gazebo. When the model is hosted on the database, Gazebo will
+automatically download it when requested. This means you don't have to
+manage which computers have the model and which do not. Additionally, other
+people can use your model.
+
+1. Fork the `gazebo_models` database by visiting [https://bitbucket.org/osrf/gazebo_models/fork](https://bitbucket.org/osrf/gazebo_models/fork).
+
+1. Clone your fork of model database.
 
     ```
-    <sensor type="ray" name="sensor">
-      <pose>0 0 -0.004645 1.5707 0 0</pose>
-      <visualize>true</visualize>
-      <ray>
-        <noise>
-          <!-- Use gaussian noise -->
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.02</stddev>
-        </noise>
+    cd
+    hg clone URL_OF_YOUR_FORK 
     ```
 
-# Next up
+1. Look at the directories in your cloned repository to make sure your model
+   does not already exist.
 
-The next tutorial in this series will add a plugin to the Velodyne sensor.
-This plugin will control the rotation of the sensor's upper portion.
+1. Copy the model from `~/.gazebo/models` to the cloned repository.
 
-[Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)
+    ```
+    cp -r ~/.gazebo/models/velodyne-hdl32 ~/gazebo_models
+    ```
+
+1. Make a new branch, which will make the pull-request process a bit easier.
+
+    ```
+    cd ~/gazebo_models
+    hg branch velodyne_tutorial_do_not_merge
+    ```
+
+1. Add, commit, and push your model.
+
+    1. ```hg add velodyne*```
+
+    1. ```hg commit -m "Added a Velodyne HDL-32 LiDAR"```
+
+    1. ```hg push --new-branch```
+
+1. Create a pull-request back to the main `gazebo_models` repository.
+
+    1. Open the `URL_OF_YOUR_FORK` in a webbrowser
+
+    1. Select `Create pull request` on the left
+
+    1. Enter a title and description, and select the `Create Pull Request`
+       button.
+
+1. Two approvals of your pull request are required before it will be merged
+   into the main `gazebo_models` repository. Please respond to any comments
+   quickly in order to expidite the process.
+
+# Next Up
+
+Now that we have a stand-along Velodyne LiDAR model, we can improve it in
+three ways:
+
+1. Add 3D meshes to improve visual appearance
+
+1. Add sensor noise to improve data realism
+
+1. Add a plugin to control the sensor.
+
+The first improvement will be addressed in the next tutorial.
+
+[Next Tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i3)

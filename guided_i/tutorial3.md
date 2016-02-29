@@ -1,209 +1,112 @@
-# Improve Appearance
+# Recap
 
-Models with textures and 3D meshes can improve your visual experience, and
-more importantly improve the realism of an environment. Simulated cameras
-that feed information to vision processing algorithms will benefit from
-models that appear realistic as well.
+The previous three tutorials have led us through the process of creating
+a sensor model, contributing the sensor to an online database, and improving
+the model's visual appearance. This tutorial will improve the output from
+the sensor through the addition of noise.
 
-In this section, we will use 3D meshes available on the Velodyne website to
-improve the visual appearance of our model. More manufactures are making 3D
-meshes available, however it can sometimes be difficult to find an existing
-mesh.  In these cases you can try your hand at mesh creation, work with an
-artist, or contact the manufacturer directly.
+# Sensor Noise
 
-Velodyne has a [STEP file](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) for the HDL-32 located on [their
-website](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP).
-Gazebo can only use STL or Collada files, so we'll have to convert this
-file and then add it to our model.
+Every, or nearly every, sensor has noise in the output. Cameras can have
+chromatic aberrations, sonars multi-path effects, and lasers incorrect
+distance readings. In order to more closely match the type of data a real
+sensors generates, we have to add noise to the data generated in simulation.
 
-# Step 1: Mesh Acquisition
+Gazebo has a built in noise model that can apply Gaussian noise to a variety
+of sensors. While Gaussian noise may not be super realistic, it is better
+than nothing and serves as a good first-pass approximation of noise.
+Gaussian noise is also relatively easy to apply to data streams.
 
-1. Download the STEP file. Right-click and save-as on this [link](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) to save the STEP file.
+For more information on Gazebo's sensor noise model, visit [this tutorial](http://gazebosim.org/tutorials?tut=sensor_noise&cat=sensors).
 
-1. Open the STEP file in FreeCad. If you're using Ubuntu, you can install freecad using: ```sudo apt-get install freecad```
+## Step 1: Visualize the sensor data
 
-    ```
-    freecad ~/Downloads/HDL32E_Outline_Model.STEP
-    ```
+Let's start by looking at the current Velodyne output, and then we can add
+noise.
 
-1. Select the base of Velodyne, by clicking on "HDL32 OUTLINE MODEL" in the
-   left-hand `Labels & Attributes` panel.
+1. Open Gazebo, and insert the Velodyne sensor.
 
-    [[file:files/freecad_base.png|800px]]
+    1. ```gazebo```
+    1. Select the Insert Tab near the upper left.
+    1. Scroll down and select the Velodyne HDL-32 model.
+    1. Click on a location in the render window. 
 
-1. Export to Collada, into a file called `velodyne_base.dae`.
+1. Add a Box in front of the laser beams, so that we get useful data.
 
-    ```
-    File->Export
-    ```
+    1. Select the Box icon in the toolbar above the render window.
 
-1. We need to modify the `velodyne_base.dae` file in
-   [Blender](https://www.blender.org/),
-   because the units are incorrect and we want the mesh centered on the
-   origin.
+    1. Left click in front the laser beams to place the box.
 
-    ```
-    blender
-    ```
+        [[file:files/box_no_noise.jpg|800px]]
 
-1. Import the `velodyne_base.dae` file.
+1. We can get a closer look at the sensor data through Gazebo's topic
+   visualizer.
 
-    ```
-    File->Import->Collada
-    ```
+    1. Press Ctrl-t, to open the topic selector. Find the
+       `/gazebo/default/velodyne/top/sensor/scan` topic.
 
-    > Note: You may have to download a newer version of [Blender](https://www.blender.org/) to get the Collada import feature.
+        [[file:files/topic_selector.png]]
 
-    [[file:files/blender_import.png|800px]]
+    1. Select the `/gazebo/default/velodyne/top/sensor/scan` topic, and
+       press Okay to open a laser visualizer.
 
-1. The units are currently in millimeters, and Gazebo requires meters. The
-   model is also rotated so that the top is facing along the Y-axis, and we
-   would like the top to face along the Z-axis.
+        [[file:files/velodyne_vis_no_noise.png]]
 
-1. Pull out the right-tab in blender (look for a plus
-   sign near the upper right of the render window). Under the `Dimensions`
-   section of this tab, divide the x,y,z components by 1000. See image
-   below.
+    1. Notice the nice smooth lines of the outptut.
 
-1. In the same tab, rotate the model by 90 degrees around the X-axis. See
-   image below.
+## Step 2: Add noise to the sensor
 
-1. The mesh should not look like the following image.
+Gazebo's noise model can be accessed using the `<noise>` tag. See
+[sdformat.org/spec](http://sdformat.org/spec) for more information.
 
-    [[file:files/blender_shrunk.png|800px]]
-
-1. Export the mesh as a collada file.
+1. Open the Velodyne model.
 
     ```
-    File->Export->Collada
+    gedit ~/.gazebo/models/velodyne_hdl32/model.sdf
     ```
 
-1. Repeat this process for the top of the velodyne. You will also have to
-   translate this mesh so that the bottom is on the XY-plane. Use the
-   `Translate` button in the upper left (click on it twice to open a dialog in the lower left)  to move the model down the Z-axis by -0.06096. 
-
-    [[file:files/blender_translate.png]]
-   
-At this point You should have two collada files: `velodyne_base.dae` and `velodyne_top.dae`. These two files are also available from the following links:
-
-
-1.  [velodyne_base.dae](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_base.dae)
-
-1.  [velodyne_top.dae](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_top.dae)
-  
-In the next section, we will cover adding these meshes to the SDF model. 
-
-# Step 2: Add meshes to SDF
-
-Another benefit of Gazebo's model structure is that it conveniently
-organizes resources, such as mesh files, required by the model. In this
-section, we will add the two mesh files, `velodyne_base.dae` and
-`velodyne_top.dae`, to the Velodyne SDF model file.
-
-
-1. Create a `meshes` directory in the `~/.gazebo/models/velodyne_hdl32`
-   directory.
+1. Add a `<noise>` element as a child of the `<ray>` element. We will apply
+   a large amount of noise at first so that the effects are readily visible.
 
     ```
-    mkdir ~/.gazebo/models/velodyne_hdl32/meshes
+    <sensor type="ray" name="sensor">
+      <pose>0 0 -0.004645 1.5707 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <noise>
+          <!-- Use gaussian noise -->
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.1</stddev>
+        </noise>
     ```
 
-1. Copy your two Collada files into the new directory.
+1. Once again, add the Velodyne sensor to Gazebo, and insert a box in front
+   of the beams. 
+
+1. Open the topic visualizer (Ctrl-t), and select the Velodyne laser scan
+   topic. The output should look very noisy.
+
+    [[file:files/velodyne_noisy.png]]
+
+1. Now let's reduce the noise to something reasonable.
 
     ```
-    cp velodyne_base.dae ~/.gazebo/models/velodyne_hdl32/meshes
-    cp velodyne_top.dae ~/.gazebo/models/velodyne_hdl32/meshes
+    <sensor type="ray" name="sensor">
+      <pose>0 0 -0.004645 1.5707 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <noise>
+          <!-- Use gaussian noise -->
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.02</stddev>
+        </noise>
     ```
-
-1. Now we will modify the model's SDF to use the `velodyne_top` mesh.
-
-    1. Within the `<visual name="top_visual">` element, replace the
-       `<cylinder>` element within with a `<mesh>` element. The `<mesh>`
-       element should have a child `<uri>` that points to the top collada
-       visual. The following snippet is what your top visual should contain.
-
-         ```
-         <visual name="top_visual">
-           <geometry>
-             <!-- The mesh tag indicates that we will use a 3D mesh as
-                  a visual -->
-             <mesh>
-               <!-- The URI should refer to the 3D mesh. The "model:" 
-                   URI scheme indicates that the we are referencing a Gazebo
-                   model. -->
-               <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
-             </mesh>
-           </geometry>
-         </visual>
-         ```
-
-    1. Test this change out in Gazebo, and you should see the following.
-
-        [[file:files/velodyne_top_visual_unrotated.jpg|800px]]
-
-    1. Notice that the visual is rotated incorrectly and has a vertical
-       offset. These errors occur because the mesh's coordinate frame
-       does not exactly match up with the coordinate frame of the SDF
-       link. You can either edit the mesh in Blender to move the mesh, or
-       you can apply a transform in SDF. Let's use the second option.
-
-        ```
-        <visual name="top_visual">
-          <!-- Lower the mesh by half the height, and rotate by 90 degrees -->
-          <pose>0 0 -0.0376785 0 0 1.5707</pose>
-          <geometry>
-            <mesh>
-              <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        ```
-
-    1.  The result should now be correct.
-
-        [[file:files/velodyne_top_visual_rotated.jpg|800px]]
-
-1. Now let's add the `velodyne_base` mesh, using what we learned from the
-   `velodyne_top` mesh.
-
-    ```
-    <visual name="base_visual">
-      <!-- Offset the visual by have the base's height. We are not rotating
-           mesh since symmetrical -->
-      <pose>0 0 -0.029335 0 0 0</pose>
-      <geometry>
-        <mesh>
-          <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
-        </mesh>
-      </geometry>
-    </visual>
-    ```
-
-1. We are done! The Velodyne model is looking good.
-
-    [[file:files/velodyne_complete_visual.jpg|800px]]
-
-# Step 3: Textures
-
-Textures add an additional level of realism. The Velodyne website does not
-have texture files for download, and for the most part the sensor is
-a uniform grey. 
-
-We will not add textures to the Velodyne model in this tutorial. However, if
-you have texture files then you can add them to your model in a couple ways.
-
-1. Define a texture within a collada file, using [texture
-   mapping](https://en.wikipedia.org/wiki/Texture_mapping).
-
-1. Define an [OGRE material
-   script](http://www.ogre3d.org/docs/manual/manual_14.html), and attach it
-   to the model using
-   [SDF](http://sdformat.org/spec?ver=1.6&elem=material#material_script). 
 
 # Next up
 
-In the next tutorial we will add noise to the sensor reading. By default
-simulation will provide near-perfect data, and this does not match the data
-received in the real world.
+The next tutorial in this series will add a plugin to the Velodyne sensor.
+This plugin will control the rotation of the sensor's upper portion.
 
-[Sensor Noise](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i4)
+[Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)

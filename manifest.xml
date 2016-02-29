@@ -27,19 +27,19 @@
       <description>How to construct a Velodyne model.</description>
     </tutorial>
 
-    <tutorial title="Intermediate: Upload Velodyne Model" ref='guided_i2'>
+    <tutorial title="Intermediate: Model Appearance" ref='guided_i2'>
       <markdown version="7.0">guided_i/tutorial2.md</markdown>
-      <description>How to upload a model to the model database.</description>
-    </tutorial>
-
-    <tutorial title="Intermediate: Model Appearance" ref='guided_i3'>
-      <markdown version="7.0">guided_i/tutorial3.md</markdown>
       <description>How to add meshes to a model to improve visual appearance.</description>
     </tutorial>
 
-    <tutorial title="Intermediate: Sensor Noise" ref='guided_i4'>
-      <markdown version="7.0">guided_i/tutorial4.md</markdown>
+    <tutorial title="Intermediate: Sensor Noise" ref='guided_i3'>
+      <markdown version="7.0">guided_i/tutorial3.md</markdown>
       <description>How to add noise to a sensor.</description>
+    </tutorial>
+
+    <tutorial title="Intermediate: Upload Velodyne Model" ref='guided_i4'>
+      <markdown version="7.0">guided_i/tutorial4.md</markdown>
+      <description>How to upload a model to the model database.</description>
     </tutorial>
 
     <tutorial title="Intermediate: Control plugin" ref='guided_i5'>
