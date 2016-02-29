@@ -155,18 +155,28 @@ mkdir build
 Compile the plugin.
 
 ```
+cd build
 cmake ..
 make
 ```
 
-Run the world.
+Run the world.  Note: It is important to run gazebo from within the `build` directory so that Gazebo can find the plugin library.
 
-```
-gazebo ../velodyne.world
-```
+1. Gazebo version < 6
 
-> Note: It is important to run gazebo from within the `build` directory so
-> that Gazebo can find the plugin library.
+    ```
+    cd ~/velodyne_plugin/build
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:~/velodyne_plugin/build
+    gazebo ../velodyne.world
+    ```
+
+1. Gazebo version >= 6
+
+    ```
+    cd ~/velodyne_plugin/build
+    gazebo ../velodyne.world
+    ```
+
 
 Check your terminal, you should see:
 

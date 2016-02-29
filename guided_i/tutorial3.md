@@ -16,7 +16,7 @@ website](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP).
 Gazebo can only use STL or Collada files, so we'll have to convert this
 file and then add it to our model.
 
-# Mesh Acquisition
+# Step 1: Mesh Acquisition
 
 1. Download the STEP file. Right-click and save-as on this [link](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) to save the STEP file.
 
@@ -93,7 +93,7 @@ At this point You should have two collada files: `velodyne_base.dae` and `velody
   
 In the next section, we will cover adding these meshes to the SDF model. 
 
-# Add meshes to SDF
+# Step 2: Add meshes to SDF
 
 Another benefit of Gazebo's model structure is that it conveniently
 organizes resources, such as mesh files, required by the model. In this
@@ -182,6 +182,23 @@ section, we will add the two mesh files, `velodyne_base.dae` and
 1. We are done! The Velodyne model is looking good.
 
     [[file:files/velodyne_complete_visual.jpg|800px]]
+
+# Step 3: Textures
+
+Textures add an additional level of realism. The Velodyne website does not
+have texture files for download, and for the most part the sensor is
+a uniform grey. 
+
+We will not add textures to the Velodyne model in this tutorial. However, if
+you have texture files then you can add them to your model in a couple ways.
+
+1. Define a texture within a collada file, using [texture
+   mapping](https://en.wikipedia.org/wiki/Texture_mapping).
+
+1. Define an [OGRE material
+   script](http://www.ogre3d.org/docs/manual/manual_14.html), and attach it
+   to the model using
+   [SDF](http://sdformat.org/spec?ver=1.6&elem=material#material_script). 
 
 # Next up
 
