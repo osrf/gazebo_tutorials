@@ -16,7 +16,7 @@ tutorials.
 To begin building the tutorial, a good starting point is to add the `libSimEventsPlugin.so` block to the world SDF.
 In our current example, custom SDF block for the custom plugin can be found here:
 
-<include lang='xml' src='https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/worlds/luke_hand_spring_test.world?at=spring_buckle_test&fileviewer=file-view-default#luke_hand_spring_test.world-4' from='/<plugin name="SimEvents/' to='/plugin name="HaptixWorldPlugin/' />
+<include lang='xml' src='https://bitbucket.org/osrf/handsim/raw/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/worlds/luke_hand_spring_test.world?at=spring_buckle_test#luke_hand_spring_test.world-4' from='/<plugin name="SimEvents/' to='/plugin name="HaptixWorldPlugin/' />
 
 (For reference, recall that the documentation for [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world)).
 
