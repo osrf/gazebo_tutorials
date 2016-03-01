@@ -24,7 +24,7 @@ And the accompanying source code blocks that interprets the results of the `SimE
 
 This block:
 
-<include lang='c' src='https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-1050' from='/void HaptixGUIPlugin::ScoringUpdate\(\)/' to='/void HaptixGUIPlugin::PollTracking/' /> 
+<include lang='c' src='https://bitbucket.org/osrf/handsim/raw/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc#HaptixGUIPlugin.cc-1050' from='/void HaptixGUIPlugin::ScoringUpdate\(\)/' to='/void HaptixGUIPlugin::PollTracking/' /> 
 
 updates the GUI visual to keep track of the task completion state by changing colors of three circles to the lower right hand
 side of the hand diagram used for contact sensor visualization.
