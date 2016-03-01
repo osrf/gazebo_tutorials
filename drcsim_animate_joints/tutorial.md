@@ -61,7 +61,7 @@ Standard for every rospy node. This imports roslib and then loads the manifest.x
 
 Import more modules, and import the message file for JointTrajectory and JointTrajectoryPoint.
 
-<include from='/def jointTrajectoryCommand/' to='/JointTrajectory\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/def jointTrajectoryCommand/' to='/queue_size=10\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
 
 This initializes the node and creates a publisher for the /joint_trajectory topic.
 
