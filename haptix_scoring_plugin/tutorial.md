@@ -2,7 +2,7 @@
 
 This tutorial demonstrates building a custom test world
 to create a manipulation dexterity test inspired by a paper titled
-["The strength-dexterity test as a measure of dynamic pinch performance"](www.asbweb.org/conferences/2001/pdf/012.pdf)
+["The strength-dexterity test as a measure of dynamic pinch performance"](http://www.asbweb.org/conferences/2001/pdf/012.pdf)
 written by Valero-Cuevas et. al. in 2003.
 
 For this tutorial, we assume that you have already completed the
