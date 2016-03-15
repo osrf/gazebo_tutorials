@@ -21,7 +21,8 @@ Copy the world code and save it as joint_event.world
 <include lang='sdf' src='./joint_event_position.world'/>
 
 ~~~
-on="1.5">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <world name="default">
     <include>
       <uri>model://ground_plane</uri>
