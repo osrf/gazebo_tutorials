@@ -14,6 +14,8 @@ even physics. It is used for simulation, visualization, motion planning, and rob
 format of SDF is described by [XML](https://en.wikipedia.org/wiki/XML), which facilitates updates and
 allows conversion from previous versions. Learn how to programmatically build a simple model [here](http://gazebosim.org/tutorials?tut=build_model). 
 
+[[file:files/Model.png|320px]]
+
 #What’s in a model?
 As can be seen [here](http://sdformat.org/spec?ver=1.5&elem=model), models are made up of quite a few components :
 
@@ -57,6 +59,7 @@ A link may contain 0 or more sensors.
 Sensors are crucial in replicating real-time robots and environments. 
 No robot can function without taking input from the external world.
 The various types of sensors in the Gazebo API can be found here:
+
 1. Camera: Render to offscreen buffer
 2. Kinect: Depth camera
 3. Laser: CPU and GPU-based ray casting
@@ -72,6 +75,7 @@ A parent and child relationship is established along with other parameters such 
 More specifications can be found [here](http://sdformat.org/spec?ver=1.5&elem=joint#joint_parent).
 
 The various types of joints are:
+
 1. Revolute
 2. Revolute2
 3. Prismatic
@@ -142,8 +146,3 @@ models within the coffee shop model, creating one model out of many.
 ~~~
 
 Example can be seen [here](https://bitbucket.org/osrf/gazebo/raw/e4b49fd4734aac84389c47ee76bd8a0bb4c6d081/worlds/nested_model.world).
-
-
-
-
-
