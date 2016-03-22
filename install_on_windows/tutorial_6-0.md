@@ -106,6 +106,7 @@ Windows `cmd` for configuring and building.  You might also need to
         ..\configure
         nmake gzclient
         nmake gzserver
+        nmake install
 
     Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release or
     gz-ws/gazebo/build/install/Debug.
@@ -158,7 +159,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. Copy this file into the `gui` directory
 
-            cp plugins.cfg gui/
+            copy plugins.cfg gui\
 
 
 1. Run gzserver
