@@ -39,7 +39,8 @@ The [DART](http://dartsim.github.io) physics engine can be used as well,
   prior to installing Gazebo.
 
         brew tap dartsim/dart
-        brew install dartsim --core-only
+        brew tap homebrew/science
+        brew install dartsim/dart/dartsim4 --core-only
         # Gazebo will be built with DART (autodetected), bullet and simbody
         brew install gazebo6 --with-bullet --with-simbody
 
