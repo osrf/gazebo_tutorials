@@ -3,9 +3,9 @@
 This documentation describes how to set up a workspace for trying to compile
 Gazebo on Windows.  It does not actually work yet.
 
-## Important requirement: 30Gb free disk space 
+## Important requirement: 30Gb free disk space
 
-It is recommended to have at least 30 Gigabytes of disk space to host Gazebo 
+It is recommended to have at least 30 Gigabytes of disk space to host Gazebo
 sources together with all the dependencies and compilation artifacts.
 
 ## Supported compilers
@@ -57,11 +57,11 @@ Windows `cmd` for configuring and building.  You might also need to
 1. Install cmake, make sure to select the "Add CMake to system path for all users" option in the install dialog box
 
     > [Cmake](http://www.cmake.org/download/)
-    
+
 1. Install Ruby 1.9 or greater. During the install process make sure add Ruby to your system paths.
 
     > [Ruby](http://rubyinstaller.org/downloads/)
-    
+
 1. Clone Ignition Math, Sdformat, and Gazebo:
 
         hg clone https://bitbucket.org/ignitionrobotics/ign-math
@@ -75,9 +75,10 @@ Windows `cmd` for configuring and building.  You might also need to
 1. In a Windows shell, configure and build Ignition Math
 
         cd ign-math
-        mkdir build       
+        mkdir build
         cd build
-        ..\configure
+        # if you want debug, run ..\configure Debug
+        ..\configure Release
         nmake
         nmake install
 
@@ -86,14 +87,14 @@ Windows `cmd` for configuring and building.  You might also need to
 1. In the same Windows shell, configure and build Sdformat
 
         cd ..\..\sdformat
-        mkdir build       
+        mkdir build
         cd build
-        #if you want debug, run ..\configure Debug
+        # if you want debug, run ..\configure Debug
         ..\configure
         nmake
         nmake install
 
-    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release or 
+    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release or
     gz-ws/sdformat/build/install/Debug.
 
 1. In the same Windows shell, configure and build Gazebo:
@@ -101,10 +102,11 @@ Windows `cmd` for configuring and building.  You might also need to
         cd ..\..\gazebo
         mkdir build
         cd build
-        #if you want debug, run ..\configure Debug
+        # if you want debug, run ..\configure Debug
         ..\configure
         nmake gzclient
         nmake gzserver
+        nmake install
 
     Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release or
     gz-ws/gazebo/build/install/Debug.
@@ -130,7 +132,7 @@ Windows `cmd` for configuring and building.  You might also need to
     1. `cd gz-ws\gazebo\build\gazebo`
 
     1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
-    
+
             # Define plugin folder
             PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
 
@@ -143,7 +145,7 @@ Windows `cmd` for configuring and building.  You might also need to
             Plugin=Plugin_OctreeSceneManager_d
 
     1. If in Release: Copy in the following into `plugins.cfg`
-    
+
             # Define plugin folder
             PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Release\bin\Release
 
@@ -157,7 +159,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. Copy this file into the `gui` directory
 
-            cp plugins.cfg gui/
+            copy plugins.cfg gui\
 
 
 1. Run gzserver
@@ -186,7 +188,7 @@ More details will be added as testing continues.
 1. Download OIS
 
        http://sunet.dl.sourceforge.net/project/wgois/Source%20Release/1.3/ois-v1-3.zip
-  
+
 1. Compile OIS in Visual Studio
    Use the project in Win32/ folder
 
