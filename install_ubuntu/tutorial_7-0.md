@@ -47,6 +47,19 @@
         sudo apt-get install gazebo7
         # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo7-dev
+        
+    If you see the error below:
+    
+        $ sudo apt-get install gazebo7
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        E: Unable to locate package gazebo7
+        
+    It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
+    For example, installing gazebo7 on Ubuntu Precise (12.04) will produce the error above.
+    Hint: Take a look at "Project Status" section on http://gazebosim.org, next to each version is the supported ubuntu versions and ROS versions.
+
 
 1. Check your installation
 
