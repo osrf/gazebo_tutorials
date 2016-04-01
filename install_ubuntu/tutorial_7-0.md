@@ -58,7 +58,7 @@
         
     It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
     For example, installing gazebo7 on Ubuntu Precise (12.04) will produce the error above.
-    Hint: Take a look at "Project Status" section on http://gazebosim.org, next to each version is the supported ubuntu versions and ROS versions.
+    Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status), next to each version is the supported ubuntu versions and ROS versions.
 
 
 1. Check your installation
