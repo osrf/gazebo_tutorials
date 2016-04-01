@@ -18,6 +18,11 @@
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
+    You can check to see if the file was written correctly:
+    
+        $ cat /etc/apt/sources.list.d/gazebo-stable.list
+        deb http://packages.osrfoundation.org/gazebo/ubuntu-stable trusty main
+
 1. Setup keys
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -25,6 +30,20 @@
 1. Install Gazebo.
 
         sudo apt-get update
+
+    Make sure the update process ends without any errors, for example:
+  
+        $ sudo apt-get update
+        ...
+        Hit http://ppa.launchpad.net trusty/main Translation-en            
+        Ign http://us.archive.ubuntu.com trusty/main Translation-en_US
+        Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US
+        Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US           
+        Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US             
+        Reading package lists... Done   
+
+    Next install gazebo-7 by:
+
         sudo apt-get install gazebo7
         # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo7-dev
