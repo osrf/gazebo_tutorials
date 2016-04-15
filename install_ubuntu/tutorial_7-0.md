@@ -29,9 +29,11 @@
 
 1. Install Gazebo.
 
+    First update the debian database:
+
         sudo apt-get update
 
-    Make sure the update process ends without any errors, for example:
+    Hint: make sure the apt-get update process ends without any errors, the console output ends in `Done` similar to below:
   
         $ sudo apt-get update
         ...
