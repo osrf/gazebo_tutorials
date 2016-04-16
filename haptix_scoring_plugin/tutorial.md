@@ -17,8 +17,6 @@ tutorials.
 In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world-4),
   a new `libSimEventsPlugin.so` plugin block has been added:
 
-[//]: <> (<include lang='xml' src='https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world' from='/<plugin name="SimEvents/' to='/plugin>/' />)
-
 ~~~
     <plugin name="SimEvents" filename="libSimEventsPlugin.so">
       <!-- spring 3 -->
