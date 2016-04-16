@@ -140,12 +140,21 @@ And the `HaptixGUIPlugin::OnSimEvents` function [referenced here](https://bitbuc
 For reference, the Gazebo SimEvents API documentation can be found
 [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SimEventsPlugin.html).
 
+This plugin subscribes to gazebo topic `/gazebo/sim_events` for changes in the simulated spring joints
+  and creates three little circular dots at the lower right hand side of the hand visualization GUI.
+Initially, the three circles are red-white-white, indicating the spring is undistrubed.
+When the spring is compressed sufficiently (compression length between 1 to 10cm), and
+the torsional springs are relatively straight < 0.1 radians in flex, the first circle turns green.
+A timer is started for this successful unbuckled compression, and the second circle fades from red to green.
+When the timer reaches 3 seconds, the second and third circular indicators turn green, and
+  the program considers this a successful test trial.
+
 # Start Gazebo handsim simulation
 
 To run the example, start gazebo in terminal:
 
 ~~~
-gazebo --verbose worlds/luke_hand_spring_test.world
+gazebo --verbose worlds/luke_hand.world
 ~~~
 
 ## Example Video
