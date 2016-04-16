@@ -17,7 +17,114 @@ tutorials.
 In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world-4),
   a new `libSimEventsPlugin.so` plugin block has been added:
 
-<include lang='xml' src='https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world' from='/<plugin name="SimEvents/' to='/<\/plugin>/' />
+[//]: <> (<include lang='xml' src='https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world' from='/<plugin name="SimEvents/' to='/plugin>/' />)
+
+~~~
+    <plugin name="SimEvents" filename="libSimEventsPlugin.so">
+      <!-- spring 3 -->
+      <event>
+        <name>compressed_bottom</name>
+        <type>joint</type>
+        <model>spring_buckle_test_3</model>
+        <joint>joint_bottom_1</joint>
+        <range>
+          <type>position</type>
+          <min>-0.10</min>
+          <max>-0.01</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_x</name>
+        <type>joint</type>
+        <model>spring_buckle_test_3</model>
+        <joint>joint_1_2</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_y</name>
+        <type>joint</type>
+        <model>spring_buckle_test_3</model>
+        <joint>joint_2_3</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+      <!-- spring 2 -->
+      <event>
+        <name>compressed_bottom</name>
+        <type>joint</type>
+        <model>spring_buckle_test_2</model>
+        <joint>joint_bottom_1</joint>
+        <range>
+          <type>position</type>
+          <min>-0.10</min>
+          <max>-0.01</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_x</name>
+        <type>joint</type>
+        <model>spring_buckle_test_2</model>
+        <joint>joint_1_2</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_y</name>
+        <type>joint</type>
+        <model>spring_buckle_test_2</model>
+        <joint>joint_2_3</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+      <!-- spring 1 -->
+      <event>
+        <name>compressed_bottom</name>
+        <type>joint</type>
+        <model>spring_buckle_test_1</model>
+        <joint>joint_bottom_1</joint>
+        <range>
+          <type>position</type>
+          <min>-0.10</min>
+          <max>-0.01</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_x</name>
+        <type>joint</type>
+        <model>spring_buckle_test_1</model>
+        <joint>joint_1_2</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+      <event>
+        <name>buckled_y</name>
+        <type>joint</type>
+        <model>spring_buckle_test_1</model>
+        <joint>joint_2_3</joint>
+        <range>
+          <type>normalized_angle</type>
+          <min>-0.1</min>
+          <max> 0.1</max>
+        </range>
+      </event>
+    </plugin>
+~~~
 
 (For reference, recall that the documentation for [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world)).
 
