@@ -20,7 +20,7 @@
       <name>joint_angle</name>
       <type>joint</type>
       <model>revoluter</model>
-      <joint>joint</joint>
+      <joint>my_joint</joint>
       <range>
         <type>normalized_angle</type>
         <min>1.55</min>
@@ -33,7 +33,7 @@
       <name>joint_velocity</name>
       <type>joint</type>
       <model>revoluter</model>
-      <joint>joint</joint>
+      <joint>my_joint</joint>
       <range>
         <type>velocity</type>
         <min>3</min>
@@ -46,7 +46,7 @@
       <name>joint_force</name>
       <type>joint</type>
       <model>revoluter</model>
-      <joint>joint</joint>
+      <joint>my_joint</joint>
       <type>applied_force</type>
       <range>
         <type>applied_force</type>
@@ -106,7 +106,7 @@
            </collision>
         </link>
 
-        <joint name='joint' type='revolute'>
+        <joint name='my_joint' type='revolute'>
           <parent>base</parent>
           <child>needle</child>
 
