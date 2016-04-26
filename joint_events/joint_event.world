@@ -1,6 +1,9 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <sdf version="1.5">
   <world name="default">
+    <physics type="ode">
+      <gravity>0 0 0</gravity>
+    </physics>
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -11,6 +14,7 @@
 
     <plugin name="SimEvents" filename="libSimEventsPlugin.so">
 
+
     <!-- Angle: must be in range -PI to PI  -->
     <event>
       <name>joint_angle</name>
@@ -19,8 +23,8 @@
       <joint>joint</joint>
       <range>
         <type>normalized_angle</type>
-        <min>3</min>
-        <max>3.3</max>
+        <min>1.55</min>
+        <max>1.70</max>
       </range>
     </event>
 
@@ -37,19 +41,18 @@
       </range>
     </event>
 
-
     <!-- Applied Force -->
     <event>
       <name>joint_force</name>
       <type>joint</type>
       <model>revoluter</model>
       <joint>joint</joint>
+      <type>applied_force</type>
+      <range>
         <type>applied_force</type>
-        <range>
-          <type>applied_force</type>
-          <min>3</min>
-          <max>3.3</max>
-        </range>
+        <min>3</min>
+        <max>3.3</max>
+      </range>
     </event>
 
     <!-- Close the plugin element  -->
@@ -80,19 +83,20 @@
             </geometry>
           </collision>
         </link>
-
         <link name='needle'>
-          <pose>0.25 0 -0.2 0 -0 0</pose>
-            <visual name='visual'>
-              <geometry>
-                <cylinder>
-                  <radius>0.05</radius>
-                  <length>0.5</length>
-                </cylinder>
-              </geometry>
-            </visual>
+          <pose>0.25 0 0 0 -0 0</pose>
+          <visual name='visual'>
+            <pose>0 0 -0.2 0 -0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.05</radius>
+                <length>0.5</length>
+              </cylinder>
+            </geometry>
+          </visual>
 
           <collision name='collision'>
+            <pose>0 0 -0.2 0 -0 0</pose>
             <geometry>
               <cylinder>
                 <radius>0.05</radius>
@@ -103,8 +107,8 @@
         </link>
 
         <joint name='joint' type='revolute'>
-          <parent>needle</parent>
-          <child>base</child>
+          <parent>base</parent>
+          <child>needle</child>
 
           <pose>0 0 0 0 0 0</pose>
           <axis>
@@ -122,4 +126,3 @@
 
   </world>
 </sdf>
-
