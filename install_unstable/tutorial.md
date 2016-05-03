@@ -24,7 +24,7 @@ prerelease repository:
 # Be sure to install the stable repo first !!
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
 sudo apt-get update
-sudo apt-get install gazebo7 # (might not be released)
+sudo apt-get install gazebo8 # (might not be released)
 ```
 
 ### Gazebo nightly repo
@@ -40,7 +40,7 @@ and then add the nightly repository:
 # Be sure to install the stable repo first !!
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
 sudo apt-get update
-sudo apt-get install gazebo7
+sudo apt-get install gazebo8
 ```
 
 ### Remove prereleases and nightly installed packages
@@ -77,8 +77,8 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 
  * `current_released_version:` will be the latest version released available in
    the changelog file of the corresponding -release repo. If the nightly is
-   used for an upcoming release (lets say gazebo7) then R-1.99.99-1
-   (gazebo7_6.99.99-1) form will be used until prereleases or final release.
+   used for an upcoming release (for example, gazebo8) then R-1.99.99-1
+   (gazebo8_6.99.99-1) form will be used until prereleases or final release.
 
  * `date`: timestamp YYYY-MM-DD
 
