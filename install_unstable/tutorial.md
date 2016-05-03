@@ -78,7 +78,7 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
  * `current_released_version:` will be the latest version released available in
    the changelog file of the corresponding -release repo. If the nightly is
    used for an upcoming release (for example, gazebo8) then R-1.99.99-1
-   (gazebo8_6.99.99-1) form will be used until prereleases or final release.
+   (gazebo8_7.99.99-1) form will be used until prereleases or final release.
 
  * `date`: timestamp YYYY-MM-DD
 
