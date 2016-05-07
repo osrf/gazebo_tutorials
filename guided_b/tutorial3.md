@@ -111,7 +111,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
     [[file:files/ftu4-wheel_paste.png|600px]]
 
-1.  Let's now make sure that the vehicle will drive correctly by aligning the chassis along the positive X axis (the red marker in the scene). When you add the wheels in the next step,
+    Let's now make sure that the vehicle will drive correctly by aligning the chassis along the positive X axis (the red marker in the scene). When you add the wheels in the next step,
     make sure they are at the end of the vehicle that is extending along the positive X axis. 
 
 1. The chassis and the wheels are currently free-moving bodies. To constrain their motion, we'll add joints between each wheel and the chassis. Click on the Joint icon in the top Toolbar to bring up the Joint Creation dialog.
