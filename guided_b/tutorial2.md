@@ -2,7 +2,7 @@
 
 This is an introduction to the Gazebo Graphical User Interface, or GUI. We will learn interface basics like what the buttons do and how to navigate in the scene. 
 
-By now, you should have Gazebo [installed](http://gazebosim.org/tutorialsnew?cat=guided_b&tut=guided_b1&branch=ftu2). 
+By now, you should have Gazebo [installed](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1&branch=ftu2). 
 
 Start by opening Gazebo. Press Alt-F2, type Gazebo, and then press Enter. 
 
