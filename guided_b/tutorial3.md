@@ -40,7 +40,7 @@ right-clicking on the part and selecting Open Inspector from the context menu in
 
 #### Toolbar
 
-Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorialsnew?cat=guided_b&tut=guided_b2) tutorial).
+Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2) tutorial).
 
 A new Joint Creation tool is available; it is used to create joints between links in the model.
 
