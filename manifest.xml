@@ -271,6 +271,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Inserting and deleting entities" ref='inserting_deleting'>
+      <markdown version="8+">inserting_deleting/tutorial.md</markdown>
+      <description>Introduction to several ways to insert and delete entities during simulation.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Random numbers" ref='random_numbers'>
       <markdown version="1.9+">random_numbers/tutorial.md</markdown>
       <description>How to set the random number seed.</description>
@@ -943,6 +949,7 @@
       <tutorials>
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
+        <tutorial>inserting_deleting</tutorial>
         <tutorial>dem</tutorial>
         <tutorial>model_population</tutorial>
         <tutorial>building_editor</tutorial>
