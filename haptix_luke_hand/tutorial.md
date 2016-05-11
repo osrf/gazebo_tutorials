@@ -43,3 +43,51 @@ To start Gazebo with the DEKA Luke hand model, type the following command
 ~~~
 gazebo --verbose worlds/luke_hand.world
 ~~~
+
+## Installing documentation for Gazebo DEKA Luke hand model
+
+~~~
+unzip Luke_Hand_Gazebo_Doc_v1.0.zip -d /tmp/
+~~~
+
+To view documentation, open the following link in a browser:
+
+[file:///tmp/haptix_wiki/haptix/index.html](file:///tmp/haptix_wiki/haptix/index.html)
+
+# Running handsim with DEKA Luke hand model
+
+To start Gazebo with the DEKA Luke hand model, type the following command
+  in a terminal:
+
+~~~
+gazebo --verbose worlds/luke_hand.world
+~~~
+
+# Using the real DEKA Luke hand.
+
+To use the real DEKA Luke hand with your own controller using the HAPTIX
+protocol, you need to install the HAPTIX CANbus driver.
+
+## Installing HAPTIX CANbus driver from Linux.
+
+First, install the CAN dependencies:
+
+~~~
+sudo apt-get install libpcanbasic-dev
+~~~
+
+Then, download the haptix-luke-proprietary driver from here and type:
+
+~~~
+sudo dpkg -i ~/Downloads/haptix-luke-proprietary_0.0.1-1~trusty_amd64.deb
+~~~
+
+## Installing HAPTIX CANbus driver from Windows.
+
+%%%
+[[file:files/vide-visuals2.png|800px]]
+%%%
+
+Download the haptix-luke-proprietary driver from here and unzip it in your
+preferred folder.
+
