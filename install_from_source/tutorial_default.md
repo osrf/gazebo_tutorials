@@ -320,6 +320,75 @@ Other packages can be added to the catkin workspace
 as long as they have a package.xml that
 lists their dependencies.
 
+#### Source install without custom apt-repo requirements (e.g. Gubuntu)
+
+Following script checks out and builds gazebo `gazebo7` branch in a local directory:
+
+~~~
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libtinyxml2-dev libtar-dev libogre-1.8-dev [...and more...]
+
+export workspace_path=/tmp/ws
+export install_path=/tmp/install
+export flags="-j4"
+
+mkdir -p ${workspace_path}
+mkdir -p ${install_path}
+
+cd ${workspace_path}
+hg clone https://bitbucket.org/ignitionrobotics/ign-math -b ign-math2
+cd ign-math
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
+make $flags install
+
+cd ${workspace_path}
+hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -b ignition-msgs_0.3.0
+cd ign-msgs
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
+make $flags install
+
+cd ${workspace_path}
+hg clone https://bitbucket.org/ignitionrobotics/ign-math -b ign-transport1
+cd ign-math
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
+make $flags install
+
+cd ${workspace_path}
+hg clone https://bitbucket.org/osrf/sdformat -b sdformat4
+cd sdformat
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
+make $flags install
+
+cd ${workspace_path}
+hg clone https://bitbucket.org/osrf/gazebo -b gazebo7
+cd gazebo
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
+make $flags install
+
+function run_luke_hand_gazebo() {
+export workspace_path=/tmp/ws
+export install_path=/tmp/install
+
+export PKG_CONFIG_PATH=${install_path}/lib/pkgconfig:${install_path}/lib/x86_64-linux-gnu/pkgconfig:${PKG_CONFIG_PATH}
+export PATH=${install_path}/bin:${PATH}
+export LIBRARY_PATH=${install_path}/lib:${LIBRARY_PATH}
+export LD_LIBRARY_PATH=${install_path}/lib:${install_path}/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
+export GAZEBO_MODEL_PATH=${install_path}/share/gazebo-7/models
+gazebo --verbose 
+}
+~~~
 ### Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
