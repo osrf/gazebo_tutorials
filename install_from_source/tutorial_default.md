@@ -377,18 +377,15 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=${install_path} ..
 make $flags install
 
-function run_luke_hand_gazebo() {
-export workspace_path=/tmp/ws
-export install_path=/tmp/install
-
 export PKG_CONFIG_PATH=${install_path}/lib/pkgconfig:${install_path}/lib/x86_64-linux-gnu/pkgconfig:${PKG_CONFIG_PATH}
 export PATH=${install_path}/bin:${PATH}
 export LIBRARY_PATH=${install_path}/lib:${LIBRARY_PATH}
 export LD_LIBRARY_PATH=${install_path}/lib:${install_path}/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
 export GAZEBO_MODEL_PATH=${install_path}/share/gazebo-7/models
+
 gazebo --verbose 
-}
 ~~~
+
 ### Uninstalling Source-based Install
 
 If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
