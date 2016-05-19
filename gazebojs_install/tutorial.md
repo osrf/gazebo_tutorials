@@ -31,6 +31,10 @@ Install nodejs and npm
     curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
+You may have to install nodejs-legacy if the node command does not exist:
+
+    sudo apt-get install nodejs-legacy
+
 If you already have nodejs, make sure that its version >=0.12.x, and note that nodejs version 6.x has not been supported yet
 
     node --version
