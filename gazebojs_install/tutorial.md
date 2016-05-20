@@ -22,14 +22,34 @@ This tutorial shows how to download, install and compile Gazebojs on a computer 
 Install the osrf repository and install the development libraries, dependending on the version of Gazeobo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?cat=install). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
 Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
 
-Install nodejs and npm 
+Make sure you have curl
 
-    sudo apt-get install nodejs npm
+    sudo apt-get install curl
 
-You may have to install nodejs-legacy if the `node` command does not exist:
+Install nodejs and npm
+
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+You may have to install nodejs-legacy if the node command does not exist:
 
     sudo apt-get install nodejs-legacy
 
+If you already have nodejs, make sure that its version >=0.12.x:
+
+    node --version
+    
+In case you had any problem with installation, or you are using a diffrent OS
+
+    https://nodejs.org/en/download/package-manager/
+
+In case you want to install more than one version of nodejs on your machine you can use nvm
+
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+    source ~/.profile
+    nvm install [version number e.g: v5]
+    nvm use [version number e.g: v5]
+ 
 Install jansson (JSON library)
 
     sudo apt-get install libjansson-dev
