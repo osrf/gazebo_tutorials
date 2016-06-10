@@ -18,7 +18,7 @@ You can append the following arguments to the launch files to change the behavio
 
   > Start Gazebo in a paused state (default false)
 
-**use_sim_time**
+**use\_sim\_time**
 
   > Tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock (default true)
 
@@ -69,7 +69,10 @@ Notice in `mud_world.launch` a simple jointed mechanism is launched. The launch 
 </launch>
 ~~~
 
-In this launch file we inherit most of the necessary functionality from empty_world.launch. The only parameter we need to change is the `world_name` parameter, substituting the `empty.world` world file with the `mud.world` file. The other arguments are simply set to their default values.
+In this launch file we inherit most of the necessary functionality from
+empty\_world.launch. The only parameter we need to change is the `world_name`
+parameter, substituting the `empty.world` world file with the `mud.world` file.
+The other arguments are simply set to their default values.
 
 ### World Files
 
@@ -278,15 +281,9 @@ Launching this file, you should see the same results as when using `rosrun`.
 #### XACRO Example with PR2
 If your URDF is not in XML format but rather in [XACRO](http://ros.org/wiki/xacro) format, you can make a similar modification to your launch file. You can run this PR2 example by installing this package:
 
-**ROS Groovy:** - Note: PR2 in Groovy is currently broken until this [pull request](https://github.com/PR2/pr2_common/pull/222) is merged and released to public debians
-
+**ROS Jade:**
 <pre>
-sudo apt-get install ros-groovy-pr2-common
-</pre>
-
-**ROS Hydro:**
-<pre>
-sudo apt-get install ros-hydro-pr2-common
+sudo apt-get install ros-jade-pr2-common
 </pre>
 
 Then adding this to your launch file created previously in this tutorial:

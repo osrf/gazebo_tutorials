@@ -10,10 +10,10 @@ As an example, we'll invert the gravity in the simulation. Make sure you have th
 sudo apt-get install ros-groovy-rqt-common-plugins ros-groovy-dynamic-reconfigure
 ~~~
 
-Or these packages for hydro:
+Or these packages for kinetic:
 
 ~~~
-sudo apt-get install ros-hydro-rqt-common-plugins ros-hydro-dynamic-reconfigure
+sudo apt-get install ros-kinetic-rqt-common-plugins ros-kinetic-dynamic-reconfigure
 ~~~
 
 Start Gazebo:
