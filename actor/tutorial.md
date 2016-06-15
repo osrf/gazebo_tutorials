@@ -8,10 +8,10 @@ This means they won't fall due to gravity or collide with other objects, for
 example. They will, however, have a 3D visualization which can be seen by RGB
 cameras and 3D meshes which can be detected by GPU based depth sensors.
 
-> Tip: Physics-engine-based sensors would require collsion information, read
+> **Tip**: Physics-engine-based sensors would require collsion information, read
 more about sensors [here](is there any material on this?).
 
-# Actors
+# Actors in Gazebo
 
 In Gazebo, an animated model is called an `actor`. Actors extend models adding
 animation capabilities.
@@ -19,37 +19,39 @@ animation capabilities.
 There are two types of animations which can be used separately or combined
 together:
 
-* Motion along a trajectory, defined by a series of keyframes with time and
-pose. This is a high level motion which carries all the actor's links as one
-group.
+* Motion along a **trajectory**, defined by a series of keyframes. This is a
+high level motion which carries all of the actor's links around the world,
+as one group:
 
     [[file:files/traj_full.gif|300px]]
 
-* Skeleton motion, which is relative motion between links in one model. These
-can be described in DAE and BVH formats.
+* **Skeleton** motion, which is relative motion between links in one model:
 
     [[file:files/skel_full.gif|300px]]
 
-* And both motions can be combined and used together:
+* Both types of motions can be **combined** to achieve an animation which moves
+in the world:
 
     [[file:files/skel_traj_full.gif|300px]]
 
-# Scripted motion
+# Scripted trajectories
 
 This is the high level animation of actors, which consists of specifying
-poses which should be reached at specific times, and Gazebo takes care of
-interpolating the motion between them.
+a series of poses to be reached at specific times. Gazebo takes care of
+interpolating the motion between them so the movement is fluid.
 
-Let's take a look at an example and then explain how it works.
-Let's create a world which has an animated box in it.
-try to script a simple motion for a box. Create a world file and copy
-the following contents into it:
+Let's take a look at a simple example by creating a world which has an
+animated box in it. First create a world file:
 
     gedit animated_box.world
+
+Then copy the following SDF description into it and save it. The code will be
+explained in detail soon.
 
     <?xml version="1.0" ?>
     <sdf version="1.6">
        <world name="default">
+          <!-- A ground plane -->
           <include>
              <uri>model://ground_plane</uri>
           </include>
@@ -57,15 +59,9 @@ the following contents into it:
           <include>
              <uri>model://sun</uri>
           </include>
-          <actor name="actor">
+          <!-- An actor -->
+          <actor name="animated_box">
             <link name="link">
-              <collision name="collision">
-                <geometry>
-                  <box>
-                    <size>.2 .2 .2</size>
-                  </box>
-                </geometry>
-              </collision>
               <visual name="visual">
                 <geometry>
                   <box>
@@ -78,25 +74,25 @@ the following contents into it:
               <loop>true</loop>
               <delay_start>0.000000</delay_start>
               <auto_start>true</auto_start>
-              <trajectory id="0" type="walking">
+              <trajectory id="0" type="square">
                  <waypoint>
                     <time>0.0</time>
                     <pose>-1 -1 1 0 0 0</pose>
                  </waypoint>
                  <waypoint>
-                    <time>0.5</time>
+                    <time>1.0</time>
                     <pose>-1 1 1 0 0 0</pose>
                  </waypoint>
                  <waypoint>
-                    <time>1.0</time>
+                    <time>2.0</time>
                     <pose>1 1 1 0 0 0</pose>
                  </waypoint>
                  <waypoint>
-                    <time>1.5</time>
+                    <time>3.0</time>
                     <pose>1 -1 1 0 0 0</pose>
                  </waypoint>
                  <waypoint>
-                    <time>2.0</time>
+                    <time>4.0</time>
                     <pose>-1 -1 1 0 0 0</pose>
                  </waypoint>
               </trajectory>
@@ -106,14 +102,67 @@ the following contents into it:
     </sdf>
 
 
-Let's take a look at what it does, and then explain how it works.
+Let's open it in Gazebo to see what it does:
 
     gazebo animated_box.world
 
-So what's happening?
+You'll see a floating box moving in a square trajectory again and again. The
+trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
+`[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
 
+#### <actor>
 
+We're interested in the `<actor>` tag. This is just like a `<model>`, so you
+can put links and joints inside it as usual. The main differences are:
 
+* Actors are always static (i.e. no forces are applied on them, be it from
+gravity or contact)
 
+* Actors can have their motions scripted directly in the SDF
 
+* There can't be models nested inside it, so we're limited to links and joints.
 
+You can see the full specification for the actor element in SDF in this
+[link](http://sdformat.org/spec?ver=1.6&elem=actor),
+we will explain some of them below.
+
+#### <script>
+
+The actor in the example has a simple link with a box visual. The interesting
+part here is the `<script>` tag, used to script global trajectories. The
+parameters available are the following:
+
+* **`loop`**: Set this to true for the script to be repeated in a loop. For a
+fluid continuous motion, make sure the last waypoint matches the first one.
+
+* **`delay_start`**: This is the time to wait before starting the script. If
+running in a loop, this time will be waited in between each cycle.
+
+* **`auto_start`**: Set to true if the animation should start as soon as the
+simulation starts playing. This is useful if the animation should start playing
+only when triggered from a plugin, for example.
+
+* **`trajectory`**: Within this tag, it's possible to describe a series of
+keyframes to be followed. It has two attributes: a unique `id` and a `type`. The
+type will be useful when we explain skeleton animations below.
+
+    * **`waypoint`**: There can be any number of waypoints in a trajectory. Each
+      waypoint consists of a `time` and a `pose`:
+
+        * **`time`**: The time in seconds, counted from the beginning of the
+          script, when the pose should be reached.
+
+        * **`pose`**: The pose which should be reached
+
+> **Tip**: The order in which waypoints are defined is not important, they will
+follow the given times.
+
+> **Note**: The trajectory is smoothed as a whole. This means that you'll get a
+fluid motion, but the exact poses contained in the waypoints might not be reached.
+
+Get acquainted with the script, try out different values for the tags described
+above before moving on to the next section!
+
+# Skeleton
+
+These can be described in DAE and BVH formats.
