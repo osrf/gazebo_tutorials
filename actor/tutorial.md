@@ -34,6 +34,24 @@ in the world:
 
     [[file:files/skel_traj_full.gif|300px]]
 
+# Actors
+
+Gazebo's actors are just like
+[models](http://gazebosim.org/tutorials?tut=build_model),
+so you can put links and joints inside it as usual. The main differences are:
+
+* Actors are always static (i.e. no forces are applied on them, be it from
+gravity or contact)
+
+* Actors can have their motions scripted directly in the SDF, with support for
+different skeleton descriptions and open loop trajectories.
+
+* There can't be models nested inside it, so we're limited to links and joints.
+
+You can see the full specification for the actor element in SDF in this
+[link](http://sdformat.org/spec?ver=1.6&elem=actor),
+we will explain some of them below.
+
 # Scripted trajectories
 
 This is the high level animation of actors, which consists of specifying
@@ -110,21 +128,7 @@ You'll see a floating box moving in a square trajectory again and again. The
 trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 `[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
 
-## Actor
-
-We're interested in the `<actor>` tag. This is just like a `<model>`, so you
-can put links and joints inside it as usual. The main differences are:
-
-* Actors are always static (i.e. no forces are applied on them, be it from
-gravity or contact)
-
-* Actors can have their motions scripted directly in the SDF
-
-* There can't be models nested inside it, so we're limited to links and joints.
-
-You can see the full specification for the actor element in SDF in this
-[link](http://sdformat.org/spec?ver=1.6&elem=actor),
-we will explain some of them below.
+    [[file:files/box_square_full.gif|300px]]
 
 ## Script
 
@@ -133,14 +137,15 @@ part here is the `<script>` tag, used to script global trajectories. The
 parameters available are the following:
 
 * **`loop`**: Set this to true for the script to be repeated in a loop. For a
-fluid continuous motion, make sure the last waypoint matches the first one.
+fluid continuous motion, make sure the last waypoint matches the first one,
+like in the previous example.
 
 * **`delay_start`**: This is the time to wait before starting the script. If
-running in a loop, this time will be waited in between each cycle.
+running in a loop, this time will be waited before starting each cycle.
 
 * **`auto_start`**: Set to true if the animation should start as soon as the
-simulation starts playing. This is useful if the animation should start playing
-only when triggered from a plugin, for example.
+simulation starts playing. It is useful to set this to false if the animation
+should only start playing only when triggered by a plugin, for example.
 
 * **`trajectory`**: Within this tag, it's possible to describe a series of
 keyframes to be followed. It has two attributes: a unique `id` and a `type`. The
@@ -160,8 +165,13 @@ follow the given times.
 > **Note**: The trajectory is smoothed as a whole. This means that you'll get a
 fluid motion, but the exact poses contained in the waypoints might not be reached.
 
-Get acquainted with the script, try out different values for the tags described
-above before moving on to the next section!
+> **Tip**: Non-actor models can also follow scripted trajectories, but that
+requires the use of plugins. See
+[this](http://gazebosim.org/tutorials?tut=animated_box)
+tutorial to learn how.
+
+Now it's your turn! Try out different trejctory descriptions before moving on to
+the next section!
 
 # Skeleton
 
