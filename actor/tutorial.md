@@ -128,7 +128,7 @@ You'll see a floating box moving in a square trajectory again and again. The
 trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 `[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
 
-    [[file:files/box_square_full.gif|300px]]
+[[file:files/box_square_full.gif|300px]]
 
 ## Script
 
