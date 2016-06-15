@@ -23,16 +23,16 @@ together:
 pose. This is a high level motion which carries all the actor's links as one
 group.
 
-    [[file:files/traj_full.gif|600px]]
+    [[file:files/traj_full.gif|300px]]
 
 * Skeleton motion, which is relative motion between links in one model. These
 can be described in DAE and BVH formats.
 
-    [[file:files/skel_full.gif|600px]]
+    [[file:files/skel_full.gif|300px]]
 
 * And both motions can be combined and used together:
 
-    [[file:files/skel_traj_full.gif|600px]]
+    [[file:files/skel_traj_full.gif|300px]]
 
 # Scripted motion
 
