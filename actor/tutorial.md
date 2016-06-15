@@ -110,7 +110,7 @@ You'll see a floating box moving in a square trajectory again and again. The
 trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 `[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
 
-#### `<actor>`
+### `<actor>`
 
 We're interested in the `<actor>` tag. This is just like a `<model>`, so you
 can put links and joints inside it as usual. The main differences are:
@@ -126,7 +126,7 @@ You can see the full specification for the actor element in SDF in this
 [link](http://sdformat.org/spec?ver=1.6&elem=actor),
 we will explain some of them below.
 
-#### `<script>`
+### `<script>`
 
 The actor in the example has a simple link with a box visual. The interesting
 part here is the `<script>` tag, used to script global trajectories. The
