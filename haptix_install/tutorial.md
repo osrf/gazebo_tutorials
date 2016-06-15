@@ -246,7 +246,7 @@ Simulator Version : Client SDK Version
 
 The HAPTIX CANbus driver is needed to control the real DEKA Luke hand using the
 HAPTIX client library SDK. The installation process requires access to the
-DEKA webtransfer system. If you believe you should have received a copy but did
+DEKA webtransfer system. If you believe you should have received access but did
 not, please contact `haptix@osrfoundation.org` for help.
 
 ## Installing on Windows
