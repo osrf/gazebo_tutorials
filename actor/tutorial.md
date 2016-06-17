@@ -2,11 +2,11 @@
 
 This tutorial explains how to use Gazebo's "actors" to create scripted animations.
 
-Animations are useful if you want to have entities moving around in simulation
-following scripted motions without being affected by the physics engine.
-This means they won't fall due to gravity or collide with other objects, for
-example. They will, however, have a 3D visualization which can be seen by RGB
-cameras and 3D meshes which can be detected by GPU based depth sensors.
+Animations are useful if you want to have entities following predefined paths
+in simulation without being affected by the physics engine. This means they won't
+fall due to gravity or collide with other objects, for example. They will,
+however, have a 3D visualization which can be seen by RGB cameras and 3D meshes
+which can be detected by GPU based depth sensors.
 
 > **Tip**: Physics-engine-based sensors would require collsion information, read
 more about sensors [here](is there any material on this?).
@@ -133,12 +133,14 @@ trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 ## Script
 
 The actor in the example has a simple link with a box visual. The interesting
-part here is the `<script>` tag, used to script global trajectories. The
+part here is the
+[`<script>`](http://sdformat.org/spec?ver=1.6&elem=actor#actor_script)
+tag, used to script global trajectories. The
 parameters available are the following:
 
 * **`loop`**: Set this to true for the script to be repeated in a loop. For a
 fluid continuous motion, make sure the last waypoint matches the first one,
-like in the previous example.
+like in the example.
 
 * **`delay_start`**: This is the time to wait before starting the script. If
 running in a loop, this time will be waited before starting each cycle.
@@ -176,3 +178,12 @@ the next section!
 # Skeleton
 
 These can be described in DAE and BVH formats.
+
+
+<skin> by itself loads animation, but if you want that to be loaded in sync with trajectory,
+you need <animation> - is that it?
+
+So just <skin> also loads animation, see moonwalk. what is <animation> for?
+
+
+Custom animations - where to save files?
