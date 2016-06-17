@@ -531,7 +531,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Bumper
 
-**Description:** provides contact feedback via [ContactsState message](http://ros.org/doc/api/gazebo_plugins/html/msg/ContactsState.html).
+**Description:** provides contact feedback via [ContactsState message](http://docs.ros.org/api/gazebo_msgs/html/msg/ContactsState.html).
 
 ~~~
 <gazebo>
