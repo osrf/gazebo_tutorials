@@ -43,14 +43,13 @@ so you can put links and joints inside it as usual. The main differences are:
 * Actors are always static (i.e. no forces are applied on them, be it from
 gravity or contact)
 
-* Actors can have their motions scripted directly in the SDF, with support for
+* Actors can have their motions scripted directly in SDF, with support for
 different skeleton descriptions and open loop trajectories.
 
 * There can't be models nested inside it, so we're limited to links and joints.
 
-You can see the full specification for the actor element in SDF in this
-[link](http://sdformat.org/spec?ver=1.6&elem=actor),
-we will explain some of them below.
+> **Tip**: Check out the full specification for the actor SDF element
+[here](http://sdformat.org/spec?ver=1.6&elem=actor).
 
 # Scripted trajectories
 
@@ -132,8 +131,10 @@ trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 
 ## Script
 
-The actor in the example has a simple link with a box visual. The interesting
-part here is the
+The actor in the example has a simple link with a box visual, described in the
+`</link>` tag.
+
+The movement is described within the
 [`<script>`](http://sdformat.org/spec?ver=1.6&elem=actor#actor_script)
 tag, used to script global trajectories. The
 parameters available are the following:
@@ -177,13 +178,172 @@ the next section!
 
 # Skeleton
 
-These can be described in DAE and BVH formats.
+Gazebo supports two different skeleton animation file formats:
+[COLLADA (.dae)](https://www.khronos.org/collada/wiki/Main_page) and
+[Biovision Hierarchy (.bvh)](http://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html).
+
+Let's try a simple example animation that comes with Gazebo. First, create a
+new world file:
+
+    gedit walk.world
+
+And paste the following SDF:
+
+    <?xml version="1.0" ?>
+    <sdf version="1.6">
+       <world name="default">
+          <include>
+             <uri>model://sun</uri>
+          </include>
+          <actor name="actor">
+             <skin>
+                <filename>walk.dae</filename>
+             </skin>
+          </actor>
+       </world>
+    </sdf>
+
+Take a look at it in Gazebo, and you'll see a person walking in place just like
+the animationa above.
+
+    gazebo walk.world
+
+## Skin
+
+The actor in this example is really simple, all it loads is a COLLADA file
+described within the `<skin>` tag.
+
+> **Note**: If you've made
+[custom](http://gazebosim.org/tutorials?tut=import_mesh&cat=build_robot)
+Gazebo models before, you might have used COLLADA files as visuals and
+collisions for your models. When used within links, COLLADA animations are
+ignored, but when used within skins, they are loaded.
+
+The file specified in `<filename>` can either be an absolute path, for example:
+
+    /home/<user>/my_gazebo_models/skeleton_model/skeleton.dae
+
+You can also tell Gazebo to look for the mesh in all the directories contained in
+the environment variable
+[`GAZEBO_MODEL_PATH`](http://gazebosim.org/tutorials?tut=components),
+like this:
+
+    model://skeketon_model/skeleton.dae
+
+Finally, you can use a few example meshes which are installed with Gazebo by
+referencing directly to their filenames. Below is the list of the ones
+available, you should take a look at some of them!
+
+    * `moonwalk.dae`
+    * `run.dae`
+    * `sit_down.dae`
+    * `sitting.dae`
+    * `stand_up.dae`
+    * `stand.dae`
+    * `talk_a.dae`
+    * `talk_b.dae`
+    * `walk.dae`
+
+## Combining skin and trajectories: Animation
+
+By this point, you already know everything about creating trajectories and
+loading static animations. It's time to learn how to combine them.
+
+You might be thinking "I'll just add both a `<skin>` and a `<trajectory>` tag
+to my world and they will work together". I'm not going to stop you, go ahead
+and try that, I'll even give you an example:
+
+    <sdf version="1.6">
+      <world name="default">
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <actor name="actor">
+          <skin>
+            <filename>walk.dae</filename>
+          </skin>
+          <script>
+            <trajectory id="0" type="walking">
+              <waypoint>
+                <time>0</time>
+                <pose>0 2 0 0 0 -1.57</pose>
+              </waypoint>
+              <waypoint>
+                <time>2</time>
+                <pose>0 -2 0 0 0 -1.57</pose>
+              </waypoint>
+              <waypoint>
+                <time>2.5</time>
+                <pose>0 -2 0 0 0 1.57</pose>
+              </waypoint>
+              <waypoint>
+                <time>7</time>
+                <pose>0 2 0 0 0 1.57</pose>
+              </waypoint>
+              <waypoint>
+                <time>7.5</time>
+                <pose>0 2 0 0 0 -1.57</pose>
+              </waypoint>
+            </trajectory>
+          </script>
+        </actor>
+      </world>
+    </sdf>
+
+Go ahead and load it and see what happens.
+
+That wasn't what you expected, right? What happened is that Gazebo didn't have
+enough information to put the two together. For that, we need to add another
+tag, `<animation>`. So go ahead and add the following to the actor above and
+see what happens.
+
+    <animation name="walking">
+      <filename>walk.dae</filename>
+      <interpolate_x>true</interpolate_x>
+    </animation>
+
+Now you actually have the two animations playing in sync. You should be seeing
+the person walking from one side to the other, faster in one direction, and
+slower the other way.
+
+    [[file:files/full_animation.gif|300px]]
+
+### Skin file and animation file
+
+When using the animation tag, we need to give it an animation file. This file
+can be the same one as that for the skin, or any other file which has a
+compatible skeleton.
+
+For example, the files `walk.dae` and `moonwalk.dae` are compatible so they can
+be mixed with each other. The person walking has a green shirt, and the person
+moonwalking has a red shirt.
+
+* If you want a person moonwalking with a green shirt, use `walk` for the skin
+and `moonwalk` for the animation.
+
+* If you want a person walking with a red shirt, use `moonwalk` for the skin
+and `walk` for the animation.
+
+### Interpolate X
+
+Did you notice on the actor above how the skeleton animation got faster and
+slower to match the trajectory? That's because the `<interpolate_x>` flag was
+set to true. Try setting it to false and you'll see how the actor seems to be
+sliding on the ground.
 
 
-<skin> by itself loads animation, but if you want that to be loaded in sync with trajectory,
-you need <animation> - is that it?
+# Closed-loop trajectories
 
-So just <skin> also loads animation, see moonwalk. what is <animation> for?
+You just learned how to create actors and set their trajectories through SDF.
+The limitation to that is that the trajectory is running in an open-loop,
+that is, it is not taking any feedback from the environment. Now we're going to
+learn how to change the trajectory dynamically using plugins.
 
 
-Custom animations - where to save files?
+
+
+
+
+
+
+
