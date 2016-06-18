@@ -234,15 +234,15 @@ Finally, you can use a few example meshes which are installed with Gazebo by
 referencing directly to their filenames. Below is the list of the ones
 available, you should take a look at some of them!
 
-    * `moonwalk.dae`
-    * `run.dae`
-    * `sit_down.dae`
-    * `sitting.dae`
-    * `stand_up.dae`
-    * `stand.dae`
-    * `talk_a.dae`
-    * `talk_b.dae`
-    * `walk.dae`
+* `moonwalk.dae`
+* `run.dae`
+* `sit_down.dae`
+* `sitting.dae`
+* `stand_up.dae`
+* `stand.dae`
+* `talk_a.dae`
+* `talk_b.dae`
+* `walk.dae`
 
 ## Combining skin and trajectories: Animation
 
@@ -306,7 +306,7 @@ Now you actually have the two animations playing in sync. You should be seeing
 the person walking from one side to the other, faster in one direction, and
 slower the other way.
 
-    [[file:files/full_animation.gif|300px]]
+[[file:files/full_animation.gif|300px]]
 
 ### Skin file and animation file
 
