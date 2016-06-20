@@ -4,9 +4,11 @@ Gzweb is installed on the server-side. Once the server is set up and running, cl
 
 # Dependencies
 
-Gzweb is a graphical interface which communicates with gzserver. To use gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
+Gzweb is a graphical interface which communicates with gzserver. To use
+ gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
 
- 1. Make sure your system supports a more recent version of NodeJS (>=0.10)
+ 1. Make sure your system has the right NodeJS version (0.10.x). While this is
+ not the latest version, it is the version that ships with Ubuntu Trusty.
 
     >**Note:** For Ubuntu Precise or older distributions, the NodeJS version that comes with it may not work with gzweb. In that case, set up your system to grab and install the latest NodeJS debs:
 
