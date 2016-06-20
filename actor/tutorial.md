@@ -11,6 +11,10 @@ which can be detected by GPU based depth sensors.
 > **Tip**: Physics-engine-based sensors would require collsion information, read
 more about sensors [here](is there any material on this?).
 
+The tutorial begins explaining how to create open-loop trajectories, and
+afterwards how to create closed-loop trajectories which can make use of feedback
+from the surrounding environment to plan their trajectories.
+
 # Actors in Gazebo
 
 In Gazebo, an animated model is called an `actor`. Actors extend models adding
@@ -339,11 +343,136 @@ The limitation to that is that the trajectory is running in an open-loop,
 that is, it is not taking any feedback from the environment. Now we're going to
 learn how to change the trajectory dynamically using plugins.
 
+> **Tip**: If you're not familiar with Gazebo plugins, take a look at some
+[plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin) first.
 
+Gazebo has an example world with actors moving around while avoiding obstacles.
+Take a look at it running:
 
+    gazebo worlds/cafe.world
 
+Here's what it looks like:
 
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=nZN07_5r568" frameborder="0" allowfullscreen></iframe>
 
+## Plugin in SDF
 
+Just like for models, it's possible to write custom plugins for any actor and
+assign the plugin in the SDF description. Let's take a look at the part of
+[cafe.world](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/worlds/cafe.world?at=default&fileviewer=file-view-default)
+which refers to one of the actors in the video:
 
+    <actor name="actor1">
+      <pose>0 1 1.25 0 0 0</pose>
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor1_plugin" filename="libActorPlugin.so">
+        <target>0 -5 1.2138</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor>
+
+We can see that instead of giving a list of specific waypoints to follow, a
+plugin was given. Inside the plugin tag, there are several parameters which
+can be tuned specifically for this plugin. We won't get into the details on how
+the plugin works, the intent here is to show that a few parameters can be
+exposed, and the logic to determine the trajectory will be inside the plugin.
+
+## Plugin C++ code
+
+The source code for the `ActorPlugin` can be found
+[here](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/plugins/ActorPlugin.cc?at=default&fileviewer=file-view-default).
+And
+[here](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/plugins/ActorPlugin.hh?at=default&fileviewer=file-view-default)
+is the header.
+
+The main trick here is listening to world update begin events like this:
+
+    this->connections.push_back(event::Events::ConnectWorldUpdateBegin(
+        std::bind(&ActorPlugin::OnUpdate, this, std::placeholders::_1)));
+
+This way, we specify a callback `ActorPlugin::OnUpdate`, which will be called
+at every world iteration. This is the function where we will update our actor's
+trajectory. Let's see what the plugin is doing:
+
+    void ActorPlugin::OnUpdate(const common::UpdateInfo &_info)
+    {
+      // Time delta
+      double dt = (_info.simTime - this->lastUpdate).Double();
+
+      ignition::math::Pose3d pose = this->actor->GetWorldPose().Ign();
+      ignition::math::Vector3d pos = this->target - pose.Pos();
+      ignition::math::Vector3d rpy = pose.Rot().Euler();
+
+      double distance = pos.Length();
+
+      // Choose a new target position if the actor has reached its current
+      // target.
+      if (distance < 0.3)
+      {
+        this->ChooseNewTarget();
+        pos = this->target - pose.Pos();
+      }
+
+It starts by checking the current information, like the time and actor pose.
+If it's already reached the target destination, we pick a new one.
+
+      // Normalize the direction vector, and apply the target weight
+      pos = pos.Normalize() * this->targetWeight;
+
+      // Adjust the direction vector by avoiding obstacles
+      this->HandleObstacles(pos);
+
+      // Compute the yaw orientation
+      ignition::math::Angle yaw = atan2(pos.Y(), pos.X()) + 1.5707 - rpy.Z();
+      yaw.Normalize();
+
+      // Rotate in place, instead of jumping.
+      if (std::abs(yaw.Radian()) > GZ_DTOR(10))
+      {
+        pose.Rot() = ignition::math::Quaterniond(1.5707, 0, rpy.Z()+
+            yaw.Radian()*0.001);
+      }
+      else
+      {
+        pose.Pos() += pos * this->velocity * dt;
+        pose.Rot() = ignition::math::Quaterniond(1.5707, 0, rpy.Z()+yaw.Radian());
+      }
+
+      // Make sure the actor stays within bounds
+      pose.Pos().X(std::max(-3.0, std::min(3.5, pose.Pos().X())));
+      pose.Pos().Y(std::max(-10.0, std::min(2.0, pose.Pos().Y())));
+      pose.Pos().Z(1.2138);
+
+Then it goes on calculating the target pose taking into account obstacles and
+making sure we have a smooth motion. The following steps are the most
+important, because they involve actor-specific API.
+
+      // Distance traveled is used to coordinate motion with the walking
+      // animation
+      double distanceTraveled = (pose.Pos() -
+          this->actor->GetWorldPose().Ign().Pos()).Length();
+
+      this->actor->SetWorldPose(pose, false, false);
+      this->actor->SetScriptTime(this->actor->ScriptTime() +
+        (distanceTraveled * this->animationFactor));
+      this->lastUpdate = _info.simTime;
+    }
+
+We first set the actor's world pose as if it was a static model, with `SetWorldPose`.
+This will not trigger the animation however. That's done by telling the actor which
+point of its skeleton animation it should be in, with `SetScriptTime`.
 
