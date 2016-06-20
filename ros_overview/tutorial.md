@@ -37,9 +37,8 @@ Thus, all worlds have been centralized within the Gazebo project itself, includi
 
 ### CMakeLists.txt
 
-Because Gazebo is no longer a ROS package but instead a system dependency, your
-CMake file might need to be reconfigured.  The following is an example
-CMakeLists.txt:
+The ROS-wrapped versiong of Gazebo was removed in favor of the system install of Gazebo. This may require reconfiguration of your
+CMake file.  The following is an example CMakeLists.txt:
 
 ~~~
 cmake_minimum_required(VERSION 2.8.3)
