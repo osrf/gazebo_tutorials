@@ -6,7 +6,7 @@ around the stand-alone Gazebo.  They provide the necessary interfaces to
 simulate a robot in Gazebo using ROS messages, services and dynamic reconfigure
 Some features of `gazebo_ros_pkgs`:
 
-- Supports an stand alone system dependency of Gazebo, that has no ROS bindings on its own
+- Supports a stand alone system dependency of Gazebo, that has no ROS bindings on its own
 - Builds with [catkin](http://www.ros.org/wiki/catkin)
 - Treats URDF and [SDF](http://gazebosim.org/sdf.html) as equally as possible
 - Reduces code duplication with Gazebo
