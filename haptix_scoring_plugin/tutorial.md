@@ -22,7 +22,7 @@ gazebo --verbose worlds/luke_hand.world
 By default it brings up the desktop world with the [Luke Hand model](http://gazebosim.org/tutorials?tut=haptix_luke_hand&cat=haptix).
 
 Integrated in this world is a spring compression test that uses
-the SimEventsPlugin to keep track of status of aforementioned task completion.
+the SimEventsPlugin to keep track of the status of aforementioned task completion.
 
 ## Example Video
 
