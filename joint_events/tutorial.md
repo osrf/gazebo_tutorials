@@ -23,7 +23,7 @@ Copy the world code and save it as joint_event.world (or download it from [here]
 
 ## Position
 
-As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
+As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/gazebo/msgs/sim_event.proto?at=default&fileviewer=file-view-default) is [published](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) over the topic `/gazebo/sim_events`.
 
 ~~~
     <!-- Position -->
