@@ -25,19 +25,19 @@ Copy the world code and save it as joint_event.world (or download it from [here]
 
 As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/gazebo/msgs/sim_event.proto?at=default&fileviewer=file-view-default) is [published](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Angle:/' to='    </event>' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
+<include lang="xml" from='/    <!-- Angle:/' to='/    </event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
 
 ## Velocity
 
 As the joint named `my_joint` enters or exits the velocity range between 3 and 3.3 rad/s, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Velocity/' to='    </event>' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
+<include lang="xml" from='/    <!-- Velocity/' to='/    </event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
 
 ## Applied force
 
 As the force applied by user on the joint named `my_joint` enters or exits the effort range between 3 and 3.3 Nm, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Applied/' to='    </event>' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
+<include lang="xml" from='/    <!-- Applied/' to='/    </event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
 
 # Running simulation with joint events plugin
 
