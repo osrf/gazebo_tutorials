@@ -7,10 +7,40 @@ manipulation dexterity testing inspired by a paper titled
 written by Valero-Cuevas et. al. in 2003.
 
 For this tutorial, we assume that you have already completed the
-[installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
+[HAPTIX handsim installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
 and we strongly recommend that you have completed the
-[world API](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix)
-tutorials.
+[simulation world API tutorials](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix).
+
+# Running the Simulation Example
+
+To start Gazebo handsim scoring plugin example, run gazebo in terminal:
+
+~~~
+gazebo --verbose worlds/luke_hand.world
+~~~
+
+By default it brings up the desktop world with the [Luke Hand model](http://gazebosim.org/tutorials?tut=haptix_luke_hand&cat=haptix).
+
+Integrated in this world is a spring compression test that uses
+the SimEventsPlugin to keep track of status of aforementioned task completion.
+
+## Example Video
+
+Below is an example of the custom world as tele-operated by keyboard and spacenav options:
+
+<iframe width="600" height="450" src="https://www.youtube.com/watch?v=pj6mMQOjTPM" frameborder="0" allowfullscreen></iframe>
+
+In the video, there are three little task completion indicator dots at the lower right hand side of the hand visualization GUI.
+The left most circular dot indicates correct compression without buckling, green if compressed without buckling, red if uncompressed or buckled.
+The middle circular dot indicates compression hold time, it fades from white to green as the spring is compressed correctly and held for 3 seconds.
+The right most circular dot indicates task success as it turns from white to green.
+
+Initially, the three circles are red-white-white, indicating the spring is undisturbed.
+When the spring is compressed sufficiently (compression length between 1 to 10cm), and
+the springs are relatively straight (torsional spring joint at the middle of the spring exhibits < 0.1 radians in flex), the first circle turns green.
+A timer is started for this successful unbuckled compression, and the second circle fades from white to green.
+When the timer reaches 3 seconds, the second and third circular indicators turn green, and
+  the program considers this a successful test trial.
 
 # Relevant Documentations
 
@@ -139,26 +169,5 @@ And the `HaptixGUIPlugin::OnSimEvents` function [referenced here](https://bitbuc
 
 For reference, the Gazebo SimEvents API documentation can be found
 [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SimEventsPlugin.html).
+This plugin subscribes to gazebo topic `/gazebo/sim_events` to monitor for changes in the simulated spring joints.
 
-This plugin subscribes to gazebo topic `/gazebo/sim_events` for changes in the simulated spring joints
-  and creates three little circular dots at the lower right hand side of the hand visualization GUI.
-Initially, the three circles are red-white-white, indicating the spring is undisturbed.
-When the spring is compressed sufficiently (compression length between 1 to 10cm), and
-the torsional springs are relatively straight < 0.1 radians in flex, the first circle turns green.
-A timer is started for this successful unbuckled compression, and the second circle fades from red to green.
-When the timer reaches 3 seconds, the second and third circular indicators turn green, and
-  the program considers this a successful test trial.
-
-# Start Gazebo handsim simulation
-
-To run the example, start gazebo in terminal:
-
-~~~
-gazebo --verbose worlds/luke_hand.world
-~~~
-
-## Example Video
-
-Below is an example of the custom world as tele-operated by keyboard and spacenav options:
-
-<iframe width="600" height="450" src="https://www.youtube.com/embed/q-WT0C6UhHc" frameborder="0" allowfullscreen></iframe>
