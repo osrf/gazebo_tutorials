@@ -7,7 +7,7 @@ The JointEvent will send a message on the `sim_events` topic when a joint's posi
 # Usage and Example
 
 The JointEvent component is instantiated through the
-`libSimEventsPlugin.so` and relies on at least one `<region>` and `<event>`,
+`libSimEventsPlugin.so` and relies on at least one region declared using `<range>` elements inside of `<event>` section,
   where the `<event>` has a `<type>` of `joint`.
 
 The following world example features a model with a revolute joint. To begin tutorial, start by creating a temporary directory:
