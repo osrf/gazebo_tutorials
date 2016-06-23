@@ -10,147 +10,18 @@ The JointEvent component is instantiated through the
 `libSimEventsPlugin.so` and relies on at least one `<region>` and `<event>`,
   where the `<event>` has a `<type>` of `joint`.
 
-The following world features a model with a revolute joint.
+The following world example features a model with a revolute joint. To begin tutorial, start by creating a temporary directory:
 
 ~~~
 mkdir joint_event
 cd joint_event
 ~~~
 
-Copy the world code and save it as joint_event.world
+Copy the world code and save it as joint_event.world (or download it from [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world)):
 
 <include lang='sdf' src='./joint_event.world'/>
 
-~~~
-<?xml version="1.0" ?>
-<sdf version="1.5">
-  <world name="default">
-    <physics type="ode">
-      <gravity>0 0 0</gravity>
-    </physics>
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
-    <plugin name="SimEvents" filename="libSimEventsPlugin.so">
-
-
-    <!-- Angle: must be in range -PI to PI  -->
-    <event>
-      <name>joint_angle</name>
-      <type>joint</type>
-      <model>revoluter</model>
-      <joint>my_joint</joint>
-      <range>
-        <type>normalized_angle</type>
-        <min>1.55</min>
-        <max>1.70</max>
-      </range>
-    </event>
-
-    <!-- Velocity -->
-    <event>
-      <name>joint_velocity</name>
-      <type>joint</type>
-      <model>revoluter</model>
-      <joint>my_joint</joint>
-      <range>
-        <type>velocity</type>
-        <min>3</min>
-        <max>3.3</max>
-      </range>
-    </event>
-
-    <!-- Applied Force -->
-    <event>
-      <name>joint_force</name>
-      <type>joint</type>
-      <model>revoluter</model>
-      <joint>my_joint</joint>
-      <type>applied_force</type>
-      <range>
-        <type>applied_force</type>
-        <min>3</min>
-        <max>3.3</max>
-      </range>
-    </event>
-
-    <!-- Close the plugin element  -->
-    </plugin>
-
-    <model name='revoluter'>
-        <pose>0.5 0.5 0.5 0 0 0</pose>
-        <link name='base'>
-        <pose>0 0 0 0 -0 0</pose>
-          <visual name='visual'>
-            <geometry>
-              <box>
-                <size>0.5 1 1</size>
-              </box>
-            </geometry>
-            <material>
-              <script>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-                <name>Gazebo/Orange</name>
-              </script>
-            </material>
-          </visual>
-          <collision name='collision'>
-            <geometry>
-              <box>
-                <size>0.5 1 1</size>
-              </box>
-            </geometry>
-          </collision>
-        </link>
-        <link name='needle'>
-          <pose>0.25 0 0 0 -0 0</pose>
-          <visual name='visual'>
-            <pose>0 0 -0.2 0 -0 0</pose>
-            <geometry>
-              <cylinder>
-                <radius>0.05</radius>
-                <length>0.5</length>
-              </cylinder>
-            </geometry>
-          </visual>
-
-          <collision name='collision'>
-            <pose>0 0 -0.2 0 -0 0</pose>
-            <geometry>
-              <cylinder>
-                <radius>0.05</radius>
-                <length>0.5</length>
-              </cylinder>
-            </geometry>
-           </collision>
-        </link>
-
-        <joint name='my_joint' type='revolute'>
-          <parent>base</parent>
-          <child>needle</child>
-
-          <pose>0 0 0 0 0 0</pose>
-          <axis>
-            <xyz>1 0 0</xyz>
-          </axis>
-        </joint>
-
-        <!-- this joint keeps the model from moving around -->
-        <joint name ='fix' type='fixed'>
-          <parent>world</parent>
-          <child>base</child>
-        </joint>
-
-    </model>
-
-  </world>
-</sdf>
-~~~
+<include from='/<?xml/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world' />
 
 ## Position
 
