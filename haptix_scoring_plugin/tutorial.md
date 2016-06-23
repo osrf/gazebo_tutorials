@@ -124,7 +124,7 @@ In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1
     </plugin>
 ~~~
 
-(For reference, recall that the documentation for [SDF format](http://www.sdformat.org/) can be found [here](http://gazebosim.org/tutorials?cat=build_world)).
+(For reference, [here are the documentation for SDF format](http://www.sdformat.org/) and here are [some basic tutorials on using SDF to build simulation worlds and models](http://gazebosim.org/tutorials?cat=build_world)).
 
 And the accompanying source code blocks that interprets the results of the `SimEventsPlugin` data can be found in [`HaptixGUIPlugin.cc`](https://bitbucket.org/osrf/handsim/src/spring_buckle_test/src/HaptixGUIPlugin.cc).
 
