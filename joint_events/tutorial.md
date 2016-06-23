@@ -1,7 +1,7 @@
 # Overview
 
 The [SimEventsPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html) contains multiple components, one of which is the
-[JointEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1JointEventSource.html).
+[JointEvent](https://bitbucket.org/osrf/gazebo/src/4004fbd7deede758c0ca0fbc7c906e62b0a808a4/plugins/events/JointEventSource.hh?at=default&fileviewer=file-view-default) with [doxygen API](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1JointEventSource.html).
 The JointEvent will send a message on the `sim_events` topic when a joint's position (or velocity, or applied force) enters or leaves a specified range.
 
 # Usage and Example
