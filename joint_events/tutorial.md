@@ -127,4 +127,4 @@ The end result should look like below:
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/Dh_YF8JAbBE" frameborder="0" allowfullscreen></iframe>
 
-As the joint rotates into user specified angular region, a sim events message is published. And as the joint rotates out of the user specified region, another message is published. Similarly joint velocity and joint force are monitored by the `joint_velocity` and `joint_velocity` SimEvents blocks.
+As the joint rotates into user specified angular region, a sim events message is published. And as the joint rotates out of the user specified region, another message is published. Similarly joint velocity and joint force are monitored by the `joint_velocity` and `joint_force` SimEvents blocks.
