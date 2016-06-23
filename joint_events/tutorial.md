@@ -31,7 +31,7 @@ As the joint named `my_joint` enters or exits the position range between 1.55 an
 
 As the joint named `my_joint` enters or exits the velocity range between 3 and 3.3 rad/s, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Velocity -->/' to='/</event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
+<include lang="xml" from='/    <!-- Velocity -->/' to='/    <!-- Applied Force -->/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events/joint_events/joint_event.world' />
 
 ## Applied force
 
