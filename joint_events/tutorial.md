@@ -87,7 +87,19 @@ Launch Gazebo in a terminal with the following  command
 gazebo --verbose joint_event.world
 ~~~
 
-The world should have a model that looks like this:
+If you like, you can add a description of the world like this:
+
+The world contains a single model, `revoluter`, which has 2 links:
+
+  - `base`, and orange box
+  - `needle`, a white cylinder
+
+It also contains 2 joints:
+
+  - `fix`, a fixed joints that prevents the `base` link from moving in the world.
+  - `my_joint`, a revolute joint that allows the needle to rotate around the center of the "base" link
+
+The force, velocity and position of `my_joint` will trigger events.
 
 [[file:./joint_test_world.png|640px]]
 
