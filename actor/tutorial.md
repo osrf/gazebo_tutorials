@@ -291,6 +291,14 @@ Like this:
       </world>
     </sdf>
 
+> **Tip**: Check out
+[this](http://www.wazim.com/Collada_Tutorial_1.htm)
+tutorial to learn more about COLLADA animations. In Gazebo's context, COLLADA
+files used as skins must have `<library_effects>` and `<library_materials>`,
+while animation files must have `<library_animations>`. To be used together,
+both files must have matching `<library_geometries>`, `<library_controllers>`
+and `<library_visual_scenes>`.
+
 Try out different combinations now!
 
 ### Sync animation and trajectory
