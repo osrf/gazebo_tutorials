@@ -201,16 +201,16 @@ as the skin:
 
     <?xml version="1.0" ?>
     <sdf version="1.6">
-       <world name="default">
-          <include>
-             <uri>model://sun</uri>
-          </include>
-          <actor name="actor">
-             <skin>
-                <filename>walk.dae</filename>
-             </skin>
-          </actor>
-       </world>
+      <world name="default">
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <actor name="actor">
+          <skin>
+            <filename>walk.dae</filename>
+          </skin>
+        </actor>
+      </world>
     </sdf>
 
 Take a look at it in Gazebo, and you'll see a person walking in place.
@@ -271,6 +271,28 @@ and `moonwalk` for the animation.
 * If you want a person *walking* with a *red* shirt, use `moonwalk` for the skin
 and `walk` for the animation.
 
+The animation tag goes alongside the skin tag, and it takes a `name` parameter.
+Like this:
+
+    <?xml version="1.0" ?>
+    <sdf version="1.6">
+      <world name="default">
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <actor name="actor">
+          <skin>
+            <filename>walk.dae</filename>
+          </skin>
+          <animation name="animation">
+            <filename>moonwalk.dae</filename>
+          </animation>
+        </actor>
+      </world>
+    </sdf>
+
+Try out different combinations now!
+
 ### Sync animation and trajectory
 
 By this point, you already know everything about creating trajectories and
@@ -289,7 +311,7 @@ and try that, I'll even give you an example:
           <skin>
             <filename>walk.dae</filename>
           </skin>
-          <animation name="walking">
+          <animation name="animation">
             <filename>walk.dae</filename>
           </animation>
           <script>
@@ -320,7 +342,14 @@ and try that, I'll even give you an example:
       </world>
     </sdf>
 
-Go ahead and load it and see what happens.
+Go ahead and load it and see what happens. That's not what yopu expected,
+right? The actor's legs are not moving at all. That's because Gazebo doesn't
+know which animation to match with which trajectory. So let's change the
+animation name to match the trajectory type like this:
+
+          <animation name="walking">
+            <filename>walk.dae</filename>
+          </animation>
 
 Ok, so the actor was both moving back and forth in the world, and moving his
 legs. But that didn't look very natural, right? His feet were sliding on the
@@ -329,11 +358,14 @@ ground.
 Let's tell Gazebo to synchronize the distance travelled by the trajectory, with
 the animation, by setting `<interpolate_x>` to true inside `<animation>`:
 
+          <animation name="walking">
+            <filename>walk.dae</filename>
             <interpolate_x>true</interpolate_x>
+          </animation>
 
-Now you actually have the two animations playing in sync. You should be seeing
-the person walking from one side to the other, faster in one direction, and
-slower the other way.
+Now you finally have the two animations playing in perfect sync. You should be
+seeing the person walking from one side to the other, faster in one direction,
+and slower the other way.
 
 [[file:files/full_animation.gif|300px]]
 
@@ -367,8 +399,6 @@ assign the plugin in the SDF description. Let's take a look at the part of
 [cafe.world](https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world)
 which refers to one of the actors in the video:
 
-<include from='/... actor1/' to='/... actor>/' src='https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world' />
-
     <actor name="actor1">
       <pose>0 1 1.25 0 0 0</pose>
       <skin>
@@ -401,19 +431,24 @@ exposed, and the logic to determine the trajectory will be inside the plugin.
 ## Plugin C++ code
 
 The source code for the `ActorPlugin` can be found
-[here](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/plugins/ActorPlugin.cc?at=default&fileviewer=file-view-default).
+[here](https://bitbucket.org/osrf/gazebo/raw/default/plugins/ActorPlugin.cc).
 And
-[here](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/plugins/ActorPlugin.hh?at=default&fileviewer=file-view-default)
+[here](https://bitbucket.org/osrf/gazebo/raw/default/plugins/ActorPlugin.hh)
 is the header.
 
-The main trick here is listening to world update begin events like this:
+The first trick is to listen to world update begin events like this:
+
+<include from='/  this->connections/' to='/_1)));/' src='https://bitbucket.org/osrf/gazebo/raw/default/plugins/ActorPlugin.cc' />
+
 
     this->connections.push_back(event::Events::ConnectWorldUpdateBegin(
         std::bind(&ActorPlugin::OnUpdate, this, std::placeholders::_1)));
 
 This way, we specify a callback `ActorPlugin::OnUpdate`, which will be called
 at every world iteration. This is the function where we will update our actor's
-trajectory. Let's see what the plugin is doing:
+trajectory. Let's see what the plugin is doing in that function:
+
+
 
     void ActorPlugin::OnUpdate(const common::UpdateInfo &_info)
     {
