@@ -367,9 +367,7 @@ assign the plugin in the SDF description. Let's take a look at the part of
 [cafe.world](https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world)
 which refers to one of the actors in the video:
 
-    from='/... actor1/'
-    to='/... actor>/'
-    src='https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world' />
+<include from='/... actor1/' to='/... actor>/' src='https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world' />
 
     <actor name="actor1">
       <pose>0 1 1.25 0 0 0</pose>
