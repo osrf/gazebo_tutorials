@@ -515,3 +515,11 @@ We first set the actor's world pose as if it was a static model, with `SetWorldP
 This will not trigger the animation however. That's done by telling the actor which
 point of its skeleton animation it should be in, with `SetScriptTime`.
 
+In conclusion, When writing your own plugins, you can use your logic of choice
+to define the desired pose at each time step. Also, don't forget to also choose the
+apopropriate script time to synchronize your animation. You can see the whole API
+for the `physics::Actor` class
+[here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Actor.html).
+
+
+
