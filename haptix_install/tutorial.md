@@ -249,7 +249,8 @@ HAPTIX client library SDK. The installation process requires access to the
 DEKA webtransfer system. If you believe you should have received access but do
 not, please contact `haptix@osrfoundation.org` for help.
 
-A CANbus adapter is also required. We recommend the [PCAN-USB Adapter](http://www.phytools.com/PEAK_IPEH_002021_PCAN_USB_Adapter_p/ipeh-002021.htm).
+A CANbus adapter is also required. We recommend the [PCAN-USB Adapter](http://www.phytools.com/PEAK_IPEH_002021_PCAN_USB_Adapter_p/ipeh-002021.htm) made by
+PEAK-System Technik.
 
 ## Installing on Windows
 
