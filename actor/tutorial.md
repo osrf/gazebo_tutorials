@@ -438,7 +438,7 @@ is the header.
 
 The first trick is to listen to world update begin events like this:
 
-<include from='/  this->connections/' to='/_1)));/' src='https://bitbucket.org/osrf/gazebo/raw/default/plugins/ActorPlugin.cc' />
+<include from='/  this->connections/' src='https://bitbucket.org/osrf/gazebo/raw/default/plugins/ActorPlugin.cc' />
 
 
     this->connections.push_back(event::Events::ConnectWorldUpdateBegin(
