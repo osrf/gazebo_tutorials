@@ -49,7 +49,7 @@ different skeleton descriptions and open loop trajectories.
 * There can't be models nested inside actors, so we're limited to animated
 meshes, links and joints.
 
-> **Tip**: Check out the full specification for the actor SDF element
+> **Tip**: Check out the full specification for the `<actor>` SDF element
 [here](http://sdformat.org/spec?ver=1.6&elem=actor).
 
 # Scripted trajectories
@@ -117,10 +117,11 @@ The following parameters are available:
 
 * **`loop`**: Set this to true for the script to be repeated in a loop. For a
 fluid continuous motion, make sure the last waypoint matches the first one,
-like in the example.
+as we'll see below.
 
-* **`delay_start`**: This is the time to wait before starting the script. If
-running in a loop, this time will be waited before starting each cycle.
+* **`delay_start`**: This is the time in seconds to wait before starting the
+script. If running in a loop, this time will be waited before starting each
+cycle.
 
 * **`auto_start`**: Set to true if the animation should start as soon as the
 simulation starts playing. It is useful to set this to false if the animation
@@ -155,17 +156,18 @@ Finally, we define a trajectory with a sequence of waypoints:
        </world>
     </sdf>
 
-* **`trajectory`**: Within this tag, it's possible to describe a series of
-keyframes to be followed. It has two attributes: a unique `id` and a `type`. The
-type will be useful when we explain skeleton animations below.
+Within the `<trajectory>` tag, it's possible to describe a series of keyframes
+to be followed. It has two attributes: a unique `id` and a `type`. The type will
+be useful when we explain skeleton animations in the next section. The
+trajectory parameters are as follows:
 
-    * **`waypoint`**: There can be any number of waypoints in a trajectory. Each
-      waypoint consists of a `time` and a `pose`:
+* **`waypoint`**: There can be any number of waypoints in a trajectory. Each
+  waypoint consists of a `time` and a `pose`:
 
-        * **`time`**: The time in seconds, counted from the beginning of the
-          script, when the pose should be reached.
+    * **`time`**: The time in seconds, counted from the beginning of the
+      script, when the pose should be reached.
 
-        * **`pose`**: The pose which should be reached
+    * **`pose`**: The pose which should be reached
 
 > **Tip**: The order in which waypoints are defined is not important, they will
 follow the given times.
@@ -209,7 +211,7 @@ And paste the following SDF:
     </sdf>
 
 Take a look at it in Gazebo, and you'll see a person walking in place just like
-the animationa above.
+the animation above.
 
     gazebo walk.world
 
