@@ -43,8 +43,9 @@ so you can put links and joints inside them as usual. The main differences are:
 * Actors are always static (i.e. no forces are applied on them, be it from
 gravity or contact or anything else)
 
-* Actors can have their motions scripted directly in SDF, with support for
-different skeleton descriptions and open loop trajectories.
+* Actors support skeleton animation imported from COLLADA and BVH files.
+
+* Actors can have trajectories scripted directly in SDF.
 
 * There can't be models nested inside actors, so we're limited to animated
 meshes, links and joints.
@@ -189,12 +190,14 @@ Gazebo supports two different skeleton animation file formats:
 [COLLADA (.dae)](https://www.khronos.org/collada/wiki/Main_page) and
 [Biovision Hierarchy (.bvh)](http://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html).
 
-Let's try a simple example animation that comes with Gazebo. First, create a
+Let's try a simple example file that comes with Gazebo. First, create a
 new world file:
 
     gedit walk.world
 
-And paste the following SDF:
+And paste the following SDF, it has a sun and an actor using the
+[walk.dae](https://bitbucket.org/osrf/gazebo/src/default/media/models/walk.dae)
+as the skin:
 
     <?xml version="1.0" ?>
     <sdf version="1.6">
@@ -210,23 +213,22 @@ And paste the following SDF:
        </world>
     </sdf>
 
-Take a look at it in Gazebo, and you'll see a person walking in place just like
-the animation above.
+Take a look at it in Gazebo, and you'll see a person walking in place.
 
     gazebo walk.world
 
 ## Skin
 
-The actor in this example is really simple, all it loads is a COLLADA file
+The actor in the example above is really simple, all it loads is a COLLADA file
 described within the `<skin>` tag.
 
 > **Note**: If you've made
 [custom](http://gazebosim.org/tutorials?tut=import_mesh&cat=build_robot)
 Gazebo models before, you might have used COLLADA files as visuals and
-collisions for your models. When used within links, COLLADA animations are
-ignored, but when used within skins, they are loaded.
+collisions for your models. When used within *links*, COLLADA animations are
+ignored, but when used within *skins*, they are loaded!
 
-The file specified in `<filename>` can either be an absolute path, for example:
+The file specified in `<filename>` can be an absolute path, for example:
 
     /home/<user>/my_gazebo_models/skeleton_model/skeleton.dae
 
@@ -239,7 +241,7 @@ like this:
 
 Finally, you can use a few example meshes which are installed with Gazebo by
 referencing directly to their filenames. Below is the list of the ones
-available, you should take a look at some of them!
+available. Take a look at some of them substituting into the world above!
 
 * `moonwalk.dae`
 * `run.dae`
@@ -251,13 +253,31 @@ available, you should take a look at some of them!
 * `talk_b.dae`
 * `walk.dae`
 
-## Combining skin and trajectories: Animation
+## Animation
+
+### Combining different skins ans animations
+
+Sometimes, it is useful to combine different skins with different animations.
+Gazebo allows us to take the skin from one file, and the animation from
+another file, as long as they have compatible skeletons.
+
+For example, the files `walk.dae` and `moonwalk.dae` are compatible so they can
+be mixed with each other. The person walking has a green shirt, and the person
+moonwalking has a red shirt.
+
+* If you want a person *moonwalking* with a *green* shirt, use `walk` for the skin
+and `moonwalk` for the animation.
+
+* If you want a person *walking* with a *red* shirt, use `moonwalk` for the skin
+and `walk` for the animation.
+
+### Sync animation and trajectory
 
 By this point, you already know everything about creating trajectories and
 loading static animations. It's time to learn how to combine them.
 
-You might be thinking "I'll just add both a `<skin>` and a `<trajectory>` tag
-to my world and they will work together". I'm not going to stop you, go ahead
+You might be thinking "I'll just add `<skin>`, `<animation>` and `<trajectory>`
+tags to my actor and they will work together". I'm not going to stop you, go ahead
 and try that, I'll even give you an example:
 
     <sdf version="1.6">
@@ -269,6 +289,9 @@ and try that, I'll even give you an example:
           <skin>
             <filename>walk.dae</filename>
           </skin>
+          <animation name="walking">
+            <filename>walk.dae</filename>
+          </animation>
           <script>
             <trajectory id="0" type="walking">
               <waypoint>
@@ -299,15 +322,14 @@ and try that, I'll even give you an example:
 
 Go ahead and load it and see what happens.
 
-That wasn't what you expected, right? What happened is that Gazebo didn't have
-enough information to put the two together. For that, we need to add another
-tag, `<animation>`. So go ahead and add the following to the actor above and
-see what happens.
+Ok, so the actor was both moving back and forth in the world, and moving his
+legs. But that didn't look very natural, right? His feet were sliding on the
+ground.
 
-    <animation name="walking">
-      <filename>walk.dae</filename>
-      <interpolate_x>true</interpolate_x>
-    </animation>
+Let's tell Gazebo to synchronize the distance travelled by the trajectory, with
+the animation, by setting `<interpolate_x>` to true inside `<animation>`:
+
+            <interpolate_x>true</interpolate_x>
 
 Now you actually have the two animations playing in sync. You should be seeing
 the person walking from one side to the other, faster in one direction, and
@@ -315,35 +337,16 @@ slower the other way.
 
 [[file:files/full_animation.gif|300px]]
 
-### Skin file and animation file
-
-When using the animation tag, we need to give it an animation file. This file
-can be the same one as that for the skin, or any other file which has a
-compatible skeleton.
-
-For example, the files `walk.dae` and `moonwalk.dae` are compatible so they can
-be mixed with each other. The person walking has a green shirt, and the person
-moonwalking has a red shirt.
-
-* If you want a person moonwalking with a green shirt, use `walk` for the skin
-and `moonwalk` for the animation.
-
-* If you want a person walking with a red shirt, use `moonwalk` for the skin
-and `walk` for the animation.
-
-### Interpolate X
-
-Did you notice on the actor above how the skeleton animation got faster and
-slower to match the trajectory? That's because the `<interpolate_x>` flag was
-set to true. Try setting it to false and you'll see how the actor seems to be
-sliding on the ground.
+Try playing with the times and the distances in the waypoint, and you'll see
+that the actor's legs will move faster or slower depending on the trajectory.
 
 # Closed-loop trajectories
 
 You just learned how to create actors and set their trajectories through SDF.
 The limitation to that is that the trajectory is running in an open-loop,
 that is, it is not taking any feedback from the environment. Now we're going to
-learn how to change the trajectory dynamically using plugins.
+take a look at an example of how to change the trajectory dinamically using
+plugins.
 
 > **Tip**: If you're not familiar with Gazebo plugins, take a look at some
 [plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin) first.
@@ -355,14 +358,19 @@ Take a look at it running:
 
 Here's what it looks like:
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=nZN07_5r568" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nZN07_5r568" frameborder="0" allowfullscreen></iframe>
 
 ## Plugin in SDF
 
 Just like for models, it's possible to write custom plugins for any actor and
 assign the plugin in the SDF description. Let's take a look at the part of
-[cafe.world](https://bitbucket.org/osrf/gazebo/src/5adf274c0172e4707ac86523c3aedd3d332f3c7c/worlds/cafe.world?at=default&fileviewer=file-view-default)
+[cafe.world](https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world)
 which refers to one of the actors in the video:
+
+<include
+    from='/    <actor name="actor1">/'
+    to='/    </actor>/'
+    src='https://bitbucket.org/osrf/gazebo/raw/default/worlds/cafe.world' />
 
     <actor name="actor1">
       <pose>0 1 1.25 0 0 0</pose>
