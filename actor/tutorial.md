@@ -5,52 +5,49 @@ This tutorial explains how to use Gazebo's "actors" to create scripted animation
 Animations are useful if you want to have entities following predefined paths
 in simulation without being affected by the physics engine. This means they won't
 fall due to gravity or collide with other objects, for example. They will,
-however, have a 3D visualization which can be seen by RGB cameras and 3D meshes
+however, have a 3D visualization which can be seen by RGB cameras, and 3D meshes
 which can be detected by GPU based depth sensors.
 
-> **Tip**: Physics-engine-based sensors would require collsion information, read
-more about sensors [here](is there any material on this?).
+The tutorial explains in detail how to create open-loop trajectories which don't
+interact with the rest of the simulation. Towards the end, we will take a quick
+look at an example plugin which controls animations based on feedback from the
+environment.
 
-The tutorial begins explaining how to create open-loop trajectories, and
-afterwards how to create closed-loop trajectories which can make use of feedback
-from the surrounding environment to plan their trajectories.
+# Actors
 
-# Actors in Gazebo
-
-In Gazebo, an animated model is called an `actor`. Actors extend models adding
-animation capabilities.
+In Gazebo, an animated model is called an `actor`. Actors extend
+[common models](http://gazebosim.org/tutorials?tut=build_model&cat=build_robot),
+adding animation capabilities.
 
 There are two types of animations which can be used separately or combined
 together:
 
-* Motion along a **trajectory**, defined by a series of keyframes. This is a
-high level motion which carries all of the actor's links around the world,
-as one group:
-
-    [[file:files/traj_full.gif|300px]]
-
-* **Skeleton** motion, which is relative motion between links in one model:
+* **Skeleton** animation, which is relative motion between links in one model:
 
     [[file:files/skel_full.gif|300px]]
 
-* Both types of motions can be **combined** to achieve an animation which moves
-in the world:
+* Motion along a **trajectory**, which carries all of the actor's links around
+the world, as one group:
+
+    [[file:files/traj_full.gif|300px]]
+
+* Both types of motions can be **combined** to achieve a skeleton animation which
+moves in the world:
 
     [[file:files/skel_traj_full.gif|300px]]
 
-# Actors
-
 Gazebo's actors are just like
 [models](http://gazebosim.org/tutorials?tut=build_model),
-so you can put links and joints inside it as usual. The main differences are:
+so you can put links and joints inside them as usual. The main differences are:
 
 * Actors are always static (i.e. no forces are applied on them, be it from
-gravity or contact)
+gravity or contact or anything else)
 
 * Actors can have their motions scripted directly in SDF, with support for
 different skeleton descriptions and open loop trajectories.
 
-* There can't be models nested inside it, so we're limited to links and joints.
+* There can't be models nested inside actors, so we're limited to animated
+meshes, links and joints.
 
 > **Tip**: Check out the full specification for the actor SDF element
 [here](http://sdformat.org/spec?ver=1.6&elem=actor).
@@ -61,13 +58,25 @@ This is the high level animation of actors, which consists of specifying
 a series of poses to be reached at specific times. Gazebo takes care of
 interpolating the motion between them so the movement is fluid.
 
-Let's take a look at a simple example by creating a world which has an
-animated box in it. First create a world file:
+## Example world
 
-    gedit animated_box.world
+Let's take a look at a simple example world which comes with Gazebo:
 
-Then copy the following SDF description into it and save it. The code will be
-explained in detail soon.
+    gazebo worlds/animated_box.world
+
+You'll see a floating box moving in a square trajectory again and again. The
+trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
+`[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
+
+[[file:files/box_square_full.gif|300px]]
+
+## World explained
+
+You can see the whole world description
+[here](http://bitbucket.org/osrf/gazebo/raw/actor_2/worlds/animated_box.world).
+Let's go through it by parts.
+
+We start by defining a world with a ground plane and a sun.
 
     <?xml version="1.0" ?>
     <sdf version="1.6">
@@ -80,6 +89,10 @@ explained in detail soon.
           <include>
              <uri>model://sun</uri>
           </include>
+
+We create an actor called `animated_box` and give it a simple link with a box
+visual:
+
           <!-- An actor -->
           <actor name="animated_box">
             <link name="link">
@@ -91,10 +104,30 @@ explained in detail soon.
                 </geometry>
               </visual>
             </link>
+
+Now comes the part which is special to actors, the `<script>` tag. We begin by
+telling it to loop forever and start playing as soon as the world is loaded.
+
             <script>
               <loop>true</loop>
               <delay_start>0.000000</delay_start>
               <auto_start>true</auto_start>
+
+The following parameters are available:
+
+* **`loop`**: Set this to true for the script to be repeated in a loop. For a
+fluid continuous motion, make sure the last waypoint matches the first one,
+like in the example.
+
+* **`delay_start`**: This is the time to wait before starting the script. If
+running in a loop, this time will be waited before starting each cycle.
+
+* **`auto_start`**: Set to true if the animation should start as soon as the
+simulation starts playing. It is useful to set this to false if the animation
+should only start playing only when triggered by a plugin, for example.
+
+Finally, we define a trajectory with a sequence of waypoints:
+
               <trajectory id="0" type="square">
                  <waypoint>
                     <time>0.0</time>
@@ -121,38 +154,6 @@ explained in detail soon.
           </actor>
        </world>
     </sdf>
-
-
-Let's open it in Gazebo to see what it does:
-
-    gazebo animated_box.world
-
-You'll see a floating box moving in a square trajectory again and again. The
-trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
-`[1, 1, 1]` and `[1, -1, 1]`) and takes 1 s in between them.
-
-[[file:files/box_square_full.gif|300px]]
-
-## Script
-
-The actor in the example has a simple link with a box visual, described in the
-`</link>` tag.
-
-The movement is described within the
-[`<script>`](http://sdformat.org/spec?ver=1.6&elem=actor#actor_script)
-tag, used to script global trajectories. The
-parameters available are the following:
-
-* **`loop`**: Set this to true for the script to be repeated in a loop. For a
-fluid continuous motion, make sure the last waypoint matches the first one,
-like in the example.
-
-* **`delay_start`**: This is the time to wait before starting the script. If
-running in a loop, this time will be waited before starting each cycle.
-
-* **`auto_start`**: Set to true if the animation should start as soon as the
-simulation starts playing. It is useful to set this to false if the animation
-should only start playing only when triggered by a plugin, for example.
 
 * **`trajectory`**: Within this tag, it's possible to describe a series of
 keyframes to be followed. It has two attributes: a unique `id` and a `type`. The
@@ -334,7 +335,6 @@ Did you notice on the actor above how the skeleton animation got faster and
 slower to match the trajectory? That's because the `<interpolate_x>` flag was
 set to true. Try setting it to false and you'll see how the actor seems to be
 sliding on the ground.
-
 
 # Closed-loop trajectories
 
