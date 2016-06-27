@@ -12,7 +12,8 @@ The JointEvent component is instantiated through the
 `libSimEventsPlugin.so` and relies on at least one region declared using `<range>` elements inside of `<event>` section,
   where the `<event>` has a `<type>` of `joint`.
 
-The following world example features a model with a revolute joint. To begin tutorial, start by creating a temporary directory:
+The following world example features a model with a revolute joint.
+To begin the tutorial, start by creating a temporary directory:
 
 ~~~
 mkdir joint_event
@@ -96,7 +97,7 @@ The world contains a single model, `revoluter`, which has 2 links:
 
 It also contains 2 joints:
 
-  - `fix`, a fixed joints that prevents the `base` link from moving in the world.
+  - `fix`, a fixed joint that prevents the `base` link from moving in the world.
   - `my_joint`, a revolute joint that allows the needle to rotate around the center of the "base" link
 
 The force, velocity and position of `my_joint` will trigger events.
