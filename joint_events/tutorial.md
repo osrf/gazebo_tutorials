@@ -17,27 +17,67 @@ mkdir joint_event
 cd joint_event
 ~~~
 
-Copy the world code and save it as joint_event.world (or download it from [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world)):
+Copy the world code and save it as joint_event.world (or download it from [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/35f11a386fe4fddca295ea349faa1005204fae83/joint_events/joint_event.world)):
 
-<include lang="xml" src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events_louise/joint_events/joint_event.world' />
+<include lang="sdf" src='https://bitbucket.org/osrf/gazebo_tutorials/raw/35f11a386fe4fddca295ea349faa1005204fae83/joint_events/joint_event.world' />
 
 ## Position
 
 As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/gazebo/msgs/sim_event.proto?at=default&fileviewer=file-view-default) is [published](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Angle: must be in range -PI to PI  -->/' to='/</event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events_louise/joint_events/joint_event.world' />
+~~~
+    <!-- Angle: must be in range -PI to PI  -->
+    <event>
+      <name>joint_angle</name>
+      <type>joint</type>
+      <model>revoluter</model>
+      <joint>my_joint</joint>
+      <range>
+        <type>normalized_angle</type>
+        <min>1.55</min>
+        <max>1.70</max>
+      </range>
+    </event>
+~~~
 
 ## Velocity
 
 As the joint named `my_joint` enters or exits the velocity range between 3 and 3.3 rad/s, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Velocity -->/' to='/</event> <!-- end Velocity -->/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events_louise/joint_events/joint_event.world' />
+~~~
+    <!-- Velocity -->
+    <event>
+      <name>joint_velocity</name>
+      <type>joint</type>
+      <model>revoluter</model>
+      <joint>my_joint</joint>
+      <range>
+        <type>velocity</type>
+        <min>3</min>
+        <max>3.3</max>
+      </range>
+    </event>
+~~~
 
 ## Applied force
 
 As the force applied by user on the joint named `my_joint` enters or exits the effort range between 3 and 3.3 Nm, a [`gazebo::msgs::SimEvents` message](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) is published over the topic `/gazebo/sim_events`.
 
-<include lang="xml" from='/    <!-- Applied Force -->/' to='/</event>/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/joint_events_louise/joint_events/joint_event.world' />
+~~~
+    <!-- Applied Force -->
+    <event>
+      <name>joint_force</name>
+      <type>joint</type>
+      <model>revoluter</model>
+      <joint>my_joint</joint>
+      <type>applied_force</type>
+      <range>
+        <type>applied_force</type>
+        <min>3</min>
+        <max>3.3</max>
+      </range>
+    </event>
+~~~
 
 # Running simulation with joint events plugin
 
