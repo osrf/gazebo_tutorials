@@ -887,6 +887,13 @@
         hand model and use it in Gazebo.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX Simulation Scoring Plugin Example" ref='haptix_scoring_plugin'>
+      <markdown version="7.0+">haptix_scoring_plugin/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Gazebo SimEvents plugin to keep score of individual user task performance in a custom world.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -1146,6 +1153,7 @@
         <tutorial>haptix_world_sim_api</tutorial>
         <tutorial>haptix_logging</tutorial>
         <tutorial>haptix_luke_hand</tutorial>
+        <tutorial>haptix_scoring_plugin</tutorial>
       </tutorials>
     </category>
 
