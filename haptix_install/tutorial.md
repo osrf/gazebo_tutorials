@@ -242,3 +242,37 @@ Simulator Version : Client SDK Version
 * 0.7.x  : 0.6.y
 * 0.6.x  : 0.5.y
 
+# HAPTIX CANbus driver
+
+The HAPTIX CANbus driver is needed to control the real DEKA Luke hand using the
+HAPTIX client library SDK. The installation process requires access to the
+DEKA webtransfer system. If you believe you should have received access but do
+not, please contact `haptix@osrfoundation.org` for help.
+
+A CANbus adapter is also required.
+We recommend the
+[PCAN-USB Adapter](http://www.phytools.com/PEAK_IPEH_002021_PCAN_USB_Adapter_p/ipeh-002021.htm)
+made by PEAK-System Technik.
+
+## Installing on Windows
+
+1. Download the zipped file `haptix-canbus-osrf.zip` from the DEKA webtransfer system.
+
+1. Unzip it in your preferred directory and you will find the `haptix.exe`
+file which will enable the communication with the hand via the HAPTIX
+protocol when executed.
+
+
+## Installing on Linux
+
+1. Install the CANbus dependencies.
+
+        sudo apt-get update
+        sudo apt-get install libpcan-dev libpcanbasic-dev
+
+1. Download the package `haptix-luke-proprietary_0.0.1-1~trusty_amd64.deb` from
+the DEKA webtransfer system.
+
+1. Install the HAPTIX CANbus driver.
+
+        sudo dpkg -i ~/Downloads/haptix-luke-proprietary_0.0.1-1~trusty_amd64.deb
