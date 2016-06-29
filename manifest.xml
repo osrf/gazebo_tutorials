@@ -1147,6 +1147,7 @@
         <tutorial>haptix_world_sim_api</tutorial>
         <tutorial>haptix_logging</tutorial>
         <tutorial>haptix_luke_hand</tutorial>
+        <tutorial>haptix_scoring_plugin</tutorial>
       </tutorials>
     </category>
 
