@@ -255,7 +255,7 @@ available. Take a look at some of them substituting into the world above!
 
 ## Animation
 
-### Combining different skins ans animations
+### Combining different skins and animations
 
 Sometimes, it is useful to combine different skins with different animations.
 Gazebo allows us to take the skin from one file, and the animation from
