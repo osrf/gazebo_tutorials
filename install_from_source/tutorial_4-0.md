@@ -165,7 +165,7 @@ To install from source, you should first install the SDFormat package, then buil
   
     >        cmake -DCMAKE_BUILD_TYPE=Debug ../
     
-    > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the developemnt, you can use:
+    > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the development, you can use:
 
     >>        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
  
