@@ -241,7 +241,7 @@ like this:
 
 Finally, you can use a few example meshes which are installed with Gazebo by
 referencing directly to their filenames. Below is the list of the ones
-available. Take a look at some of them substituting into the world above!
+available. Take a look at some of them substituting into the `walk.world` above!
 
 * `moonwalk.dae`
 * `run.dae`
@@ -363,13 +363,18 @@ Ok, so the actor was both moving back and forth in the world, and moving his
 legs. But that didn't look very natural, right? His feet were sliding on the
 ground.
 
-Let's tell Gazebo to synchronize the distance travelled by the trajectory, with
-the animation, by setting `<interpolate_x>` to true inside `<animation>`:
+Our skeleton animation contains a translational component in the X axis, as we
+could notice by running the animation without any trajectory. But that animation
+is not yet synchronized with our trajectory. We can enable that by setting
+`<interpolate_x>` to true inside `<animation>`.
 
           <animation name="walking">
             <filename>walk.dae</filename>
             <interpolate_x>true</interpolate_x>
           </animation>
+
+> **Note**: There are no interpolate flags for the `y` or `z` axes, so make sure
+your in-place animations move along the x axis.
 
 Now you finally have the two animations playing in perfect sync. You should be
 seeing the person walking from one side to the other, faster in one direction,
