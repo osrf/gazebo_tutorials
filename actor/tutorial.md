@@ -1,3 +1,5 @@
+** This tutorial applies to Gazebo versions 8+**
+
 # Overview
 
 This tutorial explains how to use Gazebo's "actors" to create scripted animations.
