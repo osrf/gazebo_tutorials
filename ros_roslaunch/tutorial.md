@@ -416,7 +416,7 @@ The disadvantage of this method is that your packaged `MYROBOT_description` and 
 are not as easily portable between computers - you first have to set the `GAZEBO_MODEL_PATH`
 on any new system before being able to use these ROS packages.
 
-## Exporting model paths from a pcakage.xml
+## Exporting model paths from a package.xml
 
 The useful info would be the format for exporting model paths from a package.xml:
 
