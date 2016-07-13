@@ -1,4 +1,4 @@
-**This tutorial applies to Gazebo versions 8+**
+#**This tutorial applies to Gazebo versions 8+**
 
 # Overview
 
