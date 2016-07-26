@@ -502,12 +502,9 @@ save, then launch the same launch files as for GPU Laser.
 
 **Description:** ROS interface for applying Wrench (geometry_msgs) on a body in simulation.
 
-## IMU sensor (GazeboRosImuSensor)
+## IMU (GazeboRosImu)
 
-**Description:** simulates an Inertial Motion Unit sensor, the main differences from **IMU** (GazeboRosIMU) are:
-  - inheritance from SensorPlugin instead of ModelPlugin,
-  - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
-  - gravity is included in inertial measurements.
+**Description:** simulates IMU sensor. Measurements are computed by the ROS plugin, not by Gazebo. See usage snippet sample below for implementation.
 
 ~~~
 <robot>
@@ -525,6 +522,12 @@ save, then launch the same launch files as for GPU Laser.
 </robot>
 ~~~
 
+## IMU sensor (GazeboRosImuSensor)
+
+**Description:** simulates an Inertial Motion Unit sensor, the main differences from **IMU** (GazeboRosIMU) are:
+  - inheritance from SensorPlugin instead of ModelPlugin,
+  - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
+  - gravity is included in inertial measurements.
 
 ## Joint Pose Trajectory
 
