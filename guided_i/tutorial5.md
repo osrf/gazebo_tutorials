@@ -535,7 +535,7 @@ plugin.
     
       // Publish to the  velodyne topic
       gazebo::transport::PublisherPtr pub =
-        node->Advertise<gazebo::msgs::Vector3d>("~/my_velodyne/vel_cmd");
+        node->Advertise<gazebo::msgs::Vector3d>("~/my_velodyne/velodyne_cmd");
     
       // Wait for a subscriber to connect to this publisher
       pub->WaitForConnection();
