@@ -359,7 +359,7 @@ simultaneously.
         this->node->Init(this->model->GetWorld()->GetName());
 
         // Create a topic name
-        std::string topicname = "~/" + this->model->GetName() + "/velodyne_cmd";
+        std::string topicname = "~/" + this->model->GetName() + "/vel_cmd";
 
         // Subscribe to the topic, and register a callback
         this->sub = this->node->Subscribe(topicName,
@@ -535,7 +535,7 @@ plugin.
     
       // Publish to the  velodyne topic
       gazebo::transport::PublisherPtr pub =
-        node->Advertise<gazebo::msgs::Vector3d>("~/my_velodyne/velodyne_cmd");
+        node->Advertise<gazebo::msgs::Vector3d>("~/my_velodyne/vel_cmd");
     
       // Wait for a subscriber to connect to this publisher
       pub->WaitForConnection();
