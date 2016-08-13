@@ -42,7 +42,8 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 # OSRF Internal Development Process
 
-   The steps listed below detail how a Gazebo release is developed. This process is enforced by the core Gazebo team, which currently resides at [http://osrfoundation.org OSRF].
+   The steps listed below detail how a Gazebo release is developed.
+   This process is enforced by the core Gazebo team, which currently resides at [OSRF](http://osrfoundation.org).
 
 ## Step 1: New features and/or bug fixes
 
