@@ -359,7 +359,7 @@ simultaneously.
         this->node->Init(this->model->GetWorld()->GetName());
 
         // Create a topic name
-        std::string topicname = "~/" + this->model->GetName() + "/velodyne_cmd";
+        std::string topicname = "~/" + this->model->GetName() + "/vel_cmd";
 
         // Subscribe to the topic, and register a callback
         this->sub = this->node->Subscribe(topicName,
