@@ -18,6 +18,7 @@ your system.
 1. Add a header files to the `velodyne_plugin.cc` file.
 
     ```
+    #include <thread>
     #include "ros/ros.h"
     #include "ros/callback_queue.h"
     #include "ros/subscribe_options.h"
@@ -100,13 +101,13 @@ your system.
 
         ```
         cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-        
+
         find_package(roscpp REQUIRED)
         find_package(std_msgs REQUIRED)
         include_directories(${roscpp_INCLUDE_DIRS})
         include_directories(${std_msgs_INCLUDE_DIRS})
         ```
-    
+
     1. Modify the plugin's target link libraries.
 
         ```
@@ -122,20 +123,20 @@ your system.
         find_package(std_msgs REQUIRED)
         include_directories(${roscpp_INCLUDE_DIRS})
         include_directories(${std_msgs_INCLUDE_DIRS})
-        
+
         # Find Gazebo
         find_package(gazebo REQUIRED)
         include_directories(${GAZEBO_INCLUDE_DIRS})
         link_directories(${GAZEBO_LIBRARY_DIRS})
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
-        
+
         # Build our plugin
         add_library(velodyne_plugin SHARED velodyne_plugin.cc)
         target_link_libraries(velodyne_plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
-        
+
         # Build the stand-alone test program
         add_executable(vel vel.cc)
-        
+
         if (${gazebo_VERSION_MAJOR} LESS 6)
           include(FindBoost)
           find_package(Boost ${MIN_BOOST_VERSION} REQUIRED system filesystem regex)
@@ -144,6 +145,12 @@ your system.
           target_link_libraries(vel ${GAZEBO_LIBRARIES})
         endif()
         ```
+
+1. Make sure you've sourced ROS:
+
+    ```
+    source /opt/ros/<DISTRO>/setup.bash
+    ```
 
 1. Recompile the plugin.
 
@@ -159,16 +166,25 @@ We can now load the Gazebo plugin as usual, and it will listen on ROS topic
 for incoming float messages. These messages will then be used to set the
 Velodyne's rotational speed.
 
-1. Start Gazebo
+1. Start `roscore`
+
+    ```
+    source /opt/ros/<DISTRO>/setup.bash
+    roscore
+    ```
+
+1. In a new terminal, start Gazebo
 
     ```
     cd ~/velodyne_plugin/build
-    gazebo ../worlds/velodyne.world
+    source /opt/ros/<DISTRO>/setup.bash
+    gazebo ../velodyne.world
     ```
 
 1. In a new terminal, use `rostopic` to send a velocity message.
 
     ```
+    source /opt/ros/<DISTRO>/setup.bash
     rostopic pub /my_velodyne/vel_cmd std_msgs/Float32 1.0
     ```
 
