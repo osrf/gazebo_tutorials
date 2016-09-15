@@ -28,7 +28,7 @@ the SimEventsPlugin to keep track of the status of aforementioned task completio
 
 Below is an example of the custom world as tele-operated by keyboard and spacenav options:
 
-<iframe width="600" height="450" src="https://www.youtube.com/watch?v=pj6mMQOjTPM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pj6mMQOjTPM" frameborder="0" allowfullscreen></iframe>
 
 In the video, there are three little task completion indicator dots at the lower right hand side of the hand visualization GUI.
 The left most circular dot indicates correct compression without buckling, green if compressed without buckling, red if uncompressed or buckled.
