@@ -39,10 +39,11 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     cd ~; hg clone https://bitbucket.org/osrf/gzweb
     ~~~
 
- 1. Enter the Gzweb repository and switch to the 1.2.0 branch:
+ 1. Enter the Gzweb repository and switch to a release branch:
 
     ~~~
     cd ~/gzweb
+    # Note for Gazebo versions < 6, please use the gzweb_1.2.0 branch
     hg up gzweb_1.2.0
     ~~~
 
@@ -72,7 +73,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     ./deploy.sh -m
     ~~~
 
-    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed.
+    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed. The process will also try to generate thumbnails, see note on thumbnails below.
 
 ## Options
 
@@ -83,6 +84,8 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 * To generate thumbnails manually, run the script with the `-t` flag, i.e.:
 
         ./deploy.sh -t
+
+    >Note: This spins up a gzserver with a camera for capturing screenshots of models. So make sure there is rendering support and no background gzerver process running (or set a different `GAZEBO_MASTER_URI` in the terminal).
 
 * If you'll use gzweb on mobile devices, you can create coarse versions of all models, which are lighter to load (50% of original quality). If generated, these meshes will automatically be used on mobile devices. If you've already ran `./deploy.sh -m`, run just:
 
@@ -172,4 +175,3 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     A: It seems that your Gazebo installation didn't install GTS headers. Try installing them manually:
 
         sudo apt-get install libgts-dev
-
