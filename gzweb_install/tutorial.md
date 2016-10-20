@@ -44,7 +44,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     ~~~
     cd ~/gzweb
     # Note for Gazebo versions < 6, please use the gzweb_1.2.0 branch
-    hg up gzweb_1.2.0
+    hg up gzweb_1.3.0
     ~~~
 
  1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
