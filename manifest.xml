@@ -227,6 +227,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+     <tutorial title="Make an animated model (actor)" ref='actor'>
+      <markdown version="8+">actor/tutorial.md</markdown>
+      <description>Describes how to create animated skeletons and scripted trajectories.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Model structure and requirements" ref='model_structure'>
       <markdown version="1.9+">model_structure/tutorial.md</markdown>
       <description>Describes how Gazebo finds and load models, and requirements for creating a model.</description>
@@ -938,6 +944,7 @@
         <tutorial>nested_model</tutorial>
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
+        <tutorial>actor</tutorial>
         <tutorial>inertia</tutorial>
         <tutorial>visual_layers</tutorial>
       </tutorials>
