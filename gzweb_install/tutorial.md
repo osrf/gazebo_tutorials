@@ -43,7 +43,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
     ~~~
     cd ~/gzweb
-    # Note for Gazebo versions < 6, please use the gzweb_1.2.0 branch
+    # Note for Gazebo versions < 7, please use the gzweb_1.2.0 branch
     hg up gzweb_1.3.0
     ~~~
 
