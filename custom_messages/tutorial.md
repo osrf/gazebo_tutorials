@@ -575,7 +575,7 @@ add_dependencies(collision_map_creator collision_map_creator_msgs)
 
 ## Build and Deploy ##
 
-First, you will need to intall protobuf-compiler.
+First, you will need to install a dependency package, protobuf-compiler.
 
 ~~~
 sudo apt-get install protobuf-compiler
