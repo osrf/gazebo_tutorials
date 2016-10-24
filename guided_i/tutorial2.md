@@ -154,8 +154,8 @@ section, we will create a Velodyne SDF model and add the two mesh files,
 1. Copy the contents of `velodyne.world` into `model.sdf` and leave
 only the `<?xml>`, `<sdf>` and `<model>` tags, removing the following:
 
-  * The opening and closing `<world>` tags
-  * The `<include>` tags for sun and ground plane
+    * The opening and closing `<world>` tags
+    * The `<include>` tags for sun and ground plane
 
 1. At this point, we should be able to start Gazebo, and dynamically insert
    the Velodyne model.
