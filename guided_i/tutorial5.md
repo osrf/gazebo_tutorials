@@ -249,7 +249,7 @@ private: common::PID pid;
 Recompile and run Gazebo.
 
 ```
-cd build
+cd ~/velodyne_plugin/build
 make
 gazebo ../velodyne.world
 ```
