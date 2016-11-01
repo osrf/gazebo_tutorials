@@ -30,11 +30,27 @@ build.
 
 ### Install Required Dependencies
 
-Install prerequisites.  A clean Ubuntu system will need:
+The simulator depends on sdformat, ignition-transport and ignition-math.
+In a clean Ubuntu installation you can install these dependencies from source (installation steps below) or you can use the pre-compiled version.
 
-    wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
-    ROS_DISTRO=dummy . /tmp/dependencies.sh
-    sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
+To install the pre-compiled version:
+
+1. Setup your computer to accept software from packages.osrfoundation.org.
+
+    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+
+1. Setup keys and update
+
+        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        sudo apt-get update
+
+1. Install prerequisites.  A clean Ubuntu system will need (replace dummy with your ROS version):
+
+        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        ROS_DISTRO=dummy . /tmp/dependencies.sh
+        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) 
 
 ### Optional Physics Engines
 
@@ -101,7 +117,6 @@ desire more stability (with the `hg up ign-math2` command).
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr
         make -j4
         sudo make install
-
 
 ### Build And Install SDFormat
 
