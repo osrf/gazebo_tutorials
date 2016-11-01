@@ -118,26 +118,6 @@ desire more stability (with the `hg up ign-math2` command).
         make -j4
         sudo make install
 
-### Build And Install ignition transport 
-
-Gazebo also depends on ignition transport library.
-
-1. Clone the reository:
-
-        hg clone https://bitbucket.org/ignitionrobotics/ign-transport /tmp/ign-transport
-        cd /tmp/ign-transport
-
-1. Create a build directory:
-
-        mkdir build
-        cd build
-
-1. Build and install:
-
-        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j4
-        sudo make install
-
 ### Build And Install SDFormat
 
 Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of that:
