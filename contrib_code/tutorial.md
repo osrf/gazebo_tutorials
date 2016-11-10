@@ -31,7 +31,7 @@ well to other repositories maintained by OSRF.
 1. Work out of a branch: `hg branch my_new_branch_name`
 > Always work out of a new branch, never off of default. This is a good habit to get in, and will make your life easier.
 
-1. Choosing a base branch.
+1. Choose a base branch.
 > If your changes will break API or ABI, then base your new branch off of default. If your changes don't break API/ABI and you would like them to be released to an existing gazebo release with major version `N`, then use branch `gazeboN` as the base.
 
 1. Write your code.
