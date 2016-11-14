@@ -175,9 +175,7 @@ desire more stability
 
     >        cmake -DCMAKE_BUILD_TYPE=Debug ../
 
-    > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the development, you can use:
-
-    >>        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
+    >>        cmake ../
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
@@ -194,6 +192,16 @@ desire more stability
         sudo make install
 
 1. Setup environment variables
+
+#### Optional tests suite compilation
+
+The generic call to `make` won't compile any of the different types of tests
+present in Gazebo. While this saves a lot of time in compilations, there are
+many reasons to compile and run the testing suite: submitting changes to
+gazebo repository, packaging for linux distributions, etc. In order to compile
+the whole gazebo test suite you'll need to run:
+
+    make tests
 
 #### Local Install
 
