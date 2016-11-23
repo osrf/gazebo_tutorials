@@ -340,6 +340,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Code introspection" ref='introspection'>
+      <markdown version="8.0+">introspection/tutorial.md</markdown>
+      <description>Introspect Gazebo and your plugins</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -976,6 +982,7 @@
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
+        <tutorial>introspection</tutorial>
       </tutorials>
     </category>
 
