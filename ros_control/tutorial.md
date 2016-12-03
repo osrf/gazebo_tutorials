@@ -329,7 +329,7 @@ Add another topic to the Plot plugin that tracks the error between the commanded
 For the RRBot:
 
 ~~~
-/rrbot/joint1_position_controller/state/error
+/rrbot/joint1_position_controller/state/process_value
 ~~~
 
 You screen should look something like this:
