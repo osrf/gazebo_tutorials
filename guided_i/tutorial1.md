@@ -8,18 +8,18 @@ We assume you are familiar with using Gazebo and Linux. We also assume that
 you are an expert tutorials reader (read everything carefully, and
 completely).
 
-During this series of tutorials we will create a 
+During this series of tutorials we will create a
 [Velodyne HDL-32 LiDAR](http://velodynelidar.com/hdl-32e.html). We will
-walk through 
+walk through
 
 1. creating an SDF model of the HDL-32 sensor,
-1. contributing the model to Gazebo's model database, 
+1. contributing the model to Gazebo's model database,
 1. improving the model's appearance and data output,
 1. controlling the model using a plugin, and
 1. visualizing the sensor data in Gazebo and RViz.
 
 Each of the above topics will be covered in separate tutorials. The rest of
-this tutorial will focus on the creation of the Velodyne SDF model. 
+this tutorial will focus on the creation of the Velodyne SDF model.
 
 # Model Creation
 
@@ -49,14 +49,14 @@ Based on the Velodyne documentation, we will create a sensor that has:
     <?xml version="1.0" ?>
     <sdf version="1.5">
       <world name="default">
-    
+
         <!-- A global light source -->
         <include>
           <uri>model://sun</uri>
         </include>
-    
+
         <!-- A ground plane -->
-        <include> 
+        <include>
           <uri>model://ground_plane</uri>
         </include>
       </world>
@@ -69,7 +69,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
    drawing](http://velodynelidar.com/lidar/hdldownloads/86-0106%20REV%20A%20OUTLINE%20DRAWING%20HDL-32E.pdf).
 
     [[file:files/velodyne_drawing.png|800px]]
-  
+
     1. Copy the following into the SDF world file directly before the `</world>` tag.
 
         ```
@@ -99,7 +99,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
               </geometry>
             </visual>
           </link>
-        
+
           <!-- Give the base link a unique name -->
           <link name="top">
 
@@ -172,7 +172,7 @@ oversized, which is due to our model lacking inertia information.
    which is 1.3kg, and giving the base link a majority (this distribution is
    a guess on our part). The moment of inertia matrix can be computed
    using equations found on
-   [Wikipedia](https://en.wikipedia.org/wiki/List_of_moments_of_inertia). 
+   [Wikipedia](https://en.wikipedia.org/wiki/List_of_moments_of_inertia).
 
     > The following are the inertia values for the `base` link. Copy the
     > `<inertial>` block into the indicated location.
@@ -239,32 +239,32 @@ select ```View->Transparent```).
 
 1. We first have to add a joint to the Velodyne model. The joint will be
    revolute, since the top link will spin relative to the base link.
-   
+
 1. Open the SDF world, and add a ``revolute`` joint before the `</model>`
    tag.
 
     ```
     <!-- Each joint must have a unique name -->
     <joint type="revolute" name="joint">
-    
+
       <!-- Position the joint at the bottom of the top link -->
       <pose>0 0 -0.036785 0 0 0</pose>
-    
+
       <!-- Use the base link as the parent of the joint -->
       <parent>base</parent>
-    
+
       <!-- Use the top link as the child of the joint -->
       <child>top</child>
-    
+
       <!-- The axis defines the joint's degree of freedom -->
       <axis>
-    
+
         <!-- Revolve around the z-axis -->
         <xyz>0 0 1</xyz>
-    
+
         <!-- Limit refers to the range of motion of the joint -->
         <limit>
-    
+
           <!-- Use a very large number to indicate a continuous revolution -->
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
@@ -290,12 +290,13 @@ select ```View->Transparent```).
 
     [[file:files/velodyne_joint_cmd_widget.png|800px]]
 
-1. Use the `Force` tab in this widget to apply a small force, 0.001 will be fine, to the joint. You should see the visualized joint start to spin around the model's Z-axis. 
+1. Use the `Force` tab in this widget to apply a small force, 0.001 will be fine, to the joint.
+Unpause the world, and you should see the visualized joint start to spin around the model's Z-axis.
 
 
 At this point we have a Velodyne model with good inertia, collision, and
 joint properties. In the next section we'll cover the final part of model,
-addition of the sensor. 
+addition of the sensor.
 
 ## Step 4: Add the sensor
 
@@ -304,9 +305,9 @@ section we'll add a `ray` sensor to the Velodyne model. A `ray` sensor in
 Gazebo consists of one or more beams that generate distance, and potentially
 intensity, data.
 
-A `ray` sensor consists of one `<scan>` and one `<range>` SDF element. The `<scan>` element defines the layout and number of beams, and the `<range>` element defines properties of an individual beam. i
+A `ray` sensor consists of one `<scan>` and one `<range>` SDF element. The `<scan>` element defines the layout and number of beams, and the `<range>` element defines properties of an individual beam.
 
-Within the `<scan>` elements is a `<horizontal>` and `<vertical>` element.
+Within the `<scan>` element are `<horizontal>` and `<vertical>` elements.
 The `<horizontal>` component defines rays that fan out in a horizontal
 plane, and the `<vertical>` component defines rays that fan out in
 a vertical plane.
@@ -319,12 +320,12 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
     ```
     <!-- Add a ray sensor, and give it a name -->
     <sensor type="ray" name="sensor">
-    
+
       <!-- Position the ray sensor based on the specification. Also rotate
            it by 90 degrees around the X-axis so that the <horizontal> rays
            become vertical -->
       <pose>0 0 -0.004645 1.5707 0 0</pose>
-    
+
       <!-- Enable visualization to see the rays in the GUI -->
       <visualize>true</visualize>
 
@@ -339,11 +340,11 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
 
     ```
     <ray>
-    
+
       <!-- The scan element contains the horizontal and vertical beams.
            We are leaving out the vertical beams for this tutorial. -->
       <scan>
-    
+
         <!-- The horizontal beams -->
         <horizontal>
           <!-- The velodyne has 32 beams(samples) -->
@@ -357,28 +358,28 @@ The Velodyne sensor requires vertical rays, that then rotate. We will simulated 
 
           <!-- Minimum angle in radians -->
           <min_angle>-0.53529248</min_angle>
-    
+
           <!-- Maximum angle in radians -->
           <max_angle>0.18622663</max_angle>
         </horizontal>
       </scan>
-    
+
       <!-- Range defines characteristics of an individual beam -->
       <range>
-        
+
         <!-- Minimum distance of the beam -->
         <min>0.05</min>
-    
+
         <!-- Maximum distance of the beam -->
         <max>70</max>
-    
+
         <!-- Linear resolution of the beam -->
         <resolution>0.02</resolution>
       </range>
     </ray>
     ```
 
-1. Start up simulation again, and you should see the 32 sensor beams.
+1. Start up simulation again, and you should see the 32 sensor beams when not paused.
 
     [[file:files/velodyne_rays.jpg|800px]]
 

@@ -50,6 +50,7 @@ Copy in the following code.
 #define _VELODYNE_PLUGIN_HH_
 
 #include <gazebo/gazebo.hh>
+#include <gazebo/physics/physics.hh>
 
 namespace gazebo
 {
@@ -144,7 +145,7 @@ Copy in the following SDF content.
 
 ## Step 5: Build and test
 
-We are now ready to compile the plugin, and test it out. 
+We are now ready to compile the plugin, and test it out.
 
 Within your workspace, create a build directory.
 
@@ -195,8 +196,9 @@ Velodyne's joint.
 Open the source file in your workspace.
 
 ```
-gedit velodyne_plugin.cc
+gedit ~/velodyne_plugin/velodyne_plugin.cc
 ```
+
 Modify the `Load` function to have the following content.
 
 ```
@@ -230,10 +232,24 @@ public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 }
 ```
 
+And add the following private members to the class, just below the `Load`
+function:
+
+```
+/// \brief Pointer to the model.
+private: physics::ModelPtr model;
+
+/// \brief Pointer to the joint.
+private: physics::JointPtr joint;
+
+/// \brief A PID controller for the joint.
+private: common::PID pid;
+```
+
 Recompile and run Gazebo.
 
 ```
-cd build
+cd ~/velodyne_plugin/build
 make
 gazebo ../velodyne.world
 ```
@@ -252,7 +268,7 @@ can be anything, as long as it is valid XML. Our plugin will have access to
 this value in the `Load` function.
 
 ```
-gedit velodyne.world
+gedit ~/velodyne_plugin/velodyne.world
 ```
 
 Modify the `<plugin>` to contain a new `<velocity>` element.
@@ -266,7 +282,7 @@ Modify the `<plugin>` to contain a new `<velocity>` element.
 Now let's read this value in the plugin's `Load` function.
 
 ```
-gedit velodyne_plugin.cc
+gedit ~/velodyne_plugin/velodyne_plugin.cc
 ```
 
 Modify the end of the `Load` function to read the `<velocity>` using the
@@ -289,10 +305,10 @@ this->model->GetJointController()->SetVelocityTarget(
 Compile and run simulation to see the results.
 
 ```
-cd build
+cd ~/velodyne_plugin/build
 cmake ../
 make
-gaezbo ../velodyne.world
+gazebo ../velodyne.world
 ```
 
 Adjust the `<velocity>` SDF value, and restart simulation to see the
@@ -323,7 +339,7 @@ simultaneously.
 1. Start by opening the `velodyne_plugin.cc` file.
 
     ```
-    gedit velodyne_plugin.cc
+    gedit ~/velodyne_plugin/velodyne_plugin.cc
     ```
 
 1. Create a new public function that can set the target velocity. This will
@@ -340,18 +356,18 @@ simultaneously.
     }
     ```
 
-1. Now we will setup the messaging passing infrastructure. 
+1. Now we will setup the messaging passing infrastructure.
 
-    1. Add a Node and subscriber to the plugin. 
+    1. Add a Node and subscriber to the plugin.
 
         ```
         /// \brief A node used for transport
         private: transport::NodePtr node;
-    
+
         /// \brief A subscriber to a named topic.
         private: transport::SubscriberPtr sub;
         ```
-    1. Instantiate the Node and subscriber at the end of `Load` function. 
+    1. Instantiate the Node and subscriber at the end of `Load` function.
 
         ```
         // Create the node
@@ -359,7 +375,7 @@ simultaneously.
         this->node->Init(this->model->GetWorld()->GetName());
 
         // Create a topic name
-        std::string topicname = "~/" + this->model->GetName() + "/vel_cmd";
+        std::string topicName = "~/" + this->model->GetName() + "/vel_cmd";
 
         // Subscribe to the topic, and register a callback
         this->sub = this->node->Subscribe(topicName,
@@ -391,12 +407,12 @@ simultaneously.
     ```
     #ifndef _VELODYNE_PLUGIN_HH_
     #define _VELODYNE_PLUGIN_HH_
-    
+
     #include <gazebo/gazebo.hh>
     #include <gazebo/physics/physics.hh>
     #include <gazebo/transport/transport.hh>
     #include <gazebo/msgs/msgs.hh>
-    
+
     namespace gazebo
     {
       /// \brief A plugin to control a Velodyne sensor.
@@ -404,7 +420,7 @@ simultaneously.
       {
         /// \brief Constructor
         public: VelodynePlugin() {}
-    
+
         /// \brief The load function is called by Gazebo when the plugin is
         /// inserted into simulation
         /// \param[in] _model A pointer to the model that this plugin is
@@ -418,42 +434,42 @@ simultaneously.
             std::cerr << "Invalid joint count, Velodyne plugin not loaded\n";
             return;
           }
-    
+
           // Store the model pointer for convenience.
           this->model = _model;
-    
+
           // Get the first joint. We are making an assumption about the model
           // having one joint that is the rotational joint.
           this->joint = _model->GetJoints()[0];
-    
+
           // Setup a P-controller, with a gain of 0.1.
           this->pid = common::PID(0.1, 0, 0);
-    
+
           // Apply the P-controller to the joint.
           this->model->GetJointController()->SetVelocityPID(
               this->joint->GetScopedName(), this->pid);
-    
+
           // Default to zero velocity
           double velocity = 0;
-    
+
           // Check that the velocity element exists, then read the value
           if (_sdf->HasElement("velocity"))
             velocity = _sdf->Get<double>("velocity");
-    
+
           this->SetVelocity(velocity);
-    
+
           // Create the node
           this->node = transport::NodePtr(new transport::Node());
           this->node->Init(this->model->GetWorld()->GetName());
-    
+
           // Create a topic name
           std::string topicName = "~/" + this->model->GetName() + "/vel_cmd";
-    
+
           // Subscribe to the topic, and register a callback
           this->sub = this->node->Subscribe(topicName,
              &VelodynePlugin::OnMsg, this);
         }
-    
+
         /// \brief Set the velocity of the Velodyne
         /// \param[in] _vel New target velocity
         public: void SetVelocity(const double &_vel)
@@ -462,7 +478,7 @@ simultaneously.
           this->model->GetJointController()->SetVelocityTarget(
               this->joint->GetScopedName(), _vel);
         }
-    
+
         /// \brief Handle incoming message
         /// \param[in] _msg Repurpose a vector3 message. This function will
         /// only use the x component.
@@ -470,23 +486,23 @@ simultaneously.
         {
           this->SetVelocity(_msg->x());
         }
-    
+
         /// \brief A node used for transport
         private: transport::NodePtr node;
-    
+
         /// \brief A subscriber to a named topic.
         private: transport::SubscriberPtr sub;
-    
+
         /// \brief Pointer to the model.
         private: physics::ModelPtr model;
-    
+
         /// \brief Pointer to the joint.
         private: physics::JointPtr joint;
-    
+
         /// \brief A PID controller for the joint.
         private: common::PID pid;
       };
-    
+
       // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
       GZ_REGISTER_MODEL_PLUGIN(VelodynePlugin)
     }
@@ -501,7 +517,7 @@ plugin.
 1. Create a new source file in your workspace.
 
     ```
-    gedit vel.cc
+    gedit ~/velodyne_plugin/vel.cc
     ```
 
 1. Add the following code. Comments in the code explain what is going on.
@@ -510,7 +526,7 @@ plugin.
     #include <gazebo/gazebo_config.h>
     #include <gazebo/transport/transport.hh>
     #include <gazebo/msgs/msgs.hh>
-    
+
     // Gazebo's API has changed between major releases. These changes are
     // accounted for with #if..#endif blocks in this file.
     #if GAZEBO_MAJOR_VERSION < 6
@@ -518,7 +534,7 @@ plugin.
     #else
     #include <gazebo/gazebo_client.hh>
     #endif
-    
+
     /////////////////////////////////////////////////
     int main(int _argc, char **_argv)
     {
@@ -528,31 +544,31 @@ plugin.
     #else
       gazebo::client::setup(_argc, _argv);
     #endif
-    
+
       // Create our node for communication
       gazebo::transport::NodePtr node(new gazebo::transport::Node());
       node->Init();
-    
+
       // Publish to the  velodyne topic
       gazebo::transport::PublisherPtr pub =
         node->Advertise<gazebo::msgs::Vector3d>("~/my_velodyne/vel_cmd");
-    
+
       // Wait for a subscriber to connect to this publisher
       pub->WaitForConnection();
-    
+
       // Create a a vector3 message
       gazebo::msgs::Vector3d msg;
-    
+
       // Set the velocity in the x-component
     #if GAZEBO_MAJOR_VERSION < 6
       gazebo::msgs::Set(&msg, gazebo::math::Vector3(std::atof(_argv[1]), 0, 0));
     #else
       gazebo::msgs::Set(&msg, ignition::math::Vector3d(std::atof(_argv[1]), 0, 0));
     #endif
-    
+
       // Send the message
       pub->Publish(msg);
-    
+
       // Make sure to shut everything down.
     #if GAZEBO_MAJOR_VERSION < 6
       gazebo::shutdown();
@@ -562,13 +578,17 @@ plugin.
     }
     ```
 
-1. Add a couple line to the `CMakeLists.txt` file in your workspace, to
+1. Add a few lines to the `CMakeLists.txt` file in your workspace, to
    build the new `vel` program.
+
+    ```
+    gedit ~/velodyne_plugin/CMakeLists.txt
+    ```
 
     ```
     # Build the stand-alone test program
     add_executable(vel vel.cc)
-    
+
     if (${gazebo_VERSION_MAJOR} LESS 6)
       # These two
       include(FindBoost)
@@ -582,7 +602,7 @@ plugin.
 1. Compile and run simulation
 
     ```
-    cd build
+    cd ~/velodyne_plugin/build
     cmake ../
     make
     gazebo ../velodyne.world
