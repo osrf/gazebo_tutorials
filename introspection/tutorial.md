@@ -17,7 +17,7 @@ items. GzServer has an introspection manager instance running and we already
 preregistered some items that allow us to introspect simulation time or the
 position, velocity, and acceleration of models and links, among other items.
 
-[[file:files/introspection_registration.png|640px]]
+[[file:files/introspection_registration.png|300px]]
 
 You can learn more about the introspection manager and its API by looking at the
 Util/IntrospectionManager class in the Gazebo source code.
@@ -54,8 +54,8 @@ $ mkdir ~/gazebo_instrospection_tutorial
 $ cd ~/gazebo_instrospection_tutorial
 ~~~
 
-Download the code of the plugin from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc here) and the code of the
-watcher from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/watcher.cc here). You'll also need a
+Download the code of the plugin from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc here) and the code of
+the watcher from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/watcher.cc here). You'll also need a
 (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt CMakeLists.txt) file.
 
 Let's compile the code:
@@ -122,8 +122,8 @@ First, let's take a look at the introspectable_plugin:
 
 <include from='/    void Load/' to='/fCounterValue);\n\s+}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc' />
 
-On Load(), as usual we connect the world update event with our OnUpdate()
-function. The rest of the code in Load() is registering the counter in the
+On Load(), we connect the world update event with our OnUpdate() function.
+The rest of the code in Load() is registering the counter in the
 introspection manager. You can see how we get an instance of the manager and
 call Register(). We have to specify the type of our item (int in this case), a
 string representation of the item ("data://my_plugin/counter") and a callback.
