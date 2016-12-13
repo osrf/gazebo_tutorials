@@ -119,7 +119,7 @@ time and the counter.
 
 First, let's take a look at the introspectable_plugin:
 
-<include from='//svoid Load/' to='/fCounterValue);\n\s+}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc' />
+<include from='//svoid Load/' to='/fCounterValue);\n\s+}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/introspectable_plugin.cc' />
 
 On Load(), we connect the world update event with our OnUpdate() function.
 The rest of the code in Load() is registering the counter in the
@@ -138,7 +138,7 @@ freedom to fill this function with any code that you need.
 
 Now, let's study the watcher program:
 
-<include from='/\s//Use the/' to='/(2));/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc' />
+<include from='/\s//Use the/' to='/(2));/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/watcher.cc' />
 
 This executable is in charge of the subscription to a specific set of items that
 are introspectable. We created the class IntrospectionClient to help all the
@@ -146,18 +146,18 @@ clients of the introspection service. As you can see, we instantiate one object
 of type IntrospectionClient, and then, we wait for the introspection manager to
 come online.
 
-<include from='/\s// Pick up/' to='//counter";/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc' />
+<include from='/\s// Pick up/' to='//counter";/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/watcher.cc' />
 
 In theory, we could have multiple introspection managers running, although in
 the case of Gazebo will only have one. We're working under this assumption, so
 we'll save the Id of the first introspection manager detected.
 
-<include from='/\s// The \'sim_time\'/' to='/manager.\n";\nreturn -1\n;}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc' />
+<include from='/\s// The \'sim_time\'/' to='/manager.\n";\nreturn -1\n;}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/watcher.cc' />
 
 This code block perform a sanity check to make sure that both items are
 registered in the introspection manager.
 
-<include from='/\s// Create a filter \'sim_time\'/' to='/waitForShutdown();\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc' />
+<include from='/\s// Create a filter \'sim_time\'/' to='/waitForShutdown();\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/watcher.cc' />
 
 This is the part where we notify our manager that we're interested on a set of
 topics (simTime and counter). `filterId` and `topic` are output variables. After
