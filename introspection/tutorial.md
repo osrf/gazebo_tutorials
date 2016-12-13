@@ -119,7 +119,7 @@ time and the counter.
 
 First, let's take a look at the introspectable_plugin:
 
-<include from='/class ModelPush/' to='/counter = 0;/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/introspectable_plugin.cc' />
+<include from='/  class ModelPush/' to='/counter = 0;/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/introspectable_plugin.cc' />
 
 
 On Load(), we connect the world update event with our OnUpdate() function.
