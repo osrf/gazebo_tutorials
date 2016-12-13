@@ -119,4 +119,45 @@ time and the counter.
 
 First, let's take a look at the introspectable_plugin:
 
-<include from='/void Load/' to='/\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/introspectable_plugin.cc' />
+~~~
+public: void Load(physics::WorldPtr _parent, sdf::ElementPtr /*_sdf*/)
+{
+  // Listen to the update event. This event is broadcast every
+  // simulation iteration.
+  this->updateConnection = event::Events::ConnectWorldUpdateBegin(
+      std::bind(&ModelPush::OnUpdate, this));
+
+  // Introspection callback.
+  auto fCounterValue = [this]()
+  {
+    return this->counter;
+  };
+
+  // Register the counter element.
+  gazebo::util::IntrospectionManager::Instance()->Register
+  <int>("data://my_plugin/counter", fCounterValue);
+}
+
+// Called by the world update start event
+public: void OnUpdate()
+{
+  ++this->counter;
+}
+~~~
+
+On Load(), we connect the world update event with our OnUpdate() function.
+The rest of the code in Load() is registering the counter in the
+introspection manager. You can see how we get an instance of the manager and
+call Register(). We have to specify the type of our item (int in this case), a
+string representation of the item ("data://my_plugin/counter") and a callback.
+In this example, the callback is a lambda function.
+
+The introspection manager is going to associate this callback with
+"data://my_plugin/counter". Essentially, the string is the name of the item in
+the manager. The callback is the way that the manager has to retrieve the next
+value from this item. So, if there is any client interested in this value, the
+manager will call this callback every time it needs an update. In the callback
+we're directly returning the value of our member variable counter but you have
+freedom to fill this function with any code that you need.
+
+Now, let's study the watcher program:
