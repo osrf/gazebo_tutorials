@@ -54,9 +54,8 @@ $ mkdir ~/gazebo_instrospection_tutorial
 $ cd ~/gazebo_instrospection_tutorial
 ~~~
 
-Download the code of the plugin from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc here) and the code of
-the watcher from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/watcher.cc here). You'll also need a
-(http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt CMakeLists.txt) file.
+Download the code of the plugin from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc) and
+the code of the watcher from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/watcher.cc). You'll also need a [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt) file.
 
 Let's compile the code:
 
@@ -71,7 +70,7 @@ ready for testing.
 
 ## Run the code
 
-Download a world file from (http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/empty.world here), that will load your world plugin.
+Download a world file from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/empty.world), that will load your world plugin.
 
 Start gazebo:
 
