@@ -171,3 +171,70 @@ we're directly returning the value of our member variable counter but you have
 freedom to fill this function with any code that you need.
 
 Now, let's study the watcher program:
+
+~~~
+// Use the introspection service for finding the "sim_time" item.
+gazebo::util::IntrospectionClient client;
+
+// Wait for the managers to come online.
+std::set<std::string> managerIds = client.WaitForManagers(
+    std::chrono::seconds(2));
+~~~
+
+This executable is in charge of the subscription to a specific set of items that
+are introspectable. We created the class IntrospectionClient to help all the
+clients of the introspection service. As you can see, we instantiate one object
+of type IntrospectionClient, and then, we wait for the introspection manager to
+come online.
+
+~~~
+// Pick up the first manager.
+std::string managerId = *managerIds.begin();
+~~~
+
+In theory, we could have multiple introspection managers running, although in
+the case of Gazebo will only have one. We're working under this assumption, so
+we'll save the Id of the first introspection manager detected.
+
+~~~
+// The 'sim_time' is not registered.
+if (!client.IsRegistered(managerId, simTime))
+{
+  std::cerr << "The sim_time item is not registered on the manager.\n";
+  return -1;
+}
+
+// The 'counter' is not registered.
+if (!client.IsRegistered(managerId, counter))
+{
+  std::cerr << "The counter item is not registered on the manager.\n";
+  return -1;
+}
+~~~
+
+This code block perform a sanity check to make sure that both items are
+registered in the introspection manager.
+
+~~~
+// Create a filter for watching the items.
+  std::string filterId, topic;
+  if (!client.NewFilter(managerId, {simTime, counter}, filterId, topic))
+    return -1;
+
+  // Let's subscribe to the topic for receiving updates.
+  ignition::transport::Node node;
+  node.Subscribe(topic, cb);
+
+  /// zZZZ.
+  ignition::transport::waitForShutdown();
+~~~
+
+This is the part where we notify our manager that we're interested on a set of
+topics (simTime and counter). `filterId` and `topic` are output variables. After
+this function, the manager will create a channel of communication under the
+topic `topic` with our custom updates. The `filterId` is a unique identifier for
+our filter, in case we want to update it or remove it in the future.
+
+Next, we instantiate an ignition::transport::Node and we use it to subscribe to
+our recently created topic. Note that we pass a callback as an argument. This is
+the callback that will be periodically executed with the requested values.
