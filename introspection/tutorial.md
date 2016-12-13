@@ -119,3 +119,4 @@ time and the counter.
 
 First, let's take a look at the introspectable_plugin:
 
+<include from='/void Load/' to='/fCounterValue);\n\s+}\n/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/introspection/introspection/files/introspectable_plugin.cc' />
