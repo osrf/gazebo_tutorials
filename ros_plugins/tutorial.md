@@ -152,7 +152,7 @@ An empty Gazebo should open and in the terminal you should see it print out some
 
 A template is available to help you quickly get a Gazebo-ROS plugin working:
 
-[gazebo_ros_template.cpp](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/hydro-devel/gazebo_plugins/src/gazebo_ros_template.cpp)
+[gazebo_ros_template.cpp](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/kinetic-devel/gazebo_plugins/src/gazebo_ros_template.cpp)
 
 ## Adding Functionality
 

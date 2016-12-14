@@ -42,6 +42,7 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
  * ***packages.ros.org***
   *  Indigo: host gazebo version 2.x package.
   *  Jade: host gazebo version 5.x package.
+  *  Kinetic: host or use gazebo version 7.x package.
  * ***packages.osrfoundation.org***
   * gazebo 5.x series (package name `gazebo5`)
   * gazebo 6.x series (package name `gazebo6`)
@@ -69,6 +70,14 @@ workspace for getting a valid `gazebo_ros_pkgs`.
 For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
+
+### Kinetic
+
+ROS Kinetic hosts or use the 7.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 7.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo7`) and do ***not*** use the osrfoundation
+repository.
 
 ### Jade
 
