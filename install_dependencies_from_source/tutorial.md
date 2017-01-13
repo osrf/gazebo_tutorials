@@ -23,17 +23,26 @@ extracted from Gazebo.
 
 ### SDFormat
 
-SDFormat was completely removed from Gazebo in version 1.9?
+Gazebo has had a dependency on SDFormat since early versions.
+
+* Gazebo 1.9 - SDFormat > 1?
+* Gazebo 2.2 - SDFormat > 1.4.7 and < 2.0
+* Gazebo 3 - SDFormat > 2.0.1 and < 3.0
+* Gazebo 4 - SDFormat > 2.0.1 and < 4.0
+* Gazebo 5 - SDFormat > 2.3.1 and < 4.0
+* Gazebo 6 - SDFormat > 3.1.1 and < 4.0
+* Gazebo 7 - SDFormat 4.1.0
+* Gazebo 8 - SDFormat 4.1.0
+* Gazebo 9 - SDFormat TBD
 
 ### Ignition Math
 
-Gazebo has a dependency on Ignition Math from version 5.
+Gazebo has a dependency on Ignition Math from version 6.
 
-* Gazebo 5 - Ignition math
-* Gazebo 6 - Ignition math
+* Gazebo 6 - Ignition math 2.0
 * Gazebo 7 - Ignition math 2.4
 * Gazebo 8 - Ignition math 3 - The built-in gazebo::math library is completely deprecated.
-* Gazebo 9 - Ignition math ? - The built-in gazebo::math library is completely removed.
+* Gazebo 9 - Ignition math TBD - The built-in gazebo::math library is completely removed.
 
 ### Ignition Transport
 
@@ -41,14 +50,14 @@ Gazebo has a dependency on Ignition Transport from version 7.
 
 * Gazebo 7 - Ignition transport 1 or 2
 * Gazebo 8 - Ignition transport 3
-* Gazebo 9 - Ignition transport ?
+* Gazebo 9 - Ignition transport TBD
 
 ### Ignition Messages
 
 Gazebo has a dependency on Ignition Messages from version 8.
 
 * Gazebo 8 - Ignition msgs 0.4
-* Gazebo 9 - Ignition msgs ?
+* Gazebo 9 - Ignition msgs TBD
 
 ## Build and install Ignition Math from source
 
@@ -91,7 +100,7 @@ desire more stability (with the `hg up ign-math3` command).
         make -j4
         sudo make install
 
-## Build And Install SDFormat from source
+## Build and install SDFormat from source
 
 Gazebo depends on the SDFormat package.
 
@@ -132,7 +141,7 @@ stability
         make -j4
         sudo make install
 
-## Build And Install Ignition Messages from source
+## Build and install Ignition Messages from source
 
 Gazebo and Ignition Transport depend on the Ignition Messages package.
 
@@ -170,7 +179,7 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
         make -j4
         sudo make install
 
-## Build And Install Ignition Transport from source
+## Build and install Ignition Transport from source
 
 Gazebo depends on the Ignition Transport package.
 
@@ -179,7 +188,10 @@ Gazebo depends on the Ignition Transport package.
         hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
-     **Note:** Ignition messages hasn't released version 1.0 yet. You can use the `default` branch for version 0.
+     **Note:** the `default` branch is the development branch where
+you'll find the bleeding edge code, your cloned repository should be on this
+branch by default but we recommend you switch to the `ign-transport3` branch if you
+desire more stability (with the `hg up ign-transport3` command).
 
 1. Create a build directory and go there:
 

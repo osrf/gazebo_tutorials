@@ -18,9 +18,9 @@ source version manually.
 
 As a side note, default install locations:
 
-  1. Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
+  1. Pre-compiled Ubuntu Binaries : `/usr/bin/gazebo`
 
-  2. Default source install : /usr/local/bin/gazebo
+  2. Default source install : `/usr/local/bin/gazebo`
 
 ### ROS Users
 
@@ -101,8 +101,8 @@ Gazebo development is tightly linked to the development of a few other libraries
 
 If you've installed all required dependencies following the instructions above, you
 already have the latest release of these libraries installed in your system.
-However, when working on new features, you often might need to build these
-libraries from source.
+However, when working on new features, you often need to build these libraries
+from source.
 
 If you don't need a special version of these libraries, **you can skip this
 section**. If you're not sure if you need to build these from source, you can
