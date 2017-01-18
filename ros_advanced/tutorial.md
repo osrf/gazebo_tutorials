@@ -4,16 +4,16 @@
 
 Some of the physics properties can be adjusted within Gazebo as we described in the [modifying a world tutorial](http://gazebosim.org/tutorials?tut=modifying_world&cat=build_world). In addition, we can modify this properties using ROS's dynamic reconfigure mechanism.
 
-As an example, we'll invert the gravity in the simulation. Make sure you have the following installed for groovy:
+As an example, we'll invert the gravity in the simulation. Make sure you have the following installed for jade:
 
 ~~~
-sudo apt-get install ros-groovy-rqt-common-plugins ros-groovy-dynamic-reconfigure
+sudo apt-get install ros-jade-rqt-common-plugins ros-jade-dynamic-reconfigure
 ~~~
 
-Or these packages for hydro:
+Or these packages for kinetic:
 
 ~~~
-sudo apt-get install ros-hydro-rqt-common-plugins ros-hydro-dynamic-reconfigure
+sudo apt-get install ros-kinetic-rqt-common-plugins ros-kinetic-dynamic-reconfigure
 ~~~
 
 Start Gazebo:
