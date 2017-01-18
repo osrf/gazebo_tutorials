@@ -1,4 +1,4 @@
-# Install dependencies from source
+# Install dependencies from source on Ubuntu
 
 This tutorial will go through the process of installing some of Gazebo's
 dependencies from source. The dependencies listed here are all maintained by
@@ -63,15 +63,21 @@ Gazebo has a dependency on Ignition Messages from version 8.
 
 SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
+1. Install required dependencies:
+
+        sudo apt-get install build-essential \
+                             cmake \
+                             mercurial
+
 1. Clone the repository into a directory and go into it:
 
         hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
      **Note:** the `default` branch is the development branch where
-you'll find the bleeding edge code, your cloned repository should be on this
-branch by default but we recommend you switch to the `ign-math3` branch if you
-desire more stability (with the `hg up ign-math3` command).
+     you'll find the bleeding edge code, your cloned repository should be on
+     this branch by default but we recommend you switch to the `ign-math3`
+     branch if you desire more stability (with the `hg up ign-math3` command).
 
 1. Create a build directory and go there:
 
@@ -80,20 +86,22 @@ desire more stability (with the `hg up ign-math3` command).
 
 1. Configure build (choose either method `a` or `b` below):
 
-    a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
+    a. Release mode (strictly speaking, `RelWithDebInfo`): This will generate
+       optimized code, but will not have debug symbols. Use this mode if you
+       don't need to use GDB.
 
            cmake ../
 
 
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+    > Note: You can use a custom install path to make it easier to switch
+    > between source and debian installs:
 
     >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
-    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
+    b. Debug mode: This will generate code with debug symbols. It will run
+       slower, but you'll be able to use GDB.
 
            cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-    >        cmake ../
 
 1. Build and install:
 
@@ -104,15 +112,31 @@ desire more stability (with the `hg up ign-math3` command).
 
 Gazebo depends on the SDFormat package.
 
+1. Install required dependencies (note that ign-math was left out):
+
+        sudo apt-get install build-essential \
+                             cmake \
+                             mercurial \
+                             python \
+                             libboost-system-dev \
+                             libboost-filesystem-dev \
+                             libboost-program-options-dev \
+                             libboost-regex-dev \
+                             libboost-iostreams-dev \
+                             libtinyxml-dev \
+                             libxml2-utils \
+                             ruby-dev \
+                             ruby
+
 1. Clone the repository into a directory and go into it:
 
         hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
      **Note:** the `default` branch is the development branch where you'll find
-the bleeding edge code, your cloned repository should be on this branch by
-default but we recommend you switch to branch `sdf4` if you desire more
-stability
+     the bleeding edge code, your cloned repository should be on this branch by
+     default but we recommend you switch to branch `sdf4` if you desire more
+     stability
 
 1. Create a build directory and go there:
 
@@ -121,20 +145,22 @@ stability
 
 1. Configure build (choose either method `a` or `b` below):
 
-    a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
+    a. Release mode (strictly speaking, `RelWithDebInfo`): This will generate
+       optimized code, but will not have debug symbols. Use this mode if you
+       don't need to use GDB.
 
            cmake ../
 
 
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+    > Note: You can use a custom install path to make it easier to switch
+    > between source and debian installs:
 
     >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
-    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
+    b. Debug mode: This will generate code with debug symbols. It will run
+       slower, but you'll be able to use GDB.
 
            cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-    >        cmake ../
 
 1. Build and install:
 
@@ -145,12 +171,22 @@ stability
 
 Gazebo and Ignition Transport depend on the Ignition Messages package.
 
+1. Install required dependencies:
+
+        sudo apt-get install build-essential \
+                             cmake \
+                             mercurial \
+                             libprotoc-dev \
+                             libprotobuf-dev \
+                             protobuf-compiler
+
 1. Clone the repository into a directory and go into it:
 
         hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
-     **Note:** Ignition messages hasn't released version 1.0 yet. You can use the `default` branch for version 0.
+     **Note:** Ignition messages hasn't released version 1.0 yet. You can use
+     the `default` branch for version 0.
 
 1. Create a build directory and go there:
 
@@ -159,20 +195,21 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
 1. Configure build (choose either method `a` or `b` below):
 
-    a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
+    a. Release mode (strictly speaking, `RelWithDebInfo`): This will generate
+       optimized code, but will not have debug symbols. Use this mode if you
+       don't need to use GDB.
 
            cmake ../
 
-
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+    > Note: You can use a custom install path to make it easier to switch
+    > between source and debian installs:
 
     >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
-    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
+    b. Debug mode: This will generate code with debug symbols. It will run
+       slower, but you'll be able to use GDB.
 
            cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-    >        cmake ../
 
 1. Build and install:
 
@@ -183,39 +220,10 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
 Gazebo depends on the Ignition Transport package.
 
-1. Clone the repository into a directory and go into it:
+Please follow the instructions on the Ignition Transport
+[documents](http://ignition-transport.readthedocs.io/en/latest/installation/installation.html#install-from-sources-ubuntu-linux).
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
-        cd /tmp/ign-msgs
+When installing dependencies, make sure you only install the
+`libignition-msgs-dev` package if you haven't installed Ignition Messages from
+source.
 
-     **Note:** the `default` branch is the development branch where
-you'll find the bleeding edge code, your cloned repository should be on this
-branch by default but we recommend you switch to the `ign-transport3` branch if you
-desire more stability (with the `hg up ign-transport3` command).
-
-1. Create a build directory and go there:
-
-        mkdir build
-        cd build
-
-1. Configure build (choose either method `a` or `b` below):
-
-    a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
-
-           cmake ../
-
-
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
-
-    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-
-    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-
-           cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-    >        cmake ../
-
-1. Build and install:
-
-        make -j4
-        sudo make install
