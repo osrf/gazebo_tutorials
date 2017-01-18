@@ -185,8 +185,8 @@ Gazebo depends on the Ignition Transport package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
-        cd /tmp/ign-msgs
+        hg clone https://bitbucket.org/ignitionrobotics/ign-transport /tmp/ign-transport
+        cd /tmp/ign-transport
 
      **Note:** the `default` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
