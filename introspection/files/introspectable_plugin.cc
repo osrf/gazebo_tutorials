@@ -22,8 +22,8 @@ namespace gazebo
       };
 
       // Register the counter element.
-      gazebo::util::IntrospectionManager::Instance()->Register
-      <int>("data://my_plugin/counter", fCounterValue);
+      gazebo::util::IntrospectionManager::Instance()->Register<int>(
+        "data://my_plugin/counter", fCounterValue);
     }
 
     // Called by the world update start event
