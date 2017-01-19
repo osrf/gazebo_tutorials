@@ -16,7 +16,7 @@ The Model Editor interface looks similar to the main Gazebo UI but with some sub
 
  1. **Toolbar** - Contains tools for editting the model
  2. **Palette** - Also known as *Left Panel*. Has two tabs for editing the model.
- 3. **Insert tab** - Tools for adding links and meshes
+ 3. **Insert tab** - Tools for adding links and nested models
  4. **Model tab** - Allows editing model properties and contents
 
 #### Palette (Left Panel)
