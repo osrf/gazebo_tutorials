@@ -20,7 +20,7 @@ position, velocity, and acceleration of models and links, among other items.
 [[file:files/introspection_registration.png|300px]]
 
 You can learn more about the introspection manager and its API by looking at the
-Util/IntrospectionManager class in the Gazebo source code.
+[Util/IntrospectionManager class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionManager.html) in the Gazebo source code.
 
 # Subscribing for receiving item updates
 
@@ -193,7 +193,7 @@ std::set<std::string> managerIds = client.WaitForManagers(
 ~~~
 
 This executable is in charge of the subscription to a specific set of items that
-are introspectable. We created the class `IntrospectionClient` to help all the
+are introspectable. We created the [`IntrospectionClient` class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionClient.html) to help all the
 clients of the introspection service. As you can see, we instantiate one object
 of type `IntrospectionClient`, and then, we wait for the introspection manager to
 come online.
