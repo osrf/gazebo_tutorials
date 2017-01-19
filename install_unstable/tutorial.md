@@ -15,32 +15,30 @@ presence of gazebo-stable repository in the system.
 ### Gazebo prerelease repo
 
 Gazebo prerelease versions are those released to test an upcoming release.
-To install the prerelease, first use the instructions in the
-[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
-to install the stable repository and after it add the
-prerelease repository:
+The prerelease packages repository is designed to work together with the
+stable repository, both need to be installed.
 
 ```
-# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install gazebo8 # (might not be released)
 ```
 
 ### Gazebo nightly repo
 
-Gazebo nightlies are packages released every night which can be used for different
-purposes like testing the last feature added to gazebo code. To install the
-nightlies, first use the instructions in the 
-[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
-to install the stable repository
-and then add the nightly repository:
+Gazebo nightlies are packages released every night which can be used for
+different purposes like testing the last feature added to gazebo code. The
+nighly packages repository is designed to work together with the stable
+repository, both need to be installed.
 
 ```
-# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install gazebo8
+sudo apt-get install gazebo8 (might not be released)
 ```
 
 ### Remove prereleases and nightly installed packages
