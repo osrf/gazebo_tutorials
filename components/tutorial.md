@@ -22,9 +22,9 @@ A number of models are provided in the [online model database](http://bitbucket.
 
 # Environment Variables
 
-Gazebo uses a number of environment variables to locate files, and set up communications between the server and clients.
-
-Starting with Gazebo 1.9.0, default values that work for most cases are compiled in. This means you don't need to set any variables.
+Gazebo uses a number of environment variables to locate files, and set up
+communications between the server and clients.  Default values that work for
+most cases are compiled in. This means you don't need to set any variables.
 
 Here are the variables:
 
