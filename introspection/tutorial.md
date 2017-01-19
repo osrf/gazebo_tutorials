@@ -22,7 +22,7 @@ position, velocity, and acceleration of models and links, among other items.
 You can learn more about the introspection manager and its API by looking at the
 Util/IntrospectionManager class in the Gazebo source code.
 
-# Receiving item updates
+# Subscribing for receiving item updates
 
 Once all potential introspectable items are registered, a client needs to
 notify the introspection service that it's interested in one or multiple items.
@@ -31,7 +31,7 @@ and the Id of an introspection manager is also passed.
 
 [[file:files/introspection_subscription.png|640px]]
 
-This operation is essentially creating a dedicated channel of communication
+This operation creates a dedicated channel of communication
 between the introspection manager and the client. The channel contains
 messages with the value of the variables specified in the filter.
 If one or more variables were not registered, they will not be received.
