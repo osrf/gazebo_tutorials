@@ -19,6 +19,7 @@ recommended that you look over these tutorials before proceeding.
 
 # Install Gazebo headers
 On some operating systems the development package must be installed prior to building a plugin.
+
 ```
 # Ubuntu or Debian
 sudo apt install libgazebo8-dev
