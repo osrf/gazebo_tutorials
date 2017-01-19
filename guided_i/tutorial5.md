@@ -4,7 +4,7 @@ At this point we have an almost fully functional sensor. The model
 components are in place, it's been added to Gazebo's online database, and
 a Gaussian noise model has been applied. The final component to add is
 a plugin that controls the sensor's one degree of freedom.
-If you skipped the previous tutorials then download the model here [[file:files/velodyne_hdl32.tar.gz]]
+If you skipped the previous tutorials then download the [model here.](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_hdl32.tar.gz)
 
 # Plugin overview
 
