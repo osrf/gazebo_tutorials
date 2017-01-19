@@ -5,11 +5,11 @@ process of creating a new simulation feature and contributing the feature to
 Gazebo.
 
 We assume you are familiar with using Gazebo and Linux. We also assume that
-you are an expert tutorials reader (read everything carefully, and
+you are an expert tutorial reader (read everything carefully, and
 completely).
 
 During this series of tutorials we will create a
-[Velodyne HDL-32 LiDAR](http://velodynelidar.com/hdl-32e.html). We will
+[Velodyne HDL-32 LiDAR](http://velodynelidar.com/hdl-32e.html), and we will
 walk through
 
 1. creating an SDF model of the HDL-32 sensor,
@@ -178,7 +178,7 @@ oversized, which is due to our model lacking inertia information.
     > `<inertial>` block into the indicated location.
 
     ````
-    <model name="velodyne">
+    <model name="velodyne_hdl-32">
       <link name="base">
         <pose>0 0 0.029335 0 0 0</pose>
         <inertial>
@@ -195,7 +195,7 @@ oversized, which is due to our model lacking inertia information.
 
     ````
 
-    > and the inertia values for the `top` link. Copy the
+    > Next add the inertia values for the `top` link. Copy the following
     > `<inertial>` block into the indicated location.
 
     ````
@@ -231,7 +231,7 @@ defines a single rotational degree of freedom between two links. A complete
 list of joints can be found on the [SDF
 website](http://sdformat.org/spec?ver=1.6&elem=joint#joint_type).
 
-As with most the previous sections, it is possible to visualize joints. With
+Of course, it is possible to visualize joints. With
 Gazebo running, Right click on a model, and choose ```View->Joints```.
 Joints are often located within a model, so you may have to make a model
 transparent to see the joint visualization (Right click on the model and
@@ -273,7 +273,7 @@ select ```View->Transparent```).
     </joint>
     ```
 
-1. Run the SDF world, paused, and visualization the joint.
+1. Run the SDF world, paused, and visualize the joint.
 
     1. ```gazebo velodyne.world -u```
 
@@ -294,7 +294,7 @@ select ```View->Transparent```).
 Unpause the world, and you should see the visualized joint start to spin around the model's Z-axis.
 
 
-At this point we have a Velodyne model with good inertia, collision, and
+At this point we have a Velodyne model with valid inertia, collision, and
 joint properties. In the next section we'll cover the final part of model,
 addition of the sensor.
 
