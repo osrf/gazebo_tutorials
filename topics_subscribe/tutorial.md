@@ -16,7 +16,8 @@ gz topic -l
 
 This example subscribes to a [WorldStatistics message](http://gazebosim.org/api/msgs/dev/world__stats_8proto.html) and assumes that you can link against Gazebo.
 
-Download listener.cc and CMakeLists.txt from the above link and put them into to a folder called listener at your home directory. Compile the example:
+Download `listener.cc` and `CMakeLists.txt` and put them into to a folder
+called `listener` at your home directory and then compile the example:
 
 ~~~
 mkdir ~/listener
