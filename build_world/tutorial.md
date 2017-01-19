@@ -10,12 +10,6 @@ This tutorial describes the process of creating a world with both static and dyn
 
 1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
 
-1.  Create a working directory for this tutorial:
-
-    ~~~
-    $ mkdir ~/build_world_tutorial; cd ~/build_world_tutorial
-    ~~~
-
 1.  Start up gazebo, and you should see a world with just a ground plane.
 
     ~~~
@@ -30,11 +24,11 @@ Gazebo provides two mechanisms for adding objects to Gazebo.
 
 1.  The first is a set of simple shapes, located above the render window.
 
-[[file:files/empty_world_simple_shapes_highlighted.png|640px]]
+    [[file:files/empty_world_simple_shapes_highlighted.png|640px]]
 
 1.  The second is via the [model database](https://bitbucket.org/osrf/gazebo_models), which is accessible by selecting the `Insert` tab in the upper left corner.
 
-[[file:files/empty_world_insert_highlighted.png|640px]]
+    [[file:files/empty_world_insert_highlighted.png|640px]]
 
 ## Adding Simple Shapes
 
@@ -56,7 +50,7 @@ Gazebo's model database is a repository of all types of models including robots,
 
 1.  Select the `Insert` tab in the upper left hand corner to access the model database.
 
-    > The list of models are divided into sections according to there current location. Each section is labeled with a path or URI. Selecting an object located on a remote server will cause the model to be downloaded and stored in `~/.gazebo/models`.
+    > The list of models are divided into sections according to their current location. Each section is labeled with a path or URI. Selecting an object located on a remote server will cause the model to be downloaded and stored in `~/.gazebo/models`.
 
 2.  Try adding various models to the world. Be patient when downloading models, as some may be large.
 
@@ -71,25 +65,47 @@ The pose of each model may be altered through the translate and rotate tools:
 [[file:files/empty_rts.png|640px]]
 
 ## Translation
-The translate tools allows you to move the object along the x, y, and z axes. Select this tool now and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
+The translate tool allows you to move the object along the x, y, and z axes. Select this tool now (or click `t`) and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
 
-You can also just click on the object itself and drag it to move on the x-y plane. You may control which axis the object moves along by pressing and holding the x, y, or z key while dragging the object.
+* You can also just click on the object itself and drag it to move on the x-y
+plane. You may control which axis the object moves along by pressing and
+holding the `x`, `y`, or `z` key while dragging the object.
+
+* You can hold the `Ctrl` key to snap the movement to a 1 meter grid.
+
+* If the object is not aligned with the world (for example after you use the
+rotate tool explained next), you can hold the `Shift` key so the visual markers
+show up aligned with the world, and you can translate in world coordinates.
 
 Try moving the objects around now into a different configuration.
 
 ## Rotation
-The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
+The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now (or click `r`) and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
+
+* You can also just click on the object itself and hold the `x`, `y`, or `z` keys
+while dragging it to constrain the motion to one of these axes.
+
+* You can hold the `Ctrl` key to snap the movement to 45 degree increments.
+
+* If the object is not aligned with the world, you can hold the `Shift` key so
+the visual markers show up aligned with the world, and you can rotate about the
+world axes.
 
 Try rotating the objects into a different configuration.
 
 ## Scale
-The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
+The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now (or click `s`) and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
+
+* You can also just click on the object itself and hold the `x`, `y`, or `z` keys
+while dragging it to constrain the scaling to one of these axes.
+
+* You can hold the `Ctrl` key to scale in 1 meter increments.
 
 Try scaling the simple shapes into different sizes.
 
 # Delete Models
 
-Model may also be deleted by selecting them and the hitting the `Delete` key, or by right-clicking on a model and selecting `Delete`.
+Models may also be deleted by selecting them and the hitting the `Delete` key, or by right-clicking on a model and selecting `Delete`.
 
 Try deleting a few models.
 
@@ -97,7 +113,7 @@ Try deleting a few models.
 
 Once you are happy with a world it can be save through the `File` menu.
 
-Select the `File` menu now, and choose `Save As`.
+Select the `File` menu now, and choose `Save World As`.
 
 A pop-up will appear asking you to enter a new filename. Enter `my_world.sdf` and click okay.
 
