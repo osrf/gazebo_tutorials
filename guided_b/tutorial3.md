@@ -13,10 +13,11 @@ To enter the Model Editor, click on `Edit` in the menu bar and select `Model Edi
 The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
 
 [[file:files/gazebo8_model_editor_ui.png|800px]]
-**1.** Toolbar - Contains tools for editting the model
-**2.** Palette - Also known as *Left Panel*. Has two tabs for editing the model.
-**3.** Insert tab - Tools for adding links and meshes
-**4.** Model tab - Allows editing model properties and contents
+
+ 1. **Toolbar** - Contains tools for editting the model
+ 2. **Palette** - Also known as *Left Panel*. Has two tabs for editing the model.
+ 3. **Insert tab** - Tools for adding links and meshes
+ 4. **Model tab** - Allows editing model properties and contents
 
 #### Palette (Left Panel)
 The **Palette** has two tabs.
