@@ -26,19 +26,19 @@ namespace gazebo
         "data://my_plugin/counter", fCounterValue);
     }
 
-    // Called by the world update start event
+    // Called by the world update start event.
     public: void OnUpdate()
     {
       ++this->counter;
     }
 
-    // Pointer to the update event connection
+    // Pointer to the update event connection.
     private: event::ConnectionPtr updateConnection;
 
     // A counter for testing the introspection capabilites.
     private: int counter = 0;
   };
 
-  // Register this plugin with the simulator
+  // Register this plugin with the simulator.
   GZ_REGISTER_WORLD_PLUGIN(ModelPush)
 }

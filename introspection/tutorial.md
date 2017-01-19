@@ -194,16 +194,16 @@ registered in the introspection manager.
 
 ~~~
 // Create a filter for watching the items.
-  std::string filterId, topic;
-  if (!client.NewFilter(managerId, {simTime, counter}, filterId, topic))
-    return -1;
+std::string filterId, topic;
+if (!client.NewFilter(managerId, {simTime, counter}, filterId, topic))
+  return -1;
 
-  // Let's subscribe to the topic for receiving updates.
-  ignition::transport::Node node;
-  node.Subscribe(topic, cb);
+// Let's subscribe to the topic for receiving updates.
+ignition::transport::Node node;
+node.Subscribe(topic, cb);
 
-  /// zZZZ.
-  ignition::transport::waitForShutdown();
+// zZZZ.
+ignition::transport::waitForShutdown();
 ~~~
 
 This is the part where we notify our manager that we're interested on a set of
