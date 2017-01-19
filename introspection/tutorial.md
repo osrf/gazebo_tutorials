@@ -1,7 +1,7 @@
 # Overview
 
 A new code introspection utility has been introduced in Gazebo 8. This new
-service allow clients to receive updates with the value of some requested
+service allows clients to receive updates with the value of some requested
 variables. The introspection service can be used to debug the state of internal
 variables within Gazebo, plugins, or even stand-alone applications.
 
@@ -50,35 +50,46 @@ time and our custom counter.
 Create a new directory for storing all files in this tutorial:
 
 ~~~
-$ mkdir ~/gazebo_instrospection_tutorial
-$ cd ~/gazebo_instrospection_tutorial
+mkdir ~/gazebo_introspection_tutorial
+cd ~/gazebo_introspection_tutorial
 ~~~
 
-Download the code of the plugin from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc) and
-the code of the watcher from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/watcher.cc). You'll also need a [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt) file.
+Download the code for the plugin, the watcher program and a `CMakeLists.txt` file:
+
+~~~
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/CMakeLists.txt
+~~~
 
 Let's compile the code:
 
 ~~~
-$ mkdir build && cd build
-$ cmake ..
-$ make
+mkdir build && cd build
+cmake ..
+make
 ~~~
 
-You should have a libintrospectable_plugin.so plugin and a watcher executable
+You should have a `libintrospectable_plugin.so` plugin and a `watcher` executable
 ready for testing.
 
 ## Run the code
 
-Download a world file from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/empty.world), that will load your world plugin.
+Download a world file that will load your world plugin:
+
+~~~
+cd ~/gazebo_introspection_tutorial
+wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/empty.world
+~~~
 
 Start gazebo:
 
 ~~~
-$ GAZEBO_PLUGIN_PATH=`pwd` gazebo --verbose ../empty.world
+cd ~/gazebo_introspection_tutorial/build
+GAZEBO_PLUGIN_PATH=`pwd` gazebo --verbose ../empty.world
 ~~~
 
-Note that we are setting the GAZEBO_PLUGIN_PATH with the path to our current
+Note that we are setting the `GAZEBO_PLUGIN_PATH` with the path to our build
 directory in order to help Gazebo finding our plugin. Once Gazebo is ready,
 execute the following command on a new terminal:
 
@@ -117,7 +128,7 @@ time and the counter.
 
 ## Walkthrough
 
-First, let's take a look at the introspectable_plugin:
+First, let's take a look at the `introspectable_plugin`:
 
 ~~~
 class ModelPush : public WorldPlugin
@@ -155,10 +166,10 @@ class ModelPush : public WorldPlugin
 ~~~
 
 
-On Load(), we connect the world update event with our OnUpdate() function.
-The rest of the code in Load() is registering the counter in the
+On `Load()`, we connect the world update event with our `OnUpdate()` function.
+The rest of the code in `Load()` is registering the counter in the
 introspection manager. You can see how we get an instance of the manager and
-call Register(). We have to specify the type of our item (int in this case), a
+call `Register()`. We have to specify the type of our item (`int` in this case), a
 string representation of the item ("data://my_plugin/counter") and a callback.
 In this example, the callback is a lambda function.
 
@@ -182,9 +193,9 @@ std::set<std::string> managerIds = client.WaitForManagers(
 ~~~
 
 This executable is in charge of the subscription to a specific set of items that
-are introspectable. We created the class IntrospectionClient to help all the
+are introspectable. We created the class `IntrospectionClient` to help all the
 clients of the introspection service. As you can see, we instantiate one object
-of type IntrospectionClient, and then, we wait for the introspection manager to
+of type `IntrospectionClient`, and then, we wait for the introspection manager to
 come online.
 
 ~~~
@@ -193,8 +204,8 @@ std::string managerId = *managerIds.begin();
 ~~~
 
 In theory, we could have multiple introspection managers running, although in
-the case of Gazebo will only have one. We're working under this assumption, so
-we'll save the Id of the first introspection manager detected.
+the case of Gazebo we will only have one. We're working under this assumption,
+so we'll save the Id of the first introspection manager detected.
 
 ~~~
 // The 'sim_time' is not registered.
@@ -212,7 +223,7 @@ if (!client.IsRegistered(managerId, counter))
 }
 ~~~
 
-This code block perform a sanity check to make sure that both items are
+This code block performs a sanity check to make sure that both items are
 registered in the introspection manager.
 
 ~~~
@@ -230,11 +241,12 @@ registered in the introspection manager.
 ~~~
 
 This is the part where we notify our manager that we're interested on a set of
-topics (simTime and counter). `filterId` and `topic` are output variables. After
+topics (`simTime` and `counter`). `filterId` and `topic` are output variables. After
 this function, the manager will create a channel of communication under the
 topic `topic` with our custom updates. The `filterId` is a unique identifier for
 our filter, in case we want to update it or remove it in the future.
 
-Next, we instantiate an ignition::transport::Node and we use it to subscribe to
+Next, we instantiate an `ignition::transport::Node` and we use it to subscribe to
 our recently created topic. Note that we pass a callback as an argument. This is
 the callback that will be periodically executed with the requested values.
+
