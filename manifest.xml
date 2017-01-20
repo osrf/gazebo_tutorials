@@ -496,7 +496,8 @@
 
     <tutorial title="Animated Box" ref='animated_box'>
       <markdown version="4.0-5.0">animated_box/tutorial_4.md</markdown>
-      <markdown version="6.0+">animated_box/tutorial.md</markdown>
+      <markdown version="6.0-7.0">animated_box/tutorial_6.md</markdown>
+      <markdown version="8.0+">animated_box/tutorial.md</markdown>
       <description>Animate the pose of box.</description>
       <skill>intermediate</skill>
       <tags>
