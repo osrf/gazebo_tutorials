@@ -28,16 +28,9 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
           <uri>model://hokuyo</uri>
           <pose>0.2 0 0.2 0 0 0</pose>
         </include>
-        <joint name="hokuyo_joint" type="revolute">
+        <joint name="hokuyo_joint" type="fixed">
           <child>hokuyo::link</child>
           <parent>chassis</parent>
-          <axis>
-            <xyz>0 0 1</xyz>
-            <limit>
-              <upper>0</upper>
-              <lower>0</lower>
-            </limit>
-          </axis>
         </joint>
     ~~~
 
@@ -49,7 +42,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
     [here](http://models.gazebosim.org/), and at the corresponding [mercurial
     repository](https://bitbucket.org/osrf/gazebo_models)).
 
-    The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint has and `<upper>` and `<lower>` limit of zero to prevent it from moving.
+    The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint is `fixed` to prevent it from moving.
 
     The `<child>` name in the joint is derived from the [hokuyo model's SDF](https://bitbucket.org/osrf/gazebo_models/src/6cd587c0a30e/hokuyo/model.sdf?at=default), which begins with:
 
