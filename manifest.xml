@@ -537,8 +537,9 @@
     </tutorial>
 
     <tutorial title="System Plugin" ref='system_plugin'>
-      <markdown version="3.0">system_plugin/tutorial_3-0.md</markdown>
-      <markdown version="5+">system_plugin/tutorial.md</markdown>
+      <markdown version="3.0-4.0">system_plugin/tutorial_3-0.md</markdown>
+      <markdown version="5.0-6.0">system_plugin/tutorial_5-0.md</markdown>
+      <markdown version="7.0+">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
