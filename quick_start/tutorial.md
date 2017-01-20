@@ -45,8 +45,8 @@ first is called `gzserver`, and the second `gzclient`.
 
 The `gzserver` executable runs the physics update-loop and sensor data
 generation. This is the core of Gazebo, and can be used independently of a
-graphical interface. You may see the phrase "run headless" thrown about in
-the forums. This phrase equates to running only the `gzserver`. An example
+graphical interface. You may see the phrase "run headless" thrown about. 
+This phrase equates to running only the `gzserver`. An example
 use case would involve running `gzserver` on a cloud computer where a user
 interface is not needed.
 
