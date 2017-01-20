@@ -500,7 +500,7 @@ It is important to start simple, and build up a model in steps. The first step i
 
     The two joints rotate about the y axis `<xyz>0 1 0</xyz>`, and connect each wheel to the chassis.
 
-1. Start gazebo, and insert your model. Click on the three white rectangles to the right of the screen and drag them to the left.
+1. Start gazebo, and insert your model. Click on the dots to the right of the screen and drag them to the left.
 
 1. A new window should appear that contains various controllers for each joint. (**Note** Make sure the model you want to control is selected)
 
