@@ -1,8 +1,8 @@
 # Introduction
 
-This tutorial demonstrates the process of creating a contact sensor, and
+This tutorial demonstrates the process of creating a contact sensor and
 getting the contact data via a plugin or a message. A contact sensor detects
-collisions between two object and reports the location of the contact
+collisions between two objects and reports the location of the contact
 associated forces.
 
 # Setup Tutorial
