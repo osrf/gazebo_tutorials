@@ -41,11 +41,11 @@ take a look at the NodeJs
 [documentation](https://nodejs.org/en/download/package-manager/).
 
 > **Tip**: In case you want to install more than one version of nodejs on your machine you can use nvm
-
-        curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-        source ~/.profile
-        nvm install [version number e.g: v5]
-        nvm use [version number e.g: v5]
+>
+>    curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+>    source ~/.profile
+>    nvm install [version number e.g: v5]
+>    nvm use [version number e.g: v5]
 
 Install jansson (JSON library)
 
