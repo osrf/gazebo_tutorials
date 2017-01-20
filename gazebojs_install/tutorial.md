@@ -10,16 +10,13 @@ The source code for this project can be found here: <https://bitbucket.org/osrf/
 
 This page explains how to install the GazeboJs Node bindings to Gazebo.
 
-
-
-
 ### Ubuntu Linux
 
 This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo and its  development libraries are installed.
 
 #### Setup
 
-Install the osrf repository and install the development libraries, dependending on the version of Gazeobo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?cat=install). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
+Install the osrf repository and install the development libraries, dependending on the version of Gazebo you are using (for example, libgazebo4-dev for Gazebo 4. see http://gazebosim.org/tutorials?cat=install). The dev Debian package contains the Gazebo header files that are necessary for the gazebojs installation. This is because the NodeJs Gazebo modules are automatically compiled on your machine when the 'npm install gazebojs' is invoked (see below).
 Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
 
 Make sure you have curl
@@ -38,18 +35,18 @@ You may have to install nodejs-legacy if the node command does not exist:
 If you already have nodejs, make sure that its version >=0.12.x:
 
     node --version
-    
-In case you had any problem with installation, or you are using a diffrent OS
 
-    https://nodejs.org/en/download/package-manager/
+In case you had any problem with installation, or you are using a diffrent OS,
+take a look at the NodeJs
+[documentation](https://nodejs.org/en/download/package-manager/).
 
-In case you want to install more than one version of nodejs on your machine you can use nvm
+> **Tip**: In case you want to install more than one version of nodejs on your machine you can use nvm
 
-    curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-    source ~/.profile
-    nvm install [version number e.g: v5]
-    nvm use [version number e.g: v5]
- 
+        curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+        source ~/.profile
+        nvm install [version number e.g: v5]
+        nvm use [version number e.g: v5]
+
 Install jansson (JSON library)
 
     sudo apt-get install libjansson-dev
@@ -65,7 +62,7 @@ Now that everything is installed, here are the steps to test it:
 
 
 Create a NodeJs project directory
- 
+
     mkdir gz_node_inst
     cd gz_node_inst
 
@@ -92,9 +89,11 @@ command) to invoke the NodeJs REPL console
 
     node
 
-Type in the following commands ('undefined' messages are NodeJS console valid
-responses to your command) to load the gazeboJs module, create a
+Type in the following commands to load the gazeboJs module, create a
 simulation client and pause the running simulation
+
+> **Note**: 'undefined' messages are NodeJS console valid responses to your
+command
 
     > var gazebojs = require('gazebojs')
     undefined
