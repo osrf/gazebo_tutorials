@@ -65,7 +65,7 @@ The pose of each model may be altered through the translate and rotate tools:
 [[file:files/empty_rts.png|640px]]
 
 ## Translation
-The translate tool allows you to move the object along the x, y, and z axes. Select this tool now (or click `t`) and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
+The translate tool allows you to move the object along the x, y, and z axes. Select this tool now (or press `t`) and click on the object you want to move. A three axes visual marker will appear over the object, which allows you to move the object in x, y, and z directions.
 
 * You can also just click on the object itself and drag it to move on the x-y
 plane. You may control which axis the object moves along by pressing and
@@ -80,7 +80,7 @@ show up aligned with the world, and you can translate in world coordinates.
 Try moving the objects around now into a different configuration.
 
 ## Rotation
-The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now (or click `r`) and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
+The rotate tool allows you to orient a model around the x, y, and z axes. Select this tool now (or press `r`) and click on the object you want to move. Three ring-shaped visual marker will appear over the object, which allows you to rotate the object around the x, y, and z axes.
 
 * You can also just click on the object itself and hold the `x`, `y`, or `z` keys
 while dragging it to constrain the motion to one of these axes.
@@ -94,7 +94,7 @@ world axes.
 Try rotating the objects into a different configuration.
 
 ## Scale
-The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now (or click `s`) and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
+The scale tool allows you to resize a model in the x, y, and z directions. Currently the scale tool only works with simple shapes, i.e. box, cylinder and sphere. Select this tool now (or press `s`) and click on a simple shape. A three axes visual marker will appear over the object, which allows you to scale the x, y, and z dimensions of the object.
 
 * You can also just click on the object itself and hold the `x`, `y`, or `z` keys
 while dragging it to constrain the scaling to one of these axes.
