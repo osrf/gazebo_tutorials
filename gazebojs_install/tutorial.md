@@ -36,7 +36,7 @@ If you already have nodejs, make sure that its version >=0.12.x:
 
     node --version
 
-In case you had any problem with installation, or you are using a diffrent OS,
+If you have a problem with installation or are using a different OS,
 take a look at the NodeJs
 [documentation](https://nodejs.org/en/download/package-manager/).
 
