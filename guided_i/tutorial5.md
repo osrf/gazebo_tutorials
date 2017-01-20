@@ -185,7 +185,7 @@ Run the world.  Note: It is important to run gazebo from within the `build` dire
 
     ```
     cd ~/velodyne_plugin/build
-    gazebo ../velodyne.world
+    gazebo --verbose ../velodyne.world
     ```
 
 
@@ -261,7 +261,7 @@ Recompile and run Gazebo.
 ```
 cd ~/velodyne_plugin/build
 make
-gazebo ../velodyne.world
+gazebo --verbose ../velodyne.world
 ```
 
 You should see the Velodyne spinning.
@@ -318,7 +318,7 @@ Compile and run simulation to see the results.
 cd ~/velodyne_plugin/build
 cmake ../
 make
-gazebo ../velodyne.world
+gazebo --verbose ../velodyne.world
 ```
 
 Adjust the `<velocity>` SDF value, and restart simulation to see the
@@ -623,7 +623,7 @@ plugin.
     cd ~/velodyne_plugin/build
     cmake ../
     make
-    gazebo ../velodyne.world
+    gazebo --verbose ../velodyne.world
     ```
 
 1. In a new terminal, go into the build directory and run the `vel` command.
