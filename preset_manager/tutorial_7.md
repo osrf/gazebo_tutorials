@@ -37,7 +37,7 @@ construct the example world shown above in SDF:
 ```
 physics::WorldPtr world = physics::get_world("default");
 // Get the PresetManager object from the world
-physics::PresetManagerPtr presetManager = world->PresetMgr();
+physics::PresetManagerPtr presetManager = world->GetPresetManager();
 
 // Create a new profile called "ode_70iters"
 // It will be populated with the default physics parameters
@@ -107,7 +107,7 @@ While Gazebo is running, you can switch the profile in another terminal
 by using `gz physics`:
 
 ```
-gz physics --profile ode_200iters
+gz physics --profile ode_7=200iters
 gz physics -o ode_70iters
 ```
 
