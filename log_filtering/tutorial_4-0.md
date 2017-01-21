@@ -81,9 +81,11 @@ Some guidelines for using the `--filter` flag:
 * Use `.` to access an entity's property, for example `<model_name>.pose.y` or `<model_name>/<link_name>.velocity`
 
     > Some available properties are:
-    >     * Model: pose
-    >     * Link: pose, velocity, acceleration, wrench
-    >     * Pose, velocity, acceleration or wrench: x, y, z, r (roll), p (pitch), a (yaw)
+    >     **Model**: pose
+    >
+    >     **Link**: pose, velocity, acceleration, wrench
+    >
+    >     **Pose, velocity, acceleration or wrench**: x, y, z, r (roll), p (pitch), a (yaw)
 
 * Use `*` as a wildcard, for example `*.pose` or `<model_name>/right_*`
 
