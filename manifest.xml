@@ -268,7 +268,8 @@
 
     <tutorial title="Building a world" ref='build_world'>
       <markdown version="1.9">build_world/tutorial_1.9.md</markdown>
-      <markdown version="2.2+">build_world/tutorial.md</markdown>
+      <markdown version="2.2-6.0">build_world/tutorial_2.2.md</markdown>
+      <markdown version="7+">build_world/tutorial.md</markdown>
       <description>How to populate a simulated world with simulated objects.</description>
       <skill>beginner</skill>
     </tutorial>
