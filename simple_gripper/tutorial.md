@@ -138,7 +138,7 @@ file:
 
         gazebo ~/simple_gripper_tutorial/gripper.world
 
-1. Right-click on the model and select "View->Joints". The newly created joints will be displayed:
+1. Right-click on the model and select "View->Joints" and "View->Wireframe". The newly created joints will be displayed:
 
 [[file:files/Simple-gripper-joints_5.png|640px]]
 
