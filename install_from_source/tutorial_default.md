@@ -110,7 +110,7 @@ ask for guidance at [Gazebo Answers](https://answers.gazebosim.org), explaining
 your specific use case.
 
 To build these libraries from source, first go through the
-[Build dependencies from source](ttp://gazebosim.org/tutorials?tut=install_dependencies_from_source)
+[Build dependencies from source](http://gazebosim.org/tutorials?tut=install_dependencies_from_source)
 tutorial and then come back here.
 
 ### Build And Install Gazebo
