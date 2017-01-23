@@ -102,9 +102,9 @@ joint creation.
 
 # Edit your model
 
-[[file:files/undo_redo.png|100px]]
+> **Tip:** If you make a mistake, click the undo button on the toolbar to undo the last action.
 
-**Note: If you make a mistake, click the undo button on the toolbar to undo the last action.**
+[[file:files/undo_redo.png|100px]]
 
 > **Tip:** All measurements are in meters.
 
