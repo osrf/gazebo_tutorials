@@ -103,6 +103,7 @@ joint creation.
 # Edit your model
 
 **Note: If you make a mistake, click the undo button on the toolbar to undo the last action.**
+
     [[file:files/undo_redo.png]]
 
 > **Tip:** All measurements are in meters.
