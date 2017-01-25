@@ -23,7 +23,7 @@ $ gedit factory.cc
 ~~~
 
 Copy the following code into the `factory.cc` file:
-<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/factory/factory.cc' />
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo8/examples/plugins/factory/factory.cc' />
 
 ## The Code Explained
 
