@@ -44,7 +44,7 @@
         Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US
         Reading package lists... Done
 
-    Next install gazebo-7 by:
+    Next install gazebo-8 by:
 
         sudo apt-get install gazebo8
         # For developers that work on top of Gazebo, one extra package
@@ -72,12 +72,11 @@
 ## Gazebo in different deb packages
 
 Gazebo ships different Ubuntu debian packages following the [official packaging
-guidelines](https://www.debian.org/doc/manuals/maint-guide/). This changes
-brings an option about how to install gazebo:
+guidelines](https://www.debian.org/doc/manuals/maint-guide/):
 
  * Use Gazebo as an application: for the users that just run Gazebo simulator
    with the provided plugins and models and do not plan on developing on top of
-   gazebo its own custom software. To use Gazebo 7.0, please install the package
+   gazebo its own custom software. To use Gazebo 8 please install the package
    called ***gazebo8***.
 
  * Use Gazebo to develop software using Gazebo libraries: for users that

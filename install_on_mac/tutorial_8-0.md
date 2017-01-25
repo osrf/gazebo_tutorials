@@ -3,7 +3,7 @@
 Gazebo and several of its dependencies can be compiled on OS X with
 [Homebrew](http://brew.sh) using the
 [osrf/simulation tap](https://github.com/osrf/homebrew-simulation).
-Gazebo 7 is straightforward to install on Mac OS X 10.9 (Mavericks) or higher.
+Gazebo is straightforward to install on Mac OS X 10.9 (Mavericks) or higher.
 Installation on older versions requires changing the default standard library
 and rebuilding dependencies due to the
 [use of c++11](https://bitbucket.org/osrf/gazebo/pull-request/1340/c-11-support-take-2/diff).
