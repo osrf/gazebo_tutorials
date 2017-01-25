@@ -218,7 +218,8 @@
     </tutorial>
 
     <tutorial title="Attach Gripper to Robot" ref='attach_gripper'>
-      <markdown version="1.9+">attach_gripper/tutorial.md</markdown>
+      <markdown version="1.9+">attach_gripper/tutorial-1.9+.md</markdown>
+      <markdown version="6+">attach_gripper/tutorial.md</markdown>
       <description>Connect the simple gripper to the mobile robot</description>
       <skill>beginner</skill>
     </tutorial>
