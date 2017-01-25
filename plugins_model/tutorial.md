@@ -6,7 +6,7 @@
 
 #Code
 
-Source: [ gazebo/examples/plugins/model_push](https://bitbucket.org/osrf/gazebo/src/gazebo_2.2/examples/plugins/model_push)
+Source: [ gazebo/examples/plugins/model_push](https://bitbucket.org/osrf/gazebo/src/gazebo8/examples/plugins/model_push)
 
 Plugins allow complete access to the physical properties of models and their underlying elements (links, joints, collision objects). The following plugin will apply a linear velocity to its parent model.
 
@@ -16,13 +16,13 @@ $ gedit model_push.cc
 ~~~
 
 Plugin Code:
-<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/model_push.cc' />
+<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo8/examples/plugins/model_push/model_push.cc' />
 
 ## Compiling the Plugin
 
 Assuming the reader has gone through the [Hello WorldPlugin tutorial](http://gazebosim.org/tutorials?tut=plugins_hello_world) all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
-<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/CMakeLists.txt' />
+<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo8/examples/plugins/model_push/CMakeLists.txt' />
 
 Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libmodel_push.so`, that can be inserted in a Gazebo simulation.
 
