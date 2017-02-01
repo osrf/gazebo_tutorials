@@ -65,6 +65,7 @@
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
       <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
+      <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -90,6 +91,7 @@
       <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
       <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_on_mac/tutorial_7-0.md</markdown>
+      <markdown version="8.0">install_on_mac/tutorial_8-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -124,6 +126,7 @@
       <markdown version="5.0">install_from_source/tutorial_old.md</markdown>
       <markdown version="6.0">install_from_source/tutorial_old.md</markdown>
       <markdown version="7.0">install_from_source/tutorial_old.md</markdown>
+      <markdown version="8.0">install_from_source/tutorial_default.md</markdown>
       <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
        Installation instructions for building a gazebo application using the
