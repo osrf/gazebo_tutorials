@@ -158,6 +158,7 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 
 1. **No inline comments**
 > `//` style comments may not be placed on the same line as code.
+>
 > `speed *= 0.44704;  // miles per hour to meters per second` : Bad
 
 # Reduce Code Duplication 
