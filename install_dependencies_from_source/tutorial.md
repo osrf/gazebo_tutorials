@@ -23,16 +23,26 @@ extracted from Gazebo.
 
 ### SDFormat
 
-Gazebo has had a dependency on SDFormat since early versions.
+SDFormat is a C++ software which works with the SDF format. The SDF (Simulation
+Definition Format) format has [its own specification](http://sdformat.org/spec)
+which is versioned (1.4, 1.5, 1.6). The SDF format files (*.sdf) are hosted in
+the same repository than the SDFormat C++ parser and both will be installed at
+the same time if a from source installation is performed. Please note that
+SDFormat versions follow a semantic versioning and major versions correspond
+to changes in ABI and its versioning scheme has nothing to do with the SDF
+protocol supported.
 
-* Gazebo 1.9 - SDFormat > 1?
-* Gazebo 2.2 - SDFormat > 1.4.7 and < 2.0
-* Gazebo 3 - SDFormat > 2.0.1 and < 3.0
-* Gazebo 4 - SDFormat > 2.0.1 and < 4.0
-* Gazebo 5 - SDFormat > 2.3.1 and < 4.0
-* Gazebo 6 - SDFormat > 3.1.1 and < 4.0
-* Gazebo 7 - SDFormat 4.1.0
-* Gazebo 8 - SDFormat 4.1.0
+Gazebo has had a dependency on SDFormat (that will handle automatically the SDF
+protocol supported) since early versions:
+
+* Gazebo 1.9 - SDFormat > 1? (SDF protocol 1.4)
+* Gazebo 2.2 - SDFormat > 1.4.7 and < 2.0 (SDF protocol 1.5)
+* Gazebo 3 - SDFormat > 2.0.1 and < 3.0 (SDF protocol 1.5)
+* Gazebo 4 - SDFormat > 2.0.1 and < 4.0 (SDF protocol 1.5)
+* Gazebo 5 - SDFormat > 2.3.1 and < 4.0 (SDF protocol 1.5)
+* Gazebo 6 - SDFormat > 3.1.1 and < 4.0 (SDF protocol 1.5)
+* Gazebo 7 - SDFormat 4.1.0 (SDF protocol 1.6)
+* Gazebo 8 - SDFormat 4.1.0 (SDF protocol 1.6)
 * Gazebo 9 - SDFormat TBD
 
 ### Ignition Math
