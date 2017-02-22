@@ -55,8 +55,8 @@ the SDF protocol supported) since early versions:
 * Gazebo 4 - SDFormat > 2.0.1 and < 4.0 (SDF protocol <=  1.5)
 * Gazebo 5 - SDFormat > 2.3.1 and < 4.0 (SDF protocol <=  1.5)
 * Gazebo 6 - SDFormat > 3.1.1 and < 4.0 (SDF protocol <=  1.5)
-* Gazebo 7 - SDFormat 4.1.0 (SDF protocol <=  1.6)
-* Gazebo 8 - SDFormat 4.1.0 (SDF protocol <=  1.6)
+* Gazebo 7 - SDFormat > 4.1.0 and < 5.0 (SDF protocol <=  1.6)
+* Gazebo 8 - SDFormat 5.0 (SDF protocol <=  1.6)
 * Gazebo 9 - SDFormat TBD
 
 ### Ignition Math
