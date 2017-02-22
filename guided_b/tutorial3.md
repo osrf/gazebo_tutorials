@@ -12,44 +12,41 @@ To enter the Model Editor, click on `Edit` in the menu bar and select `Model Edi
 
 The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
 
-[[file:files/ftu4-model_editor.png|800px]]
+[[file:files/gazebo8_model_editor_ui.png|800px]]
 
-#### Left Panel
+ 1. **Toolbar** - Contains tools for editting the model
+ 2. **Palette** - Also known as *Left Panel*. Has two tabs for editing the model.
+ 3. **Insert tab** - Tools for adding links and nested models
+ 4. **Model tab** - Allows editing model properties and contents
 
-The left panel, also known as the **Palette**, has two tabs.
+#### Palette (Left Panel)
+The **Palette** has two tabs.
 
-* **INSERT** tab: The Insert tab is where you add new parts (links and models)
+* **INSERT**: The Insert tab is where you add new parts (links and models)
   to the Model Editor. There are three sections.
       * Simple Shapes: These are primitive geometries that can be
-      inserted to form a *link* of the model.
-      * Custom Shapes: The `Add` button allows you to import custom meshes
-      (currently supports COLLADA, STL, and SVG files) into the editor to form
-      a *link* of the model.
-      * Model Database: Located in the bottom half of the Palette is a
-      list of *models*. These are models on your local computer or models
-      available for download from the online model database.
-      They can be inserted into the Model Editor in the same way as simple shapes
-      and custom meshes. Once inserted, they become a part of the model you are
-      building. We refer to them as *Nested Models*.
+      inserted to form a *link* in the model.
+      * Custom Shapes: The `Add` button allows you to import custom meshes to from a *link* in the model. It currently supports COLLADA (.dae), 3D Systems (.stl), Wavefront (.obj) and W3C SVG (.svg) files.
+      * Model Database: Has a list of *models*. These can be inserted into the Model Editor in the same way as simple shapes. Once inserted, they are called *Nested Models*.
 
 
-* **MODEL** tab: The Model tab allows you to set the name and basic parameters of the model you
-are building. It also displays a list of the links, joints, nested models, and plugins that are currently
-part of the model. You can view and modify a part's parameters, like its pose, in two ways: 1) by double-clicking on the part in the list, or 2) by
-right-clicking on the part and selecting Open Inspector from the context menu in the Scene.
+* **MODEL**: The Model tab allows you to set the name and basic parameters of the model you are building. It displays a list of the links, joints, nested models, and plugins that are in the model. The parameters can be modified using the *Link Inspector*. It can be opened using any of these methods.
+	 1. double-clicking on the item in the list
+	 1. double-clicking on the item in the Scene
+	 1. right-clicking on the item in the list and selecting `Open Link Inspector`
+	 1. right-clicking on the item in the Scene and selecting `Open Link Inspector`
+	 
 
 #### Toolbar
 
 Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2) tutorial).
 
-A new Joint Creation tool is available; it is used to create joints between links in the model.
+The avaible tools are selection, translation, scaling, rotation, undo & redo, copy & paste, alignment, snapping, view adjustment, and joint creation.
 
 #### Limitations
 
 The Model Editor supports most of the basic model building tasks that can be done by writing SDF. However, there are a few features that are not
 yet available:
-
-* adding and editing model plugins.
 
 * editing nested models and links within nested models.
 
@@ -82,8 +79,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
     [[file:files/ftu4-chassis_scale.png|600px]]
 
 1. We want to lower the chassis closer to the ground. To give exact measurements, we will use the Link Inspector. Double-click on the box to bring up the
-   Inspector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m. Click `OK` to save the changes and close
-   the Inspector.
+   Inspector. Scroll down to the bottom of the Link tab to find the `Pose` parameters and change `Z` to be 0.4m then click outside the box (don't hit enter). Click `OK` to save the changes and close the Inspector.
 
     [[file:files/ftu4-chassis_height.png|600px]]
 
@@ -91,7 +87,7 @@ This section provides step-by-step instructions on creating a simple vehicle mod
 
 1. Let's move on to the front wheels. Start by inserting a cylinder from the Insert tab on the left panel.
 
-1. The cylinder in its default orientation will not roll very well. Let's rotate it along the X axis using the Link Inspector. Double-click on the cylinder, scroll to the Pose section at the bottom, and change `Roll` to 1.5707 radians (90 degrees) and hit the Enter key on the keyboard. Do not close the Inspector just yet.
+1. The cylinder in its default orientation will not roll very well. Let's rotate it along the X axis using the Link Inspector. Double-click on the cylinder, scroll to the Pose section at the bottom, and change `Roll` to 1.5707 radians (90 degrees) and click outside the box. Do not close the Inspector just yet.
 
     [[file:files/ftu4-wheel_rotate.png|600px]]
 

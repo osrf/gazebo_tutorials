@@ -74,6 +74,24 @@ gz log -e -f ~/.gazebo/log/*/gzserver/state.log --filter *.pose/*.pose
 
 The `--filter` option is a flexible command line argument to extract information from a log file.
 
+Some guidelines for using the `--filter` flag:
+
+* Use `/` to separate entities in a hierarchy, for example `<model_name>/<link_name>`
+
+* Use `.` to access an entity's property, for example `<model_name>.pose.y` or `<model_name>/<link_name>.velocity`
+
+  Some available properties are:
+
+  **Model**: pose
+
+  **Link**: pose, velocity, acceleration, wrench
+
+  **Pose, velocity, acceleration or wrench**: x, y, z, r (roll), p (pitch), a (yaw)
+
+* Use `*` as a wildcard, for example `*.pose` or `<model_name>/right_*`
+
+* Use `[]` to match any of the lower level properties, for example `<model_name>/pose.[x,y,a]`
+
 It is also possible to filter based on simulation time using a Hz filter.
 For example, we can output state information at 30 Hz using:
 
@@ -92,3 +110,7 @@ This log file can then be replayed in Gazebo
 ~~~
 gazebo -p /tmp/filtered_state.log
 ~~~
+
+
+
+

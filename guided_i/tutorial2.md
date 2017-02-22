@@ -12,8 +12,8 @@ mesh.  In these cases you can try your hand at mesh creation, work with an
 artist, or contact the manufacturer directly.
 
 Velodyne has a [STEP file](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) for the HDL-32 located on [their
-website](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP).
-Gazebo can only use STL or Collada files, so we'll have to convert this
+website](http://velodynelidar.com).
+Gazebo can only use STL, OBJ or Collada files, so we'll have to convert this
 file and then add it to our model.
 
 # Step 1: Mesh Acquisition

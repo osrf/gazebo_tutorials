@@ -4,6 +4,7 @@ At this point we have an almost fully functional sensor. The model
 components are in place, it's been added to Gazebo's online database, and
 a Gaussian noise model has been applied. The final component to add is
 a plugin that controls the sensor's one degree of freedom.
+If you skipped the previous tutorials then download the [model here.](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_hdl32.tar.gz)
 
 # Plugin overview
 
@@ -16,6 +17,15 @@ More information on plugins is available in [these
 tutorials](http://gazebosim.org/tutorials?cat=write_plugin). It is highly
 recommended that you look over these tutorials before proceeding.
 
+# Install Gazebo headers
+On some operating systems the development package must be installed prior to building a plugin.
+
+```
+# Ubuntu or Debian
+sudo apt install libgazebo8-dev
+# Fedora
+sudo yum install gazebo-devel
+```
 
 # Write the plugin
 
@@ -175,7 +185,7 @@ Run the world.  Note: It is important to run gazebo from within the `build` dire
 
     ```
     cd ~/velodyne_plugin/build
-    gazebo ../velodyne.world
+    gazebo --verbose ../velodyne.world
     ```
 
 
@@ -251,7 +261,7 @@ Recompile and run Gazebo.
 ```
 cd ~/velodyne_plugin/build
 make
-gazebo ../velodyne.world
+gazebo --verbose ../velodyne.world
 ```
 
 You should see the Velodyne spinning.
@@ -308,7 +318,7 @@ Compile and run simulation to see the results.
 cd ~/velodyne_plugin/build
 cmake ../
 make
-gazebo ../velodyne.world
+gazebo --verbose ../velodyne.world
 ```
 
 Adjust the `<velocity>` SDF value, and restart simulation to see the
@@ -372,7 +382,11 @@ simultaneously.
         ```
         // Create the node
         this->node = transport::NodePtr(new transport::Node());
+        #if GAZEBO_MAJOR_VERSION < 8
         this->node->Init(this->model->GetWorld()->GetName());
+        #else
+        this->node->Init(this->model->GetWorld()->Name());
+        #endif
 
         // Create a topic name
         std::string topicName = "~/" + this->model->GetName() + "/vel_cmd";
@@ -460,7 +474,11 @@ simultaneously.
 
           // Create the node
           this->node = transport::NodePtr(new transport::Node());
+          #if GAZEBO_MAJOR_VERSION < 8
           this->node->Init(this->model->GetWorld()->GetName());
+          #else
+          this->node->Init(this->model->GetWorld()->Name());
+          #endif
 
           // Create a topic name
           std::string topicName = "~/" + this->model->GetName() + "/vel_cmd";
@@ -605,7 +623,7 @@ plugin.
     cd ~/velodyne_plugin/build
     cmake ../
     make
-    gazebo ../velodyne.world
+    gazebo --verbose ../velodyne.world
     ```
 
 1. In a new terminal, go into the build directory and run the `vel` command.
