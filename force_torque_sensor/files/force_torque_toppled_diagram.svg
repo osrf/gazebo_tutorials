@@ -17,8 +17,8 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="force_torque_toppled_diagram.svg"
    inkscape:export-filename="/home/sloretz/projects/gazebo_tutorials/force_torque_sensor/files/force_torque_toppled_diagram.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="143.68941"
+   inkscape:export-ydpi="143.68941">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="306.03217"
-     inkscape:cy="588.86269"
+     inkscape:cx="324.76699"
+     inkscape:cy="590.44908"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -55,21 +55,18 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g4142">
-      <circle
-         r="19.697975"
-         cy="527.58795"
-         cx="229.80971"
-         id="path4136"
-         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <circle
-         r="1.5"
-         cy="527.58795"
-         cx="229.80971"
-         style="fill:#ff0000;stroke:none"
-         id="path4140" />
-    </g>
+    <circle
+       style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4136"
+       cx="445.98236"
+       cy="527.58795"
+       r="19.697975" />
+    <circle
+       id="path4140"
+       style="fill:#000000;stroke:none"
+       cx="445.98236"
+       cy="527.58795"
+       r="1.5" />
     <path
        style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4146"
@@ -100,22 +97,6 @@
          x="188.89853"
          y="580.87354"
          style="font-size:20px;fill:#ff0000">+X</tspan></text>
-    <g
-       id="g5616">
-      <rect
-         y="510.9808"
-         x="412.85715"
-         height="33.214287"
-         width="66.428574"
-         id="rect4138"
-         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <circle
-         r="1.5"
-         cy="527.58795"
-         cx="446.07144"
-         style="fill:#000000;stroke:none"
-         id="path5614" />
-    </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1, 3;stroke-dashoffset:0;stroke-opacity:1"
        d="m 229.8097,527.58795 216.67773,0"
@@ -156,5 +137,11 @@
          x="231.42857"
          y="559.50507"
          style="fill:#00ff00">+Y</tspan></text>
+    <circle
+       id="path5655"
+       style="fill:#ff0000;stroke:none"
+       cx="229.73215"
+       cy="527.45148"
+       r="1.5" />
   </g>
 </svg>
