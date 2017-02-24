@@ -71,12 +71,6 @@ The translate tool allows you to move the object along the x, y, and z axes. Sel
 plane. You may control which axis the object moves along by pressing and
 holding the `x`, `y`, or `z` key while dragging the object.
 
-* You can hold the `Ctrl` key to snap the movement to a 1 meter grid.
-
-* If the object is not aligned with the world (for example after you use the
-rotate tool explained next), you can hold the `Shift` key so the visual markers
-show up aligned with the world, and you can translate in world coordinates.
-
 Try moving the objects around now into a different configuration.
 
 ## Rotation
@@ -85,12 +79,6 @@ The rotate tool allows you to orient a model around the x, y, and z axes. Select
 * You can also just click on the object itself and hold the `x`, `y`, or `z` keys
 while dragging it to constrain the motion to one of these axes.
 
-* You can hold the `Ctrl` key to snap the movement to 45 degree increments.
-
-* If the object is not aligned with the world, you can hold the `Shift` key so
-the visual markers show up aligned with the world, and you can rotate about the
-world axes.
-
 Try rotating the objects into a different configuration.
 
 ## Scale
@@ -98,8 +86,6 @@ The scale tool allows you to resize a model in the x, y, and z directions. Curre
 
 * You can also just click on the object itself and hold the `x`, `y`, or `z` keys
 while dragging it to constrain the scaling to one of these axes.
-
-* You can hold the `Ctrl` key to scale in 1 meter increments.
 
 Try scaling the simple shapes into different sizes.
 
@@ -113,7 +99,7 @@ Try deleting a few models.
 
 Once you are happy with a world it can be save through the `File` menu.
 
-Select the `File` menu now, and choose `Save World As`.
+Select the `File` menu now, and choose `Save As`.
 
 A pop-up will appear asking you to enter a new filename. Enter `my_world.sdf` and click okay.
 

@@ -25,7 +25,7 @@ where 0 equates to a friction-less contact
 and a large value approximates a surface with infinite friction.
 Tables of friction coefficient values for a variety of
 materials can be found in engineering handbooks
-or [online references](http://www.engineershandbook.com/Tables/frictioncoefficients.htm).
+or [online references](http://www.engineeringtoolbox.com/friction-coefficients-d_778.html).
 
 ## How to specify friction
 

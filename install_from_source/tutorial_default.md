@@ -43,7 +43,9 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
-1. Install prerequisites.  A clean Ubuntu system will need (replace dummy with your ROS version):
+1. Install prerequisites. A clean Ubuntu system will need the following
+   (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
+    kinetic...):
 
         wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy . /tmp/dependencies.sh
