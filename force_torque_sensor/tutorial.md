@@ -26,7 +26,6 @@ In a new terminal open the topic viewer with the following command:
 gz topic --view /gazebo/default/model_1/joint_01/force_torque/wrench
 ```
 
-
 ### Apply forces and torques in gazebo
 [Apply a force](tutorials?tut=apply_force_torque) to `link_1` of 500 N in the +Y direction.
 Observe the output in the topic viewer window.
@@ -40,7 +39,7 @@ Observe the output in the topic viewer window.
 This world has one link and one joint.
 The link is a sphere with a mass of 10 kg offset 1.5 m from the joint.
 The joint connects the sphere to the world, allowing rotation on its X axis.
-At the start the sphere balanced at the top of the joint, floating above the ground plane.
+At the start the sphere balanced above the joint.
 There is no torque on the joint.
 The force on the joint comes from gravity.
 
@@ -54,6 +53,7 @@ forceJointZ = mass * g
 [[file:files/force_torque_toppled.png|480px]]
 
 Applying a force to `link_2` causes it to topple over and rest at a 90 degree angle, the limit of the joint.
+The limit is what keeps the sphere suspended above the ground plane.
 The joint's +Y axis points towards the ground plane.
 Gravity acting on the sphere applies a torque about the X axis.
 
