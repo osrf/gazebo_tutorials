@@ -154,7 +154,7 @@ This is the same magnitude as before but opposite direction.
 ## Adding a force/torque sensor to a link
 
 While the SDF schema allows a `<sensor>` tag to be placed on either a link or a joint, the force/torque sensor only works on joints.
-If the sensor is added to a link, running gazebo with `--verbose` show's the following error:
+If the sensor is added to a link, running gazebo with `--verbose` shows the following error:
 
 ```
 [Err] [Link.cc:114] A link cannot load a [force_torque] sensor.
