@@ -14,7 +14,7 @@ This section gives a quick view of what a force/torque sensor does.
 
 Save this world as `force_torque_tutorial.world`
 
-[[file:files/force_torque_tutorial.world]]
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world' />
 
 **Launch the  world**
 
