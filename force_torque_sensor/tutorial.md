@@ -5,18 +5,23 @@ It publishes force and torque readings to a topic.
 
 
 # Quick start
-
 This section gives a quick view of what a force/torque sensor does.
+
 
 ## Steps to see the sensor in action
 
-**Launch the demo world**
+**Create a world with a force/torque sensor**
 
-Gazebo ships with a world demonstrating this feature.
+Save this world as `force_torque_tutorial.world`
+
+[[file:files/force_torque_tutorial.world]]
+
+**Launch the  world**
+
 Launch it with:
 
 ```
-gazebo --verbose worlds/force_torque_demo.world
+gazebo --verbose force_torque_tutorial.world
 ```
 
 **Open up the topic view to the force/torque sensor's output topic**
