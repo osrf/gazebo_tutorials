@@ -151,7 +151,7 @@ Try changing the example above to `parent_to_child`.
 When toppled it reports a force of -98 N on the Y axis and a torque of +147 Nm about the X axis.
 This is the same magnitude as before but opposite direction.
 
-### Adding a force/torque sensor to a link
+## Adding a force/torque sensor to a link
 
 While the SDF schema allows a `<sensor>` tag to be placed on either a link or a joint, the force/torque sensor only works on joints.
 If the sensor is added to a link, running gazebo with `--verbose` show's the following error:
