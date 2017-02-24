@@ -19,7 +19,7 @@ Open a terminal and run this command:
 gazebo --verbose force_torque_tutorial.world
 ```
 
-### Open up the topic view to the force/torque sensor's output topic
+### View the output of the force/torque sensor
 In a new terminal open the topic viewer with the following command:
 
 ```
