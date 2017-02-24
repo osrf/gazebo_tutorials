@@ -7,7 +7,8 @@ It publishes force and torque readings to a topic.
 # Quick start
 These steps will give a quick view of what a `force_torque` sensor does.
 
-1. Launch the demo world
+1. **Launch the demo world**
+
   Gazebo ships with a world demonstrating this feature.
   Launch it with:
 
@@ -15,7 +16,8 @@ These steps will give a quick view of what a `force_torque` sensor does.
   gazebo --verbose worlds/force_torque_demo.world
   ```
 
-1. Open up the topic view to the `force_torque` sensor's output topic
+1. **Open up the topic view to the `force_torque` sensor's output topic**
+
   In a new terminal open the topic viewer with the following command:
 
   ```
@@ -26,14 +28,15 @@ These steps will give a quick view of what a `force_torque` sensor does.
 
   [[file:files/force_torque_topic_window.png|320px]]
 
-1. Apply forces and torques in gazebo
+1. **Apply forces and torques in gazebo**
+
   [Apply a force](tutorials?tut=apply_force_torque) to `link_2` of 500 N in the `Y` direction.
   Observe the output in the topic viewer window.
 
 
 ## Understanding the demo world
 
-1. At the start of the world
+1. **At the start of the world**
 
   [[file:files/force_torque_demo.png|480px]]
 
@@ -68,7 +71,7 @@ These steps will give a quick view of what a `force_torque` sensor does.
                  = -196 N
   ```
 
-1. After applying 500 N to link_2
+1. **After applying 500 N to link_2**
 
   [[file:files/force_torque_toppled.png|480px]]
 
