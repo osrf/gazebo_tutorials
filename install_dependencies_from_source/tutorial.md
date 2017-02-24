@@ -83,7 +83,7 @@ Gazebo has a dependency on Ignition Messages from version 8.
 * Gazebo 8 - Ignition msgs 0.4
 * Gazebo 9 - Ignition msgs TBD
 
-### Remove packages to get a clean system
+## Remove packages to get a clean system
 
 Be sure of removing any distribution package of the dependencies listed in this
 document to get started from a clean system. For example, in .deb distributions
