@@ -48,9 +48,6 @@ The demo world has one link and one joints.
 The link is a sphere with a mass of 10 kg offset 1.5 m from the joint.
 `joint_01` connects a sphere to the word, allowing rotation on its X axis.
 At the start the sphere balanced at the top of the joint.
-The sensor on `joint_01` reports the following:
-
-[[file:files/force_torque_topic_window.png|320px]]
 
 This joint is keeping the link floating above the ground plane.
 The force on the joint comes from gravity.
