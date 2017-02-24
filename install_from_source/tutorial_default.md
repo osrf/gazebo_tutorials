@@ -22,7 +22,7 @@ As a side note, default install locations:
 
   2. Default source install : `/usr/local/bin/gazebo`
 
-## ROS Users
+#### ROS Users
 
 When building Gazebo, we recommend you do not have your */opt/ros/\*/setup.sh*
 file sourced, as it has been seen to add the wrong libraries to the Gazebo
