@@ -4,9 +4,8 @@ This sensor publishes force and torque readings to a topic.
 
 
 # Quick Start
-This section gives a quick view of what a force/torque sensor does.
 
-## Steps to see the sensor in action
+## See the sensor in action
 
 ### Create a world with a force/torque sensor
 Save this world as `force_torque_tutorial.world`
@@ -14,7 +13,7 @@ Save this world as `force_torque_tutorial.world`
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world' />
 
 ### Launch the  world
-Launch it with:
+Open a terminal and run this command:
 
 ```
 gazebo --verbose force_torque_tutorial.world
@@ -56,14 +55,13 @@ forceJointZ = mass * g
 
 Applying a force to `link_2` causes it to topple over and rest at a 90 degree angle, the limit of the joint.
 The joint's +Y axis points towards the ground plane.
-The gravity acting on the block is applying a torque about the X axis.
+Gravity acting on the sphere applies a torque about the X axis.
 
 [[file:files/force_torque_toppled_diagram.png|480px]]
 
 The mass supported by the joint remains the same, so the magnitude of the force is the same.
-THe direction of the force changes, it becomes +98 N on the Y axis.
-The mass of the sphere is positioned 1.5 m away on the joint's Z axis.
-The torque about the X axis is:
+The direction of the force changes to be +98 N on the Y axis.
+Because the sphere is positioned 1.5 m away on the joint's Z axis the torque about the X axis is:
 
 ```
 torqueJoint01_x = r X R
@@ -73,7 +71,7 @@ torqueJoint01_x = r X R
                 = -147 Nm
 ```
 
-**Note: Readings near joint limits may jump depending on physics engine parameters. See [#2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
+**Note: Measurements near joint limits may jump depending on physics engine parameters. See [#2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
 
 # Understanding the Force/Torque Sensor
 
@@ -102,10 +100,11 @@ This setting has no effect.
 The force/torque sensor does not currently support this parameter.
 
 #### `<frame>`
-The force/torque sensor does not currently support this parameter as it is described in the SDF specification.
+The force/torque sensor does not currently support this parameter.
 
 #### `<pose>`
-A string given as `x y z r p y` that describes the location of the origin of the sensor frame.
+Floating point numbers separated by spaces with this order `x y z roll pitch yaw`.
+It describes the location of the sensor frame.
 
 ### Force/Torque specific parameters
 A force/torque sensor is created by adding `<sensor>` tag with the attribute `type` set to `force_torque`.
@@ -127,12 +126,12 @@ The values `parent` and `child` refer to the parent or child links of the joint.
 The value `sensor` means the measurement is rotated by the rotation component of the `<pose>` of this sensor.
 The translation component of the pose has no effect.
 
-Regardless, the torque is always a force applied at a distance from the origin of the joint.
+Regardless of this setting, the torque is always measured as a force applied at a distance from the joint.
 
 #### `<measure_direction>`
 This is the direction of the measurement.
 Try changing the example above to `parent_to_child`.
-When toppled it reports a force of -98 N on the Y axis and a torque of +147 Nm about the X axis.
+After being toppled the sensor reports a force of -98 N on the Y axis and a torque of +147 Nm about the X axis.
 This is the same magnitude as before but opposite direction.
 
 ## Adding a force/torque sensor to a link
