@@ -139,6 +139,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Dependencies from source" ref='install_dependencies_from_source'>
+      <markdown version="5+">install_dependencies_from_source/tutorial.md</markdown>
+      <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Old versions (prior to gazebo4)" ref='install'>
       <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
       <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
@@ -924,6 +930,7 @@
         <tutorial>install</tutorial>
 
         <tutorial>install_from_source</tutorial>
+        <tutorial>install_dependencies_from_source</tutorial>
         <tutorial>install_unstable</tutorial>
       </tutorials>
     </category>
