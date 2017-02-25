@@ -124,7 +124,7 @@ The value of this element may be one of: `child`, `parent`, or `sensor`.
 It is the frame in which the forces and torques should be expressed.
 The values `parent` and `child` refer to the parent or child links of the joint.
 The value `sensor` means the measurement is rotated by the rotation component of the `<pose>` of this sensor.
-The translation component of the pose has no effect.
+The translation component of the pose has no effect on the measurement.
 
 Regardless of this setting, the torque is always measured as a force applied at a distance from the joint.
 
