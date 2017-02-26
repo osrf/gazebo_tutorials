@@ -8,7 +8,8 @@ This sensor publishes force and torque readings to a topic.
 ## See the sensor in action
 
 ### Create a world with a force/torque sensor
-Save this world as `force_torque_tutorial.world`
+Save this world as
+[force_torque_tutorial.world](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world).
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world' />
 
