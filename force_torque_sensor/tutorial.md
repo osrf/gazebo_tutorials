@@ -39,7 +39,7 @@ Observe the output in the topic viewer window.
 This world has one link and one joint.
 The link is a sphere with a mass of 10 kg offset 1.5 m from the joint.
 The joint connects the sphere to the world, allowing rotation on its X axis.
-At the start the sphere balanced above the joint.
+At the start the sphere is balanced above the joint.
 There is no torque on the joint.
 The force on the joint comes from gravity.
 
