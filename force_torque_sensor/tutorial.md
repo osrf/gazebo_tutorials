@@ -127,7 +127,7 @@ The values `parent` and `child` refer to the parent or child links of the joint.
 The value `sensor` means the measurement is rotated by the rotation component of the `<pose>` of this sensor.
 The translation component of the pose has no effect on the measurement.
 
-Regardless of this setting, the torque is always measured as a force applied at a distance from the joint.
+Regardless of this setting, the torque component is always expressed about the origin of the joint frame.
 
 #### `<measure_direction>`
 This is the direction of the measurement.
