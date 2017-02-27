@@ -150,8 +150,8 @@ However, real force/torque sensors are typically rigidly mounted to another rigi
 A real sensor could not measure the force and torque exactly at the revolute joint origin.
 Modeling this way is reasonable if the real sensor is close enough to the joint that the error from the offset is negligible.
 
-[[file:force_torque_on_revolute.png|480px]]
+[[file:files/force_torque_on_revolute.png|480px]]
 
 If this error is not negligible, the rigid body can be split into two links with a fixed joint at the location of the real sensor.
 
-[[file:force_torque_on_fixed.png|480px]]
+[[file:files/force_torque_on_fixed.png|480px]]
