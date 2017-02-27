@@ -135,10 +135,23 @@ Try changing the example above to `parent_to_child`.
 After being toppled the sensor reports a force of -98 N on the Y axis and a torque of +147 Nm about the X axis.
 This is the same magnitude as before but opposite direction.
 
-## Adding a force/torque sensor to a link
+### Adding a force/torque sensor to a link
 While the SDF schema allows a `<sensor>` tag to be placed on either a link or a joint, the force/torque sensor only works on joints.
 If the sensor is added to a link, running gazebo with `--verbose` shows the following error:
 
 ```
 [Err] [Link.cc:114] A link cannot load a [force_torque] sensor.
 ```
+
+## Modeling a Real Force/Torque Sensor
+
+The above example places a force/torque sensor on a revolute joint.
+However, real force/torque sensors are typically rigidly mounted to another rigid body.
+A real sensor could not measure the force and torque exactly at the revolute joint origin.
+Modeling this way is reasonable if the real sensor is close enough to the joint that the error from the offset is negligible.
+
+[[file:force_torque_on_revolute.png|480px]]
+
+If this error is not negligible, the rigid body can be split into two links with a fixed joint at the location of the real sensor.
+
+[[file:force_torque_on_fixed.png|480px]]
