@@ -143,7 +143,7 @@ If the sensor is added to a link, running gazebo with `--verbose` shows the foll
 [Err] [Link.cc:114] A link cannot load a [force_torque] sensor.
 ```
 
-## Modeling a Real Force/Torque Sensor
+# Modeling a Real Force/Torque Sensor
 
 The above example places a force/torque sensor on a revolute joint.
 However, real force/torque sensors are typically rigidly mounted to another rigid body.
