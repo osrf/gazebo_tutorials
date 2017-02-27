@@ -10,7 +10,7 @@
           <type>quick</type>
           <iters>50</iters>
           <sor>1.0</sor>
-          <use_dynamic_moi_rescaling>true</use_dynamic_moi_rescaling>
+          <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
         </solver>
       </ode>
     </physics>
