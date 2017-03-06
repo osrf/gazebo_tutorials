@@ -53,7 +53,7 @@ forceJointZ = mass * g
 ### After applying a force to the link
 [[file:files/force_torque_toppled.png|480px]]
 
-Applying a force to `link_2` causes it to topple over and rest at a 90 degree angle, the limit of the joint.
+Applying a force to `link_1` causes it to topple over and rest at a 90 degree angle, the limit of the joint.
 The limit is what keeps the sphere suspended above the ground plane.
 The joint's +Y axis points towards the ground plane.
 Gravity acting on the sphere applies a torque about the X axis.
