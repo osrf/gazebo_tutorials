@@ -1,8 +1,6 @@
 # Overview
 
 This tutorial describes the process of creating a model using the Model Editor.
-See [this tutorial](http://gazebosim.org/tutorials?tut=guided_b3) for a walkthrough
-of creating a simple mobile base with the model editor.
 
 ## Open the Model Editor
 
@@ -59,12 +57,13 @@ that lets you find the mesh you want to add.
 
 1. Click on `Browse` button and use the file browser to find the mesh file
 on your local machine. If you know the path of the mesh file, you can enter it
-directly in the text field box next to the `Browse` button. Gazebo 8 supports
-COLLADA (.dae), 3D Systems (.stl), Wavefront (.obj) and W3C SVG (.svg) files.
+directly in the text field box next to the `Browse` button. Note Gazebo
+currently only supports importing COLLADA (dae), STereoLithography (stl),
+and Scalable Vector Graphics (svg) files.
 
 1. Click `Import` to load the mesh file. Then, add it to the 3D view.
 
-    [[file:files/model_editor_insert_mesh_8.png|640]]
+    [[file:files/model_editor_insert_mesh_7.png|640]]
 
 # Create Joints
 
@@ -102,9 +101,7 @@ joint creation.
 
 # Edit your model
 
-> **Tip:** If you make a mistake, click the undo button on the toolbar to undo the last action.
-
-[[file:files/undo_redo.png|100px]]
+**Note: Be careful when editing your model; the editor currently has no option to undo your actions.**
 
 > **Tip:** All measurements are in meters.
 
