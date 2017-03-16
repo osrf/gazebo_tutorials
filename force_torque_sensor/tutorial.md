@@ -5,7 +5,7 @@ This sensor publishes force and torque readings to a topic.
 
 # Quick Start
 
-## See the sensor in action
+## Part 1: See the sensor in action
 
 ### Create a world with a force/torque sensor
 Save this world as
@@ -32,7 +32,7 @@ gz topic --view /gazebo/default/model_1/joint_01/force_torque/wrench
 Observe the output in the topic viewer window.
 
 
-## Understanding the example world
+## Part 2: Explanation of the above steps
 
 ### At the start of the world
 [[file:files/force_torque_demo.png|480px]]
