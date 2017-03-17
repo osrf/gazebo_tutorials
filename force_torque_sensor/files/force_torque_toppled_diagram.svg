@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="324.76699"
-     inkscape:cy="590.44908"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="335.74731"
+     inkscape:cy="615.50503"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -105,15 +105,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="306.83383"
+       x="294.58383"
        y="523.79987"
        id="text5622"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5624"
-         x="306.83383"
+         x="294.58383"
          y="523.79987"
-         style="fill:#0000ff">1.5 m</tspan></text>
+         style="fill:#0000ff">r = 1.5 m</tspan></text>
     <path
        style="fill:#00ff00;fill-rule:evenodd;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 229.80971,527.80863 0,25.80357"
@@ -143,5 +143,77 @@
        cx="229.73215"
        cy="527.45148"
        r="1.5" />
+    <g
+       id="g4389"
+       transform="translate(216.42518,0)">
+      <path
+         style="fill:#00ff00;fill-rule:evenodd;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 229.80971,527.80863 0,57.91582"
+         id="path4385"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4387"
+         d="m 225.8127,582.36239 3.99552,14.86559 3.99553,-14.95742 z"
+         style="fill:#00ff00;fill-rule:evenodd;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="451.01535"
+       y="597.11652"
+       id="text4393"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4395"
+         x="451.01535"
+         y="597.11652">F = 98N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="486.13589"
+       y="559.91284"
+       id="text4397"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4399"
+         x="486.13589"
+         y="559.91284"></tspan></text>
+    <g
+       id="g4413"
+       transform="matrix(0,-0.59008948,0.59008948,0,-81.759569,790.57202)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path4401"
+         sodipodi:type="arc"
+         sodipodi:cx="445.98309"
+         sodipodi:cy="527.58722"
+         sodipodi:rx="46.42857"
+         sodipodi:ry="46.42857"
+         sodipodi:start="0"
+         sodipodi:end="1.3089969"
+         d="m 492.41166,527.58722 a 46.42857,46.42857 0 0 1 -34.41197,44.84655"
+         sodipodi:open="true" />
+      <path
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 462.5572,575.43072 -14.86559,-3.99552 14.95742,-3.99553 z"
+         id="path4403"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4405"
+       y="499.17734"
+       x="211.92188"
+       style="font-style:normal;font-weight:normal;font-size:18.49502754px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:9.24751377px;fill:#ff0000"
+         y="499.17734"
+         x="211.92188"
+         id="tspan4407"
+         sodipodi:role="line">θ = -90°</tspan></text>
   </g>
 </svg>

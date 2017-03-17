@@ -446,7 +446,7 @@
 
     <tutorial title="Force/Torque Sensor" ref='force_torque_sensor'>
       <markdown version="7.0+">force_torque_sensor/tutorial.md</markdown>
-      <description>How to create and get data from force_torque sensors.</description>
+      <description>How to create and get data from force/torque sensors.</description>
       <skill>intermediate</skill>
     </tutorial>
 

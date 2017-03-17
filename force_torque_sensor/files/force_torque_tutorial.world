@@ -1,7 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.6">
   <world name="default">
-    <physics name='default_physics' default='0' type='ode'>
+    <physics name="default_physics" default="0" type="ode">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
@@ -9,7 +9,7 @@
         <solver>
           <type>quick</type>
           <iters>50</iters>
-          <sor>1.0</sor>
+          <sor>1.0</sor> <!-- Important, see issue #2209 -->
           <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
         </solver>
       </ode>
@@ -39,6 +39,15 @@
             <sphere>
               <radius>0.100000</radius>
             </sphere>
+          </geometry>
+        </visual>
+        <visual name="visual_cylinder">
+          <pose>0 0 -0.75 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.0100000</radius>
+              <length>1.5</length>
+            </cylinder>
           </geometry>
         </visual>
         <collision name="collision_sphere">

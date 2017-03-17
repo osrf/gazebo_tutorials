@@ -67,12 +67,12 @@ Because the sphere is positioned 1.5 m away on the joint's Z axis the torque abo
 ```
 torqueJoint01_x = r X R
                 = ||r|| * ||F|| * sin(theta)
-                = distanceZ * (massLink2 * g) * sin(theta)
+                = distanceZ * (massLink * g) * sin(theta)
                 = 1.5 m * (10 kg * 9.8 m/s^2) * sin(-90)
                 = -147 Nm
 ```
 
-**Note: Measurements near joint limits may jump depending on physics engine parameters. See [#2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
+**Note: Measurements near joint limits may jump depending on physics engine parameters. See [issue #2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
 
 # Understanding the Force/Torque Sensor
 
@@ -85,17 +85,16 @@ All sensors have a common set of parameters in the [SDF sensor schema](http://sd
 If `true` the sensor will always measure force and torque.
 If `false` the sensor will only update if there is a subscriber connected to the sensor's topic.
 This setting is important when accessing the sensor through code.
-Calls to `ForceTorqueSensor::Torque()` or `ForceTorqueSensor::Force()` will return stale data if there are no subscribers.
-This can be detected by checking if `IsActive()` returns false.
-Code can make a sensor update with no subscribers by calling `SetActive(true)`.
+Calls to [`ForceTorqueSensor::Torque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1ForceTorqueSensor.html#a050a369346fb2d338ae956b2fc01b7a0) or [`ForceTorqueSensor::Force()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1ForceTorqueSensor.html#ad578fc59083b6ceca7924d2335402d55) will return stale data if there are no subscribers.
+This can be detected by checking if [`IsActive()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1ForceTorqueSensor.html#aa58bb55f74716e3435ae09ed212df26f) returns `false`.
+Code can make a sensor update with no subscribers by calling [`SetActive(true)`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1Sensor.html#a9a22d0e822e1d2bcd03c8594a0f5a40b).
 
 #### `<update_rate>`
 This is the rate in Hz that the sensor should update itself.
 It is the number of messages that will be published by this sensor per simulated second.
 
 #### `<visualize>`
-There is no visualization for this sensor.
-This setting has no effect.
+If `true` the gazebo client will show a visualization of the force and torque at the joint.
 
 #### `<topic>`
 The force/torque sensor does not currently support this parameter.
@@ -105,7 +104,7 @@ The force/torque sensor does not currently support this parameter.
 
 #### `<pose>`
 Floating point numbers separated by spaces with this order `x y z roll pitch yaw`.
-It describes the location of the sensor frame.
+It describes the location of the sensor frame with respect to the parent joint.
 
 ### Force/Torque specific parameters
 A force/torque sensor is created by adding `<sensor>` tag with the attribute `type` set to `force_torque`.
