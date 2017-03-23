@@ -104,6 +104,16 @@ this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
+### Gazebo 8.x series
+
+The OSRF repository provides `-gazebo8-` versions of ROS/Kinetic gazebo
+wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
+The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-kinetic-gazebo8-ros-pkgs` from the osrfoundation repository, which will install the `gazebo8` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
+
 ### Gazebo 7.x series
 
 The OSRF repository provides `-gazebo7-` versions of ROS/Indigo and ROS/Jade
@@ -147,6 +157,16 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
  so please follow the above instructions to use `gazebo4` in combination with ROS.
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
+
+#### I need to use gazebo8 and ROS Kinetic, what can I do?
+***Warning!: Using this option, you won't be able to use any ROS Kinetic package
+related to Gazebo from ROS deb repository. The way to go is to build them from
+source. Thanks to catkin workspaces this is quite easy to do.***
+
+If you need some features only present in versions 8.x of Gazebo,
+there is a way of installing `gazebo8` and ROS Kinetic. Please
+follow the instructions about how to use ROS with gazebo8 package
+which are in this same document.
 
 #### I need to use gazebo5/gazebo6/gazebo7 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
