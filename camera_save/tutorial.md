@@ -34,6 +34,7 @@ The child tag `<path>` is a directory in which the camera images will be saved.
 If the directory does not exist, gazebo will try to create it.
 `<width>` and `<height>` set the resolution of the images from the camera.
 `update_rate` is the number of images per second that will be saved.
+This camera will output images with 1920x1080 resolution at 30 frames per second.
 
 ## Run the world
 Navige to the folder where the world was downloaded and start gazebo.
@@ -43,11 +44,10 @@ Navige to the folder where the world was downloaded and start gazebo.
 Close gazebo after a few seconds.
 
 The world above will save images to `/tmp/camera_save_tutorial`.
-It has a camera configured to capure images with a 1920x1080 resolution at 30 frames per second.
 
 ## Examine the images
-Inside `/tmp/camera_save_tutorials` there should be many jpg images numbered sequentialy.
-Each one has the same resolution as the camera they were captured from (1920x1080).
+Inside `/tmp/camera_save_tutorials` there should be many images numbered sequentialy.
+They have the same resolution as the camera they were captured from (1920x1080).
 The first image is called `default_camera_link_my_camera(1)-0000.jpg`.
 
 # Convert Images to Video
@@ -60,4 +60,4 @@ ffmpeg -r 30 -pattern_type glob -i '/tmp/camera_save_tutorial/default_camera_lin
 
 [[file:files/my_camera.gif|480px]]
 
-Download a video created from this tutorial [here.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/my_camera.mp4)
+Download the video [here.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/my_camera.mp4)
