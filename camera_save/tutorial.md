@@ -10,14 +10,21 @@ Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/d
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world' />
 
+
+The important parts are here.
 ```
 <sensor name="my_camera">
   <camera>
+    <image>
+      <width>1920</width>
+      <height>1080</height>
+    </image>
     ...
     <save enabled="true">
       <path>/tmp/camera_save_tutorial</path>
     </save>
     ...
+    <update_rate>30</update_rate>
   </camera>
 </sensor>
 ```
@@ -25,6 +32,8 @@ Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/d
 The `<save>` tag has an attribute `enabled` that must be set to `true` for images to be saved.
 The child tag `<path>` is a directory in which the camera images will be saved.
 If the directory does not exist, gazebo will try to create it.
+`<width>` and `<height>` set the resolution of the images from the camera.
+`update_rate` is the number of images per second that will be saved.
 
 ## Run the world
 Navige to the folder where the world was downloaded and start gazebo.
