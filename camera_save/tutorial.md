@@ -12,6 +12,7 @@ Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/d
 
 
 The important parts are here.
+
 ```
 <sensor name="my_camera">
   <camera>
