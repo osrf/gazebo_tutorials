@@ -276,6 +276,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Create a Video with a Camera" ref='camera_save'>
+      <markdown version="7.0+">camera_save/tutorial.md</markdown>
+      <description>Shows how to create a video from a camera in the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Building a world" ref='build_world'>
       <markdown version="1.9">build_world/tutorial_1.9.md</markdown>
       <markdown version="2.2-6.0">build_world/tutorial_2.2.md</markdown>
@@ -1029,6 +1035,7 @@
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
         <tutorial>camera_distortion</tutorial>
+        <tutorial>camera_save</tutorial>
         <tutorial>force_torque_sensor</tutorial>
       </tutorials>
     </category>
