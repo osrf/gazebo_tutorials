@@ -5,7 +5,7 @@
 ### Prerequisites
 
 For compiling the latest version of gazebo you will need an Ubuntu distribution
-equal to 14.04.2 (Trusty) or newer.
+equal to 16.04 (Xenial) or newer.
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing
 from source:
