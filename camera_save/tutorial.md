@@ -33,7 +33,7 @@ The important parts are here.
 The `<save>` tag has an attribute `enabled` that must be set to `true` for images to be saved.
 The child tag `<path>` is a directory in which the camera images will be saved.
 If the directory does not exist, gazebo will try to create it.
-`<width>` and `<height>` set the resolution of the images from the camera.
+`<width>` and `<height>` set the resolution of the images.
 `update_rate` is the number of images per second that will be saved.
 This camera will output images with 1920x1080 resolution at 30 frames per second.
 
