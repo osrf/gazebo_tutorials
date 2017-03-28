@@ -59,6 +59,14 @@ This comand creates a video called `my_camera.mp4` at 30 frames per second.
 ffmpeg -r 30 -pattern_type glob -i '/tmp/camera_save_tutorial/default_camera_link_my_camera*.jpg' -c:v libx264 my_camera.mp4
 ```
 
+If you have Ubuntu Trusty, you might have `avconv` instead of `ffmpeg`
+([here is some of the backstory](https://en.wikipedia.org/wiki/Libav#Fork_from_FFmpeg)).
+The following command can be used with `avconv`:
+
+```
+avconv -framerate 30 -i /tmp/camera_save_tutorial/default_camera_link_my_camera\(1\)-%04d.jpg -c:v libx264 my_camera.mp4
+```
+
 [[file:files/my_camera.gif|480px]]
 
 Download the video [here.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/my_camera.mp4)
