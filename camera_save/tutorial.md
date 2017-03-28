@@ -1,5 +1,5 @@
 # Introduction
-This tutorial shows how to create a video from a camera in a gazebo world.
+This tutorial shows how to create a video from a camera sensor in a gazebo world.
 
 # Save Camera Images
 Gazebo can automatically save camera images to disk.
@@ -38,7 +38,7 @@ If the directory does not exist, gazebo will try to create it.
 This camera will output images with 1920x1080 resolution at 30 frames per second.
 
 ## Run the world
-Navige to the folder where the world was downloaded and start gazebo.
+Navigate to the folder where the world was downloaded and start gazebo.
 
 `gazebo --verbose camera_tutorial.world`
 
