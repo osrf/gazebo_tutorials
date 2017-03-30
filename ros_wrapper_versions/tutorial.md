@@ -47,6 +47,7 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
   * gazebo 5.x series (package name `gazebo5`)
   * gazebo 6.x series (package name `gazebo6`)
   * gazebo 7.x series (package name `gazebo7`)
+  * gazebo 8.x series (package name `gazebo8`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
