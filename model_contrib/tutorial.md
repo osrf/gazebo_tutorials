@@ -11,7 +11,7 @@ to share it with the community.
 This tutorial also assumes that you have an account on Bitbucket, and that you have a client for [Mercurial](http://mercurial.selenic.com).
 
 > **Note**: You don't need to add your model to the database in order to use it
-on Gazebo. The database is a common place where you can find models which are
+in Gazebo. The database is a common place where you can find models which are
 useful for the whole commuinity.
 
 # Fork and clone the osrf/gazebo\_models repository
