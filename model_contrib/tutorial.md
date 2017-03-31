@@ -14,6 +14,9 @@ This tutorial also assumes that you have an account on Bitbucket, and that you h
 on Gazebo. The database is a common place where you can find models which are
 useful for the whole commuinity.
 
+> **Note**: Make sure that you have permission to distribute all the files included
+in the model and they're not copywrited material.
+
 # Fork and clone the osrf/gazebo\_models repository
 Go to [https://bitbucket.org/osrf/gazebo\_models](https://bitbucket.org/osrf/gazebo_models) and, from the menu on the left hand side of the screen, choose "Fork". The default options are generally fine.
 
@@ -32,14 +35,11 @@ For this tutorial, we will assume that this directory is called **mymodel**,
 but you should give the directory an informative name about the model.
 
 That directory must include the file **model.config** and at least one `.sdf`
-file. It may include other files as well (plugins, makefiles, README's, etc.)
+file. It may include other files as well (meshes, textures, templates, etc.)
 
 Also make sure you add the model directory to the
 [CMakeLists.txt](https://bitbucket.org/osrf/gazebo_models/src/default/CMakeLists.txt?at=default&fileviewer=file-view-default)
 file.
-
-Finally, make sure that you have permission to distribute all the files included
-in the model, and they're not copywrited material.
 
 # Contents of **model.config**:
 
