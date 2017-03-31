@@ -12,7 +12,7 @@ This tutorial also assumes that you have an account on Bitbucket, and that you h
 
 > **Note**: You don't need to add your model to the database in order to use it
 in Gazebo. The database is a common place where you can find models which are
-useful for the whole commuinity.
+useful for the whole community.
 
 # Fork and clone the osrf/gazebo\_models repository
 Go to [https://bitbucket.org/osrf/gazebo\_models](https://bitbucket.org/osrf/gazebo_models) and, from the menu on the left hand side of the screen, choose "Fork". The default options are generally fine.
