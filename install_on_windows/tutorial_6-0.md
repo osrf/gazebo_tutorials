@@ -38,7 +38,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. [libcurl HEAD](http://packages.osrfoundation.org/win32/deps/libcurl-vc12-x64-release-debug-static-ipv6-sspi-winssl.zip)
 
-    1. [OGRE 1.9.0 rc1](http://packages.osrfoundation.org/win32/deps/ogre_src_v1-8-1-vc12-x64-release-debug.zip)
+    1. [OGRE 1.9.0 rc1](http://packages.osrfoundation.org/win32/deps/OGRE-SDK-1.9.0-vc120-x64-12.03.2016.zip)
 
     1. [protobuf 2.6.0](http://packages.osrfoundation.org/win32/deps/protobuf-2.6.0-win64-vc12.zip)
 
