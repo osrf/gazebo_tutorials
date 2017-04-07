@@ -23,7 +23,7 @@ Zero means the first axis on the joint, and one means the second if applicable.
 |------------|:--------------:|
 | revolute2  |        2       |
 | prismatic  |        1       |
-| screw      |        2       |
+| screw      |        1       |
 | universal  |        2       |
 | revolute   |        1       |
 
