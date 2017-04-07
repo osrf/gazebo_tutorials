@@ -810,6 +810,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Setting Velocity on Joints and Links" ref="set_velocity">
+      <markdown version="7.0">set_velocity/tutorial_7.md</markdown>
+      <description> This tutorial describes how to programatically set velocities on links and joints</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <!-- scripting  -->
     <tutorial title="GazeboJs installation" ref='gazebojs_install'>
           <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
