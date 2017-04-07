@@ -3,9 +3,9 @@ This tutorial will describe how to programatically set velocities on Joints and 
 Usually this is a task done in a custom [plugin](tutorials?cat=plugins).
 
 ## Supported Joint Types
-Not all joints can be set to a target velocity by any method.
+Not all joints can be commanded to move at target velocity.
 Revolute, revolute2, prismatic, screw, and universal joints can be set.
-Ball, gearbox, and fixed joints cannot be set to a target velocity.
+Ball, gearbox, and fixed joints cannot be set using any method described below.
 However, while a gearbox joint velocity cannot be set, the parent or child joint can be set if it is one of the supported joint types.
 
 ## Set Velocity Instantaneously
@@ -34,18 +34,18 @@ It is meters per second for prismatic joints, and radians per second for all oth
 ### Links
 Linear velocity on links can be set with [`Link::SetLinearVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a110267b99cacd79cd377ca8619956645).
 It accepts a [three dimensional vector](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1math_1_1Vector3.html) with the target linear velocity.
-The provided target velocity must be expressed in the world frame.
+The velocity must be expressed in the world frame.
 
 Angular velocity on links can be set with [`Link::SetAngularVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a996d99f2897ebca28979b24b7f23faa1).
 It also accepts a three dimensional vector with the target angular velocity.
-The provided target velocity must be expressed in the world frame.
+The velocity must be expressed in the world frame.
 
 ## Set Velocity With Joint Motors (ODE Only)
-The joint velocity can be achieved through applying the perfect amount of force to a joint.
+Joint velocity can be set by applying the exact required force to a joint.
 Gazebo only supports this method when using the ODE physics engine (the default engine).
 It relies on the [ODE Joint Motor feature](https://www.ode-wiki.org/wiki/index.php?title=Manual:_Joint_Types_and_Functions#Stops_and_motor_parameters).
 
-Accessing this feature requires calling [`Joint::SetParam()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a48402b4fa13b0209246396c0d726d914).
+Configuring a joint motor is done using [`Joint::SetParam()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a48402b4fa13b0209246396c0d726d914).
 It accepts three parameters: key, axis, and value.
 The key parameter is a string that names the parameter to be changed.
 The axis parameter is an index that may be 0 or 1.
@@ -55,17 +55,17 @@ This call will work `joint->SetParam('fmax', 0, 0.0)`, while this won't compile 
 
 ### Joints
 Setting up a joint motor requires requires two calls to [`Joint::SetParam()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a48402b4fa13b0209246396c0d726d914).
-The first key is `vel`.
+The first call sets the key `vel`.
 This is the velocity the joint should travel at.
-The other key is `fmax`.
+The other call sets the key `fmax`.
 This is the maximum force or torque a joint motor may apply to get the joint to the target velocity.
 If it is larger than the force required, the link will be at the target velocity at the next time step.
 Otherwise the motor will keep applying a force over many time steps until the velocity is reached.
-The motor will continue to keep the joint at the target velocity until `fmax` is set to zero.
+The motor will continue to keep the joint at the target velocity until `fmax` is set back to zero.
 
 ### Links
 Joint motors can be used to move links at a target velocity by creating joints which connect the link to the world.
-It is critical that the joints are created when the velocity is to be applied, and deleted when that is finished.
+It is critical that the joints are created when the velocity is to be applied, and deleted afterwards.
 
 Linear velocity can be set by creating a prismatic joint attached to the world and the link to be moved.
 The prismatic joint constrains rotation, so the link will not rotate while the linear velocity is applied to it.
@@ -98,8 +98,8 @@ The following example can apply a force or torque to one axis on a joint.
 Extending it to support controlling two axis at the same time is left to the reader.
 
 ### Links
-A PID controller be used to apply forces to all 6 degrees of freedom simultaneously.
-The following example can apply a forces and torques to a link to achieve a target linear and angular velocity.
+All 6 degrees of freedom can be set to target velocities simultaneously by using a PID controller for each degree of freedom..
+The following example can apply a forces and torques to a link to set a target linear and angular velocity.
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/pid_link.hh' />
 
