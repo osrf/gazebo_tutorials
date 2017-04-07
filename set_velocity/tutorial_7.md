@@ -20,7 +20,8 @@ The axis parameter is an index, and it may be 0 or 1.
 Zero means the first axis on the joint, and one means the second if applicable.
 
 #### Number of axis by joint type
-
+| | |
+|------------|:--------------:|
 | revolute2  |        2       |
 | prismatic  |        1       |
 | screw      |        2       |
