@@ -21,7 +21,7 @@ Zero means the first axis on the joint, and one means the second if applicable.
 
 #### Number of axis by joint type
 
-| Type | Number |
+|    Type    |      Number    |
 |------------|:--------------:|
 | revolute2  |        2       |
 | prismatic  |        1       |
