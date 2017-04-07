@@ -64,7 +64,7 @@ Otherwise the motor will keep applying a force over many time steps until the ve
 The motor will continue to keep the joint at the target velocity until `fmax` is set back to zero.
 
 ### Links
-Joint motors can be used to move links at a target velocity by creating a joint connecte the link and to the world.
+Joint motors can be used to move links at a target velocity by creating a joint connecting the link and the world.
 It is critical that the joints are created when the velocity is to be applied, and deleted afterwards.
 
 Linear velocity can be set by creating a prismatic joint between the world and the link to be moved.
