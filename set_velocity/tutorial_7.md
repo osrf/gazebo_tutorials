@@ -1,6 +1,6 @@
 # Setting Velocity on Links And Joints
 This tutorial will describe how to programatically set velocities on Joints and Links.
-Usually this is a task done in a custom [plugin](tutorials?cat=plugins).
+This is a common task done in a custom [plugin](tutorials?cat=plugins).
 
 ## Supported Joint Types
 Not all joints can be commanded to move at target velocity.
@@ -66,22 +66,22 @@ Otherwise the motor will keep applying a force over many time steps until the ve
 The motor will continue to keep the joint at the target velocity until `fmax` is set back to zero.
 
 ### Links
-Joint motors can be used to move links at a target velocity by creating joints which connect the link to the world.
+Joint motors can be used to move links at a target velocity by creating a joint connecte the link and to the world.
 It is critical that the joints are created when the velocity is to be applied, and deleted afterwards.
 
-Linear velocity can be set by creating a prismatic joint attached to the world and the link to be moved.
-The prismatic joint constrains rotation, so the link will not rotate while the linear velocity is applied to it.
+Linear velocity can be set by creating a prismatic joint between the world and the link to be moved.
+The prismatic joint constrains rotation and two degrees of translation, so the link will not rotate or move off the prismatic joint axis while the velocity is applied to it.
 The following example shows a class that can set the linear velocity of a link using this method.
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/ode_perfect_linear.hh' />
 
-Angular velocity can be set by creating a revolute joint attached to the world and the link to be moved.
-The revolute joint contrains translation and two degrees of rotation, so the link will only rotate about the revolute joint's axis while the velocity is aplied.
+Angular velocity can be set by creating a revolute joint between the world and the link to be moved.
+The revolute joint contrains translation and two degrees of rotation, so the link will only be able to rotate about the revolute joint's axis while the velocity is aplied.
 The following example shows a class that can set the angular velocity of a link using this method.
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/ode_perfect_angular.hh' />
 
-It is possible to control angular and linear velocity at the same time using a combination of these joints and a programatically created link.
+It is possible to control angular and linear velocity at the same time using a combination of these joints and an additional programatically created link.
 Implementing this is left to the reader.
 
 ## Setting Velocity by Applying Force/Torqe with a PID controller
