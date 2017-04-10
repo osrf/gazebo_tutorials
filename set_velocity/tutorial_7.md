@@ -9,9 +9,20 @@ Ball, gearbox, and fixed joints cannot be set using any method described below.
 However, while a gearbox joint velocity cannot be set, the parent or child joint can be set if it is one of the supported joint types.
 
 ## Set Velocity Instantaneously
+
+**Advantages**
+
+* Supported on all physics engines
+* Simple, only one function call
+* Object moves at target velocity right away
+
+**Disadvantages**
+
+* Object doesn't "feel" a force accellerating it
+
 All physics engines used by gazebo support setting an instananeous velocity.
-This causes objects to move at the given speed without appling any forces or torques to do so.
-Calls to [`Joint::GetForceTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a85f6b25f1d0d6451a84875c18c57535d), [`Link::GetWorldForce()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab6d63e2c37c0273d1f8fd820d208f894) and [`Link::GetWorldTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab4f3ec4a752b81b69198055b525cc026) will not show any additional forces or torques when using these methods.
+Objects to move at the target speed without any forces or torques being applied.
+This means calls to [`Joint::GetForceTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a85f6b25f1d0d6451a84875c18c57535d), [`Link::GetWorldForce()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab6d63e2c37c0273d1f8fd820d208f894) and [`Link::GetWorldTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab4f3ec4a752b81b69198055b525cc026) will not show any additional forces or torques when using these methods.
 
 ### Joints
 Velocity on joints can be set using [`Joint::SetVelocity()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#ae32987acf99308e4aca7f2c399f3e731).
@@ -40,7 +51,19 @@ Angular velocity on links can be set with [`Link::SetAngularVel()`](http://osrf-
 It also accepts a three dimensional vector with the target angular velocity.
 The velocity must be expressed in the world frame.
 
-## Set Velocity With Joint Motors (ODE Only)
+## Set Velocity With Joint Motors
+
+**Advantages**
+
+* Configurable whether to reach target velocity in a single update or multiple
+* Object feels the force that accellerates it
+
+**Disadvantages**
+
+* ODE only (default physics engine used by gazebo)
+* When moving links the other degrees of freedom are constrained
+
+
 Joint velocity can be set by applying the exact required force to a joint.
 Gazebo only supports this method when using the ODE physics engine (the default engine).
 It relies on the [ODE Joint Motor feature](https://www.ode-wiki.org/wiki/index.php?title=Manual:_Joint_Types_and_Functions#Stops_and_motor_parameters).
@@ -83,6 +106,18 @@ It is possible to control angular and linear velocity at the same time using a c
 Implementing this is left to the reader.
 
 ## Setting Velocity by Applying Force/Torqe with a PID controller
+
+**Advantages**
+
+* Supported on all physics engines
+* Object feels the force that accellerates it
+* Does not contrain other degrees of freedom
+
+**Disadvangates**
+
+* PID gains may need to be tuned per object
+* It takes multiple updates to reach the target velocity
+
 Another method of setting velocity is to use a [PID controller](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1common_1_1PID.html) to apply forces and torques.
 It works on all physics engines, but requires tuning the PID gains for the object being moved.
 In general the velocity cannot be achieved instantaneously.
