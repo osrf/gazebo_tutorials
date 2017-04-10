@@ -30,14 +30,32 @@ It takes two parameters: axis, and velocity.
 The axis parameter is an index, and it may be 0 or 1.
 Zero means the first axis on the joint, and one means the second if applicable.
 
-|    Type    |       Axes     |
-|------------|:--------------:|
-| revolute2  |        2       |
-| prismatic  |        1       |
-| screw      |        1       |
-| universal  |        2       |
-| revolute   |        1       |
-
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Number of Axes</th>
+  </tr>
+  <tr>
+    <td>prismatic</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>revolute</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>revolute2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>screw</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>universal</td>
+    <td>2</td>
+  </tr>
+</table>
 
 The second parameter is the velocity.
 It is meters per second for prismatic joints, and radians per second for all others.
