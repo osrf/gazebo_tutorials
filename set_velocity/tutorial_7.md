@@ -202,12 +202,12 @@ Linear velocity can be set by creating a prismatic joint between the world and t
 Then a joint moter can be configured as described above.
 The link will not rotate or move off the prismatic joint axis until the joint is detached.
 
-<include from="/        // create prismatic joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_linear.cpp"/>
+<include from="/        // create prismatic joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_linear.hh"/>
 
 Angular velocity can be set by creating a revolute joint between the world and the link to be moved.
 The link will only be able to rotate about the revolute joint axis until the joint is detached.
 
-<include from="/        // create revolute joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_angular.cpp"/>
+<include from="/        // create revolute joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_angular.hh"/>
 
 Controlling both linear and angular velocity at the same time requires an additional link.
 The link should be programmatically created with the same origin as the link whose velocity is to be set.
@@ -223,4 +223,4 @@ Each degree of freedom (x, y, z, roll, pitch, yaw) must have it's own PID contro
 Fewer controllers can be used if it is permissable for the link to move freely on some degrees of freedom.
 For example, setting a translational velocity while allowing the object to rotate requries only 3 PID controllers: x, y, z.
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/pid_link.hh' />
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
