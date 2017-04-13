@@ -3,6 +3,9 @@
 #include <gazebo/common/Time.hh>
 #include <gazebo/physics/Link.hh>
 
+#ifndef GAZEBO_TUTORIALS_SET_VELOCITY_PID_LINK_HH_
+#define GAZEBO_TUTORIALS_SET_VELOCITY_PID_LINK_HH_
+
 using namespace gazebo;
 
 //////////////////////////////////////////////////
@@ -108,17 +111,4 @@ class PIDLinkVelocityController
   private: common::Time lastSimTime;
 };
 
-// ...
-
-// Create the controller in your plugin so it lives for multiple time steps
-PIDLinkVelocityController controller;
-
-// ...
-
-// Start the controller with a target velocity on one of the joint axis
-controller.Start(myLink, {1, 0 ,0}, {3, 4, 5}, 100.0, 100.0);
-
-// ...
-// Wait at least one time step before stopping the controller or no
-// force/torque will be applied!
-controller.Stop();
+#endif
