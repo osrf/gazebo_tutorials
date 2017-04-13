@@ -170,7 +170,7 @@ Stop applying force by setting `fmax` is set back to zero.
 A [PID controller](https://en.wikipedia.org/wiki/PID_controller) be used to apply forces on the joint axes.
 The class [`physics::JointController`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1JointController.html) can manager the PID controllers for you.
 
-<include from="/          this->jointController.reset(new physics::JointController(/" to="/          this->jointController->SetVelocityTarget(name, 1.0);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/SetJointVelocityPlugin.cpp"/>
+<include from="/          this->jointController.reset(new physics::JointController(/" to="/          this->jointController->SetVelocityTarget(name, 1.0);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
 
 The controller gains must be configured for each object being moved.
 The velocity target is meters per second for prismatic joints, and radians per second for all others.
@@ -187,7 +187,7 @@ This section will show how to use the three methods to set velocity on a link.
 
 ### Set Link Velocity Instantaneously
 
-<include from="/          // Link velocity instantaneously without applying forces/" to="/          model->GetLink("white_link_1")->SetLinearVel({0, 1, 0});/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/SetLinkVelocityPlugin.cpp"/>
+<include from="/          // Link velocity instantaneously without applying forces/" to="/          model->GetLink("white_link_1")->SetLinearVel({0, 1, 0});/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetLinkVelocityPlugin.cpp"/>
 
 Linear velocity on links can be set with [`Link::SetLinearVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a110267b99cacd79cd377ca8619956645).
 Angular velocity on links can be set with [`Link::SetAngularVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a996d99f2897ebca28979b24b7f23faa1).
