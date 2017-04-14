@@ -12,7 +12,7 @@ mkdir build
 cd build
 cmake ..
 make
-GAZEBO_PLUGIN_PLATH=. gazebo --pause --verbose ../set_velocity.world
+GAZEBO_PLUGIN_PATH=. gazebo --pause --verbose ../set_velocity.world
 ```
 
 Finally unpause the world to see everything move.
@@ -44,7 +44,7 @@ This means calls to [`Joint::GetForceTorque()`](http://osrf-distributions.s3.ama
 
 The object is not constrained to the velocity permanently.
 Forces or torques may change the speed of the object after the velocity is set.
-It set every time step to keep the object at a constant velocity forever.
+It must be set every time step to keep the object at a constant velocity forever.
 
 ### Set Velocity With Joint Motors
 
@@ -59,7 +59,7 @@ It set every time step to keep the object at a constant velocity forever.
 * ODE only (default physics engine used by gazebo)
 * When using to set a link's velocity all other degrees of freedom are locked
 
-Joint velocity can be set by applying the exact required force to a joint.
+Joints motors can be used to reach a velocity by applying the exact required force to a joint.
 Gazebo only supports this method when using the ODE physics engine (the default engine).
 It relies on the [ODE Joint Motor feature](https://www.ode-wiki.org/wiki/index.php?title=Manual:_Joint_Types_and_Functions#Stops_and_motor_parameters).
 
@@ -69,11 +69,11 @@ It relies on the [ODE Joint Motor feature](https://www.ode-wiki.org/wiki/index.p
 
 * Supported on all physics engines
 * Object feels the force that accellerates it
-* Does not require contraining other degrees of freedom
+* Does not need to lock other degrees of freedom
 
 **Disadvantages**
 
-* PID gains may need to be tuned per object
+* PID gains need to be tuned per object
 * Can under shoot or over shoot the target velocity
 * It takes multiple updates to reach the target velocity
 
@@ -166,10 +166,10 @@ The other call sets the key `fmax`.
 It is the maximum force or torque a joint motor may apply during a time step.
 Set it larger than the force required to be at the target velocity at the next time step.
 Set it smaller to apply a force over many time steps until the velocity is reached.
-Stop applying force by setting `fmax` is set back to zero.
+Stop applying force by setting `fmax` back to zero.
 
 ### Set Joint Velocity Using PID controllers
-A [PID controller](https://en.wikipedia.org/wiki/PID_controller) be used to apply forces on the joint axes.
+A [PID controller](https://en.wikipedia.org/wiki/PID_controller) can be used to apply forces on the joint axes.
 The class [`physics::JointController`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1JointController.html) can manager the PID controllers for you.
 
 <include from="/          this->jointController\.reset/" to="/          this->jointController->SetVelocityTarget\(name, 1.0\);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
@@ -189,7 +189,7 @@ This section will show how to use the three methods to set velocity on a link.
 
 ### Set Link Velocity Instantaneously
 
-<include from="/          \/\/ Link velocity instantaneously without applying forces/" to='/          model->GetLink\("white_link_1"\)->SetLinearVel\({0, 1, 0}\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetLinkVelocityPlugin.cpp"/>
+<include from="/          \/\/ Link velocity instantaneously without applying forces/" to='/          model->GetLink\(\"white_link_2\"\)->SetAngularVel\({1, 0, 0}\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetLinkVelocityPlugin.cpp"/>
 
 Linear velocity on links can be set with [`Link::SetLinearVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a110267b99cacd79cd377ca8619956645).
 Angular velocity on links can be set with [`Link::SetAngularVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a996d99f2897ebca28979b24b7f23faa1).
@@ -197,7 +197,7 @@ Both accept a [three dimensional vector](http://osrf-distributions.s3.amazonaws.
 The velocity must be expressed in the world frame in meters per second or radians per second.
 
 ###  Set Link Velocity Using Joint Motors
-Joint motors can be used to move links by creating a joint connecting the link and the world.
+Joint motors can be used to move links by creating a joint connecting the link to the world.
 It is critical that the joints are created when the velocity is to be applied, and deleted afterwards.
 
 Linear velocity can be set by creating a prismatic joint between the world and the link to be moved.
