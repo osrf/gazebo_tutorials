@@ -39,7 +39,7 @@ class PIDLinkVelocityController
       double angular_d = 0.0;
       double angular_imax = 123456789.0;
 
-      // Add a PID controller (3 translation, 3 rotation) for each DoF
+      // Add a PID controller for each DoF
       for (int i = 0; i < 3; i++)
       {
         common::PID controller_translation(linear_p, linear_i, linear_d,
