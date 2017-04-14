@@ -107,7 +107,7 @@ The axis parameter is an index, and it may be 0 or 1.
 Zero means the first axis on the joint, and one means the second if applicable.
 
 <style>
-th,td {padding: 5px;}
+table, th,td {padding: 5px;}
 </style>
 <table border="1">
   <tr>
