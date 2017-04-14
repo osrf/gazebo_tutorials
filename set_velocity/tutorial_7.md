@@ -229,15 +229,21 @@ Each degree of freedom (x, y, z, roll, pitch, yaw) must have it's own PID contro
 Fewer controllers can be used if it is permissable for the link to move freely on some degrees of freedom.
 For example, setting a translational velocity while allowing the object to rotate requries only 3 PID controllers: x, y, z.
 
-<!-- <include from="      \/\/ Add a PID controller for each DoF" to='      }' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' /> -->
+```
+<include from="      \/\/ Add a PID controller for each DoF" to='      }' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
+```
 
 Every physics update the error between the actual velocity and the target velocity needs to be given to the controller.
 
-<!-- <include from="      \/\/ Calculate the error between actual and target velocity" to='      worldTorque\.z = this->controllers\[5\]\.Update\(angularError\.z, dt\);' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' /> -->
+```
+<include from="      \/\/ Calculate the error between actual and target velocity" to='      worldTorque\.z = this->controllers\[5\]\.Update\(angularError\.z, dt\);' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
+```
 
 The controllers will output forces and torques that should be applied to the link to correct for the current error.
 
-<!-- <include from="      \/\/ Add those forces to the body" to='      this->link->AddTorque\(worldTorque\);' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' /> -->
+```
+<include from="      \/\/ Add those forces to the body" to='      this->link->AddTorque\(worldTorque\);' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
+```
 
 The object will move at the desired velocity.
 The amount of velocity error depends on the PID gains chosen.
