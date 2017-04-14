@@ -241,4 +241,4 @@ The controllers will output forces and torques that should be applied to the lin
 
 The object will move at the desired velocity.
 The amount of velocity error depends on the PID gains chosen.
-Tune these until you find acceptable performance
+Tune these until you get acceptable performance.
