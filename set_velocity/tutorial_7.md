@@ -170,7 +170,7 @@ Stop applying force by setting `fmax` is set back to zero.
 A [PID controller](https://en.wikipedia.org/wiki/PID_controller) be used to apply forces on the joint axes.
 The class [`physics::JointController`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1JointController.html) can manager the PID controllers for you.
 
-<include from="/          this->jointController.reset(new physics::JointController(/" to="/          this->jointController->SetVelocityTarget(name, 1.0);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
+<include from="/          this->jointController\.reset/" to="/          this->jointController->SetVelocityTarget/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
 
 The controller gains must be configured for each object being moved.
 The velocity target is meters per second for prismatic joints, and radians per second for all others.
@@ -187,7 +187,7 @@ This section will show how to use the three methods to set velocity on a link.
 
 ### Set Link Velocity Instantaneously
 
-<include from="/          // Link velocity instantaneously without applying forces/" to="/          model->GetLink("white_link_1")->SetLinearVel({0, 1, 0});/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetLinkVelocityPlugin.cpp"/>
+<include from="/          \/\/ Link velocity instantaneously without applying forces/" to='/          model->GetLink\("white_link_1"\)->SetLinearVel\({0, 1, 0}\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetLinkVelocityPlugin.cpp"/>
 
 Linear velocity on links can be set with [`Link::SetLinearVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a110267b99cacd79cd377ca8619956645).
 Angular velocity on links can be set with [`Link::SetAngularVel()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#a996d99f2897ebca28979b24b7f23faa1).
@@ -202,12 +202,12 @@ Linear velocity can be set by creating a prismatic joint between the world and t
 Then a joint moter can be configured as described above.
 The link will not rotate or move off the prismatic joint axis until the joint is detached.
 
-<include from="/        // create prismatic joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_linear.hh"/>
+<include from="/        \/\/ create prismatic joint with the world as a parent/" to='/        this->joint->SetParam\(\"vel\", 0, magnitude\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_linear.hh"/>
 
 Angular velocity can be set by creating a revolute joint between the world and the link to be moved.
 The link will only be able to rotate about the revolute joint axis until the joint is detached.
 
-<include from="/        // create revolute joint with the world as a parent/" to="/        this->joint->SetParam("vel", 0, magnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_angular.hh"/>
+<include from="/        \/\/ create revolute joint with the world as a parent/" to='/        this->joint->SetParam\(\"vel\", 0, magnitude\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_angular.hh"/>
 
 Controlling both linear and angular velocity at the same time requires an additional link.
 The link should be programmatically created with the same origin as the link whose velocity is to be set.
@@ -215,7 +215,7 @@ Create a prismatic joint with the world as the parent and the phantom link as th
 Then create a revolute joint with the phantom link as the parent and the link to be moved as the child.
 Finally create joint motors on both joints to reach the target velocity.
 
-<include from="/        // Create a phantom link/" to="/        this->revoluteJoint->SetParam("vel", 0, angularMagnitude);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_velocity.cpp"/>
+<include from="/        \/\/ Create a phantom link/" to='/        this->revoluteJoint->SetParam\(\"vel\", 0, angularMagnitude\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_velocity.cpp"/>
 
 ### Set Link Velocity Using PID controllers
 A [PID controller](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1common_1_1PID.html) can be used to set a velocity by appling forces or torques.
