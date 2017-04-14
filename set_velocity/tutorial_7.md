@@ -38,7 +38,6 @@ There are three methods to set velocity:
 * Object doesn't "feel" a force accellerating it
 
 All physics engines used by gazebo support setting an instananeous velocity.
-
 Objects move at the target speed without any forces or torques being applied.
 This means calls to [`Joint::GetForceTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a85f6b25f1d0d6451a84875c18c57535d), [`Link::GetWorldForce()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab6d63e2c37c0273d1f8fd820d208f894) and [`Link::GetWorldTorque()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Link.html#ab4f3ec4a752b81b69198055b525cc026) will not show any additional forces or torques when using these methods.
 
