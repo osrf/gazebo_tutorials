@@ -223,7 +223,7 @@ Finally create joint motors on both joints to reach the target velocity.
 A [PID controller](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1common_1_1PID.html) can be used to set a velocity by appling forces or torques.
 This requires tuning constants for each object whose velocity is to be set.
 
-<include from="      \/\/ Hard coded gains" to='      double angular_imax = 123456789\.0;' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
+<include from="" to='' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/pid_link.hh' />
 
 Each degree of freedom (x, y, z, roll, pitch, yaw) must have it's own PID controller.
 Fewer controllers can be used if it is permissable for the link to move freely on some degrees of freedom.
