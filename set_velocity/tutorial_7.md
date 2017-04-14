@@ -170,7 +170,7 @@ Stop applying force by setting `fmax` is set back to zero.
 A [PID controller](https://en.wikipedia.org/wiki/PID_controller) be used to apply forces on the joint axes.
 The class [`physics::JointController`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1JointController.html) can manager the PID controllers for you.
 
-<include from="/          this->jointController\.reset/" to="/          this->jointController->SetVelocityTarget/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
+<include from="/          this->jointController\.reset/" to="/          this->jointController->SetVelocityTarget\(name, 1.0\);/" src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/src/SetJointVelocityPlugin.cpp"/>
 
 The controller gains must be configured for each object being moved.
 The velocity target is meters per second for prismatic joints, and radians per second for all others.
