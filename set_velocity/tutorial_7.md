@@ -97,6 +97,9 @@ This section will show how to use the three methods to set velocity on a joint.
 
 ### Set Joint Velocity Instantaneously
 Velocity on joints can be set instantaneously using [`Joint::SetVelocity()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#ae32987acf99308e4aca7f2c399f3e731).
+The velocity is achieved by moving the child link.
+Notice at first the top link (child) on the gray (leftmost) joint moves while the bottom link is stationary.
+The momentum of the top link causes the whole gray object to move when the joint limit is hit.
 
 ```
           this->model->GetJoint("gray_joint")->SetVelocity(0, 1.0);
@@ -138,10 +141,6 @@ table, th,td {padding: 5px;}
 
 The second parameter is the velocity.
 It is meters per second for prismatic joints, and radians per second for all others.
-
-The velocity is achieved by moving the child link.
-Notice at first the top link (child) on the gray (leftmost) joint moves while the bottom link is stationary.
-The momentum of the top link causes the whole gray object to move when the joint limit is hit.
 
 ### Set Joint Velocity Using Joint Motors
 Configuring a joint motor is done using [`Joint::SetParam()`](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1physics_1_1Joint.html#a48402b4fa13b0209246396c0d726d914).
