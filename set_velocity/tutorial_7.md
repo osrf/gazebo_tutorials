@@ -215,7 +215,7 @@ Create a prismatic joint with the world as the parent and the phantom link as th
 Then create a revolute joint with the phantom link as the parent and the link to be moved as the child.
 Finally create joint motors on both joints to reach the target velocity.
 
-<include from="/        \/\/ Create a phantom link/" to='/        this->revoluteJoint->SetParam\(\"vel\", 0, angularMagnitude\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_velocity.cpp"/>
+<include from="/        \/\/ Create a phantom link/" to='/        this->revoluteJoint->SetParam\(\"vel\", 0, angularMagnitude\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/set_velocity/examples/set_vel_plugin/include/ode_perfect_velocity.hh"/>
 
 ### Set Link Velocity Using PID controllers
 A [PID controller](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1common_1_1PID.html) can be used to set a velocity by appling forces or torques.
