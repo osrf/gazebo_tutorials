@@ -52,10 +52,10 @@
       <description>How to control a plugin using ROS.</description>
     </tutorial>
 
-    <!-- Advanced tutorials
-    <tutorial title="Advanced: 1" ref='guided_a1'>
+    <!-- Advanced tutorials -->
+    <tutorial title="Advanced: Where is the code?" ref='guided_a1'>
       <markdown version="7.0">guided_a/tutorial1.md</markdown>
-    </tutorial> -->
+    </tutorial>
 
     <!-- ****************** -->
     <!-- Beginner tutorials -->
