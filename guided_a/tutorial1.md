@@ -2,9 +2,9 @@
 
 Welcome to the Advanced Module! This module will guide you through the
 process of making a contribution to Gazebo's codebase! We will cover
-things such as:
+topics such as:
 
-* How is Gazebo structured
+* Understanding the source code structure
 * Finding an issue to fix
 * Using Mercurial and Bitbucket to manage source files
 * Testing and documenting your code
@@ -12,8 +12,11 @@ things such as:
 
 Each tutorial builds upon the last, so we recommend following the tutorials in order.
 
-These tutorials are intended for those with basic experience using Gazebo, Linux, and
-writing C++ code.
+These tutorials are intended for those with basic experience using Gazebo,
+Ubuntu Linux, and writing C++ code.
+
+> **Note**: It's possible to contribute to Gazebo if you're using a different
+operating system, but for simplicity, this tutorial is focusing on Ubuntu users.
 
 # Where is Gazebo's source code?
 
@@ -49,7 +52,7 @@ following [this link](https://bitbucket.org/account/signup/).
 
 You might be asking, is this it, is that all the code needed to bring Gazebo
 to life? Well, not exactly. Gazebo, as most software, takes advantage of other
-existing libraries which perform specific tasks.
+existing libraries to perform specific tasks. These are called _dependencies_.
 
 For example, Gazebo uses [Ogre](http://www.ogre3d.org/) for rendering,
 [Qt](https://www.qt.io/) for the graphical user interface and supports a few
@@ -57,7 +60,7 @@ physics engines, such as [ODE](http://www.ode.org/) and
 [Bullet](http://bulletphysics.org/wordpress/). That's only to name a few.
 
 Among Gazebo's dependencies, there are some dependencies which are maintained
-by the Gazebo core team. Often Gazebo development is tied to the development of
+by the Gazebo core team. Gazebo development is often tied to the development of
 these libraries, so everything that will be discussed on this series also
 applies to those libraries. All these libraries are hosted on Bitbucket using
 mercurial. They are the following:
@@ -65,7 +68,7 @@ mercurial. They are the following:
 ## SDFormat
 
 SDF is an XML file format that describes worlds used by simulators
-such as Gazebo. The SDF library is used to parse these files and provides a
+such as Gazebo. The SDF library is used to parse these files and provide a
 C++ interface.
 
 * Source code: [https://bitbucket.org/osrf/sdformat](https://bitbucket.org/osrf/sdformat)
