@@ -55,6 +55,17 @@
     <!-- Advanced tutorials -->
     <tutorial title="Advanced: Where is the code?" ref='guided_a1'>
       <markdown version="7.0">guided_a/tutorial1.md</markdown>
+      <description>Introduction to the series and basic concepts</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Run your own copy of Gazebo" ref='guided_a2'>
+      <markdown version="7.0">guided_a/tutorial2.md</markdown>
+      <description>Get the code and build Gazebo from source</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Workflow" ref='guided_a3'>
+      <markdown version="7.0">guided_a/tutorial3.md</markdown>
+      <description>Get familiar with the source code and the toolchain</description>
     </tutorial>
 
     <!-- ****************** -->

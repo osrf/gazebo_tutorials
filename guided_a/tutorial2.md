@@ -1,4 +1,4 @@
-# Get familiar with the codebase
+# Run your own copy of Gazebo
 
 On the [previous tutorial](http://gazebosim.org/tutorials?tut=guided_a1)
 we covered where to find the source code for Gazebo and other dependencies.

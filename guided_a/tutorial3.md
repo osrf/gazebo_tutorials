@@ -1,0 +1,140 @@
+# Workflow
+
+On the previous tutorials you learned how to get your own copy of Gazebo
+running on your computer. On this tutorial, we will a bit into more
+detail on how to navigate the code and make changes to it.
+
+## Code structure
+
+Let's understand a bit more how Gazebo's source code is organized. First,
+move to the directory where you cloned the repository:
+
+    cd ~/code/gazebo
+
+These are some important contents of this directory which you should know about:
+
+* `gazebo`: this directory is where you find all the header files (`.hh`) and
+implementation files (`.cc`) which together form Gazebo. Unit tests for each class
+also go here (`*_TEST.*`).
+Inside this directory, we can see other directories, each one corresponding to a
+library:
+
+    * `physics`: this is where you find all classes related to physics. There
+                 are four subdirectories here, one for each physics engine:
+                 `ode`, `bullet`, `dart`, `simbody`.
+
+    * `sensors`: this is where you find all classes related to sensors, like
+                 cameras and IMUs.
+
+    * `rendering`: this is where you find all classes related to rendering,
+                   like scene, visuals, materials...
+
+    * `gui`: this is where you find all classes related to the GUI (Graphical
+             User Interface), like menus and buttons.
+
+    * `transport`: this is where you find all classes related to the transport
+                   layer.
+
+    * `msgs`: this is where you find the description for all messages to be
+              used with the transport layer.
+
+    * `util`: this is where you find classes which perform generally
+              useful tasks.
+
+    * `common`: this is where you find classes which are shared by one or more
+                of the other libraries.
+
+
+* `test`: this is where all integration, regression and performance tests go.
+Supporting data for the tests, such as worlds, meshes and plugins, also go here.
+
+* `plugins`: this directory contains several plugins which are installed and
+distributed with Gazebo.
+
+* `worlds`: contains world files which are installed and distributed with
+Gazebo. Note that there isn't an equivalent directory for models, as models are
+hosted on a separate repository,
+[gazebo_models](https://bitbucket.org/osrf/gazebo_models/).
+
+* `examples`: contains example plugins and stand-alone programs which are not
+installed with Gazebo, but can be used as references in tutorials.
+
+## Workflow example
+
+You've previously built and run Gazebo locally, but you've never made any changes
+to the source code. Let's go through a simple example of how you'd change something
+on the source code for the first time.
+
+We will talk later about how to find an appropriate bug or feature to address.
+For this example, let's pretend that we want to change the label which says
+`Real Time Factor` on the interface to say `RTF` instead.
+
+[[file:files/tut3_1.png|800px]]
+
+
+1. Before making changes to the code, it's always a good idea to make sure you're
+running the latest Gazebo code. Move to the source code directory and "pull" the
+latest changes from the OSRF repository using the `hg pull` command:
+
+        cd ~/code/gazebo
+        hg pull https://bitbucket.org/osrf/gazebo
+
+1. This will update your local files with all the latest files. Now let's move
+to the branch we want to target. Let's say we want our change to be available
+from the next Gazebo release, so we target the `default` branch. Use the `hg up`
+command to update your workspace to that branch:
+
+        hg up default
+
+1. Now let's build and install Gazebo before making any changes:
+
+        cd build
+        cmake ..
+        make -j4
+        sudo make install
+
+1. Check that Gazebo runs fine (it's a good idea to run Gazebo in verbose mode
+   to check if any errors happened):
+
+        gazebo --verbose
+
+1. If everything is in order, now you can start thinking about making the change.
+It's a good idea to open a new terminal to browse through files, and keep the
+terminal for building open for quick access. So go ahead and open a new terminal
+and move to the source file folder:
+
+        cd ~/code/gazebo
+
+1. A good idea when jumping into a new codebase for the first time is to use the
+`grep` tool to search for strings in files. Here, we can search for the string
+we want to change, `Real Time Factor`. Let's use `grep` with the `-r` flag to
+search recursively through all subdirectories within `gazebo` and the `-n` flag
+to display line numbers:
+
+        grep "Real Time Factor" -nr gazebo
+
+1. You'll get a result similar to the following:
+
+        gazebo/gui/TimeWidget.cc:137:  this->dataPtr->realTimeFactorLabel = new QLabel(tr("Real Time Factor:"));
+
+1. The result is within `gazebo/gui`. That makes sense because we're
+trying to modify something on the graphical interface. It also makes sense
+that the line we're looking for is within `TimeWidget`, because it is
+displayed within a widget that tells time. So let's open that file:
+
+        gedit gazebo/gui/TimeWidget.cc
+
+1. Let's go to the line number we found on our search (in this case 137), and change
+`Real Time Factor` to `RTF`.
+
+1. Now back at our build terminal, let's re-run commands to install:
+
+        sudo make install
+
+1. If everything went well, let's open Gazebo from any terminal and check that the
+label has been successfully changed:
+
+        gazebo --verbose
+
+[[file:files/tut3_1.png|800px]]
+

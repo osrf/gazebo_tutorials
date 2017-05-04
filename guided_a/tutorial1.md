@@ -4,9 +4,9 @@ Welcome to the Advanced Module! This module will guide you through the
 process of making a contribution to Gazebo's codebase! We will cover
 topics such as:
 
+* Using Mercurial and Bitbucket to manage source files
 * Understanding the source code structure
 * Finding an issue to fix
-* Using Mercurial and Bitbucket to manage source files
 * Testing and documenting your code
 * Getting your code integrated into Gazebo!
 
