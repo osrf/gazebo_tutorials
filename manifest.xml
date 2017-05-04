@@ -68,6 +68,11 @@
       <description>Get familiar with the source code and the toolchain</description>
     </tutorial>
 
+    <tutorial title="Advanced: Code quality" ref='guided_a4'>
+      <markdown version="7.0">guided_a/tutorial4.md</markdown>
+      <description>Testing, style, warnings and documentation</description>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Beginner tutorials -->
 

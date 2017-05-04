@@ -1,7 +1,7 @@
 # Workflow
 
 On the previous tutorials you learned how to get your own copy of Gazebo
-running on your computer. On this tutorial, we will a bit into more
+running on your computer. On this tutorial, we will go into a bit more
 detail on how to navigate the code and make changes to it.
 
 ## Code structure
@@ -26,8 +26,8 @@ library:
     * `sensors`: this is where you find all classes related to sensors, like
                  cameras and IMUs.
 
-    * `rendering`: this is where you find all classes related to rendering,
-                   like scene, visuals, materials...
+    * `rendering`: this is where you find all classes related to the 3D
+                   rendering, like scene, visuals, materials...
 
     * `gui`: this is where you find all classes related to the GUI (Graphical
              User Interface), like menus and buttons.
@@ -38,12 +38,8 @@ library:
     * `msgs`: this is where you find the description for all messages to be
               used with the transport layer.
 
-    * `util`: this is where you find classes which perform generally
-              useful tasks.
-
     * `common`: this is where you find classes which are shared by one or more
                 of the other libraries.
-
 
 * `test`: this is where all integration, regression and performance tests go.
 Supporting data for the tests, such as worlds, meshes and plugins, also go here.
@@ -124,8 +120,8 @@ displayed within a widget that tells time. So let's open that file:
 
         gedit gazebo/gui/TimeWidget.cc
 
-1. Let's go to the line number we found on our search (in this case 137), and change
-`Real Time Factor` to `RTF`.
+1. Then go to the line number found on the search (in this case 137), and change
+`Real Time Factor` to `RTF` and then save the file.
 
 1. Now back at our build terminal, let's re-run commands to install:
 
@@ -136,5 +132,6 @@ label has been successfully changed:
 
         gazebo --verbose
 
-[[file:files/tut3_1.png|800px]]
+[[file:files/tut3_2.png|800px]]
+
 

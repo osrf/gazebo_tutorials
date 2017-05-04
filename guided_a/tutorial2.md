@@ -137,7 +137,7 @@ some special configuration, check out the full
 1. Setup keys and update
 
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-sudo apt-get update
+        sudo apt-get update
 
 1. Install dependencies
 
