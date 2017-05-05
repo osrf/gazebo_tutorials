@@ -488,6 +488,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="ROS Depth Camera Integration" ref='ros_depth_camera'>
+      <markdown version="1.7+">ros_plugins/tutorial.md</markdown>
+      <description>Connect a Gazebo depth camera to ROS.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="ROS plugin" ref='ros_plugins'>
       <markdown version="1.9+">ros_plugins/tutorial.md</markdown>
       <description>Create ROS for Gazebo.</description>
@@ -1079,6 +1085,7 @@
         <tutorial>ros_wrapper_versions</tutorial>
         <tutorial>ros_installing</tutorial>
         <tutorial>ros_roslaunch</tutorial>
+        <tutorial>ros_depth_camera</tutorial>
         <tutorial>ros_urdf</tutorial>
         <tutorial>ros_gzplugins</tutorial>
         <tutorial>ros_control</tutorial>
