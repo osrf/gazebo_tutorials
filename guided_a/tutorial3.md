@@ -75,8 +75,8 @@ latest changes from the OSRF repository using the `hg pull` command:
         cd ~/code/gazebo
         hg pull https://bitbucket.org/osrf/gazebo
 
-1. This will update your local files with all the latest files. Now let's move
-to the branch we want to target. Let's say we want our change to be available
+1. Now your local branches are all in sync with the official repository. Let's
+move to the branch we want to target. Let's say we want our change to be available
 from the next Gazebo release, so we target the `default` branch. Use the `hg up`
 command to update your workspace to that branch:
 
@@ -120,10 +120,10 @@ displayed within a widget that tells time. So let's open that file:
 
         gedit gazebo/gui/TimeWidget.cc
 
-1. Then go to the line number found on the search (in this case 137), and change
+1. Then go to the line number found on the search (in this case 137), change
 `Real Time Factor` to `RTF` and then save the file.
 
-1. Now back at our build terminal, let's re-run commands to install:
+1. Now back at our build terminal, let's re-run commands to build and install:
 
         sudo make install
 
@@ -134,4 +134,4 @@ label has been successfully changed:
 
 [[file:files/tut3_2.png|800px]]
 
-
+Congratulations, you're making changes to Gazebo!
