@@ -9,7 +9,7 @@ your code into the official Gazebo repository!
 ## Choosing an issue
 
 Before starting to write code, it's a good idea to find out if anyone is
-already working on that, whether anyone has tried before but failed,
+already working on that, whether anyone has tried it before but failed,
 or simply if it makes sense.
 
 On Bitbucket, there is a list of "issues", which may be bugs or feature
@@ -38,7 +38,7 @@ if you find anything that's interesting to you.
 Feel free to leave a comment on one of those issues saying that you're
 considering tackling it and asking for additional information as needed.
 Some issues might seem too large, and it's ok to only partially solve
-an issue if that solution is self-contained in itself.
+an issue if that solution makes sense by itself.
 
 ### Other issues
 
@@ -58,7 +58,7 @@ results of your search are:
 1. Someone has worked on it in the past but has left it in an incomplete state
 
     Feel free to post a comment asking for clarification on what's the current
-    status of their work, whether they're planning on keep working on it, why
+    status of their work, whether they're planning to keep working on it, why
     they stopped... Ask anything which might help you pick up from where they
     left.
 
