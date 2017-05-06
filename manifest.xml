@@ -65,12 +65,17 @@
 
     <tutorial title="Advanced: Workflow" ref='guided_a3'>
       <markdown version="7.0">guided_a/tutorial3.md</markdown>
-      <description>Get familiar with the source code and the toolchain</description>
+      <description>Get familiar with the source code and toolchain</description>
     </tutorial>
 
     <tutorial title="Advanced: Code quality" ref='guided_a4'>
       <markdown version="7.0">guided_a/tutorial4.md</markdown>
       <description>Testing, style, warnings and documentation</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Code review" ref='guided_a5'>
+      <markdown version="7.0">guided_a/tutorial5.md</markdown>
+      <description>Choose a bug, fix it, and get your patch into Gazebo!</description>
     </tutorial>
 
     <!-- ****************** -->
