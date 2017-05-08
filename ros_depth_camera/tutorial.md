@@ -23,18 +23,11 @@ before doing this tutorial.
 Because Gazebo and ROS are separate projects that
 do not depend on each other, sensors such as depth cameras do not include ROS
 plugins by default. This means you have to make a custom camera based on those
-in the Gazebo model repository, and then add our own code to make the depth
-camera data publish to ROS topics.
+in the Gazebo model repository, and then add your own `<plugin>` tag to make the
+depth camera data publish point clouds and images to ROS topics.
 
-You should choose a depth camera to use from those available in Gazebo. Some
-possible options are:
-
-  - Microsoft Kinect
-  - Asus Xtion Pro
-  - Intel Realsense R200
-  - Orbbec Astra
-
-This tutorial will use the Microsoft Kinect, but the procedure should be the
+You should choose a depth camera to use from those available in Gazebo. This
+tutorial will use the Microsoft Kinect, but the procedure should be the
 same for other depth cameras on the list.
 
 First, make a new model as in the
@@ -43,14 +36,16 @@ To make this process faster, you can cheat a bit.
 Clone the gazebo_models directory, and copy the `kinect` folder into your
 `~/.gazebo/models` directory. Then, change the name of your model to something
 meaningful, like `kinect_ros`. To change the model's name, you should update
-both the folder name and the name stored in the `.config` file.
+the folder name, the `<name>` stored in the `.config` file, and the `model name`
+in the `model.sdf` file.
 
 Now you need to add the ROS plugin to publish depth camera information and
-output to ROS topics. A list of ROS plugins, with example code, can be found in the
+output to ROS topics. A list of ROS plugins, with example code, can be found in
+the
 [plugins tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros).
-In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can
-use this plugin for other types of depth cameras besides the Kinect (it is an
-older plugin, and so it retains its old name).
+In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can and
+should use this plugin for other types of depth cameras besides the Kinect (it
+is an older plugin, and so it retains its old name).
 
 Open the `model.sdf` file in your new model's directory. Add the following SDF
 markup inside the `<sensor>` tag, immediately after the closing `</camera>` tag:
@@ -107,9 +102,10 @@ saved your changes, you should be ready to roll!
 Open Gazebo with ROS support enabled (e.g. `rosrun gazebo_ros gazebo`). Use the
 Insert panel and find your "Kinect ROS" model. Insert it in the world.
 
-*Important:* You must also add some other objects to the scene, otherwise your
-camera won't have anything to see! Add some cubes, spheres, or anything else,
-and make sure they are located in the visible range of the camera:
+*Important:* You should also add some other objects to the scene, otherwise your
+camera might not have anything to see! Add some cubes, spheres, or anything
+else, and make sure they are located in the visible range of the camera, like in
+the screenshot below.
 
 [[file:depth_camera_scene.png|600px]]
 
