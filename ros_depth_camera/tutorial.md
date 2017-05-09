@@ -15,7 +15,7 @@ quickly using computer vision in ROS and Gazebo.
 
 ### Prerequisites
 
-You should [install gazebo_ros_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+You should [install gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
 before doing this tutorial.
 
 ## Create a Gazebo Model with a Depth Camera Plugin
@@ -30,12 +30,19 @@ You should choose a depth camera to use from those available in Gazebo. This
 tutorial will use the Microsoft Kinect, but the procedure should be the
 same for other depth cameras on the list.
 
-First, make a new model as in the
-[model contribution tutorial](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot).
-To make this process faster, you can cheat a bit.
-Clone the gazebo_models directory, and copy the `kinect` folder into your
+First, acquire the depth camera and modify its name. We've packaged the Kinect
+sensor from `gazebo\_models` repository for you, so all you have to do is
+[download](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/ros_depth_camera/files/kinect.zip)
+and unzip it.
+
+Alternatively, you can follow the
+[model contribution tutorial](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
+to make your own camera from scratch, or you can clone the `gazebo\_models`
+repository and copy one of the sensors from there.
+
+However you acquire it, copy the `kinect` folder into your
 `~/.gazebo/models` directory. Then, change the name of your model to something
-meaningful, like `kinect_ros`. To change the model's name, you should update
+meaningful, like `kinect\_ros`. To change the model's name, you should update
 the folder name, the `<name>` stored in the `.config` file, and the `model name`
 in the `model.sdf` file.
 
@@ -43,6 +50,7 @@ Now you need to add the ROS plugin to publish depth camera information and
 output to ROS topics. A list of ROS plugins, with example code, can be found in
 the
 [plugins tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros).
+
 In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can and
 should use this plugin for other types of depth cameras besides the Kinect (it
 is an older plugin, and so it retains its old name).
@@ -82,10 +90,12 @@ As you can see, this plugin allows you a lot of fine-grained control over how
 the information is passed to ROS. A few points to note:
 
   * The `updateRate` parameter should be set to 0, which will cause the plugin
-  to publish depth information as the same rate as the parent SDF `sensor`.
+  to publish depth information as the same rate as the parent SDF `sensor`. If
+  updateRate is not 0, it will do additional throttling on top of the parent
+  `sensor`'s update rate.
   * The topic names and `frameName` can be set to whatever you'd like, but the
   ones shown above match the default topics that are published by commonly used
-  ROS packages, such as openni2_launch. Keeping the topic names the same will
+  ROS packages, such as `openni2_launch`. Keeping the topic names the same will
   help make switching between real and simulated cameras easier.
   * The `distortionX` parameters should match those in the `<distortion>` tag of
   the parent camera. If there is no `<distortion>` tag, then use 0 for all the
@@ -102,7 +112,7 @@ saved your changes, you should be ready to roll!
 Open Gazebo with ROS support enabled (e.g. `rosrun gazebo_ros gazebo`). Use the
 Insert panel and find your "Kinect ROS" model. Insert it in the world.
 
-*Important:* You should also add some other objects to the scene, otherwise your
+**Important:** You should also add some other objects to the scene, otherwise your
 camera might not have anything to see! Add some cubes, spheres, or anything
 else, and make sure they are located in the visible range of the camera, like in
 the screenshot below.
@@ -129,7 +139,7 @@ should see something similar to the following:
 
 ### Troubleshooting
 
-*Problem:* `rostopic list` shows no camera topics.
+**Problem:** `rostopic list` shows no camera topics.
 
 *Solution:* Make sure you added the correct model in Gazebo. Make sure that
 the Gazebo simulation is running, not paused. Check the `model.sdf` file and
@@ -138,9 +148,9 @@ running Gazebo in verbose mode (`rosrun gazebo_ros gazebo --verbose`) and
 see if there are any helpful warning or error messages that can help pinpoint
 the problem.
 
-*Problem:* The ROS topics are listed, but I don't see anything in Rviz.
+**Problem:** The ROS topics are listed, but I don't see anything in Rviz.
 
-*Solution:* Make sure that there are objects for the camera to see in Gazebo.
+**Solution:** Make sure that there are objects for the camera to see in Gazebo.
 Make sure that you have an Image or PointCloud2 display added in RViz. Check
 that your Image or PointCloud2 displays are set to show the correct topic. Check
 that the Image or PointCloud2 displays are not disabled (checkbox).
