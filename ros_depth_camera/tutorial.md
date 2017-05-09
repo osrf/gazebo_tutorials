@@ -39,7 +39,8 @@ Alternatively, you can follow the
 [model contribution tutorial](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
 to make your own camera from scratch, or you can clone the `gazebo\_models`
 repository and copy one of the sensors from there.
-Clone the gazebo\_models directory, and copy the `kinect` folder into your
+
+However you acquire it, copy the `kinect` folder into your
 `~/.gazebo/models` directory. Then, change the name of your model to something
 meaningful, like `kinect\_ros`. To change the model's name, you should update
 the folder name, the `<name>` stored in the `.config` file, and the `model name`
@@ -49,6 +50,7 @@ Now you need to add the ROS plugin to publish depth camera information and
 output to ROS topics. A list of ROS plugins, with example code, can be found in
 the
 [plugins tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros).
+
 In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can and
 should use this plugin for other types of depth cameras besides the Kinect (it
 is an older plugin, and so it retains its old name).
@@ -88,7 +90,9 @@ As you can see, this plugin allows you a lot of fine-grained control over how
 the information is passed to ROS. A few points to note:
 
   * The `updateRate` parameter should be set to 0, which will cause the plugin
-  to publish depth information as the same rate as the parent SDF `sensor`.
+  to publish depth information as the same rate as the parent SDF `sensor`. If
+  updateRate is not 0, it will do additional throttling on top of the parent
+  `sensor`'s update rate.
   * The topic names and `frameName` can be set to whatever you'd like, but the
   ones shown above match the default topics that are published by commonly used
   ROS packages, such as `openni2_launch`. Keeping the topic names the same will
