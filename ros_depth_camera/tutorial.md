@@ -131,11 +131,24 @@ point clouds to ROS topics. You can check the topics that are being published
 by running `rostopic list` in a new terminal. You should see the topics you
 specified in the SDF plugin code listed.
 
-Now you can run RViz (`rosrun rviz rviz`) and add a new PointCloud2 or Image
-display to visualize the camera's view. After setting the correct topics, you
-should see something similar to the following:
+Now you can run RViz (`rosrun rviz rviz`). First, set the RViz Fixed Frame in
+the left panel's Global Options section to match the value you set for
+`<frameName>` in the plugin XML code. Then, you can add a PointCloud2 and an
+Image display to RViz. For an Image, set the Image Topic to the value you used
+in the `<imageTopicName>` tag. For the PointCloud2, set the Topic to the name
+you used in the `<depthImageTopicName>` tag. See the screenshot below for an
+example that matches the values in the example sensor XML above:
+
+[[file:rviz_topics.png|600px]]
+
+After setting the correct topics and fixed frame, you should see something
+similar to the following from the PointCloud2:
 
 [[file:depth_camera_rviz.png|600px]]
+
+An Image display will show a grayscale version of the depth camera results.
+It should match what's seen in Gazebo if you use the Topic Visualizer on the
+depth camera.
 
 ### Troubleshooting
 
