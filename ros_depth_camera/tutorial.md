@@ -31,18 +31,18 @@ tutorial will use the Microsoft Kinect, but the procedure should be the
 same for other depth cameras on the list.
 
 First, acquire the depth camera and modify its name. We've packaged the Kinect
-sensor from `gazebo\_models` repository for you, so all you have to do is
+sensor from `gazebo_models` repository for you, so all you have to do is
 [download](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/ros_depth_camera/files/kinect.zip)
 and unzip it.
 
 Alternatively, you can follow the
 [model contribution tutorial](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
-to make your own camera from scratch, or you can clone the `gazebo\_models`
+to make your own camera from scratch, or you can clone the `gazebo_models`
 repository and copy one of the sensors from there.
 
 However you acquire it, copy the `kinect` folder into your
 `~/.gazebo/models` directory. Then, change the name of your model to something
-meaningful, like `kinect\_ros`. To change the model's name, you should update
+meaningful, like `kinect_ros`. To change the model's name, you should update
 the folder name, the `<name>` stored in the `.config` file, and the `model name`
 in the `model.sdf` file.
 
@@ -109,8 +109,9 @@ saved your changes, you should be ready to roll!
 
 ## Set up the Depth Camera in Gazebo
 
-Open Gazebo with ROS support enabled (e.g. `rosrun gazebo_ros gazebo`). Use the
-Insert panel and find your "Kinect ROS" model. Insert it in the world.
+Open Gazebo with ROS support enabled (e.g.
+`roslaunch gazebo_ros gazebo_ros empty_world.launch`). Use the
+Insert panel to find your "Kinect ROS" model, and insert it into the world!
 
 **Important:** You should also add some other objects to the scene, otherwise your
 camera might not have anything to see! Add some cubes, spheres, or anything
