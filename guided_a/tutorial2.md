@@ -17,8 +17,8 @@ In order to modify the code, you'll need to get your own copy, which is called
 a "fork". You can fork Gazebo as follows:
 
 1. Click on [this link](https://bitbucket.org/osrf/gazebo/fork)
-1. You can choose a custom name for the repository, but here we will consider
-you left the default value `gazebo`.
+1. You can choose a custom name for the repository, but here we will leave the
+default value `gazebo`.
 1. After you finish the fork process, you should have a copy of Gazebo on
 `https://bitbucket.org/<yourname>/gazebo`.
 

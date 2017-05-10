@@ -38,8 +38,8 @@ library:
     * `msgs`: this is where you find the description for all messages to be
               used with the transport layer.
 
-    * `common`: this is where you find classes which are shared by one or more
-                of the other libraries.
+    * `common, utils`: in these folders you find classes which are shared by
+                       one or more of the other libraries.
 
 * `test`: this is where all integration, regression and performance tests go.
 Supporting data for the tests, such as worlds, meshes and plugins, also go here.
@@ -54,6 +54,12 @@ hosted on a separate repository,
 
 * `examples`: contains example plugins and stand-alone programs which are not
 installed with Gazebo, but can be used as references in tutorials.
+
+* `cmake`: contains files used by cmake to build Gazebo. In particular, the
+`SearchForStuff.cmake` file looks for dependencies.
+
+* `doc`: contains files responsible for generating documentation web pages
+from doxygen comments in C++ header files.
 
 ## Workflow example
 
