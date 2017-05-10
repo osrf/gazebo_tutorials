@@ -57,31 +57,7 @@ move to that folder and list its contents:
 
 1. You should see something like this:
 
-        AUTHORS
-        build
-        Changelog.md
-        cmake
-        CMakeLists.txt
-        configure.bat
-        CONTRIBUTING.md
-        COPYING
-        deps
-        doc
-        examples
-        gazebo
-        interfaces
-        LICENSE
-        media
-        Migration.md
-        models
-        NEWS
-        plugins
-        README.md
-        release-notes.html
-        test
-        tools
-        win_addpath.bat
-        worlds
+    [[file:files/tut2_1.png|800px]]
 
 ## Branches
 

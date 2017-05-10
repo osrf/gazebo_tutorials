@@ -19,24 +19,22 @@ also go here (`*_TEST.*`).
 Inside this directory, we can see other directories, each one corresponding to a
 library:
 
-    * `physics`: this is where you find all classes related to physics. There
-                 are four subdirectories here, one for each physics engine:
+    * `physics`: has all classes related to physics. There are four
+                 subdirectories here, one for each physics engine:
                  `ode`, `bullet`, `dart`, `simbody`.
 
-    * `sensors`: this is where you find all classes related to sensors, like
-                 cameras and IMUs.
+    * `sensors`: has all classes related to sensors, like cameras and IMUs.
 
-    * `rendering`: this is where you find all classes related to the 3D
-                   rendering, like scene, visuals, materials...
+    * `rendering`: has all classes related to the 3D rendering, like scene,
+                   visuals, materials...
 
-    * `gui`: this is where you find all classes related to the GUI (Graphical
-             User Interface), like menus and buttons.
+    * `gui`: has all classes related to the GUI (Graphical User Interface),
+             like menus and buttons.
 
-    * `transport`: this is where you find all classes related to the transport
-                   layer.
+    * `transport`: has all classes related to the transport layer.
 
-    * `msgs`: this is where you find the description for all messages to be
-              used with the transport layer.
+    * `msgs`: has the description for all messages to be used with the
+              transport layer.
 
     * `common, utils`: in these folders you find classes which are shared by
                        one or more of the other libraries.
