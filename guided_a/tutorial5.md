@@ -118,6 +118,20 @@ branch we're currently at with the `hg branch` command:
 
 1. If you've been following the tutorials, you should now be at `default`.
 
+1. It was mentioned earlier that different Gazebo releases live in different
+branches.
+
+    * If you're fixing a bug on an existing release, you'll want to start
+      from that branch, for example `gazebo7`. When targeting a release
+      branch, make sure your changes won't break ABI or API.
+
+    * If you're adding a new feature, you probably want it to go into a future
+      release, so you can start from `default`.
+
+    You can change to the target branch with the `hg up` command, for example:
+
+        hg up gazebo7
+
 1. To create a new branch we pass the branch name to the `hg branch` command.
 This creates a new branch as a copy of the branch we're currently in. For
 example:
@@ -183,7 +197,8 @@ You can create a pull request for Gazebo on this link:
 
 Be sure to describe what you did, refer the issue you're fixing, and add any
 images or other things which you think may help the reviewers get a good
-idea of your code. Let us know in the description if this is your first
+idea of your code. Be sure to choose the correct target branch if you're not
+starting from `default`. Let us know in the description if this is your first
 pull request so we can give you extra guidance ;)
 
 At least two other people have to approve your pull request before it can be merged.
