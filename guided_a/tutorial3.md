@@ -63,7 +63,7 @@ from doxygen comments in C++ header files.
 
 You've previously built and run Gazebo locally, but you've never made any changes
 to the source code. Let's go through a simple example of how you'd change something
-on the source code for the first time.
+in the source code for the first time.
 
 We will talk later about how to find an appropriate bug or feature to address.
 For this example, let's pretend that we want to change the label which says
