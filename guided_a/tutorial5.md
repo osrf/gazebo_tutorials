@@ -121,12 +121,12 @@ branch we're currently at with the `hg branch` command:
 1. It was mentioned earlier that different Gazebo releases live in different
 branches.
 
-    * If you're fixing a bug on an existing release, you'll want to start
-      from that branch, for example `gazebo7`. When targeting a release
-      branch, make sure your changes won't break ABI or API.
+ * If you're fixing a bug on an existing release, you'll want to start
+   from that branch, for example `gazebo7`. When targeting a release
+   branch, make sure your changes won't break ABI or API.
 
-    * If you're adding a new feature, you probably want it to go into a future
-      release, so you can start from `default`.
+ * If you're adding a new feature, you probably want it to go into a future
+   release, so you can start from `default`.
 
     You can change to the target branch with the `hg up` command, for example:
 
