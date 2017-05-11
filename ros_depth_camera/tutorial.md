@@ -110,7 +110,7 @@ saved your changes, you should be ready to roll!
 ## Set up the Depth Camera in Gazebo
 
 Open Gazebo with ROS support enabled (e.g.
-`roslaunch gazebo_ros gazebo_ros empty_world.launch`). Use the
+`roslaunch gazebo_ros empty_world.launch`). Use the
 Insert panel to find your "Kinect ROS" model, and insert it into the world!
 
 **Important:** You should also add some other objects to the scene, otherwise your
@@ -155,7 +155,7 @@ depth camera.
 
 **Problem:** `rostopic list` shows no camera topics.
 
-*Solution:* Make sure you added the correct model in Gazebo. Make sure that
+**Solution:** Make sure you added the correct model in Gazebo. Make sure that
 the Gazebo simulation is running, not paused. Check the `model.sdf` file and
 ensure that the `<plugin>` tag is in the correct location in the file. Try
 running Gazebo in verbose mode (`rosrun gazebo_ros gazebo --verbose`) and
