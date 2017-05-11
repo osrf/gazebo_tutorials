@@ -155,7 +155,7 @@ depth camera.
 
 **Problem:** `rostopic list` shows no camera topics.
 
-*Solution:* Make sure you added the correct model in Gazebo. Make sure that
+**Solution:** Make sure you added the correct model in Gazebo. Make sure that
 the Gazebo simulation is running, not paused. Check the `model.sdf` file and
 ensure that the `<plugin>` tag is in the correct location in the file. Try
 running Gazebo in verbose mode (`rosrun gazebo_ros gazebo --verbose`) and
