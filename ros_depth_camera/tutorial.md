@@ -20,11 +20,11 @@ before doing this tutorial.
 
 ## Create a Gazebo Model with a Depth Camera Plugin
 
-Because Gazebo and ROS are separate projects that
-do not depend on each other, sensors such as depth cameras do not include ROS
-plugins by default. This means you have to make a custom camera based on those
-in the Gazebo model repository, and then add your own `<plugin>` tag to make the
-depth camera data publish point clouds and images to ROS topics.
+Because Gazebo and ROS are separate projects that do not depend on each other,
+sensors from the `gazebo_models` repository (such as depth cameras) do not
+include ROS plugins by default. This means you have to make a custom camera
+based on those in the Gazebo model repository, and then add your own `<plugin>`
+tag to make the depth camera data publish point clouds and images to ROS topics.
 
 You should choose a depth camera to use from those available in Gazebo. This
 tutorial will use the Microsoft Kinect, but the procedure should be the
@@ -51,9 +51,9 @@ output to ROS topics. A list of ROS plugins, with example code, can be found in
 the
 [plugins tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros).
 
-In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can and
-should use this plugin for other types of depth cameras besides the Kinect (it
-is an older plugin, and so it retains its old name).
+In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can
+(and should) use this plugin for other types of depth cameras besides the Kinect
+(it's an older plugin, and so it retains its old name).
 
 Open the `model.sdf` file in your new model's directory. Add the following SDF
 markup inside the `<sensor>` tag, immediately after the closing `</camera>` tag:
@@ -110,11 +110,11 @@ saved your changes, you should be ready to roll!
 ## Set up the Depth Camera in Gazebo
 
 Open Gazebo with ROS support enabled (e.g.
-`roslaunch gazebo_ros empty_world.launch`). Use the
-Insert panel to find your "Kinect ROS" model, and insert it into the world!
+`roslaunch gazebo_ros empty_world.launch`). Use the Insert panel to find your
+"Kinect ROS" model, and insert it into the world.
 
-**Important:** You should also add some other objects to the scene, otherwise your
-camera might not have anything to see! Add some cubes, spheres, or anything
+**Important:** You should also add some other objects to the scene, otherwise
+your camera might not have anything to see! Add some cubes, spheres, or anything
 else, and make sure they are located in the visible range of the camera, like in
 the screenshot below.
 
@@ -132,9 +132,9 @@ point clouds to ROS topics. You can check the topics that are being published
 by running `rostopic list` in a new terminal. You should see the topics you
 specified in the SDF plugin code listed.
 
-Now you can run RViz (`rosrun rviz rviz`). First, set the RViz Fixed Frame in
+You can also run RViz (`rosrun rviz rviz`). First, set the RViz Fixed Frame in
 the left panel's Global Options section to match the value you set for
-`<frameName>` in the plugin XML code. Then, you can add a PointCloud2 and an
+`<frameName>` in the plugin XML code. Then, add a PointCloud2 and/or an
 Image display to RViz. For an Image, set the Image Topic to the value you used
 in the `<imageTopicName>` tag. For the PointCloud2, set the Topic to the name
 you used in the `<depthImageTopicName>` tag. See the screenshot below for an
@@ -148,8 +148,8 @@ similar to the following from the PointCloud2:
 [[file:depth_camera_rviz.png|600px]]
 
 An Image display will show a grayscale version of the depth camera results.
-It should match what's seen in Gazebo if you use the Topic Visualizer on the
-depth camera.
+If you have Gazebo 8 or newer, you can compare these RViz results to the depth
+image results available in the Gazebo Topic Visualizer.
 
 ### Troubleshooting
 
