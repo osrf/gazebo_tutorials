@@ -112,7 +112,7 @@ wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-kinetic-gazebo8-ros-pkgs` and/or `ros-kinetic-gazebo8-ros-pkgs`
+ * Install `ros-kinetic-gazebo8-ros-pkgs` and/or `ros-kinetic-gazebo8-ros-control`
    from the osrfoundation repository, which will install the `gazebo8` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
