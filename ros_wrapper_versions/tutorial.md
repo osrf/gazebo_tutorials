@@ -112,7 +112,8 @@ wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-kinetic-gazebo8-ros-pkgs` from the osrfoundation repository, which will install the `gazebo8` package.
+ * Install `ros-kinetic-gazebo8-ros-pkgs` and/or `ros-kinetic-gazebo8-ros-pkgs`
+   from the osrfoundation repository, which will install the `gazebo8` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 7.x series
@@ -122,7 +123,8 @@ gazebo wrappers (`gazebo7_ros_pkgs`) which are built on top of the `gazebo7`
 package.  The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` from the osrfoundation repository, which will install the `gazebo7` package.
+ * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo7-ros-control`
+   from the osrfoundation repository, which will install the `gazebo7` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 6.x series
@@ -132,7 +134,8 @@ gazebo wrappers (`gazebo6_ros_pkgs`) which are built on top of the `gazebo6`
 package.  The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo6-ros-pkgs` from the osrfoundation repository, which will install the `gazebo6` package.
+ * Install `ros-$ROS_DISTRO-gazebo6-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo6-ros-control`
+   from the osrfoundation repository, which will install the `gazebo6` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 5.x series
@@ -142,7 +145,8 @@ The OSRF repository provides `-gazebo5-` versions of ROS/Indigo gazebo wrappers
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-indigo-gazebo5-ros-pkgs` from the osrfoundation repository, which will install the `gazebo5` package.
+ * Install `ros-indigo-gazebo5-ros-pkgs` and/or `ros-indigo-gazebo5-ros-control`
+   from the osrfoundation repository, which will install the `gazebo5` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ## FAQ
