@@ -149,14 +149,7 @@ freedom to fill this function with any code that you need.
 
 Now, let's study the watcher program:
 
-~~~
-// Use the introspection service for finding the "sim_time" item.
-gazebo::util::IntrospectionClient client;
-
-// Wait for the managers to come online.
-std::set<std::string> managerIds = client.WaitForManagers(
-    std::chrono::seconds(2));
-~~~
+<include from="  /\/\/ Use the introspection service" to="std::chrono::seconds\(2\)\);" src="wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 This executable is in charge of the subscription to a specific set of items that
 are introspectable. We created the [`IntrospectionClient` class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionClient.html) to help all the
