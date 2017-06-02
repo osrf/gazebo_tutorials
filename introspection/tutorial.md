@@ -163,7 +163,7 @@ In theory, we could have multiple introspection managers running, although in
 the case of Gazebo we will only have one. We're working under this assumption,
 so we'll save the Id of the first introspection manager detected.
 
-<include from='/  \/\/ Check if \"sim_time\" is registered/' to='/  \/\/ The variables to watch are registerd with the manager/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  std::string simTime/' to='/  \/\/ The variables to watch are registerd with the manager/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 This code block performs a sanity check to make sure that both items are
 registered in the introspection manager.
