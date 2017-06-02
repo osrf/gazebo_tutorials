@@ -157,47 +157,18 @@ clients of the introspection service. As you can see, we instantiate one object
 of type `IntrospectionClient`, and then, we wait for the introspection manager to
 come online.
 
-~~~
-// Pick up the first manager.
-std::string managerId = *managerIds.begin();
-~~~
+<include from='/  \/\/ Pick up the first manager/' to='/managerIds.begin\(\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 In theory, we could have multiple introspection managers running, although in
 the case of Gazebo we will only have one. We're working under this assumption,
 so we'll save the Id of the first introspection manager detected.
 
-~~~
-// The 'sim_time' is not registered.
-if (!client.IsRegistered(managerId, simTime))
-{
-  std::cerr << "The sim_time item is not registered on the manager.\n";
-  return -1;
-}
-
-// The 'counter' is not registered.
-if (!client.IsRegistered(managerId, counter))
-{
-  std::cerr << "The counter item is not registered on the manager.\n";
-  return -1;
-}
-~~~
+<include from='/  \/\/ Check if \"sim_time\" is registered/' to='/  \/\/ The variables to watch are registerd/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 This code block performs a sanity check to make sure that both items are
 registered in the introspection manager.
 
-~~~
-// Create a filter for watching the items.
-std::string filterId, topic;
-if (!client.NewFilter(managerId, {simTime, counter}, filterId, topic))
-  return -1;
-
-// Let's subscribe to the topic for receiving updates.
-ignition::transport::Node node;
-node.Subscribe(topic, cb);
-
-// zZZZ.
-ignition::transport::waitForShutdown();
-~~~
+<include from='/  \/\/ Create a filter for watching the items/' to='/waitForShutdown\(\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 This is the part where we notify our manager that we're interested on a set of
 topics (`simTime` and `counter`). `filterId` and `topic` are output variables. After

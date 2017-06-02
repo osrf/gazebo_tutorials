@@ -34,19 +34,21 @@ int main(int argc, char **argv)
   std::string simTime = "data://world/default?p=time/sim_time";
   std::string counter = "data://my_plugin/counter";
 
-  // The 'sim_time' is not registered.
+  // Check if "sim_time" is registered.
   if (!client.IsRegistered(managerId, simTime))
   {
     std::cerr << "The sim_time item is not registered on the manager.\n";
     return -1;
   }
 
-  // The 'counter' is not registered.
+  // Check if "counter" is registered.
   if (!client.IsRegistered(managerId, counter))
   {
     std::cerr << "The counter item is not registered on the manager.\n";
     return -1;
   }
+
+  // The variables to watch are registerd with the manager
 
   // Create a filter for watching the items.
   std::string filterId, topic;
