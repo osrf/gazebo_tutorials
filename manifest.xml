@@ -608,6 +608,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Gravity compensation" ref='gravity_compensation'>
+      <markdown version="9">gravity_compenation/tutorial.md</markdown>
+      <description>Use gravity compensation to complement PID position control of a linear actuator.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -1053,6 +1059,7 @@
         <tutorial>occupiedevent</tutorial>
         <tutorial>aerodynamics</tutorial>
         <tutorial>hydrodynamics</tutorial>
+        <tutorial>gravity_compensation</tutorial>
       </tutorials>
     </category>
 
