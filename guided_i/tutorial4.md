@@ -13,11 +13,11 @@ automatically download it when requested. This means you don't have to
 manage which computers have the model and which do not. Additionally, other
 people can use your model.
 
-> You're welcome to go through the whole process described here, but since
-  you'll be uploading an example model from the tutorial, your pull request
-  will not be merged. See more details on
-  [this](http://gazebosim.org/tutorials?tut=model_contrib)
-  tutorial on how to contribute your original creations.
+You're welcome to go through the whole process described here, but since
+you'll be uploading an example model from the tutorial, your pull request
+will not be merged. See more details on
+[this](http://gazebosim.org/tutorials?tut=model_contrib)
+tutorial on how to contribute your original creations.
 
 1. Fork the `gazebo_models` database by visiting [https://bitbucket.org/osrf/gazebo_models/fork](https://bitbucket.org/osrf/gazebo_models/fork).
 
