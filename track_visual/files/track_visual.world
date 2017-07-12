@@ -12,6 +12,7 @@
 
     <gui>
       <camera name="user_camera">
+        <pose>-2 0 2 0 0 0</pose>
         <track_visual>
           <name>box</name>
           <static>false</static>
