@@ -31,6 +31,9 @@ well to other repositories maintained by OSRF.
 1. Work out of a branch: `hg branch my_new_branch_name`
 > Always work out of a new branch, never off of default. This is a good habit to get in, and will make your life easier.
 
+1. Choose a base branch.
+> If your changes will break API or ABI, then base your new branch off of default. If your changes don't break API/ABI and you would like them to be released to an existing gazebo release with major version `N`, then use branch `gazeboN` as the base.
+
 1. Write your code.
 > This is the fun part.
 
@@ -103,7 +106,7 @@ check must pass before continuing to the next step.
 
 # Style
 
-In general, we follow [Google's style guide](https://google-styleguide.googlecode.com/svn/trunk/cppguide.html). However, we add in some extras.
+In general, we follow [Google's style guide](https://google.github.io/styleguide/cppguide.html). However, we add in some extras.
 
 1. **This pointer**
 > All class attributes and member functions must be accessed using the `this->` pointer. Here is an [example](https://bitbucket.org/osrf/gazebo/src/default/gazebo/physics/Base.cc#cl-40).
@@ -152,6 +155,11 @@ In general, we follow [Google's style guide](https://google-styleguide.googlecod
 > `int myvariable;` : Bad
 >
 > `int my_variable;` : Bad
+
+1. **No inline comments**
+> `//` style comments may not be placed on the same line as code.
+>
+> `speed *= 0.44704;  // miles per hour to meters per second` : Bad
 
 # Reduce Code Duplication 
 
@@ -216,7 +224,7 @@ situations in the code. If the assertion check failed, the assertion will
 stop the program immediately.
 
      Object * p = some_crazy_function()
-     GZ_ASSERT(p != NULL, “Object from some_crazy_function should never point to NULL”)
+     GZ_ASSERT(p != NULL, "Object from some_crazy_function should never point to NULL")
      p->run()
 
 ### Gazebo runtime assertions: GZ_ASSERT
@@ -231,6 +239,7 @@ In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
 ### Benefits of the assertions
 
 Some of the benefits of using the assertions:
+
 * They are really useful for not having to debug all kind of weird and unexpected errors, especially in runtime. Exact failure point appears when pass by an assertion.
 * Developer can be sure that some conditions are met at a given code point. Code turns more reliable.
 * Help to detect no so obvious errors happening (affecting performance for example)
@@ -239,7 +248,7 @@ Some of the benefits of using the assertions:
 
 While assertions are aimed to impossible situations generated from programming errors, the exceptions handle all kind of expected errors and unusual but logically possible code situations.
 
-Lets review an example: imaging we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
+Lets review an example: suppose we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
      
      double sqrt_for_positives(double number)
 

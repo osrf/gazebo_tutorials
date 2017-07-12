@@ -1,16 +1,12 @@
 # Tutorial: ROS integration overview
 
-As of Gazebo 1.9 and [ROS Hydro](http://www.ros.org/wiki/hydro/),
-Gazebo no longer has any direct ROS dependencies and is now installed as an Ubuntu stand-alone package.
-Historically using Gazebo with ROS required a specific version of Gazebo to be built with the legacy 'simulator_gazebo' stack.
+To achieve ROS integration with stand-alone Gazebo, a set of ROS packages named
+[gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs) provides wrappers
+around the stand-alone Gazebo.  They provide the necessary interfaces to
+simulate a robot in Gazebo using ROS messages, services and dynamic reconfigure
+Some features of `gazebo_ros_pkgs`:
 
-To achieve ROS integration with stand-alone Gazebo, a new set of ROS packages named
-[gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs)
-has been created to provide wrappers around the stand-alone Gazebo.
-They provide the necessary interfaces to simulate a robot in Gazebo using ROS messages, services and dynamic reconfigure
-Some differences between `simulator_gazebo` and `gazebo_ros_pkgs` are the following:
-
-- Supports the latest stand alone system dependency of Gazebo, that has no ROS bindings on its own
+- Supports a stand alone system dependency of Gazebo, that has no ROS bindings on its own
 - Builds with [catkin](http://www.ros.org/wiki/catkin)
 - Treats URDF and [SDF](http://gazebosim.org/sdf.html) as equally as possible
 - Reduces code duplication with Gazebo
@@ -25,13 +21,6 @@ An overview of the `gazebo_ros_pkgs` interface is in the following diagram:
 ## Upgrading from simulator_gazebo (ROS groovy and earlier)
 
 The following guidelines will help you upgrade your Gazebo-dependent packages from `simulator_gazebo` for use in your ROS packages:
-
-### Catkin
-
-Your previous packages for interfacing with Gazebo with the old `simulator_gazebo` stack are likely still using the
-[rosbuild](http://www.ros.org/wiki/rosbuild) build system.
-With `gazebo_ros_pkgs` in ROS Hydro, you will first need to "catkinize" your packages to begin migration.
-See the [Catkin Tutorials](http://www.ros.org/wiki/catkin/Tutorials).
 
 ### Launch Files
 
@@ -48,8 +37,8 @@ Thus, all worlds have been centralized within the Gazebo project itself, includi
 
 ### CMakeLists.txt
 
-- Because Gazebo is no longer a ROS package but instead a system dependency, your CMake file might need to be reconfigured.
-The following is an example CMakeLists.txt:
+The ROS-wrapped versiong of Gazebo was removed in favor of the system install of Gazebo. This may require reconfiguration of your
+CMake file.  The following is an example CMakeLists.txt:
 
 ~~~
 cmake_minimum_required(VERSION 2.8.3)
@@ -78,9 +67,7 @@ catkin_package(
 
 ### package.xml
 
-This is the replacement for the rosbuild "manifest.xml":
-
-- Add dependency on the new `gazebo_ros` package:
+Add dependency on the new `gazebo_ros` package:
 
 ~~~
 <build_depend>gazebo_ros</build_depend>
@@ -91,9 +78,9 @@ This is the replacement for the rosbuild "manifest.xml":
 
 The names of the ROS nodes to launch Gazebo have changed slightly to coincide with the Gazebo executable names:
 
- - `rosrun gazebo_ros gazebo` now launch both the Gazebo server and GUI.
- - `rosrun gazebo_ros gui` has been renamed to `rosrun gazebo_ros gzclient`
- - `rosrun gazebo_ros gzserver` has been added
+ - `rosrun gazebo_ros gazebo` launch both the Gazebo server and GUI.
+ - `rosrun gazebo_ros gzclient` launch the Gazebo GUI.
+ - `rosrun gazebo_ros gzserver` launch the Gazebo server.
 
 Available nodes to run:
 
@@ -108,15 +95,5 @@ rosrun gazebo_ros debug
 
 These nodes are better documented in the tutorial
 [Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/tutorials?tut=ros_roslaunch&cat=connect_ros).
-
-### More
-
-`Add your upgrade issues here, please`
-
-## Tutorials
-
-Tutorials from ros.org have been almost entirely removed and re-written from scratch on this website to reflect the many changes that have occurred over the course of Gazebo's history.
-We've done our best to thoroughly document how to get your URDF-based robot running smoothly in Gazebo.
-If you have any question please see [answers.ros.org](http://answers.ros.org/).
 
 Continue to [Installing gazebo_ros Packages](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros).

@@ -1,6 +1,11 @@
 # Overview
 
-This tutorial describes how to make a simple two-bar pinching gripper.
+This tutorial describes how to make a simple two-bar pinching gripper by
+editing SDF files.
+
+For editing models graphically, see the
+[Model Editor](http://gazebosim.org/tutorials?tut=model_editor&cat=build_robot)
+tutorial.
 
 # Setup your model directory
 
@@ -25,14 +30,25 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 1. Create a model directory inside ~/.gazebo. This is where we'll put the model files:
 
         mkdir -p ~/.gazebo/models/my_gripper
+        cd ~/.gazebo/models/my_gripper
 
 1. Let's layout the basic structure of our gripper. The easiest way to accomplish this is to make a `static` model and add in the links one at a time. A static model means the links will not move when the simulator starts. This will allow you to start the simulator, and visually inspect the link placement before adding joints.
 
-1. Create a [model.config](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config) file with the following contents:
+1. Create a [model.config](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config) file:
+
+        gedit model.config
+
+1. And copy the following contents:
 
     <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/model.config' />
 
-1. Copy the following code in the [simple_gripper.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf) file.
+1. Likewise, create a
+[simple_gripper.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf)
+file:
+
+        gedit simple_gripper.sdf
+
+1. And copy the following code into it:
 
     <include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/simple_gripper/files/simple_gripper.sdf' />
 
@@ -42,7 +58,7 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
     You should see something like this:
 
-[[file:files/Simple-gripper-1.png|640px]]
+    [[file:files/Simple-gripper-1.png|640px]]
 
 1. Once we are happy with the layout of the links, we can add in the joints, by copying the following code into the `simple_gripper.sdf` file before the `</model>` line.
 
@@ -122,13 +138,13 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
         gazebo ~/simple_gripper_tutorial/gripper.world
 
-1. Right-click on the model and select "View->Joints". The newly created joints will be displayed:
+1. Right-click on the model and select "View->Joints" and "View->Wireframe". The newly created joints will be displayed:
 
-[[file:files/Simple-gripper-joints_5.png|640px]]
+    [[file:files/Simple-gripper-joints_5.png|640px]]
 
 1. You can also control the forces on each joint using the Joint Control widget.  Click on the gripper model.  Then expand this widget by clicking on the vertical handle on the right side of the GUI and dragging it to the left. The widget displays a list of sliders, one for each joint. Select the Force tab and use the sliders to apply forces to each joint, and you should see the gripper move.  E.g., set the force on `palm_riser` to 10 (Newtons), and you should see something like:
 
-[[file:files/Simple_gripper_joint_control_1_5.png|640px]]
+    [[file:files/Simple_gripper_joint_control_1_5.png|640px]]
 
 1. Optional:
 

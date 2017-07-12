@@ -15,32 +15,30 @@ presence of gazebo-stable repository in the system.
 ### Gazebo prerelease repo
 
 Gazebo prerelease versions are those released to test an upcoming release.
-To install the prerelease, first use the instructions in the
-[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
-to install the stable repository and after it add the
-prerelease repository:
+The prerelease packages repository is designed to work together with the
+stable repository, both need to be installed.
 
 ```
-# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install gazebo7 # (might not be released)
+sudo apt-get install gazebo8 # (might not be released)
 ```
 
 ### Gazebo nightly repo
 
-Gazebo nightlies are packages released every night which can be used for different
-purposes like testing the last feature added to gazebo code. To install the
-nightlies, first use the instructions in the 
-[install_ubuntu tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Step-by-stepInstall)
-to install the stable repository
-and then add the nightly repository:
+Gazebo nightlies are packages released every night which can be used for
+different purposes like testing the last feature added to gazebo code. The
+nighly packages repository is designed to work together with the stable
+repository, both need to be installed.
 
 ```
-# Be sure to install the stable repo first !!
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install gazebo7
+sudo apt-get install gazebo8 # (might not be released)
 ```
 
 ### Remove prereleases and nightly installed packages
@@ -77,8 +75,8 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 
  * `current_released_version:` will be the latest version released available in
    the changelog file of the corresponding -release repo. If the nightly is
-   used for an upcoming release (lets say gazebo7) then R-1.99.99-1
-   (gazebo7_6.99.99-1) form will be used until prereleases or final release.
+   used for an upcoming release (for example, gazebo8) then R-1.99.99-1
+   (gazebo8_7.99.99-1) form will be used until prereleases or final release.
 
  * `date`: timestamp YYYY-MM-DD
 
@@ -91,11 +89,11 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 Which version has priority when using prerelease and stable repositories?
 
  * packageA version: `1.0.0-1` (stable)
- * packageA prerelease: `1.0.1-1~pre1` (prerelease)
- * packageA prerelease: `1.0.1-1~pre2` (prerelease)
+ * packageA prerelease: `1.0.1~pre1-1` (prerelease)
+ * packageA prerelease: `1.0.1~pre2-1` (prerelease)
  * packageA version: `1.0.1-1` (stable)
 
- * Order: `1.0.1-1` > `1.0.1-1~pre2` > `1.0.1-1~pre1` > `1.0.0`
+ * Order: `1.0.1-1` > `1.0.1~pre2-1` > `1.0.1~pre1-1` > `1.0.0`
 
 Which version has priority when using nightly and stable repositories?
 
@@ -109,9 +107,9 @@ Which version has priority when using nightly and stable repositories?
 Which version has priority when using nightly, prerelease and stable repositories?
 
  * packageA version: `0.99.99+hg20150101r2212b5136299-1` (nightly)
- * packageA prerelease: `1.0.0-1~pre1` (prerelease)
- * packageA version: `1.0.0-1~pre1+hg20150101r2212b5136299-1` (nightly)
- * packageA prerelease: `1.0.0-1~pre2` (prerelease)
+ * packageA prerelease: `1.0.0~pre1` (prerelease)
+ * packageA version: `1.0.0~pre1+hg20150101r2212b5136299-1` (nightly)
+ * packageA prerelease: `1.0.0~pre2-1` (prerelease)
  * packageA version: `1.0.0-1` (stable)
 
- * Order: `1.0.0-1` > `1.0.0-1~pre2` > `1.0.0-1~pre1+hg20150101r2212b5136299-1` > `1.0.0-1~pre1` > `0.99.99+hg20150101r2212b5136299-1`
+ * Order: `1.0.0-1` > `1.0.0~pre2-1` > `1.0.0~pre1+hg20150101r2212b5136299-1` > `1.0.0~pre1-1` > `0.99.99+hg20150101r2212b5136299-1`

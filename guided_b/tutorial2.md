@@ -2,7 +2,9 @@
 
 This is an introduction to the Gazebo Graphical User Interface, or GUI. We will learn interface basics like what the buttons do and how to navigate in the scene. 
 
-Start by double-clicking on the Gazebo icon to open Gazebo. 
+By now, you should have Gazebo [installed](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1&branch=ftu2). 
+
+Start by opening Gazebo. Press Alt-F2, type Gazebo, and then press Enter. 
 
 ## GUI
 
@@ -22,7 +24,7 @@ objects are animated and you interact with the environment.
 ### The Panels
 
 Both side panels—right and left—can be displayed, hidden or resized by dragging
-the bar that separates them from the scene.
+the bar that separates them from the Scene.
 
 [[file:files/ftu3-panels.png|800px]]
 
@@ -31,17 +33,18 @@ the bar that separates them from the scene.
 The left panel appears by default when you launch Gazebo. There are three tabs
 in the panel:
 
-* **WORLD** tab: The World tab displays the models that are currently in the
+* **WORLD**: The World tab displays the models that are currently in the
   scene, and allows you to view and modify model parameters, like their
   pose. You can also change the camera view angle by expanding the
   "GUI" option and tweaking the camera pose. 
 
-* **INSERT** tab: The Insert tab is where you add new objects (models) to the
-  simulation. Click (and release) on the model you want to insert, and click
-  again in the Scene to add it.
+* **INSERT**: The Insert tab is where you add new objects (models) to the
+  simulation. To see the model list, you may need to click the arrow to expand the 
+  folder. Click (and release) on the model you want to insert, and click
+  again in the Scene to add it. 
 
 
-* **LAYERS** tab: The Layers tab organizes and displays the different
+* **LAYERS**: The Layers tab organizes and displays the different
   visualization groups that are available in the simulation, if any. A layer
   may contain one or more models. Toggling a layer on or off will display
   or hide the models in that layer. 
@@ -70,6 +73,29 @@ create simple shapes (e.g. cube, sphere, cylinder); and copy/paste. Go ahead and
 around with each button to see how it behaves.
 
 [[file:files/ftu3-top-toolbar.png|1200px]]
+
+Select mode: Navigate in the scene
+
+Translate mode: Select models you want to move
+
+Rotate mode: Select models you want to rotate 
+
+Scale mode: Select models you want to scale
+
+Undo/Redo: Undo/redo actions in the scene
+
+Simple shapes: Insert simple shapes into the scene
+
+Lights: Add lights to the scene
+
+Copy/paste: Copy/paste models in the scene
+
+Align: Align models to one another
+
+Snap: Snap one model to another
+
+Change view: View the scene from various angles
+
 
 #### Bottom Toolbar
 

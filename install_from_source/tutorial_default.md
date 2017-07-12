@@ -5,12 +5,12 @@
 ### Prerequisites
 
 For compiling the latest version of gazebo you will need an Ubuntu distribution
-equal to 14.04.2 (Trusty) or newer.
+equal to 16.04 (Xenial) or newer.
 
 Make sure you have removed the Ubuntu pre-compiled binaries before installing
 from source:
 
-    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*'
+    sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*' '.*ignition-msgs.*' '.*ignition-transport.*'
 
 If you have previously installed from source, be sure you are installing to the
 same path location or that you have removed the previous installation from
@@ -18,11 +18,11 @@ source version manually.
 
 As a side note, default install locations:
 
-  1. Pre-compiled Ubuntu Binaries : /usr/bin/gazebo
+  1. Pre-compiled Ubuntu Binaries : `/usr/bin/gazebo`
 
-  2. Default source install : /usr/local/bin/gazebo
+  2. Default source install : `/usr/local/bin/gazebo`
 
-### ROS Users
+#### ROS Users
 
 When building Gazebo, we recommend you do not have your */opt/ros/\*/setup.sh*
 file sourced, as it has been seen to add the wrong libraries to the Gazebo
@@ -30,11 +30,26 @@ build.
 
 ### Install Required Dependencies
 
-Install prerequisites.  A clean Ubuntu system will need:
+In a clean Ubuntu installation you can install pre-compiled versions of all dependencies:
 
-    wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
-    ROS_DISTRO=dummy . /tmp/dependencies.sh
-    sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
+1. Setup your computer to accept software from packages.osrfoundation.org.
+
+    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+
+1. Setup keys and update
+
+        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        sudo apt-get update
+
+1. Install prerequisites. A clean Ubuntu system will need the following
+   (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
+    kinetic...):
+
+        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        ROS_DISTRO=dummy . /tmp/dependencies.sh
+        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 
 ### Optional Physics Engines
 
@@ -76,57 +91,29 @@ To generate man-pages for the Gazebo executables, the ruby-ronn package is neede
 
     sudo apt-get install robot-player-dev*
 
-### Build And Install ignition math
 
-SDFormat and Gazebo depend on the ignition math library.
+### Dependencies managed by OSRF
 
-1. Clone the repository into a directory and go into it:
+Gazebo development is tightly linked to the development of a few other libraries:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
-        cd /tmp/ign-math
+* [SDFormat](http://sdformat.org/)
+* [ignition-math](http://ignitionrobotics.org/libraries/math)
+* [ignition-transport](http://ignitionrobotics.org/libraries/transport)
+* [ignition-msgs](http://ignitionrobotics.org/libraries/messages)
 
-     **Note:** the `default` branch is the development branch where
-you'll find the bleeding edge code, your cloned repository should be on this
-branch by default but we recommend you switch to the `ign-math2` branch if you
-desire more stability (with the `hg up ign-math2` command).
+If you've installed all required dependencies following the instructions above, you
+already have the latest release of these libraries installed in your system.
+However, when working on new features, you often need to build these libraries
+from source.
 
+If you don't need a special version of these libraries, **you can skip this
+section**. If you're not sure if you need to build these from source, you can
+ask for guidance at [Gazebo Answers](https://answers.gazebosim.org), explaining
+your specific use case.
 
-1. Create a build directory and go there:
-
-        mkdir build
-        cd build
-
-1. Build and install:
-
-        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j4
-        sudo make install
-
-
-### Build And Install SDFormat
-
-Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of that:
-
-1. Clone the repository into a directory and go into it:
-
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
-        cd /tmp/sdformat
-
-     **Note:** the `default` branch is the development branch where you'll find
-the bleeding edge code, your cloned repository should be on this branch by
-default but we recommend you switch to branch `sdf3` if you desire more
-stability
-
-1. Create a build directory and go there:
-
-        mkdir build
-        cd build
-
-1. Build and install:
-
-        cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-        make -j4
-        sudo make install
+To build these libraries from source, first go through the
+[Build dependencies from source](http://gazebosim.org/tutorials?tut=install_dependencies_from_source)
+tutorial and then come back here.
 
 ### Build And Install Gazebo
 
@@ -147,22 +134,20 @@ desire more stability
 
 1. Configure Gazebo (choose either method `a` or `b` below):
 
-    > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
+    a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
+
+           cmake ../
+
+
+    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+
+    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
+
+    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
+
+           cmake -DCMAKE_BUILD_TYPE=Debug ../
 
     >        cmake ../
-
-
-    >> Note: You can use a custom install path to make it easier to switch between source and debian installs:
-
-    >>        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-
-    > b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-
-    >        cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-    > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the developemnt, you can use:
-
-    >>        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
@@ -179,6 +164,16 @@ desire more stability
         sudo make install
 
 1. Setup environment variables
+
+#### Optional tests suite compilation
+
+The generic call to `make` won't compile any of the different types of tests
+present in Gazebo. While this saves a lot of time in compilations, there are
+many reasons to compile and run the testing suite: submitting changes to
+gazebo repository, packaging for linux distributions, etc. In order to compile
+the whole gazebo test suite you'll need to run:
+
+    make tests
 
 #### Local Install
 

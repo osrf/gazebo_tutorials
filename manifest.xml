@@ -21,15 +21,62 @@
     </tutorial>
 
 
-    <!-- Intermediate tutorials
-    <tutorial title="Intermediate: 1" ref='guided_i1'>
+    <!-- Intermediate tutorials -->
+    <tutorial title="Intermediate: Velodyne" ref='guided_i1'>
       <markdown version="7.0">guided_i/tutorial1.md</markdown>
-    </tutorial>-->
+      <description>How to construct a Velodyne model.</description>
+    </tutorial>
 
-    <!-- Advanced tutorials
-    <tutorial title="Advanced: 1" ref='guided_a1'>
+    <tutorial title="Intermediate: Model Appearance" ref='guided_i2'>
+      <markdown version="7.0">guided_i/tutorial2.md</markdown>
+      <description>How to add meshes to a model to improve visual appearance.</description>
+    </tutorial>
+
+    <tutorial title="Intermediate: Sensor Noise" ref='guided_i3'>
+      <markdown version="7.0">guided_i/tutorial3.md</markdown>
+      <description>How to add noise to a sensor.</description>
+    </tutorial>
+
+    <tutorial title="Intermediate: Upload Velodyne Model" ref='guided_i4'>
+      <markdown version="7.0">guided_i/tutorial4.md</markdown>
+      <description>How to upload a model to the model database.</description>
+    </tutorial>
+
+    <tutorial title="Intermediate: Control plugin" ref='guided_i5'>
+      <markdown version="7.0">guided_i/tutorial5.md</markdown>
+      <description>How to control a sensor using a plugin.</description>
+    </tutorial>
+
+    <tutorial title="Intermediate: Connect to ROS" ref='guided_i6'>
+      <markdown version="7.0">guided_i/tutorial6.md</markdown>
+      <description>How to control a plugin using ROS.</description>
+    </tutorial>
+
+    <!-- Advanced tutorials -->
+    <tutorial title="Advanced: Where is the code?" ref='guided_a1'>
       <markdown version="7.0">guided_a/tutorial1.md</markdown>
-    </tutorial> -->
+      <description>Introduction to the series and basic concepts</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Run your own copy of Gazebo" ref='guided_a2'>
+      <markdown version="7.0">guided_a/tutorial2.md</markdown>
+      <description>Get the code and build Gazebo from source</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Workflow" ref='guided_a3'>
+      <markdown version="7.0">guided_a/tutorial3.md</markdown>
+      <description>Get familiar with the source code and toolchain</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Code quality" ref='guided_a4'>
+      <markdown version="7.0">guided_a/tutorial4.md</markdown>
+      <description>Testing, style, warnings and documentation</description>
+    </tutorial>
+
+    <tutorial title="Advanced: Code review" ref='guided_a5'>
+      <markdown version="7.0">guided_a/tutorial5.md</markdown>
+      <description>Choose a bug, fix it, and get your patch into Gazebo!</description>
+    </tutorial>
 
     <!-- ****************** -->
     <!-- Beginner tutorials -->
@@ -38,6 +85,8 @@
       <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
       <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
+      <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
+      <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -62,6 +111,8 @@
       <markdown version="4.0">install_on_mac/tutorial_4-0.md</markdown>
       <markdown version="5.0">install_on_mac/tutorial_5-0.md</markdown>
       <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
+      <markdown version="7.0">install_on_mac/tutorial_7-0.md</markdown>
+      <markdown version="8.0">install_on_mac/tutorial_8-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -93,7 +144,10 @@
     </tutorial>
 
     <tutorial title="From source (Ubuntu and Mac)" ref='install_from_source'>
-      <markdown version="4.0">install_from_source/tutorial_4-0.md</markdown>
+      <markdown version="5.0">install_from_source/tutorial_old.md</markdown>
+      <markdown version="6.0">install_from_source/tutorial_old.md</markdown>
+      <markdown version="7.0">install_from_source/tutorial_old.md</markdown>
+      <markdown version="8.0">install_from_source/tutorial_default.md</markdown>
       <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
        Installation instructions for building a gazebo application using the
@@ -103,6 +157,12 @@
       <tags>
         <tag>install</tag>
       </tags>
+      <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Dependencies from source" ref='install_dependencies_from_source'>
+      <markdown version="5+">install_dependencies_from_source/tutorial.md</markdown>
+      <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -138,14 +198,16 @@
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
-      <markdown version="1.9+">plugins_world/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
+      <markdown version="7+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
       <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
-      <markdown version="2.2+">plugins_world_properties/tutorial.md</markdown>
+      <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
+      <markdown version="7+">plugins_world_properties/tutorial.md</markdown>
       <description>Modify world properties, such as ambient color and the physics time step.</description>
       <tags>
         <tag>plugin</tag>
@@ -186,7 +248,8 @@
     </tutorial>
 
     <tutorial title="Attach Gripper to Robot" ref='attach_gripper'>
-      <markdown version="1.9+">attach_gripper/tutorial.md</markdown>
+      <markdown version="1.9+">attach_gripper/tutorial-1.9+.md</markdown>
+      <markdown version="6+">attach_gripper/tutorial.md</markdown>
       <description>Connect the simple gripper to the mobile robot</description>
       <skill>beginner</skill>
     </tutorial>
@@ -195,6 +258,12 @@
       <markdown version="1.9+">build_model/tutorial.md</markdown>
       <description>Describes models, and how to create custom models.</description>
       <skill>beginner</skill>
+    </tutorial>
+
+     <tutorial title="Make an animated model (actor)" ref='actor'>
+      <markdown version="8+">actor/tutorial.md</markdown>
+      <description>Describes how to create animated skeletons and scripted trajectories.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Model structure and requirements" ref='model_structure'>
@@ -209,8 +278,15 @@
       <skill>beginner</skill>
     </tutorial>
 
+     <tutorial title="Nested model" ref='nested_model'>
+      <markdown version="7+">nested_model/tutorial.md</markdown>
+      <description>Describes how to create an assembly of models.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Sensor Noise Model" ref='sensor_noise'>
-      <markdown version="1.9+">sensor_noise/tutorial.md</markdown>
+      <markdown version="1.9-6.0">sensor_noise/tutorial.md</markdown>
+      <markdown version="7.0+">sensor_noise/tutorial-7_0.md</markdown>
       <description>How to add noise to sensors</description>
       <skill>beginner</skill>
     </tutorial>
@@ -221,9 +297,16 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Create a Video with a Camera" ref='camera_save'>
+      <markdown version="7.0+">camera_save/tutorial.md</markdown>
+      <description>Shows how to create a video from a camera in the world.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Building a world" ref='build_world'>
       <markdown version="1.9">build_world/tutorial_1.9.md</markdown>
-      <markdown version="2.2+">build_world/tutorial.md</markdown>
+      <markdown version="2.2-6.0">build_world/tutorial_2.2.md</markdown>
+      <markdown version="7+">build_world/tutorial.md</markdown>
       <description>How to populate a simulated world with simulated objects.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -291,6 +374,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Logging and playback" ref='logging_playback'>
+      <markdown version="7.0+">logging_playback/tutorial.md</markdown>
+      <description>Record and playback your simulation, via the GUI or command line.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Log filtering" ref='log_filtering'>
       <markdown version="1.9">log_filtering/tutorial.md</markdown>
       <markdown version="4.0+">log_filtering/tutorial_4-0.md</markdown>
@@ -343,7 +432,9 @@
     </tutorial>
 
     <tutorial title="Model Editor" ref="model_editor">
-      <markdown version="6+">model_editor/tutorial.md</markdown>
+      <markdown version="6+">model_editor/tutorial_6.md</markdown>
+      <markdown version="7+">model_editor/tutorial_7.md</markdown>
+      <markdown version="8+">model_editor/tutorial.md</markdown>
       <description>Create and edit models within a model editor.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -375,17 +466,35 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Joint Events" ref='joint_events'>
+      <markdown version="6.0+">joint_events/tutorial.md</markdown>
+      <description>Use the SimEvents plugin to send messages when a joint state changes.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Occupied Event" ref='occupiedevent'>
       <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
       <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Force/Torque Sensor" ref='force_torque_sensor'>
+      <markdown version="7.0+">force_torque_sensor/tutorial.md</markdown>
+      <description>How to create and get data from force/torque sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Contact Sensor" ref='contact_sensor'>
-      <markdown version="1.9">contact_sensor/tutorial.md</markdown>
-      <markdown version="4.0+">contact_sensor/tutorial_4-0.md</markdown>
+      <markdown version="1.9-4.0">contact_sensor/tutorial.md</markdown>
+      <markdown version="4.0-6.0">contact_sensor/tutorial_4-0.md</markdown>
+      <markdown version="7.0">contact_sensor/tutorial_7-0.md</markdown>
       <description>How to create and get data from contact sensors.</description>
       <skill>intermediate</skill>
+    </tutorial>
+    <tutorial title="Random Velocity Plugin" ref='plugins_random_velocity'>
+    	<markdown version="6.0">plugins_random_velocity/tutorial-6.md</markdown>
+    	<description>Use this for random walks of any link.</description>
+    	<skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="ROS overview" ref='ros_overview'>
@@ -437,7 +546,9 @@
     </tutorial>
 
     <tutorial title="Animated Box" ref='animated_box'>
-      <markdown version="4.0+">animated_box/tutorial.md</markdown>
+      <markdown version="4.0-5.0">animated_box/tutorial_4.md</markdown>
+      <markdown version="6.0-7.0">animated_box/tutorial_6.md</markdown>
+      <markdown version="8.0+">animated_box/tutorial.md</markdown>
       <description>Animate the pose of box.</description>
       <skill>intermediate</skill>
       <tags>
@@ -445,14 +556,15 @@
       </tags>
     </tutorial>
 
-    <tutorial title="Find out inertial parameters" ref='inertia'>
+    <tutorial title="Inertial parameters of triangle meshes" ref='inertia'>
       <markdown version="1.9+">inertia/tutorial.md</markdown>
-      <description>Fill in the inertial parameters so that the model behaves plausibly.</description>
+      <description>Identify reasonable inertial parameters for a model composed of triangle meshes.</description>
       <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
-      <markdown version="3.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
+      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -477,8 +589,9 @@
     </tutorial>
 
     <tutorial title="System Plugin" ref='system_plugin'>
-      <markdown version="3.0">system_plugin/tutorial_3-0.md</markdown>
-      <markdown version="5+">system_plugin/tutorial.md</markdown>
+      <markdown version="3.0-4.0">system_plugin/tutorial_3-0.md</markdown>
+      <markdown version="5.0-6.0">system_plugin/tutorial_5-0.md</markdown>
+      <markdown version="7.0+">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -718,9 +831,16 @@
     </tutorial>
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
-      <markdown version="5.0+">gui_overlay/tutorial.md</markdown>
+      <markdown version="5.0-6.0">gui_overlay/tutorial.md</markdown>
+      <markdown version="7.0+">gui_overlay/tutorial7.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Setting Velocity on Joints and Links" ref="set_velocity">
+      <markdown version="7.0">set_velocity/tutorial_7.md</markdown>
+      <description> This tutorial describes how to programatically set velocities on links and joints</description>
+      <skill>advanced</skill>
     </tutorial>
 
     <!-- scripting  -->
@@ -729,6 +849,12 @@
           <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
           <skill>advanced</skill>
     </tutorial>
+    <tutorial title="GazeboJs installation on Mac" ref='gazebojs_install_mac'>
+          <markdown version="6.0">gazebojs_install_mac/tutorial.md</markdown>
+          <description>Explains how to install the javascript NodeJs bindings to Gazebo on OSX.</description>
+          <skill>advanced</skill>
+    </tutorial>
+
 
     <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
         <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
@@ -821,6 +947,20 @@
         the Gazebo GUI for creating and playing back a log file.]]></description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="HAPTIX DEKA Luke hand installation" ref='haptix_luke_hand'>
+      <markdown version="6.0+">haptix_luke_hand/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to install the DEKA Luke
+        hand model and use it in Gazebo.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="HAPTIX Simulation Scoring Plugin Example" ref='haptix_scoring_plugin'>
+      <markdown version="7.0+">haptix_scoring_plugin/tutorial.md</markdown>
+      <description><![CDATA[This tutorial describes how to use the Gazebo SimEvents plugin to keep score of individual user task performance in a custom world.]]></description>
+      <skill>intermediate</skill>
+    </tutorial>
+
   </tutorials>
 
   <categories>
@@ -836,6 +976,7 @@
         <tutorial>install</tutorial>
 
         <tutorial>install_from_source</tutorial>
+        <tutorial>install_dependencies_from_source</tutorial>
         <tutorial>install_unstable</tutorial>
       </tutorials>
     </category>
@@ -862,8 +1003,10 @@
         <tutorial>add_laser</tutorial>
         <tutorial>simple_gripper</tutorial>
         <tutorial>attach_gripper</tutorial>
+        <tutorial>nested_model</tutorial>
         <tutorial>model_editor</tutorial>
         <tutorial>animated_box</tutorial>
+        <tutorial>actor</tutorial>
         <tutorial>inertia</tutorial>
         <tutorial>visual_layers</tutorial>
       </tutorials>
@@ -891,6 +1034,7 @@
     <category title="Tools and utilities" skill="beginner" ref="tools_utilities">
       <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
       <tutorials>
+        <tutorial>logging_playback</tutorial>
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
@@ -925,6 +1069,8 @@
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
         <tutorial>camera_distortion</tutorial>
+        <tutorial>camera_save</tutorial>
+        <tutorial>force_torque_sensor</tutorial>
       </tutorials>
     </category>
 
@@ -1051,6 +1197,7 @@
       <description>Gazebo scripting interface: NodeJS bindings for the Gazebo simulator.</description>
       <tutorials>
         <tutorial>gazebojs_install</tutorial>
+        <tutorial>gazebojs_install_mac</tutorial>
         <tutorial>gazebojs_pubsub</tutorial>
         <tutorial>gazebojs_camera_topics</tutorial>
         <tutorial>gazebojs_models</tutorial>
@@ -1077,6 +1224,8 @@
         <tutorial>haptix_tactors</tutorial>
         <tutorial>haptix_world_sim_api</tutorial>
         <tutorial>haptix_logging</tutorial>
+        <tutorial>haptix_luke_hand</tutorial>
+        <tutorial>haptix_scoring_plugin</tutorial>
       </tutorials>
     </category>
 

@@ -6,7 +6,7 @@ Lightmaps are typically used for models that do not move with respect to the pos
 
 # Create a model with lightmap
 
-Lightmaps can be created using popular 3D modeling tools. e.g. [Blender](http://wiki.blender.org/index.php/Doc:2.6/Manual/Textures/Mapping/UV/Unwrapping#Lightmap). In this tutorial, we'll save you the time by supplying a mesh and a pre-generated lightmap.
+Lightmaps can be created using popular 3D modeling tools. e.g. [Blender](https://www.blender.org/manual/render/blender_render/bake.html). In this tutorial, we'll save you the time by supplying a mesh and a pre-generated lightmap.
 
 In Gazebo, a lightmap is associated to a model as opposed to the whole scene because there is almost always the chance that something moves in a robot simulation.
 
@@ -161,7 +161,7 @@ Locate the material SDF element in the model.sdf and set `lighting` to be `false
           </script>
 %%%
 ~~~
-            <lighting>false</lighting>
+          <lighting>false</lighting>
 ~~~
 %%%
         </material>

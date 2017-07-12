@@ -7,8 +7,8 @@ In this tutorial we'll walk through creating a very basic Gazebo plugin that is 
 Create a new ROS package in your catkin workspace:
 
 ~~~
-cd ~/catkin_ws
-catkin_create-pkg gazebo_tutorials gazebo_ros roscpp
+cd ~/catkin_ws/src
+catkin_create_pkg gazebo_tutorials gazebo_ros roscpp
 ~~~
 
 ## Create the Plugin
@@ -130,6 +130,12 @@ Create the following launch file gazebo_tutorials/launch/hello.launch:
 </launch>
 ~~~
 
+Before continuing source your new setup.*sh file:
+
+~~~
+source devel/setup.bash
+~~~
+
 ## Run the Plugin
 
 ~~~
@@ -146,7 +152,7 @@ An empty Gazebo should open and in the terminal you should see it print out some
 
 A template is available to help you quickly get a Gazebo-ROS plugin working:
 
-[gazebo_ros_template.cpp](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/hydro-devel/gazebo_plugins/src/gazebo_ros_template.cpp)
+[gazebo_ros_template.cpp](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/kinetic-devel/gazebo_plugins/src/gazebo_ros_template.cpp)
 
 ## Adding Functionality
 

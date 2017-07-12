@@ -304,7 +304,7 @@ These services allow the user to apply wrenches and forces to bodies and joints 
 
 `~/apply_joint_effort` : `gazebo_msgs/ApplyJointEffort` - Apply effort to a joint in simulation.  All active efforts applied to the same joint are cumulative.
 
-`~/clear_joint_forces` : `gazebo_msgs/ClearJointForces` - Clear applied efforts to a joint.
+`~/clear_joint_forces` : `gazebo_msgs/JointRequest` - Clear applied efforts to a joint.
 
 `~/clear_body_wrenches` : `gazebo_msgs/ClearBodyWrenches` - Clear applied wrench to a body.
 

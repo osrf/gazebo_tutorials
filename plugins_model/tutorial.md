@@ -41,13 +41,19 @@ $ cd ~/gazebo_plugin_tutorial
 $ gedit model_push.world
 ~~~
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo/raw/gazebo_2.2/examples/plugins/model_push/model_push.world' />
+<include lang='xml' src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/model_push/model_push.world' />
 
 The hook to attach a plugin to a model is specified at the end of the model element block using:
 
 %%%
 <plugin name="model_push" filename="libmodel_push.so"/>
 %%%
+
+Add your library path to the `GAZEBO_PLUGIN_PATH`:
+
+~~~
+$ export GAZEBO_PLUGIN_PATH=$HOME/gazebo_plugin_tutorial/build:$GAZEBO_PLUGIN_PATH
+~~~
 
 To start simulation, run
 
