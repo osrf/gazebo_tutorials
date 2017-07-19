@@ -141,3 +141,35 @@ When applied to a physical robot, gravity compensation may exhibit varying degre
 The controller overshoots the target by a large margin because it weighs more in the plugin's model. So, if error of 0.01kg in the mass estimate is realistic, we might consider adding back an integral term and/or increasing the PID gains.
 
 [[file:files/model_error.png|600px]]
+
+## Robonaut
+
+Gravity compensation can readily extend to more complex systems. The GIF below shows Robonaut 2 models with and without gravity compensation. The left Robonaut holds its pose with gravity compensation while the right one lets its arms drop to its sides.
+
+[[file:files/robonaut.gif|400px]]
+
+To run this example yourself, start gazebo with the following world file:
+~~~
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://r2_description</uri>
+      <pose>0 -2 0 0 0 0</pose>
+      <plugin name="gravity_compensation" filename="libGravityCompensationPlugin.so">
+        <uri>model://r2_description</uri>
+      </plugin>
+    </include>
+    <include>
+      <uri>model://r2_description</uri>
+      <pose>2 0 0 0 0 -1.57</pose>
+    </include>
+  </world>
+</sdf>
+~~~
