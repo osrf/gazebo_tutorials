@@ -26,9 +26,10 @@ You can append the following arguments to the launch files to change the behavio
 
   > Launch the user interface window of Gazebo (default true)
 
-**headless**
+**headless** (deprecated)
+**recording**  (previously called headless)
 
-  > Disable any function calls to simulator rendering (Ogre) components. Does not work with gui:=true (default false)
+  > Enable gazebo state log recording
 
 **debug**
 
@@ -39,7 +40,7 @@ You can append the following arguments to the launch files to change the behavio
 Normally the default values for these arguments are all you need, but just as an example:
 
 <pre>
-roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false headless:=false debug:=true
+roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false recording:=false debug:=true
 </pre>
 
 ### Launching Other Demo Worlds
@@ -63,7 +64,7 @@ Notice in `mud_world.launch` a simple jointed mechanism is launched. The launch 
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
+    <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
   </include>
 </launch>
