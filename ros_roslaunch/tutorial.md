@@ -27,7 +27,7 @@ You can append the following arguments to the launch files to change the behavio
   > Launch the user interface window of Gazebo (default true)
 
 **headless** (deprecated)
-**recording**
+**recording**  (previously called headless)
 
   > Enable gazebo state log recording
 
