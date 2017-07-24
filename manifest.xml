@@ -489,7 +489,7 @@
     </tutorial>
 
     <tutorial title="ROS Depth Camera Integration" ref='ros_depth_camera'>
-      <markdown version="1.7+">ros_plugins/tutorial.md</markdown>
+      <markdown version="7+">ros_plugins/tutorial.md</markdown>
       <description>Connect a Gazebo depth camera to ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
