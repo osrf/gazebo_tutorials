@@ -36,14 +36,14 @@ version, the version of Gazebo available is different:
 ## Arch
 
 [Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
-Arch User Repository (Benjamin ChrÃ©tien is the maintainer). This means that it
+Arch User Repository (Benjamin Chrétien is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
 or packer:
 
 1. Install Gazebo
 
-        sudo yaourt -S gazebo
+        yaourt -S gazebo
         # or 
         sudo packer -S gazebo
 
