@@ -161,6 +161,7 @@ To run this example yourself, start gazebo with the following world file:
     </include>
     <include>
       <uri>model://r2_description</uri>
+      <name>r2_grav_comp</name>
       <pose>0 -2 0 0 0 0</pose>
       <plugin name="gravity_compensation" filename="libGravityCompensationPlugin.so">
         <uri>model://r2_description</uri>
