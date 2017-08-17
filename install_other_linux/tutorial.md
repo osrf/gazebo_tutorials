@@ -43,7 +43,7 @@ or packer:
 
 1. Install Gazebo
 
-        sudo yaourt -S gazebo
+        yaourt -S gazebo
         # or 
         sudo packer -S gazebo
 

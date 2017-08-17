@@ -19,8 +19,8 @@ repositories could end up in conflicts or other integration problems with ROS pa
 
 Gazebo is an independent project like boost, ogre or
 any other project used by ROS. Usually, the latest major version of gazebo
-available at the beginning of every ROS release cycle (for example `gazebo5`
-for ROS Jade) is selected as the official one to be fully integrated and
+available at the beginning of every ROS release cycle (for example `gazebo7`
+for ROS Kinetic) is selected as the official one to be fully integrated and
 supported and will be kept during the whole life of the ROS distribution.
 
 Gazebo development is not synced with ROS, so each new major version of Gazebo
@@ -41,8 +41,8 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
 
  * ***packages.ros.org***
   *  Indigo: host gazebo version 2.x package.
-  *  Jade: host gazebo version 5.x package.
   *  Kinetic: host or use gazebo version 7.x package.
+  *  Lunar: host or use gazebo version 7.x package.
  * ***packages.osrfoundation.org***
   * gazebo 5.x series (package name `gazebo5`)
   * gazebo 6.x series (package name `gazebo6`)
@@ -72,20 +72,20 @@ For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
 
+### Lunar
+
+ROS Lunar hosts or use the 7.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 7.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo7`) and do ***not*** use the osrfoundation
+repository.
+
 ### Kinetic
 
 ROS Kinetic hosts or use the 7.x version of Gazebo.
 For a fully-integrated ROS system, we recommend using the 7.x version of
 Gazebo.  The way to proceed is just to use the ROS repository (it will
 automatically install `gazebo7`) and do ***not*** use the osrfoundation
-repository.
-
-### Jade
-
-ROS Jade hosts the 5.x version of Gazebo.
-For a fully-integrated ROS system, we recommend using the 5.x version of
-Gazebo.  The way to proceed is just to use the ROS repository (it will
-automatically install `gazebo5`) and do ***not*** use the osrfoundation
 repository.
 
 ### Indigo
@@ -107,7 +107,7 @@ There is a way of using any specific version of gazebo and ROS if really needed:
 
 ### Gazebo 8.x series
 
-The OSRF repository provides `-gazebo8-` versions of ROS/Kinetic gazebo
+The OSRF repository provides `-gazebo8-` versions of ROS/Kinetic or ROS/Lunar gazebo
 wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
 The steps to use them are:
 
@@ -118,35 +118,13 @@ The steps to use them are:
 
 ### Gazebo 7.x series
 
-The OSRF repository provides `-gazebo7-` versions of ROS/Indigo and ROS/Jade
-gazebo wrappers (`gazebo7_ros_pkgs`) which are built on top of the `gazebo7`
-package.  The steps to use them are:
+The OSRF repository provides `-gazebo7-` versions of ROS/Indigo gazebo wrappers
+(`gazebo7_ros_pkgs`) which are built on top of the `gazebo7` package.  The
+steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
  * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo7-ros-control`
    from the osrfoundation repository, which will install the `gazebo7` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
-### Gazebo 6.x series
-
-The OSRF repository provides `-gazebo6-` versions of ROS/Indigo and ROS/Jade
-gazebo wrappers (`gazebo6_ros_pkgs`) which are built on top of the `gazebo6`
-package.  The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo6-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo6-ros-control`
-   from the osrfoundation repository, which will install the `gazebo6` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
-### Gazebo 5.x series
-
-The OSRF repository provides `-gazebo5-` versions of ROS/Indigo gazebo wrappers
- (`gazebo5_ros_pkgs`) which are built on top of the `gazebo5` package.
-The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-indigo-gazebo5-ros-pkgs` and/or `ros-indigo-gazebo5-ros-control`
-   from the osrfoundation repository, which will install the `gazebo5` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ## FAQ
@@ -163,38 +141,27 @@ Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu pac
 Dart still requires gazebo installation from source (starting from `gazebo3`),
  so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
 
-#### I need to use gazebo8 and ROS Kinetic, what can I do?
+#### I need to use gazebo8 and ROS Kinetic/Lunar, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Kinetic package
 related to Gazebo from ROS deb repository. The way to go is to build them from
 source. Thanks to catkin workspaces this is quite easy to do.***
 
 If you need some features only present in versions 8.x of Gazebo,
-there is a way of installing `gazebo8` and ROS Kinetic. Please
+there is a way of installing `gazebo8` and ROS Kinetic/Lunar. Please
 follow the instructions about how to use ROS with gazebo8 package
 which are in this same document.
 
-#### I need to use gazebo5/gazebo6/gazebo7 and ROS Indigo, what can I do?
+#### I need to use gazebo7 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in version 5.x, 6.x or 7.x of Gazebo,
-there is a way of installing `gazebo5`, `gazebo6` or `gazebo7` and ROS Indigo.
-Please follow the instructions about how to use ROS with gazebo4, gazebo5 or
-gazebo6 which are in this same document.
-
-#### I need to use gazebo6/gazebo7 and ROS Jade, what can I do?
-***Warning!: Using this option, you won't be able to use any ROS Jade package
-related to Gazebo from ROS deb repository. The way to go is to build them from
-source. Thanks to catkin workspaces this is quite easy to do.***
-
-If you need some features only present in versions 6.x/7.x of Gazebo,
-there is a way of installing `gazebo6` or `gazebo7` and ROS Jade. Please
-follow the instructions about how to use ROS with gazebo6 package
-which are in this same document.
+If you need some features only present in version 7.x of Gazebo, there is a way
+of installing `gazebo7` and ROS Indigo.  Please follow the instructions about
+how to use ROS with gazebo7 which are in this same document.
 
 #### Some ROS packages conflict with GazeboX ROS Wrappers!
 
 Note that each ROS distribution is designed to be used with an specific version
-of Gazebo (`gazebo5` in Jade). When someone chooses to use a different version
+of Gazebo (`gazebo7` in Kinetic). When someone chooses to use a different version
 of Gazebo than the one recommended in the ROS distribution, problems may appear
 and some of them could be unsolvable.
 

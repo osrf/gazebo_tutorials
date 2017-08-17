@@ -11,7 +11,7 @@ The main motivation to support DEMs in Gazebo is to be able to simulate a realis
 In order to work with DEM files you should install GDAL libraries.
 
 ~~~
-$ sudo apt-get install gdal-bin libgdal-dev libgdal1h python-gdal
+$ sudo apt-get install gdal-bin libgdal-dev python-gdal
 ~~~
 
 # DEM file and the definition into SDF format
