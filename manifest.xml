@@ -236,6 +236,7 @@
 
     <tutorial title="Add a Sensor to a Robot" ref='add_laser'>
       <markdown version="1.9+">add_laser/tutorial.md</markdown>
+      <markdown version="6+">add_laser/tutorial_6+.md</markdown>
       <description>How to add a laser sensor to a robot</description>
       <skill>beginner</skill>
     </tutorial>
