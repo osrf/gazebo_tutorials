@@ -147,7 +147,7 @@ desire more stability
 
            cmake -DCMAKE_BUILD_TYPE=Debug ../
 
-    >     cmake ../
+    >        cmake ../
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
