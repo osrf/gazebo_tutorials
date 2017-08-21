@@ -145,9 +145,9 @@ desire more stability
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
-       cmake -DCMAKE_BUILD_TYPE=Debug ../
+            cmake -DCMAKE_BUILD_TYPE=Debug ../
 
-    >     cmake ../
+    >       cmake ../
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
@@ -157,11 +157,11 @@ desire more stability
 
 1. Build Gazebo:
 
-           make -j4
+        make -j4
 
 1. Install Gazebo:
 
-         sudo make install
+        sudo make install
 
 1. Setup environment variables
 
