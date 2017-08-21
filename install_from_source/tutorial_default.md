@@ -145,7 +145,7 @@ desire more stability
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
-        cmake -DCMAKE_BUILD_TYPE=Debug ../
+           cmake -DCMAKE_BUILD_TYPE=Debug ../
 
     >     cmake ../
 
