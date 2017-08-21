@@ -36,20 +36,20 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
     ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+       sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-        sudo apt-get update
+       wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+       sudo apt-get update
 
 1. Install prerequisites. A clean Ubuntu system will need the following
    (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
     kinetic...):
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
-        ROS_DISTRO=dummy . /tmp/dependencies.sh
-        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
+       wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+       ROS_DISTRO=dummy . /tmp/dependencies.sh
+       sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 
 ### Optional Physics Engines
 
@@ -64,14 +64,14 @@ the default branch. In an Ubuntu system, several Personal Package Archives
 (PPA's) can be used to install the proper package and dependencies. Note that
 adding these PPA's may cause conflicts with ROS.
 
-        # Only needed on Trusty. Ubuntu packages since Utopic.
-        sudo apt-add-repository ppa:libccd-debs
-        sudo apt-add-repository ppa:fcl-debs
+    # Only needed on Trusty. Ubuntu packages since Utopic.
+    sudo apt-add-repository ppa:libccd-debs
+    sudo apt-add-repository ppa:fcl-debs
 
-        # Main repository
-        sudo apt-add-repository ppa:dartsim
-        sudo apt-get update
-        sudo apt-get install libdart-core5-dev
+    # Main repository
+    sudo apt-add-repository ppa:dartsim
+    sudo apt-get update
+    sudo apt-get install libdart-core5-dev
 
 ### Optional Dependencies
 
@@ -119,8 +119,8 @@ tutorial and then come back here.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
-        cd /tmp/gazebo
+       hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+       cd /tmp/gazebo
 
      **Note:** the `default` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
@@ -129,39 +129,39 @@ desire more stability
 
 1. Create a build directory and go there:
 
-        mkdir build
-        cd build
+       mkdir build
+       cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below):
 
     a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
 
-           cmake ../
+       cmake ../
 
 
     > Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
-    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
+    >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
-           cmake -DCMAKE_BUILD_TYPE=Debug ../
+       cmake -DCMAKE_BUILD_TYPE=Debug ../
 
-    >        cmake ../
+    >     cmake ../
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-          -- Install path: /home/$USER/local
+       -- Install path: /home/$USER/local
 
 1. Build Gazebo:
 
-        make -j4
+       make -j4
 
 1. Install Gazebo:
 
-        sudo make install
+       sudo make install
 
 1. Setup environment variables
 
@@ -343,4 +343,4 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 ### Optional dependencies ###
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-        brew install default --with-bullet --with-simbody
+    brew install default --with-bullet --with-simbody
