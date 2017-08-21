@@ -119,8 +119,8 @@ tutorial and then come back here.
 
 1. Clone the repository into a directory and go into it:
 
-       hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
-       cd /tmp/gazebo
+      hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+      cd /tmp/gazebo
 
      **Note:** the `default` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
@@ -129,14 +129,14 @@ desire more stability
 
 1. Create a build directory and go there:
 
-       mkdir build
-       cd build
+      mkdir build
+      cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below):
 
     a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
 
-       cmake ../
+      cmake ../
 
 
     > Note: You can use a custom install path to make it easier to switch between source and debian installs:
@@ -153,15 +153,15 @@ desire more stability
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-       -- Install path: /home/$USER/local
+      -- Install path: /home/$USER/local
 
 1. Build Gazebo:
 
-       make -j4
+      make -j4
 
 1. Install Gazebo:
 
-       sudo make install
+      sudo make install
 
 1. Setup environment variables
 
