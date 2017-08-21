@@ -136,7 +136,7 @@ desire more stability
 
     a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
 
-          cmake ../
+        cmake ../
 
 
     > Note: You can use a custom install path to make it easier to switch between source and debian installs:
