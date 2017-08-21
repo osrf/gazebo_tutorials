@@ -68,8 +68,8 @@ well to other repositories maintained by OSRF.
 >
 > [Too large](https://bitbucket.org/osrf/gazebo/pull-request/30)
 
-1. [Pull request](https://bitbucket.org/osrf/gazebo/pull-request/new)
-> Submit a pull request when you ready.
+1. [Pull request](https://confluence.atlassian.com/bitbucket/work-with-pull-requests-223220593.html)
+> Submit a pull request from your Bitbucket fork when you are ready.
 
 1. Review
 > At least two other people have to approve your pull request before it can be merged. Please be responsive to any questions and comments.
@@ -79,7 +79,7 @@ well to other repositories maintained by OSRF.
 > We do this to encourage the review of pull requests. If you submit a pull request, then try to review other open pull requests. This will reduce the time it takes for your code to get accepted, and also gets more eyes on more code.
 
 1. Done, phew.
-> Once you have met all the requirements, you're code will be merged. Thanks for improving Gazebo!
+> Once you have met all the requirements, your code will be merged. Thanks for improving Gazebo!
 
 ### Internal Developers
 
@@ -187,11 +187,12 @@ writing a test please ask for help in your pull request.
 
 Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
 
-1. In your `build` folder, compile Gazebo with `-DCMAKE_BUILD_TYPE=Coverage`
+1. In your `build` folder, compile Gazebo and the tests with `-DCMAKE_BUILD_TYPE=Coverage`
 
     ~~~
     cmake -DCMAKE_BUILD_TYPE=Coverage ..\
     make
+    make tests
     ~~~
 
 1. Run a single test, or all the tests
@@ -229,7 +230,7 @@ stop the program immediately.
 
 ### Gazebo runtime assertions: GZ_ASSERT
 
-In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
+In Gazebo, the GZ_ASSERT macro is designed to handle all our runtime assertions
 
      GZ_ASSERT(<condition to check>,<fail msg>) 
 
@@ -240,38 +241,38 @@ In Gazebo, the GZ_ASSERT macro id designed to handle all our runtime assertions
 
 Some of the benefits of using the assertions:
 
-* They are really useful for not having to debug all kind of weird and unexpected errors, especially in runtime. Exact failure point appears when pass by an assertion.
-* Developer can be sure that some conditions are met at a given code point. Code turns more reliable.
-* Help to detect no so obvious errors happening (affecting performance for example)
+* They are really useful for not having to debug all kinds of weird and unexpected errors, especially in runtime. The exact failure point appears when an assertion is triggered.
+* The developer can be sure that some conditions are met at a given code point. This makes the code more reliable.
+* They help to detect when not-so-obvious errors are happening (affecting performance for example).
 
 ### Difference between Assertion and Exception
 
-While assertions are aimed to impossible situations generated from programming errors, the exceptions handle all kind of expected errors and unusual but logically possible code situations.
+While assertions are intended for impossible situations resulting from programming errors, exceptions handle all kinds of expected errors and unusual but logically possible code situations.
 
-Lets review an example: suppose we are writing a math library and created a really fast method to calculate square roots but it only works for positive numbers. Something declared as:
+Let's review an example: suppose we are writing a math library and created a really fast method to calculate square roots, but it only works for positive numbers. Something declared as:
      
      double sqrt_for_positives(double number)
 
-So what could be an assertion and what an exception for our revolutionary function?
+What could be an assertion and what would be an exception for our revolutionary function?
 
-* Exception: if the incoming number is negative (our function only accept positive numbers), then we will thrown an exception. It was an error by the user but we should consider it a possible scenario since we are offering a public interface.
+* Exception: If the incoming number is negative (our function only accepts positive numbers), then we will throw an exception. It was an error by the user, but we should consider it a possible scenario since we are offering a public interface.
 
-* Assertion: our square root should never return a negative number. This is not a logical error, is a completely unexpected error.
+* Assertion: Our square root should never return a negative number. This is not a logical error; it is a completely unexpected error which should be impossible if the function is written correctly.
 
 ## Debugging Gazebo
 
 ### Meaningful backtraces
 
-In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most of the situations. This are the three level of traces which can be obtained:
+In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most situations. There are three level of traces which can be obtained:
 
 '''Maximum level of debugging support'''
-:This only can be obtained compiling Gazebo from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up no optimizations and debugging symbols. It can be required by developers in situations specially difficult to reproduce.
+: This can only be obtained by compiling Gazebo from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up debugging symbols with no optimizations. It may be required by developers for problems that are especially difficult to track down.
 
 '''Medium level of debugging support'''
-:This can be obtained installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
+: This can be obtained installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
 
 '''Minimum level of debugging support'''
-:This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. This traces are particularly difficult to follow.
+: This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. These traces are particularly difficult to follow.
 
 ## Code Check 
 
@@ -280,6 +281,7 @@ Code pushed into the Gazebo repository should pass a few simple tests. It is als
 ### Regression Tests   
 
 In your Gazebo build directory run `make test`:
+
         make test
 
 All the tests should pass. If they do not, you can run and debug the tests individually. For example, to run the transport test from your build directory:
@@ -300,9 +302,9 @@ It takes a few minutes to run. Fix all errors and warnings until the output look
 
         Total errors found: 0
 
-### `CMAKE_BUILD_TYPE`=Check compiles with no warnings
+### `CMAKE_BUILD_TYPE=Check` compiles with no warnings
 
-This test compiles Gazebo with numerous warning flags enabled. The source code for Gazebo should compile cleanly. This does not include code in the {{{deps}}} directory. As a rule of thumb, start looking for compilation warnings after the proto messages are built which appear as a series of blue text:
+This test compiles Gazebo with numerous warning flags enabled. The source code for Gazebo should compile cleanly. This does not include code in the `deps` directory. As a rule of thumb, start looking for compilation warnings after the proto messages are built which appear as a series of blue text:
 
         Linking CXX executable gazebomsgs_out
         Running C++ protocol buffer compiler on axis.proto
