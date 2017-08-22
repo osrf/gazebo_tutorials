@@ -8,7 +8,7 @@ This tutorial explains how to use a model plugin for gravity compensation in Gaz
 
 Gravity compensation is a technique used to mitigate the effects of gravity on a robot's behavior. A model of the robot and its current configuration are used to estimate the gravitational forces acting on the robot's links and the joint efforts necessary to balance them. Ideally, gravity compensation would cancel out accelerations due to gravity while allowing the robot to comply with other external forces.
 
-We will begin by controlling a mass on a linear actuator using PID feedback and then see how gravity compensation can improve control.
+We will begin by controlling a 0.1 kg mass on a linear actuator using PID feedback and then see how gravity compensation can improve control.
 
 # PID Control
 ## P Control
@@ -102,13 +102,14 @@ gazebo -u --verbose worlds/gravity_compensation.world
 
 3. Unpause the simulation.
 
-With gravity compensation, the mass settles near the target despite lower PID gains. The controller has some steady-state state error because the integral term is zero and the model includes friction.
+With gravity compensation, the mass settles near the target despite lower PID gains. The controller has some steady-state error because the integral term is zero and the model includes friction.
 
 [[file:files/gravity_compensation.png|600px]]
 
 ## Using the Plugin
 
 The following excerpt from `gravity_compensation.world` shows how it calls the  plugin:
+
 ~~~
 <include>
   <uri>model://mass_on_rails</uri>
@@ -149,6 +150,7 @@ Gravity compensation can readily extend to more complex systems. The GIF below s
 [[file:files/robonaut.gif|400px]]
 
 To run this example yourself, start gazebo with the following world file:
+
 ~~~
 <?xml version="1.0"?>
 <sdf version="1.5">
