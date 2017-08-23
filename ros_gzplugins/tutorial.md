@@ -529,7 +529,7 @@ save, then launch the same launch files as for GPU Laser.
   - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
   - gravity is included in inertial measurements.
 ~~~
-    <gazebo reference="$imu_link">
+    <gazebo reference="imu_link">
         <gravity>true</gravity>
         <sensor name='imu_sensor' type='imu'>
             <always_on>1</always_on>
