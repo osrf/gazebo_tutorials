@@ -528,6 +528,27 @@ save, then launch the same launch files as for GPU Laser.
   - inheritance from SensorPlugin instead of ModelPlugin,
   - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
   - gravity is included in inertial measurements.
+~~~
+    <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name='imu_sensor' type='imu'>
+            <always_on>1</always_on>
+            <update_rate>1000</update_rate>
+            <visualize>1</visualize>
+            <topic>__default_topic__</topic>
+            <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+                <topicName>imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>10.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+      </gazebo>
+~~~
 
 ## Joint Pose Trajectory
 
