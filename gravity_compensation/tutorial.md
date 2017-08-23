@@ -87,7 +87,7 @@ Care must be taken in tuning PID controllers. For example, if we set the PID gai
 
 # Gravity Compensation
 
-The PID controller now performs well for the `mass_on_rails` system. However, it relies on high gains which may be undesirable, for example, if we want compliance in controller. In some situations, gravity compensation can provide a means to reduce PID gains without completely sacrificing the controller performance.
+The PID controller now performs well for the `mass_on_rails` system. However, it relies on high gains which may be undesirable, for example, if we want compliance in the controller. In some situations, gravity compensation can provide a means to reduce PID gains without completely sacrificing the controller performance.
 
 ## Demonstration
 For the `mass_on_rails` system, gravity is the primary factor the controller must overcome. So, if we add gravity compensation (GC), we can reduce the PID gains and still have the mass settle near the target.
@@ -135,7 +135,7 @@ When applied to a physical robot, gravity compensation may exhibit varying degre
 
 6. Exit the model editor, saving the model when prompted.
 
-7. Select the model and enter the joint controller parameters again..
+7. Select the model and enter the joint controller parameters again.
 
 8. Unpause the simulation.
 
