@@ -15,6 +15,7 @@ Gzweb makes use of the [JQuery mobile](http://jquerymobile.com/) user interface 
 
 To install required Grunt packages:
 
+    npm install -g grunt-cli
     cd gz3d/utils && npm install
 
 ## Work Flow:
