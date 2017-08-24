@@ -1,6 +1,12 @@
 #Prerequisites
 
-  [Overview / HelloWorld](http://gazebosim.org/tutorials?tut=plugins_hello_world) Plugin Tutorial
+[Plugins 101](http://gazebosim.org/tutorials?tut=plugins_hello_world) tutorial
+
+* This tutorial will use a [model plugin](http://gazebosim.org/tutorials?tut=plugins_model).
+
+[From source](http://gazebosim.org/tutorials?tut=install_from_source) tutorial
+
+* Install optional [DART physics and utilities](http://gazebosim.org/tutorials?tut=install_from_source#OptionalPhysicsEngines) (`libdart6-utils-urdf-dev`).
 
 # Overview
 

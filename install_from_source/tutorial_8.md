@@ -59,22 +59,19 @@ shipping the ODE, Bullet, and Simbody physics engines.
 
 #### DART Support
 
-Support for [DART](http://dartsim.github.io/) version 6 is integrated into
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
 the default branch. In an Ubuntu system, several Personal Package Archives
 (PPA's) can be used to install the proper package and dependencies. Note that
 adding these PPA's may cause conflicts with ROS.
 
-    # Only needed on Trusty. Ubuntu packages since Utopic.
-    sudo apt-add-repository ppa:libccd-debs
-    sudo apt-add-repository ppa:fcl-debs
+        # Only needed on Trusty. Ubuntu packages since Utopic.
+        sudo apt-add-repository ppa:libccd-debs
+        sudo apt-add-repository ppa:fcl-debs
 
-    # Main repository
-    sudo apt-add-repository ppa:dartsim
-    sudo apt-get update
-    sudo apt-get install libdart6-dev
-
-    # Additional utilities
-    sudo apt-get install libdart6-utils-urdf-dev
+        # Main repository
+        sudo apt-add-repository ppa:dartsim
+        sudo apt-get update
+        sudo apt-get install libdart-core5-dev
 
 ### Optional Dependencies
 
@@ -139,24 +136,24 @@ desire more stability
 
     a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
 
-        cmake ../
+           cmake ../
 
 
     > Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
-    >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
+    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
-        cmake -DCMAKE_BUILD_TYPE=Debug ../
+           cmake -DCMAKE_BUILD_TYPE=Debug ../
 
-    >     cmake ../
+    >        cmake ../
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-        -- Install path: /home/$USER/local
+          -- Install path: /home/$USER/local
 
 1. Build Gazebo:
 
@@ -264,7 +261,7 @@ For example, gazebo5 doesn't support dart5.
 cd ${WS}/src/gazebo
 hg up default
 cd ${WS}/src/dart
-git checkout release-6.2
+git checkout release-5.0
 ~~~
 
 Add [package.xml](http://wiki.ros.org/catkin/package.xml)
@@ -346,4 +343,4 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 ### Optional dependencies ###
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-    brew install default --with-bullet --with-simbody
+        brew install default --with-bullet --with-simbody
