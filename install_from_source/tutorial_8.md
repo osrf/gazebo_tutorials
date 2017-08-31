@@ -59,7 +59,7 @@ shipping the ODE, Bullet, and Simbody physics engines.
 
 #### DART Support
 
-Support for [DART](http://dartsim.github.io/) version 6 is integrated into
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
 the default branch. In an Ubuntu system, several Personal Package Archives
 (PPA's) can be used to install the proper package and dependencies. Note that
 adding these PPA's may cause conflicts with ROS.
@@ -71,10 +71,7 @@ adding these PPA's may cause conflicts with ROS.
     # Main repository
     sudo apt-add-repository ppa:dartsim
     sudo apt-get update
-    sudo apt-get install libdart6-dev
-
-    # Optional DART utilities
-    sudo apt-get install libdart6-utils-urdf-dev
+    sudo apt-get install libdart-core5-dev
 
 ### Optional Dependencies
 
@@ -264,7 +261,7 @@ For example, gazebo5 doesn't support dart5.
 cd ${WS}/src/gazebo
 hg up default
 cd ${WS}/src/dart
-git checkout release-6.2
+git checkout release-5.0
 ~~~
 
 Add [package.xml](http://wiki.ros.org/catkin/package.xml)
