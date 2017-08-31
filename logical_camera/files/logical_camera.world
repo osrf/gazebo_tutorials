@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="post">
+      <pose>0 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 0.2 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>.2 .2 2</size>
+            </box>
+          </geometry>
+        </visual>
+
+        <sensor name="logical_camera" type="logical_camera">
+          <pose>0 0 1 0 0 0</pose>
+          <logical_camera>
+            <near>0.55</near>
+            <far>2.5</far>
+            <horizontal_fov>1.05</horizontal_fov>
+            <aspect_ratio>1.8</aspect_ratio>
+          </logical_camera>
+
+          <visualize>true</visualize>
+          <always_on>true</always_on>
+          <update_rate>10</update_rate>
+          <plugin name="SomeMeaningfulName" filename="libDataViaPlugin.so"/>
+        </sensor>
+      </link>
+    </model>
+
+    <model name="tall_target">
+      <pose>2 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="tall_collision">
+          <geometry>
+            <box>
+              <size>1 1 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="tall_visual">
+          <geometry>
+            <box>
+              <size>1 1 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="base_target">
+      <pose>1 0 1.5 0 0 0</pose>
+      <link name="link">
+        <collision name="base_collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="base_visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <model name="nested_target">
+        <pose>0 0 1.5 0 0 0</pose>
+        <link name="link">
+          <collision name="nested_collision">
+            <geometry>
+              <box>
+                <size>1 1 1</size>
+              </box>
+            </geometry>
+          </collision>
+          <visual name="nested_visual">
+            <geometry>
+              <box>
+                <size>1 1 1</size>
+              </box>
+            </geometry>
+          <material>
+            <script>
+              <uri>file://../../wireframe.material</uri>
+              <name>Wireframe/Purple</name>
+            </script>
+          </material>
+          </visual>
+        </link>
+      </model>
+    </model>
+  </world>
+</sdf>
