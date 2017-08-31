@@ -73,7 +73,7 @@ adding these PPA's may cause conflicts with ROS.
     sudo apt-get update
     sudo apt-get install libdart6-dev
 
-    # Additional utilities
+    # Optional DART utilities
     sudo apt-get install libdart6-utils-urdf-dev
 
 ### Optional Dependencies
