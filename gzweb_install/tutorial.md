@@ -123,6 +123,8 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     http://localhost:8080
     ~~~
 
+    > You can use the `-p` option to choose an arbitrary port, for example: `./start_gzweb.sh -p 1234`
+
 1. To stop Gzweb server, from your gzweb directory, run:
 
     ~~~
