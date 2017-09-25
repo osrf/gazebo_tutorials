@@ -479,6 +479,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Logical Camera Sensor" ref='logical_camera_sensor'>
+      <markdown version="7.0+">logical_camera/tutorial_7+.md</markdown>
+      <description>How to create and get data from logical camera sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9-4.0">contact_sensor/tutorial.md</markdown>
       <markdown version="4.0-6.0">contact_sensor/tutorial_4-0.md</markdown>
