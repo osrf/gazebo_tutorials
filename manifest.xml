@@ -1084,6 +1084,7 @@
         <tutorial>camera_distortion</tutorial>
         <tutorial>camera_save</tutorial>
         <tutorial>force_torque_sensor</tutorial>
+        <tutorial>logical_camera_sensor</tutorial>
       </tutorials>
     </category>
 
