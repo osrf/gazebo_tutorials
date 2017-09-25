@@ -6,10 +6,10 @@
     </include>
 
     <model name="post">
+      <pose>0 0 1 0 0 3.14159</pose>
       <static>true</static>
       <link name="link">
         <sensor name="logical_camera" type="logical_camera">
-          <pose>0 0 1 0 0 0</pose>
           <logical_camera>
             <near>0.55</near>
             <far>2.5</far>
@@ -26,7 +26,7 @@
 
     <model name="target_box">
       <static>true</static>
-      <pose>2 0 1 0 0 0</pose>
+      <pose>-2 0 1 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
