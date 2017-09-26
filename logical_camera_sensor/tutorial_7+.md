@@ -88,24 +88,24 @@ However, it will include any nested or parent models.
 
 #SDFormat Parameters
 * `<update_rate>`
-  This is a value in Hz that says how often in simulated time the logical camera will generate sensor data.
+  * Number of times per simulated second the sensor will generate data.
 * `<topic>`
-  The gazebo transport topic to publish to.
-  If this is not specified then the sensor will generate a topic name that includes the names of its ancestors in SDF.
+  * The gazebo transport topic to publish to.
+    If this is not specified then the sensor will generate a topic name that includes the names of its ancestors in SDF.
 * `<pose>`
-  If the model, link, and sensor poses are all zero, the world positive X axis will point out the center of the logical camera.
-  The pose of a `<sensor>` is relative to the pose of the `<link>` which is relative to the pose of the `<model>`.
+  * If the model, link, and sensor poses are all zero, the world positive X axis will point out the center of the logical camera.
 * `<visualize>`
-  If true then the camera's frustum will be visualized in the gazebo client.
-* `<logical_camera><near>`
-  Distance in meters from the pose of the sensor to the closest point on the near clip plane.
-* `<logical_camera><far>`
-  Distance in meters from the pose of the sensor to the closest point on the far clip plane.
-* `<logical_camera><horizontal_fov>`
-  The horizontal field of view of the camera in radians.
-* `<logical_camera><aspect_ratio>`
-  The ratio of the width and height of the camera.
-  The aspect ratio combined with the horizontal field of view defines the vertical field of view of the camera.
+  * If true then the camera's frustum will be visualized in the gazebo client.
+* `<logical_camera>`
+  * `<near>`
+      * Distance in meters from the pose of the sensor to the closest point on the near clip plane.
+  * `<far>`
+      * Distance in meters from the pose of the sensor to the closest point on the far clip plane.
+  * `<horizontal_fov>`
+      * The horizontal field of view of the camera in radians.
+  * `<aspect_ratio>`
+      * The ratio of the width and height of the camera.
+        The aspect ratio combined with the horizontal field of view defines the vertical field of view of the camera.
 
 # Getting Data
 There are two ways to get the data: directly from the sensor, or using gazebo transport.
