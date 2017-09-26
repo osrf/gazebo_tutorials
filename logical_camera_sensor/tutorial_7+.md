@@ -1,8 +1,8 @@
 # Logical Camera
-A logical camera outputs the names and poses of models that could appear in a camera with the same parameters.
+While a camera outputs an image, a logical camera outputs model names and poses.
+It is useful when one wants to know which models might be visible to a camera in the same location.
 
 # Example of a Logical Camera
-Lets see what a logical camera does.
 Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
 
 <include lang='xml' from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>

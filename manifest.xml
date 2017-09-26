@@ -480,7 +480,7 @@
     </tutorial>
 
     <tutorial title="Logical Camera Sensor" ref='logical_camera_sensor'>
-      <markdown version="7.0+">logical_camera/tutorial_7+.md</markdown>
+      <markdown version="7.0+">logical_camera_sensor/tutorial_7+.md</markdown>
       <description>How to create and get data from logical camera sensors.</description>
       <skill>intermediate</skill>
     </tutorial>
