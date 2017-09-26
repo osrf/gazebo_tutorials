@@ -3,9 +3,9 @@ A logical camera outputs the names and poses of models that could appear in a ca
 
 # Example of a Logical Camera
 Lets see what a logical camera does.
-Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera/files/tutorial_logical_camera.world)
+Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera/files/tutorial_logical_camera.world'/>
+<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
 
 Launch the world:
 
