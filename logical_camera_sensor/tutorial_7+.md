@@ -5,7 +5,7 @@ A logical camera outputs the names and poses of models that could appear in a ca
 Lets see what a logical camera does.
 Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
+<include lang='xml' from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
 
 Launch the world:
 
@@ -108,47 +108,41 @@ However, it will include any nested or parent models.
 There are two ways to get the data: directly from the sensor, or using gazebo transport.
 Both ways return a [LogicalCameraImage](https://bitbucket.org/osrf/gazebo/src/gazebo7/gazebo/msgs/logical_camera_image.proto).
 
-## Get Directly From The Sensor
+## Directly From The Sensor
 The data can be taken directly from the sensor.
 You will need to write a [gazebo plugin](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) to access it.
 Only the most recently generated message is available.
 
 1. Get a generic sensor pointer using the name of the sensor.
-  ```
-      gazebo::sensors::SensorPtr genericSensor = sensors::get_sensor("model_name::link_name::my_logical_camera")
-  ```
+        
+        gazebo::sensors::SensorPtr genericSensor = sensors::get_sensor("model_name::link_name::my_logical_camera")
 
 1. Cast it to a [LogicalCameraSensor](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html).
-  ```
-      sensors::LogicalCameraSensorPtr logicalCamera = std::dynamic_pointer_cast<sensors::LogicalCameraSensor>(genericSensor);
-  ```
+        
+        sensors::LogicalCameraSensorPtr logicalCamera = std::dynamic_pointer_cast<sensors::LogicalCameraSensor>(genericSensor);
 
 1. Call [LogicalCamera::Image()](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html#a753f458d95c8f7abcfa87b19fffe0021) to get the latest sensor data.
-  ```
-      gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
-  ```
+        
+        gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
 
-## Get Using Gazebo Transport
+## Using Gazebo Transport
 Logical camera sensor data is published using gazebo transport.
 The data is published to subscribers immediately after it is generated.
 
 1. Create a gazebo transport node and initialize it.
-  ```
-      gazebo::transport::NodePtr node(new gazebo::transport::Node());
-      node->Init();
-  ```
+        
+        gazebo::transport::NodePtr node(new gazebo::transport::Node());
+        node->Init();
 
 1. Create a callback for the subscription
-  ```
-      /////////////////////////////////////////////////
-      // Function is called everytime a message is received.
-      void callback(gazebo::msgs::ConstLogicalCameraImagePtr &_msg)
-      {
-        // your code here
-      }
-  ```
+        
+        /////////////////////////////////////////////////
+        // Function is called everytime a message is received.
+        void callback(gazebo::msgs::ConstLogicalCameraImagePtr &_msg)
+        {
+          // your code here
+        }
 
 1. Listen to the topic published by the logical camera
-  ```
-      gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
-  ```
+        
+        gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
