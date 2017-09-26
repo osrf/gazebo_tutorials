@@ -1,25 +1,22 @@
 # Logical Camera
 While a camera outputs an image, a logical camera outputs model names and poses.
-It is useful when one wants to know which models might be visible to a camera in the same location.
+It shows which models might be visible to a camera in the same location.
 
 # Example of a Logical Camera
-Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
+1. Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
+    
+    <include lang='xml' from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
 
-<include lang='xml' from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
+1. Launch the world
+        
+        gazebo --verbose ./tutorial_logical_camera.world
 
-Launch the world:
-
-```
-gazebo --verbose ./tutorial_logical_camera.world
-```
-
-From the top menu click `Window` then `Topic Visualization`.
-Select the topic `/gazebo/default/post/link/logical_camera/models`.
-It has the message type `gazebo.msgs.LogicalCameraImage`.
-
-You should see the following:
-
-[[file:files/tutorial_logical_camera.world.png|480px]]
+1. From the top menu click **Window** then **Topic Visualization**.
+1. Select the topic **/gazebo/default/post/link/logical_camera/models**.
+    * It will be listed under the message type **gazebo.msgs.LogicalCameraImage**.
+1. You should see the following:
+    
+    [[file:files/tutorial_logical_camera.world.png|800px]]
 
 
 # Data Explanation
@@ -28,7 +25,10 @@ The logical camera reports the names and poses of models it sees.
 While a normal camera sees `<visual>` geometry, the logical camera sees `<collision>`.
 It works by testing if its [frustum](https://en.wikipedia.org/wiki/Viewing_frustum) intersects the [axis aligned bounding box](https://en.wikipedia.org/wiki/Bounding_volume) (**AABB**) of a model.
 The model's AABB is just big enough to contain all of its `<collision>` geometry.
-The AABB of a model does not contain nested models.
+
+**Note:**
+*The AABB of a model does not contain nested models.*
+*If a nested model is inside the frustum but the parent model is not, only the nested model is reported.*
 
 ## Model Names
 Model names reported by the camera are scoped names.
@@ -37,7 +37,7 @@ If it had a nested model `<model name="hand">`, the nested model's scoped name w
 
 The scoped name can be used to get a pointer to the model.
 
-```
+```cpp
 // Get the world (named "default")
 gazebo::physics::WorldPtr world = physics::get_world("default");
 
@@ -47,18 +47,19 @@ gazebo::physics::ModelPtr handModel = world->GetModel("robot::hand");
 
 ## Model Poses
 The logical camera outputs poses of models it sees relative to itself.
-Combine it with the pose of the camera to get it in world coordinates.
+It also outputs its own pose in world coordinates.
+Use this to get the model poses in world coordinates.
 
-```
-// LogicalCameraImage msg;
+```cpp
+// gazebo::msgs::LogicalCameraImage msg;
 
 // Pose of camera in world coordinates
 ignition::math::Pose3d cameraPose = gazebo::msgs::ConvertIgn(msg.pose());
 
-// Pose of model relative to camera
+// Pose of first model relative to camera
 ignition::math::Pose3d modelRelativePose = gazebo::msgs::ConvertIgn(msg.model(0).pose());
 
-// Pose of model in world coordinates
+// Pose of first model in world coordinates
 ignition::math::Pose3d modelWorldPose = modelRelativePose - cameraPose;
 ```
 
@@ -73,6 +74,8 @@ The output of a logical camera may include a model a normal camera would not see
 
 The volume of a model's AABB is always greater than or equal to the volume of the collisions on it.
 It is possible some part of this extra volume intersects the frustum while none of the collision geometry does.
+
+[[file:files/tutorial_logical_camera_aabb_false_positive.world.png|600px]]
 
 ## False Negatives
 The output of a logical camera may not include a model a normal camera would see if:
@@ -114,35 +117,47 @@ You will need to write a [gazebo plugin](http://gazebosim.org/tutorials?tut=plug
 Only the most recently generated message is available.
 
 1. Get a generic sensor pointer using the name of the sensor.
-        
-        gazebo::sensors::SensorPtr genericSensor = sensors::get_sensor("model_name::link_name::my_logical_camera")
+    
+    ~~~cpp
+    gazebo::sensors::SensorPtr genericSensor = sensors::get_sensor("model_name::link_name::my_logical_camera")
+    ~~~
 
 1. Cast it to a [LogicalCameraSensor](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html).
-        
-        sensors::LogicalCameraSensorPtr logicalCamera = std::dynamic_pointer_cast<sensors::LogicalCameraSensor>(genericSensor);
+    
+    ~~~cpp
+    sensors::LogicalCameraSensorPtr logicalCamera = std::dynamic_pointer_cast<sensors::LogicalCameraSensor>(genericSensor);
+    ~~~
 
 1. Call [LogicalCamera::Image()](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html#a753f458d95c8f7abcfa87b19fffe0021) to get the latest sensor data.
-        
-        gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
+    
+    ~~~cpp
+    gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
+    ~~~
 
 ## Using Gazebo Transport
 Logical camera sensor data is published using gazebo transport.
 The data is published to subscribers immediately after it is generated.
 
 1. Create a gazebo transport node and initialize it.
-        
-        gazebo::transport::NodePtr node(new gazebo::transport::Node());
-        node->Init();
+    
+    ~~~cpp
+    gazebo::transport::NodePtr node(new gazebo::transport::Node());
+    node->Init();
+    ~~~
 
 1. Create a callback for the subscription
-        
-        /////////////////////////////////////////////////
-        // Function is called everytime a message is received.
-        void callback(gazebo::msgs::ConstLogicalCameraImagePtr &_msg)
-        {
-          // your code here
-        }
+    
+    ~~~cpp
+    /////////////////////////////////////////////////
+    // Function is called everytime a message is received.
+    void callback(gazebo::msgs::ConstLogicalCameraImagePtr &_msg)
+    {
+      // your code here
+    }
+    ~~~
 
 1. Listen to the topic published by the logical camera
-        
-        gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
+    
+    ~~~cpp
+    gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
+    ~~~
