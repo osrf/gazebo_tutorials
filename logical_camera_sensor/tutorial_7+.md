@@ -114,19 +114,16 @@ You will need to write a [gazebo plugin](http://gazebosim.org/tutorials?tut=plug
 Only the most recently generated message is available.
 
 1. Get a generic sensor pointer using the name of the sensor.
-  
   ```
       gazebo::sensors::SensorPtr genericSensor = sensors::get_sensor("model_name::link_name::my_logical_camera")
   ```
 
 1. Cast it to a [LogicalCameraSensor](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html).
-  
   ```
       sensors::LogicalCameraSensorPtr logicalCamera = std::dynamic_pointer_cast<sensors::LogicalCameraSensor>(genericSensor);
   ```
 
 1. Call [LogicalCamera::Image()](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1sensors_1_1LogicalCameraSensor.html#a753f458d95c8f7abcfa87b19fffe0021) to get the latest sensor data.
-  
   ```
       gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
   ```
@@ -136,14 +133,12 @@ Logical camera sensor data is published using gazebo transport.
 The data is published to subscribers immediately after it is generated.
 
 1. Create a gazebo transport node and initialize it.
-  
   ```
       gazebo::transport::NodePtr node(new gazebo::transport::Node());
       node->Init();
   ```
 
 1. Create a callback for the subscription
-  
   ```
       /////////////////////////////////////////////////
       // Function is called everytime a message is received.
@@ -154,7 +149,6 @@ The data is published to subscribers immediately after it is generated.
   ```
 
 1. Listen to the topic published by the logical camera
-  
   ```
       gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
   ```
