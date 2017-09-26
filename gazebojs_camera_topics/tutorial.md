@@ -30,11 +30,11 @@ Now you can create javascript files and execute them by invoking node.
 
 Create a file
 
-    gedit save_jpeg.js
+    gedit save_camera_frames.js
 
-and add the following content ([save_jpeg.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js)):
+and add the following content ([save_camera_frames.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js)):
 
-<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js' />
 
 
 ### Code explained
@@ -137,12 +137,12 @@ First, you must setup Gazebo. In an empty world, add a few items (the double pen
 
 Invoke the script
 
-    node save_jpeg.js camera frame 10
+    node save_camera_frames.js camera frame 10
 
 You should see the following output:
 
 ~~~
-node save_jpeg.js camera frame 10
+node save_camera_frames.js camera frame 10
 saving [~/camera/link/camera/image] to  [frame] for 10 frames
 setup a loop with 5 sec interval tick
 frame_0001.jpeg saved
