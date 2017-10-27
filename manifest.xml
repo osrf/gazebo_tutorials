@@ -351,6 +351,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Physics Parameters" ref='physics_params'>
+      <markdown version="7+">physics_params/tutorial.md</markdown>
+      <description>How to tune the physics parameters.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Collide bitmask" ref='collide_bitmask'>
       <markdown version="6.0+">collide_bitmask/tutorial.md</markdown>
       <description>Learn how to control which geometries collide or do not collide with each other through the use of bitmasks.</description>
@@ -1152,6 +1158,7 @@
         <tutorial>clone_simulation</tutorial>
         <tutorial>preset_manager</tutorial>
         <tutorial>parallel</tutorial>
+        <tutorial>physics_params</tutorial>
       </tutorials>
     </category>
 
