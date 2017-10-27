@@ -61,9 +61,11 @@ stable for `world` step, while unstable (with the contacts disappearing and appe
 each time step) for `quick` step.
 
 World step simulation:
+
 <iframe width="640" height="320" src="https://youtu.be/vnVbyexorNQ" frameborder="0" allowfullscreen></iframe>
 
 Quick step simulation:
+
 <iframe width="640" height="320" src="https://youtu.be/1ncEVDIP1Yo" frameborder="0" allowfullscreen></iframe>
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
