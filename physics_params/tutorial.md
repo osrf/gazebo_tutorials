@@ -63,9 +63,6 @@ an accurate enough solution.
     World step simulation:
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/vnVbyexorNQ" frameborder="0" gesture="media" allowfullscreen></iframe>
-
-    Quick step simulation:
-
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1ncEVDIP1Yo" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
@@ -115,108 +112,108 @@ equivalent, i.e. `cfm` and `erp` simulates exactly the spring-damper behavior.
 This is the same parameter as the `max_vel` under `collision->surface->contact`.
 `contact_max_correcting_vel` sets `max_vel` globally. Given the following `.world` file example:
 
-```
-<?xml version="1.0" ?>
-<sdf version="1.6">
-  <world name="default">
-    <physics type="ode">
-      <ode>
-        <solver>
-          <type>world</type>
-        </solver>
-        <constraints>
-          <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
-          <contact_surface_layer>0.0001</contact_surface_layer>
-        </constraints>
-      </ode>
-      <max_step_size>0.001</max_step_size>
-    </physics>
-    <gravity>0.0 0.0 -9.81</gravity>
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <model name="sphere_1">
-      <pose>0.0 1.8 0.5 0.0 0.0 0.0</pose>
-      <link name="link_1">
-        <visual name="visual_sphere_1">
-          <geometry>
-            <sphere>
-             <radius>0.5</radius>
-           </sphere>
-          </geometry>
-          <material>
-            <script>Gazebo/WoodPallet</script>
-          </material>
-        </visual>
-        <collision name="collision_sphere_1">
-          <geometry>
-            <sphere>
-             <radius>0.5</radius>
-           </sphere>
-          </geometry>
-          <surface>
-            <contact>
-              <ode>
-                <max_vel>10</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-    </model>
-    <model name="sphere_2">
-      <pose>0.0 0.0 0.5 0.0 0.0 0.0</pose>
-      <link name="link_2">
-        <visual name="visual_sphere_2">
-          <geometry>
-            <sphere>
-             <radius>0.5</radius>
-           </sphere>
-          </geometry>
-          <material>
-            <script>Gazebo/WoodPallet</script>
-          </material>
-        </visual>
-        <collision name="collision_sphere_2">
-          <geometry>
-            <sphere>
-             <radius>0.5</radius>
-           </sphere>
-          </geometry>
-          <surface>
-            <contact>
-              <ode>
-                <max_vel>1</max_vel>
-                <min_depth>0.01</min_depth>
-              </ode>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-    </model>
-  </world>
-</sdf>
+    ```
+    <?xml version="1.0" ?>
+    <sdf version="1.6">
+      <world name="default">
+        <physics type="ode">
+          <ode>
+            <solver>
+              <type>world</type>
+            </solver>
+            <constraints>
+              <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
+              <contact_surface_layer>0.0001</contact_surface_layer>
+            </constraints>
+          </ode>
+          <max_step_size>0.001</max_step_size>
+        </physics>
+        <gravity>0.0 0.0 -9.81</gravity>
+        <include>
+          <uri>model://ground_plane</uri>
+        </include>
+        <include>
+          <uri>model://sun</uri>
+        </include>
+        <model name="sphere_1">
+          <pose>0.0 1.8 0.5 0.0 0.0 0.0</pose>
+          <link name="link_1">
+            <visual name="visual_sphere_1">
+              <geometry>
+                <sphere>
+                 <radius>0.5</radius>
+               </sphere>
+              </geometry>
+              <material>
+                <script>Gazebo/WoodPallet</script>
+              </material>
+            </visual>
+            <collision name="collision_sphere_1">
+              <geometry>
+                <sphere>
+                 <radius>0.5</radius>
+               </sphere>
+              </geometry>
+              <surface>
+                <contact>
+                  <ode>
+                    <max_vel>10</max_vel>
+                    <min_depth>0.001</min_depth>
+                  </ode>
+                </contact>
+              </surface>
+            </collision>
+          </link>
+        </model>
+        <model name="sphere_2">
+          <pose>0.0 0.0 0.5 0.0 0.0 0.0</pose>
+          <link name="link_2">
+            <visual name="visual_sphere_2">
+              <geometry>
+                <sphere>
+                 <radius>0.5</radius>
+               </sphere>
+              </geometry>
+              <material>
+                <script>Gazebo/WoodPallet</script>
+              </material>
+            </visual>
+            <collision name="collision_sphere_2">
+              <geometry>
+                <sphere>
+                 <radius>0.5</radius>
+               </sphere>
+              </geometry>
+              <surface>
+                <contact>
+                  <ode>
+                    <max_vel>1</max_vel>
+                    <min_depth>0.01</min_depth>
+                  </ode>
+                </contact>
+              </surface>
+            </collision>
+          </link>
+        </model>
+      </world>
+    </sdf>
 
-```
-In the above example, a global `contact_max_correcting_vel` is defined with a value of `0.1`.
-Model `sphere_1` has a `max_vel` of `10` and `sphere_2` has a `max_vel` of `1`. Whenever there
-is a contact between `sphere_1` and `sphere_2`, ODE chose the minimum value of `max_vel` of
-the two entities that form the contact. In this case, `max_vel` for the contact is
-`min(10, 1) = 1`; Finally this `max_vel` is truncated by the `contact_max_correcting_vel`
-defined globally, i.e. the `max_vel` equals to `min(1, 0.1) = 0.1`
+    ```
+    In the above example, a global `contact_max_correcting_vel` is defined with a value of `0.1`.
+    Model `sphere_1` has a `max_vel` of `10` and `sphere_2` has a `max_vel` of `1`. Whenever there
+    is a contact between `sphere_1` and `sphere_2`, ODE chose the minimum value of `max_vel` of
+    the two entities that form the contact. In this case, `max_vel` for the contact is
+    `min(10, 1) = 1`; Finally this `max_vel` is truncated by the `contact_max_correcting_vel`
+    defined globally, i.e. the `max_vel` equals to `min(1, 0.1) = 0.1`
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U12uajzfJUY" frameborder="0" gesture="media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/U12uajzfJUY" frameborder="0" gesture="media" allowfullscreen></iframe>
 
-This simulation sets `max_vel` to three different values for two spheres in collision. The
-simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
-two spheres won't bounce and the velocity is zero after the penetration is corrected; if
-`max_vel` is set to `1`, then the red sphere on the top would bounce at a speed no greater
-than `1`; similarly for `max_vel=10`. This is helpful to prevent the simulation from blowing
-up, especially after the simulation corrects some penetration of contacts.
+    This simulation sets `max_vel` to three different values for two spheres in collision. The
+    simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
+    two spheres won't bounce and the velocity is zero after the penetration is corrected; if
+    `max_vel` is set to `1`, then the red sphere on the top would bounce at a speed no greater
+    than `1`; similarly for `max_vel=10`. This is helpful to prevent the simulation from blowing
+    up, especially after the simulation corrects some penetration of contacts.
 
 1. `contact_surface_layer`
 This is the same parameter as the `min_depth` under `collision->surface->contact`.
@@ -229,18 +226,18 @@ In this example: `min_depth = min(min(0.001, 0.01), 0.0001) = 0.0001`.
 With this `min_depth` determined, penetration between the two entities is updated
 `depth = max(depth - min_depth, 0)` at each time step.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LaSlY0cX7qU" frameborder="0" gesture="media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LaSlY0cX7qU" frameborder="0" gesture="media" allowfullscreen></iframe>
 
-Three cases are shown in this video: the leftmost two spheres started with detaching mode,
-i.e. they are not in contact at the beginning of the simulation. The red sphere on the top
-starts falling due to gravity and forms a contact. In this case, no penetration would happen
-and therefore `min_depth=0.5` doesn't play any role here. In the second case, the two spheres
-start with a contact and a penetration depth of `0.7`, `min_depth=0` in this case. Therefore,
-the simulation corrects the penetration depth of `0.7`. As for the third case, the two spheres
-start with a contact and a penetration depth of `0.7`, `min_depth=0.5`. Therefore, the
-penetration depth will be updated by `depth = max(depth-min_depth, 0)=0.2` and the simulation
-corrects the new `depth` of `0.2` and the two spheres stay with a remaining penetration depth
-equal to the `min_depth`.
+    Three cases are shown in this video: the leftmost two spheres started with detaching mode,
+    i.e. they are not in contact at the beginning of the simulation. The red sphere on the top
+    starts falling due to gravity and forms a contact. In this case, no penetration would happen
+    and therefore `min_depth=0.5` doesn't play any role here. In the second case, the two spheres
+    start with a contact and a penetration depth of `0.7`, `min_depth=0` in this case. Therefore,
+    the simulation corrects the penetration depth of `0.7`. As for the third case, the two spheres
+    start with a contact and a penetration depth of `0.7`, `min_depth=0.5`. Therefore, the
+    penetration depth will be updated by `depth = max(depth-min_depth, 0)=0.2` and the simulation
+    corrects the new `depth` of `0.2` and the two spheres stay with a remaining penetration depth
+    equal to the `min_depth`.
 
 ## Friction parameters
 As for the torsional friction, please refer to the tutorial
@@ -257,13 +254,13 @@ For most cases, `mu2` has same value with `mu`.
 1. `fdir1` 3-tuple unit vector specifying the direction of `mu` in the
 collision local reference frame.
 
-[[file:files/cone_pyramid.png|300px]]
+    [[file:files/cone_pyramid.png|300px]]
 
-This picture shows how the friction cone is approximated with a pyramid model.
-The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
-the normal direction is decided and with a definition of `fdir1`, contact coordinate
-frame can be easily constructed with the third `fdir2` as cross product of unit vector
-along normal and `fdir1` direction.
+    This picture shows how the friction cone is approximated with a pyramid model.
+    The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
+    the normal direction is decided and with a definition of `fdir1`, contact coordinate
+    frame can be easily constructed with the third `fdir2` as cross product of unit vector
+    along normal and `fdir1` direction.
 
 1. `slip1` Force dependent slip direction 1 in collision local frame.
 
@@ -282,12 +279,12 @@ along normal and `fdir1` direction.
 
 1. `kd` Dynamically 'damping'-equivalent coefficient for contact joints
 
-`kp` and `kd` can be used to stabilize the contacts between two entities. The double
-pendulum with `quick` step has unstable intermittent contacts, if we add `kp` and
-`kd` parameter to the `collision->surface->contact` between the ground and base, the
-contacts will be stable, as shown in this following video.
+    `kp` and `kd` can be used to stabilize the contacts between two entities. The double
+    pendulum with `quick` step has unstable intermittent contacts, if we add `kp` and
+    `kd` parameter to the `collision->surface->contact` between the ground and base, the
+    contacts will be stable, as shown in this following video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mTN0O5EOOfA" frameborder="0" gesture="media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mTN0O5EOOfA" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `max_vel` maximum correction velocity, if the predicted velocity for the
 next simulation step is larger than this value, it will be truncated to this
