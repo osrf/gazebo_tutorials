@@ -3,42 +3,42 @@ parameters, mainly focused on the physics parameters in Open
 Dynamics Engine(ODE).
 
 # Overview
-This tutorial will first explain physics related parameters that are applicable
-to all the physics engines, such as `real_time_factor`, `max_step_size`, etc.
+This tutorial first explains physics related parameters that are applicable
+to all the physics engines such as `real_time_factor` and `max_step_size`.
 Then it explains with demonstration about how to use the parameters for `solvers`,
 `constraints`, `friction`. The oder of parameters in this tutorial follows
 the `sdformat` specification definition [here](http://sdformat.org/spec?ver=1.6).
 
 # Parameters Applicable to All Physics Engines
-The parameters listed in this section is defined under the `physics` tab
-[here](http://sdformat.org/spec?ver=1.6&elem=physics), which are shared among
-all the physics engines.
+The parameters listed in this section are defined under the `<physics>` tag
+[here](http://sdformat.org/spec?ver=1.6&elem=physics). These are shared among
+all physics engines.
 
 1. `type` The type of the dynamics engine. Currently Gazebo supports 4 physics
 engines: `ode`, `bullet`, `simbody` and `dart`. The default physics engine is `ode`.
 
 1. `max_step_size` The maximum time step size during the simulation. `ode` supports
 only constant step size and this is a constant value. Default value in Gazebo is
-`0.001`.
+`0.001` seconds.
 
 1. `real_time_factor` `max_step_size x real_time_update_rate` sets an upper bound
-of `real_time_factor`. If `real_time_factor < 1`, the simulation is slower than real
+of `real_time_factor`. If `real_time_factor < 1` the simulation is slower than real
 time.
 
 1. `real_time_update_rate` This is the frequency at which the simulation time steps
-are advanced. The default value in Gazebo is `1000`, multiplied with the default
-`max_step_size` of `0.001` gives a `real_time_factor` of `1`. If `real_time_update_rate`
-is set to `0`, the simulation will run as fast as it can. If Gazebo is not able to update
+are advanced. The default value in Gazebo is `1000` Hz. Multiplying with the default
+`max_step_size` of `0.001` seconds gives a `real_time_factor` of `1`. If `real_time_update_rate`
+is set to `0` the simulation will run as fast as it can. If Gazebo is not able to update
 at the desired rate, it will update as fast as it can, based on the computing power.
 
 1. `max_contacts` The maximum number of contacts to be generated between two entities.
 This value can be overwritten by the `max_contacts` element nested under a `collision`
 element. This is helpful to constrain the maximum number of contacts between two entities,
-such as face-to-face collision, with a potential sacrifice to the accuracy. The
+such as face-to-face collisions, with a potential sacrifice to the accuracy. The
 `max_contacts` parameter is especially helpful for trimesh objects. Another benefit of
 `max_contacts` parameter is that it allows users to allocate a fixed amount of memory
-at the beginning to store the contact and no reallocation would happen since we have
-allocated memory large enough to store the maximum number of contacts allowed.
+at the beginning to store contacts. No reallocation would happen since we have
+allocated enough memory to store the maximum number of contacts possible.
 
 # Parameters for Open Dynamics Engine(ODE)
 The ODE user guide [here](http://ode.org/ode-latest-userguide.html) includes
@@ -50,13 +50,13 @@ guide when necessary.
 [here](http://sdformat.org/spec?ver=1.6&elem=physics#ode_solver)
 
 1. `type` The type of the solvers in ODE. There are two types: `world` and `quick`.
-`world` step is using the direct method called Dantzig and the `quick` step uses an
+`world` step uses a direct method called Dantzig, and the `quick` step uses an
 iterative Projected Gauss-Seidel (PGS) method. `world` step gives an accurate solution
 if it is able to solve the problem, while `quick` step depends on the number of
 iterations to reach an accurate enough solution.
 
     The following two videos show the double pendulum simulation with `world` step and `quick`
-    step, it is clear that the contacts between the ground and the double pendulum base are
+    step. It is clear that the contacts between the ground and the double pendulum base are
     stable for `world` step, while unstable (with the contacts disappearing and appearing for
     each time step) for `quick` step.
 
@@ -66,18 +66,18 @@ iterations to reach an accurate enough solution.
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
 engine. The value of `min_step_size` is no larger than the `max_step_size` under the
-`physics` element. If this left unspecified, the default value will be the `max_step_size`
+`physics` element. If this is left unspecified the default value will be the `max_step_size`
 under `physics` element.
 
 1. `iters` The number of iterations for the solver to run for each time step. In general, a
-larger number results in better accuracy at the cost of slower simulation, but not always
-guaranteed. Note that this parameter is only meaningful to `quick` solver, `world` solver
+larger number results in better accuracy at the cost of slower simulation, but this is not
+guaranteed. Note that this parameter is only meaningful to `quick` solver; `world` solver
 doesn't use this parameter.
 
-1. `precon_iters` This parameter only applies to the `quick` solver, which is the number of
+1. `precon_iters` This parameter only applies to the `quick` solver. It is the number of
 iterations used for preconditioning before solving the problem. The preconditioning strategy
-is disabled by default and therefore, this parameter is not used. As mentioned in the sdformat
-specifications, this is an experimental parameter.
+is disabled by default and therefore this parameter is not used. As mentioned in the sdformat
+specifications this is an experimental parameter.
 
 1. `sor` Successive Over-Relaxation parameter. This is used by `quick` solver only.
 
@@ -90,16 +90,16 @@ directions. The implementation of this feature is
 `constraints` is an element nested under `physics->ode->constraints` in the sdformat
 [here](http://sdformat.org/spec?ver=1.6&elem=physics#ode_constraints)
 
-1. `cfm` Constraint Force Mixing (CFM) is a square diagonal matrix, which added a
+1. `cfm` Constraint Force Mixing (CFM) is a square diagonal matrix. It adds a
 small positive value to the matrix in the linear complementarity problem to be solved.
 An explanation about `cfm` is [here](http://ode.org/ode-latest-userguide.html#sec_3_8_0).
 This should be the first parameter to tune when the simulation is not stable, especially
-that with intermittent contacts. CFM stablizes the simulation by converting a hard contact
+one with intermittent contacts. CFM stablizes the simulation by converting a hard contact
 to a soft one. Therefore, if the error metric to evaluate the solution still uses the violation
-of the original hard contact, CFM could limit the accuracy of the simulation. Figure 3-5 in
+of the original hard contact CFM could limit the accuracy of the simulation. Figure 3-5 in
 [this paper](https://foswiki.cs.rpi.edu/foswiki/pub/RoboticsWeb/LabPublications/Lu14_IROS.pdf)
 gives an explicit demonstration about this limitation. Due to the fact that CFM is always a
-small positive value, this limitation is always ignored.
+small positive value this limitation is always ignored.
 
 1. `erp` Error Reduction Parameter (ERP) specifies what proportion of the joint error will be fixed
 during the next simulation step. The local ERP value nested under `joints` overwrites that defined
@@ -208,10 +208,10 @@ This is the same parameter as the `max_vel` under `collision->surface->contact`.
     <iframe width="560" height="315" src="https://www.youtube.com/embed/U12uajzfJUY" frameborder="0" gesture="media" allowfullscreen></iframe>
 
     This simulation sets `max_vel` to three different values for two spheres in collision. The
-    simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
-    two spheres won't bounce and the velocity is zero after the penetration is corrected; if
-    `max_vel` is set to `1`, then the red sphere on the top would bounce at a speed no greater
-    than `1`; similarly for `max_vel=10`. This is helpful to prevent the simulation from blowing
+    simulation starts with a contact at penetration depth of `0.5`. If we set `max_vel=0` the
+    two spheres won't bounce and the velocity is zero after the penetration is corrected. If
+    `max_vel` is set to `1` then the red sphere on the top would bounce at a speed no greater
+    than `1`, similarly for `max_vel=10`. This is helpful to prevent the simulation from blowing
     up, especially after the simulation corrects some penetration error of contacts.
 
 1. `contact_surface_layer`
@@ -229,8 +229,8 @@ With this `min_depth` determined, penetration between the two entities is update
 
     Three cases are shown in this video: the leftmost two spheres started with detaching mode,
     i.e. they are not in contact at the beginning of the simulation. The red sphere on the top
-    starts falling due to gravity and forms a contact. In this case, no penetration would happen
-    and therefore `min_depth=0.5` doesn't play any role here. In the second case, the two spheres
+    starts falling due to gravity and forms a contact. In this case no penetration would happen
+    and therefore `min_depth=0.5` doesn't play any role here. In the second case the two spheres
     start with a contact and a penetration depth of `0.7`, `min_depth=0` in this case. Therefore,
     the simulation corrects the penetration depth of `0.7`. As for the third case, the two spheres
     start with a contact and a penetration depth of `0.7`, `min_depth=0.5`. Therefore, the
@@ -267,7 +267,7 @@ collision local reference frame.
 
 
 ## Contact parameters
-`contact` is an element nested under `collision->surface->contact` in the sdformat
+`contact` is an element nested under `collision->surface->contact` in sdformat
 [here](http://sdformat.org/spec?ver=1.6&elem=collision#contact_ode).
 
 1. `soft_cfm` Soft constraint force mixing. This is useful to make surfaces soft.
@@ -281,7 +281,7 @@ collision local reference frame.
     `kp` and `kd` can be used to stabilize the contacts between two entities. The double
     pendulum with `quick` step has unstable intermittent contacts as we compared `quick`
     step with `world` step. If we add `kp` and `kd` parameter to the `collision->surface->contact`
-    between the ground and base, the contacts will be stable, as shown in this following video.
+    between the ground and base the contacts will be stable as shown in this following video.
 
     ```
     <collision name="col_plate_on_ground">
@@ -305,11 +305,11 @@ collision local reference frame.
     <iframe width="560" height="315" src="https://www.youtube.com/embed/mTN0O5EOOfA" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `max_vel` Maximum correction velocity for contacts. If the predicted velocity for the
-next simulation step is larger than this value, it will be truncated to this value.
+next simulation step is larger than this value it will be truncated to this value.
 The combination usage with `contact_max_correcting_vel` is demonstrated earlier
 
 1. `min_depth` If the penetration depth is no greater than the value of `min_depth`, then no
-contact force would be applied; Otherwise, contact force will be applied to
+contact force would be applied. Otherwise, contact force will be applied to
 correct the portion of the penetration with a value of penetration depth minus
 `min_depth`. The remaining `min_depth` penetration would stay.
 
