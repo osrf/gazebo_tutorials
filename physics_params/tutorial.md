@@ -62,7 +62,7 @@ an accurate enough solution.
 
     World step simulation:
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/vnVbyexorNQ" frameborder="0" gesture="media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vnVbyexorNQ" frameborder="0" gesture="media" allowfullscreen></iframe>     
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1ncEVDIP1Yo" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
@@ -254,7 +254,7 @@ For most cases, `mu2` has same value with `mu`.
 1. `fdir1` 3-tuple unit vector specifying the direction of `mu` in the
 collision local reference frame.
 
-    [[file:files/cone_pyramid.png|300px]]
+    [[file:files/cone_pyramid.png|360px]]
 
     This picture shows how the friction cone is approximated with a pyramid model.
     The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
