@@ -209,7 +209,8 @@ the two entities that form the contact. In this case, `max_vel` for the contact 
 `min(10, 1) = 1`; Finally this `max_vel` is truncated by the `contact_max_correcting_vel`
 defined globally, i.e. the `max_vel` equals to `min(1, 0.1) = 0.1`
 
-<iframe width="640" height="320" src="https://youtu.be/U12uajzfJUY" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/U12uajzfJUY" frameborder="0" allowfullscreen></iframe>
+
 This simulation sets `max_vel` to three different values for two spheres in collision. The
 simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
 two spheres won't bounce and the velocity is zero after the penetration is corrected; if
@@ -228,7 +229,8 @@ In this example: `min_depth = min(min(0.001, 0.01), 0.0001) = 0.0001`.
 With this `min_depth` determined, penetration between the two entities is updated
 `depth = max(depth - min_depth, 0)` at each time step.
 
-<iframe width="640" height="320" src="https://youtu.be/LaSlY0cX7qU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/LaSlY0cX7qU" frameborder="0" allowfullscreen></iframe>
+
 Three cases are shown in this video: the leftmost two spheres started with detaching mode,
 i.e. they are not in contact at the beginning of the simulation. The red sphere on the top
 starts falling due to gravity and forms a contact. In this case, no penetration would happen
@@ -255,7 +257,7 @@ For most cases, `mu2` has same value with `mu`.
 1. `fdir1` 3-tuple unit vector specifying the direction of `mu` in the
 collision local reference frame.
 
-[[file:files/cone_pyramid.png|600px]]
+[[file:files/cone_pyramid.png|500px]]
 
 This picture shows how the friction cone is approximated with a pyramid model.
 The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
