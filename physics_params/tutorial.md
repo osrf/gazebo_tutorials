@@ -257,7 +257,7 @@ For most cases, `mu2` has same value with `mu`.
 1. `fdir1` 3-tuple unit vector specifying the direction of `mu` in the
 collision local reference frame.
 
-[[file:files/cone_pyramid.png|500px]]
+[[file:files/cone_pyramid.png|300px]]
 
 This picture shows how the friction cone is approximated with a pyramid model.
 The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
