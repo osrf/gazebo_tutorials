@@ -61,7 +61,7 @@ an accurate enough solution.
     each time step) for `quick` step.
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/vnVbyexorNQ" frameborder="0" gesture="media" allowfullscreen></iframe>
-    <iframe width="10" height="315" frameborder="0"></iframe>
+    <iframe width="25" height="315" frameborder="0"></iframe>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1ncEVDIP1Yo" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
