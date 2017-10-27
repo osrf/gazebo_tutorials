@@ -62,11 +62,11 @@ each time step) for `quick` step.
 
 World step simulation:
 
-<iframe width="640" height="320" src="https://youtu.be/vnVbyexorNQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vnVbyexorNQ" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 Quick step simulation:
 
-<iframe width="640" height="320" src="https://youtu.be/1ncEVDIP1Yo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1ncEVDIP1Yo" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `min_step_size` The time duration which advances with each time step of the dynamics
 engine. The value of `min_step_size` is no larger than `max_step_size` under the `physics`
@@ -209,8 +209,7 @@ the two entities that form the contact. In this case, `max_vel` for the contact 
 `min(10, 1) = 1`; Finally this `max_vel` is truncated by the `contact_max_correcting_vel`
 defined globally, i.e. the `max_vel` equals to `min(1, 0.1) = 0.1`
 
-[![](https://youtu.be/U12uajzfJUY/0.jpg)](https://youtu.be/U12uajzfJUY)
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U12uajzfJUY" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 This simulation sets `max_vel` to three different values for two spheres in collision. The
 simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
@@ -230,7 +229,7 @@ In this example: `min_depth = min(min(0.001, 0.01), 0.0001) = 0.0001`.
 With this `min_depth` determined, penetration between the two entities is updated
 `depth = max(depth - min_depth, 0)` at each time step.
 
-<iframe width="560" height="315" src="https://youtu.be/LaSlY0cX7qU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LaSlY0cX7qU" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 Three cases are shown in this video: the leftmost two spheres started with detaching mode,
 i.e. they are not in contact at the beginning of the simulation. The red sphere on the top
@@ -288,7 +287,7 @@ pendulum with `quick` step has unstable intermittent contacts, if we add `kp` an
 `kd` parameter to the `collision->surface->contact` between the ground and base, the
 contacts will be stable, as shown in this following video.
 
-<iframe width="640" height="320" src="http://youtu.be/mTN0O5EOOfA" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mTN0O5EOOfA" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 1. `max_vel` maximum correction velocity, if the predicted velocity for the
 next simulation step is larger than this value, it will be truncated to this
