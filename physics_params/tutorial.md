@@ -209,7 +209,8 @@ the two entities that form the contact. In this case, `max_vel` for the contact 
 `min(10, 1) = 1`; Finally this `max_vel` is truncated by the `contact_max_correcting_vel`
 defined globally, i.e. the `max_vel` equals to `min(1, 0.1) = 0.1`
 
-[![max_vel demonstration](https://youtu.be/U12uajzfJUY/0.jpg)](https://youtu.be/U12uajzfJUY)
+[![](https://youtu.be/U12uajzfJUY/0.jpg)](https://youtu.be/U12uajzfJUY)
+
 
 This simulation sets `max_vel` to three different values for two spheres in collision. The
 simulation starts with a contact at penetration depth of `0.5`, if we set `max_vel=0`, the
@@ -286,7 +287,8 @@ along normal and `fdir1` direction.
 pendulum with `quick` step has unstable intermittent contacts, if we add `kp` and
 `kd` parameter to the `collision->surface->contact` between the ground and base, the
 contacts will be stable, as shown in this following video.
-<iframe width="640" height="320" src="https://youtu.be/mTN0O5EOOfA" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="320" src="http://youtu.be/mTN0O5EOOfA" frameborder="0" allowfullscreen></iframe>
 
 1. `max_vel` maximum correction velocity, if the predicted velocity for the
 next simulation step is larger than this value, it will be truncated to this
