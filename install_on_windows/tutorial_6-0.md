@@ -1,7 +1,7 @@
 # Install on Windows
 
 This documentation describes how to set up a workspace for trying to compile
-Gazebo on Windows.  It does not actually work yet.
+Gazebo on Windows.  *It does not actually work yet.*
 
 ## Important requirement: 30Gb free disk space
 
@@ -75,10 +75,9 @@ Windows `cmd` for configuring and building.  You might also need to
 1. In a Windows shell, configure and build Ignition Math
 
         cd ign-math
-        mkdir build
-        cd build
-        # if you want debug, run ..\configure Debug
-        ..\configure Release
+        hg up ign-math3
+        # if you want debug, run configure Debug
+        .\configure
         nmake
         nmake install
 
