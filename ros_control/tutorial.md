@@ -152,7 +152,7 @@ mkdir config
 mkdir launch
 ~~~
 
-(The complete working example of the package we're talking about in this section can be found as `rrbot_control`](https://github.com/ros-simulation/gazebo_ros_demos/tree/kinetic-devel/rrbot_control)).
+[The complete working example of the package we're talking about in this section can be found as `rrbot_control`](https://github.com/ros-simulation/gazebo_ros_demos/tree/kinetic-devel/rrbot_control)).
 
 ### Create a .yaml config file
 
