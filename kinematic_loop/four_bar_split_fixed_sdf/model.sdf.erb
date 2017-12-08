@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<%
+  # Four-bar linkage modeled with SDFormat.
+  # SI units (length in meters)
+  require "matrix"
+  def a_to_s(v)
+    Array(v).join(" ")
+  end
+
+  # Box dimensions
+  t = 0.02
+  X = 0.20
+  Y = 1.5 * X
+
+  def box_inertia(dx, dy, dz)
+    density = 600
+    box = {}
+    box[:size]   = Vector[dx, dy, dz]
+    box[:volume] = dx * dy * dz
+    box[:mass] = density * box[:volume]
+    box[:ixx]  = box[:mass]/12.0 * (dy**2 + dz**2)
+    box[:iyy]  = box[:mass]/12.0 * (dz**2 + dx**2)
+    box[:izz]  = box[:mass]/12.0 * (dx**2 + dy**2)
+    box
+  end
+
+  # Points A, D are attached to ground
+  # Links AB, BC, CD connected by revolute joints
+  #
+  #            A          D
+  # ^Y         |          |
+  # |          |          |
+  # |   X      |          |
+  # O--->      B----------C
+  #
+  boxes = {}
+
+  boxes["AB"] = box_inertia(t, Y, t);
+  boxes["AB"][:offset] = Vector[-t/2, -Y/2, 0]
+
+  boxes["BC"] = box_inertia(X, t, t);
+  boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
+
+  boxes["CD"] = box_inertia(t, Y, t);
+  boxes["CD"][:offset] = Vector[X+t/2, -Y/2, 0]
+
+  # Revolute joints placed at inside corners of boxes
+  joints = {}
+
+  joints["A"] = {}
+  joints["A"][:type] = "revolute"
+  joints["A"][:parent] = "world"
+  joints["A"][:child] = "link_AB"
+  joints["A"][:pose] = Vector[t/2, Y/2, 0, 0, 0, 0]
+  joints["A"][:axis] = Vector[0, 0, 1]
+
+  joints["B"] = {}
+  joints["B"][:type] = "revolute"
+  joints["B"][:parent] = "link_AB"
+  joints["B"][:child] = "link_BC"
+  joints["B"][:pose] = Vector[-X/2, t/2, 0, 0, 0, 0]
+  joints["B"][:axis] = Vector[0, 0, 1]
+
+  joints["D"] = {}
+  joints["D"][:type] = "revolute"
+  joints["D"][:parent] = "world"
+  joints["D"][:child] = "link_CD"
+  joints["D"][:pose] = Vector[-t/2, Y/2, 0, 0, 0, 0]
+  joints["D"][:axis] = Vector[0, 0, 1]
+
+  joints["C"] = {}
+  joints["C"][:type] = "revolute"
+  joints["C"][:parent] = "link_CD"
+  joints["C"][:child] = "link_BC"
+  joints["C"][:pose] = Vector[X/2, t/2, 0, 0, 0, 0]
+  joints["C"][:axis] = Vector[0, 0, 1]
+%>
+<sdf version="1.5">
+  <model name="four_bar_sdf">
+    <pose>0 0 <%= 2*t %>  0 0 0</pose>
+    <self_collide>true</self_collide>
+<%
+  boxes.keys.each do |k|
+    box = boxes[k]
+    link_name = "link_#{k}"
+%>
+    <link name="<%= link_name %>">
+      <pose><%= a_to_s(box[:offset]) %>  0 0 0</pose>
+      <inertial>
+        <mass><%= box[:mass] %></mass>
+        <inertia>
+          <ixx><%= box[:ixx] %></ixx>
+          <iyy><%= box[:iyy] %></iyy>
+          <izz><%= box[:izz] %></izz>
+          <ixy><%= box[:ixy] %></ixy>
+          <ixz><%= box[:ixz] %></ixz>
+          <iyz><%= box[:iyz] %></iyz>
+        </inertia>
+      </inertial>
+      <collision name="box<%= k %>Collision">
+        <geometry>
+          <box>
+            <size><%= a_to_s(box[:size]) %></size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="box<%= k %>Visual">
+        <geometry>
+          <box>
+            <size><%= a_to_s(box[:size]) %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+<%
+  end
+  joints.keys.each do |k|
+    joint = joints[k]
+    joint_name = "joint_#{k}"
+%>
+    <joint name="<%= joint_name %>" type="<%= joint[:type] %>">
+      <pose><%= a_to_s(joint[:pose]) %></pose>
+      <parent><%= joint[:parent] %></parent>
+      <child><%= joint[:child] %></child>
+      <axis>
+        <xyz><%= a_to_s(joint[:axis]) %></xyz>
+      </axis>
+    </joint>
+<%
+  end
+%>
+  </model>
+</sdf>
