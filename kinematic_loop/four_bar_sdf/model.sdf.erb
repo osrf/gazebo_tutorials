@@ -11,6 +11,7 @@
   t = 0.02
   X = 0.20
   Y = 1.5 * X
+  z0 = 2*t
 
   def box_inertia(dx, dy, dz)
     density = 600
@@ -77,7 +78,7 @@
 %>
 <sdf version="1.5">
   <model name="four_bar_sdf">
-    <pose>0 0 <%= 2*t %>  0 0 0</pose>
+    <pose>0 0 <%= z0 %>  0 0 0</pose>
     <self_collide>true</self_collide>
 <%
   boxes.keys.each do |k|
