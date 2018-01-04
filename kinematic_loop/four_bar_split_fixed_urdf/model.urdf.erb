@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<%
+  # Four-bar linkage modeled with SDFormat.
+  # SI units (length in meters)
+  require "matrix"
+  def a_to_s(v)
+    Array(v).join(" ")
+  end
+
+  # Box dimensions
+  t = 0.02
+  X = 0.20
+  Y = 1.5 * X
+  z0 = 2*t
+
+  def box_inertia(dx, dy, dz)
+    density = 600
+    box = {}
+    box[:size]   = Vector[dx, dy, dz]
+    box[:volume] = dx * dy * dz
+    box[:mass] = density * box[:volume]
+    box[:ixx]  = box[:mass]/12.0 * (dy**2 + dz**2)
+    box[:iyy]  = box[:mass]/12.0 * (dz**2 + dx**2)
+    box[:izz]  = box[:mass]/12.0 * (dx**2 + dy**2)
+    box[:ixy]  = 0.0
+    box[:ixz]  = 0.0
+    box[:iyz]  = 0.0
+    box
+  end
+
+  # Points A, D are attached to ground
+  # Links AB, BC, CD connected by revolute joints
+  #
+  #            A          D
+  # ^Y         |          |
+  # |          |          |
+  # |   X      |          |
+  # O--->      B-----E----C
+  #
+  boxes = {}
+
+  boxes["AB"] = box_inertia(t, Y, t);
+  boxes["AB"][:offset] = Vector[-t/2, -Y/2, 0]
+
+  # boxes["BC"] = box_inertia(X, t, t);
+  # boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
+
+  boxes["BE"] = box_inertia(X/2, t, t);
+  boxes["BE"][:offset] = Vector[X/4, -t/2, 0]
+
+  boxes["EC"] = box_inertia(X/2, t, t);
+  boxes["EC"][:offset] = Vector[-X/4, -t/2, 0]
+
+  boxes["CD"] = box_inertia(t, Y, t);
+  boxes["CD"][:offset] = Vector[t/2, -Y/2, 0]
+
+  # Revolute joints placed at inside corners of boxes
+  joints = {}
+
+  joints["A"] = {}
+  joints["A"][:type] = "continuous"
+  joints["A"][:parent] = "world"
+  joints["A"][:child] = "link_AB"
+  joints["A"][:pose] = Vector[0, 0, z0]
+  joints["A"][:axis] = Vector[0, 0, 1]
+
+  joints["B"] = {}
+  joints["B"][:type] = "continuous"
+  joints["B"][:parent] = "link_AB"
+  joints["B"][:child] = "link_BE"
+  joints["B"][:pose] = Vector[0, -Y, 0]
+  joints["B"][:axis] = Vector[0, 0, 1]
+
+  joints["D"] = {}
+  joints["D"][:type] = "continuous"
+  joints["D"][:parent] = "world"
+  joints["D"][:child] = "link_CD"
+  joints["D"][:pose] = Vector[X, 0, z0]
+  joints["D"][:axis] = Vector[0, 0, 1]
+
+  joints["C"] = {}
+  joints["C"][:type] = "continuous"
+  joints["C"][:parent] = "link_CD"
+  joints["C"][:child] = "link_EC"
+  joints["C"][:pose] = Vector[0, -Y, 0]
+  joints["C"][:axis] = Vector[0, 0, 1]
+
+  # joints["E"] = {}
+  # joints["E"][:type] = "fixed"
+  # joints["E"][:parent] = "link_BE"
+  # joints["E"][:child] = "link_EC"
+  # joints["E"][:pose] = Vector[-X/4, 0, 0]
+%>
+<!--
+<sdf version="1.5">
+  <model name="four_bar_sdf">
+    <self_collide>true</self_collide>
+-->
+<robot name="four_bar_split_fixed_urdf">
+  <link name="world"/>
+<%
+  boxes.keys.each do |k|
+    box = boxes[k]
+    link_name = "link_#{k}"
+%>
+  <link name="<%= link_name %>">
+    <inertial>
+      <origin rpy="0 0 0" xyz="<%= a_to_s(box[:offset]) %>"/>
+      <mass value="<%= box[:mass] %>"/>
+      <inertia ixx="<%= box[:ixx] %>"
+               ixy="<%= box[:ixy] %>"
+               ixz="<%= box[:ixz] %>"
+               iyy="<%= box[:iyy] %>"
+               iyz="<%= box[:iyz] %>"
+               izz="<%= box[:izz] %>"/>
+    </inertial>
+    <collision name="box<%= k %>Collision">
+      <origin rpy="0 0 0" xyz="<%= a_to_s(box[:offset]) %>"/>
+      <geometry>
+        <box size="<%= a_to_s(box[:size]) %>"/>
+      </geometry>
+    </collision>
+    <visual name="box<%= k %>Visual">
+      <origin rpy="0 0 0" xyz="<%= a_to_s(box[:offset]) %>"/>
+      <geometry>
+        <box size="<%= a_to_s(box[:size]) %>"/>
+      </geometry>
+    </visual>
+  </link>
+<%
+  end
+  joints.keys.each do |k|
+    joint = joints[k]
+    joint_name = "joint_#{k}"
+%>
+  <joint name="<%= joint_name %>" type="<%= joint[:type] %>">
+    <origin rpy="0 0 0" xyz="<%= a_to_s(joint[:pose]) %>"/>
+    <parent link="<%= joint[:parent] %>"/>
+    <child link="<%= joint[:child] %>"/>
+    <axis xyz="<%= a_to_s(joint[:axis]) %>"/>
+  </joint>
+<%
+  end
+%>
+</robot>
