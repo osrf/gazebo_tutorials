@@ -85,11 +85,14 @@
   joints["C"][:pose] = Vector[0, -Y, 0]
   joints["C"][:axis] = Vector[0, 0, 1]
 
-  # joints["E"] = {}
-  # joints["E"][:type] = "fixed"
-  # joints["E"][:parent] = "link_BE"
-  # joints["E"][:child] = "link_EC"
-  # joints["E"][:pose] = Vector[-X/4, 0, 0]
+  # SDF fixed joint to close the kinematic loop
+  sdf_joints = {}
+
+  sdf_joints["E"] = {}
+  sdf_joints["E"][:type] = "fixed"
+  sdf_joints["E"][:parent] = "link_BE"
+  sdf_joints["E"][:child] = "link_EC"
+  sdf_joints["E"][:pose] = Vector[-X/2, -t/2, 0]
 %>
 <robot name="four_bar_split_fixed_urdf">
   <gazebo>
@@ -139,5 +142,27 @@
   </joint>
 <%
   end
+  sdf_joints.keys.each do |k|
+    joint = sdf_joints[k]
+    joint_name = "joint_#{k}"
 %>
+  <gazebo>
+    <joint name="<%= joint_name %>" type="<%= joint[:type] %>">
+      <pose><%= a_to_s(joint[:pose]) %> 0 0 0</pose>
+      <parent><%= joint[:parent] %></parent>
+      <child><%= joint[:child] %></child>
+<%
+    if joint.has_key?(:axis)
+%>
+      <axis>
+        <xyz><%= a_to_s(joint[:axis]) %></xyz>
+      </axis>
+<%
+    end
+%>
+    </joint>
+<%
+  end
+%>
+  </gazebo>
 </robot>
