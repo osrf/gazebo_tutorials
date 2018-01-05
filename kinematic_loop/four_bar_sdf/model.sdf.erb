@@ -22,6 +22,9 @@
     box[:ixx]  = box[:mass]/12.0 * (dy**2 + dz**2)
     box[:iyy]  = box[:mass]/12.0 * (dz**2 + dx**2)
     box[:izz]  = box[:mass]/12.0 * (dx**2 + dy**2)
+    box[:ixy]  = 0.0
+    box[:ixz]  = 0.0
+    box[:iyz]  = 0.0
     box
   end
 

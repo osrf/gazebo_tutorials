@@ -13,9 +13,9 @@
           <ixx>0.0005424000000000002</ixx>
           <iyy>4.800000000000001e-06</iyy>
           <izz>0.0005424000000000002</izz>
-          <ixy></ixy>
-          <ixz></ixz>
-          <iyz></iyz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
         </inertia>
       </inertial>
       <collision name="boxABCollision">
@@ -48,9 +48,9 @@
           <ixx>3.2000000000000003e-06</ixx>
           <iyy>0.00016160000000000002</iyy>
           <izz>0.00016160000000000002</izz>
-          <ixy></ixy>
-          <ixz></ixz>
-          <iyz></iyz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
         </inertia>
       </inertial>
       <collision name="boxBCCollision">
@@ -83,9 +83,9 @@
           <ixx>0.0005424000000000002</ixx>
           <iyy>4.800000000000001e-06</iyy>
           <izz>0.0005424000000000002</izz>
-          <ixy></ixy>
-          <ixz></ixz>
-          <iyz></iyz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
         </inertia>
       </inertial>
       <collision name="boxCDCollision">
