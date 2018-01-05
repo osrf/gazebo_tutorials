@@ -1,11 +1,9 @@
 <?xml version="1.0" ?>
 
-<!--
-<sdf version="1.5">
-  <model name="four_bar_sdf">
-    <self_collide>true</self_collide>
--->
 <robot name="four_bar_split_fixed_urdf">
+  <gazebo>
+    <self_collide>true</self_collide>
+  </gazebo>
   <link name="world"/>
 
   <link name="link_AB">

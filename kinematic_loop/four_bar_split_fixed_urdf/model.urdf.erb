@@ -91,12 +91,10 @@
   # joints["E"][:child] = "link_EC"
   # joints["E"][:pose] = Vector[-X/4, 0, 0]
 %>
-<!--
-<sdf version="1.5">
-  <model name="four_bar_sdf">
-    <self_collide>true</self_collide>
--->
 <robot name="four_bar_split_fixed_urdf">
+  <gazebo>
+    <self_collide>true</self_collide>
+  </gazebo>
   <link name="world"/>
 <%
   boxes.keys.each do |k|
