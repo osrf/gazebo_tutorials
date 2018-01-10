@@ -182,9 +182,9 @@ the whole gazebo test suite you'll need to run:
 
 If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
 
-    echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
-    echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
-    echo "export PKG_CONFIG_PATH=<install_path>/local/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=<install_path>/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    echo "export PATH=<install_path>/bin:$PATH" >> ~/.bashrc
+    echo "export PKG_CONFIG_PATH=<install_path>/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
     source ~/.bashrc
 
 Now try running gazebo:
