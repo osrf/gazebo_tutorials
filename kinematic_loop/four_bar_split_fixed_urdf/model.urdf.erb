@@ -115,13 +115,13 @@
                iyz="<%= box[:iyz] %>"
                izz="<%= box[:izz] %>"/>
     </inertial>
-    <collision name="box<%= k %>Collision">
+    <collision>
       <origin rpy="0 0 0" xyz="<%= a_to_s(box[:offset]) %>"/>
       <geometry>
         <box size="<%= a_to_s(box[:size]) %>"/>
       </geometry>
     </collision>
-    <visual name="box<%= k %>Visual">
+    <visual>
       <origin rpy="0 0 0" xyz="<%= a_to_s(box[:offset]) %>"/>
       <geometry>
         <box size="<%= a_to_s(box[:size]) %>"/>
