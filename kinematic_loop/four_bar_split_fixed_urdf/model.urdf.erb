@@ -128,6 +128,9 @@
       </geometry>
     </visual>
   </link>
+  <gazebo reference="<%= link_name %>">
+    <material>Gazebo/Wood</material>
+  </gazebo>
 <%
   end
   joints.keys.each do |k|

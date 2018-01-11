@@ -30,6 +30,9 @@
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_AB">
+    <material>Gazebo/Wood</material>
+  </gazebo>
 
   <link name="link_BE">
     <inertial>
@@ -55,6 +58,9 @@
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_BE">
+    <material>Gazebo/Wood</material>
+  </gazebo>
 
   <link name="link_EC">
     <inertial>
@@ -80,6 +86,9 @@
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_EC">
+    <material>Gazebo/Wood</material>
+  </gazebo>
 
   <link name="link_CD">
     <inertial>
@@ -105,6 +114,9 @@
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_CD">
+    <material>Gazebo/Wood</material>
+  </gazebo>
 
   <joint name="joint_A" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.04"/>
