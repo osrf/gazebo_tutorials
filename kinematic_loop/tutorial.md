@@ -69,6 +69,6 @@ files and the embedded ruby
 The SDFormat fixed joint is
 [specified in <gazebo> tags](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:157):
 
-<include from='/&ltgazebo&gt/' to='/&lt\/gazebo&gt' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
+<include from='/&ltgazebo&gt/' to='/&lt\/gazebo&gt/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
 
 
