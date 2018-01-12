@@ -149,6 +149,7 @@
     joint = sdf_joints[k]
     joint_name = "joint_#{k}"
 %>
+  <!-- SDFormat joints -->
   <gazebo>
     <joint name="<%= joint_name %>" type="<%= joint[:type] %>">
       <pose><%= a_to_s(joint[:pose]) %> 0 0 0</pose>

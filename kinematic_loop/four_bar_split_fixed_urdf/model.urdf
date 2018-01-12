@@ -146,6 +146,7 @@
     <axis xyz="0 0 1"/>
   </joint>
 
+  <!-- SDFormat joints -->
   <gazebo>
     <joint name="joint_E" type="fixed">
       <pose>-0.1 -0.01 0 0 0 0</pose>
