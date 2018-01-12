@@ -43,9 +43,9 @@ In this example, the middle link is split in half
 and a fixed joint is added to hold them together.
 It has the same 4 revolute joints but with 4 links and a fixed joint.
 
-![screenshot of four\_bar_split\_fixed_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split.png)
+![screenshot of four\_bar\_split\_fixed_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split.png)
 
-The SDFormat model files are in the [four\_bar_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_sdf)
+The SDFormat model files are in the [four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_sdf)
 folder.
 To use this model, create a folder `~/.gazebo/models/four_bar_split_fixed_sdf` and copy the
 [model.config](https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_sdf/model.config)
@@ -59,7 +59,7 @@ created with embedded ruby to see how the model is constructed.
 # Split 4-bar linkage in URDF with an SDFormat fixed joint
 
 The split 4-bar linkage is modeled in URDF in the
-[four\_bar_split\_fixed_urdf](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf)
+[four\_bar\_split\_fixed_urdf](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf)
 folder with
 [model.config](https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.config)
 and
@@ -69,6 +69,6 @@ files and the embedded ruby
 The SDFormat fixed joint is
 [specified in <gazebo> tags](https://bitbucket.org/osrf/gazebo_tutorials/src/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:157):
 
-<include from='/&ltgazebo&gt/' to='/&lt\/gazebo&gt/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
+<include from='/SDFormat/' to='@./gazebo./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/0f6734899e9e24f43eb7b4a9bfdbcfe9b08b7a1c/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
 
 
