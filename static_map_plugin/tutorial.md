@@ -26,12 +26,12 @@ In this example world, the plugin will generate a map model with a unique name a
 
 Now try inserting a few models from the gazebo model database into the world (Left: original Google map view. Right Gazebo window):
 
-[[file:files/static_map_models.png|600px]]
+[[file:files/static_map_models.png|800px]]
 
 
 # Plugin Parameters
 
-The plugin has the following required parameters:
+The plugin requires the following parameters:
 
 * `<center>`: Latitude and longitude of center of map. The two values should be space delimited.
 * `<world_size>`: Target size of world to cover (in meters). The plugin will fetch enough tiles to create a model that is larger than the specified size.
