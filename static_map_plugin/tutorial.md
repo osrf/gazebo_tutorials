@@ -1,6 +1,6 @@
 # Introduction
 
-In applications such as aerial robotics, it is often useful to have a ground plane with satellite imagery in simulation to help with testing computer vision tasks. The tutorials shows how to use the Static Map world plugin supplied by gazebo to create and insert a satellite map model into the world. The images are downloaded in run time using the [Google's Static Map API](https://developers.google.com/maps/documentation/static-maps/intro) so internet connectivity is required to use this plugin.
+In applications such as aerial robotics that take place in large outdoor environments, it is often useful to have a ground plane with satellite imagery in simulation to help with environment visualization or testing tasks like computer vision. The tutorials shows how to use the Static Map world plugin supplied by Gazebo to create and insert a satellite map model into the world. The images are downloaded in run time using the [Google's Static Map API](https://developers.google.com/maps/documentation/static-maps/intro) so internet connectivity is required to use this plugin.
 
 # Example World
 
