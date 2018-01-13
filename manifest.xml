@@ -621,6 +621,13 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Model with satellite texture images" ref='static_map_plugin'>
+      <markdown version="7.10+">static_map_plugin/tutorial.md</markdown>
+      <description>How to add satellte textured models from a plugin.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+
     <!-- ****************** -->
     <!-- Advanced tutorials -->
 
@@ -1035,6 +1042,7 @@
         <tutorial>dem</tutorial>
         <tutorial>model_population</tutorial>
         <tutorial>building_editor</tutorial>
+        <tutorial>static_map_plugin</tutorial>
       </tutorials>
     </category>
 
