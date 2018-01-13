@@ -1,6 +1,6 @@
 # Introduction
 
-In applications such as aerial robotics, it is often useful to have a ground plane with satellite imagery in simulation to help with testing computer visual tasks. The tutorials shows how to use the Static Map world plugin supplied by gazebo to create and insert a flat satellite map model into the world. The images are downloaded in run time using the [Google's Static Map API](https://developers.google.com/maps/documentation/static-maps/intro) so internet connectivity is required to use this plugin.
+In applications such as aerial robotics, it is often useful to have a ground plane with satellite imagery in simulation to help with testing computer vision tasks. The tutorials shows how to use the Static Map world plugin supplied by gazebo to create and insert a satellite map model into the world. The images are downloaded in run time using the [Google's Static Map API](https://developers.google.com/maps/documentation/static-maps/intro) so internet connectivity is required to use this plugin.
 
 # Example World
 
@@ -8,9 +8,9 @@ To try out this plugin, download and save [this world file](https://bitbucket.or
 
 <include lang='xml' src='https://bitbucket.org/osrf/gazebo/raw/462957509d71f7bf1dd0f981950a53a097cba9ae/worlds/static_map_plugin.world'/>
 
-Since we are using the Google Static Map API service, you'll need to get yourself a [Google API key](https://developers.google.com/maps/documentation/static-maps/get-api-key)
+The example world contains only a sun and the Static Map plugin. A `ground_plane` model is not needed as the plugin will be generating and inserting the map model into the world at run time. Before launching this world, you will need an API key. Since we are using the Google Static Map API service, you can get yourself a [Google API key](https://developers.google.com/maps/documentation/static-maps/get-api-key).
 
-Once you have the API key, enter it into the plugin parameter in the world file, i.e. replace the following line with key generate given to you by Google
+Once you have the API key, enter it into the plugin parameter in the world file, i.e. replace the following line with key generate given to you by Google:
 
     <api_key>enter_your_google_api_key_here</api_key>
 
@@ -22,8 +22,9 @@ and you should see the following:
 
 [[file:files/static_map_plugin.jpg|600px]]
 
+In this example world, the plugin will generate a map model with a unique name and save the model SDF and image files in to a self-contained model folder with `map_` prefix in `<HOME>/.gazebo/models`. We are also telling the plugin that we don't want to use the image cache by setting `<use_cache>` to false so that subsequent launches will trigger the download of images (and recreate the model files) again. See the Plugin Parameters section below on how to specify you own model name or reuse image cache to prevent future image downloads.
 
-Try inserting a few models into the world (Left: original google map view. Right Gazebo window):
+Now try inserting a few models from the gazebo model database into the world (Left: original Google map view. Right Gazebo window):
 
 [[file:files/static_map_models.png|600px]]
 
@@ -49,6 +50,6 @@ Optional parameters:
 
 The Static Map Plugin currently has few limitations:
 
-* It is only able to generate square-shaped map models and it does not support capturing a rectangular region of the world.
-* Downloading of images happen in the main thread and thus blocks gazebo window until all images are downloaded. The number of image tiles to download depends on the `<world_size>` specified.
+* It is only able to generate square-shaped map models based on `<world_size>` and does not support rectangular regions.
+* Downloading of images happen in the main thread and thus blocks Gazebo window until all images are downloaded. The number of image tiles to download depends on the `<world_size>` specified.
 * Only the **Standard** Google Map API is supported, see [Usage Limits](https://developers.google.com/maps/documentation/static-maps/usage-limits) for more details.
