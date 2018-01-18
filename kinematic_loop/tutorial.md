@@ -17,7 +17,7 @@ That joint will get added to the model after being converted to SDFormat.
 
 This is an SDFormat example of a 4-bar linkage connected to the ground at each end.
 It has 4 revolute joints labeled A, B, C, and D
-and 3 links named link_AB, link_BC, and link_CD.
+and 3 links named link\_AB, link\_BC, and link\_CD.
 
 ![screenshot of four\_bar_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar.png)
 
@@ -34,10 +34,25 @@ in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guide
 For brevity, the model parameters are encoded in an embedded ruby template file named
 [model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
 
-<include lang='ruby' from='/  # Box dimensions/' to='/  # end first ruby code block/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+This allows geometric parameters to be defined in one place
+along with a helper function for computing the moment of inertia of a uniform box.
 
-created with embedded ruby to see how the model is constructed.
+<include lang='ruby' from='/  # Box dimensions/' to='/  # Points/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
+The link parameters are stored in a dictionary named `boxes`:
+
+<include lang='ruby' from='/  # Points/' to='/  # Revolute/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+
+and the joint parameters are stored in a dictionary named `joints`:
+
+<include lang='ruby' from='/  # Revolute/' to='/  # end first ruby code block/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+
+A model template is then included that references the computed parameters
+for each link and joint:
+
+<include lang='ruby' from='/.sdf version/' to='@/sdf.@' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+
+The computed parameters are then inserted into the model
 # Split 4-bar linkage with an extra fixed joint
 
 A model with kinematic loops can be partially modeled as a tree by
