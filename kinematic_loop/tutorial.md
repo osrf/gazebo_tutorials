@@ -9,8 +9,8 @@ SDFormat is able to model closed kinematic loops
 because it uses a graph structure.
 Since gazebo converts URDF to SDF before loading,
 we can declare an SDFormat joint inside `<gazebo>`
-extension tags that will get added to the model 
-after being converted to SDFormat.
+extension tags to close the loop.
+That joint will get added to the model after being converted to SDFormat.
 
 
 # Simple 4-bar linkage in SDFormat
