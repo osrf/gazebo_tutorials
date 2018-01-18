@@ -37,20 +37,35 @@ For brevity, the model parameters are encoded in an embedded ruby template file 
 This allows geometric parameters to be defined in one place
 along with a helper function for computing the moment of inertia of a uniform box.
 
-<include lang='ruby' from='/  # Box dimensions/' to='/  # Points/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Box dimensions/' to='/  # Points/'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 The link parameters are stored in a dictionary named `boxes`:
 
-<include lang='ruby' from='/  # Points/' to='/  # Revolute/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Points/' to='/  # Revolute/'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 and the joint parameters are stored in a dictionary named `joints`:
 
-<include lang='ruby' from='/  # Revolute/' to='/  # end first ruby code block/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Revolute/' to='/  # end first ruby code block/'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 A model template is then included that references the computed parameters
 for each link and joint:
 
-<include lang='ruby' from='/.sdf version/' to='@/sdf.@' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='xml' from='/.sdf version/' to='@/sdf.@'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+
+The full [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
+is instantiated from this template, as you can see in the snippets below:
+
+<include lang='xml' from='    .link name="link_AB".' to='    .link name="link_BC".'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+
+<include lang='xml' from='    .joint name="A".' to='    .joint name="B".'
+    src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+
+
 
 The computed parameters are then inserted into the model
 # Split 4-bar linkage with an extra fixed joint
