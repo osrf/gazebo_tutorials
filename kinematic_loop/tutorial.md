@@ -15,9 +15,9 @@ That joint will get added to the model after being converted to SDFormat.
 
 # Simple 4-bar linkage in SDFormat
 
-This is an example of a 4-bar linkage connected to the ground at each end
-expressed in SDFormat.
-It has 3 links and 4 revolute joints.
+This is an SDFormat example of a 4-bar linkage connected to the ground at each end.
+It has 4 revolute joints labeled A, B, C, and D
+and 3 links named link_AB, link_BC, and link_CD.
 
 ![screenshot of four\_bar_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar.png)
 
@@ -28,8 +28,14 @@ To use this model, create a folder `~/.gazebo/models/four_bar_sdf` and copy the
 and
 [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
 to that folder.
-You can also examine the
-[model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb)
+You can then insert the model into a simulation using the `Insert Model` panel
+in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2).
+
+For brevity, the model parameters are encoded in an embedded ruby template file named
+[model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
+
+<include lang='ruby' from='/  # Box dimensions/' to='/joints["C"][:axis] = Vector[0, 0, 1]/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+
 created with embedded ruby to see how the model is constructed.
 
 # Split 4-bar linkage with an extra fixed joint
