@@ -16,7 +16,7 @@ That joint will get added to the model after being converted to SDFormat.
 # Simple 4-bar linkage in SDFormat
 
 This is an SDFormat example of a 4-bar linkage connected to the ground at each end.
-It has 4 revolute joints labeled A, B, C, and D
+It has 4 revolute joints labeled joint\_A, joint\_B, joint\_C, and joint\_D
 and 3 links named link\_AB, link\_BC, and link\_CD.
 
 ![screenshot of four\_bar_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar.png)
@@ -57,7 +57,7 @@ is instantiated from this template, as you can see in the snippets below:
 
 <include lang='xml' from='/    .link name="link_AB"./' to='/    .link name="link_BC"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
-<include lang='xml' from='/    .joint name="A"./' to='/    .joint name="B"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+<include lang='xml' from='/    .joint name="joint_A"./' to='/    .joint name="joint_B"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
 
 # Split 4-bar linkage with an extra fixed joint
