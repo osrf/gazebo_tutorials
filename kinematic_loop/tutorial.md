@@ -53,11 +53,11 @@ for each link and joint:
 <include lang='xml' from='/.sdf version/' to='@/sdf.@' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 The full [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
-is instantiated from this template, as you can see in the snippets below:
+is instantiated from this template, as you can see in the snippet below:
 
 <include lang='xml' from='/    .link name="link_AB"./' to='/    .link name="link_BC"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
-<include lang='xml' from='/    .joint name="joint_A"./' to='/    .joint name="joint_B"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+<include lang='xml' from='/    .link name="link_CD"./' to='/joint_B/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
 
 # Split 4-bar linkage with an extra fixed joint
