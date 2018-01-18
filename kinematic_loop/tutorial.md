@@ -34,7 +34,7 @@ in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guide
 For brevity, the model parameters are encoded in an embedded ruby template file named
 [model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
 
-<include lang='ruby' from='/  # Box dimensions/' to='/joints["C"][:axis] = Vector[0, 0, 1]/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Box dimensions/' to='/  # end first ruby code block/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 created with embedded ruby to see how the model is constructed.
 
