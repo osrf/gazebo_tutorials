@@ -175,8 +175,9 @@ and
 [model.urdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf)
 files and the embedded ruby
 [model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
-Comparing this model with the `four_bar_split_fixed_sdf` model provides a useful
-comparison of how coordinate frames are defined in SDFormat and URDF.
+Comparing this model with the
+[four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf)
+model provides a useful comparison of how coordinate frames are defined in SDFormat and URDF.
 
 The SDFormat fixed joint is
 [specified in gazebo tags](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:158):
