@@ -55,8 +55,6 @@ for each link and joint:
 The full [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
 is instantiated from this template, as you can see in the snippet below:
 
-<include lang='xml' from='/    .link name="link_AB"./' to='/    .link name="link_BC"./' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
-
 <include lang='xml' from='/    .link name="link_CD"./' to='/joint_B/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
 
@@ -69,7 +67,9 @@ in half.
 The loop can be closed again by adding an extra joint.
 In this example, the middle link is split in half
 and a fixed joint is added to hold them together.
-It has the same 4 revolute joints but with 4 links and a fixed joint.
+It has the same 4 revolute joints joint\_A, joint\_B, joint\_C, and joint\_D
+but with 4 links link\_AB, link\_BE, link\_EC, link\_CD
+and a fixed joint joint\_E.
 
 ![screenshot of four\_bar\_split\_fixed_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split.png)
 
@@ -83,6 +83,85 @@ to that folder.
 You can also examine the
 [model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb)
 created with embedded ruby to see how the model is constructed.
+
+The difference between the `four_bar_sdf` and `four_bar_split_fixed_sdf`
+model templates is shown below:
+
+~~~
+--- a/kinematic_loop/four_bar_sdf/model.sdf.erb
++++ b/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb
+@@ -35,15 +35,21 @@
+   # ^Y         |          |
+   # |          |          |
+   # |   X      |          |
+-  # O--->      B----------C
++  # O--->      B-----E----C
+   #
+   boxes = {}
+ 
+   boxes["AB"] = box_inertia(t, Y, t);
+   boxes["AB"][:offset] = Vector[-t/2, -Y/2, 0]
+ 
+-  boxes["BC"] = box_inertia(X, t, t);
+-  boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
++  # boxes["BC"] = box_inertia(X, t, t);
++  # boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
++
++  boxes["BE"] = box_inertia(X/2, t, t);
++  boxes["BE"][:offset] = Vector[X/4, -(Y+t/2), 0]
++
++  boxes["EC"] = box_inertia(X/2, t, t);
++  boxes["EC"][:offset] = Vector[X*3/4, -(Y+t/2), 0]
+ 
+   boxes["CD"] = box_inertia(t, Y, t);
+   boxes["CD"][:offset] = Vector[X+t/2, -Y/2, 0]
+@@ -61,8 +67,8 @@
+   joints["B"] = {}
+   joints["B"][:type] = "revolute"
+   joints["B"][:parent] = "link_AB"
+-  joints["B"][:child] = "link_BC"
+-  joints["B"][:pose] = Vector[-X/2, t/2, 0, 0, 0, 0]
++  joints["B"][:child] = "link_BE"
++  joints["B"][:pose] = Vector[-X/4, t/2, 0, 0, 0, 0]
+   joints["B"][:axis] = Vector[0, 0, 1]
+ 
+   joints["D"] = {}
+@@ -75,11 +81,15 @@
+   joints["C"] = {}
+   joints["C"][:type] = "revolute"
+   joints["C"][:parent] = "link_CD"
+-  joints["C"][:child] = "link_BC"
+-  joints["C"][:pose] = Vector[X/2, t/2, 0, 0, 0, 0]
++  joints["C"][:child] = "link_EC"
++  joints["C"][:pose] = Vector[X/4, t/2, 0, 0, 0, 0]
+   joints["C"][:axis] = Vector[0, 0, 1]
+ 
+-  # end first ruby code block
++  joints["E"] = {}
++  joints["E"][:type] = "fixed"
++  joints["E"][:parent] = "link_BE"
++  joints["E"][:child] = "link_EC"
++  joints["E"][:pose] = Vector[-X/4, 0, 0, 0, 0, 0]
+ %>
+ <sdf version="1.5">
+   <model name="four_bar_sdf">
+@@ -134,9 +144,15 @@
+       <pose><%= a_to_s(joint[:pose]) %></pose>
+       <parent><%= joint[:parent] %></parent>
+       <child><%= joint[:child] %></child>
++<%
++    if joint.has_key?(:axis)
++%>
+       <axis>
+         <xyz><%= a_to_s(joint[:axis]) %></xyz>
+       </axis>
++<%
++    end
++%>
+     </joint>
+ <%
+   end
+~~~
 
 # Split 4-bar linkage in URDF with an SDFormat fixed joint
 
