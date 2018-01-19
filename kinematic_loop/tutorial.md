@@ -33,7 +33,7 @@ in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guide
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
 [model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
-The model.sdf can be generated from the template using the `erb` command: `erb model.sdf.erb > model.sdf`
+The model.sdf can be generated from the template using the `erb` command: `erb model.sdf.erb > model.sdf`.
 
 This allows geometric parameters to be defined in one place
 along with a helper function for computing the moment of inertia of a uniform box.
@@ -176,6 +176,7 @@ and
 [model.urdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf)
 files and the embedded ruby
 [model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
+The model.urdf can be generated from the template using the erb command: `erb model.urdf.erb > model.urdf`.
 Comparing this model with the
 [four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf)
 model provides a useful comparison of how coordinate frames are defined in SDFormat and URDF.
