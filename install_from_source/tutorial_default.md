@@ -142,9 +142,9 @@ desire more stability
         cmake ../
 
 
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+    > Note: You can use a custom install path to make it easier to switch between source and debian installs. We recommend using `/home/$USER/local` as the value for `<install_path>`:
 
-    >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
+    >     cmake -DCMAKE_INSTALL_PREFIX=<install_path> ../
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
@@ -154,7 +154,7 @@ desire more stability
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
-1. Make note of your install path, which is output from `cmake` and should look something like:
+1. Make note of your install path, which is output from `cmake` and will either be the default install location or the one specified as `<install_path>` above, e.g.:
 
         -- Install path: /home/$USER/local
 
@@ -180,11 +180,11 @@ the whole gazebo test suite you'll need to run:
 
 #### Local Install
 
-If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
+If you decided to install gazebo in a local directory you'll need to modify some of your PATHs:
 
-    echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
-    echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
-    echo "export PKG_CONFIG_PATH=<install_path>/local/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=<install_path>/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    echo "export PATH=<install_path>/bin:$PATH" >> ~/.bashrc
+    echo "export PKG_CONFIG_PATH=<install_path>/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
     source ~/.bashrc
 
 Now try running gazebo:
