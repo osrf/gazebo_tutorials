@@ -33,6 +33,7 @@ in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guide
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
 [model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
+The model.sdf can be generated from the template using the `erb` command: `erb model.sdf.erb > model.sdf`
 
 This allows geometric parameters to be defined in one place
 along with a helper function for computing the moment of inertia of a uniform box.
