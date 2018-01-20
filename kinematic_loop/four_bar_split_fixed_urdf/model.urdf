@@ -152,8 +152,7 @@
       <pose>-0.1 -0.01 0 0 0 0</pose>
       <parent>link_BE</parent>
       <child>link_EC</child>
-
     </joint>
-
   </gazebo>
+  
 </robot>
