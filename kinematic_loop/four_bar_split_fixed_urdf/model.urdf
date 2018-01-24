@@ -1,11 +1,9 @@
 <?xml version="1.0" ?>
-
 <robot name="four_bar_split_fixed_urdf">
   <gazebo>
     <self_collide>true</self_collide>
   </gazebo>
   <link name="world"/>
-
   <link name="link_AB">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
@@ -30,7 +28,6 @@
       </geometry>
     </visual>
   </link>
-
   <link name="link_BE">
     <inertial>
       <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
@@ -55,7 +52,6 @@
       </geometry>
     </visual>
   </link>
-
   <link name="link_EC">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
@@ -80,7 +76,6 @@
       </geometry>
     </visual>
   </link>
-
   <link name="link_CD">
     <inertial>
       <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
@@ -105,42 +100,35 @@
       </geometry>
     </visual>
   </link>
-
   <joint name="joint_A" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.04"/>
     <parent link="world"/>
     <child link="link_AB"/>
     <axis xyz="0 0 1"/>
   </joint>
-
   <joint name="joint_B" type="continuous">
     <origin rpy="0 0 0" xyz="0 -0.30000000000000004 0"/>
     <parent link="link_AB"/>
     <child link="link_BE"/>
     <axis xyz="0 0 1"/>
   </joint>
-
   <joint name="joint_D" type="continuous">
     <origin rpy="0 0 0" xyz="0.2 0 0.04"/>
     <parent link="world"/>
     <child link="link_CD"/>
     <axis xyz="0 0 1"/>
   </joint>
-
   <joint name="joint_C" type="continuous">
     <origin rpy="0 0 0" xyz="0 -0.30000000000000004 0"/>
     <parent link="link_CD"/>
     <child link="link_EC"/>
     <axis xyz="0 0 1"/>
   </joint>
-
   <gazebo>
     <joint name="joint_E" type="fixed">
       <pose>-0.1 -0.01 0 0 0 0</pose>
       <parent>link_BE</parent>
       <child>link_EC</child>
-
     </joint>
-
   </gazebo>
 </robot>
