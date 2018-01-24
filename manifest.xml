@@ -192,7 +192,8 @@
     </tutorial>
 
     <tutorial title="Model plugins" ref='plugins_model'>
-      <markdown version="1.9+">plugins_model/tutorial.md</markdown>
+      <markdown version="1.9+">plugins_model/tutorial_1-9.md</markdown>
+      <markdown version="9+">plugins_model/tutorial.md</markdown>
       <description>Manipulate a model using a model plugin.</description>
       <skill>beginner</skill>
     </tutorial>
