@@ -107,7 +107,7 @@ While Gazebo is running, you can switch the profile in another terminal
 by using `gz physics`:
 
 ```
-gz physics --profile ode_7=200iters
+gz physics --profile ode_200iters
 gz physics -o ode_70iters
 ```
 
