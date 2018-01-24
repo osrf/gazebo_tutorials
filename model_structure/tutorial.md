@@ -136,24 +136,24 @@ The format of this `model.config` is:
 
          Email address of the author.
 
-*  <*description*> *required*
+   *  <*description*> *required*
 
-   Description of the model should include:
-   >  * What the model is (e.g., robot, table, cup)
-   >  * What the plugins do (functionality of the model)
+      Description of the model should include:
+      >  * What the model is (e.g., robot, table, cup)
+      >  * What the plugins do (functionality of the model)
 
-*  <*depend*> *optional*
+   *  <*depend*> *optional*
 
-   All the dependencies for this model. This is typically other models.
+      All the dependencies for this model. This is typically other models.
 
-   *  <*model*> *optional*
+      *  <*model*> *optional*
 
-      *  <*uri*> *required*
+         *  <*uri*> *required*
 
-         URI of the model dependency.
-      *  <*version*> *required*
+            URI of the model dependency.
+         *  <*version*> *required*
 
-         Version of the model.
+            Version of the model.
 
 ### Model SDF
 
