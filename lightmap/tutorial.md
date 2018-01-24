@@ -1,6 +1,6 @@
 # Introduction
 
-Lightmaps are commonly used to improve the rendering performance of complex scenes. Lightmaps can be thought of as texture maps with lighting information pre-baked into the texture. The resulting models appear as if they are shaded by lights in the environment. Since lighting is precomputed, lightmaps are suitable for models are do not move with respect to the pose of the lights in the scene. For example, static buildings, furniture, ground plane, and terrain in an environment with a directional light.
+Lightmaps are commonly used to improve the rendering performance of complex scenes. Lightmaps can be thought of as texture maps with lighting information pre-baked into the texture. The resulting models appear as if they are shaded by lights in the environment. Since lighting is precomputed, lightmaps are suitable for models that do not move with respect to the pose of the lights in the scene. For example, static buildings, furniture, ground plane, and terrain in an environment with a directional light.
 
 # Create a model with lightmap
 
