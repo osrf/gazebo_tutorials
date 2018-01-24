@@ -128,9 +128,13 @@ The format of this `model.config` is:
    The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
 
 *  <*author*> *required*
+
   * <*name*> *required*
+
     Name of the model author.
+
   * <*email*> *required*
+
     Email address of the author.
 
 *  <*description*> *required*
