@@ -14,7 +14,7 @@ Gazebo is a 3D dynamic simulator with the ability to accurately and
 efficiently simulate populations of robots in complex indoor and outdoor
 environments. While similar to game engines, Gazebo offers physics
 simulation at a much higher degree of fidelity, a suite of sensors, and
-interfaces for both users and programs.
+interfaces for both users and programs
 
 Typical uses of Gazebo include:
 
@@ -48,12 +48,13 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 If you run into problems during the install, please see the [complete install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install).
 
-1. Download the [installer](http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo8_install.sh). If a window opens, you can close it again.
+1. Download the installer. Open [the installer webpage](http://get.gazebosim.org) and save the page (right clic in your browser, "Save Page As" or "Save
+as") to the Downloads directory of your disc.
 
 1. Copy the following text by pressing Ctrl-C:
 
     ```
-    chmod +x ~/Downloads/gazebo8_install.sh
+    chmod +x ~/Downloads/gazebo.sh
     ```
 
 1. Press Alt-F2
@@ -67,7 +68,7 @@ If you run into problems during the install, please see the [complete install in
 1. Copy the following by pressing Ctrl-C:
 
     ```
-    gnome-terminal --working-directory="~" -e "./Downloads/gazebo8_install.sh"
+    gnome-terminal --working-directory="~" -e "./Downloads/gazebo.sh"
     ```
 
 1. Press Alt-F2
