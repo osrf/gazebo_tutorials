@@ -1,10 +1,8 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="four_bar_sdf">
     <pose>0 0 0.04  0 0 0</pose>
     <self_collide>true</self_collide>
-
     <link name="link_AB">
       <pose>-0.01 -0.15000000000000002 0  0 0 0</pose>
       <inertial>
@@ -39,7 +37,6 @@
         </material>
       </visual>
     </link>
-
     <link name="link_BC">
       <pose>0.1 -0.31000000000000005 0  0 0 0</pose>
       <inertial>
@@ -74,7 +71,6 @@
         </material>
       </visual>
     </link>
-
     <link name="link_CD">
       <pose>0.21000000000000002 -0.15000000000000002 0  0 0 0</pose>
       <inertial>
@@ -109,7 +105,6 @@
         </material>
       </visual>
     </link>
-
     <joint name="joint_A" type="revolute">
       <pose>0.01 0.15000000000000002 0 0 0 0</pose>
       <parent>world</parent>
@@ -118,7 +113,6 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
     <joint name="joint_B" type="revolute">
       <pose>-0.1 0.01 0 0 0 0</pose>
       <parent>link_AB</parent>
@@ -127,7 +121,6 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
     <joint name="joint_D" type="revolute">
       <pose>-0.01 0.15000000000000002 0 0 0 0</pose>
       <parent>world</parent>
@@ -136,7 +129,6 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
     <joint name="joint_C" type="revolute">
       <pose>0.1 0.01 0 0 0 0</pose>
       <parent>link_CD</parent>
@@ -145,6 +137,5 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
   </model>
 </sdf>
