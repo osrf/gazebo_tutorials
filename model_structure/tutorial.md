@@ -70,22 +70,21 @@ The format of this `database.config` is:
 </database>
 ~~~
 
-*  <*name*>
- 
-   The name of the database. This is used by the GUI and other tools.
-   
-*  <*license*> 
+   *  <*name*>
 
-   The license for the models within the database. We highly recommend the
-[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
+      The name of the database. This is used by the GUI and other tools.
 
-*  <*models*>
+   *  <*license*> 
 
-   A listing of all the model URIs within the database.
-   
-   * <*uri*>
+      The license for the models within the database. We highly recommend the[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
 
-     The URI for a model, this should be `file://model_directory_name`
+   *  <*models*>
+
+      A listing of all the model URIs within the database.
+
+      * <*uri*>
+
+        The URI for a model, this should be `file://model_directory_name`
 
 ### Model Config 
 
@@ -112,26 +111,27 @@ The format of this `model.config` is:
 </model>
 ~~~
 
-*  <*name*> *required*
+   *  <*name*> *required*
 
-   Name of the model.
-   
-*  <*version*> *required*
+      Name of the model.
 
-   Version of this model. 
+   *  <*version*> *required*
 
-   *Note:* This is not the version of sdf that the model uses. That information
-   is kept in the `model.sdf` file.
+      Version of this model. 
 
-*  <*sdf*> *required*
+      *Note:* This is not the version of sdf that the model uses. That information
+      is kept in the `model.sdf` file.
 
-   The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
+   *  <*sdf*> *required*
+
+      The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
 
    *  <*author*> *required*
 
       *  <*name*> *required*
 
          Name of the model author.
+
       *  <*email*> *required*
 
          Email address of the author.
@@ -151,6 +151,7 @@ The format of this `model.config` is:
          *  <*uri*> *required*
 
             URI of the model dependency.
+
          *  <*version*> *required*
 
             Version of the model.
