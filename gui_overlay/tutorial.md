@@ -201,8 +201,9 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/void GUIExampleTimeWidget::OnStats/' to='/\)\)\);/' />
 
-1. Follow the same steps as the previous tutorial to compile the plugin,
-tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
+1. Follow the same steps as the previous tutorial to compile the plugin and add the GAZEBO_PLUGIN_PATH
+
+1. Tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
 
     > **Tip:** You can add both plugins to `gui.ini` as follows:
 

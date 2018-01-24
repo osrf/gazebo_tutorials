@@ -15,7 +15,7 @@ Gazebo and receive data from Gazebo.
 
 The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo9/examples/plugins/gui_overlay_plugin_spawn).
 
-1. Install the stable version: follow the [instructions of the install page](http://gazebosim.org/tutorials?cat=install)
+1. Install the latest Gazebo version: follow the [instructions of the install page](http://gazebosim.org/tutorials?cat=install)
 
 1. Start by creating a working directory
 
@@ -24,7 +24,7 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
     cd ~/gazebo_gui_spawn
     ~~~
 
-1. Download the source code for the GUI overlay plugin
+1. Download the source code for the GUI overlay plugin (On OsX, wget can be replaced with curl -OL)
 
     ~~~
     wget https://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh
