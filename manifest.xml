@@ -255,6 +255,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model a 4-bar linkage in SDFormat and URDF" ref='kinematic_loop'>
+      <markdown version="7+">kinematic_loop/tutorial.md</markdown>
+      <description>Model a 4-bar linkage in SDFormat and URDF.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
      <tutorial title="Make a model" ref='build_model'>
       <markdown version="1.9+">build_model/tutorial.md</markdown>
       <description>Describes models, and how to create custom models.</description>

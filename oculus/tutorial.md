@@ -9,7 +9,7 @@ After this tutorial, you will be able to attach a virtual Oculus Camera to one o
 Follow the next instructions to install the Oculus SDK version that we prepared for Gazebo.
 
 ~~~
-sudo apt-get install libusb-dev libudev-dev libxinerama-dev
+sudo apt-get install libusb-dev libudev-dev libxinerama-dev libxrandr-dev
 hg clone https://bitbucket.org/osrf/oculussdk
 cd oculussdk
 mkdir build

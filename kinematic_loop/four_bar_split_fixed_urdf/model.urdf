@@ -15,19 +15,22 @@
                iyz="0.0"
                izz="0.0005424000000000002"/>
     </inertial>
-    <collision name="boxABCollision">
+    <collision>
       <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
       <geometry>
         <box size="0.02 0.30000000000000004 0.02"/>
       </geometry>
     </collision>
-    <visual name="boxABVisual">
+    <visual>
       <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
       <geometry>
         <box size="0.02 0.30000000000000004 0.02"/>
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_AB">
+    <material>Gazebo/Wood</material>
+  </gazebo>
   <link name="link_BE">
     <inertial>
       <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
@@ -39,19 +42,22 @@
                iyz="0.0"
                izz="2.0800000000000004e-05"/>
     </inertial>
-    <collision name="boxBECollision">
+    <collision>
       <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
       <geometry>
         <box size="0.1 0.02 0.02"/>
       </geometry>
     </collision>
-    <visual name="boxBEVisual">
+    <visual>
       <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
       <geometry>
         <box size="0.1 0.02 0.02"/>
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_BE">
+    <material>Gazebo/Wood</material>
+  </gazebo>
   <link name="link_EC">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
@@ -63,19 +69,22 @@
                iyz="0.0"
                izz="2.0800000000000004e-05"/>
     </inertial>
-    <collision name="boxECCollision">
+    <collision>
       <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
       <geometry>
         <box size="0.1 0.02 0.02"/>
       </geometry>
     </collision>
-    <visual name="boxECVisual">
+    <visual>
       <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
       <geometry>
         <box size="0.1 0.02 0.02"/>
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_EC">
+    <material>Gazebo/Wood</material>
+  </gazebo>
   <link name="link_CD">
     <inertial>
       <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
@@ -87,19 +96,22 @@
                iyz="0.0"
                izz="0.0005424000000000002"/>
     </inertial>
-    <collision name="boxCDCollision">
+    <collision>
       <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
       <geometry>
         <box size="0.02 0.30000000000000004 0.02"/>
       </geometry>
     </collision>
-    <visual name="boxCDVisual">
+    <visual>
       <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
       <geometry>
         <box size="0.02 0.30000000000000004 0.02"/>
       </geometry>
     </visual>
   </link>
+  <gazebo reference="link_CD">
+    <material>Gazebo/Wood</material>
+  </gazebo>
   <joint name="joint_A" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.04"/>
     <parent link="world"/>
@@ -124,6 +136,7 @@
     <child link="link_EC"/>
     <axis xyz="0 0 1"/>
   </joint>
+  <!-- SDFormat joints -->
   <gazebo>
     <joint name="joint_E" type="fixed">
       <pose>-0.1 -0.01 0 0 0 0</pose>
