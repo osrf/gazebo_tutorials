@@ -129,9 +129,12 @@ The format of this `model.config` is:
 
 *  <*author*> *required*
 
-  * <*name*> *required*: Name of the model author.
+   *  <*name*> *required*
 
-  * <*email*> *required*: Email address of the author.
+      Name of the model author.
+   *  <*email*> *required*
+
+      Email address of the author.
 
 *  <*description*> *required*
 
