@@ -32,7 +32,7 @@ You can then insert the model into a simulation using the `Insert Model` panel
 in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2).
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
-[model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
+[model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
 The model.sdf can be generated from the template using the `erb` command: `erb -T 1 model.sdf.erb > model.sdf`.
 
 This allows geometric parameters to be defined in one place
@@ -82,7 +82,7 @@ and
 [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf)
 to that folder.
 You can also examine the
-[model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb)
+[model template](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb)
 created with embedded ruby to see how the model is constructed.
 
 The difference between the `four_bar_sdf` and `four_bar_split_fixed_sdf`
@@ -175,14 +175,14 @@ folder with
 and
 [model.urdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf)
 files and the embedded ruby
-[model template](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
+[model template](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
 The model.urdf can be generated from the template using the erb command: `erb -T 1 model.urdf.erb > model.urdf`.
 Comparing this model with the
 [four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf)
 model provides a useful comparison of how coordinate frames are defined in SDFormat and URDF.
 
 The SDFormat fixed joint is
-[specified in gazebo tags](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:158):
+[specified in gazebo tags](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:158):
 
 <include lang='xml' from='/  .!-- SDFormat/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
 
