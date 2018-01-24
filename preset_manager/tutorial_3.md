@@ -127,9 +127,11 @@ the two world profiles 5 times, pausing for 5 seconds between each switch.
 The behavior of double pendulum model in this world illustrates the differences between the two physics
 profiles. A classic double pendulum consists of two links attached by a hinge joint. One of the links is
 attached to a fixed point via another hinge joint. In this example, the link attached to a fixed point
-is much smaller, and thus there is a large inertia ratio between the two links. The world enforces a constant
-force lateral to the hinge joint (in the x-direction) by setting the x component of gravity to 1.0 meters
-per second squared, causing the pendulum to swing back and forth in the XZ plane.
+is much smaller, and thus there is a large inertia ratio between the two links. The world applies a constant
+force parallel to the rotation axis of the hinge joints (in the x-direction)
+by setting the x component of gravity to 1.0 meters per second squared.
+The pendulum should normally move only in the YZ plane,
+but the lateral force causes the pendulum to wobble in the x direction.
 
 [[file:files/inertia_ratio_pendulum.svg]]
 
