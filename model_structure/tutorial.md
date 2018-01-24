@@ -132,6 +132,7 @@ The format of this `model.config` is:
 
     Name of the model author.
 
+
   *  <*email*> *required*
 
     Email address of the author.
