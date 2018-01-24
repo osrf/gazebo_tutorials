@@ -127,18 +127,24 @@ Example of loading a system plugin via the command line:
 gzserver -s <plugin_filename>
 ~~~
 
-Where `<plugin_filename>` is the name of a shared library found in
-`GAZEBO_PLUGIN_PATH`. For example, to load the `RestWebPlugin` that ships
-with Gazebo:
+The `-s` flag indicates it is a system plugin, and `<plugin_filename>` is the
+name of a shared library found in `GAZEBO_PLUGIN_PATH`.
+For example, to load the `RestWebPlugin` that ships with Gazebo:
 
 ~~~
 gzserver --verbose -s libRestWebPlugin.so
 ~~~
 
-The same mechanism is used by the graphical client:
+The same mechanism is used by the graphical client, the supported command line
+flags are the following:
+
+* Gazebo 7 and earlier: Use `-g` to load a GUI plugin
+* Gazebo 8 and later: Use `--gui-client-plugin` to load a GUI plugin
+
+For example, to load the `TimerGUIPlugin`:
 
 ~~~
-gzclient -g <plugin_filename>
+gzclient --gui-client-plugin libTimerGUIPlugin.so
 ~~~
 
 For more information refer to the [plugins overview](http://gazebosim.org/tutorials/?tut=plugins_hello_world) page.
