@@ -6,7 +6,8 @@ The world description file contains all the elements in a simulation, including 
 
 The Gazebo server (`gzserver`) reads this file to generate and populate a world.
 
-A number of example worlds are shipped with Gazebo. These worlds are located in `<install_path>/share/gazebo-<version>/worlds`.
+A number of example worlds are shipped with Gazebo. These worlds are installed in `<install_path>/share/gazebo-<version>/worlds`;
+you can also see them in the [source code](https://bitbucket.org/osrf/gazebo/src/default/worlds/).
 
 # Model Files
 
@@ -19,6 +20,8 @@ A model file uses the same [SDF](http://gazebosim.org/sdf.html) format as world 
 ~~~
 
 A number of models are provided in the [online model database](http://bitbucket.org/osrf/gazebo_models) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
+
+Read more about model files [here](http://gazebosim.org/tutorials?tut=build_model).
 
 # Environment Variables
 
@@ -46,11 +49,28 @@ source <install_path>/share/gazebo/setup.sh
 
 If you want to modify Gazebo's behavior, e.g., by extending the path it searches for models, you should first source the shell script listed above, then modify the variables that it sets.
 
+## New in Gazebo 7
+
+Gazebo is transitioning to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
+library for inter-process communication instead of the built-in
+Gazebo Transport library, which will eventually be deprecated.
+Some functionality already uses Ignition Transport and may be affected by the
+following environment variables:
+
+`IGN_PARTITION`: Partition name for all Ignition Transport nodes.
+
+`IGN_IP`: Similar to `GAZEBO_MASTER_URI`, but for Ignition Transport.
+
+`IGN_VERBOSE`: Show debug information from Ignition Transport.
+
+Read more about Ignition Transport environment variables
+[here](http://ignition-transport.readthedocs.io/en/ign-transport3/environment_variables/env_variables.html).
+
 # Gazebo Server
 
 The server is the workhorse of Gazebo. It parses a world description file given on the command line, and then simulates the world using a physics and sensor engine.
 
-The server can be started using the following command.  Note that the server does not include any graphics; it's meant to run headless.
+The server can be started using the following command.  Note that the server does not include any graphical interface; it's meant to run headless.
 
 ~~~
 gzserver <world_filename>
@@ -64,12 +84,12 @@ The `<world_filename>` can be:
 
 3. relative to a path component in `GAZEBO_RESOURCE_PATH`.
 
-Worlds that are shipped with Gazebo are located in `<install_path>/share/gazebo-<version_number>/worlds`.
+4. `worlds/<world_name>`, where `<world_name>` is a world that is installed with Gazebo
 
-For example, to use the `empty.world` which is shipped with Gazebo, use the following command
+For example, to use the `empty_sky.world` which is shipped with Gazebo, use the following command
 
 ~~~
-gzserver worlds/empty.world
+gzserver worlds/empty_sky.world
 ~~~
 
 # Graphical Client
@@ -87,17 +107,32 @@ gzclient
 The `gazebo` command combines server and client in one executable.  Instead of running `gzserver worlds/empty.world` and then `gzclient`, you can do this:
 
 ~~~
-gazebo worlds/empty.world
+gazebo worlds/empty_sky.world
 ~~~
 
 # Plugins
 
-Plugins provide a simple and convenient mechanism to interface with Gazebo. Plugins can either be loaded on the command line, or specified in a world/model file (see the [SDF](http://gazebosim.org/sdf.html ) format). Plugins specified on the command line are loaded first, then plugins specified in the world/model files are loaded. Most plugins are loaded by the server; however, plugins can also be loaded by the graphical client to facilitate custom GUI generation.
+Plugins provide a simple and convenient mechanism to interface with Gazebo.
+Plugins can either be loaded on the command line, or specified in an SDF file
+(see the [SDF](http://gazebosim.org/sdf.html) format).
 
-Example of loading a plugin on the command line:
+Plugins specified on the command line are loaded first, then plugins specified
+in the SDF files are loaded. Some plugins are loaded by the server, such as
+plugins which affect physics properties, while other plugins are loaded by the
+graphical client to facilitate custom GUI generation.
+
+Example of loading a system plugin via the command line:
 
 ~~~
-gzserver -s <plugin_filename> <world_file>
+gzserver -s <plugin_filename>
+~~~
+
+Where `<plugin_filename>` is the name of a shared library found in
+`GAZEBO_PLUGIN_PATH`. For example, to load the `RestWebPlugin` that ships
+with Gazebo:
+
+~~~
+gzserver --verbose -s libRestWebPlugin.so
 ~~~
 
 The same mechanism is used by the graphical client:
