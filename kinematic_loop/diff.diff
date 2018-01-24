@@ -1,0 +1,73 @@
+--- a/kinematic_loop/four_bar_sdf/model.sdf.erb
++++ b/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb
+@@ -35,15 +35,21 @@
+   # ^Y         |          |
+   # |          |          |
+   # |   X      |          |
+-  # O--->      B----------C
++  # O--->      B-----E----C
+   #
+   boxes = {}
+
+   boxes["AB"] = box_inertia(t, Y, t);
+   boxes["AB"][:offset] = Vector[-t/2, -Y/2, 0]
+
+-  boxes["BC"] = box_inertia(X, t, t);
+-  boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
++  # boxes["BC"] = box_inertia(X, t, t);
++  # boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
++
++  boxes["BE"] = box_inertia(X/2, t, t);
++  boxes["BE"][:offset] = Vector[X/4, -(Y+t/2), 0]
++
++  boxes["EC"] = box_inertia(X/2, t, t);
++  boxes["EC"][:offset] = Vector[X*3/4, -(Y+t/2), 0]
+
+   boxes["CD"] = box_inertia(t, Y, t);
+   boxes["CD"][:offset] = Vector[X+t/2, -Y/2, 0]
+@@ -61,8 +67,8 @@
+   joints["B"] = {}
+   joints["B"][:type] = "revolute"
+   joints["B"][:parent] = "link_AB"
+-  joints["B"][:child] = "link_BC"
+-  joints["B"][:pose] = Vector[-X/2, t/2, 0, 0, 0, 0]
++  joints["B"][:child] = "link_BE"
++  joints["B"][:pose] = Vector[-X/4, t/2, 0, 0, 0, 0]
+   joints["B"][:axis] = Vector[0, 0, 1]
+
+   joints["D"] = {}
+@@ -75,11 +81,15 @@
+   joints["C"] = {}
+   joints["C"][:type] = "revolute"
+   joints["C"][:parent] = "link_CD"
+-  joints["C"][:child] = "link_BC"
+-  joints["C"][:pose] = Vector[X/2, t/2, 0, 0, 0, 0]
++  joints["C"][:child] = "link_EC"
++  joints["C"][:pose] = Vector[X/4, t/2, 0, 0, 0, 0]
+   joints["C"][:axis] = Vector[0, 0, 1]
+
+-  # end first ruby code block
++  joints["E"] = {}
++  joints["E"][:type] = "fixed"
++  joints["E"][:parent] = "link_BE"
++  joints["E"][:child] = "link_EC"
++  joints["E"][:pose] = Vector[-X/4, 0, 0, 0, 0, 0]
+ %>
+ <sdf version="1.5">
+   <model name="four_bar_sdf">
+@@ -134,9 +144,15 @@
+       <pose><%= a_to_s(joint[:pose]) %></pose>
+       <parent><%= joint[:parent] %></parent>
+       <child><%= joint[:child] %></child>
++<%
++    if joint.has_key?(:axis)
++%>
+       <axis>
+         <xyz><%= a_to_s(joint[:axis]) %></xyz>
+       </axis>
++<%
++    end
++%>
+     </joint>
+ <%
+   end
