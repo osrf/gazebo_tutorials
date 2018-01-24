@@ -53,12 +53,12 @@ This example is available as a run-able Gazebo demo.
       [[file:files/collide_bitmask.png|640px]]
 
 # How to set a collide bitmask
-**1)Using GUI in Gazebo Software:**
+
+##1)Using GUI in Gazebo Software:##
 In Model Editor, Right click on Link -> Link Inspector -> Collision and change **Collide bitmask** as stated above by box examples.
 here bitmask value can be specified in range 0-100000000 using base-10.
 
-**2)Using SDF :**
-
+##2)Using SDF :##
 A collide bitmask may be set using [SDF](http://sdformat.org), an XML file
 format for describing simulation properties and entities. The bitmask XML
 element is a child of the surface XML element. The bitmask value may be specified using either base-10 or base-16. The following is a simple example, note that some necessary SDF elements have been removed for clarity.
@@ -89,10 +89,11 @@ not want to collide with the ground plane, and other default objects.
 
 ### Self Collision
 Self collide option is used for control of collisions between the links in the model itself.
-**how to set self collide :**
+##how to set self collide :##
 Set Self collide to **true** value (Right click on Link -> Link Inspector -> Link).
 
 or if you are working on SDF file then follow the example below :
+
 ~~~
 <model name="model">
   <link name="link1">
@@ -108,4 +109,5 @@ or if you are working on SDF file then follow the example below :
   </link>
 </model>
 ~~~
+
 this way link 1 and link2 of same model will collide for the proper bitmask values.
