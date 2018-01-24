@@ -56,7 +56,7 @@ for each link and joint:
 The full [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
 is instantiated from this template, as you can see in the snippet below:
 
-<include lang='xml' from='/    .link name="link_CD"./' to='/joint_B. type=.continuous../' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+<include lang='xml' from='/    .link name="link_CD"./' to='/joint_B. type=.revolute../' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
 
 
 # Split 4-bar linkage with an extra fixed joint
