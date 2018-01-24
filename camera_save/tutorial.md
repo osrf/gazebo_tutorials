@@ -6,14 +6,14 @@ Gazebo can automatically save camera images to disk.
 To do so, a `<save>` tag must be added to a camera sensor.
 
 ## Create a world with a camera
-Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world)
+Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world) as `camera_tutorial.world`
 
 <include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world' />
 
 
 The important parts are here.
 
-```
+%%%
 <sensor name="my_camera">
   <camera>
     <image>
@@ -28,7 +28,7 @@ The important parts are here.
     <update_rate>30</update_rate>
   </camera>
 </sensor>
-```
+%%%
 
 The `<save>` tag has an attribute `enabled` that must be set to `true` for images to be saved.
 The child tag `<path>` is a directory in which the camera images will be saved.
@@ -59,7 +59,7 @@ This comand creates a video called `my_camera.mp4` at 30 frames per second.
 ffmpeg -r 30 -pattern_type glob -i '/tmp/camera_save_tutorial/default_camera_link_my_camera*.jpg' -c:v libx264 my_camera.mp4
 ```
 
-If you have Ubuntu Trusty, you might have `avconv` instead of `ffmpeg`
+If you have Ubuntu Trusty or a newer version, you might have `avconv` instead of `ffmpeg`
 ([here is some of the backstory](https://en.wikipedia.org/wiki/Libav#Fork_from_FFmpeg)).
 The following command can be used with `avconv`:
 
