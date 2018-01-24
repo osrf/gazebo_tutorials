@@ -15,9 +15,7 @@ Gazebo and receive data from Gazebo.
 
 The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo9/examples/plugins/gui_overlay_plugin_spawn).
 
-1. Install the stable version.
-
-   Please follow the [instructions of the install page](http://gazebosim.org/tutorials?cat=install)
+1. Install the stable version: follow the [instructions of the install page](http://gazebosim.org/tutorials?cat=install)
 
 1. Start by creating a working directory
 
