@@ -28,7 +28,7 @@ To use this model, create a folder `~/.gazebo/models/four_bar_sdf` and copy the
 and
 [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
 to that folder.
-You can then insert the model into a simulation using the `Insert Model` panel
+You can then insert the model into a simulation using the `Insert` panel
 in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2).
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
