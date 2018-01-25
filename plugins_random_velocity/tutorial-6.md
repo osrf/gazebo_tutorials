@@ -139,8 +139,7 @@ using Private class `RandomVelocityPluginPrivate`.
 The second function is a destructor function that deletes the pointer pointing
 to this instance's data.
 
-<include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not function.\n";
-    return;/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not function.\n" src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 Similar to what we did in Hello World, we create function
 `RandomVelocityPlugin::Load()`
