@@ -49,7 +49,7 @@ source <install_path>/share/gazebo/setup.sh
 
 If you want to modify Gazebo's behavior, e.g., by extending the path it searches for models, you should first source the shell script listed above, then modify the variables that it sets.
 
-## New in Gazebo 7
+## New in Gazebo 8
 
 Gazebo is transitioning to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
 library for inter-process communication instead of the built-in
