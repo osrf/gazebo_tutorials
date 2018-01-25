@@ -66,14 +66,14 @@ ignition::math::Pose3d modelWorldPose = modelRelativePose - cameraPose;
 ## False Positives
 The output of a logical camera may include a model a normal camera would not see if:
 
-* the model has no `<visual>`
-* the `<visual>` are transparent
-* the model is rotated in the world such that its AABB is in the frustum while the geometry is not
-* the `<collision>` on the model are larger or in different places than the `<visual>`
-* the model is occluded by another model
-
-The volume of a model's AABB is always greater than or equal to the volume of the collisions on it.
-It is possible some part of this extra volume intersects the frustum while none of the collision geometry does.
+* The model has no `<visual>`.
+* The `<visual>` are transparent.
+* The `<collision>` on the model are larger or in different places than the `<visual>`.
+* The model is occluded by another model.
+* The model is rotated in the world such that its AABB is in the frustum while the geometry is not.
+  Since the volume of a model's AABB is greater than or equal to the volume of the collisions on it,
+  it is possible some part of this extra volume intersects the frustum while none of the collision geometry does.
+  This is illustrated in the following image:
 
 [[file:files/tutorial_logical_camera_aabb_false_positive.world.png|600px]]
 
