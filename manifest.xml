@@ -147,7 +147,7 @@
       <markdown version="5.0">install_from_source/tutorial_old.md</markdown>
       <markdown version="6.0">install_from_source/tutorial_old.md</markdown>
       <markdown version="7.0">install_from_source/tutorial_old.md</markdown>
-      <markdown version="8.0">install_from_source/tutorial_default.md</markdown>
+      <markdown version="8.0">install_from_source/tutorial_8.md</markdown>
       <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
        Installation instructions for building a gazebo application using the
@@ -571,7 +571,8 @@
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
       <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
-      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="7.0">preset_manager/tutorial_7.md</markdown>
+      <markdown version="8.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>

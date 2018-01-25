@@ -55,16 +55,16 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
 
     When the hokuyo model is inserted, the hokuyo's links are namespaced with their model name. In this case the model name is `hokuyo`, so each link in the hokuyo model is prefaced with `hokuyo::`.
 
-1.  Now start gazebo, and add the robot to the simulation using the Insert tab on the GUI. You should see the robot with a laser attached.
+1.  Now start gazebo, and add the robot to the simulation using the Insert tab on the GUI. If the hokuyo model does not exist locally, Gazebo will pull the model from the [Model Database](https://bitbucket.org/osrf/gazebo_models). Alternatively, manually download the model files to your local cache:
+
+        cd ~/.gazebo/models
+        wget -q -R *index.html*,*.tar.gz --no-parent -r -x -nH http://models.gazebosim.org/hokuyo/
+
+    Once gazebo is launched, you should see the robot with a laser attached.
 
     [[file:files/Add_laser_pioneer.png]]
 
-1.  (Optional)  Try adding a camera to the robot. The camera's model URI is `model://camera`, it should have been locally caches for you in:
-
-        ls ~/.gazebo/models/camera/
-
-
-    For reference, the SDF documentation can be found [here](http://gazebosim.org/sdf/).
+1.  (Optional)  Try adding a camera to the robot. The camera's model URI is `model://camera`. For reference, the SDF documentation can be found [here](http://gazebosim.org/sdf/).
 
 ## Next
 

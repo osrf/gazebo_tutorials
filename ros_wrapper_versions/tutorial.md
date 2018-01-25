@@ -112,7 +112,8 @@ wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo8-ros-pkgs` from the osrfoundation repository, which will install the `gazebo8` package.
+ * Install `ros-kinetic-gazebo8-ros-pkgs` and/or `ros-kinetic-gazebo8-ros-control`
+   from the osrfoundation repository, which will install the `gazebo8` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ### Gazebo 7.x series
@@ -122,7 +123,8 @@ The OSRF repository provides `-gazebo7-` versions of ROS/Indigo gazebo wrappers
 steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-indigo-gazebo7-ros-pkgs` from the osrfoundation repository, which will install the `gazebo7` package.
+ * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo7-ros-control`
+   from the osrfoundation repository, which will install the `gazebo7` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
 ## FAQ

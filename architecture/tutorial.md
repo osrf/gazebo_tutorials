@@ -30,14 +30,14 @@ of Gazebo.
 ### Gazebo Master
 
 This is essentially a topic name server.
-It provides namelookup, and topic management.
+It provides name lookup, and topic management.
 A single master can handle multiple physics simulations,
 sensor generators, and GUIs.
 
 ### Communication Library
 
  * **Dependencies:** Protobuf and boost::ASIO
- * **External API:**
+ * **External API:** Support communication with Gazebo nodes over named topics
  * **Internal API:** None
  * **Advertised Topics:** None
  * **Subscribed Topics:** None

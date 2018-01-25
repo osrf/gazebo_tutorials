@@ -59,7 +59,7 @@ shipping the ODE, Bullet, and Simbody physics engines.
 
 #### DART Support
 
-Support for [DART](http://dartsim.github.io/) version 6 is integrated into
+Support for [DART](http://dartsim.github.io/) version 5.0 is integrated into
 the default branch. In an Ubuntu system, several Personal Package Archives
 (PPA's) can be used to install the proper package and dependencies. Note that
 adding these PPA's may cause conflicts with ROS.
@@ -71,10 +71,7 @@ adding these PPA's may cause conflicts with ROS.
     # Main repository
     sudo apt-add-repository ppa:dartsim
     sudo apt-get update
-    sudo apt-get install libdart6-dev
-
-    # Optional DART utilities
-    sudo apt-get install libdart6-utils-urdf-dev
+    sudo apt-get install libdart-core5-dev
 
 ### Optional Dependencies
 
@@ -142,9 +139,9 @@ desire more stability
         cmake ../
 
 
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs. We recommend using `/home/$USER/local` as the value for `<install_path>`:
+    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
-    >     cmake -DCMAKE_INSTALL_PREFIX=<install_path> ../
+    >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
@@ -154,7 +151,7 @@ desire more stability
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
-1. Make note of your install path, which is output from `cmake` and will either be the default install location or the one specified as `<install_path>` above, e.g.:
+1. Make note of your install path, which is output from `cmake` and should look something like:
 
         -- Install path: /home/$USER/local
 
@@ -180,11 +177,11 @@ the whole gazebo test suite you'll need to run:
 
 #### Local Install
 
-If you decided to install gazebo in a local directory you'll need to modify some of your PATHs:
+If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
 
-    echo "export LD_LIBRARY_PATH=<install_path>/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
-    echo "export PATH=<install_path>/bin:$PATH" >> ~/.bashrc
-    echo "export PKG_CONFIG_PATH=<install_path>/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
+    echo "export PKG_CONFIG_PATH=<install_path>/local/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
     source ~/.bashrc
 
 Now try running gazebo:
@@ -264,7 +261,7 @@ For example, gazebo5 doesn't support dart5.
 cd ${WS}/src/gazebo
 hg up default
 cd ${WS}/src/dart
-git checkout release-6.2
+git checkout release-5.0
 ~~~
 
 Add [package.xml](http://wiki.ros.org/catkin/package.xml)
