@@ -448,7 +448,7 @@
 
     <tutorial title="Gzweb development" ref='gzweb_development'>
       <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
-      <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
+      <description>How to make changes to Gzweb and contribute your modifications back to Gzweb.</description>
       <skill>advanced</skill>
     </tutorial>
 
