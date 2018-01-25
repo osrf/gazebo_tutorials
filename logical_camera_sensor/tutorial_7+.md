@@ -51,7 +51,7 @@ It also outputs its own pose in world coordinates.
 Use this to get the model poses in world coordinates.
 
 ```cpp
-// gazebo::msgs::LogicalCameraImage msg;
+// msg is of type gazebo::msgs::LogicalCameraImage
 
 // Pose of camera in world coordinates
 ignition::math::Pose3d cameraPose = gazebo::msgs::ConvertIgn(msg.pose());
