@@ -1,0 +1,15 @@
+material Wireframe/Purple
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 1 0 1
+      diffuse 1 0 1
+      specular 0.1 0.1 0.1 1 1
+      polygon_mode wireframe
+      cull_hardware none
+      cull_software none
+    }
+  }
+}
