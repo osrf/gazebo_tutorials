@@ -83,9 +83,9 @@ The output of a logical camera may not include a model a normal camera would see
   A model's AABB does not contain its nested models.
   Every nested model has its own AABB.
   If only the nested model is visible then only it will be in the output.
-
-The logical camera never includes the model it is part of in its output.
-However, it will include any nested or parent models.
+* The model has the logical camera attached to it.
+  The logical camera never includes the model it is part of in its output.
+  However, it will include any nested or parent models.
 
 #SDFormat Parameters
 * `<update_rate>`
