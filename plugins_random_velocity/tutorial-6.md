@@ -39,8 +39,8 @@ friction (mu) is set to zero.
 Now comes the actual usage of the plugin.
 <include from='/      <plugin name/' to='/</plugin>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
-1. Plugin name is "random" and its corresponding shared object file(.so) is
-``libRandomVelocityPlugin.so``. `.so` files are dynamically linked at runtime.
+1. Plugin name is "random" and its corresponding shared object file (.so) is
+``libRandomVelocityPlugin.so``. The `.so` (or .dylib on Mac OS) files are dynamically linked at runtime.
 
 2. You can apply an initial velocity to the link, using the `initial_velocity` tag.
 
@@ -77,7 +77,7 @@ downloaded the repository.
 $ cd /YourPath/gazebo/plugins/RandomVelocityPlugin.cc
 ~~~
 
-If you have installed from debian, then you can only locate header(.hh) and not (.cc).
+If you have installed from debian, then you can only locate header (.hh) and not (.cc).
 You can try finding the location using,
 
 ~~~
@@ -139,7 +139,7 @@ using Private class `RandomVelocityPluginPrivate`.
 The second function is a destructor function that deletes the pointer pointing
 to this instance's data.
 
-<include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not fuction.\n";
+<include from='/ void RandomVelocityPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)' to="will not function.\n";
     return;/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 Similar to what we did in Hello World, we create function
@@ -153,7 +153,7 @@ A model is a collection of links, joints, and plugins.
 A pointer to the SDF element for the plugin in the world file.
 
 The function checks that `ModelPtr` is not null and `sdf::ElementPtr`
-has the elements elements which are accepted by the plugin.
+has the elements which are accepted by the plugin.
 
 ~~~
   // Get x clamping values
@@ -194,10 +194,10 @@ this->dataPtr->updateConnection = event::Events::ConnectWorldUpdateBegin(
 ~~~
 
 This makes a connection between the plugin and world update events. An
-[Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/1.9.1/classgazebo_1_1event_1_1Event.html)
+[Event](http://osrf-distributions.s3.amazonaws.com/gazebo/api/6.1.0/classgazebo_1_1event_1_1Event.html)
 class is used to get notifications for simulator events. The
 `worldUpdateBegin` event is fired at each physics iteration.
-[ConnectWorldUpdateBegin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1event_1_1Events.html#a441fb0fe08d924ab99b7255215e7502e)
+[ConnectWorldUpdateBegin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/6.1.0/classgazebo_1_1event_1_1Events.html#a441fb0fe08d924ab99b7255215e7502e)
 takes in the callback to this event and returns a connection.
 
 `bind` is a C++ standard function; it generates a forward calling wrapper.
@@ -249,26 +249,26 @@ void RandomVelocityPlugin::Update(const common::UpdateInfo &_info)
 ~~~
 
 This is the update function invoked above.
-[UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1common_1_1UpdateInfo.html#details)
+[UpdateInfo](https://osrf-distributions.s3.amazonaws.com/gazebo/api/6.1.0/classgazebo_1_1common_1_1UpdateInfo.html#details)
 `&_info` primarily contains three pieces of information:
 
-1. Real time (realTime)
+1. Real time (`realTime`)
 
-2. Current simulation time (simTime)
+2. Current simulation time (`simTime`)
 
-3. Name of the world (worldName)
+3. Name of the world (`worldName`)
 
 Other important functions and classes used are:
 
 1. [DblUniform](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Rand.html#aa27cd5f2f0b6271ae8cd9a8691d8b753) : Gets a random double value from a uniform distribution.
 
-2. [Normalize()](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1math_1_1Vector3.html#afce261908c53f06a41a81752cdbfb373) : Normalizes the vector length by returning a unit length vector.
+2. [Normalize()](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html#a81088a4e165e044916b493465b8f2edc) : Normalizes the vector length by returning a unit length vector.
 
-3. [ignition::math::vector3d](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html)
+3. [ignition::math::Vector3d](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/classignition_1_1math_1_1Vector3.html)
 
-4. [Clamp](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/namespaceignition_1_1math.html#a8a8c9d2bdc3f41ea0e71639b59b22a48)
+4. [ignition::math::clamp](https://osrf-distributions.s3.amazonaws.com/ign-math/api/1.0.0/namespaceignition_1_1math.html#a8a8c9d2bdc3f41ea0e71639b59b22a48)
 
-5. [SetLinearVelocity](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html#acb848e605587a69dfc0c5342905f1e3c)
+5. [SetLinearVelocity](https://osrf-distributions.s3.amazonaws.com/gazebo/api/6.1.0/classgazebo_1_1physics_1_1Model.html#acb848e605587a69dfc0c5342905f1e3c)
 
 You can modify the plugin by involving angular acceleration, linear acceleration,
 and you can have keep them random or fixed.
