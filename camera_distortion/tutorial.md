@@ -4,9 +4,9 @@ Cameras lenses typically exhibit some degree of optical distortions, which resul
 
 Using camera calibration tools such as Matlab or OpenCV, it is possible to extract distortion coefficients along with other camera intrinsic parameters. With these distortion coefficient, users can now create distorted camera sensor image data in Gazebo.
 
-## Current Implementation
+## Implementation
 
-Gazebo currently supports simulation of camera based on the [Brown's distortion model](http://en.wikipedia.org/wiki/Distortion_(optics)#Software_correction). It expects 5 distortion coefficients `k1`, `k2`, `k3`, `p1`, `p2` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the distortion model, while the `p` coefficients are the tangential components.
+Gazebo supports simulation of camera based on the [Brown's distortion model](http://en.wikipedia.org/wiki/Distortion_(optics)#Software_correction). It expects 5 distortion coefficients `k1`, `k2`, `k3`, `p1`, `p2` that you can get from the camera calibration tools. The `k` coefficients are the radial components of the distortion model, while the `p` coefficients are the tangential components.
 
 There are a few limitations with the current implementation that needs to be taken into account:
 
