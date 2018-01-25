@@ -12,6 +12,8 @@ These three steps will run Gazebo with a default world.
     gazebo
     ~~~
 
+    > Note: The first time you launch gazebo, it will try to download a couple of models so this process may take some time.
+
 # Run Gazebo with a robot
 
 Let's simulate something a bit more interesting by loading a world with a pioneer2dx.
@@ -21,6 +23,8 @@ Let's simulate something a bit more interesting by loading a world with a pionee
     ~~~
     gazebo worlds/pioneer2dx.world
     ~~~
+
+    > Note: If you don't have the pioneer2dx model already, Gazebo will download it from the online model database which may take some time.
 
 ## Where are the worlds located?
 
