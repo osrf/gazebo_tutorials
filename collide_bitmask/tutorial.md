@@ -21,7 +21,7 @@ and **boxC**. The boxes have bitmasks 0x01, 0x02, and 0x03 for **boxA**,
   - **boxB**: 10
   - **boxC**: 11
 
-Let's assume that all three boxes are in as simulated world, where **boxA**
+Let's assume that all three boxes are in a simulated world, where **boxA**
 is directly below **boxB** and **boxC** is directly above boxB. This creates
 a stack of boxes with **boxA** on bottom, and **boxC** on top. We will also
 assume that all the boxes are capable of colliding with the ground.
@@ -29,16 +29,16 @@ assume that all the boxes are capable of colliding with the ground.
 Once simulation starts, **boxA** and **boxB** will be in collision. However,
 the bitwise-and of their bitmasks will produce a value of zero. This
 indicates to the simulation engine that collisions should be ignored,
-and the result is **boxB** passes through boxA.
+and the result is **boxB** passes through **boxA**.
 
 At this point **boxA** and **boxB** are both co-located and resting on the
 ground.  Meanwhile, **boxC** is falling from its start position. BoxC will
-eventually hit boxA and boxB. The bitwise-and of boxC's bitmask and the
+eventually hit boxA and boxB. The bitwise-and of **boxC**'s bitmask and the
 bitmask belonging to both **boxA** and **boxB** will result in a value
 greater than zero. This non-zero result, also considered ''true'' by
 programming languages, indicates to the simulation engine that collisions
 should be generated.  The result is that **boxC** will come to rest on top
-of **boxA** and boxB. 
+of **boxA** and **boxB**.
 
 This example is available as a run-able Gazebo demo.
 
