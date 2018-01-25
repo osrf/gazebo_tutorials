@@ -11,7 +11,8 @@ easily switch between a set of physics parameters and save them to SDF.
 # Usage
 
 ## SDF
-In SDF, a physics profile is simply a `<physics>` element. As of SDF version 3,
+In SDF, a physics profile is simply a `<physics>` element. As of SDF protocol version 1.5,
+which was introduced in SDFormat version 3,
 multiple physics elements are allowed in a world file, but they must be
 differentiated by the `name` attribute. When there are multiple physics elements
 specified, Gazebo will choose the one with the `default` attribute set to true.
@@ -20,8 +21,9 @@ multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following world example
 ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world)),
-the `ode_200iters` profile is set as the default, and the `ode_70iters`
-profile will be available via the C++ API or the `gz` command line tool. The following is an excerpt from the downloadable world example that shows the values for `ode_70iters` and `ode_200iters`.
+the `ode_200iters` profile is set as the default, and the `ode_70iters` and `ode_500iters`
+profiles will be available via the C++ API or the `gz` command line tool.
+The following is an excerpt from the downloadable world example that shows the values for these profiles.
 
 <include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world'/>
 
@@ -32,7 +34,7 @@ You can also get and set profile parameters and generate an SDF element
 representing your physics profile.
 
 Here's an example `PresetManager` code snippet that would programmatically
-construct the example world shown above in SDF:
+construct two of the profiles form the example world shown above in SDF:
 
 ```
 physics::WorldPtr world = physics::get_world("default");
@@ -121,24 +123,43 @@ Download the
 
 <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles_sdf1_6.sh'/>
 
-The script launches Gazebo with the `ode_70iters` profile and switches between
-the two world profiles 5 times, pausing for 5 seconds between each switch.
+The script launches Gazebo first with the `ode_200iters` profile,
+then switches to `ode_70iters` and the simulation goes unstable.
+The script then switches back to `ode_200iters` and resets the world, then switches between
+the `ode_200iters` and `ode_500iters` profiles 5 times, pausing for 5 seconds between each switch.
+The difference between these two profiles can be seen when plotting the Pitch and Yaw angles of
+`upper_link` and `lower_link`, since these angles should be zero with a perfect solver.
+They are not perfect, but the magnitude of the angles is lower with 500 iterations
+as shown in the following image:
+
+[[file:files/preset_plot_annotated.png]]
 
 The behavior of double pendulum model in this world illustrates the differences between the two physics
 profiles. A classic double pendulum consists of two links attached by a hinge joint. One of the links is
 attached to a fixed point via another hinge joint. In this example, the link attached to a fixed point
-is much smaller, and thus there is a large inertia ratio between the two links. The world enforces a constant
-force lateral to the hinge joint (in the x-direction) by setting the x component of gravity to 1.0 meters
-per second squared, causing the pendulum to swing back and forth in the XZ plane.
+is much smaller, and thus there is a large inertia ratio between the two links,
+which is significant because the large inertia ratios can cause iterative Projected-Gauss Seidel solvers
+(the default for gazebo's ODE solver) to converge very slowly (see
+[our conference paper](https://doi.org/10.1007/978-3-319-11900-7_4)
+([pdf](https://www.osrfoundation.org/wordpress2/wp-content/uploads/2015/04/simpar2014.pdf))
+or [DOI: 10.2312/PE/vriphys/vriphys09/105-114](http://dx.doi.org/10.2312/PE/vriphys/vriphys09/105-114)
+([pdf](https://iphys.files.wordpress.com/2012/09/manuscript.pdf))).
+The world applies a constant
+force parallel to the rotation axis of the hinge joints (in the x-direction)
+by setting the x component of gravity to 3.0 meters per second squared.
+The pendulum should normally move only in the YZ plane,
+but the lateral force causes the pendulum to wobble in the x direction,
+due to the lack of sover convergence.
 
 [[file:files/inertia_ratio_pendulum.svg]]
 
-The `ode_70iters` profile uses the "quickstep" physics constraint solver, which is faster but sometimes less
-accurate. In particular, the large inertia ratio of this model causes the constraint solver to converge slowly.
-You can observe that the pendulum tends to wobble when this profile is active. This profile is also set to
+The `ode_70iters` profile uses the "quickstep" physics constraint solver, which is faster less accurate.
+The large inertia ratio of this model causes the constraint solver to converge slowly, enough to
+make the simulation diverge with the pendulum swingly wildly.
+This profile is also set to
 run with a real time factor of 1.5, which means that simulation runs in "fast motion" while this profile is active.
 
-The `ode_200iters` profile also uses the "quickstep" solver but increases the number of iterations,
+The `ode_200iters` and `ode_500iters` profiles also use the "quickstep" solver but with increased iterations,
 which gives the solver more time to converge. Thus when the profile switches, you can see the pendulum's motion
 stabilize to back and forth behavior in the XZ plane. This profile runs with a real time factor of 1.0, which means
 that the time passes as slowly in simulation as it does in real life.
