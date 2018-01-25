@@ -32,8 +32,8 @@ indicates to the simulation engine that collisions should be ignored,
 and the result is **boxB** passes through **boxA**.
 
 At this point **boxA** and **boxB** are both co-located and resting on the
-ground.  Meanwhile, **boxC** is falling from its start position. BoxC will
-eventually hit boxA and boxB. The bitwise-and of **boxC**'s bitmask and the
+ground.  Meanwhile, **boxC** is falling from its start position. **BoxC** will
+eventually hit **boxA** and **boxB**. The bitwise-and of **boxC**'s bitmask and the
 bitmask belonging to both **boxA** and **boxB** will result in a value
 greater than zero. This non-zero result, also considered ''true'' by
 programming languages, indicates to the simulation engine that collisions
