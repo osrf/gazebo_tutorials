@@ -70,22 +70,21 @@ The format of this `database.config` is:
 </database>
 ~~~
 
-*  <*name*>
- 
-   The name of the database. This is used by the GUI and other tools.
-   
-*  <*license*> 
+   *  <*name*>
 
-   The license for the models within the database. We highly recommend the
-[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
+      The name of the database. This is used by the GUI and other tools.
 
-*  <*models*>
+   *  <*license*> 
 
-   A listing of all the model URIs within the database.
-   
-   * <*uri*>
+      The license for the models within the database. We highly recommend the[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
 
-     The URI for a model, this should be `file://model_directory_name`
+   *  <*models*>
+
+      A listing of all the model URIs within the database.
+
+      * <*uri*>
+
+        The URI for a model, this should be `file://model_directory_name`
 
 ### Model Config 
 
@@ -112,48 +111,50 @@ The format of this `model.config` is:
 </model>
 ~~~
 
-*  <*name*> *required*
-
-   Name of the model.
-   
-*  <*version*> *required*
-
-   Version of this model. 
-
-   *Note:* This is not the version of sdf that the model uses. That information
-   is kept in the `model.sdf` file.
-
-*  <*sdf*> *required*
-
-   The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
-
-*  <*author*> *required*
    *  <*name*> *required*
 
-      Name of the model author.
-      
-   *  <*email*> *required*
+      Name of the model.
 
-      Email address of the author.
+   *  <*version*> *required*
 
-*  <*description*> *required*
+      Version of this model. 
 
-   Description of the model should include:
-   >  * What the model is (e.g., robot, table, cup)
-   >  * What the plugins do (functionality of the model)
+      *Note:* This is not the version of sdf that the model uses. That information
+      is kept in the `model.sdf` file.
 
-*  <*depend*> *optional*
+   *  <*sdf*> *required*
 
-   All the dependencies for this model. This is typically other models.
+      The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
 
-   *  <*model*> *optional*
+   *  <*author*> *required*
 
-      *  <*uri*> *required*
+      *  <*name*> *required*
 
-         URI of the model dependency.
-      *  <*version*> *required*
+         Name of the model author.
 
-         Version of the model.
+      *  <*email*> *required*
+
+         Email address of the author.
+
+   *  <*description*> *required*
+
+      Description of the model should include:
+      >  * What the model is (e.g., robot, table, cup)
+      >  * What the plugins do (functionality of the model)
+
+   *  <*depend*> *optional*
+
+      All the dependencies for this model. This is typically other models.
+
+      *  <*model*> *optional*
+
+         *  <*uri*> *required*
+
+            URI of the model dependency.
+
+         *  <*version*> *required*
+
+            Version of the model.
 
 ### Model SDF
 
