@@ -2,7 +2,7 @@
 
 Cameras lenses typically exhibit some degree of optical distortions, which result in warping of images. An example is a fisheye camera that is commonly used in robotics applications to obtain a wider field of view of the environment for object recognition or navigation tasks.
 
-Using camera calibration tools such as Matlab or OpenCV, it is possible to extract distortion coefficients along with other camera intrinsic parameters. With these distortion coefficient, users can now create a distorted camera sensor in Gazebo.
+Using camera calibration tools such as Matlab or OpenCV, it is possible to extract distortion coefficients along with other camera intrinsic parameters. With these distortion coefficient, users can now create distorted camera sensor image data in Gazebo.
 
 ## Current Implementation
 
@@ -10,7 +10,7 @@ Gazebo currently supports simulation of camera based on the [Brown's distortion 
 
 There are a few limitations with the current implementation that needs to be taken into account:
 
-1. Only barrel distortion is supported at the moment, which typically has a negative `k1` value.
+1. In Gazebo versions 5 and 6, only barrel distortion is supported, which typically has a negative `k1` value. Pincushion model is added in Gazebo 7.
 
 1. Distortion is applied to the camera image texture. This means taking the generated image data and just warping it. This has the caveat that the final image (especially at the corners) has a narrower field of view than a real camera lens with barrel distortion. One workaround to compensate for this effect is to increase the field of view of the camera sensor in Gazebo.
 
