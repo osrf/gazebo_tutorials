@@ -78,14 +78,13 @@ The output of a logical camera may include a model a normal camera would not see
 The output of a logical camera may not include a model a normal camera would see if:
 
 * The `<visual>` geometry is larger or in different places than the `<collision>`
-* The logical camera is on the model
+* The logical camera is on the model.
+  The logical camera never includes the model it is part of in its output.
+  However, it will include any nested or parent models.
 * The only part of a model within the frustum is a nested model.
   A model's AABB does not contain its nested models.
   Every nested model has its own AABB.
   If only the nested model is visible then only it will be in the output.
-* The model has the logical camera attached to it.
-  The logical camera never includes the model it is part of in its output.
-  However, it will include any nested or parent models.
 
 #SDFormat Parameters
 * `<update_rate>`
@@ -160,5 +159,5 @@ The data is published to subscribers immediately after it is generated.
 1. Listen to the topic published by the logical camera
     
     ~~~cpp
-    gazebo::transport::SubscriberPtr sub = node->Subscribe("~/box/link/logical_camera/models", callback);
+    gazebo::transport::SubscriberPtr sub = node->Subscribe("~/post/link/logical_camera/models", callback);
     ~~~
