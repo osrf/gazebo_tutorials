@@ -26,9 +26,6 @@ While a normal camera sees `<visual>` geometry, the logical camera sees `<collis
 It works by testing if its [frustum](https://en.wikipedia.org/wiki/Viewing_frustum) intersects the [axis aligned bounding box](https://en.wikipedia.org/wiki/Bounding_volume) (**AABB**) of a model.
 The model's AABB is just big enough to contain all of its `<collision>` geometry.
 
-**Note:**
-*The AABB of a model does not contain nested models.*
-*If a nested model is inside the frustum but the parent model is not, only the nested model is reported.*
 
 ## Model Names
 Model names reported by the camera are scoped names.
@@ -82,6 +79,10 @@ The output of a logical camera may not include a model a normal camera would see
 
 * the `<visual>` geometry is larger or in different places than the `<collision>`
 * the logical camera is on the model
+* The only part of a model within the frustum is a nested model.
+  A model's AABB does not contain its nested models.
+  Every nested model has its own AABB.
+  If only the nested model is visible then only it will be in the output.
 
 The logical camera never includes the model it is part of in its output.
 However, it will include any nested or parent models.
