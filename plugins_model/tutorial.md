@@ -16,7 +16,7 @@ $ gedit model_push.cc
 ~~~
 
 Plugin Code:
-<include from="/#include/" src='https://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/model_push/model_push.cc' />
+<include from="/#include/" src='https://bitbucket.org/osrf/gazebo/raw/gazebo8/examples/plugins/model_push/model_push.cc' />
 
 ## Compiling the Plugin
 
