@@ -10,7 +10,7 @@ Gazebo supports simulation of camera based on the [Brown's distortion model](htt
 
 There are a few limitations with the current implementation that needs to be taken into account:
 
-1. In Gazebo versions 5 and 6, only barrel distortion is supported, which typically has a negative `k1` value. Pincushion model is added in Gazebo 7.
+1. In Gazebo versions 5 and 6, only barrel distortion is supported, which typically has a negative `k1` value. Pincushion model is added in Gazebo 7.7.
 
 1. Distortion is applied to the camera image texture. This means taking the generated image data and just warping it. This has the caveat that the final image (especially at the corners) has a narrower field of view than a real camera lens with barrel distortion. One workaround to compensate for this effect is to increase the field of view of the camera sensor in Gazebo.
 
