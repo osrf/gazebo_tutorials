@@ -6,7 +6,7 @@
     <link name="link">
       <inertial>
         <mass>1.0</mass>
-        <inertia> <!-- interias are tricky to compute -->
+        <inertia> <!-- inertias are tricky to compute -->
           <!-- http://answers.gazebosim.org/question/4372/the-inertia-matrix-explained/ -->
           <ixx>0.083</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
           <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
