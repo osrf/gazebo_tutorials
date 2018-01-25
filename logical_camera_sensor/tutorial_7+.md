@@ -77,8 +77,8 @@ The output of a logical camera may include a model a normal camera would not see
 ## False Negatives
 The output of a logical camera may not include a model a normal camera would see if:
 
-* the `<visual>` geometry is larger or in different places than the `<collision>`
-* the logical camera is on the model
+* The `<visual>` geometry is larger or in different places than the `<collision>`
+* The logical camera is on the model
 * The only part of a model within the frustum is a nested model.
   A model's AABB does not contain its nested models.
   Every nested model has its own AABB.
