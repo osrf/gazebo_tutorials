@@ -40,7 +40,7 @@ Now comes the actual usage of the plugin.
 <include from='/      <plugin name/' to='/</plugin>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 1. Plugin name is "random" and its corresponding shared object file (.so) is
-``libRandomVelocityPlugin.so``. The `.so` (or .dylib on Mac OS) files are dynamically linked at runtime.
+``libRandomVelocityPlugin.so``. The `.so` (or `.dylib` on Mac OS) files are dynamically linked at runtime.
 
 2. You can apply an initial velocity to the link, using the `initial_velocity` tag.
 
