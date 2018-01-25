@@ -29,32 +29,26 @@ the XCode command-line tools:
 2. Install [XQuartz](http://xquartz.macosforge.org/landing/), which provides
 X11 support and is required by Gazebo and OGRE
 
-3. Run the following commands:
+3. Run the following commands to install gazebo quickly with a precompiled binary:
 
         brew tap osrf/simulation
         brew install gazebo9
         gazebo
 
 ## Optional dependencies
-The Gazebo formula has several optional dependencies:
-the [Bullet](https://code.google.com/p/bullet/)
-and [Simbody](https://github.com/simbody/simbody) physics engines.
-To install with these physics engines:
-
-        brew install gazebo9 --with-bullet --with-simbody
-
-The [DART](http://dartsim.github.io) physics engine can be used as well,
-  though it must be installed using the following procedure
-  prior to installing Gazebo.
+The Gazebo formula has an optional dependency on the
+[DART](http://dartsim.github.io) physics engine,
+which must be installed using the following procedure
+prior to installing Gazebo9 without using the precompiled binary:
 
         brew tap dartsim/dart
-        brew install dartsim --core-only
+        brew install dartsim6
         # Gazebo will be built with DART (autodetected), bullet and simbody
-        brew install gazebo9 --with-bullet --with-simbody
+        brew install gazebo9 --build-from-source
 
 ## Versions
-The formula currently installs version 8.0 of Gazebo. Version 2.2 can be
-installed using the `gazebo2` formula, Gazebo 5 using `gazebo5` and Gazebo 7
+The formula currently installs version 9.0 of Gazebo. Version 8 can be
+installed using the `gazebo8` formula and Gazebo 7
 using `gazebo7`. To install the latest version of Gazebo's default branch:
 
         brew install gazebo9 --HEAD
