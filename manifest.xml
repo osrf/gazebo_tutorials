@@ -452,6 +452,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Gzweb SDF viewer" ref='gzweb_sdfviewer'>
+      <markdown version="1.9+">gzweb_sdfviewer/tutorial.md</markdown>
+      <description>How to embed Gzweb SDF viewer into other web pages.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
@@ -1111,6 +1117,7 @@
       <tutorials>
         <tutorial>gzweb_install</tutorial>
         <tutorial>gzweb_development</tutorial>
+        <tutorial>gzweb_sdfviewer</tutorial>
       </tutorials>
     </category>
 
