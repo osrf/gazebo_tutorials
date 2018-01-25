@@ -16,7 +16,7 @@ SDF Models can range from simple shapes to complex robots. It refers to the `<mo
 
 >> **Sensor:** A sensor collects data from the world for use in plugins. A link may contain 0 or more sensors.
 
->> **Lights:** A light element describes a light source attached to a link. A link may contain 0 or more lights.
+>> **Light:** A light element describes a light source attached to a link. A link may contain 0 or more lights.
 
 > **Joints:** A joint connects two links. A parent and child relationship is established along with other parameters such as axis of rotation, and joint limits.
 
