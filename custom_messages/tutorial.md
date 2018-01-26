@@ -2,7 +2,7 @@
 
 Gazebo topics communicate through Google protobuf messages. There is an
 extensive
-[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html)
+[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/8.2.0/classes.html)
 of message types provided by Gazebo, for use with subscribing and publishing
 Gazebo topics. However, there are many situations where you want to build
 your own.
@@ -190,7 +190,6 @@ These are the necessary Gazebo headers we'll need.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
-#include "gazebo/math/Vector3.hh"
 #include "gazebo/msgs/msgs.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/transport/transport.hh"
@@ -365,7 +364,6 @@ These are the necessary gazebo headers for our executable.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
-#include "gazebo/math/Vector3.hh"
 #include "gazebo/transport/transport.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/msgs/msgs.hh"

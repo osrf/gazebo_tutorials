@@ -295,7 +295,7 @@
     </tutorial>
 
     <tutorial title="Custom messages" ref='custom_messages'>
-      <markdown version="1.9 - 7">custom_messages/tutorial.md</markdown>
+      <markdown version="1.9-7">custom_messages/tutorial.md</markdown>
       <markdown version="8+">custom_messages/tutorial-8.0.md</markdown>
       <description>How to create custom messages</description>
       <skill>advanced</skill>

@@ -39,7 +39,7 @@ to make complicated messages. Gazebo contains a library of messages already.
 The installed messages can be found in
 /usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
 installs.  This tutorial makes use of the [vector2d.proto
-message](https://bitbucket.org/osrf/gazebo/src/8b0c2de0886a61a862036f7e7fe1d4b7b8b4651c/gazebo/msgs/vector2d.proto?at=gazebo_1.9).
+message](https://bitbucket.org/osrf/gazebo/src/gazebo8/gazebo/msgs/vector2d.proto?at=gazebo8).
 
 You can see how a custom message is declared by looking into
 `~/collision_map_creator_plugin/msgs/collision_map_request.proto`.
