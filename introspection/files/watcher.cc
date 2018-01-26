@@ -32,7 +32,8 @@ int main(int argc, char **argv)
 
   // Pick up the first manager.
   std::string managerId = *managerIds.begin();
-  // sim_time is a preregistered item with the following URI format:
+
+  // sim_time is a pre-registered item with the following URI format:
   // data://world/<world_name>?p=<variable_type>/<variable_name>
   std::string simTime = "data://world/default?p=time/sim_time";
   std::string counter = "data://my_plugin/counter";
