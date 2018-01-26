@@ -115,11 +115,6 @@ Many of the ignition packages are using the ignition cmake library.
         hg clone https://bitbucket.org/ignitionrobotics/ign-cmake /tmp/ign-cmake
         cd /tmp/ign-cmake
 
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-cmake1`
-     branch if you desire more stability (with the `hg up ign-cmake1` command).
-
 1. Create a build directory and go there. Configure the build:
 
         mkdir build
