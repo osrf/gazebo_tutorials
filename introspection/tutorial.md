@@ -13,7 +13,7 @@ introspectable. Note that registering a variable will not trigger the
 publication of any update or cause relevant overhead in the system.
 
 The introspection manager is the entity that offers the ability to register
-items. GzServer has an introspection manager instance running and we already
+variables, referred to as "items". GzServer has an introspection manager instance running and we already
 preregistered some items that allow us to introspect simulation time or the
 position, velocity, and acceleration of models and links, among other items.
 
@@ -26,12 +26,12 @@ You can learn more about the introspection manager and its API by looking at the
 
 Once all potential introspectable items are registered, a client needs to
 notify the introspection service that it's interested in one or multiple items.
-Hence, the client needs to create a filter, where all the items are specified
-and the Id of an introspection manager is also passed.
+Hence, the client needs to create a filter with the introspection manager Id
+and the list of interested items.
 
 [[file:files/introspection_subscription.png|640px]]
 
-This operation creates a dedicated channel of communication
+This operation creates a dedicated channel for communication
 between the introspection manager and the client. The channel contains
 messages with the value of the variables specified in the filter.
 If one or more variables were not registered, they will not be received.
@@ -136,14 +136,14 @@ On `Load()`, we connect the world update event with our `OnUpdate()` function.
 The rest of the code in `Load()` is registering the counter in the
 introspection manager. You can see how we get an instance of the manager and
 call `Register()`. We have to specify the type of our item (`int` in this case), a
-string representation of the item ("data://my_plugin/counter") and a callback.
+string representation of the item (`data://my_plugin/counter`) and a callback.
 In this example, the callback is a lambda function.
 
 The introspection manager is going to associate this callback with
-"data://my_plugin/counter". Essentially, the string is the name of the item in
-the manager. The callback is the way that the manager has to retrieve the next
+`data://my_plugin/counter`. Essentially, the string is the name of the item in
+the manager. The callback lets the manager retrieve the next
 value from this item. So, if there is any client interested in this value, the
-manager will call this callback every time it needs an update. In the callback
+manager will call this callback every time the item is updated. In the callback
 we're directly returning the value of our member variable counter but you have
 freedom to fill this function with any code that you need.
 
@@ -163,20 +163,20 @@ In theory, we could have multiple introspection managers running, although in
 the case of Gazebo we will only have one. We're working under this assumption,
 so we'll save the Id of the first introspection manager detected.
 
-<include from='/  std::string simTime/' to='/  \/\/ The variables to watch are registerd with the manager/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  \/\/ sim_time is a preregistered/' to='/  \/\/ The variables to watch are registered with the manager/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
 This code block performs a sanity check to make sure that both items are
 registered in the introspection manager.
 
 <include from='/  \/\/ Create a filter for watching the items/' to='/waitForShutdown\(\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
 
-This is the part where we notify our manager that we're interested on a set of
-topics (`simTime` and `counter`). `filterId` and `topic` are output variables. After
+This is the part where we notify our manager that we're interested in a set of
+items (`simTime` and `counter`). `filterId` and `topic` are output variables. After
 this function, the manager will create a channel of communication under the
 topic `topic` with our custom updates. The `filterId` is a unique identifier for
 our filter, in case we want to update it or remove it in the future.
 
-Next, we instantiate an `ignition::transport::Node` and we use it to subscribe to
-our recently created topic. Note that we pass a callback as an argument. This is
+Finally, we instantiate an `ignition::transport::Node` and we use it to subscribe to
+our recently created topic. Note that we pass a `cb` callback as an argument. This is
 the callback that will be periodically executed with the requested values.
 
