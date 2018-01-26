@@ -15,7 +15,8 @@ void cb(const gazebo::msgs::Param_V &_msg)
 //////////////////////////////////////////////////
 int main(int argc, char **argv)
 {
-  // Use the introspection service for finding the "sim_time" item.
+  // Use the introspection service for finding the "sim_time" and "counter"
+  // items.
   gazebo::util::IntrospectionClient client;
 
   // Wait for the managers to come online.
@@ -31,6 +32,8 @@ int main(int argc, char **argv)
 
   // Pick up the first manager.
   std::string managerId = *managerIds.begin();
+  // sim_time is a preregistered item with the following URI format:
+  // data://world/<world_name>?p=<variable_type>/<variable_name>
   std::string simTime = "data://world/default?p=time/sim_time";
   std::string counter = "data://my_plugin/counter";
 
