@@ -289,10 +289,10 @@ they aren't shared_ptrs inside, the message we were sent is.
 
 This is an example of how to call the used physics engine to do a single ray
 trace. This code was pulled from
-`gazebo::physics::World::GetEntityBelowPoint(Vector3)`
+`gazebo::physics::World::EntityBelowPoint(Vector3)`
 
 ~~~
-        gazebo::physics::PhysicsEnginePtr engine = world->GetPhysicsEngine();
+        gazebo::physics::PhysicsEnginePtr engine = world->Physics();
         engine->InitForThread();
         gazebo::physics::RayShapePtr ray = boost::dynamic_pointer_cast<gazebo::physics::RayShape>(
               engine->CreateShape("ray", gazebo::physics::CollisionPtr()));
@@ -312,20 +312,6 @@ there is not.
             }
 ...
         }
-~~~
-
-This creates an Image msg and fills the necessary fields. Notice that the
-setter methods for each field is formatted like `set_field(something)`
-
-~~~
-        msgs::Image image;
-        image.set_width(count_horizontal);
-        image.set_height(count_vertical);
-        image.set_pixel_format(0);
-        image.set_step(count_horizontal);
-        image.set_data(data);
-
-        imagePub->Publish(image);
 ~~~
 
 Register the plugin with the simulator.
