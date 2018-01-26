@@ -26,8 +26,8 @@ You can learn more about the introspection manager and its API by looking at the
 
 Once all potential introspectable items are registered, a client needs to
 notify the introspection service that it's interested in one or multiple items.
-Hence, the client needs to create a filter which is composed of the
-introspection manager Id and the list of interested items.
+Hence, the client needs to create a filter with the introspection manager Id
+and the list of interested items.
 
 [[file:files/introspection_subscription.png|640px]]
 
