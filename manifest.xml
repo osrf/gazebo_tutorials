@@ -444,13 +444,15 @@
     </tutorial>
 
     <tutorial title="Gzweb installation" ref='gzweb_install'>
-      <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
+      <markdown version="1.9+">gzweb_install/tutorial_1.9.md</markdown>
+      <markdown version="7+">gzweb_install/tutorial.md</markdown>
       <description>Explains how to install and run the WebGL client for Gazebo.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Gzweb development" ref='gzweb_development'>
-      <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
+      <markdown version="1.9+">gzweb_development/tutorial_1.9.md</markdown>
+      <markdown version="7+">gzweb_development/tutorial.md</markdown>
       <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
       <skill>advanced</skill>
     </tutorial>
