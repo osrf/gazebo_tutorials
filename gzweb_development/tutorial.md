@@ -1,6 +1,6 @@
 # Overview
 
-The source code for Gzweb is located at the
+The source code for GzWeb is located at the
 [osrf/gzweb](https://bitbucket.org/osrf/gzweb) Bitbucket repository.
 
 The source code is composed of two main parts: Javascript code inside `gzweb/gz3d`,
@@ -9,7 +9,7 @@ responsible for communicating with `gzserver`.
 
 # Javascript development
 
-Gzweb makes use of the
+GzWeb makes use of the
 [JQuery mobile](http://jquerymobile.com/) user interface system for GUI and the
 [three.js](http://threejs.org/) library for 3D rendering.
 
@@ -40,8 +40,8 @@ Gzweb makes use of the
 
 1. Verify your changes:
 
-    * Start gzweb with `npm start`
-    * Open browser at `localhost:8080`, or just refresh page.
+    1. Start gzweb with `npm start`
+    1. Open browser at `localhost:8080`, or just refresh page.
 
     If you don't see anything changed after modifying the Javascript code, you
     might need to clear your browser cache to see the changes.
@@ -56,7 +56,7 @@ Gzweb makes use of the
 
 # C++ development
 
-Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topics.
+GzWeb communicates with `gzserver` by publishing and subscribing to Gazebo topics.
 
 ## Workflow
 
@@ -68,21 +68,21 @@ Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topic
 
 1. Verify your changes:
 
-    * Start gzweb with `npm start`
-    * Open browser at `localhost:8080`, or just refresh page.
+    1. Start gzweb with `npm start`
+    1. Open browser at `localhost:8080`, or just refresh page.
 
 # Making a contribution
 
 ## Bug reports and feature requests
 
-On Gzweb's [issue tracker](https://bitbucket.org/osrf/gzweb/issues),
+On GzWeb's [issue tracker](https://bitbucket.org/osrf/gzweb/issues),
 you're able to report bugs and ask for new features. Simply create an issue and
 categorize it accordingly.
 
 ## Pull requests
 
 If you've fixed a bug or added a feature and would like your changes to be
-integrated into Gzweb, you can make a
+integrated into GzWeb, you can make a
 [pull request](https://bitbucket.org/osrf/gzweb/pull-requests)  to the
 repository, and the changes will be reviewed and merged.
 

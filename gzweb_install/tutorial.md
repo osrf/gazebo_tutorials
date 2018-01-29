@@ -1,20 +1,20 @@
 # Overview
 
-Gzweb is usually installed on an Ubuntu server. Once the server is set up and running,
+GzWeb is usually installed on an Ubuntu server. Once the server is set up and running,
 clients can interact with the simulation simply by accessing the server's URL
 on a web browser.
 
 # Dependencies
 
 You'll need a full [Gazebo install](http://gazebosim.org/install) on your server,
-including development packages.
+including development packages (`-dev`).
 
 GzWeb currently works with NodeJS versions >= 4, so you should be able to use the
 version shipped with Ubuntu Xenial or higher.
 
-> For Trusty, you can follow instructions from
-  [here](https://github.com/nodesource/distributions) for example to upgrade the
-  Node version.
+> For Trusty, you can follow
+  [these](https://github.com/nodesource/distributions) instructions to upgrade
+  the Node version.
 
 To install all dependencies, including Gazebo's official Ubuntu packages and
 Node on Ubuntu Xenial or higher:
@@ -25,11 +25,11 @@ sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy li
 
 # Build GzWeb
 
-1. Clone the repository, for example, into a directory in your home folder:
+1. Clone the repository into a directory in your home folder for example:
 
         cd ~; hg clone https://bitbucket.org/osrf/gzweb
 
-1. Enter the Gzweb repository and switch to the 1.4.0 release branch:
+1. Enter the GzWeb repository and switch to the 1.4.0 release branch:
 
         cd ~/gzweb
         hg up gzweb_1.4.0
@@ -38,8 +38,8 @@ sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy li
    you want to simulate in the right directory ('http/client/assets') and prepare
    them for the web.
 
-   Before running the deploy script, it's important to source the Gazebo
-   `setup.sh` file:
+    Before running the deploy script, it's important to source the Gazebo
+    `setup.sh` file:
 
     > If you installed gazebo via deb packages:
 
@@ -49,7 +49,8 @@ sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy li
 
         source <YOUR_GAZEBO_PATH>/share/gazebo/setup.sh
 
-1. Run the deploy script, this downloads models from the web and may take a couple of minutes.
+1. Run the deploy script, this downloads models from the web and may take a
+   couple of minutes, see more options below.
 
         ./deploy.sh -m
 
@@ -95,28 +96,50 @@ sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy li
 
           ./coarse_meshes.sh 20 http/client/assets/bowl/
 
-# Running gzserver, GzWeb server, and WebGL client
+# Running
 
-1. On the server machine, start `gazebo` or `gzserver` first:
+Running GzWeb involves the following pieces:
 
-        gzserver
+* `gzserver` running the headless Gazebo simulation (runs by default on
+  http://127.0.0.1:11345)
+
+* GzWeb's NodeJS server which communicates with `gzserver` using
+  [Gazebo Transport](http://gazebosim.org/tutorials?tut=topics_subscribed&cat=transport).
+  It works as a bridge between the Javascript and the C++ code.
+
+* An HTTP server which serves static content such as models and website assets
+  (icons, HTML, CSS, client-side Javascript...)
+
+* A Websocket server which forwards simulation updates coming from `gzserver`
+  to the browser
+
+* A browser client which connects to the HTTP and websocket servers
+
+Start them as follows:
+
+1. On the server machine, start `gazebo` or `gzserver` first, it's recommended
+   to run in verbose mode so you see debug messages:
+
+        gzserver --verbose
+
+    > **Tip**: see the port where the Gazebo master is communicating, such as
+      `[Msg] Connected to gazebo master @ http://127.0.0.1:11345`
 
 1. On another terminal, from your GzWeb directory, run the following command to
-   start an HTTP server to serve static content (website assets and models) and
-   a websocket server that sends periodic updates:
+   start both the HTTP and Websocket servers:
 
         npm start
 
+    > **Tip**: You can use the `-p` option to choose an arbitrary port, for example:
+      `npm start -p 1234`. By default, it serves on port 8080.
+
 1. Open a browser that has WebGL and websocket support (i.e. most modern browsers)
-   and point it to the IP address and port where the HTTP server is started, by
-   default it's on port 8080, e.g.
+   and point it to the IP address and port where the HTTP server is started,
+   for example:
 
         http://localhost:8080
 
-    > You can use the `-p` option to choose an arbitrary port, for example:
-      `npm start -p 1234`
-
-1. To stop the GzWeb server, just press `Ctrl+C` in the terminal.
+1. To stop `gzserver` or the GzWeb servers, just press `Ctrl+C` in their terminals.
 
 # Troubleshooting
 
@@ -144,10 +167,6 @@ sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy li
         sudo ln -s /usr/bin/nodejs /usr/bin/node
 
     You may also find that your repository is too old and you should just install recent versions of node and npm directly.
-
- * **Q: When running `./deploy.sh`, it is missing a file in `gz3d/build`:**
-
-    A: You will need to install Grunt and run it appropriately, as described in the [development](http://gazebosim.org/tutorials?tut=gzweb_development) section.
 
  * **Q: When running `./deploy.sh`, I see errors along the lines of:**
 
