@@ -40,6 +40,7 @@ GzWeb makes use of the
 
 1. Verify your changes:
 
+    1. Make sure `gzserver` is running
     1. Start gzweb with `npm start`
     1. Open browser at `localhost:8080`, or just refresh page.
 
@@ -68,6 +69,7 @@ GzWeb communicates with `gzserver` by publishing and subscribing to Gazebo topic
 
 1. Verify your changes:
 
+    1. Make sure `gzserver` is running
     1. Start gzweb with `npm start`
     1. Open browser at `localhost:8080`, or just refresh page.
 
