@@ -53,7 +53,7 @@ that best fits your case.
 1. Run the deploy script, this downloads models from the web and may take a
    couple of minutes, see more options below.
 
-        ./deploy.sh -m
+        npm run deploy --- -m
 
     > Note: the `-m` flag tells the deploy script to grab all the models from the
      [model database](https://bitbucket.org/osrf/gazebo_models/) and any other
@@ -65,11 +65,11 @@ that best fits your case.
 * To skip downloading models from the model database and grab only local models
   in your Gazebo model path, do:
 
-        ./deploy.sh -m local
+        npm run deploy --- -m local
 
 * To generate thumbnails for all the models , run the script with the `-t` flag, i.e.:
 
-        ./deploy.sh -t
+        npm run deploy --- -t
 
     > Note: This spins up a `gzserver` with a camera for capturing screenshots
     of models. So make sure there is rendering support and no background gzerver
@@ -78,14 +78,14 @@ that best fits your case.
 * If you'll use GzWeb on mobile devices, you can create coarse versions of all
   models, which are lighter to load (50% of original quality). If generated,
   these meshes will automatically be used on mobile devices. If you've already
-  ran `./deploy.sh -m`, run just:
+  ran `npm run deploy --- -m`, run just:
 
-          ./deploy.sh -c
+          npm run deploy --- -c
 
       Or you can run both flags at the same time to generate coarse versions as
       you create the database:
 
-          ./deploy.sh -m -c
+          npm run deploy --- -m -c
 
       You also have the option to pick specific models and how much percent to
       coarsen, running:
@@ -169,7 +169,7 @@ Start them as follows:
 
     You may also find that your repository is too old and you should just install recent versions of node and npm directly.
 
- * **Q: When running `./deploy.sh`, I see errors along the lines of:**
+ * **Q: When running `npm run deploy ---`, I see errors along the lines of:**
 
         gyp ERR! configure error
 
@@ -177,7 +177,7 @@ Start them as follows:
 
         sudo apt-get remove gyp
 
- * **Q: When running `./deploy.sh`, I have problems finding GTS, like this:**
+ * **Q: When running `npm run deploy ---`, I have problems finding GTS, like this:**
 
         ~/gzweb/tools/gzcoarse.cc:18:17: fatal error: gts.h : no such file or directory, #include <gts.h>
 
