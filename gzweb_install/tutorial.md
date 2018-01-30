@@ -9,16 +9,20 @@ on a web browser.
 The main dependencies for GzWeb are the Gazebo development libraries, version 7 or
 greater, and NodeJS version 4 or higher.
 
-On a clean Ubuntu system, you can run the following to install all dependencies,
-including Gazebo's official Ubuntu packages and Node:
+Take a look at
+[these tutorials](http://gazebosim.org/install) to choose the Gazebo
+installation that best fits your case. The simplest approach would be
+to install Gazebo 7 as follows:
 
 ~~~
-sudo apt install gazebo libgazebo-dev libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+sudo apt install gazebo7 libgazebo7-dev
 ~~~
 
-If you're interested in a specific Gazebo version, take a look at
-[these tutorials](http://gazebosim.org/install) and choose the installation type
-that best fits your case.
+Run the following to install the rest of dependencies, including NodeJS:
+
+~~~
+sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+~~~
 
 > Ubuntu Trusty comes with NodeJS 0.10. You can follow
   [these](https://github.com/nodesource/distributions) instructions to upgrade
