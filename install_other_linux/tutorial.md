@@ -11,11 +11,11 @@ Debian, Fedora, Arch and Gentoo.
 as an official package in Debian Sid (the Gazebo team is the official
 maintainer in Debian) which usually hosts the latest gazebo release.
 
-1. Install Gazebo5
+1. Install Gazebo8
 
-        sudo apt-get install gazebo5
+        sudo apt-get install gazebo8
         # For developers that works on top of Gazebo, one extra package
-        sudo apt-get install libgazebo5-dev
+        sudo apt-get install libgazebo8-dev
 
 ## Fedora
 
@@ -24,9 +24,8 @@ as an official package (the maintainer is Rich Mattes). Depending on the Fedora
 version, the version of Gazebo available is different:
 
  * Rawhide is usually hosting one of the latest releases
- * Fedora 23: gazebo-5.0.1
- * Fedora 22: gazebo-4.0.2
- * Fedora 21: gazebo-3.1.0
+ * Fedora 27: gazebo-8.1.1
+ * Fedora 26: gazebo-8.0.0
 
 1. Install Gazebo
         sudo yum install gazebo
@@ -36,7 +35,7 @@ version, the version of Gazebo available is different:
 ## Arch
 
 [Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
-Arch User Repository (Benjamin Chrétien is the maintainer). This means that it
+Arch User Repository (racko is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
 or packer:

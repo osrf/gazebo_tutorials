@@ -4,7 +4,7 @@
       <uri>model://sun</uri>
     </include>
 
-    <gravity>1.0 0 -9.81</gravity>
+    <gravity>3.0 0 -9.81</gravity>
 
     <physics name="ode_70iters" type="ode">
       <real_time_update_rate>1500</real_time_update_rate>
@@ -24,7 +24,22 @@
         </solver>
       </ode>
     </physics>
+
+    <physics name="ode_500iters" type="ode">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>500</iters>
+        </solver>
+      </ode>
+    </physics>
     <!-- end physics presets, models and other world properties go here -->
+
+    <gui>
+      <camera name="user_camera">
+        <pose>1.25 -1.25 1.25 0 0.28 2.356194</pose>
+      </camera>
+    </gui>
 
     <model name="inertia_ratio">
         <pose>0 0 0.9  0.7853981633974483 0 0</pose>

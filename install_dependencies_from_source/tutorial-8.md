@@ -8,12 +8,9 @@ these libraries.
 These libraries are:
 
 * [SDFormat](http://sdformat.org/)
-* [ignition-cmake](http://ignitionrobotics.org/libraries/cmake)
-* [ignition-common](http://ignitionrobotics.org/libraries/common)
-* [ignition-fuel-tools](http://ignitionrobotics.org/libraries/fuel-tools)
 * [ignition-math](http://ignitionrobotics.org/libraries/math)
-* [ignition-msgs](http://ignitionrobotics.org/libraries/messages)
 * [ignition-transport](http://ignitionrobotics.org/libraries/transport)
+* [ignition-msgs](http://ignitionrobotics.org/libraries/messages)
 
 [[file:files/gazebo_dependency_tree.svg|400px]]
 
@@ -60,15 +57,7 @@ the SDF protocol supported) since early versions:
 * Gazebo 6 - SDFormat > 3.1.1 and < 4.0 (SDF protocol <=  1.5)
 * Gazebo 7 - SDFormat > 4.1.0 and < 5.0 (SDF protocol <=  1.6)
 * Gazebo 8 - SDFormat 5.0 (SDF protocol <=  1.6)
-* Gazebo 9 - SDFormat 6.0 (SDF protocol <= 1.6)
-
-### Ignition Common
-
-* Gazebo 9 - Ignition common 1
-
-### Ignition Fuel Tools
-
-* Gazebo 9 - Ignition fuel tools 1
+* Gazebo 9 - SDFormat TBD
 
 ### Ignition Math
 
@@ -77,7 +66,7 @@ Gazebo has a dependency on Ignition Math from version 6.
 * Gazebo 6 - Ignition math 2.0
 * Gazebo 7 - Ignition math 2.4
 * Gazebo 8 - Ignition math 3 - The built-in gazebo::math library is completely deprecated.
-* Gazebo 9 - Ignition math 4 - The built-in gazebo::math library is completely removed.
+* Gazebo 9 - Ignition math TBD - The built-in gazebo::math library is completely removed.
 
 ### Ignition Transport
 
@@ -85,14 +74,14 @@ Gazebo has a dependency on Ignition Transport from version 7.
 
 * Gazebo 7 - Ignition transport 1 or 2
 * Gazebo 8 - Ignition transport 3
-* Gazebo 9 - Ignition transport 4
+* Gazebo 9 - Ignition transport TBD
 
 ### Ignition Messages
 
 Gazebo has a dependency on Ignition Messages from version 8.
 
 * Gazebo 8 - Ignition msgs 0.4
-* Gazebo 9 - Ignition msgs 1.0
+* Gazebo 9 - Ignition msgs TBD
 
 ## Remove packages to get a clean system
 
@@ -100,37 +89,7 @@ Be sure of removing any distribution package of the dependencies listed in this
 document to get started from a clean system. For example, in .deb distributions
 like Debian or Ubuntu this can easily done by running:
 
-        sudo apt-get remove '.*sdformat.*' '.*ignition-.*'
-
-## Build and install Ignition CMake from source
-
-Many of the ignition packages are using the ignition cmake library.
-
-1. Install required dependencies:
-
-        sudo apt-get install build-essential cmake pkg-config
-
-1. Clone the repository into a directory and go into it:
-
-        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake /tmp/ign-cmake
-        cd /tmp/ign-cmake
-
-1. Create a build directory and go there. Configure the build:
-
-        mkdir build
-        cd build
-        cmake ../
-
-    > Note: You can use a custom install path to make it easier to switch
-    > between source and debian installs:
-
-    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-
-1. Build and install:
-
-        make -j4
-        sudo make install
-
+        sudo apt-get remove '.*sdformat.*' '.*ignition-math.*' '.*ignition-msgs.*' '.*ignition-transport.*'
 
 ## Build and install Ignition Math from source
 
@@ -140,8 +99,7 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
-                             python
+                             mercurial
 
 1. Clone the repository into a directory and go into it:
 
@@ -150,67 +108,8 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
      **Note:** the `default` branch is the development branch where
      you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-math4`
-     branch if you desire more stability (with the `hg up ign-math4` command).
-
-1. Create a build directory and go there:
-
-        mkdir build
-        cd build
-
-1. Configure build (choose either method `a` or `b` below):
-
-    a. Release mode (strictly speaking, `RelWithDebInfo`): This will generate
-       optimized code, but will not have debug symbols. Use this mode if you
-       don't need to use GDB.
-
-           cmake ../
-
-
-    > Note: You can use a custom install path to make it easier to switch
-    > between source and debian installs:
-
-    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-
-    b. Debug mode: This will generate code with debug symbols. It will run
-       slower, but you'll be able to use GDB.
-
-           cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-1. Build and install:
-
-        make -j4
-        sudo make install
-
-## Build and install Ignition Common from source
-
-Gazebo and Ignition Fuel Tools depend on the Ignition Common library.
-
-1. Install required dependencies (note that ignition-cmake and ignition-math are out):
-
-        sudo apt-get install build-essential \
-                             cmake \
-			     libfreeimage-dev \
-			     libtinyxml2-dev \
-			     uuid-dev \
-			     libgts-dev \
-			     libavdevice-dev \
-			     libavformat-dev \
-			     libavcodec-dev \
-			     libswscale-dev \
-			     libavutil-dev \
-			     libprotoc-dev \
-	 	             libprotobuf-dev
-
-1. Clone the repository into a directory and go into it:
-
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-math
-        cd /tmp/ign-common
-
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-common1`
-     branch if you desire more stability (with the `hg up ign-common1` command).
+     this branch by default but we recommend you switch to the `ign-math3`
+     branch if you desire more stability (with the `hg up ign-math3` command).
 
 1. Create a build directory and go there:
 
@@ -252,8 +151,12 @@ Gazebo depends on the SDFormat package.
                              mercurial \
                              python \
                              libboost-system-dev \
+                             libboost-filesystem-dev \
+                             libboost-program-options-dev \
+                             libboost-regex-dev \
+                             libboost-iostreams-dev \
                              libtinyxml-dev \
-                             libxml2-utils
+                             libxml2-utils \
                              ruby-dev \
                              ruby
 
@@ -264,7 +167,7 @@ Gazebo depends on the SDFormat package.
 
      **Note:** the `default` branch is the development branch where you'll find
      the bleeding edge code, your cloned repository should be on this branch by
-     default but we recommend you switch to branch `sdf6` if you desire more
+     default but we recommend you switch to branch `sdf4` if you desire more
      stability
 
 1. Create a build directory and go there:
@@ -344,60 +247,6 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
         make -j4
         sudo make install
-
-
-## Build and install Ignition Fuel Tools
-
-Gazebo depends optionally in the Ignition Fuel Tools
-
-1. Install required dependencies (note that ignition-cmake and ignition-common are out):
-
-        sudo apt-get install build-essential \
-                             cmake \
-			     libzip-dev \
-			     libjsoncpp-dev \
-			     libcurl4-openssl-dev \
-			     libyaml-dev
-
-1. Clone the repository into a directory and go into it:
-
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-fuel-tools
-        cd /tmp/ign-fuel-tools
-
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-fuel-tools1`
-     branch if you desire more stability (with the `hg up ign-fuel-tools1` command).
-
-1. Create a build directory and go there:
-
-        mkdir build
-        cd build
-
-1. Configure build (choose either method `a` or `b` below):
-
-    a. Release mode (strictly speaking, `RelWithDebInfo`): This will generate
-       optimized code, but will not have debug symbols. Use this mode if you
-       don't need to use GDB.
-
-           cmake ../
-
-
-    > Note: You can use a custom install path to make it easier to switch
-    > between source and debian installs:
-
-    >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-
-    b. Debug mode: This will generate code with debug symbols. It will run
-       slower, but you'll be able to use GDB.
-
-           cmake -DCMAKE_BUILD_TYPE=Debug ../
-
-1. Build and install:
-
-        make -j4
-        sudo make install
-
 
 ## Build and install Ignition Transport from source
 
