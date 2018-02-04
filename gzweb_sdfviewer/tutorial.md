@@ -5,7 +5,7 @@ The SDF viewer is a part of Gzweb that visualize robots without the need to a ba
 In this example, we will describe how to embed gzweb's SDF viewer into other web pages.
 
 ## Code
-Create file.
+Create a new `html` file.
 
 `gedit sdf_viewer_example.html`
 
@@ -34,14 +34,6 @@ Read the nessesary `urls` to load the model.
 </div>
 ```
 
-```html
-<div>
-  <h4>SDF model URL</h4>
-  <input type="text" id="sdf-input"></input>
-  <button onclick="loadModel()" id="load-button">Load model!</button>
-</div>
-```
-
 We create a `dom` element which we will append the `renderer` to.
 
 ```html
@@ -59,13 +51,13 @@ We create a `dom` element which we will append the `renderer` to.
 
  - Call `animate` to start drawing the `scene`.
 
-<include from="/var scene;/" to="/scene.render();\*\}\/" src='https://bitbucket.org/osrf/gzweb/raw/gzweb_1.4.0/examples/view_sdf_from_url.html' />
+<include from="/var scene;/" to="/scene.render\(\);\*\}\/" src='https://bitbucket.org/osrf/gzweb/raw/gzweb_1.4.0/examples/view_sdf_from_url.html' />
 
 The `sdfparser.loadSDF()` takes the model `sdf` file as an argument and returns the model as an `object`.
 
 We then simply call `scene.add(<model object>)` to add the `model` to the `scene`, the object is a (`THREE.Object3D`)[https://threejs.org/docs/#api/core/Object3D].
 
-<include from="/// Callback/" to="/sdfInput.value;\*\}\/" src='https://bitbucket.org/osrf/gzweb/raw/gzweb_1.4.0/examples/view_sdf_from_url.html' />
+<include from="/\/\/ Callback/" to="/sdfInput.value;\*\}\/" src='https://bitbucket.org/osrf/gzweb/raw/gzweb_1.4.0/examples/view_sdf_from_url.html' />
 
 In `addUrl()` function we call `sdfparser.addUrl(<resources urls>)` (e.g. textures, meshes), this shouldn't be called after `sdfparser.loadSDF(<model sdf file url>)`.
 
