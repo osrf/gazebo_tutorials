@@ -102,6 +102,7 @@
       <child>left_wheel</child>
       <parent>chassis</parent>
       <axis>
+        <use_parent_model_frame>true</use_parent_model_frame>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
@@ -111,6 +112,7 @@
       <child>right_wheel</child>
       <parent>chassis</parent>
       <axis>
+        <use_parent_model_frame>true</use_parent_model_frame>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>

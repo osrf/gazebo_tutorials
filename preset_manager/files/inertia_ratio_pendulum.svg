@@ -202,7 +202,7 @@
          id="tspan3034"
          x="463.39285"
          y="190.30862"
-         style="font-size:24px">x</tspan></text>
+         style="font-size:24px">y</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -214,6 +214,6 @@
          id="tspan3034-8"
          x="412.58817"
          y="136.42468"
-         style="font-size:24px">y</tspan></text>
+         style="font-size:24px">z</tspan></text>
   </g>
 </svg>

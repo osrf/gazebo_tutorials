@@ -87,6 +87,7 @@
       <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
+      <markdown version="9.0">install_ubuntu/tutorial_9-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -113,6 +114,7 @@
       <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_on_mac/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_on_mac/tutorial_8-0.md</markdown>
+      <markdown version="8.0">install_on_mac/tutorial_9-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -161,7 +163,8 @@
     </tutorial>
 
     <tutorial title="Dependencies from source" ref='install_dependencies_from_source'>
-      <markdown version="5+">install_dependencies_from_source/tutorial.md</markdown>
+      <markdown version="5 - 8">install_dependencies_from_source/tutorial-8.md</markdown>
+      <markdown version="9+">install_dependencies_from_source/tutorial.md</markdown>
       <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -192,14 +195,16 @@
     </tutorial>
 
     <tutorial title="Model plugins" ref='plugins_model'>
-      <markdown version="1.9+">plugins_model/tutorial.md</markdown>
+      <markdown version="1.9 - 7">plugins_model/tutorial_1-9.md</markdown>
+      <markdown version="8+">plugins_model/tutorial.md</markdown>
       <description>Manipulate a model using a model plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
       <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
-      <markdown version="7+">plugins_world/tutorial.md</markdown>
+      <markdown version="7 - 8">plugins_world/tutorial-7-8.md</markdown>
+      <markdown version="9+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -257,6 +262,7 @@
 
      <tutorial title="Make a model" ref='build_model'>
       <markdown version="1.9+">build_model/tutorial.md</markdown>
+      <markdown version="7+">build_model/tutorial-7.md</markdown>
       <description>Describes models, and how to create custom models.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -479,6 +485,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Logical Camera Sensor" ref='logical_camera_sensor'>
+      <markdown version="7.0+">logical_camera_sensor/tutorial_7+.md</markdown>
+      <description>How to create and get data from logical camera sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9-4.0">contact_sensor/tutorial.md</markdown>
       <markdown version="4.0-6.0">contact_sensor/tutorial_4-0.md</markdown>
@@ -565,7 +577,8 @@
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
       <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
-      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="7.0">preset_manager/tutorial_7.md</markdown>
+      <markdown version="8.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -592,7 +605,9 @@
     <tutorial title="System Plugin" ref='system_plugin'>
       <markdown version="3.0-4.0">system_plugin/tutorial_3-0.md</markdown>
       <markdown version="5.0-6.0">system_plugin/tutorial_5-0.md</markdown>
-      <markdown version="7.0+">system_plugin/tutorial.md</markdown>
+      <markdown version="7.0">system_plugin/tutorial_7-0.md</markdown>
+      <markdown version="8.0">system_plugin/tutorial_8-0.md</markdown>
+      <markdown version="9.0">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -846,7 +861,8 @@
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
       <markdown version="5.0-6.0">gui_overlay/tutorial.md</markdown>
-      <markdown version="7.0+">gui_overlay/tutorial7.md</markdown>
+      <markdown version="7.0-8.0">gui_overlay/tutorial7.md</markdown>
+      <markdown version="9.0+">gui_overlay/tutorial9.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -1086,6 +1102,7 @@
         <tutorial>camera_distortion</tutorial>
         <tutorial>camera_save</tutorial>
         <tutorial>force_torque_sensor</tutorial>
+        <tutorial>logical_camera_sensor</tutorial>
       </tutorials>
     </category>
 

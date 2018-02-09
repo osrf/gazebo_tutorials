@@ -57,7 +57,7 @@ gazebo executable with a plugin.
 Run using gazebo itself with:
 
 ~~~
-cd ~/gazebo_animatebox_tutorial
+cd ~/gazebo_animatedbox_tutorial
 gazebo animated_box.world
 ~~~
 
@@ -78,7 +78,7 @@ executable that connects to Gazebo. The independent listener receives
 the location and timestamp of the box and prints it out.
 
 ~~~
-cd ~/gazebo_animatebox_tutorial
+cd ~/gazebo_animatedbox_tutorial
 gazebo animated_box.world & ./build/independent_listener
 ~~~
 
@@ -95,7 +95,7 @@ The integrated_main example demonstrates the following:
 Run integrated_main:
 
 ~~~
-cd ~/gazebo_animatebox_tutorial
+cd ~/gazebo_animatedbox_tutorial
 ./build/integrated_main animated_box.world
 ~~~
 
