@@ -1,6 +1,6 @@
 # Introduction
 
-It is often useful to have a ground plane with satellite imagery in applications that take place in large outdoor environments, such as aerial robotics. Satellite imagery is also useful for environment visualization and computer vision.
+It is often useful in simulation to have a ground plane with satellite imagery for applications that take place in large outdoor environments, such as aerial robotics. Satellite imagery is also useful for environment visualization and computer vision tasks.
 
 This tutorial shows how to use the Static Map world plugin, supplied by Gazebo, to create and insert a satellite map model into a world. The images are downloaded at run time using the [Google's Static Map API](https://developers.google.com/maps/documentation/static-maps/intro) so internet connectivity is required to use this plugin.
 
@@ -12,7 +12,7 @@ To try out this plugin, download and save [this world file](https://bitbucket.or
 
 The example world contains only a sun and the Static Map plugin. A `ground_plane` model is not needed as the plugin will be generating and inserting the map model into the world at run time. Before launching this world, you will need an API key. Since we are using the Google Static Map API service, you can get yourself a [Google API key](https://developers.google.com/maps/documentation/static-maps/get-api-key).
 
-Once you have the API key, enter it into the plugin parameter in the world file, i.e. replace the following line with key generate given to you by Google:
+Once you have the API key, enter it into the plugin parameter in the world file, i.e. replace the following line with the key given to you by Google:
 
     <api_key>enter_your_google_api_key_here</api_key>
 
