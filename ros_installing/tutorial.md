@@ -6,9 +6,10 @@ See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_ov
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Kinetic](http://www.ros.org/wiki/kinetic), 
-ROS [Jade](http://www.ros.org/wiki/jade) and ROS [Indigo](http://www.ros.org/wiki/indigo).
-It is recommended to first read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
+with ROS [Lunar](http://www.ros.org/wiki/lunar), ROS
+[Kinetic](http://www.ros.org/wiki/kinetic) and ROS
+[Indigo](http://www.ros.org/wiki/indigo).  It is recommended to first read
+[Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -19,7 +20,7 @@ You should understand the basic concepts of ROS and have gone through the [ROS T
 ### Install ROS
 
 We recommend for these ROS integration tutorials you install
-(`ros-kinetic-desktop-full`, `ros-jade-desktop-full` or
+(`ros-lunar-desktop-full`, `ros-kinetic-desktop-full` or
 `ros-indigo-desktop-full`) so that you have all the necessary packages.
 
 See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for more details. Be sure to source your ROS setup.bash script by following the instructions on the ROS installation page.
@@ -73,16 +74,16 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
+* [ROS Lunar](http://ros.org/wiki/lunar):
+
+~~~
+sudo apt-get install ros-lunar-gazebo-ros-pkgs
+~~~
+
 * [ROS Kinetic](http://ros.org/wiki/kinetic):
 
 ~~~
 sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
-~~~
-
-* [ROS Jade](http://ros.org/wiki/jade):
-
-~~~
-sudo apt-get install ros-jade-gazebo-ros-pkgs 
 ~~~
 
 * [ROS Indigo](http://ros.org/wiki/indigo):
