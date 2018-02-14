@@ -129,6 +129,36 @@ Make sure `git` is installed on your Ubuntu machine:
 sudo apt-get install git
 ~~~
 
+##### ROS Lunar
+
+Lunar is using the gazebo 7.x series, start by installing it:
+
+~~~
+sudo apt-get install -y libgazebo7-dev
+~~~
+
+Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
+
+~~~
+cd ~/catkin_ws/src
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b lunar-devel
+~~~
+
+Check for any missing dependencies using rosdep:
+
+~~~
+rosdep update
+rosdep check --from-paths . --ignore-src --rosdistro lunar
+~~~
+
+You can automatically install the missing dependencies using rosdep via debian install:
+
+~~~
+rosdep install --from-paths . --ignore-src --rosdistro lunar -y
+~~~
+
+Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
+
 ##### ROS Kinetic
 
 Kinetic is using the gazebo 7.x series, start by installing it:
@@ -158,47 +188,6 @@ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ~~~
 
 Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
-
-
-##### ROS Jade
-
-Jade is using the gazebo 5.x series, start by installing it:
-
-~~~
-sudo apt-get install -y libgazebo5-dev
-~~~
-
-Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
-
-~~~
-cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b jade-devel
-~~~
-
-Check for any missing dependencies using rosdep:
-
-~~~
-rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro jade
-~~~
-
-You can automatically install the missing dependencies using rosdep via debian install:
-
-~~~
-rosdep install --from-paths . --ignore-src --rosdistro jade -y
-~~~
-
-Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
-released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
-to see the progress. Meantime, we need to disable the gazebo-ros-control compilation:
-
-~~~
-touch gazebo_ros_pkgs/gazebo_ros_control/CATKIN_IGNORE
-~~~
-
-Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
 
 ##### ROS Indigo
 
