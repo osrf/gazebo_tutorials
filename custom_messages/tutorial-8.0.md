@@ -2,7 +2,7 @@
 
 Gazebo topics communicate through Google protobuf messages. There is an
 extensive
-[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/8.2.0/classes.html)
+[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html)
 of message types provided by Gazebo, for use with subscribing and publishing
 Gazebo topics. However, there are many situations where you want to build
 your own.
@@ -17,13 +17,15 @@ collision map of a Gazebo World. The plug-in will rasterize a world in
 Gazebo use a RayShape to do ray intersection below this grid. It will
 publish the created image to a custom topic and output to a file. The source
 code for this plug-in lives at
-[BitBucket](https://bitbucket.org/brawner/collision_map_creator_plugin).
-Feel free to submit issues or pull-requests for improvements.
+[BitBucket](https://bitbucket.org/osrf/collision_map_creator_plugin).
+
+Feel free to submit issues or pull-requests for improvements. The original
+author of the code is Stephen Brawner.
 
 You can download the source code using mercurial:
 
 ~~~
-hg clone https://bitbucket.org/brawner/collision_map_creator_plugin
+hg clone https://bitbucket.org/osrf/collision_map_creator_plugin
 ~~~
 
 or copy and paste the code into files as instructed below.
@@ -37,7 +39,7 @@ to make complicated messages. Gazebo contains a library of messages already.
 The installed messages can be found in
 /usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
 installs.  This tutorial makes use of the [vector2d.proto
-message](https://bitbucket.org/osrf/gazebo/src/8b0c2de0886a61a862036f7e7fe1d4b7b8b4651c/gazebo/msgs/vector2d.proto?at=gazebo_1.9).
+message](https://bitbucket.org/osrf/gazebo/src/gazebo8/gazebo/msgs/vector2d.proto?at=gazebo8).
 
 You can see how a custom message is declared by looking into
 `~/collision_map_creator_plugin/msgs/collision_map_request.proto`.
@@ -171,7 +173,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 This is the code for the custom Gazebo world plugin
 (`~/collision_map_creator_plugin/collision_map_creator.cc`).
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
+<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
 
 
 ### Code Explained
@@ -190,6 +192,7 @@ These are the necessary Gazebo headers we'll need.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
+#include "gazebo/math/Vector3.hh"
 #include "gazebo/msgs/msgs.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/transport/transport.hh"
@@ -289,10 +292,10 @@ they aren't shared_ptrs inside, the message we were sent is.
 
 This is an example of how to call the used physics engine to do a single ray
 trace. This code was pulled from
-`gazebo::physics::World::EntityBelowPoint(Vector3)`
+`gazebo::physics::World::GetEntityBelowPoint(Vector3)`
 
 ~~~
-        gazebo::physics::PhysicsEnginePtr engine = world->Physics();
+        gazebo::physics::PhysicsEnginePtr engine = world->GetPhysicsEngine();
         engine->InitForThread();
         gazebo::physics::RayShapePtr ray = boost::dynamic_pointer_cast<gazebo::physics::RayShape>(
               engine->CreateShape("ray", gazebo::physics::CollisionPtr()));
@@ -314,6 +317,20 @@ there is not.
         }
 ~~~
 
+This creates an Image msg and fills the necessary fields. Notice that the
+setter methods for each field is formatted like `set_field(something)`
+
+~~~
+        msgs::Image image;
+        image.set_width(count_horizontal);
+        image.set_height(count_vertical);
+        image.set_pixel_format(0);
+        image.set_step(count_horizontal);
+        image.set_data(data);
+
+        imagePub->Publish(image);
+~~~
+
 Register the plugin with the simulator.
 
 ~~~
@@ -330,7 +347,7 @@ built message type. There are some extra steps that must be taken that
 aren't explained in plugin tutorials. You can see the source code by opening
 the file `~/collision_map_creator_plugin/request_publisher.cc`:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/request_publisher.cc' />
+<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/request_publisher.cc' />
 
 ### Code Explained ###
 
@@ -350,6 +367,7 @@ These are the necessary gazebo headers for our executable.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
+#include "gazebo/math/Vector3.hh"
 #include "gazebo/transport/transport.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/msgs/msgs.hh"
@@ -506,7 +524,7 @@ Before exiting, the program must call `transport::fini()` to tear it all down.
 Below you can find the CMakeLists.txt file required to compile the plugin
 and executable:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
+<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
 
 ### Code Explained
 
@@ -593,7 +611,7 @@ sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugin
 Assuming everything went fine, and that's probably a rough assumption
 (seriously this one was long), you need to run Gazebo with a custom wold file:
 
-<include src='https://bitbucket.org/brawner/collision_map_creator_plugin/raw/default/map_creator.world' />
+<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/map_creator.world' />
 
 Run Gazebo with this world:
 
