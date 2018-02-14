@@ -77,7 +77,7 @@ The `gazebo_ros_pkgs` packages are available in:
 * [ROS Lunar](http://ros.org/wiki/lunar):
 
 ~~~
-sudo apt-get install ros-lunar-gazebo-ros-pkgs
+sudo apt-get install ros-lunar-gazebo-ros-pkgs ros-lunar-gazebo-ros-control
 ~~~
 
 * [ROS Kinetic](http://ros.org/wiki/kinetic):
