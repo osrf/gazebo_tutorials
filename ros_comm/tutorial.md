@@ -412,4 +412,4 @@ rosservice call gazebo/unpause_physics
 ~~~
 
 ## Next Steps
-Learn how to create custom [ROS plugins for Gazebo](http://gazebosim.org/tutorials/?cat=ros_plugins).
+Learn how to create custom [ROS plugins for Gazebo](http://gazebosim.org/tutorials/?tut=ros_plugins).
