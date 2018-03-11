@@ -404,7 +404,7 @@ Gazebo depends optionally in the Ignition Fuel Tools
 Gazebo depends on the Ignition Transport package.
 
 Please follow the instructions on the Ignition Transport
-[documents](http://ignition-transport.readthedocs.io/en/latest/installation/installation.html#install-from-sources-ubuntu-linux).
+[documents](https://ignitionrobotics.org/tutorials/transport/4.0/md__data_ignition_ign-transport_tutorials_installation.html).
 
 When installing dependencies, make sure you only install the
 `libignition-msgs-dev` package if you haven't installed Ignition Messages from
