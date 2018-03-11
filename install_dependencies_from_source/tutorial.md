@@ -361,7 +361,7 @@ Gazebo depends optionally in the Ignition Fuel Tools
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-fuel-tools
+        hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools /tmp/ign-fuel-tools
         cd /tmp/ign-fuel-tools
 
      **Note:** the `default` branch is the development branch where
