@@ -66,6 +66,8 @@ When a ball rolls under a lamp post, the light will turn on.
 
 Download the [example world](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/custom_example.world), [plugin source code](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/TurnOnLightPlugin.cpp), and [CMake file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/CMakeLists.txt).
 Build and run the plugin using [this tutorial](/tutorials?tut=plugins_hello_world&cat=write_plugin) as an example.
+Make sure to run `source <install_path>/share/gazebo/setup.sh` before extending `GAZEBO_PLUGIN_PATH`.
+`<install_path>` is `/usr` if you installed using `apt`.
 
 A ContainPlugin instance is configured to watch when a sphere enters a box below the lamp post.
 When the sphere rolls into or out of the box ContainPlugin will publish a message on the `contain` topic.
