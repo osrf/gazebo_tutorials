@@ -62,7 +62,7 @@ In gazebo 9 and beyond the gazebo topics are removed; only the ignition transpor
 This example shows how to use ContainPlugin to trigger an action.
 When a ball rolls under a lamp post, the light will turn on.
 
-[[file:example_world.png]]
+[[file:example_world.png|800px]]
 
 Download the [example world](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/custom_example.world), [plugin source code](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/TurnOnLightPlugin.cpp), and [CMake file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/contain_plugin/CMakeLists.txt).
 Build and run the plugin using [this tutorial](/tutorials?tut=plugins_hello_world&cat=write_plugin) as an example.
