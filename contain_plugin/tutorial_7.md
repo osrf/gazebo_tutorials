@@ -33,7 +33,7 @@ In gazebo 9 and beyond the gazebo topics are removed; only the ignition transpor
   *example: `<enabled>false</enabled>`*
 
 ### `<entity>`
-  This is a scoped name of a link or model or nested model in the world.
+  This is a scoped name of a link, model, nested model, or light in the world.
   Every simulation update ContainPlugin checks if the origin of this entity is inside the specified geometry.
 
   *example: `<entity>robot::hand_link</entity>`*
