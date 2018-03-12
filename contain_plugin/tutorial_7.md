@@ -1,6 +1,6 @@
 # Contain Plugin Introduction
 
-ContainPlugin is a [world plugin](/tutorials?tut=plugins_world&cat=write_plugin) included with gazebo that publishes a message when something enters or exits a box.
+ContainPlugin is a [world plugin](/tutorials?tut=plugins_world&cat=write_plugin) included with gazebo that publishes a message when something enters or exits a volume.
 It can be used to trigger an action.
 For example, it may be used to raise an error in a test when a robot enters a keepout zone.
 
