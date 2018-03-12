@@ -58,7 +58,9 @@ In gazebo 9 and beyond the gazebo topics are removed; only the ignition transpor
   See the [sdformat specification for box geometry](http://sdformat.org/spec?ver=1.6&elem=geometry#geometry_box) for more info.
 
 
-# Example of Triggering an Action
+# Examples
+
+## Using ContainPlugin to Trigger an Action
 This example shows how to use ContainPlugin to trigger an action.
 When a ball rolls under a lamp post, the light will turn on.
 
@@ -80,3 +82,25 @@ After building and running the world you should see the ball trigger the light t
 Hit `CTRL + R` to restart the world if you missed it.
 
 [[file:lamppostlight.gif]]
+
+## ContainPlugin tracking a Moving Volume
+The `<pose>` tag on this plugin can be given relative to another entity.
+This allows the volume to move with the entity as if it were connected by a fixed joint.
+Gazebo includes a world demonstrating this.
+
+Start gazebo in paused mode with the moving geometry world.
+
+```
+gazebo --pause --verbose worlds/contain_plugin_moving_demo.world
+```
+
+In another terminal echo the output of the `contain` topic,
+
+```
+gz topic --echo /gazebo/default/drill/contain
+```
+
+Initially the plugin reports a false value becaues the drill is not inside it.
+As the volume falls the plugin reports a true value when the drill enters the volume, and a false value later when that is no longer the case.
+
+[[file:movingvolume.gif]]
