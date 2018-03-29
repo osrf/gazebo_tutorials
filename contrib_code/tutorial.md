@@ -164,9 +164,9 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 1. **Accessors must not start with `Get`**
 > Member functions granting read access to protected data must look like a noun.
 > 
-> `public: ::ServerConfig ServerConfig();` : Allowed
+> `public: ::ServerConfig ServerConfig() const;` : Allowed
 > 
-> `public: ServerConfig GetServerConfig();` : Not Allowed
+> `public: ServerConfig GetServerConfig() const;` : Not Allowed
 
 1. **Mutators must start with `Set`**
 > Member functions granting write access to protected data must begin with `Set`.
