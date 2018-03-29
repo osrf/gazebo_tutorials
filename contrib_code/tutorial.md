@@ -161,6 +161,20 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 >
 > `speed *= 0.44704;  // miles per hour to meters per second` : Bad
 
+1. **Accessors must not start with `Get`**
+> Member functions granting read access to protected data must look like a noun.
+> 
+> `public: ::ServerConfig ServerConfig();` : Allowed
+> 
+> `public: ServerConfig GetServerConfig();` : Not Allowed
+
+1. **Mutators must start with `Set`**
+> Member functions granting write access to protected data must begin with `Set`.
+> 
+> `public: void SetServerConfig(ServerConfig &_config);` : Allowed
+> 
+> `public: void ServerConfig(::ServerConfig &_config);` : Not Allowed
+
 # Reduce Code Duplication 
 
 Check to make sure someone else is not currently working on the same
