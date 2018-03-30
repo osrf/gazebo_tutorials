@@ -141,25 +141,50 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 1. **Class function names**
 > Class functions must start with a capital letter, and capitalize every word.
 >
-> `void MyFunction();` : Good
+> `void MyFunction();` : Allowed
 >
-> `void myFunction();` : Bad
+> `void myFunction();` : Not Allowed
 >
-> `void my_function();` : Bad
+> `void my_function();` : Not Allowed
 
 1. **Variable names**
 > Variables must start with a lower case letter, and capitalize every word thereafter.
 > 
-> `int myVariable;` : Good
+> `int myVariable;` : Allowed
 >
-> `int myvariable;` : Bad
+> `int myvariable;` : Not Allowed
 >
-> `int my_variable;` : Bad
+> `int my_variable;` : Not Allowed
 
 1. **No inline comments**
 > `//` style comments may not be placed on the same line as code.
 >
-> `speed *= 0.44704;  // miles per hour to meters per second` : Bad
+> `speed *= 0.44704;  // miles per hour to meters per second` : Not Allowed
+
+1. **Accessors must not start with `Get`**
+> Member functions granting read access to protected or private data must look like a noun.
+> 
+> `public: ::ServerConfig ServerConfig() const;` : Allowed
+> 
+> `public: ServerConfig GetServerConfig() const;` : Not Allowed
+>
+> **Corner Cases**
+>
+> * A class name may conflict with an accessor function. For example, `Model(int)` would conflict with a `Model` class. In these cases, try to follow the `Noun` - `By` pattern. For example:
+> 
+> >  * `ModelByName(const std::string &_name)` : Allowed
+> > >  * `ModelById(const int _id)` : Allowed
+> 
+> * A template function that returns a data type may use a stand-alone `Get`. For example:
+> 
+> >  * public: template<typename T> T Get();` : Allowed
+
+1. **Mutators must start with `Set`**
+> Member functions granting write access to protected data must begin with `Set`.
+> 
+> `public: void SetServerConfig(ServerConfig &_config);` : Allowed
+> 
+> `public: void ServerConfig(::ServerConfig &_config);` : Not Allowed
 
 # Reduce Code Duplication 
 
