@@ -173,8 +173,8 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > 1. A class name may conflict with an accessor function. For example,
 >    `Model(int)` would conflict with a `Model` class. In these cases,
 >    try to follow the `Noun` - `By` pattern. For example:
->   * `ModelByName(const std::string &_name)` : Allowed
->   * `ModelById(const int _id)` : Allowed
+>     * `ModelByName(const std::string &_name)` : Allowed
+>     * `ModelById(const int _id)` : Allowed
 > 2. A template function that returns a data type may use a stand-alone `Get`.
 >    For example:
 > > > >  public: template<typename T> T Get();` : Allowed
