@@ -197,6 +197,8 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > ```
 > class ClassName
 > {
+>    TYPEDEFS
+>    ENUMS (consider using an external `enum class` instead)
 >    CONSTRUCTORS
 >    DESTRUCTORS
 >    PUBLIC FUNCTIONS
