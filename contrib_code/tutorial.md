@@ -168,17 +168,15 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > 
 > `public: ServerConfig GetServerConfig() const;` : Not Allowed
 
-**Corner Cases(test)**
-1. A class name may conflict with an accessor function. For example,
-  `Model(int)` would conflict with a `Model` class. In these cases,
-   try to follow the `Noun` - `By` pattern. For example:
-  * `ModelByName(const std::string &_name)` : Allowed
-  * `ModelById(const int _id)` : Allowed
-
-2. A template function that returns a data type may use a stand-alone `Get`.
-   For example:
-
-  * public: template<typename T> T Get();` : Allowed
+> **Corner Cases(test1)**
+> 1. A class name may conflict with an accessor function. For example, `Model(int)` would conflict with a `Model` class. In these cases, try to follow the `Noun` - `By` pattern. For example:
+> 
+>   * `ModelByName(const std::string &_name)` : Allowed
+>   * `ModelById(const int _id)` : Allowed
+> 
+> 2. A template function that returns a data type may use a stand-alone `Get`. For example:
+> 
+>   * public: template<typename T> T Get();` : Allowed
 
 1. **Mutators must start with `Set`**
 > Member functions granting write access to protected data must begin with `Set`.
