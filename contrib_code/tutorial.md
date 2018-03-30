@@ -186,6 +186,31 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > 
 > `public: void ServerConfig(::ServerConfig &_config);` : Not Allowed
 
+1. **Class member declaration order**
+> Group similar declarations together.
+> 
+> Every function and member variable must start with one of `public:`,
+> `protected:`, or `private:`.
+>
+> A class should be structured according to the following pattern:
+>
+> ```
+> class ClassName
+> {
+>    CONSTRUCTORS
+>    DESTRUCTORS
+>    PUBLIC FUNCTIONS
+>    PROTECTED FUNCTIONS
+>    PRIVATE FUNCTIONS
+>    PUBLIC CLASSES
+>    PROTECTED CLASSES
+>    PRIVATE CLASSES
+>    PUBLIC MEMBER VARIABLES
+>    PROTECTED MEMBER VARIABLES
+>    PRIVATE MEMBER VARIABLES
+>    FRIEND DEFINITIONS
+> }
+
 # Reduce Code Duplication 
 
 Check to make sure someone else is not currently working on the same
