@@ -168,7 +168,7 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > 
 > `public: ServerConfig GetServerConfig() const;` : Not Allowed
 >
-> **Corner Cases(test4)**
+> **Corner Cases**
 >
 > * A class name may conflict with an accessor function. For example, `Model(int)` would conflict with a `Model` class. In these cases, try to follow the `Noun` - `By` pattern. For example:
 > 
