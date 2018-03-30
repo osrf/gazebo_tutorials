@@ -207,11 +207,16 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 >    PUBLIC CLASSES
 >    PROTECTED CLASSES
 >    PRIVATE CLASSES
->    PUBLIC MEMBER VARIABLES
->    PROTECTED MEMBER VARIABLES
->    PRIVATE MEMBER VARIABLES
+>    PUBLIC MEMBER VARIABLES (there shouldn't be any, expect in special
+>      circumstances)
+>    PRIVATE MEMBER VARIABLES (consider using the private data pointer,
+>      PIMPL, idiom)
 >    FRIEND DEFINITIONS
 > }
+> 
+> Protected member variables should not exist in a class.
+>
+> Operator overloads should be treated the same as other functions.
 
 # Reduce Code Duplication 
 
