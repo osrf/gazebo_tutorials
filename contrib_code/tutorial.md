@@ -168,14 +168,14 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 > 
 > `public: ServerConfig GetServerConfig() const;` : Not Allowed
 >
-> **Corner Cases(test3)**
+> **Corner Cases(test4)**
 >
-> 1. A class name may conflict with an accessor function. For example, `Model(int)` would conflict with a `Model` class. In these cases, try to follow the `Noun` - `By` pattern. For example:
+> * A class name may conflict with an accessor function. For example, `Model(int)` would conflict with a `Model` class. In these cases, try to follow the `Noun` - `By` pattern. For example:
 > 
 > >  * `ModelByName(const std::string &_name)` : Allowed
 > > >  * `ModelById(const int _id)` : Allowed
 > 
-> 2. A template function that returns a data type may use a stand-alone `Get`. For example:
+> * A template function that returns a data type may use a stand-alone `Get`. For example:
 > 
 > >  * public: template<typename T> T Get();` : Allowed
 
