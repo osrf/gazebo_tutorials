@@ -66,7 +66,7 @@ When a ball rolls under a lamp post, the light will turn on.
 
 [[file:example_world.png|800px]]
 
-Download the [example world](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/custom_example.world), [plugin source code](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp), and [CMake file](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/CMakeLists.txt).
+Download the [example world](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world), [plugin source code](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp), and [CMake file](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/CMakeLists.txt).
 Build and run the plugin using [this tutorial](/tutorials?tut=plugins_hello_world&cat=write_plugin) as an example.
 Make sure to run `source <install_path>/share/gazebo/setup.sh` before extending `GAZEBO_PLUGIN_PATH`.
 `<install_path>` is `/usr` if you installed using `apt`.
