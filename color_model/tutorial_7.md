@@ -139,17 +139,16 @@ It has a bright white directional light with some ambient light.
 
 The next step is to create a model.
 At the end of this section you'll have the following files and folders.
-See the [model structure tutorial](tutorials?tut=model_structure) for more information about these files.
+
+[[file:files/model_files.png|256px]]
 
 Create the directories first.
 
-``
+```
 mkdir -p models/example_model/materials/scripts
 mkdir -p models/example_model/materials/textures
 mkdir -p models/example_model/materials/meshes
 ```
-
-[[file:files/model_files.png|256px]]
 
 Save this file as `model.config`.
 
@@ -159,30 +158,42 @@ Save this file as `model.sdf`.
 
 <include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.no_materials.sdf'/>
 
+See the [model structure tutorial](tutorials?tut=model_structure) for more information about these files.
+
 ### Color Wheels and Power LED using SDF
 
 The wheels and power LED of this model wil be single uniform color, so using SDF values will be good enough.
 First add a material to both wheels.
-Here is an example that makes the wheels dark blue.
+Here is an example material that makes the wheels dark blue.
+Add it to both of the wheel `<visual>` tags.
 
-<include lang='xml' from='/      <visual name="wheel1_visual">/' to='/      </visual> <!-- End wheel visuals -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/        <material> <!-- Wheel material -->/' to='/        </material>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
 
 The power LED should always be on.
 It is the source of it's own light, so the emissive component will be used.
-Add this to the model to make a green LED
+Add this to the `power_led` visual to make it always be green.
 
-<include lang='xml' from='/      <visual name="power_led_visual">/' to='/      </visual> <!-- End LED visual -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+The result is an LED that stays green in the dark and wheels that must be in the light to see.
+
+<include lang='xml' from='/        <material> <!-- LED material -->/' to='/        </material>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
 
 ### Color body using an Ogre Material Script
 
-Save this file as `repeated.material`.
-This is an Ogre Material Script that repeats a texture in a file `seamless_texture.png` over each face of the box.
+The body will be covered in a repeating texture.
+
+Save this image as `seamless_texture.png
+
+[[file:files/seamless_texture.png]]
+
+Then save this file as `repeated.material`.
+It is an Ogre Material Script that repeats the texture over each face of the box.
 
 <include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/repeated.material'/>
 
-Insert the model into gazebo.
-The result should be a cube with each face having four copies of the seamless texture.
+The result is a cube with each face having four copies of the seamless texture.
 
 [[file:files/scaled_ogre_script.png|400px]]
 
 ### Color head using a Collada with a Texture
+
+TODO file where library_images must be editted.
