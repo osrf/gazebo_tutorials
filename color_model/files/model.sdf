@@ -23,7 +23,7 @@
           <diffuse>0.1 0.1 0.2 1</diffuse>
           <specular>0 0 0 0</specular>
           <emissive>0 0 0 1</emissive>
-        </material>
+        </material> <!-- End wheel material -->
       </visual>
       <visual name="wheel2_visual">
         <pose>0.2 0 -0.25 0 1.57079 0</pose>
@@ -52,7 +52,7 @@
           <diffuse>0 0 0 1</diffuse>
           <specular>0 0 0 0</specular>
           <emissive>0 1 0 1</emissive>
-        </material>
+        </material> <!-- End LED material -->
       </visual>
       <visual name="body_visual">
         <geometry>
@@ -65,7 +65,7 @@
             <uri>model://example_model/materials/scripts/repeated.material</uri>
             <name>RepeatedTexture</name>
           </script>
-        </material>
+        </material> <!-- End Body Material -->
       </visual>
       <visual name="head_visual">
         <pose>0 0 0.25 0 0 -2.5</pose>
@@ -75,7 +75,7 @@
             <scale>0.25 0.25 0.25</scale>
           </mesh>
         </geometry>
-      </visual>
+      </visual> <!-- End head visual -->
     </link>
   </model>
 </sdf>

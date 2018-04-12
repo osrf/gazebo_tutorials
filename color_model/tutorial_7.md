@@ -1,8 +1,10 @@
-# Adding Color to a Model
-This tutorial describes how to make your model appear a certain color.
-At the end you'll know what parameters relate to color and where they can be tweaked.
+# Adding Color and Textures to a Model
+This tutorial describes how color works in gazebo.
+After reading you will know how to make objects in your simulation look more like their real-world counterparts.
 
-## About Ambient, Diffuse, Specular Emissive
+## About Ambient, Diffuse, Specular, and Emissive
+At the end this section you'll know what parameters relate to color and how they work.
+
 The color of an object is determined using a [Blinn-Phong shading model](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model).
 There are four components that control the color: ambient, diffuse, specular, and emissive.
 The [OpenGL Programming guide chapter on Lighting](http://www.glprogramming.com/red/chapter05.html) has detailed information about how these work.
@@ -21,19 +23,10 @@ A light with diffuse `RGBA(0 0 0.75 1)` would make the object appear <span style
 
 [[file:files/light_and_material_interaction.png|256px]]
 
-Each of the four components adds color to an object.
-The final color of an object is the sum of all components.
-After summation, if any red, green, or blue value goes above 1.0 then it is set to 1.0.
-
-[[file:files/component_affects.png|600px]]
-
 ### Ambient
 Ambient light is the color of an object when no lights are pointing at it.
 It is completely uniform about the object.
-
 Ambient light is meant to approximate light that has been reflected so many times it is hard to tell where it came from.
-Indoors, global ambient light may be a large value since every wall and surface is an opportunity to reflect light.
-A simulation of satellites may have almost no ambient light since most is radiated out into space.
 
 ### Diffuse
 This is the color of an object under a pure white light.
@@ -50,18 +43,30 @@ The Emissive component can only be set on a material.
 Like ambient light, emissive adds uniform color to an object.
 It appears as if light was emitted from the object, though emissive light does not add light to other objects in the world.
 
-## Adding color to objects
-Specifying the color an object means configuring both lights and the material on the object itself.
+### Compination of components
+
+Each of the four components adds color to an object.
+The final color of an object is the sum of all components.
+After summation, if any red, green, or blue value goes above 1.0 then it is set to 1.0.
+
+[[file:files/component_affects.png|600px]]
+
+## Where Color Parameters can be Set
+Specifying the color of an object means configuring both lights and the object's material.
+At the end of this section you'll know where color parameters for lights and models are, and how they can be tweaked.
 
 ### Setting the Color components of Lights
 Light color can only be set through SDF.
 Ambient light is set globally in [&lt;scene&gt;](http://sdformat.org/spec?ver=1.6&elem=scene#scene_ambient).
+The amount of ambient light in the world is a design choice that is up to you.
+An indoor world may need a large global ambient light since every wall and surface is an opportunity to reflect light.
+A simulation of satellites may have almost no ambient light since most is radiated out into space.
 
 The [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) and [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_specular) tags on a [&lt;light&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) set the color of diffuse and specular components emitted by the light.
 These tags require four floating point numbers (RGBA) between 0.0 and 1.0.
 The last number (alpha) has no affect on lights.
 
-Lights do not have an emissive or ambient components.
+Lights do not have emissive or ambient components.
 
 ### Setting the Color components of objects
 The color components on objects can be set from SDF, an Ogre Material Script, or some types of meshes.
@@ -104,6 +109,7 @@ See [this Wikipedia article](https://en.wikipedia.org/wiki/Wavefront_.obj_file) 
 ## About Textures
 Textures map an image onto a shape.
 They add detail to a model without adding geometry.
+
 The color added by a texture is made visible by both ambient and diffuse light.
 
 [[file:files/texture_ambient_diffuse.png|600px]]
@@ -117,13 +123,12 @@ Read the [Ogre Documentation](https://ogrecave.github.io/ogre/api/1.10/Material-
 #### Collada
 Collada files can apply textures to objects.
 How to create such a file is outside the scope of this tutorial.
-[Blender](https://www.blender.org/) is an open source modelling tool capable of exporting a textured model as a Collada file.
+[Blender](https://www.blender.org/) is an open source modelling tool capable exporting to Collada.
 
 Make sure the paths for textures given in `<library_images>` are relative to the collada file.
 
-## Example adding Color To a Model
-
-This will walk through how to add color to a basic model.
+## Example adding Color and Textures To a Model
+This example will walk through how to add color to a basic model.
 
 [[file:files/robot_before_after.png|256px]]
 
@@ -138,7 +143,8 @@ It has a bright white directional light with some ambient light.
 <include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/lit_world.world'/>
 
 The next step is to create a model.
-At the end of this section you'll have the following files and folders.
+The following instructions will walk through creating the following files and folders.
+Refer to this image when saving files below to see where they need to be saved.
 
 [[file:files/model_files.png|256px]]
 
@@ -162,26 +168,26 @@ See the [model structure tutorial](tutorials?tut=model_structure) for more infor
 
 ### Color Wheels and Power LED using SDF
 
-The wheels and power LED of this model wil be single uniform color, so using SDF values will be good enough.
-First add a material to both wheels.
+The wheels and power LED of this model wil be single uniform color, so they'll be set using SDF.
 Here is an example material that makes the wheels dark blue.
 Add it to both of the wheel `<visual>` tags.
 
-<include lang='xml' from='/        <material> <!-- Wheel material -->/' to='/        </material>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/        <material> <!-- Wheel material -->/' to='/        </material> <!-- End wheel material -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
 
-The power LED should always be on.
-It is the source of it's own light, so the emissive component will be used.
-Add this to the `power_led` visual to make it always be green.
+[[file:files/dark_colored_wheels.png|200]]
 
-The result is an LED that stays green in the dark and wheels that must be in the light to see.
+The power LED is the source of its own light, so the emissive component will be used.
+Add this to the `power_led` `<visual>` to make it always be fully green.
 
-<include lang='xml' from='/        <material> <!-- LED material -->/' to='/        </material>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/        <material> <!-- LED material -->/' to='/        </material> <!-- End LED material -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+
+[[file:files/green_led.png|300]]
 
 ### Color body using an Ogre Material Script
 
 The body will be covered in a repeating texture.
 
-Save this image as `seamless_texture.png
+Save this image as `seamless_texture.png`
 
 [[file:files/seamless_texture.png]]
 
@@ -195,5 +201,45 @@ The result is a cube with each face having four copies of the seamless texture.
 [[file:files/scaled_ogre_script.png|400px]]
 
 ### Color head using a Collada with a Texture
+Save this image as `head_texture.png`.
 
-TODO file where library_images must be editted.
+[[file:files/head_texture.png|256]]
+
+[Download and save this Collada file as head.dae](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/collada.dae).
+
+This collada file references an image to use as a texture.
+We need to double check that the paths are what we want them to be.
+
+Open `head.dae` with your favorite text editor and look for `<library_images>`.
+
+<include lang='xml' from='/ <library_images>/' to='/  </library_images>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/head.dae'/>
+
+The model is referencing an image without any path information.
+It expects the png file to be in the same folder as `head.dae`, but we want to store the texture in another folder.
+Change the path in `head.dae` to reference the texture location relative to `head.dae`.
+
+```
+  <library_images>
+    <image id="head_texture_png" name="head_texture_png">
+      <init_from>../materials/textures/head_texture.png</init_from>
+    </image>
+  </library_images>
+```
+
+The final step is to open it up in gazebo
+
+[[file:files/collada_head.png|200px]]
+
+### Open the result in Gazebo
+The environment variable `GAZEBO_MODEL_PATH` must be set to the path to the models folder you created.
+Set it and launch gazebo with the world you saved earlier.
+Edit the paths below to match where you saved the files on your system.
+
+```
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:YOUR/PATH/TO/models
+gazebo --verbose YOUR/PATH/TO/lit_world.world
+```
+
+Insert the model you created into the world.
+
+[[file:files/model_in_gazebo.png|480px]]
