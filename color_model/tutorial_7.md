@@ -123,9 +123,9 @@ Make sure the paths for textures given in `<library_images>` are relative to the
 
 ## Example adding Color To a Model
 
-[[file:files/robot_before_after.png:256px]]
-
 This will walk through how to add color to a basic model.
+
+[[file:files/robot_before_after.png|256px]]
 
 ### Basic files and folders
 
@@ -149,7 +149,7 @@ mkdir -p models/example_model/materials/textures
 mkdir -p models/example_model/materials/meshes
 ```
 
-[[file:model_files.png|256px]]
+[[file:files/model_files.png|256px]]
 
 Save this file as `model.config`.
 
@@ -165,13 +165,13 @@ The wheels and power LED of this model wil be single uniform color, so using SDF
 First add a material to both wheels.
 Here is an example that makes the wheels dark blue.
 
-<include lang='xml' from='      <visual name="wheel1_visual">' to='      </visual> <!-- End wheel visuals -->' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/      <visual name="wheel1_visual">/' to='/      </visual> <!-- End wheel visuals -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
 
 The power LED should always be on.
 It is the source of it's own light, so the emissive component will be used.
 Add this to the model to make a green LED
 
-<include lang='xml' from='      <visual name="power_led_visual">' to='      </visual> <!-- End LED visual -->' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/      <visual name="power_led_visual">/' to='/      </visual> <!-- End LED visual -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
 
 ### Color body using an Ogre Material Script
 
