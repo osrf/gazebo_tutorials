@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0 0 0 1</background>
+      <shadows>false</shadows>
+    </scene>
+    <light type="directional" name="some_light">
+      <diffuse>0 1 0 1.0</diffuse>
+      <specular>1 1 1 1</specular>
+      <direction>0 0 -1</direction>
+    </light>
+    <light type="directional" name="some_light2">
+      <diffuse>1 0 0 0</diffuse>
+      <specular>1 1 1 0</specular>
+      <direction>1 0 1</direction>
+    </light>
+    <light type="directional" name="some_light3">
+      <diffuse>0 0 0.75 0</diffuse>
+      <specular>1 1 1 0</specular>
+      <direction>-1 0 1</direction>
+    </light>
+
+    <model name="diffuse_sphere">
+      <static>true</static>
+      <link name="link">
+        <visual name="diffuse_only">
+          <pose>1.1 0 0.5 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <specular>0 0 0 1</specular>
+            <diffuse>1 1 0.5 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
