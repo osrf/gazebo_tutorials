@@ -16,7 +16,7 @@ Values on a material represent the percentage of light an object reflects.
 The same material may be different colors depending on the light that hits it.
 
 For example, consider a material with a diffuse color of `RGBA(1, 1, 0.5, 1.0)`.
-Under a pure white like it would look <span style="background: #ffff80">yellow</span>.
+Under a white light it would look <span style="background: #ffff80">yellow</span>.
 If exposed to a light emitting a diffuse `RGBA(0 1 0 1)` then it would appear <span style="background:#00ff00">green</span>.
 If exposed to a light emitting a diffuse `RGBA(1 0 0 1)` then it would appear <span style="background:#ff0000">red</span>.
 A light with diffuse `RGBA(0 0 0.75 1)` would make the object appear <span style="background:#00005f; color: #ffffff">dark blue</span>.
