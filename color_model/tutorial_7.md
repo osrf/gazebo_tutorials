@@ -9,7 +9,7 @@ The color of an object is determined using a [Blinn-Phong shading model](https:/
 There are four components that control the color: ambient, diffuse, specular, and emissive.
 The [OpenGL Programming guide chapter on Lighting](http://www.glprogramming.com/red/chapter05.html) has detailed information about how these work.
 
-### Component values on Lights versus Materials
+### Component Values on Lights Versus Materials
 The final color of an object depends both on the material and the lights shining on it.
 Values on lights represent the intensity of light emitted.
 Values on a material represent the percentage of light an object reflects.
@@ -51,11 +51,11 @@ After summation, if any red, green, or blue value goes above 1.0 then it is set 
 
 [[file:files/component_affects.png|600px]]
 
-## Where Color Parameters can be Set
+## Where Color Parameters Can Be Set
 Specifying the color of an object means configuring both lights and the object's material.
 At the end of this section you'll know where color parameters for lights and models are, and how they can be tweaked.
 
-### Setting the Color components of Lights
+### Setting the Color Components of Lights
 Light color can only be set through SDF.
 Ambient light is set globally in [&lt;scene&gt;](http://sdformat.org/spec?ver=1.6&elem=scene#scene_ambient).
 The amount of ambient light in the world is a design choice that is up to you.
@@ -68,7 +68,7 @@ The last number (alpha) has no affect on lights.
 
 Lights do not have emissive or ambient components.
 
-### Setting the Color components of objects
+### Setting the Color Components of Objects
 The color components on objects can be set from SDF, an Ogre Material Script, or some types of meshes.
 
 #### SDF
@@ -114,7 +114,7 @@ The color added by a texture is made visible by both ambient and diffuse light.
 
 [[file:files/texture_ambient_diffuse.png|600px]]
 
-### Setting the texture of an object
+### Setting the Texture of an Object
 
 #### Ogre Material Scripts
 Ogre Material Scripts have many options for applying a texture to an object.
@@ -127,12 +127,12 @@ How to create such a file is outside the scope of this tutorial.
 
 Make sure the paths for textures given in `<library_images>` are relative to the collada file.
 
-## Example adding Color and Textures To a Model
+## Example Adding Color and Textures to a Model
 This example will walk through how to add color to a basic model.
 
 [[file:files/robot_before_after.png|256px]]
 
-### Basic files and folders
+### Basic Files and Folders
 
 There are two parts to color: the model and the lights that light up a model.
 
@@ -166,7 +166,7 @@ Save this file as `model.sdf`.
 
 See the [model structure tutorial](tutorials?tut=model_structure) for more information about these files.
 
-### Color Wheels and Power LED using SDF
+### Color Wheels and Power LED Using SDF
 
 The wheels and power LED of this model wil be single uniform color, so they'll be set using SDF.
 Here is an example material that makes the wheels dark blue.
@@ -183,7 +183,7 @@ Add this to the `power_led` `<visual>` to make it always be fully green.
 
 [[file:files/green_led.png|300]]
 
-### Color body using an Ogre Material Script
+### Color Body Using an Ogre Material Script
 
 The body will be covered in a repeating texture.
 
@@ -200,7 +200,7 @@ The result is a cube with each face having four copies of the seamless texture.
 
 [[file:files/scaled_ogre_script.png|400px]]
 
-### Color head using a Collada with a Texture
+### Color Head Using a Collada with a Texture
 Save this image as `head_texture.png`.
 
 [[file:files/head_texture.png|256]]
@@ -230,7 +230,7 @@ The final step is to open it up in gazebo
 
 [[file:files/collada_head.png|200px]]
 
-### Open the result in Gazebo
+### Open the Result in Gazebo
 The environment variable `GAZEBO_MODEL_PATH` must be set to the path to the models folder you created.
 Set it and launch gazebo with the world you saved earlier.
 Edit the paths below to match where you saved the files on your system.
