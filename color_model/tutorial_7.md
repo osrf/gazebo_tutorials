@@ -62,7 +62,7 @@ The amount of ambient light in the world is a design choice that is up to you.
 An indoor world may need a large global ambient light since every wall and surface is an opportunity to reflect light.
 A simulation of satellites may have almost no ambient light since most is radiated out into space.
 
-The [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) and [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_specular) tags on a [&lt;light&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) set the color of diffuse and specular components emitted by the light.
+The [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) and [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_specular) tags on a [&lt;light&gt;](http://sdformat.org/spec?ver=1.6&elem=light) set the color of diffuse and specular components emitted by the light.
 These tags require four floating point numbers (RGBA) between 0.0 and 1.0.
 The last number (alpha) has no affect on lights.
 
