@@ -134,26 +134,44 @@ This example will walk through how to add color to a basic model.
 
 ### Basic Files and Folders
 
+Make a directory to contain files from this tutorial.
+
+```
+mkdir ~/color_tutorial
+```
+
 There are two parts to color: the model and the lights that light up a model.
 
-The first step is to create a world with some light.
-Save the following as `lit_world.world`.
+Lights are specified in the world, so create a world with some light.
+Save the following as:
+
+```
+~/color_tutorial/lit_world.world
+```
+
 It has a bright white directional light with some ambient light.
 
 <include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/lit_world.world'/>
 
 The next step is to create a model.
-The following instructions will walk through creating the following files and folders.
-Refer to this image when saving files below to see where they need to be saved.
+Refer to this image to see where files below need to be saved.
+See the [model structure tutorial](tutorials?tut=model_structure) for more information about these files.
 
 [[file:files/model_files.png|256px]]
 
-Create the directories first.
+The `models` folder itself must be in the environment variable [`GAZEBO_MODEL_PATH`](http://gazebosim.org/tutorials?tut=components#EnvironmentVariables).
+This tutorial will assume you use the folder `~/color_tutorial/models`.
 
 ```
-mkdir -p models/example_model/materials/scripts
-mkdir -p models/example_model/materials/textures
-mkdir -p models/example_model/materials/meshes
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/color_tutorial/models
+```
+
+Create directories for the model.
+
+```
+mkdir -p ~/color_tutorial/models/example_model/materials/scripts
+mkdir -p ~/color_tutorial/models/example_model/materials/textures
+mkdir -p ~/color_tutorial/models/example_model/materials/meshes
 ```
 
 Save this file as `model.config`.
@@ -163,8 +181,6 @@ Save this file as `model.config`.
 Save this file as `model.sdf`.
 
 <include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.no_materials.sdf'/>
-
-See the [model structure tutorial](tutorials?tut=model_structure) for more information about these files.
 
 ### Color Wheels and Power LED Using SDF
 
@@ -233,11 +249,10 @@ The final step is to open it up in gazebo
 ### Open the Result in Gazebo
 The environment variable `GAZEBO_MODEL_PATH` must be set to the path to the models folder you created.
 Set it and launch gazebo with the world you saved earlier.
-Edit the paths below to match where you saved the files on your system.
 
 ```
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:YOUR/PATH/TO/models
-gazebo --verbose YOUR/PATH/TO/lit_world.world
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/color_tutorial/models
+gazebo --verbose ~/color_tutorial/lit_world.world
 ```
 
 Insert the model you created into the world.
