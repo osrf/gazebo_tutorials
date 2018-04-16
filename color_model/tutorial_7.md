@@ -56,13 +56,13 @@ Specifying the color of an object means configuring both lights and the object's
 At the end of this section you'll know where color parameters for lights and models are, and how they can be tweaked.
 
 ### Setting the Color Components of Lights
-Light color can only be set through SDF.
+Light color must be specified in the world SDF file.
 Ambient light is set globally in [&lt;scene&gt;](http://sdformat.org/spec?ver=1.6&elem=scene#scene_ambient).
 The amount of ambient light in the world is a design choice that is up to you.
 An indoor world may need a large global ambient light since every wall and surface is an opportunity to reflect light.
 A simulation of satellites may have almost no ambient light since most is radiated out into space.
 
-The [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) and [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_specular) tags on a [&lt;light&gt;](http://sdformat.org/spec?ver=1.6&elem=light) set the color of diffuse and specular components emitted by the light.
+The [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_diffuse) and [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=light#light_specular) tags on a [&lt;light&gt;](http://sdformat.org/spec?ver=1.6&elem=light) set the color of diffuse and specular components emitted.
 These tags require four floating point numbers (RGBA) between 0.0 and 1.0.
 The last number (alpha) has no affect on lights.
 
