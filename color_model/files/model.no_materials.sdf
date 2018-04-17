@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="Color Tutorial Model">
+    <static>true</static>
+    <link name="robot_link">
+      <collision name="body_collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="wheel1_visual">
+        <pose>-0.2 0 -0.25 0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="wheel2_visual">
+        <pose>0.2 0 -0.25 0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="power_led_visual">
+        <pose>0.225 0.225 0.25 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.003</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="body_visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="head_visual">
+        <pose>0 0 0.25 0 0 -2.5</pose>
+        <geometry>
+          <sphere>
+            <radius>0.25</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

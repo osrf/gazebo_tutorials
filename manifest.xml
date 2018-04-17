@@ -464,6 +464,12 @@
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
+    <tutorial title="Color And Texture Models" ref='color_model'>
+      <markdown version="7.0+">color_model/tutorial_7.md</markdown>
+      <description>How to add color and textures to a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Elevators" ref='elevators'>
       <markdown version="6.0+">elevators/tutorial.md</markdown>
       <description>How to create and use elevators.</description>
