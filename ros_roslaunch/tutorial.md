@@ -35,12 +35,16 @@ You can append the following arguments to the launch files to change the behavio
 
   > Start gzserver (Gazebo Server) in debug mode using gdb (default false)
 
+**verbose**
+
+  > Run gzserver and gzclient with --verbose, printing errors and warnings to the terminal (default false)
+
 ### Example `roslaunch` command
 
 Normally the default values for these arguments are all you need, but just as an example:
 
 <pre>
-roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false recording:=false debug:=true
+roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false recording:=false debug:=true verbose:=true
 </pre>
 
 ### Launching Other Demo Worlds
