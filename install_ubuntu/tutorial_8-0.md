@@ -4,7 +4,7 @@
 
 1. Install
 
-        curl -ssL http://get.gazebosim.org | sh
+        curl -sSL http://get.gazebosim.org | sh
 
 2. Run
 
