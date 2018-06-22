@@ -4,7 +4,7 @@
 
 1. Install
 
-        curl -ssL http://get.gazebosim.org | sh
+        curl -sSL http://get.gazebosim.org | sh
 
 2. Run
 
@@ -60,7 +60,7 @@
 
     It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
     For example, installing gazebo9 on Ubuntu Trusty (14.04) will produce the error above.
-    Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status), 
+    Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status),
     next to each version is the supported ubuntu versions and ROS versions.
 
 

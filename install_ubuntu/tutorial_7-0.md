@@ -4,7 +4,7 @@
 
 1. Install
 
-        curl -ssL http://get.gazebosim.org | sh
+        curl -sSL http://get.gazebosim.org | sh
 
 2. Run
 
@@ -19,7 +19,7 @@
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
     You can check to see if the file was written correctly. For example, in Ubuntu Trusty, you can type:
-    
+
         $ cat /etc/apt/sources.list.d/gazebo-stable.list
         deb http://packages.osrfoundation.org/gazebo/ubuntu-stable trusty main
 
@@ -34,30 +34,30 @@
         sudo apt-get update
 
     Hint: make sure the apt-get update process ends without any errors, the console output ends in `Done` similar to below:
-  
+
         $ sudo apt-get update
         ...
-        Hit http://ppa.launchpad.net trusty/main Translation-en            
+        Hit http://ppa.launchpad.net trusty/main Translation-en
         Ign http://us.archive.ubuntu.com trusty/main Translation-en_US
         Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US
-        Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US           
-        Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US             
-        Reading package lists... Done   
+        Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US
+        Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US
+        Reading package lists... Done
 
     Next install gazebo-7 by:
 
         sudo apt-get install gazebo7
         # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo7-dev
-        
+
     If you see the error below:
-    
+
         $ sudo apt-get install gazebo7
         Reading package lists... Done
-        Building dependency tree       
+        Building dependency tree
         Reading state information... Done
         E: Unable to locate package gazebo7
-        
+
     It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
     For example, installing gazebo7 on Ubuntu Precise (12.04) will produce the error above.
     Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status), next to each version is the supported ubuntu versions and ROS versions.
