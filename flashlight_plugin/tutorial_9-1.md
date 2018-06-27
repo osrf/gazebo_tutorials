@@ -98,7 +98,7 @@ This element is optional. When it is given under the plugin, it specifies whethe
 The diagram below shows an abstract structure of the plugin and its components. `FlashLightPlugin` class holds `FlashLightSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic.
 
 <!-- diagram showing classes -->
-
+![](a)
 
 ## FlashLightSetting class
 Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<flash_light>` element, an object of `FlashLightSetting` is created with the given parameters.
@@ -109,15 +109,20 @@ To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` a
 Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://bitbucket.org/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
 
 # Extension of Plugin
+You can extend the functionalities of this plugin by creating an inheriting class. The figure below shows a child class. It can use the protected functions of `FlashLightPlugin` while interacting with external entities.
 
 <!-- diagram of extended plugin class -->
 
+`FlashLightPlugin` has the following protected functions so a child class can dynamically update the lights.
 
 ## Turning Lights On/Off
+By specifying the link and light names as function parameters, `TurnOn()` and `TurnOff()` enable/disable an individual light respectively. `TurnOnAll()` and `TurnOffAll()` enable/disable all the lights at once.
 
 ## Changing Duration/Interval
+You can also update the duration and interval time.
 
 # Extension of Setting class
+You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights.
 
 <!-- diagram of extended plugin class + setting class -->
 
