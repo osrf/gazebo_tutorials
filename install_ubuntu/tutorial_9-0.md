@@ -77,7 +77,7 @@ guidelines](https://www.debian.org/doc/manuals/maint-guide/):
 
  * Use Gazebo as an application: for the users that just run Gazebo simulator
    with the provided plugins and models and do not plan on developing on top of
-   gazebo its own custom software. To use Gazebo 8 please install the package
+   gazebo its own custom software. To use Gazebo 9 please install the package
    called ***gazebo9***.
 
  * Use Gazebo to develop software using Gazebo libraries: for users that
