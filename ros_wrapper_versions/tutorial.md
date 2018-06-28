@@ -72,6 +72,13 @@ For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
 
+### Melodic
+ROS Melodic hosts or use the 9.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 9.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo9`) and do ***not*** use the osrfoundation
+repository.
+
 ### Lunar
 
 ROS Lunar hosts or use the 7.x version of Gazebo.
