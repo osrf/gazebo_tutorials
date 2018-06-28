@@ -40,9 +40,10 @@ the same ROS distro.
 The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
 
  * ***packages.ros.org***
-  *  Indigo: host gazebo version 2.x package.
-  *  Kinetic: host or use gazebo version 7.x package.
-  *  Lunar: host or use gazebo version 7.x package.
+  *  ROS Indigo: Gazebo 2.x
+  *  ROS Kinetic: Gazebo 7.x
+  *  ROS Lunar: Gazebo 7.x
+  *  ROS Melodic: Gazebo 9.x
  * ***packages.osrfoundation.org***
   * gazebo 7.x series (package name `gazebo7`)
   * gazebo 8.x series (package name `gazebo8`)
