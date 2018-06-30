@@ -108,20 +108,64 @@ To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` a
 Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://bitbucket.org/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
 
 # Extension of Plugin
+FlashLightPlugin class has member functions which are accessible to inheriting classes. These functions can dynamically turn the flashlights on and off, and can also update the duration and interval time. As the diagram below shows, an extended plugin calls member functions of FLashLightPlugin to control the flashlights. The plugin could let external entities control flashlights by reacting to external events or requests.
 
 ![](./extendedplugin.png)
 
 ## Turning Lights On/Off
+An exted plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
 
 ## Changing Duration/Interval
+The duration and interval time of flashing can be updated by calling the corresponding functions. The function parameter is the desired time to which the value is set.
 
 # Extension of Setting class
+FlashLightSetting class can also be extended. The figure below shows that the plugin now contains inheritances of FlashLightSetting.
 
 ![](./extendedsetting.png)
 
-## Instantiation and Initialization
-
 ## Flash/Dim
-<!-- Flash/Dim -->
+By overriding Flash and Dim functions, the inheriting setting class can do its job when the flashlight flashes and dims.
+
+## Instantiation and Initialization
+An extended setting class must be instantiated in the process shown in the figure blow. An extend plugin will need to override member functions of FlashLightPlugin.
+
+![](./init.png)
+
+When a plugin is loaded, CreateSetting function is called to generate a setting object for each flashlight.
+```C++
+std::shared_ptr<FlashLightSetting>
+  FlashLightPlugin::CreateSetting(
+    const sdf::ElementPtr &_sdf,
+    const physics::ModelPtr &_model,
+    const common::Time &_currentTime)
+{
+  return std::make_shared<FlashLightSetting>(_sdf, _model, _currentTime);
+}
+```
+
+This function must be overridden by the extended plugin so an object of the extended setting class can be generated.
+
+```C++
+std::shared_ptr<FlashLightSetting> ExtendedPlugin::CreateSetting(
+  const sdf::ElementPtr &_sdf,
+  const physics::ModelPtr &_model,
+  const common::Time &_currentTime)
+{
+  return std::make_shared<ExtendedSetting>(_sdf, _model, _currentTime);
+}
+```
+
+An object is initialized by InitSettingBySpecificData function. If the object is required to be initialized by data stored in the extended plugin, it must be done in an overridden InitSettingBySpecificData function, where the FlashLightSetting's InitSettingBySpecificData is also called.
+```C++
+void ExtendedPlugin::InitSettingBySpecificData(
+    std::shared_ptr<FlashLightSetting> &_setting)
+{
+  // Call the function of the parent class.
+  FlashLightPlugin::InitSettingBySpecificData(_setting);
+
+  // Do something to initialize the object by the data in the extended plugin.
+}
+```
 
 ## Possible Scenario
+This feature will be useful when you want to synchronize other objects with flashing. For example, you can flash and dim visual objects at the same timing of the flashlights.
