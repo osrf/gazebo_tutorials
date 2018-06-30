@@ -97,8 +97,7 @@ This element is optional. When it is given under the plugin, it specifies whethe
 # How Do They Do It?
 The diagram below shows an abstract structure of the plugin and its components. `FlashLightPlugin` class holds `FlashLightSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic.
 
-<!-- diagram showing classes -->
-
+![](./flashlight.png)
 
 ## FlashLightSetting class
 Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<flash_light>` element, an object of `FlashLightSetting` is created with the given parameters.
@@ -110,8 +109,7 @@ Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Fl
 
 # Extension of Plugin
 
-<!-- diagram of extended plugin class -->
-
+![](./extendedplugin.png)
 
 ## Turning Lights On/Off
 
@@ -119,7 +117,7 @@ Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Fl
 
 # Extension of Setting class
 
-<!-- diagram of extended plugin class + setting class -->
+![](./extendedsetting.png)
 
 ## Instantiation and Initialization
 
