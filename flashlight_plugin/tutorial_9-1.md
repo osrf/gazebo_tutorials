@@ -118,6 +118,7 @@ An exted plugin can turn on/off a specific flashlight or all the existing lights
 ## Changing Duration/Interval
 The duration and interval time of flashing can be updated by calling the corresponding functions. The function parameter is the desired time to which the value is set.
 
+<!--
 # Extension of Setting class
 You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights.
 The figure below shows that the plugin now contains inheritances of FlashLightSetting.
@@ -167,3 +168,4 @@ void ExtendedPlugin::InitSettingBySpecificData(
   // Do something to initialize the object by the data in the extended plugin.
 }
 ```
+-->
