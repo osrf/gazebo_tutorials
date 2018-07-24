@@ -494,6 +494,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="LED Plugin" ref='led_plugin'>
+      <markdown version="9.1+">led_plugin/tutorial_9-1.md</markdown>
+      <description>How to use LedPlugin to blink lights on a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Joint Events" ref='joint_events'>
       <markdown version="6.0+">joint_events/tutorial.md</markdown>
       <description>Use the SimEvents plugin to send messages when a joint state changes.</description>
@@ -1120,6 +1126,7 @@
         <tutorial>gravity_compensation</tutorial>
         <tutorial>contain_plugin</tutorial>
         <tutorial>flashlight_plugin</tutorial>
+        <tutorial>led_plugin</tutorial>
       </tutorials>
     </category>
 

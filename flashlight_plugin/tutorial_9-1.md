@@ -61,6 +61,7 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
       <light_id>cylinder/light_source2</light_id>
       <duration>0.3</duration>
       <interval>1.2</interval>
+      <color>1 0 0</color>
     </flash_light>
     <flash_light>
       <light_id>box/light_source3</light_id>
@@ -70,8 +71,16 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
     </flash_light>
     <flash_light>
       <light_id>box/light_source4</light_id>
-      <duration>1.0</duration>
-      <interval>0.3</interval>
+      <block>
+        <duration>1.0</duration>
+        <interval>0</interval>
+        <color>1 1 0</color>
+      </block>
+      <block>
+        <duration>1.0</duration>
+        <interval>0.3</interval>
+        <color>0 1 1</color>
+      </block>
       <enable>true</enable>
     </flash_light>
   </plugin>
@@ -91,6 +100,32 @@ This element is required for `<flash_light>`. It specifies how long time the lig
 ## `<interval>`
 This element is required for `<flash_light>`. It specifies how long time the light must dim in seconds. If it is set to 0, the light will be static.
 
+## `<color>`
+This element is optional for `<flash_light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used.
+
+## `<block>`
+This element is optional for `<flash_light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<flash_light>` can have more than one `<block>` so it can provide multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<flash_light>` will be ignored.
+
+For example,
+```
+<block>
+  <duration>1</duration>
+  <interval>0</interval>
+  <color>1 0 0</color>
+</block>
+<block>
+  <duration>1</duration>
+  <interval>0</interval>
+  <color>0 1 0</color>
+</block>
+<block>
+  <duration>1</duration>
+  <interval>0</interval>
+  <color>0 0 1</color>
+</block>
+```
+This setting will first provide 1 second of red light, followed by green and blue lights. After the blue light is casted, it goes back to the first one, i.e., red.
+
 ## `<enable>`
 This element is optional. When it is given under the plugin, it specifies whether all the lights are enabled or not. If it is placed directly under an individual `<flash_light>`, it overrides the global one and affects the corresponding light.
 
@@ -102,7 +137,7 @@ The diagram below shows an abstract structure of the plugin and its components. 
 ## FlashLightSetting class
 Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<flash_light>` element, an object of `FlashLightSetting` is created with the given parameters.
 
-To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passes. After that, it calls `Flash()`, and repeats these steps above.
+To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passes. After that, it calls `Flash()`, and repeats these steps above. If the flashlight is given with multiple `<block>`, it switches to the next block so the light patterns are switched as described by the plugin parameters.
 
 ## ~/light/modify topic
 Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://bitbucket.org/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
