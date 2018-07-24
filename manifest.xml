@@ -489,13 +489,13 @@
     </tutorial>
 
     <tutorial title="Flashlight Plugin" ref='flashlight_plugin'>
-      <markdown version="9.1+">flashlight_plugin/tutorial_9-1.md</markdown>
+      <markdown version="9.3+">flashlight_plugin/tutorial_9-3.md</markdown>
       <description>How to use FlashLightPlugin to blink lights on a model.</description>
       <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="LED Plugin" ref='led_plugin'>
-      <markdown version="9.1+">led_plugin/tutorial_9-1.md</markdown>
+      <markdown version="9.3+">led_plugin/tutorial_9-3.md</markdown>
       <description>How to use LedPlugin to blink lights on a model.</description>
       <skill>intermediate</skill>
     </tutorial>
