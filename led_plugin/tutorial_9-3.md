@@ -36,11 +36,11 @@ This plugin is an inheritance of [FlashLightPlugin](/tutorials?tut=flashlight_pl
   ...
 
   <plugin name='light_control' filename='libLedPlugin.so'>
-    <flash_light>
-      <light_id>link/lamp</light_id>
+    <light>
+      <light>link/lamp</light>
       <duration>0.5</duration>
       <interval>0.5</interval>
-    </flash_light>
+    </light>
 
     ...
 

@@ -9,21 +9,19 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
 
 ```XML
 <model name='light_model'>
-  <static>1</static>
-  <pose frame=''>0 0 0 0 -0 0</pose>
+
+  ...
+
   <link name='cylinder'>
 
     ...
 
     <light name='light_source1' type='spot'>
-
       ...
-
     </light>
+
     <light name='light_source2' type='spot'>
-
       ...
-
     </light>
 
     ...
@@ -34,14 +32,11 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
     ...
 
     <light name='light_source3' type='spot'>
-
       ...
-
     </light>
+
     <light name='light_source4' type='spot'>
-
       ...
-
     </light>
 
     ...
@@ -52,25 +47,25 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
 
   <plugin name='light_control' filename='libFlashLightPlugin.so'>
     <enable>true</enable>
-    <flash_light>
-      <light_id>cylinder/light_source1</light_id>
+    <light>
+      <id>cylinder/light_source1</id>
       <duration>0.5</duration>
       <interval>0.5</interval>
-    </flash_light>
-    <flash_light>
-      <light_id>cylinder/light_source2</light_id>
+    </light>
+    <light>
+      <id>cylinder/light_source2</id>
       <duration>0.3</duration>
       <interval>1.2</interval>
       <color>1 0 0</color>
-    </flash_light>
-    <flash_light>
-      <light_id>box/light_source3</light_id>
+    </light>
+    <light>
+      <id>box/light_source3</id>
       <duration>1.0</duration>
       <interval>0.1</interval>
       <enable>false</enable>
-    </flash_light>
-    <flash_light>
-      <light_id>box/light_source4</light_id>
+    </light>
+    <light>
+      <id>box/light_source4</id>
       <block>
         <duration>1.0</duration>
         <interval>0</interval>
@@ -82,29 +77,29 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
         <color>0 1 1</color>
       </block>
       <enable>true</enable>
-    </flash_light>
+    </light>
   </plugin>
 </model>
 ```
 
 The following items are the parameters which the plugin takes.
-## `<flash_light>`
+## `<light>`
 This element represents a unit of settings for each flashlight. It can contain the following items. You can place this element as many as the number of light elements which your model has.
 
-## `<light_id>`
-This element is required for `<flash_light>`. It specifies which light you are going to control. It is composed of the link name followed by a slash "/" and the light name. In the example, you have a `<light>` named "light_source1" under the `<link>` named "cylinder". So the `<light_id>` should be "cylinder/light_source1".
+## `<id>`
+This element is required for `<light>`. It specifies which light you are going to control. It is composed of the link name followed by a slash "/" and the light name. In the example, you have a `<light>` named "light_source1" under the `<link>` named "cylinder". So the `<id>` should be "cylinder/light_source1".
 
 ## `<duration>`
-This element is required for `<flash_light>`. It specifies how long time the light must flash in seconds.
+This element is required for `<light>`. It specifies how long time the light must flash in seconds.
 
 ## `<interval>`
-This element is required for `<flash_light>`. It specifies how long time the light must dim in seconds. If it is set to 0, the light will be static.
+This element is required for `<light>`. It specifies how long time the light must dim in seconds. If it is set to 0, the light will be static.
 
 ## `<color>`
-This element is optional for `<flash_light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used.
+This element is optional for `<light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used.
 
 ## `<block>`
-This element is optional for `<flash_light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<flash_light>` can have more than one `<block>` so it can provide multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<flash_light>` will be ignored.
+This element is optional for `<light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<light>` can have more than one `<block>` so it can provide multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<light>` will be ignored.
 
 For example,
 ```
@@ -127,7 +122,7 @@ For example,
 This setting will first provide 1 second of red light, followed by green and blue lights. After the blue light is casted, it goes back to the first one, i.e., red.
 
 ## `<enable>`
-This element is optional. When it is given under the plugin, it specifies whether all the lights are enabled or not. If it is placed directly under an individual `<flash_light>`, it overrides the global one and affects the corresponding light.
+This element is optional. When it is given under the plugin, it specifies whether all the lights are enabled or not. If it is placed directly under an individual `<light>`, it overrides the global one and affects the corresponding light.
 
 # How Do They Do It?
 The diagram below shows an abstract structure of the plugin and its components. `FlashLightPlugin` class holds `FlashLightSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic.
@@ -135,7 +130,7 @@ The diagram below shows an abstract structure of the plugin and its components. 
 ![](./flashlight.png)
 
 ## FlashLightSetting class
-Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<flash_light>` element, an object of `FlashLightSetting` is created with the given parameters.
+Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<light>` element, an object of `FlashLightSetting` is created with the given parameters.
 
 To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passes. After that, it calls `Flash()`, and repeats these steps above. If the flashlight is given with multiple `<block>`, it switches to the next block so the light patterns are switched as described by the plugin parameters.
 
@@ -153,10 +148,9 @@ An exted plugin can turn on/off a specific flashlight or all the existing lights
 ## Changing Duration/Interval
 The duration and interval time of flashing can be updated by calling the corresponding functions. The function parameter is the desired time to which the value is set.
 
-<!--
 # Extension of Setting class
-You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights.
-The figure below shows that the plugin now contains inheritances of FlashLightSetting.
+You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights. [LedPlugin](/tutorials?tut=led_plugin&cat=plugins) is an example to blink visual objects at the same timing.
+The figure below shows that a plugin now contains extended objects of FlashLightSetting.
 
 ![](./extendedsetting.png)
 
@@ -164,7 +158,7 @@ The figure below shows that the plugin now contains inheritances of FlashLightSe
 By overriding Flash and Dim functions, the inheriting setting class can do its job when the flashlight flashes and dims.
 
 ## Instantiation and Initialization
-An extended setting class must be instantiated in the process shown in the figure blow. An extend plugin will need to override member functions of FlashLightPlugin.
+An extended setting class must be instantiated in the process shown in the figure blow. An extend plugin will need to override member functions of `FlashLightPlugin`.
 
 ![](./init.png)
 
@@ -203,4 +197,3 @@ void ExtendedPlugin::InitSettingBySpecificData(
   // Do something to initialize the object by the data in the extended plugin.
 }
 ```
--->
