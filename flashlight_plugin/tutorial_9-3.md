@@ -2,10 +2,10 @@
 
 ![](./example.gif)
 
-FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that flashes and dims lights on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., dynamically turning the lights on/off.
+FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
 
 # Usage and Plugin Parameters
-Under `<model>` element, insert <plugin> element with `filename` attribute which is set to `libFlashLightPlugin.so`. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light elements.
+Under `<model>` element, insert <plugin> element with `filename` attribute which is set to `libFlashLightPlugin.so`. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
 
 ```XML
 <model name='light_model'>
@@ -99,10 +99,10 @@ This element is required for `<light>`. It specifies how long time the light mus
 This element is optional for `<light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used.
 
 ## `<block>`
-This element is optional for `<light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<light>` can have more than one `<block>` so it can provide multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<light>` will be ignored.
+This element is optional for `<light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<light>` can have more than one `<block>` so it can produce multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<light>` will be ignored.
 
 For example,
-```
+```XML
 <block>
   <duration>1</duration>
   <interval>0</interval>

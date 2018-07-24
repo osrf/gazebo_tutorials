@@ -19,14 +19,11 @@ This plugin is an inheritance of [FlashLightPlugin](/tutorials?tut=flashlight_pl
     ...
 
     <light name='lamp' type='spot'>
-
       ...
-
     </light>
+
     <visual name='lamp'>
-
       ...
-
     </visual>
 
     ...
@@ -54,4 +51,4 @@ The diagram below shows an abstract structure of the plugin and its components.
 
 ![](./LED.png)
 
-They advertises to the topic `~/visual` to update the specified `<visual>` objects. As `Flash()` and `Dim()` are called, `LedSetting()` publishes a message to this topic.
+They send messages to the topic `~/visual` to update the specified `<visual>` objects. As `Flash()` and `Dim()` are called, `LedSetting()` publishes a message to this topic.
