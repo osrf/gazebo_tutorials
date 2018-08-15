@@ -1,6 +1,6 @@
 # LED Plugin Introduction
 
-[[file:example.gif]]
+[[file:files/example.gif|640px]]
 
 LedPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that synchronously flashes and dims light and visual objects on a model. By giving parameters to the plugin, you can choose which lights and visuals to blink, and you can also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., dynamically turning the lights on/off.
 
@@ -49,6 +49,6 @@ This plugin is an inheritance of [FlashLightPlugin](/tutorials?tut=flashlight_pl
 The diagram below shows an abstract structure of the plugin and its components.
 `LedPlugin` class holds `LedSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic. `LedPlugin` and `LedSetting` are child classes of `FlashLightPlugin` and `FlashLightSetting` respectively so they have the functionalities of the base classes.
 
-[[file:LED.png]]
+[[file:files/LED.png|640px]]
 
 They send messages to the topic `~/visual` to update the specified `<visual>` objects. As `Flash()` and `Dim()` are called, `LedSetting()` publishes a message to this topic.
