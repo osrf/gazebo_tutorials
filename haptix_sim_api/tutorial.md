@@ -86,7 +86,7 @@ state, such as position, velocity, and internal/external forces/torques.
 ### `hxs_camera_transform` and `hxs_set_camera_transform`
 Get and set the position and orientation of the simulation camera angle.
 
-<include lang='matlab' from="/% Get the user camera pose/" to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Get the user camera pose/" to="/hxs_set_camera_transform\(new_tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 Here, we store the current camera transform in a struct `tx`, translate and
 rotate it, and set the new camera transform.
@@ -97,14 +97,14 @@ where alpha represents the transparency of the object. An object with an alpha
 value of 0 is fully transparent (invisible), while an alpha value of 1 means
 the object is fully opaque (solid).
 
-<include lang='matlab' from="/% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Change the table color./" to="/hxs_model_color\('table'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 Here, we set the color of the table from red to green to blue.
 
 ### `hxs_contacts`
 Get points at which one model is contacting other models.
 
-<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts\('wood_cube_5cm'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Get contact information/" to="/hxs_contacts\('wood_cube_5cm'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 This example retrieves the contacts struct and then traverses it to print out each
 contact point for the wooden cube. Expect to see four contact points, one on each
@@ -123,10 +123,10 @@ model's canonical link. For a single-link object like the wood cube, this is
 the velocity of the whole model. But for the robotic arm, this is the velocity
 of the forearm link, which is established as the canonical link in SDF.
 
-<include lang='matlab' from="/% Move by setting linear velocity/" to="/\[-0.5; 0; 0\]\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Move by setting linear velocity/" to="/\[-0.5; 0; 0\]\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 When we set the velocity of the model in this way, the API will set the velocity
-of each link in the model. 
+of each link in the model.
 
 ### `hxs_angular_velocity` and `hxs_set_angular_velocity`
 Get and set the angular velocity of a model. The angular velocity is a 3-vector
@@ -137,7 +137,7 @@ vel = hxs_angular_velocity('wood_cube_5cm');
 ~~~
 This function will return the angular velocity of the model's canonical link.
 
-<include lang='matlab' from="/% Move by setting angular velocity/" to="/, \[0; 0; 100\]\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Move by setting angular velocity/" to="/, \[0; 0; 100\]\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 For single-link models, `hxs_set_angular_velocity` will set the angular velocity of the model
 relative to the center of mass of the link.
 
@@ -159,7 +159,7 @@ hxs_apply_torque('wood_cube_5cm', 'link', [0; 0; 0.1], 0.1)
 This function applies a torque of 0.1 Newton-meters about the Z axis on the wood
 cube model for 0.1 seconds.
 
-<include lang='matlab' from="/% Apply force and torque at the same time./" to="/wrench, 0.1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/% Apply force and torque at the same time./" to="/wrench, 0.1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 This function applies a wrench, which is a simultaneous force and torque. The wrench
 has a force component of 1 Newton in the positive Z direction, and a torque
 component  of 0.1 Newton-meters about the Z axis.
@@ -170,7 +170,7 @@ model will experience gravity (by default, 9.81 meters/second^2 in the negative 
 direction). If the gravity mode is 0, the model will not experience gravity and will
 float in the air unless disturbed by external forces.
 
-<include lang='matlab' from="/\% Check gravity mode on wooden cube/" to="/hxs_set_model_gravity_mode\('wood_cube_5cm', gravity_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Check gravity mode on wooden cube/" to="/hxs_set_model_gravity_mode\('wood_cube_5cm', gravity_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 This example retrieves the current gravity mode, which is 1 by default. It then
 turns gravity off and nudges it upward. If gravity acted on the cube, it would fall back
 towards the table, but since gravity was turned off it will float.
@@ -179,14 +179,14 @@ towards the table, but since gravity was turned off it will float.
 Get and set the transform of the model. This is defined as the current transform of the
 canonical link (usually the center of mass for single-link models).
 
-<include lang='matlab' from="/\% Get the pose of the cube/" to="/hxs_set_model_transform\('wood_cube_5cm', tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Get the pose of the cube/" to="/hxs_set_model_transform\('wood_cube_5cm', tx\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 This example gets the transform of the cube and then modifies it to a different location
 and orientation.
 
 #### Setting the transform of the arm
 You can also set the position and orientation of the robotic arm:
 
-<include lang='matlab' from="/\% Set the position of the arm/" to="/arm_tx\)/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Set the position of the arm/" to="/arm_tx\)/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 These commands will be overridden by motion tracking technology such as the
 Optitrack. If you want them to take effect, make sure motion tracking is paused or
@@ -196,7 +196,7 @@ disabled.
 Get and set the collide mode of the model. There are three possible collide modes:
 
 * `hxsCOLLIDE`: The default collide mode. The model will collide with other models
-set to this collide mode. 
+set to this collide mode.
 * `hxsNOCOLLIDE`: The model will not collide with anything. It will pass through
 other models, even if the other models are set to `hxsCOLLIDE`. `hxs_contacts`
 will not detect contacts when this model pass through other models.
@@ -208,7 +208,7 @@ that timestep (unless the model has `hxsNOCOLLIDE` set).
 
 For most applications, we recommend either `hxsCOLLIDE` or `hxsDETECTIONONLY`.
 
-<include lang='matlab' from="/\% Check collide mode on the cube/" to="/hxs_set_model_collide_mode\('wood_cube_5cm', collide_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Check collide mode on the cube/" to="/hxs_set_model_collide_mode\('wood_cube_5cm', collide_mode\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 In this example, we check the cube's collide mode, which is set to the default
 `hxsCOLLIDE`. We then set it to 0, which corresponds to `hxsNOCOLLIDE`, causing it
@@ -226,7 +226,7 @@ or learn how to use the [model editor](http://gazebosim.org/tutorials?cat=model_
 `hxs_remove_model` will return an error if it tries to remove a model that does
 not exist.
 
-<include lang='matlab' from="/\% Define a new model./" to="/hxs_remove_model\('green_cricket_ball'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Define a new model./" to="/hxs_remove_model\('green_cricket_ball'\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 This example takes a hardcoded SDF string and creates a new `green_cricket_ball` model.
 The model appears in the global coordinate frame at position (0, 0, 5), which means that
 it drops onto the wooden case. We apply a torque to show that the model reacts to
@@ -237,7 +237,7 @@ For models with one or more joints, this function takes a model and the name of 
 and two scalar values. It then sets the position and velocity of the specified joint in the model
 based on the scalar inputs.
 
-<include lang='matlab' from="/\% Set the state of a wrist joint/" to="/'wristy', 0.5, 0.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Set the state of a wrist joint/" to="/'wristy', 0.5, 0.0\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
 
 In this example, we try to set the state of the robotic arm's wrist joint.
 The joint will snap back to its original position because the motors in the arm
@@ -249,4 +249,4 @@ Reset the world. If argument "0" is passed to reset, the robotic arm and the vie
 will not reset. If a non-zero argument is passed to reset, everything in the world will
 reset to its original position.
 
-<include lang='matlab' from="/\% Move the camera/" to="/hxs_reset\(1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/> 
+<include lang='matlab' from="/\% Move the camera/" to="/hxs_reset\(1\);/" src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m'/>
