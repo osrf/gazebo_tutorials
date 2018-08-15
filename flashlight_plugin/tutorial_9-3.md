@@ -123,6 +123,8 @@ For example,
 
 This setting will first provide 1 second of red light, followed by green and blue lights. After the blue light is casted, it goes back to the first one, i.e., red.
 
+[[file:files/switchcolors.gif|640px]]
+
 ## `<enable>`
 This element is optional. When it is given under the plugin, it specifies whether all the lights are enabled or not. If it is placed directly under an individual `<light>`, it overrides the global one and affects the corresponding light.
 
