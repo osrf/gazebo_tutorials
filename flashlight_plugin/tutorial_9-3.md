@@ -136,25 +136,25 @@ The diagram below shows an abstract structure of the plugin and its components. 
 ## FlashLightSetting class
 Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<light>` element, an object of `FlashLightSetting` is created with the given parameters.
 
-To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passes. After that, it calls `Flash()`, and repeats these steps above. If the flashlight is given with multiple `<block>`, it switches to the next block so the light patterns are switched as described by the plugin parameters.
+To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passed. After that, it calls `Flash()`, and repeats these steps above. If the flashlight is given with multiple `<block>`, it switches to the next block so the light patterns are switched as described by the plugin parameters.
 
 ## ~/light/modify topic
 Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://bitbucket.org/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
 
 # Extension of Plugin
-FlashLightPlugin class has member functions which are accessible to inheriting classes. These functions can dynamically turn the flashlights on and off, and can also update the duration and interval time. As the diagram below shows, an extended plugin calls member functions of FLashLightPlugin to control the flashlights. The plugin could let external entities control flashlights by reacting to external events or requests.
+FlashLightPlugin class has member functions which are accessible to derived classes. These functions can dynamically turn the flashlights on and off, and can also update the duration and interval time. As the diagram below shows, a derived plugin calls member functions of FLashLightPlugin to control the flashlights. The plugin could let external entities control flashlights by reacting to external events or requests.
 
 [[file:files/extendedplugin.png|640px]]
 
 ## Turning Lights On/Off
-An derived plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
+A derived plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
 
 ## Changing Duration/Interval
 The duration and interval time of flashing can be updated by calling the corresponding functions. The function parameter is the desired time to which the value is set.
 
 # Extension of Setting class
 You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights. [LedPlugin](/tutorials?tut=led_plugin&cat=plugins) is an example to blink visual objects at the same timing.
-The figure below shows that a plugin now contains extended objects of FlashLightSetting.
+The figure below shows that a plugin now contains derived objects of FlashLightSetting.
 
 [[file:files/extendedsetting.png|640px]]
 
