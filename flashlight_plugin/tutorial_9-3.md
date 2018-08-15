@@ -2,10 +2,10 @@
 
 [[file:files/example.gif|640px]]
 
-FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
+FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with Gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
 
 # Usage and Plugin Parameters
-Under `<model>` element, insert <plugin> element with `filename` attribute which is set to `libFlashLightPlugin.so`. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
+Under `<model>` element, insert your plugin block with the `filename` attribute set to `libFlashLightPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
 
 ```XML
 <model name='light_model'>
@@ -84,24 +84,25 @@ Under `<model>` element, insert <plugin> element with `filename` attribute which
 
 The following items are the parameters which the plugin takes.
 ## `<light>`
-This element represents a unit of settings for each flashlight. It can contain the following items. You can place this element as many as the number of light elements which your model has.
+This element represents a unit of settings for each flashlight. It can contain the following items. You can use this element as many times as the number of lights contained in your model.
 
 ## `<id>`
-This element is required for `<light>`. It specifies which light you are going to control. It is composed of the link name followed by a slash "/" and the light name. In the example, you have a `<light>` named "light_source1" under the `<link>` named "cylinder". So the `<id>` should be "cylinder/light_source1".
+This element is required for `<light>`. It specifies which light you are going to control. It is composed of the link name followed by a slash "/" and the light name. In the example, you have a `<light>` named "light\_source1" under the `<link>` named "cylinder". So the `<id>` should be "cylinder/light_source1".
 
 ## `<duration>`
-This element is required for `<light>`. It specifies how long time the light must flash in seconds.
+This element is required for `<light>`. It specifies for how long the light should be on in seconds.
 
 ## `<interval>`
-This element is required for `<light>`. It specifies how long time the light must dim in seconds. If it is set to 0, the light will be static.
+This element is required for `<light>`. It specifies for how long the light should be dimmed in seconds. If it is set to 0, the light will be static.
 
 ## `<color>`
-This element is optional for `<light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used.
+This element is optional for `<light>`. It specifies the color of the light. If it is not given, the default color of the visual object will be used. The format is RGB, each of which ranges from 0 to 1. For example, `1 0 0` represents red. `0.5 0.5 0.5` will be gray.
 
 ## `<block>`
-This element is optional for `<light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<light>` can have more than one `<block>` so it can produce multiple patters with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<light>` will be ignored.
+This element is optional for `<light>`. It must have `<duration>` and `<interval>`, and it can optionally have `<color>`. `<light>` can have more than one `<block>` so it can produce multiple patterns with different colors. If this element is given, the `<duration>`, `<interval>`, and `<color>` elements directly placed under the `<light>` will be ignored.
 
 For example,
+
 ```XML
 <block>
   <duration>1</duration>
@@ -119,6 +120,7 @@ For example,
   <color>0 0 1</color>
 </block>
 ```
+
 This setting will first provide 1 second of red light, followed by green and blue lights. After the blue light is casted, it goes back to the first one, i.e., red.
 
 ## `<enable>`
@@ -143,7 +145,7 @@ FlashLightPlugin class has member functions which are accessible to inheriting c
 [[file:files/extendedplugin.png|640px]]
 
 ## Turning Lights On/Off
-An exted plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
+An derived plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
 
 ## Changing Duration/Interval
 The duration and interval time of flashing can be updated by calling the corresponding functions. The function parameter is the desired time to which the value is set.
@@ -163,6 +165,7 @@ An extended setting class must be instantiated in the process shown in the figur
 [[file:files/init.png|640px]]
 
 When a plugin is loaded, CreateSetting function is called to generate a setting object for each flashlight.
+
 ```C++
 std::shared_ptr<FlashLightSetting>
   FlashLightPlugin::CreateSetting(
@@ -187,6 +190,7 @@ std::shared_ptr<FlashLightSetting> ExtendedPlugin::CreateSetting(
 ```
 
 An object is initialized by InitSettingBySpecificData function. If the object is required to be initialized by data stored in the extended plugin, it must be done in an overridden InitSettingBySpecificData function, where the FlashLightSetting's InitSettingBySpecificData is also called.
+
 ```C++
 void ExtendedPlugin::InitSettingBySpecificData(
     std::shared_ptr<FlashLightSetting> &_setting)
