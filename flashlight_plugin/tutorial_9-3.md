@@ -1,6 +1,6 @@
 # Flashlight Plugin Introduction
 
-![](./example.gif)
+[[file:example.gif]]
 
 FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
 
@@ -127,7 +127,7 @@ This element is optional. When it is given under the plugin, it specifies whethe
 # How Do They Do It?
 The diagram below shows an abstract structure of the plugin and its components. `FlashLightPlugin` class holds `FlashLightSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic.
 
-![](./flashlight.png)
+[[file:flashlight.png]]
 
 ## FlashLightSetting class
 Once the plugin is loaded, it reads the parameters given under the `<plugin>` element. For each `<light>` element, an object of `FlashLightSetting` is created with the given parameters.
@@ -140,7 +140,7 @@ Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Fl
 # Extension of Plugin
 FlashLightPlugin class has member functions which are accessible to inheriting classes. These functions can dynamically turn the flashlights on and off, and can also update the duration and interval time. As the diagram below shows, an extended plugin calls member functions of FLashLightPlugin to control the flashlights. The plugin could let external entities control flashlights by reacting to external events or requests.
 
-![](./extendedplugin.png)
+[[file:extendedplugin.png]]
 
 ## Turning Lights On/Off
 An exted plugin can turn on/off a specific flashlight or all the existing lights on the model. If you want to access a particular one, you need to specify the light name and link name as function parameters. If an empty string is given to the link name, the function will access the first match of the light name.
@@ -152,7 +152,7 @@ The duration and interval time of flashing can be updated by calling the corresp
 You can also add functionalities at the exact timing when the light flashes and dims, by extending the `FlashLightSetting` class. This lets you synchronize other entities (such as visual objects) with the lights. [LedPlugin](/tutorials?tut=led_plugin&cat=plugins) is an example to blink visual objects at the same timing.
 The figure below shows that a plugin now contains extended objects of FlashLightSetting.
 
-![](./extendedsetting.png)
+[[file:extendedsetting.png]]
 
 ## Flash/Dim
 By overriding Flash and Dim functions, the inheriting setting class can do its job when the flashlight flashes and dims.
@@ -160,7 +160,7 @@ By overriding Flash and Dim functions, the inheriting setting class can do its j
 ## Instantiation and Initialization
 An extended setting class must be instantiated in the process shown in the figure blow. An extend plugin will need to override member functions of `FlashLightPlugin`.
 
-![](./init.png)
+[[file:init.png]]
 
 When a plugin is loaded, CreateSetting function is called to generate a setting object for each flashlight.
 ```C++
