@@ -1,11 +1,11 @@
-# Flashlight Plugin Introduction
+# Introduction
 
 [[file:files/example.gif|640px]]
 
 FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with Gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
 
 # Usage and Plugin Parameters
-Under `<model>` element, insert your plugin block with the `filename` attribute set to `libFlashLightPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
+Insert your plugin block with the `filename` attribute set to `libFlashLightPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
 
 ```XML
 <model name='light_model'>
@@ -128,7 +128,7 @@ This setting will first provide 1 second of red light, followed by green and blu
 ## `<enable>`
 This element is optional. When it is given under the plugin, it specifies whether all the lights are enabled or not. If it is placed directly under an individual `<light>`, it overrides the global one and affects the corresponding light.
 
-# How Do They Do It?
+# Implementation Details
 The diagram below shows an abstract structure of the plugin and its components. `FlashLightPlugin` class holds `FlashLightSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic.
 
 [[file:files/flashlight.png|640px]]
