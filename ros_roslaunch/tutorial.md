@@ -345,7 +345,7 @@ This hierarchy is specially adapted for use as a Gazebo model database by means 
 
 #### model.config
 
-Each model must have a model.config file in the model's root directory that contains meta information about the model. Basically copy this into a model.config file, replacing model.urdf with your file name:
+Each model must have a model.config file in the model's root directory that contains meta information about the model. Basically copy this into a model.config file, replacing MYROBOT.urdf with your file name:
 
       <?xml version="1.0"?>
       <model>
