@@ -528,8 +528,8 @@ save, then launch the same launch files as for GPU Laser.
   - inheritance from SensorPlugin instead of ModelPlugin,
   - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
   - gravity is included in inertial measurements.
-  
-  
+
+
 ~~~
   <gazebo reference="imu_link">
     <gravity>true</gravity>
@@ -590,17 +590,54 @@ save, then launch the same launch files as for GPU Laser.
 ~~~
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-    <alwaysOn>true</alwaysOn>
+
+    <!-- Plugin update rate in Hz -->
     <updateRate>${update_rate}</updateRate>
-    <leftJoint>base_link_right_wheel_joint</leftJoint>
-    <rightJoint>base_link_left_wheel_joint</rightJoint>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>base_link_left_wheel_joint</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>base_link_right_wheel_joint</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
     <wheelSeparation>0.5380</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
     <wheelDiameter>0.2410</wheelDiameter>
-    <torque>20</torque>
+
+    <!-- Wheel acceleration, in m/s^2, defaults to 0.0 m/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
     <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
     <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
     <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
     <robotBaseFrame>base_footprint</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
   </plugin>
 </gazebo>
 ~~~
