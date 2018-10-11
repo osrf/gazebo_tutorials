@@ -5,11 +5,12 @@
 
 Gazebo is a stand-alone application which can be used independently of ROS or
 ROS 2. The integration of Gazebo with either ROS version is done through a set
-of packages called [gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs).
+of packages called
+[gazebo\_ros\_pkgs](https://github.com/ros-simulation/gazebo_ros_pkgs).
 These packages provide a bridge between Gazebo's C++ API and transport system,
 and ROS 2 messages and services.
 
-Not all functionality from ROS 1 has been ported to ROS 2 yet. You can
+> Not all functionality from ROS 1 has been ported to ROS 2 yet. You can
 check the progress on
 [this wiki page](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-integration).
 
@@ -37,8 +38,8 @@ following packages:
 ## Target versions
 
 The ROS 2 port of `gazebo_ros_pkgs` will have debian packages released
-with the Crystal Clemmys release, scheduled for December 2018. The code can also
-be built from source using the
+with the [Crystal Clemmys](https://github.com/ros2/ros2/issues/529) release,
+scheduled for December 2018. The code can also be built from source using the
 [ros2](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2) branch
 against
 [ROS 2 master branches](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
@@ -62,27 +63,26 @@ Some goals of the refactoring were:
 * Add tests to all ported functionality.
 
 Detailed migration guides for each plugin can be found on the
-[gazebo_ros_pkgs wiki](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki).
-See some general highlights below:
+[gazebo\_ros\_pkgs wiki](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki).
+See some general highlights below.
 
 ### Init
 
 The ROS 1 integration required that Gazebo be launched with the
 `gazebo_ros_api_plugin` system plugin, which would initialize ROS.
 
-There's no such requirement with ROS 2, Gazebo can be started as usual, and
-ROS-2-enabled plugins can be added at runtime.
+There's no such requirement with ROS 2. Gazebo can be started without any
+plugins and ROS-2-enabled plugins can be added at runtime.
 
 ### Node
 
 In ROS 1, each plugin typically had one or more `ros::NodeHandle` instances to
 interact with ROS.
 
-In ROS 2, plugins use `gazebo_ros::Node` instead, which
-allows each plugin to exist as its own node in the ROS graph, with its own
-parameters, namespace, loggers, etc. Plugins also don't need to worry about
-spinning the node or keeping callback queues - `gazebo_ros` handles all that
-internally.
+In ROS 2, plugins use `gazebo_ros::Node` instead, which allows each plugin to
+exist as its own node in the ROS graph, with its own parameters, namespace,
+loggers, etc. Plugins also don't need to worry about spinning the node or
+keeping callback queues - `gazebo_ros` handles all that internally.
 
 ### SDF parsing
 
@@ -90,7 +90,7 @@ There are several configurations which Gazebo ROS plugins commonly want to
 set through SDF, and in the ROS 1 implementation, there was a lot of duplicate
 code on plugins parsing the same things, sometimes following loose conventions.
 
-In ROS 2, common configurations like namespace, ROS parameters, and topic
+In ROS 2, common configurations like namespace, ROS parameters and topic
 remapping rules are parsed by `gazebo_ros::Node`, so there's no need for plugins
 to reimplement them every time.
 
@@ -102,5 +102,5 @@ features.
 
 In ROS 2, this plugin is being split into smaller, more focused plugins. You can
 read the migration details on
-[ROS 2 Migration: gazebo_ros_api_plugin](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-gazebo_ros_api_plugin).
+[ROS 2 Migration: gazebo\_ros\_api\_plugin](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-gazebo_ros_api_plugin).
 
