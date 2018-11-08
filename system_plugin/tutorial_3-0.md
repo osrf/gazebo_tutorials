@@ -76,7 +76,7 @@ include_directories(${GAZEBO_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS} ${OGRE_LIBRARY_DIRS})
 
 add_library(system_gui SHARED system_gui.cc)
-target_link_libraries(system_gui ${GAZEBO_libraries} ${OGRE_LIBRARIES})
+target_link_libraries(system_gui ${GAZEBO_LIBRARIES} ${OGRE_LIBRARIES})
 ~~~
 
 Note for Gazebo 1.10 and later, you will need to depend on `OGRE-Terrain` as well by adding these lines to you `CMakeLists.txt`:
