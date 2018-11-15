@@ -1,7 +1,8 @@
 
 # Tutorial: Using Gazebo plugins with ROS
 
-Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input. In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
+Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input.
+In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
 
 ## Prerequisites
 
@@ -29,11 +30,14 @@ In short, the `ModelPlugin` is inserted in the URDF inside the `<robot>` element
       ... robot description ...
     </robot>
     
-Upon loading the robot model within Gazebo, the `diffdrive_plugin` code will be given a reference to the model itself, allowing it to manipulate it. Also, it will be give a reference to the SDF element of itself, in order to read the plugin parameters passed to it.
+Upon loading the [robot model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) within Gazebo,
+the `diffdrive_plugin` code will be given a reference to the model itself, allowing it to manipulate it.
+Also, it will be give a reference to the [SDF element](http://osrf-distributions.s3.amazonaws.com/sdformat/api/dev/classsdf_1_1Element.html) of itself, in order to read the plugin parameters passed to it.
 
 ## Adding a `SensorPlugin`
 
-Specifying sensor plugins is slightly different. [Sensors](http://gazebosim.org/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links, so the `<gazebo>` element describint that sensor must be given a reference to that link.
+Specifying sensor plugins is slightly different. [Sensors](http://gazebosim.org/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
+so the `<gazebo>` element describint that sensor must be given a reference to that link.
 For example:
 
     <robot>
@@ -53,8 +57,8 @@ For example:
       
     </robot>
     
-Upon loading the robot model within Gazebo, the `camera_controller` code will be given a reference to the sensor, providing access to its API. Also, it will be give a reference to the SDF element of itself, in order to read the plugin parameters passed to it.
-
+Upon loading the robot model within Gazebo, the `camera_controller` code will be given a reference to the sensor, providing access to its API.
+Also, it will be give a reference to the SDF element of itself, in order to read the plugin parameters passed to it.
 
 # Plugins available in gazebo_plugins
 
