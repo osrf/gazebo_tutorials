@@ -253,7 +253,7 @@ Gazebo depends on the SDFormat package.
                              python \
                              libboost-system-dev \
                              libtinyxml-dev \
-                             libxml2-utils
+                             libxml2-utils \
                              ruby-dev \
                              ruby
 
