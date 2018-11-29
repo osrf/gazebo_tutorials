@@ -403,7 +403,7 @@ The advantage of the model database method is that now you can include your robo
       <pose>-2.0 7.0 0 0 0 0</pose>
     </include>
     <include>
-      <uri>model://MYROBOT</uri>
+      <uri>model://MYROBOT_description</uri>
     </include>
   </world>
 </sdf>
