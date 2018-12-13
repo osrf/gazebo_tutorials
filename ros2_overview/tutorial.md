@@ -17,15 +17,16 @@ check the progress on
 The ROS 2 package `gazebo_ros_pkgs` is a metapackage which contains the
 following packages:
 
-* `gazebo_dev`: Provides a cmake config for the default version of Gazebo for
-                the ROS distribution. So downstream packages can just depend
-                on `gazebo_dev` instead of needing to find Gazebo by themselves.
+* `gazebo_dev`: Provides a cmake configuration for the default version of
+                Gazebo for the ROS distribution. So downstream packages can
+                just depend on `gazebo_dev` instead of needing to find
+                Gazebo by themselves.
 
 * `gazebo_msgs`: Message and service data structures for interacting with
                  Gazebo from ROS 2.
 
-* `gazebo_ros`: Provides convenient C++ classes and functions which can be used
-                by other plugins, such as `gazebo_ros::Node` and conversion
+* `gazebo_ros`: Provides convenient C++ classes and functions which can be
+                used by other plugins, such as `gazebo_ros::Node`, conversion
                 and testing utilities. It also provides some generally useful
                 plugins.
 
@@ -37,14 +38,15 @@ following packages:
 
 ## Target versions
 
-The ROS 2 port of `gazebo_ros_pkgs` will have debian packages released
-with the [Crystal Clemmys](https://github.com/ros2/ros2/issues/529) release,
-scheduled for December 2018. The code can also be built from source using the
+The ROS 2 port of `gazebo_ros_pkgs` has debian packages released
+for the Crystal Clemmys distribution.
+
+The code can also be built from source using the
 [ros2](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2) branch
 against
 [ROS 2 master branches](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
 
-The targeted Gazebo version is Gazebo 9.
+Currently, the only supported Gazebo version is Gazebo 9.
 
 ## Differences from ROS 1
 
@@ -60,7 +62,7 @@ Some goals of the refactoring were:
 * Modernize the codebase, making use of the latest SDFormat, Gazebo and Ignition  APIs, as well as ROS 2's
   [style guidelines](https://github.com/ros2/ros2/wiki/Developer-Guide#c-1)
   and linters.
-* Add tests to all ported functionality.
+* Add tests and demos for all ported functionality.
 
 Detailed migration guides for each plugin can be found on the
 [gazebo\_ros\_pkgs wiki](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki).

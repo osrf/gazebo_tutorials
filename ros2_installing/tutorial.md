@@ -6,24 +6,23 @@ See
 [ROS 2 Overview](http://gazebosim.org/tutorials/?tut=ros2_overview)
 for background information before continuing here.
 
-These instructions are for using Gazebo 9 with the current ROS 2 master
-branches, to be released on December 2018 as ROS 2 Crystal Clemmys.
+The packages support ROS 2 Crystal and Gazebo 9, and can be installed from
+debian packages or from source.
 
 ## Prerequisites
 
-You should understand the basic concepts of ROS 2 and have gone through the
-[ROS 2 Tutorials](https://github.com/ros2/ros2/wiki/Tutorials).
+You should understand the basic concepts of ROS 2 and have gone through some
+[ROS 2 Tutorials](https://index.ros.org/doc/ros2/Tutorials).
 
 ### Install ROS 2
 
-You'll need to install ROS 2's master branch from source until the Crystal
-release. See the
-[ROS 2 installation page](https://github.com/ros2/ros2/wiki/Installation)
-for detailed instructions. Be sure to build from source and use the `master`
-repos when getting the code (use https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
+To install ROS 2 Crystal, see the
+[ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
+Either a source or a binary installation should work; **be sure to install the
+Crystal** distribution.
 
-> **Tip**: Be sure to source your `setup.bash` script by following the
-  instructions on the ROS installation page.
+> **Tip**: Don't forget to source your `setup.bash` script as instructed
+  on the ROS installation page.
 
 ### Install Gazebo
 
@@ -33,9 +32,20 @@ You can install Gazebo either from source or from pre-build packages. See
 You should install Gazebo 9. If installing from source, be sure to build the
 `gazebo9` branch.
 
+> **Tip**: You may need to source Gazebo's setup file if you're having difficulty
+finding plugins and other resources. For example: `. /usr/share/gazebo/setup.sh`.
+
 ## Install gazebo\_ros\_pkgs
 
-Before the ROS 2 Crystal release, installation must be done from source.
+Follow either the instructions to install from debian packages, or the
+instructions to install from source.
+
+### Install from debian packages (on Ubuntu)
+
+Assuming you already have some Crystal debian packages installed, install
+`gazebo_ros_pkgs` as follows:
+
+    sudo apt install ros-crystal-gazebo-ros-pkgs
 
 ### Install from source (on Ubuntu)
 
@@ -56,7 +66,12 @@ Before the ROS 2 Crystal release, installation must be done from source.
         cd ~/ws/src
         git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b ros2
 
-1. Then go to the workspace root directory and build:
+1. Install all dependencies:
+
+        cd ~/ws
+        rosdep install --from-paths src --ignore-src -r -y
+
+1. Then build:
 
         cd ~/ws
         colcon build
@@ -80,29 +95,25 @@ insert models at runtime which have ROS 2 plugins in them.
 
 Gazebo ROS packages provides several demo worlds for you to get a quick start
 with the plugins. The demo worlds can be found
-[here](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/worlds).
-Each world file comes with instructions on the top with some example commands
-that you can run to test its functionality, be sure to check that out.
+[here](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/worlds), and are installed by default under
+`/opt/ros/<distro>/share/gazebo_plugins/worlds/`.
+
+Each world file comes with instructions at the top with some example commands
+that you can run to test its functionality, be sure to check that out!
 
 Let's try loading one of them now!
 
 1. Open a new terminal
 
-1. Source your ROS 2 installation as instructed when you installed ROS 2.
+1. Source  ROS 2 as instructed when you installed ROS 2.
 
-1. Source your `gazebo_ros_pkgs` workspace:
+1. If you installed `gazebo_ros_pkgs` from source, source the workspace:
 
         . ~/ws/install/setup.bash
 
-1. Download the differential drive example world:
+1. Load the differential drive world with Gazebo:
 
-        mkdir ~/ros2_gazebo_demos
-        cd ~/ros2_gazebo_demos
-        wget https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
-
-1. Load the world with Gazebo:
-
-        gazebo --verbose gazebo_ros_diff_drive_demo.world
+        gazebo --verbose /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
 1. The Gazebo GUI should appear with a simple vehicle:
 
@@ -111,10 +122,10 @@ Let's try loading one of them now!
 1. On a new terminal (this is the 2nd one), run the following command to take a
    look at the world file.
 
-        gedit ~/ros2_gazebo_demos/gazebo_ros_diff_drive_demo.world
+        gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
-1. See how the block on the top has a few example commands? Let's open a 3d
-   terminal and source ROS 2 and `gazebo_ros_pkgs` as described above.
+1. See how the block on the top has a few example commands? Let's open a 3rd
+   terminal and, again, source ROS 2 and `gazebo_ros_pkgs` as described above.
 
 1. Then run one of the commands, for example:
 
