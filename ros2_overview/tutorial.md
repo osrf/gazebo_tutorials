@@ -10,9 +10,13 @@ of packages called
 These packages provide a bridge between Gazebo's C++ API and transport system,
 and ROS 2 messages and services.
 
-> Not all functionality from ROS 1 has been ported to ROS 2 yet. You can
+> **Not all functionality from ROS 1 has been ported to ROS 2 yet. You can
 check the progress on
-[this wiki page](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-integration).
+[this issue](https://github.com/ros-simulation/gazebo_ros_pkgs/issues/512).**
+
+> If you're interested in porting official or your own custom plugins, check
+out the
+[ROS2 migration contribution guide](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-migration-contribution-guide).
 
 The ROS 2 package `gazebo_ros_pkgs` is a metapackage which contains the
 following packages:
@@ -64,8 +68,8 @@ Some goals of the refactoring were:
   and linters.
 * Add tests and demos for all ported functionality.
 
-Detailed migration guides for each plugin can be found on the
-[gazebo\_ros\_pkgs wiki](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki).
+**Detailed migration guides for each plugin can be found on the
+[gazebo\_ros\_pkgs wiki](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki).**
 See some general highlights below.
 
 ### Init
