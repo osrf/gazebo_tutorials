@@ -549,6 +549,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="ROS 2 overview" ref='ros2_overview'>
+      <markdown version="9+">ros2_overview/tutorial.md</markdown>
+      <description>Overview of ROS 2 integration.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="ROS control" ref='ros_control'>
       <markdown version="1.9+">ros_control/tutorial.md</markdown>
       <description>Using actuators, controllers, and ros_control with Gazebo.</description>
@@ -573,9 +579,15 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Installing gazebo_ros_pkgs" ref='ros_installing'>
+    <tutorial title="Installing gazebo_ros_pkgs (ROS 1)" ref='ros_installing'>
       <markdown version="1.9+">ros_installing/tutorial.md</markdown>
-      <description>Installing gazebo_ros_pkgs.</description>
+      <description>Installing gazebo_ros_pkgs for ROS 1.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Installing gazebo_ros_pkgs (ROS 2)" ref='ros2_installing'>
+      <markdown version="9+">ros2_installing/tutorial.md</markdown>
+      <description>Installing gazebo_ros_pkgs for ROS 2.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -1185,8 +1197,10 @@
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
+        <tutorial>ros2_overview</tutorial>
         <tutorial>ros_wrapper_versions</tutorial>
         <tutorial>ros_installing</tutorial>
+        <tutorial>ros2_installing</tutorial>
         <tutorial>ros_roslaunch</tutorial>
         <tutorial>ros_depth_camera</tutorial>
         <tutorial>ros_urdf</tutorial>
