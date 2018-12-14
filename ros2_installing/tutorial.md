@@ -107,6 +107,10 @@ Let's try loading one of them now!
 
 1. Source  ROS 2 as instructed when you installed ROS 2.
 
+1. Make sure you have some core tools installed:
+
+        sudo apt install ros-crystal-ros-core ros-crystal-geometry2
+
 1. If you installed `gazebo_ros_pkgs` from source, source the workspace:
 
         . ~/ws/install/setup.bash
