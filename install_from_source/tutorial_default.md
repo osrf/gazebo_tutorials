@@ -50,7 +50,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
         wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy GAZEBO_MAJOR_VERSION=9 . /tmp/dependencies.sh
-        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
+        sudo apt-get install $(sed 's:\\::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 
 ### Optional Physics Engines
 
