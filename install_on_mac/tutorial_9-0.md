@@ -42,7 +42,7 @@ which must be installed using the following procedure
 prior to installing Gazebo9 without using the precompiled binary:
 
         brew tap dartsim/dart
-        brew install dartsim6
+        brew install dartsim
         # Gazebo will be built with DART (autodetected), bullet and simbody
         brew install gazebo9 --build-from-source
 
