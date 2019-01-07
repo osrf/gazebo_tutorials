@@ -630,8 +630,8 @@ save, then launch the same launch files as for GPU Laser.
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
     <publishWheelTF>true</publishWheelTF>
 
-    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
-    <publishWheelJointState>true</publishWheelJointState>
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
 
     <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
     <publishWheelJointState>true</publishWheelJointState>
