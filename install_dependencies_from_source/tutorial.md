@@ -204,7 +204,7 @@ Gazebo and Ignition Fuel Tools depend on the Ignition Common library.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-math
+        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-common
         cd /tmp/ign-common
 
      **Note:** the `default` branch is the development branch where
@@ -253,7 +253,7 @@ Gazebo depends on the SDFormat package.
                              python \
                              libboost-system-dev \
                              libtinyxml-dev \
-                             libxml2-utils
+                             libxml2-utils \
                              ruby-dev \
                              ruby
 

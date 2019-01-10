@@ -1,5 +1,8 @@
 # Tutorial: ROS integration overview
 
+> For ROS 2, see
+  [ROS 2 integration overview](http://gazebosim.org/tutorials?tut=ros2_overview).
+
 To achieve ROS integration with stand-alone Gazebo, a set of ROS packages named
 [gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs) provides wrappers
 around the stand-alone Gazebo.  They provide the necessary interfaces to

@@ -337,7 +337,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 add_library(contact SHARED ContactPlugin.cc)
-target_link_libraries(contact ${GAZEBO_libraries})
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 ~~~
 
 Next, create a build directory and make the plugin:
