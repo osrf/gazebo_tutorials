@@ -489,7 +489,8 @@
     </tutorial>
 
     <tutorial title="ContainPlugin" ref='contain_plugin'>
-      <markdown version="7.11+">contain_plugin/tutorial_7.md</markdown>
+      <markdown version="7.11-8">contain_plugin/tutorial_7.md</markdown>
+      <markdown version="9+">contain_plugin/tutorial_9.md</markdown>
       <description>How to use ContainPlugin to trigger events.</description>
       <skill>intermediate</skill>
     </tutorial>
