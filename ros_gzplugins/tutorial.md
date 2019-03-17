@@ -253,7 +253,7 @@ The corresponding camera view after the pendulum has fallen:
 
 **Description:** synchronizes multiple camera's shutters such that they publish their images together. Typically used for stereo cameras, uses a very similar interface as the plain `Camera` plugin
 
-**Note**: currently only supports stereo cameras. See [Github issue](https://github.com/osrf/gazebo_ros_pkgs/issues/13).
+**Note:** currently only supports stereo cameras. See [Github issue](https://github.com/osrf/gazebo_ros_pkgs/issues/13).
 
 ### Atlas Code Example
 
@@ -323,35 +323,53 @@ In this code example there is both a left and right camera:
 
 ## Openni Kinect
 
-'''Description:''' Simulates an Xbox-Kinect, publishes the same topics as the corresponding ROS drivers for the Xbox kinect as documented in the Fuerte documentation [here](http://www.ros.org/wiki/openni_camera).
+**Description:** simulates a Microsoft Kinect, publishes the same topics as the corresponding ROS drivers for the Microsoft kinect as documented in the Fuerte documentation [here](http://www.ros.org/wiki/openni_camera).
 
 ~~~
-<gazebo>
-  <plugin name="${link_name}_controller" filename="libgazebo_ros_openni_kinect.so">
-    <baseline>0.2</baseline>
-    <alwaysOn>true</alwaysOn>
-    <updateRate>1.0</updateRate>
-    <cameraName>${camera_name}_ir</cameraName>
-    <imageTopicName>/${camera_name}/depth/image_raw</imageTopicName>
-    <cameraInfoTopicName>/${camera_name}/depth/camera_info</cameraInfoTopicName>
-    <depthImageTopicName>/${camera_name}/depth/image_raw</depthImageTopicName>
-    <depthImageInfoTopicName>/${camera_name}/depth/camera_info</depthImageInfoTopicName>
-    <pointCloudTopicName>/${camera_name}/depth/points</pointCloudTopicName>
-    <frameName>${frame_name}</frameName>
-    <pointCloudCutoff>0.5</pointCloudCutoff>
-    <distortionK1>0.00000001</distortionK1>
-    <distortionK2>0.00000001</distortionK2>
-    <distortionK3>0.00000001</distortionK3>
-    <distortionT1>0.00000001</distortionT1>
-    <distortionT2>0.00000001</distortionT2>
-    <CxPrime>0</CxPrime>
-    <Cx>0</Cx>
-    <Cy>0</Cy>
-    <focalLength>0</focalLength>
-    <hackBaseline>0</hackBaseline>
-  </plugin>
+<gazebo reference="${link_name}">
+  <sensor name="${link_name}_camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="${link_name}_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>${camera_name}_ir</cameraName>
+      <imageTopicName>/${camera_name}/depth/image_raw</imageTopicName>
+      <cameraInfoTopicName>/${camera_name}/depth/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/${camera_name}/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/${camera_name}/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/${camera_name}/depth/points</pointCloudTopicName>
+      <frameName>${frame_name}</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
 </gazebo>
 ~~~
+
+You can find a more detailed description for configuring a depth camera in [Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials/?tut=ros_depth_camera).
 
 ## GPU Laser
 
@@ -580,7 +598,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Prosilica Camera
 
-**Description:** Simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://bitbucket.org/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
+**Description:** simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://bitbucket.org/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
 
 ## Bumper
 
@@ -599,7 +617,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Differential Drive
 
-**Description** model plugin that provides a basic controller for differential drive robots in Gazebo. You need a well defined differential drive robot to use this plugin.
+**Description:** model plugin that provides a basic controller for differential drive robots in Gazebo. You need a well defined differential drive robot to use this plugin.
 
 ~~~
 <gazebo>
@@ -621,7 +639,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Skid Steering Drive
 
-**Description** model plugin that provides a basic controller for skid steering drive robots in Gazebo (Pioneer 3AT for instance).
+**Description:** model plugin that provides a basic controller for skid steering drive robots in Gazebo (Pioneer 3AT for instance).
 
 ~~~
 <gazebo>
@@ -644,7 +662,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Video Plugin
 
-**Description** visual plugin that displays a ROS image stream on an OGRE Texture inside gazebo. This plugin does not modify the texture of one of the existing link surfaces, but creates a new texture on top of it. The texture will be created on the XY plane, visible from the +Z side. The plugin requires a pixel size while constructing the texture, and will resize incoming ROS image messages to match if they are a different size.
+**Description:** visual plugin that displays a ROS image stream on an OGRE Texture inside gazebo. This plugin does not modify the texture of one of the existing link surfaces, but creates a new texture on top of it. The texture will be created on the XY plane, visible from the +Z side. The plugin requires a pixel size while constructing the texture, and will resize incoming ROS image messages to match if they are a different size.
 
 ~~~
 <gazebo reference="display_screen_link">
@@ -660,7 +678,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Planar Move Plugin
 
-**Description** model plugin that allows arbitrary objects (for instance cubes, spheres and cylinders) to be moved along a horizontal plane using a geometry_msgs/Twist message. The plugin works by imparting a linear velocity (XY) and an angular velocity (Z) to the object every cycle.
+**Description:** model plugin that allows arbitrary objects (for instance cubes, spheres and cylinders) to be moved along a horizontal plane using a geometry_msgs/Twist message. The plugin works by imparting a linear velocity (XY) and an angular velocity (Z) to the object every cycle.
 
 Here is a full URDF example that demonstrates how to control a floating box inside gazebo using this plugin, using different visual and collision elements. Note: The object needs to have sufficient inertia to prevent undesirable motions - which can occur as a reaction to the supplied velocity. You can try increasing inertia until the object moves as desired. It is also good to have the center of mass close to the ground.
 
