@@ -6,7 +6,7 @@ Dynamics Engine(ODE).
 This tutorial first explains physics related parameters that are applicable
 to all the physics engines such as `real_time_factor` and `max_step_size`.
 Then it explains with demonstration about how to use the parameters for `solvers`,
-`constraints`, `friction`. The oder of parameters in this tutorial follows
+`constraints`, `friction`. The order of parameters in this tutorial follows
 the `sdformat` specification definition [here](http://sdformat.org/spec?ver=1.6).
 
 # Parameters Applicable to All Physics Engines
@@ -14,24 +14,25 @@ The parameters listed in this section are defined under the `<physics>` tag
 [here](http://sdformat.org/spec?ver=1.6&elem=physics). These are shared among
 all physics engines.
 
-1. `type` The type of the dynamics engine. Currently Gazebo supports 4 physics
+1. `type`: The type of the dynamics engine. Currently Gazebo supports 4 physics
 engines: `ode`, `bullet`, `simbody` and `dart`. The default physics engine is `ode`.
 
-1. `max_step_size` The maximum time step size during the simulation. `ode` supports
-only constant step size and this is a constant value. Default value in Gazebo is
-`0.001` seconds.
+1. `max_step_size`: The maximum time step size that can be taken by a
+variable time-step solver (such as simbody) during simulation.
+For physics engines with fixed-step solvers (like ODE), this is simply the time step size.
+The default value in Gazebo is `0.001` seconds.
 
-1. `real_time_factor` `max_step_size x real_time_update_rate` sets an upper bound
+1. `real_time_factor`: `max_step_size x real_time_update_rate` sets an upper bound
 of `real_time_factor`. If `real_time_factor < 1` the simulation is slower than real
 time.
 
-1. `real_time_update_rate` This is the frequency at which the simulation time steps
+1. `real_time_update_rate`: This is the frequency at which the simulation time steps
 are advanced. The default value in Gazebo is `1000` Hz. Multiplying with the default
 `max_step_size` of `0.001` seconds gives a `real_time_factor` of `1`. If `real_time_update_rate`
 is set to `0` the simulation will run as fast as it can. If Gazebo is not able to update
 at the desired rate, it will update as fast as it can, based on the computing power.
 
-1. `max_contacts` The maximum number of contacts to be generated between two entities.
+1. `max_contacts`: The maximum number of contacts to be generated between two entities.
 This value can be overwritten by the `max_contacts` element nested under a `collision`
 element. This is helpful to constrain the maximum number of contacts between two entities,
 such as face-to-face collisions, with a potential sacrifice to the accuracy. The
@@ -64,14 +65,17 @@ iterations to reach an accurate enough solution.
     <iframe width="25" height="315" frameborder="0"></iframe>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1ncEVDIP1Yo" frameborder="0" gesture="media" allowfullscreen></iframe>
 
-1. `min_step_size` The time duration which advances with each time step of the dynamics
-engine. The value of `min_step_size` is no larger than the `max_step_size` under the
-`physics` element. If this is left unspecified the default value will be the `max_step_size`
+1. `min_step_size` The minimum time duration which advances with each time step of a
+variable time step solver.
+This parameter is ignored by fixed-step size solvers.
+The value of `min_step_size` must be smaller than the `max_step_size` under the
+`physics` element.
+If this is left unspecified the default value will be the `max_step_size`
 under `physics` element.
 
 1. `iters` The number of iterations for the solver to run for each time step. In general, a
 larger number results in better accuracy at the cost of slower simulation, but this is not
-guaranteed. Note that this parameter is only meaningful to `quick` solver; `world` solver
+guaranteed. Note that this parameter is only meaningful to the ode `quick` solver; `world` solver
 doesn't use this parameter.
 
 1. `precon_iters` This parameter only applies to the `quick` solver. It is the number of
