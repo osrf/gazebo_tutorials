@@ -259,7 +259,7 @@ For most cases, `mu2` has same value with `mu`.
 1. `fdir1`: 3-tuple unit vector specifying the direction of the first
 friction direction corresponding to `mu` in the collision local reference frame.
 
-    [[file:files/cone_pyramid.png|460px]]
+    [[file:files/cone_pyramid.png|300px]]
 
     This picture shows how the friction cone is approximated with a pyramid model.
     The direction of `fdir1`, `mu` and `mu2` are marked. Whenever a contact forms,
@@ -285,9 +285,6 @@ Valid values of the `friction_model` include:
     1-dimensional constraints that are solved independently.
     The friction force limit is the product of the normal force and the
     non-dimensional coefficients `mu` and `mu2` in each friction direction.
-    This is illustrated by the following figure:
-
-    [[file:files/cone_pyramid.png|460px]]
 
 * `box_model`: friction forces are again decoupled into two 1-dimensional
     constraints with a constant friction force limit that is independent of
@@ -307,7 +304,7 @@ geometric interpretation of the directions in which contact forces may point,
 as shown in the following figure.
 The angle of the cone/pyramid is set by the friction coefficient.
 
-[[file:files/cone_pyramid.png|460px]]
+[[file:files/cone_pyramid.png|300px]]
 
 A fixed normal force corresponds to a circular slice from the cone,
 representing a limit on friction force magnitude in any direction.
