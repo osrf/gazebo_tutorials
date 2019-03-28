@@ -327,7 +327,7 @@ Specifying `cone_model` in that example world at
 [line 15](https://bitbucket.org/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
 results in boxes that travel out radially as one would expect.
 
-<iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
+<iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Since the pyramid friction model uses the world X-Y axes for its friction directions
 by default, the velocity of some boxes is not aligned with these axes
@@ -341,7 +341,7 @@ These boxes end up traveling parallel to one of the friction directions
 for a duration before they eventually come to rest.
 Specifying `pyramid_model` in the example world illustrates this behavior.
 
-<iframe src="https://player.vimeo.com/video/327118010" width="640" height="602" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
+<iframe src="https://player.vimeo.com/video/327118010" width="640" height="602" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Contact parameters
 `contact` is an element nested under `collision->surface->contact` in sdformat
