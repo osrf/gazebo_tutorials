@@ -243,10 +243,12 @@ With this `min_depth` determined, penetration between the two entities is update
     equal to the `min_depth`.
 
 ## Friction parameters
-As for the torsional friction, please refer to the tutorial
+
+For torsional friction in ODE, please refer to the tutorial
 [here](http://gazebosim.org/tutorials?tut=torsional_friction&cat=physics).
 
-`friction` is an element nested under `collision->surface->friction` in the sdformat
+Contact friction parameters for each surface are specified in the SDFormat
+`friction` element nested under `collision->surface->friction`
 [here](http://sdformat.org/spec?ver=1.6&elem=collision#friction_ode).
 
 1. `mu` Coefficient of friction along the first friction direction.
@@ -254,8 +256,8 @@ As for the torsional friction, please refer to the tutorial
 1. `mu2` Coefficient of friction along the second friction direction.
 For most cases, `mu2` has same value with `mu`.
 
-1. `fdir1` 3-tuple unit vector specifying the direction of `mu` in the
-collision local reference frame.
+1. `fdir1`: 3-tuple unit vector specifying the direction of the first
+friction direction corresponding to `mu` in the collision local reference frame.
 
     [[file:files/cone_pyramid.png|460px]]
 
@@ -265,10 +267,81 @@ collision local reference frame.
     frame can be easily constructed with the third `fdir2` as cross product of unit vector
     along normal and `fdir1` direction.
 
-1. `slip1` Force dependent slip direction 1 in collision local frame.
+1. `slip1`, `slip2`: Force dependent slip direction 1 in collision local frame
+    with units of an inverse damper (m / s / N).
 
-1. `slip2` Force dependent slip direction 2 in collision local frame.
+The interpretation of these parameters depends on the friction model in use
+by the ODE solver, which is specified by the `<friction_model>` parameter under
+`<physics><ode><solver>` and documented
+[here](http://sdformat.org/spec?ver=1.6&elem=physics#solver_friction_model).
 
+The default friction model is `pyramid`, which decouples the friction
+constraints into two 1-dimensional constraints that are solved independently.
+This is illustrated in the following figure:
+
+Valid values of the `friction_model` include:
+
+* `pyramid_model`: (default) friction constraints are decoupled into two
+    1-dimensional constraints that are solved independently.
+    The friction force limit is the product of the normal force and the
+    non-dimensional coefficients `mu` and `mu2` in each friction direction.
+    This is illustrated by the following figure:
+
+    [[file:files/cone_pyramid.png|460px]]
+
+* `box_model`: friction forces are again decoupled into two 1-dimensional
+    constraints with a constant friction force limit that is independent of
+    the normal force.
+    For this model, the coefficients `mu` and `mu2` have units of Newtons
+    and represent the maximum friction force in each friction direction.
+
+* `cone_model`: this model solves the coupled dynamic friction constraints
+    by choosing a friction direction parallel to the linear velocity
+    at the contact point.
+    Only the parameter `<mu>` is used.
+    See [gazebo pull request 1522](https://bitbucket.org/osrf/gazebo/pull-request/1522)
+    for the implementation of this feature.
+
+The names of the friction cone and friction pyramid models derives from a
+geometric interpretation of the directions in which contact forces may point,
+as shown in the following figure.
+The angle of the cone/pyramid is set by the friction coefficient.
+
+[[file:files/cone_pyramid.png|460px]]
+
+A fixed normal force corresponds to a circular slice from the cone,
+representing a limit on friction force magnitude in any direction.
+For the pyramid, a fixed normal force corresponds to a square slice
+representing the independent constraints in each direction.
+The friction cone model is more physically realistic, but the pyramid model is
+useful in some circumstances when anisotropic behavior is desired,
+such as in modeling longitudinal and lateral wheel friction separately
+(see the WheelSlipPlugin added in
+[gazebo pull request 2950](https://bitbucket.org/osrf/gazebo/pull-requests/2950)).
+
+The difference between the box and cone friction models is visualized using the
+[friction\_pyramid test world](https://bitbucket.org/osrf/gazebo/raw/c2315ca10a801/worlds/friction_pyramid.world),
+which has an array of boxes arrayed in a circle with an initial velocity going
+away from the center of the circle.
+Specifying `cone_model` in that example world at
+[line 15](https://bitbucket.org/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
+results in boxes that travel out radially as one would expect.
+
+<iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
+
+Since the pyramid friction model uses the world X-Y axes for its friction directions
+by default, the velocity of some boxes is not aligned with these axes
+and their behavior is different.
+The velocity on each axis is treated independently, which is most evident when
+considering a box with initial velocity not at 0, 45, or 90 degrees to a world
+frame axis.
+In these cases, one velocity component is much smaller than the other
+and is dissipated to 0 while still moving in the other direction.
+These boxes end up traveling parallel to one of the friction directions
+for a duration before they eventually come to rest.
+Specifying `pyramid_model` in the example world illustrates this behavior.
+
+<iframe src="https://player.vimeo.com/video/327118010" width="640" height="602" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
 
 ## Contact parameters
 `contact` is an element nested under `collision->surface->contact` in sdformat
