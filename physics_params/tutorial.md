@@ -319,8 +319,29 @@ such as in modeling longitudinal and lateral wheel friction separately
 (see the WheelSlipPlugin added in
 [gazebo pull request 2950](https://bitbucket.org/osrf/gazebo/pull-requests/2950)).
 
-To see a visualization of the difference between the box and cone friction
-models, consider the 
+The difference between the box and cone friction models is visualized using the
+[friction\_pyramid test world](https://bitbucket.org/osrf/gazebo/raw/c2315ca10a801/worlds/friction_pyramid.world),
+which has an array of boxes arrayed in a circle with an initial velocity going
+away from the center of the circle.
+Specifying `cone_model` in that example world at
+[line 15](https://bitbucket.org/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
+results in boxes that travel out radially as one would expect.
+
+<iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
+
+Since the pyramid friction model uses the world X-Y axes for its friction directions
+by default, the velocity of some boxes is not aligned with these axes
+and their behavior is different.
+The velocity on each axis is treated independently, which is most evident when
+considering a box with initial velocity not at 0, 45, or 90 degrees to a world
+frame axis.
+In these cases, one velocity component is much smaller than the other
+and is dissipated to 0 while still moving in the other direction.
+These boxes end up traveling parallel to one of the friction directions
+for a duration before they eventually come to rest.
+Specifying `pyramid_model` in the example world illustrates this behavior.
+
+<iframe src="https://player.vimeo.com/video/327118010" width="640" height="602" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
 
 ## Contact parameters
 `contact` is an element nested under `collision->surface->contact` in sdformat
