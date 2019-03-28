@@ -2,7 +2,7 @@
 
 Gazebo topics communicate through Google protobuf messages. There is an
 extensive
-[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html)
+[list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/8.2.0/classes.html)
 of message types provided by Gazebo, for use with subscribing and publishing
 Gazebo topics. However, there are many situations where you want to build
 your own.
@@ -190,7 +190,6 @@ These are the necessary Gazebo headers we'll need.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
-#include "gazebo/math/Vector3.hh"
 #include "gazebo/msgs/msgs.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/transport/transport.hh"
@@ -290,10 +289,10 @@ they aren't shared_ptrs inside, the message we were sent is.
 
 This is an example of how to call the used physics engine to do a single ray
 trace. This code was pulled from
-`gazebo::physics::World::GetEntityBelowPoint(Vector3)`
+`gazebo::physics::World::EntityBelowPoint(Vector3)`
 
 ~~~
-        gazebo::physics::PhysicsEnginePtr engine = world->GetPhysicsEngine();
+        gazebo::physics::PhysicsEnginePtr engine = world->Physics();
         engine->InitForThread();
         gazebo::physics::RayShapePtr ray = boost::dynamic_pointer_cast<gazebo::physics::RayShape>(
               engine->CreateShape("ray", gazebo::physics::CollisionPtr()));
@@ -313,20 +312,6 @@ there is not.
             }
 ...
         }
-~~~
-
-This creates an Image msg and fills the necessary fields. Notice that the
-setter methods for each field is formatted like `set_field(something)`
-
-~~~
-        msgs::Image image;
-        image.set_width(count_horizontal);
-        image.set_height(count_vertical);
-        image.set_pixel_format(0);
-        image.set_step(count_horizontal);
-        image.set_data(data);
-
-        imagePub->Publish(image);
 ~~~
 
 Register the plugin with the simulator.
@@ -365,7 +350,6 @@ These are the necessary gazebo headers for our executable.
 ~~~
 #include "gazebo/gazebo.hh"
 #include "gazebo/common/common.hh"
-#include "gazebo/math/Vector3.hh"
 #include "gazebo/transport/transport.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/msgs/msgs.hh"

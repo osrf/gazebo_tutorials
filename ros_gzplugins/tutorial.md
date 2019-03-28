@@ -1,53 +1,67 @@
 
 # Tutorial: Using Gazebo plugins with ROS
 
-Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input. In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
+Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input.
+In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
 
 ## Prerequisites
 
 Make sure you have the RRBot setup as described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf).
+Also make sure you have understood the use of the `<gazebo>` element within the URDF description, from that same tutorial.
 
-## Adding Plugins
+## Plugin Types
 
-Plugins can be added to any of the main elements of a URDF - a `<robot>`, `<link>`, or `<joint>` depending on what the scope and purpose of the plugin is. To accomplish adding a plugin to a particular element in your URDF, you must wrap your `<plugin>` tag within a `<gazebo>` element.
+Gazebo supports
+[several plugin types](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin),
+and all of them can be connected to ROS, but only a few types can be referenced through a URDF file:
 
-### Adding a plugin to the `<robot>` element
+  1. [ModelPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1ModelPlugin.html), to provide access to the [physics::Model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) API
+  1. [SensorPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SensorPlugin.html), to provide access to the [sensors::Sensor](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1sensors_1_1Sensor.html) API
+  1. [VisualPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1VisualPlugin.html), to provide access to the [rendering::Visual](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1rendering_1_1Visual.html) API
 
-The following is an example of a plugin for a `<robot>` element in a URDF:
+## Adding a `ModelPlugin`
 
-    <gazebo>
-      <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
-        ... plugin parameters ...
-      </plugin>
-    </gazebo>
+In short, the `ModelPlugin` is inserted in the URDF inside the `<robot>` element. It is wrapped with the `<gazebo>` pill, to indicate information passed to Gazebo. For example:
 
-In the above example the plugin was added to the `<robot>` element because, similar to other `<gazebo>` elements and properties, if no `reference="x"` is specified it is assumes the reference is the entire `<robot>`. In [SDF](http://gazebosim.org/sdf/) terminology, it assumes the reference is the `<model>`.
+    <robot>
+      ... robot description ...
+      <gazebo>
+        <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
+          ... plugin parameters ...
+        </plugin>
+      </gazebo>
+      ... robot description ...
+    </robot>
 
-**SDF Note:**
+Upon loading the [robot model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) within Gazebo,
+the `diffdrive_plugin` code will be given a reference to the model itself, allowing it to manipulate it.
+Also, it will be give a reference to the [SDF element](http://osrf-distributions.s3.amazonaws.com/sdformat/api/dev/classsdf_1_1Element.html) of itself, in order to read the plugin parameters passed to it.
 
-Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the `<gazebo>` tags which are not in the element table described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf) are directly inserted into the `<model>` tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:
+## Adding a `SensorPlugin`
 
-    <model name="your_robot_model">
-      <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
-        ... plugin parameters ...
-      </plugin>
-    </model>
+Specifying sensor plugins is slightly different. [Sensors](http://gazebosim.org/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
+so the `<gazebo>` element describing that sensor must be given a reference to that link.
+For example:
 
-Refer to the SDF documentation for more information on how this feature can be used.
+    <robot>
+      ... robot description ...
+      <link name="sensor_link">
+        ... link description ...
+      </link>
 
-### Adding a plugin to the `<link>` element
+      <gazebo reference="sensor_link">
+        <sensor type="camera" name="camera1">
+          ... sensor parameters ...
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            ... plugin parameters ..
+          </plugin>
+        </sensor>
+      </gazebo>
 
-Similar to `<plugin>` elements for`<robot>`, you can add a `<plugin>` element to a link by passing a `reference="your_link_name"` value.
+    </robot>
 
-    <gazebo reference="your_link_name">
-      <plugin name="your_link_laser_controller" filename="libgazebo_ros_laser.so">
-        ... plugin parameters ...
-      </plugin>
-    </gazebo>
-
-### Adding a plugin to the `<joint>` element
-
-This is accomplished in the same way as a `<link>` except the reference name is a joint name.
+Upon loading the robot model within Gazebo, the `camera_controller` code will be given a reference to the sensor, providing access to its API.
+Also, it will be give a reference to the SDF element of itself, in order to read the plugin parameters passed to it.
 
 # Plugins available in gazebo_plugins
 
@@ -528,8 +542,8 @@ save, then launch the same launch files as for GPU Laser.
   - inheritance from SensorPlugin instead of ModelPlugin,
   - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
   - gravity is included in inertial measurements.
-  
-  
+
+
 ~~~
   <gazebo reference="imu_link">
     <gravity>true</gravity>

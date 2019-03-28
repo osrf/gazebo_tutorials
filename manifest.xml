@@ -87,6 +87,7 @@
       <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
+      <markdown version="9.0">install_ubuntu/tutorial_9-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -113,6 +114,7 @@
       <markdown version="6.0">install_on_mac/tutorial_6-0.md</markdown>
       <markdown version="7.0">install_on_mac/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_on_mac/tutorial_8-0.md</markdown>
+      <markdown version="8.0">install_on_mac/tutorial_9-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -161,7 +163,8 @@
     </tutorial>
 
     <tutorial title="Dependencies from source" ref='install_dependencies_from_source'>
-      <markdown version="5+">install_dependencies_from_source/tutorial.md</markdown>
+      <markdown version="5 - 8">install_dependencies_from_source/tutorial-8.md</markdown>
+      <markdown version="9+">install_dependencies_from_source/tutorial.md</markdown>
       <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -192,14 +195,16 @@
     </tutorial>
 
     <tutorial title="Model plugins" ref='plugins_model'>
-      <markdown version="1.9+">plugins_model/tutorial.md</markdown>
+      <markdown version="1.9 - 7">plugins_model/tutorial_1-9.md</markdown>
+      <markdown version="8+">plugins_model/tutorial.md</markdown>
       <description>Manipulate a model using a model plugin.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="World plugins" ref='plugins_world'>
       <markdown version="1.9+">plugins_world/tutorial1_9.md</markdown>
-      <markdown version="7+">plugins_world/tutorial.md</markdown>
+      <markdown version="7 - 8">plugins_world/tutorial-7-8.md</markdown>
+      <markdown version="9+">plugins_world/tutorial.md</markdown>
       <description>Inserting models using a world plugin.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -255,8 +260,15 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Model a 4-bar linkage in SDFormat and URDF" ref='kinematic_loop'>
+      <markdown version="7+">kinematic_loop/tutorial.md</markdown>
+      <description>Model a 4-bar linkage in SDFormat and URDF.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
      <tutorial title="Make a model" ref='build_model'>
       <markdown version="1.9+">build_model/tutorial.md</markdown>
+      <markdown version="7+">build_model/tutorial-7.md</markdown>
       <description>Describes models, and how to create custom models.</description>
       <skill>beginner</skill>
     </tutorial>
@@ -333,7 +345,8 @@
     </tutorial>
 
     <tutorial title="Custom messages" ref='custom_messages'>
-      <markdown version="1.9+">custom_messages/tutorial.md</markdown>
+      <markdown version="1.9-7">custom_messages/tutorial.md</markdown>
+      <markdown version="8+">custom_messages/tutorial-8.0.md</markdown>
       <description>How to create custom messages</description>
       <skill>advanced</skill>
     </tutorial>
@@ -385,6 +398,12 @@
       <markdown version="7.0+">logging_playback/tutorial.md</markdown>
       <description>Record and playback your simulation, via the GUI or command line.</description>
       <skill>beginner</skill>
+    </tutorial>
+
+    <tutorial title="Code introspection" ref='introspection'>
+      <markdown version="8.0+">introspection/tutorial.md</markdown>
+      <description>Introspect Gazebo and your plugins</description>
+      <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="Log filtering" ref='log_filtering'>
@@ -447,13 +466,15 @@
     </tutorial>
 
     <tutorial title="Gzweb installation" ref='gzweb_install'>
-      <markdown version="1.9+">gzweb_install/tutorial.md</markdown>
+      <markdown version="1.9+">gzweb_install/tutorial_1.9.md</markdown>
+      <markdown version="7+">gzweb_install/tutorial.md</markdown>
       <description>Explains how to install and run the WebGL client for Gazebo.</description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="Gzweb development" ref='gzweb_development'>
-      <markdown version="1.9+">gzweb_development/tutorial.md</markdown>
+      <markdown version="1.9+">gzweb_development/tutorial_1.9.md</markdown>
+      <markdown version="7+">gzweb_development/tutorial.md</markdown>
       <description>How to make changes to Gzweb and contribute your modifications back to Gazebo.</description>
       <skill>advanced</skill>
     </tutorial>
@@ -461,9 +482,33 @@
     <!-- ********************** -->
     <!-- Intermediate tutorials -->
 
+    <tutorial title="Color And Texture Models" ref='color_model'>
+      <markdown version="7.0+">color_model/tutorial_7.md</markdown>
+      <description>How to add color and textures to a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Elevators" ref='elevators'>
       <markdown version="6.0+">elevators/tutorial.md</markdown>
       <description>How to create and use elevators.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ContainPlugin" ref='contain_plugin'>
+      <markdown version="7.11+">contain_plugin/tutorial_7.md</markdown>
+      <description>How to use ContainPlugin to trigger events.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Flashlight Plugin" ref='flashlight_plugin'>
+      <markdown version="9.3+">flashlight_plugin/tutorial_9-3.md</markdown>
+      <description>How to use FlashLightPlugin to blink lights on a model.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="LED Plugin" ref='led_plugin'>
+      <markdown version="9.3+">led_plugin/tutorial_9-3.md</markdown>
+      <description>How to use LedPlugin to blink lights on a model.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -485,6 +530,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Logical Camera Sensor" ref='logical_camera_sensor'>
+      <markdown version="7.0+">logical_camera_sensor/tutorial_7+.md</markdown>
+      <description>How to create and get data from logical camera sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Contact Sensor" ref='contact_sensor'>
       <markdown version="1.9-4.0">contact_sensor/tutorial.md</markdown>
       <markdown version="4.0-6.0">contact_sensor/tutorial_4-0.md</markdown>
@@ -501,6 +552,12 @@
     <tutorial title="ROS overview" ref='ros_overview'>
       <markdown version="1.9+">ros_overview/tutorial.md</markdown>
       <description>Overview of ROS integration.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="ROS 2 overview" ref='ros2_overview'>
+      <markdown version="9+">ros2_overview/tutorial.md</markdown>
+      <description>Overview of ROS 2 integration.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -528,9 +585,15 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Installing gazebo_ros_pkgs" ref='ros_installing'>
+    <tutorial title="Installing gazebo_ros_pkgs (ROS 1)" ref='ros_installing'>
       <markdown version="1.9+">ros_installing/tutorial.md</markdown>
-      <description>Installing gazebo_ros_pkgs.</description>
+      <description>Installing gazebo_ros_pkgs for ROS 1.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
+    <tutorial title="Installing gazebo_ros_pkgs (ROS 2)" ref='ros2_installing'>
+      <markdown version="9+">ros2_installing/tutorial.md</markdown>
+      <description>Installing gazebo_ros_pkgs for ROS 2.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -571,7 +634,8 @@
 
     <tutorial title="Manage physics profiles" ref='preset_manager'>
       <markdown version="3.0-6.0">preset_manager/tutorial_3.md</markdown>
-      <markdown version="7.0+">preset_manager/tutorial.md</markdown>
+      <markdown version="7.0">preset_manager/tutorial_7.md</markdown>
+      <markdown version="8.0+">preset_manager/tutorial.md</markdown>
       <description>Use the Preset Manager interface to store and switch between physics profiles.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -598,7 +662,9 @@
     <tutorial title="System Plugin" ref='system_plugin'>
       <markdown version="3.0-4.0">system_plugin/tutorial_3-0.md</markdown>
       <markdown version="5.0-6.0">system_plugin/tutorial_5-0.md</markdown>
-      <markdown version="7.0+">system_plugin/tutorial.md</markdown>
+      <markdown version="7.0">system_plugin/tutorial_7-0.md</markdown>
+      <markdown version="8.0">system_plugin/tutorial_8-0.md</markdown>
+      <markdown version="9.0">system_plugin/tutorial.md</markdown>
       <description>Describes the process of making a system plugin that is loaded by the GUI</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -626,6 +692,13 @@
       <description>Use gravity compensation to complement PID position control of a linear actuator.</description>
       <skill>intermediate</skill>
     </tutorial>
+
+    <tutorial title="Ground plane model with satellite images" ref='static_map_plugin'>
+      <markdown version="7+">static_map_plugin/tutorial.md</markdown>
+      <description>How to insert a satellte image textured ground plane from a plugin.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
 
     <!-- ****************** -->
     <!-- Advanced tutorials -->
@@ -845,7 +918,8 @@
 
     <tutorial title="GUI Overlay" ref='gui_overlay'>
       <markdown version="5.0-6.0">gui_overlay/tutorial.md</markdown>
-      <markdown version="7.0+">gui_overlay/tutorial7.md</markdown>
+      <markdown version="7.0-8.0">gui_overlay/tutorial7.md</markdown>
+      <markdown version="9.0+">gui_overlay/tutorial9.md</markdown>
       <description>This tutorial describes how to create custom GUI interfaces for Gazebo.</description>
       <skill>intermediate</skill>
     </tutorial>
@@ -1041,6 +1115,7 @@
         <tutorial>dem</tutorial>
         <tutorial>model_population</tutorial>
         <tutorial>building_editor</tutorial>
+        <tutorial>static_map_plugin</tutorial>
       </tutorials>
     </category>
 
@@ -1051,6 +1126,7 @@
         <tutorial>log_filtering</tutorial>
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
+        <tutorial>introspection</tutorial>
       </tutorials>
     </category>
 
@@ -1073,6 +1149,9 @@
         <tutorial>aerodynamics</tutorial>
         <tutorial>hydrodynamics</tutorial>
         <tutorial>gravity_compensation</tutorial>
+        <tutorial>contain_plugin</tutorial>
+        <tutorial>flashlight_plugin</tutorial>
+        <tutorial>led_plugin</tutorial>
       </tutorials>
     </category>
 
@@ -1084,6 +1163,7 @@
         <tutorial>camera_distortion</tutorial>
         <tutorial>camera_save</tutorial>
         <tutorial>force_torque_sensor</tutorial>
+        <tutorial>logical_camera_sensor</tutorial>
       </tutorials>
     </category>
 
@@ -1123,8 +1203,10 @@
       <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
+        <tutorial>ros2_overview</tutorial>
         <tutorial>ros_wrapper_versions</tutorial>
         <tutorial>ros_installing</tutorial>
+        <tutorial>ros2_installing</tutorial>
         <tutorial>ros_roslaunch</tutorial>
         <tutorial>ros_depth_camera</tutorial>
         <tutorial>ros_urdf</tutorial>

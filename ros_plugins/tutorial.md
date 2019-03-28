@@ -160,7 +160,13 @@ To make your plugin do something useful with Gazebo and ROS, we suggest you read
 
 ## ROS Node Note
 
-All gazebo-ros plugins should check if the ROS node has already been initialized in their `Load()` function, as discussed in this [issue](http://answers.gazebosim.org/question/1493/rosinit-needed-for-ros-gazebo-plugin/). The initialization of the ROS node is performed automatically when you run <pre>rosrun gazebo_ros gazebo</pre> or use the generic empty.world launch file. The <pre>gazebo_ros/src/gazebo_ros_api_plugin.cpp</pre> should be the only place in Gazebo that calls <pre>ros::init()</pre>.
+All gazebo-ros plugins should check if the ROS node has already been initialized in their `Load()` function, as discussed in this [issue](http://answers.gazebosim.org/question/1493/rosinit-needed-for-ros-gazebo-plugin/). The initialization of the ROS node is performed automatically when you run 
+
+~~~
+rosrun gazebo_ros gazebo
+~~~
+
+or use the generic empty.world launch file. The `gazebo_ros/src/gazebo_ros_api_plugin.cpp` should be the only place in Gazebo that calls `ros::init()`.
 
 ## Next Steps
 

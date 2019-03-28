@@ -35,12 +35,16 @@ You can append the following arguments to the launch files to change the behavio
 
   > Start gzserver (Gazebo Server) in debug mode using gdb (default false)
 
+**verbose**
+
+  > Run gzserver and gzclient with --verbose, printing errors and warnings to the terminal (default false)
+
 ### Example `roslaunch` command
 
 Normally the default values for these arguments are all you need, but just as an example:
 
 <pre>
-roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false recording:=false debug:=true
+roslaunch gazebo_ros empty_world.launch paused:=true use_sim_time:=false gui:=true throttled:=false recording:=false debug:=true verbose:=true
 </pre>
 
 ### Launching Other Demo Worlds
@@ -341,7 +345,7 @@ This hierarchy is specially adapted for use as a Gazebo model database by means 
 
 #### model.config
 
-Each model must have a model.config file in the model's root directory that contains meta information about the model. Basically copy this into a model.config file, replacing model.urdf with your file name:
+Each model must have a model.config file in the model's root directory that contains meta information about the model. Basically copy this into a model.config file, replacing MYROBOT.urdf with your file name:
 
       <?xml version="1.0"?>
       <model>
@@ -399,7 +403,7 @@ The advantage of the model database method is that now you can include your robo
       <pose>-2.0 7.0 0 0 0 0</pose>
     </include>
     <include>
-      <uri>model://MYROBOT</uri>
+      <uri>model://MYROBOT_description</uri>
     </include>
   </world>
 </sdf>
@@ -419,6 +423,7 @@ on any new system before being able to use these ROS packages.
 The useful info would be the format for exporting model paths from a package.xml:
 
 ~~~
+<run_depend>gazebo_ros</run_depend>
 <export>
   <gazebo_ros gazebo_model_path="${prefix}/models"/>
   <gazebo_ros gazebo_media_path="${prefix}/models"/>

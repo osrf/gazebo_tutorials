@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<robot name="four_bar_split_fixed_urdf">
+  <gazebo>
+    <self_collide>true</self_collide>
+  </gazebo>
+  <link name="world"/>
+  <link name="link_AB">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
+      <mass value="0.07200000000000001"/>
+      <inertia ixx="0.0005424000000000002"
+               ixy="0.0"
+               ixz="0.0"
+               iyy="4.800000000000001e-06"
+               iyz="0.0"
+               izz="0.0005424000000000002"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
+      <geometry>
+        <box size="0.02 0.30000000000000004 0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.01 -0.15000000000000002 0"/>
+      <geometry>
+        <box size="0.02 0.30000000000000004 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="link_AB">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <link name="link_BE">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
+      <mass value="0.024"/>
+      <inertia ixx="1.6000000000000001e-06"
+               ixy="0.0"
+               ixz="0.0"
+               iyy="2.0800000000000004e-05"
+               iyz="0.0"
+               izz="2.0800000000000004e-05"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
+      <geometry>
+        <box size="0.1 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.05 -0.01 0"/>
+      <geometry>
+        <box size="0.1 0.02 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="link_BE">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <link name="link_EC">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
+      <mass value="0.024"/>
+      <inertia ixx="1.6000000000000001e-06"
+               ixy="0.0"
+               ixz="0.0"
+               iyy="2.0800000000000004e-05"
+               iyz="0.0"
+               izz="2.0800000000000004e-05"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
+      <geometry>
+        <box size="0.1 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 -0.01 0"/>
+      <geometry>
+        <box size="0.1 0.02 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="link_EC">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <link name="link_CD">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
+      <mass value="0.07200000000000001"/>
+      <inertia ixx="0.0005424000000000002"
+               ixy="0.0"
+               ixz="0.0"
+               iyy="4.800000000000001e-06"
+               iyz="0.0"
+               izz="0.0005424000000000002"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
+      <geometry>
+        <box size="0.02 0.30000000000000004 0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.01 -0.15000000000000002 0"/>
+      <geometry>
+        <box size="0.02 0.30000000000000004 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="link_CD">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <joint name="joint_A" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.04"/>
+    <parent link="world"/>
+    <child link="link_AB"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_B" type="continuous">
+    <origin rpy="0 0 0" xyz="0 -0.30000000000000004 0"/>
+    <parent link="link_AB"/>
+    <child link="link_BE"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_D" type="continuous">
+    <origin rpy="0 0 0" xyz="0.2 0 0.04"/>
+    <parent link="world"/>
+    <child link="link_CD"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_C" type="continuous">
+    <origin rpy="0 0 0" xyz="0 -0.30000000000000004 0"/>
+    <parent link="link_CD"/>
+    <child link="link_EC"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <!-- SDFormat joints -->
+  <gazebo>
+    <joint name="joint_E" type="fixed">
+      <pose>-0.1 -0.01 0 0 0 0</pose>
+      <parent>link_BE</parent>
+      <child>link_EC</child>
+    </joint>
+  </gazebo>
+</robot>

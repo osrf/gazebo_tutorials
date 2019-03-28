@@ -29,8 +29,8 @@ sections cover how to use ROS with different versions of Gazebo.
 
 Note that Gazebo ABI stability policy follows the
 [semantic versioning](http://semver.org/) philosophy, in which all versions
-that have the same major number (`gazebo_6.0.0`, `gazebo_6.1.0`,
-`gazebo_6.0.1`, ...) are binary compatible and thus interchangeable when using
+that have the same major number (`gazebo_7.0.0`, `gazebo_7.1.0`,
+`gazebo_7.0.1`, ...) are binary compatible and thus interchangeable when using
 the same ROS distro.
 
 ## Installing Gazebo
@@ -40,14 +40,14 @@ the same ROS distro.
 The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
 
  * ***packages.ros.org***
-  *  Indigo: host gazebo version 2.x package.
-  *  Kinetic: host or use gazebo version 7.x package.
-  *  Lunar: host or use gazebo version 7.x package.
+  *  ROS Indigo: Gazebo 2.x
+  *  ROS Kinetic: Gazebo 7.x
+  *  ROS Lunar: Gazebo 7.x
+  *  ROS Melodic: Gazebo 9.x
  * ***packages.osrfoundation.org***
-  * gazebo 5.x series (package name `gazebo5`)
-  * gazebo 6.x series (package name `gazebo6`)
   * gazebo 7.x series (package name `gazebo7`)
   * gazebo 8.x series (package name `gazebo8`)
+  * gazebo 9.x series (package name `gazebo9`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
@@ -55,12 +55,12 @@ It can be installed from the ros repository.
 ### Gazebo built from source
 
 If you have compiled a gazebo version from source, note that depending on the
-repository branch used (`gazebo6`,`gazebo7`,...) your gazebo will be
+repository branch used (`gazebo7`,`gazebo8`,...) your gazebo will be
 binary compatible with the `gazebo_ros_pkgs` (and all other ROS packages compiled
 on top of gazebo) only if the major version matches your local branch
 repository and the gazebo version used in your ROS distro.  For example, if you
-are compiling from gazebo branch `gazebo_2.0`, you can use the `gazebo_ros_pkgs`
-present in Indigo (which uses gazebo2 series).
+are compiling from gazebo branch `gazebo7`, you can use the `gazebo_ros_pkgs`
+present in Kinetic (which uses gazebo7 series).
 
 Note that if you are using `default` branch, you are probably not binary
 compatible with any of the packages released, so you will need a catkin
@@ -71,6 +71,13 @@ workspace for getting a valid `gazebo_ros_pkgs`.
 For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
+
+### Melodic
+ROS Melodic hosts or use the 9.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 9.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo9`) and do ***not*** use the osrfoundation
+repository.
 
 ### Lunar
 
@@ -105,6 +112,17 @@ this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
+### Gazebo 9.x series
+
+The OSRF repository provides `-gazebo9-` versions of ROS/Kinetic or ROS/Lunar gazebo
+wrappers (`gazebo9_ros_pkgs`) which are built on top of the `gazebo9` package.
+The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-$ROS_DISTRO-gazebo9-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo9-ros-control`
+   from the osrfoundation repository, which will install the `gazebo9` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
+
 ### Gazebo 8.x series
 
 The OSRF repository provides `-gazebo8-` versions of ROS/Kinetic or ROS/Lunar gazebo
@@ -112,7 +130,7 @@ wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
 The steps to use them are:
 
  * Add the osrfoundation repository to your sources list.
- * Install `ros-kinetic-gazebo8-ros-pkgs` and/or `ros-kinetic-gazebo8-ros-control`
+ * Install `ros-$ROS_DISTRO-gazebo8-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo8-ros-control`
    from the osrfoundation repository, which will install the `gazebo8` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
@@ -134,22 +152,15 @@ steps to use them are:
 If you don't need ROS support, the recommended version is the latest released version that can be
  [installed using the osrfoundation repo](http://gazebosim.org/install).
 
-#### I want to use the bullet/simbody/dart physics engine, which version of Gazebo should I use?
-
-Starting from `gazebo4`, bullet and simbody support is built into the Ubuntu package,
- so please follow the above instructions to use `gazebo4` in combination with ROS.
-Dart still requires gazebo installation from source (starting from `gazebo3`),
- so you can use `gazebo3` or above and follow the instructions above in this page to make it work with ROS.
-
-#### I need to use gazebo8 and ROS Kinetic/Lunar, what can I do?
+#### I need to use gazebo8/gazebo9 and ROS Kinetic/Lunar, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Kinetic package
 related to Gazebo from ROS deb repository. The way to go is to build them from
 source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in versions 8.x of Gazebo,
-there is a way of installing `gazebo8` and ROS Kinetic/Lunar. Please
-follow the instructions about how to use ROS with gazebo8 package
-which are in this same document.
+If you need some features only present in versions 8.x or 9.x of Gazebo, there
+is a way of installing `gazebo8` or `gazebo9` and ROS Kinetic/Lunar. Please
+follow the instructions about how to use ROS with gazebo8/gazebo9 package which
+are in this same document.
 
 #### I need to use gazebo7 and ROS Indigo, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***

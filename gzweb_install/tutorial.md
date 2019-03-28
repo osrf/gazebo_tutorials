@@ -1,135 +1,150 @@
 # Overview
 
-Gzweb is installed on the server-side. Once the server is set up and running, clients can interact with the simulation simply by accessing the server's URL on a web browser.
+GzWeb is usually installed on an Ubuntu server. Once the server is set up and running,
+clients can interact with the simulation simply by accessing the server's URL
+on a web browser.
 
 # Dependencies
 
-Gzweb is a graphical interface which communicates with gzserver. To use
- gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
+The main dependencies for GzWeb are the Gazebo development libraries, version 7 or
+greater, and NodeJS version 4 or higher.
 
- 1. Make sure your system has the right NodeJS version (0.10.x). While this is
- not the latest version, it is the version that ships with Ubuntu Trusty.
+Take a look at
+[these tutorials](http://gazebosim.org/install) to choose the Gazebo
+installation that best fits your case. The simplest approach would be
+to install Gazebo 7 as follows:
 
-    >**Note:** For Ubuntu Precise or older distributions, the NodeJS version that comes with it may not work with gzweb. In that case, set up your system to grab and install the latest NodeJS debs:
+~~~
+sudo apt install gazebo7 libgazebo7-dev
+~~~
 
-    ~~~~
-    dpkg -l nodejs
-    ~~~
+Run the following to install the rest of dependencies, including NodeJS:
 
-    >If the above command returns a version < 0.10 or couldn't find the nodejs package use:
+~~~
+sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+~~~
 
-    ~~~
-    curl -sL https://deb.nodesource.com/setup | sudo bash -
-    ~~~
+> Ubuntu Trusty comes with NodeJS 0.10. You can follow
+  [these](https://github.com/nodesource/distributions) instructions to upgrade
+  the Node version.
 
-    >We will install the nodejs package in the following step.
+# Build GzWeb
 
- 1. Next, install the dependencies from a terminal:
+1. Clone the repository into a directory in your home folder for example:
 
-    ~~~
-    sudo apt-get install libjansson-dev nodejs npm libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
-    ~~~
+        cd ~; hg clone https://bitbucket.org/osrf/gzweb
 
+1. Enter the GzWeb repository and switch to the 1.4.0 release branch:
 
-# Clone the repository and build
+        cd ~/gzweb
+        hg up gzweb_1.4.0
 
- 1. Clone the repository into a directory in your home folder:
+1. The first time you build, you'll need to gather all the Gazebo models which
+   you want to simulate in the right directory ('http/client/assets') and prepare
+   them for the web.
 
-    ~~~
-    cd ~; hg clone https://bitbucket.org/osrf/gzweb
-    ~~~
+    Before running the deploy script, it's important to source the Gazebo
+    `setup.sh` file:
 
- 1. Enter the Gzweb repository and switch to a release branch:
+    > If you installed gazebo via deb packages:
 
-    ~~~
-    cd ~/gzweb
-    # Note for Gazebo versions < 7, please use the gzweb_1.2.0 branch
-    hg up gzweb_1.3.0
-    ~~~
+        source /usr/share/gazebo/setup.sh
 
- 1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
+    > If you did a source install then:
 
-    >If you installed gazebo via deb packages:
+        source <YOUR_GAZEBO_PATH>/share/gazebo/setup.sh
 
-    ~~~
-    source /usr/share/gazebo/setup.sh
-    ~~~
+1. Run the deploy script, this downloads models from the web and may take a
+   couple of minutes, see more options below.
 
-    >If you did a source install then:
+        npm run deploy --- -m
 
-    ~~~
-    source <YOUR_GAZEBO_PATH>/share/gazebo/setup.sh
-    ~~~
-
- 1. If you have drcsim then source:
-
-    ~~~
-    source /usr/share/drcsim/setup.sh
-    ~~~
-
- 1. Run the deploy script, this downloads models from the web and may take a couple of minutes.
-
-    ~~~
-    ./deploy.sh -m
-    ~~~
-
-    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed. The process will also try to generate thumbnails, see note on thumbnails below.
+    > Note: the `-m` flag tells the deploy script to grab all the models from the
+     [model database](https://bitbucket.org/osrf/gazebo_models/) and any other
+     models in your `GAZEBO_MODEL_PATH`. For all subsequent builds, the `-m` flag
+     will not be needed.
 
 ## Options
 
-* To skip downloading models from the model database and grab only local models in your Gazebo model path, do:
+* To skip downloading models from the model database and grab only local models
+  in your Gazebo model path, do:
 
-        ./deploy.sh -m local
+        npm run deploy --- -m local
 
-* To generate thumbnails manually, run the script with the `-t` flag, i.e.:
+* To generate thumbnails for all the models , run the script with the `-t` flag, i.e.:
 
-        ./deploy.sh -t
+        npm run deploy --- -t
 
-    >Note: This spins up a gzserver with a camera for capturing screenshots of models. So make sure there is rendering support and no background gzerver process running (or set a different `GAZEBO_MASTER_URI` in the terminal).
+    > Note: This spins up a `gzserver` with a camera for capturing screenshots
+    of models. So make sure there is rendering support and no background gzerver
+    process running (or set a different `GAZEBO_MASTER_URI` in the terminal).
 
-* If you'll use gzweb on mobile devices, you can create coarse versions of all models, which are lighter to load (50% of original quality). If generated, these meshes will automatically be used on mobile devices. If you've already ran `./deploy.sh -m`, run just:
+* If you'll use GzWeb on mobile devices, you can create coarse versions of all
+  models, which are lighter to load (50% of original quality). If generated,
+  these meshes will automatically be used on mobile devices. If you've already
+  ran `npm run deploy --- -m`, run just:
 
-        ./deploy.sh -c
+          npm run deploy --- -c
 
-    Or you can run both flags at the same time to generate coarse versions as you create the database:
+      Or you can run both flags at the same time to generate coarse versions as
+      you create the database:
 
-        ./deploy.sh -m -c
+          npm run deploy --- -m -c
 
-* You also have the option to pick specific models and how much percent to coarsen, running:
+      You also have the option to pick specific models and how much percent to
+      coarsen, running:
 
-        ./coarse_meshes.sh [percent] [path]
+          ./coarse_meshes.sh [percent] [path]
 
-    Here, `[percent]` is the edges ratio with respect to the original mesh (0 to 100), and `[path]` is the path of the models. For example:
+      Here, `[percent]` is the edges ratio with respect to the original mesh
+      (0 to 100), and `[path]` is the path of a model. For example:
 
-        ./coarse_meshes.sh 20 http/client/assets/bowl/
+          ./coarse_meshes.sh 20 http/client/assets/bowl/
 
-# Running gzserver, gzweb server, and WebGL client
+# Running
 
-1. Start gazebo or gzserver first:
+Running GzWeb involves the following pieces:
 
-    ~~~
-    gzserver
-    ~~~
+* `gzserver` running the headless Gazebo simulation (runs by default on
+  http://127.0.0.1:11345)
 
-1. On another terminal, from your gzweb directory, start the http and websocket servers:
+* GzWeb's NodeJS server which communicates with `gzserver` using
+  [Gazebo Transport](http://gazebosim.org/tutorials?tut=topics_subscribed&cat=transport).
+  It works as a bridge between the Javascript and the C++ code.
 
-    ~~~
-    ./start_gzweb.sh
-    ~~~
+* An HTTP server which serves static content such as models and website assets
+  (icons, HTML, CSS, client-side Javascript...)
 
-1. Open a browser (Chrome works well) that has WebGL and websocket support and point it to the ip address and port where the http server is started, by default it's on port 8080, e.g.
+* A Websocket server which forwards simulation updates coming from `gzserver`
+  to the browser
 
-    ~~~
-    http://localhost:8080
-    ~~~
+* A browser client which connects to the HTTP and websocket servers
 
-    > You can use the `-p` option to choose an arbitrary port, for example: `./start_gzweb.sh -p 1234`
+Start them as follows:
 
-1. To stop Gzweb server, from your gzweb directory, run:
+1. On the server machine, start `gazebo` or `gzserver` first, it's recommended
+   to run in verbose mode so you see debug messages:
 
-    ~~~
-    ./stop_gzweb.sh
-    ~~~
+        gzserver --verbose
+
+    > **Tip**: see the port where the Gazebo master is communicating, such as
+      `[Msg] Connected to gazebo master @ http://127.0.0.1:11345`
+
+1. On another terminal, from your GzWeb directory, run the following command to
+   start both the HTTP and Websocket servers:
+
+        npm start
+
+    > **Tip**: You can use the `-p` option to choose an arbitrary port, for example:
+      `npm start -p 1234`. By default, it serves on port 8080.
+
+1. Open a browser that has WebGL and websocket support (i.e. most modern browsers)
+   and point it to the IP address and port where the HTTP server is started,
+   for example:
+
+        http://localhost:8080
+
+1. To stop `gzserver` or the GzWeb servers, just press `Ctrl+C` in their terminals.
 
 # Troubleshooting
 
@@ -158,11 +173,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
     You may also find that your repository is too old and you should just install recent versions of node and npm directly.
 
- * **Q: When running `./deploy.sh`, it is missing a file in `gz3d/build`:**
-
-    A: You will need to install Grunt and run it appropriately, as described in the [development](http://gazebosim.org/tutorials?tut=gzweb_development) section.
-
- * **Q: When running `./deploy.sh`, I see errors along the lines of:**
+ * **Q: When running `npm run deploy ---`, I see errors along the lines of:**
 
         gyp ERR! configure error
 
@@ -170,7 +181,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
         sudo apt-get remove gyp
 
- * **Q: When running `./deploy.sh`, I have problems finding GTS, like this:**
+ * **Q: When running `npm run deploy ---`, I have problems finding GTS, like this:**
 
         ~/gzweb/tools/gzcoarse.cc:18:17: fatal error: gts.h : no such file or directory, #include <gts.h>
 

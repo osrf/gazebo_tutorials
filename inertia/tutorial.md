@@ -8,6 +8,10 @@ these parameters if you have 3D models of the links.
 
 Assuming homogeneous bodies (uniform mass density),
 it is shown how to obtain inertial data using the free software MeshLab.
+If you wish to skip the setup and only compute the volume, center of mass,
+or inertia properties of your model, or quickly clean the model,
+you can use [Mesh Cleaner](https://www.hamzamerzic.info/mesh_cleaner/),
+a tool which runs MeshLab internally for this purpose.
 You can also use the commercial product SolidWorks to compute these information.
 For a guide on using SolidWorks, please refer to
 [this question on answers.ros.org.](http://answers.ros.org/question/30539/choosing-the-right-coefficients-for-gazebo-simulation/)
@@ -281,7 +285,7 @@ or like this one (in URDF):
       <collision>
         ...
       </collision>
-	</link>
+  </link>
 
 The `<mass>` should be entered in kilograms and you have to find it out experimentally (or from specifications).
 

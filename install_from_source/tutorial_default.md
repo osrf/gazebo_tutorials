@@ -43,13 +43,12 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
-1. Install prerequisites. A clean Ubuntu system will need the following
-   (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
+1. Install prerequisites. A clean Ubuntu system will need the following (replace `version` with the major version of gazebo you intend to build, eg: 7, 8, 9. And if using ROS, replace `dummy` with your ROS version, eg: indigo, jade,
     kinetic...):
 
         wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
-        ROS_DISTRO=dummy . /tmp/dependencies.sh
-        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
+        GAZEBO_MAJOR_VERSION=version ROS_DISTRO=dummy . /tmp/dependencies.sh
+        echo $BASE_DEPENDENCIES $GAZEBO_BASE_DEPENDENCIES | tr -d '\\' | xargs sudo apt-get -y install
 
 ### Optional Physics Engines
 
@@ -142,9 +141,9 @@ desire more stability
         cmake ../
 
 
-    > Note: You can use a custom install path to make it easier to switch between source and debian installs:
+    > Note: You can use a custom install path to make it easier to switch between source and debian installs. We recommend using `/home/$USER/local` as the value for `<install_path>`:
 
-    >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
+    >     cmake -DCMAKE_INSTALL_PREFIX=<install_path> ../
 
     b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
 
@@ -154,7 +153,7 @@ desire more stability
 
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
-1. Make note of your install path, which is output from `cmake` and should look something like:
+1. Make note of your install path, which is output from `cmake` and will either be the default install location or the one specified as `<install_path>` above, e.g.:
 
         -- Install path: /home/$USER/local
 
@@ -180,11 +179,11 @@ the whole gazebo test suite you'll need to run:
 
 #### Local Install
 
-If you decide to install gazebo in a local directory you'll need to modify some of your PATHs:
+If you decided to install gazebo in a local directory you'll need to modify some of your PATHs:
 
-    echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
-    echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
-    echo "export PKG_CONFIG_PATH=<install_path>/local/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=<install_path>/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+    echo "export PATH=<install_path>/bin:$PATH" >> ~/.bashrc
+    echo "export PKG_CONFIG_PATH=<install_path>/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
     source ~/.bashrc
 
 Now try running gazebo:
