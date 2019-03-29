@@ -171,7 +171,7 @@ Create directories for the model.
 ```
 mkdir -p ~/color_tutorial/models/example_model/materials/scripts
 mkdir -p ~/color_tutorial/models/example_model/materials/textures
-mkdir -p ~/color_tutorial/models/example_model/materials/meshes
+mkdir -p ~/color_tutorial/models/example_model/meshes
 ```
 
 Save this file as `model.config`.
