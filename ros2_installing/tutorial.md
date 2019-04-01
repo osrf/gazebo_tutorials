@@ -16,13 +16,67 @@ You should understand the basic concepts of ROS 2 and have gone through some
 
 ### Install ROS 2
 
-To install ROS 2 Crystal, see the
-[ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
-Either a source or a binary installation should work; **be sure to install the
-Crystal** distribution.
+ROS2 can be installed either through binary installation or source installation,
+see the [ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
+The current stable distribution is **Crystal**.
 
-> **Tip**: Don't forget to source your `setup.bash` script as instructed
-  on the ROS installation page.
+Alternatively, if you are an active developer setting up to contributing to code base,
+it is advisable to have the source installation, as it provides more access and control
+over the workflow. The following steps guide you to install ros2 from sources.
+
+- Create a workspace that holds ros2 source code
+
+```
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+```
+
+- Get the code base repositories and import them to `src` directory
+
+```
+wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos
+vcs import src < ros2.repos
+```
+
+
+> **NOTE:** This step gets the repositories pointed by the `master` branch and currently the are set to ROS2 Dashing Diademate, not ROS2 Crystal Clemmys.
+
+- Install the dependencies using rosdep
+
+```
+sudo rosdep init
+rosdep update
+# [Ubuntu 18.04]
+rosdep install --from-paths src --ignore-src --rosdistro crystal -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
+```
+
+- Build the code in the workspace
+
+```
+cd ~/ros2_ws
+colcon build --symlink-install
+```
+
+> **NOTE:** Colcon build system will create `build`, `install` and `log` directories in ros2_ws workspace directory.
+
+- Source the ros2 environment to load the build libraries and executables
+
+```
+source ~/ros2_ws/install/local_setup.bash
+```
+
+- Testing ros2 installation
+
+Once the `local_setup.bash` script is sourced correctly you can verify ros2 installation by running the following the `talker` and the `listener` programs on separate terminals.
+
+```
+ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_py listener
+```
+
+If you see the data from the `talker` terminal displayed on the `listener` terminal, everything is fine.
+
+
 
 ### Install Gazebo
 
@@ -37,8 +91,7 @@ finding plugins and other resources. For example: `. /usr/share/gazebo/setup.sh`
 
 ## Install gazebo\_ros\_pkgs
 
-Follow either the instructions to install from debian packages, or the
-instructions to install from source.
+Follow either the instructions to install from debian packages, or the instructions to install from source.
 
 ### Install from debian packages (on Ubuntu)
 
@@ -53,39 +106,50 @@ Assuming you already have some Crystal debian packages installed, install
   [colcon](https://colcon.readthedocs.io/en/released/) build tool, which is the
   standard tool used in ROS 2.
 
-1. Create a directory for the colcon workspace:
+> **Tip:** The stable branch that will work with ros2 crystal and gazebo9 is `crystal` branch. If you have ros2 from `master` branch, you need to use `ros2` branch of `gazebo_ros_pkgs`. The following setup assumes intallation with `ros2` branch of `gazebo_ros_pkgs`.
 
-        mkdir -p ~/ws/src
+- Create a workspace and get gazebo_ros_pkgs
 
-1. Make sure `git` is installed on your Ubuntu machine:
+```
+mkdir -p ~/gazebo_ros_pks_ws/src
+cd ~/gazebo_ros_pkgs
+```
 
-        sudo apt install git
+- Create a file named `ros2_gazebo_ros_pkgs_supplement.repos` and copy the contents of [this file](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs) that gets gazebo_ros_pkgs and additional packages needed.
 
-1. Download the source code from the [`gazebo_ros_pkgs` repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
+> **NOTE:** The `version` tag indicates the branch we are checking out for a particular repository
 
-        cd ~/ws/src
-        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b ros2
+- Get the packages to the src directory
 
-1. Install all dependencies:
+```
+vcs import src < ros2_gazebo_ros_pkgs_supplement.repos
+```
 
-        cd ~/ws
-        rosdep install --from-paths src --ignore-src -r -y
+- Build the packages gazebo_ros_pkgs_ws workspace
 
-1. Then build:
+```
+colcon build --symlink-install
+```
 
-        cd ~/ws
-        colcon build
+> **NOTE:** Before building this ensure that ros2 environment is sourced correctly.
 
-1. If you've had any problems building, be sure to ask for help at
+- Source the gazebo_ros_pkgs environment to load the build libraries
+
+```
+source ~/gazebo_ros_pkgs_ws/install/local_setup.bash
+```
+
+
+> **NOTE:** If you've had any problems building, be sure to ask for help at
    [answers.gazebosim.org](http://answers.gazebosim.org/questions/).
 
-1. Be sure to source this workspace's install setup for every new terminal
-   you open:
+> **NOTE:** Be sure to source the environment of a particular workspace in order to run the programs from the packages in the workspace
 
-        . ~/ws/install/setup.bash
 
-    > **Tip**: You can make this be automatically sourced for every new terminal
-      by running this once: `echo "source ~/ws/install/setup.bash" >> ~/.bashrc`
+```
+source ~/<workspace>/install/setup.bash
+```
+> **Tip**: You can make this be automatically sourced for every new terminal by running this once: `echo "source ~/ws/install/setup.bash" >> ~/.bashrc`
 
 ## Testing Gazebo and ROS 2 integration
 
@@ -141,4 +205,3 @@ Let's try loading one of them now!
 
 1. Try out the other commands listed on the file, and try mofidying their
    values to get a feeling of how things work. Also try out other demo worlds!
-
