@@ -22,10 +22,12 @@ The current stable distribution is **Crystal**.
 
 Alternatively, if you are an active developer setting up to contributing to code
 base, it is advisable to have the source installation, as it provides more
-access and control over the workflow. Additionally, the [master](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos) provides the most updated code and currently set to ROS2 Dashing Diademate,
-not ROS2 Crystal Clemmys.
+access and control over the workflow. Additionally,
+the [master](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos)
+provides the most updated code and currently set to ROS2 Dashing,
+not ROS2 Crystal.
 
-> **TIP:**  Source the ros2 environment to load the libraries and executables
+> **Tip:**  Source the ros2 environment to load the libraries and executables
 correctly. This will be achieved by sourcing `local_setup.bash` file from the
 `install` directory when ros2 is built from sources.
 
@@ -70,51 +72,52 @@ branch of `gazebo_ros_pkgs`.
 
 1. Create a workspace and get gazebo_ros_pkgs
 
-```
-mkdir -p ~/gazebo_ros_pks_ws/src
-cd ~/gazebo_ros_pkgs
-```
+    ```
+    mkdir -p ~/gazebo_ros_pks_ws/src
+    cd ~/gazebo_ros_pkgs
+    ```
 
-2. Create a file named `ros2_gazebo_ros_pkgs_supplement.repos` and copy the
+1. Create a file named `ros2_gazebo_ros_pkgs_supplement.repos` and copy the
 contents of [this file](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs)
 that gets gazebo_ros_pkgs and additional packages needed.
 
-> **NOTE:** The `version` tag indicates the branch we are checking out for a
-particular repository
 
-3. Get the packages to the src directory
+    > **Note:** The `version` tag indicates the branch we are checking out for a
+particular repository e.g. [version: ros2](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs#ros2.yaml-5) checks out `ros2` branch.
 
-```
-vcs import src < ros2_gazebo_ros_pkgs_supplement.repos
-```
+1. Get the packages to the `src` directory
 
-4. Build the packages gazebo_ros_pkgs_ws workspace
+    ```
+    vcs import src < ros2_gazebo_ros_pkgs_supplement.repos
+    ```
 
-```
-colcon build --symlink-install
-```
+1. Build the packages inside `gazebo_ros_pkgs_ws` workspace
 
-> **NOTE:** Before building this ensure that ros2 environment is sourced
+    ```
+    colcon build --symlink-install
+    ```
+
+    > **Note:** Before building this ensure that ros2 environment is sourced
 correctly.
 
-5. Source the gazebo_ros_pkgs environment to load the build libraries
+1. Source the gazebo_ros_pkgs environment
 
-```
-source ~/gazebo_ros_pkgs_ws/install/local_setup.bash
-```
+    ```
+    source ~/gazebo_ros_pkgs_ws/install/local_setup.bash
+    ```
 
 
-> **NOTE:** If you've had any problems building, be sure to ask for help at
+    > **Note:** If you've had any problems building, be sure to ask for help at
    [answers.gazebosim.org](http://answers.gazebosim.org/questions/).
 
-> **NOTE:** Be sure to source the environment of a particular workspace in order
-to run the programs from the packages in the workspace
+   > **Note:** Be sure to source the environment of a particular workspace in
+   order to run the programs from the packages in the workspace
 
 
-```
-source ~/<workspace>/install/setup.bash
-```
-> **Tip**: You can make this be automatically sourced for every new terminal
+    ```
+    source ~/<workspace>/install/setup.bash
+    ```
+    > **Tip**: You can make this be automatically sourced for every new terminal
 by running this once: `echo "source ~/ws/install/setup.bash" >> ~/.bashrc`
 
 ## Testing Gazebo and ROS 2 integration
@@ -136,49 +139,49 @@ Let's try loading one of them now!
 
 1. Open a new terminal
 
-2. Source  ROS 2 as instructed when you installed ROS 2.
+1. Source  ROS 2 as instructed when you installed ROS 2.
 
-3. Make sure you have some core tools installed
+1. Make sure you have some core tools installed
 
-```
-sudo apt install ros-crystal-ros-core ros-crystal-geometry2
-```
+    ```
+    sudo apt install ros-crystal-ros-core ros-crystal-geometry2
+    ```
 
-4. If you installed `gazebo_ros_pkgs` from source, source the workspace
+1. If you installed `gazebo_ros_pkgs` from source, source the workspace
 
-```
-~/<workspace>/install/setup.bash
-```
+    ```
+    ~/<workspace>/install/setup.bash
+    ```
 
-5. Load the differential drive world with Gazebo
+1. Load the differential drive world with Gazebo
 
-```
-gazebo --verbose /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
-```
+    ```
+    gazebo --verbose /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+    ```
 
-6. The Gazebo GUI should appear with a simple vehicle
+1. The Gazebo GUI should appear with a simple vehicle
 
     [[file:figs/gazebo_ros_diff_drive.png|600px]]
 
-7. On a new terminal (this is the 2nd one), run the following command to take a
+1. On a new terminal (this is the 2nd one), run the following command to take a
    look at the world file.
 
-```
-gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
-````
+   ```
+   gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+   ```
 
-8. See how the block on the top has a few example commands? Let's open a 3rd
+1. See how the block on the top has a few example commands? Let's open a 3rd
    terminal and, again, source ROS 2 and `gazebo_ros_pkgs` as described above.
 
-9. Then run one of the commands, for example:
+1. Then run one of the commands, for example:
 
-```
-ros2 topic pub /demo/cmd_demo geometry_msgs/Twist '{linear: {x: 1.0}}' -1
-```
+    ```
+    ros2 topic pub /demo/cmd_demo geometry_msgs/Twist '{linear: {x: 1.0}}' -1
+    ```
 
-10. You'll see the vehicle moving forward:
+1. You'll see the vehicle moving forward:
 
     [[file:figs/gazebo_ros_diff_drive_lin_vel.gif|600px]]
 
-11. Try out the other commands listed on the file, and try mofidying their
+1. Try out the other commands listed on the file, and try mofidying their
    values to get a feeling of how things work. Also try out other demo worlds!
