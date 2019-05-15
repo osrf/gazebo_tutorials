@@ -165,9 +165,9 @@ Let's try loading one of them now!
 1. On a new terminal (this is the 2nd one), run the following command to take a
    look at the world file.
 
-   ```
+    ```
     gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
-   ```
+    ```
 
 1. See how the block on the top has a few example commands? Let's open a 3rd
    terminal and, again, source ROS 2 and `gazebo_ros_pkgs` as described above.
