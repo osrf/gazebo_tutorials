@@ -166,7 +166,7 @@ Let's try loading one of them now!
    look at the world file.
 
    ```
-   gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+    gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
    ```
 
 1. See how the block on the top has a few example commands? Let's open a 3rd
