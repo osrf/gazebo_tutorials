@@ -67,7 +67,7 @@ Assuming you already have some Crystal debian packages installed, install
 
 > **Tip:** The stable branch that will work with ros2 crystal and gazebo9 is
 `crystal` branch. If you have ros2 from `master` branch, you need to use `ros2`
-branch of `gazebo_ros_pkgs`. The following setup assumes intallation with `ros2`
+branch of `gazebo_ros_pkgs`. The following setup assumes installation with `ros2`
 branch of `gazebo_ros_pkgs`.
 
 1. Create a workspace and get gazebo_ros_pkgs
@@ -106,13 +106,11 @@ correctly.
     source ~/gazebo_ros_pkgs_ws/install/local_setup.bash
     ```
 
-
     > **Note:** If you've had any problems building, be sure to ask for help at
    [answers.gazebosim.org](http://answers.gazebosim.org/questions/).
 
     > **Note:** Be sure to source the environment of a particular workspace in
    order to run the programs from the packages in the workspace
-
 
     ```
     source ~/<workspace>/install/setup.bash
