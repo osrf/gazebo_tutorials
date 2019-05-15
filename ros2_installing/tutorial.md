@@ -16,13 +16,13 @@ You should understand the basic concepts of ROS 2 and have gone through some
 
 ### Install ROS 2
 
-To install ROS 2 Crystal, see the
-[ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
-Either a source or a binary installation should work; **be sure to install the
-Crystal** distribution.
+ROS2 can be installed either through binary installation or source installation,
+see the [ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
+The current stable distribution is **Crystal**.
 
-> **Tip**: Don't forget to source your `setup.bash` script as instructed
-  on the ROS installation page.
+> **Tip**: Don't forget to source `setup.bash` script as instructed
+  on the ROS installation page. The exact command will be different according to
+  the installation method.
 
 ### Install Gazebo
 
@@ -33,7 +33,7 @@ You should install Gazebo 9. If installing from source, be sure to build the
 `gazebo9` branch.
 
 > **Tip**: You may need to source Gazebo's setup file if you're having difficulty
-finding plugins and other resources. For example: `. /usr/share/gazebo/setup.sh`.
+finding plugins and other resources. For example: `source /usr/share/gazebo/setup.sh`.
 
 ## Install gazebo\_ros\_pkgs
 
@@ -49,32 +49,62 @@ Assuming you already have some Crystal debian packages installed, install
 
 ### Install from source (on Ubuntu)
 
+If you are an active developer setting up to contribute to the
+code base, it is advisable to have the source installation, as it provides more
+access and control over the workflow.
+
 > **Tip**: These instructions require the use of the
   [colcon](https://colcon.readthedocs.io/en/released/) build tool, which is the
   standard tool used in ROS 2.
 
-1. Create a directory for the colcon workspace:
+You'll need to choose the branch of `gazebo_ros_pkgs` according to the
+ROS 2 version you're using. The currently supported branches are:
 
-        mkdir -p ~/ws/src
+* `crystal`: works with Crystal debians or Crystal's
+  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/crystal/ros2.repos).
+* `ros2`: points to the next unreleased ROS 2 turtle, currently Dashing.
+  It works with the master
+  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
+
+The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`.
 
 1. Make sure `git` is installed on your Ubuntu machine:
 
         sudo apt install git
 
-1. Download the source code from the [`gazebo_ros_pkgs` repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
+1. Create a directory for the colcon workspace and move into it:
 
-        cd ~/ws/src
-        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b ros2
+        mkdir -p ~/ws/src
+
+1. Copy
+  [this file](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs),
+  that gets `gazebo_ros_pkgs` and additional packages needed:
+
+        cd ~/ws
+        wget https://bitbucket.org/api/2.0/snippets/chapulina/geRKyA/f02dcd15c2c3b83b2d6aac00afe281162800da74/files/ros2.yaml
+
+    > **Note:** The `version` tag in the yaml file indicates the branch we are
+      checking out for a particular repository e.g.
+      [version: ros2](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs#ros2.yaml-5)
+      checks out the `ros2` branch.
+
+1. Get the packages into the `src` directory
+
+        cd ~/ws
+        vcs import src < ros2.yaml
 
 1. Install all dependencies:
 
         cd ~/ws
         rosdep install --from-paths src --ignore-src -r -y
 
-1. Then build:
+1. Then build all the packages:
 
         cd ~/ws
-        colcon build
+        colcon build --symlink-install
+
+    > **Note:** Before building this ensure that the ROS 2 environment is sourced
+    correctly.
 
 1. If you've had any problems building, be sure to ask for help at
    [answers.gazebosim.org](http://answers.gazebosim.org/questions/).
@@ -82,7 +112,7 @@ Assuming you already have some Crystal debian packages installed, install
 1. Be sure to source this workspace's install setup for every new terminal
    you open:
 
-        . ~/ws/install/setup.bash
+        source ~/ws/install/setup.bash
 
     > **Tip**: You can make this be automatically sourced for every new terminal
       by running this once: `echo "source ~/ws/install/setup.bash" >> ~/.bashrc`
@@ -95,7 +125,8 @@ insert models at runtime which have ROS 2 plugins in them.
 
 Gazebo ROS packages provides several demo worlds for you to get a quick start
 with the plugins. The demo worlds can be found
-[here](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/worlds), and are installed by default under
+[here](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/worlds),
+and are installed by default under
 `/opt/ros/<distro>/share/gazebo_plugins/worlds/`.
 
 Each world file comes with instructions at the top with some example commands
@@ -141,4 +172,3 @@ Let's try loading one of them now!
 
 1. Try out the other commands listed on the file, and try mofidying their
    values to get a feeling of how things work. Also try out other demo worlds!
-
