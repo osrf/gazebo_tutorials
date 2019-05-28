@@ -140,7 +140,7 @@ New in `gazebo6`: c++11 flags are now required for all downstream software to co
 This is done with the following line:
 
 ~~~
-list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 ~~~
 
 Create the build directory
