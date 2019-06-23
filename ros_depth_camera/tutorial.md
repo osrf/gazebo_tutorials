@@ -69,7 +69,7 @@ markup inside the `<sensor>` tag, immediately after the closing `</camera>` tag:
           <imageTopicName>/camera/depth/image_raw</imageTopicName>
           <cameraInfoTopicName>/camera/depth/camera_info</cameraInfoTopicName>
           <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
-          <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+          <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
           <frameName>camera_link</frameName>
           <pointCloudCutoff>0.5</pointCloudCutoff>
