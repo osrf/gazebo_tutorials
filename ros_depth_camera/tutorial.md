@@ -66,8 +66,8 @@ markup inside the `<sensor>` tag, immediately after the closing `</camera>` tag:
             will control the frame rate. -->
           <updateRate>0.0</updateRate>
           <cameraName>camera_ir</cameraName>
-          <imageTopicName>/camera/depth/image_raw</imageTopicName>
-          <cameraInfoTopicName>/camera/depth/camera_info</cameraInfoTopicName>
+          <imageTopicName>/camera/color/image_raw</imageTopicName>
+          <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
           <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
           <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
