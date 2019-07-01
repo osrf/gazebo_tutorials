@@ -122,7 +122,7 @@ Many of the ignition packages are using the ignition cmake library.
         cd /tmp/ign-cmake
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. ign-cmake0 for Gazebo 10)
+   (e.g. `ign-cmake0` for Gazebo 10)
 
         hg up ign-cmake0
 
@@ -160,7 +160,7 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
         cd /tmp/ign-math
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. ign-math4 for Gazebo 10)
+   (e.g. `ign-math4` for Gazebo 10)
 
         hg up ign-math4
 
@@ -219,7 +219,7 @@ Gazebo and Ignition Fuel Tools depend on the Ignition Common library.
         cd /tmp/ign-common
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. ign-common1 for Gazebo 10)
+   (e.g. `ign-common1` for Gazebo 10)
 
         hg up ign-common1
 
@@ -274,7 +274,7 @@ Gazebo depends on the SDFormat package.
         cd /tmp/sdformat
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. sdf6 for Gazebo 10)
+   (e.g. `sdf6` for Gazebo 10)
 
         hg up sdf6
 
@@ -326,7 +326,7 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
         cd /tmp/ign-msgs
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. ign-msgs1 for Gazebo 10)
+   (e.g. `ign-msgs1` for Gazebo 10)
 
         hg up ign-msgs1
 
@@ -378,7 +378,7 @@ Gazebo depends optionally in the Ignition Fuel Tools
         cd /tmp/ign-fuel-tools
 
 1. Checkout the corresponding branch for a target Gazebo version:
-   (e.g. ign-fuel-tools1 for Gazebo 10)
+   (e.g. `ign-fuel-tools1` for Gazebo 10)
 
         hg up ign-fuel-tools1
 
