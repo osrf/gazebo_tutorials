@@ -121,6 +121,11 @@ Many of the ignition packages are using the ignition cmake library.
         hg clone https://bitbucket.org/ignitionrobotics/ign-cmake /tmp/ign-cmake
         cd /tmp/ign-cmake
 
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. ign-cmake0 for Gazebo 10)
+
+        hg up ign-cmake0
+
 1. Create a build directory and go there. Configure the build:
 
         mkdir build
@@ -154,10 +159,10 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
         hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-math4`
-     branch if you desire more stability (with the `hg up ign-math4` command).
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. ign-math4 for Gazebo 10)
+
+        hg up ign-math4
 
 1. Create a build directory and go there:
 
@@ -213,10 +218,10 @@ Gazebo and Ignition Fuel Tools depend on the Ignition Common library.
         hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-common
         cd /tmp/ign-common
 
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-common1`
-     branch if you desire more stability (with the `hg up ign-common1` command).
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. ign-common1 for Gazebo 10)
+
+        hg up ign-common1
 
 1. Create a build directory and go there:
 
@@ -268,10 +273,10 @@ Gazebo depends on the SDFormat package.
         hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
-     **Note:** the `default` branch is the development branch where you'll find
-     the bleeding edge code, your cloned repository should be on this branch by
-     default but we recommend you switch to branch `sdf6` if you desire more
-     stability
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. sdf6 for Gazebo 10)
+
+        hg up sdf6
 
 1. Create a build directory and go there:
 
@@ -320,10 +325,10 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
         hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-msgs1`
-     branch if you desire more stability (with the `hg up ign-msgs1` command).
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. ign-msgs1 for Gazebo 10)
+
+        hg up ign-msgs1
 
 1. Create a build directory and go there:
 
@@ -372,10 +377,10 @@ Gazebo depends optionally in the Ignition Fuel Tools
         hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools /tmp/ign-fuel-tools
         cd /tmp/ign-fuel-tools
 
-     **Note:** the `default` branch is the development branch where
-     you'll find the bleeding edge code, your cloned repository should be on
-     this branch by default but we recommend you switch to the `ign-fuel-tools1`
-     branch if you desire more stability (with the `hg up ign-fuel-tools1` command).
+1. Checkout the corresponding branch for a target Gazebo version:
+   (e.g. ign-fuel-tools1 for Gazebo 10)
+
+        hg up ign-fuel-tools1
 
 1. Create a build directory and go there:
 
@@ -417,4 +422,3 @@ Please follow the instructions on the Ignition Transport
 When installing dependencies, make sure you only install the
 `libignition-msgs-dev` package if you haven't installed Ignition Messages from
 source.
-
