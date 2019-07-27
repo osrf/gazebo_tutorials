@@ -25,7 +25,7 @@ version, the version of Gazebo available is different:
 
  * Rawhide is usually hosting one of the latest releases
  * Fedora 30: gazebo-9.x
- * Fedora 27: gazebo-8.1
+ * Fedora 29: gazebo-8.x
  
 1. Install Gazebo
         sudo dnf install gazebo gazebo-ode
