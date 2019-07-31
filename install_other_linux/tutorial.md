@@ -24,13 +24,13 @@ as an official package (the maintainer is Rich Mattes). Depending on the Fedora
 version, the version of Gazebo available is different:
 
  * Rawhide is usually hosting one of the latest releases
- * Fedora 27: gazebo-8.1.1
- * Fedora 26: gazebo-8.0.0
-
+ * Fedora 30: gazebo-9.x
+ * Fedora 29: gazebo-8.x
+ 
 1. Install Gazebo
-        sudo yum install gazebo
+        sudo dnf install gazebo gazebo-ode
         # For developers that works on top of Gazebo, one extra package
-        sudo yum install gazebo-devel
+        sudo dnf install gazebo-devel
 
 ## Arch
 
