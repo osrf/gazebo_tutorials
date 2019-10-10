@@ -1,12 +1,12 @@
 # Install Gazebo using Ubuntu packages
 
-This tutorial covesr the installation of Gazebo packages using the the
+This tutorial covers the installation of Gazebo packages using the the
 `osrfoundation.org` repository, designed for those who want to follow the
-faster development path (but still a stable one).
+faster development path but still a stable one.
 
-Gazebo is also released as an Ubuntu official package ([check which
+Gazebo is also released as an Ubuntu official package: ([check which
 version](https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=gazebo&searchon=sourcenames)
-is available for your platform. If you are a [ROS](http://ros.org) user, please
+is available for every distribution. If you are a [ROS](http://ros.org) user, please
 read the tutorial about [ROS/Gazebo
 installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
