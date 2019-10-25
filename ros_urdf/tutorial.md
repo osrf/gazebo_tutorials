@@ -102,7 +102,7 @@ from a fake `joint_states_publisher` node (the window with the slider bars).
 
 The rest of this tutorial will refer to various aspects of the RRBot URDF.
 Go ahead and view the
-[rrbot.xacro file](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.xacro)
+[rrbot.xacro file](https://github.com/ros-simulation/gazebo_ros_demos/blob/kinetic-devel/rrbot_description/urdf/rrbot.xacro)
 now:
 
 <pre>
@@ -111,9 +111,9 @@ rosed rrbot_description rrbot.xacro
 
 Note that we are using [Xacro](http://ros.org/wiki/xacro) to make some of the link and joint calculations easier. We are also including two additional files:
 
-- [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo)
+- [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/kinetic-devel/rrbot_description/urdf/rrbot.gazebo)
 a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
-- [materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/materials.xacro)
+- [materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/kinetic-devel/rrbot_description/urdf/materials.xacro)
 a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
 
 ### View in Gazebo
