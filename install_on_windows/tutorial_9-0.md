@@ -1,7 +1,8 @@
 # Install on Windows
 
 This documentation describes how to set up a workspace for trying to compile
-Gazebo on Windows. *It does not actually work yet.*
+Gazebo on Windows. The support for the Gazebo Windows compilation has been
+completed since version 9.
 
 ## Important requirement: 30Gb free disk space
 
@@ -55,10 +56,6 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Unzip each of them in gz-ws.
 
-1. Also download Qt 4.8, using the link below, and unzip it into `C:\Qt\4.8.6\x64\msvc2013`:
-
-    > [Qt 4.8.6](https://s3.amazonaws.com/osrf-distributions/win32/deps/qt-4.8.6-x64-msvc2013-rev1.zip)
-
 1. Install cmake, make sure to select the "Add CMake to system path for all users" option in the install dialog box
 
     > [Cmake](http://www.cmake.org/download/)
@@ -67,7 +64,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
 
-1. Clone Ignition Math, Sdformat, and Gazebo:
+1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
 
         hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
         hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
@@ -90,7 +87,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
 
-1. In the same Windows shell, configure and build ign-transport
+1. In the same Windows shell, configure and build Ignition Transport
 
         cd ..\..\ign-transport
         mkdir build
