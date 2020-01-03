@@ -346,8 +346,8 @@ In this code example there is both a left and right camera:
       <alwaysOn>true</alwaysOn>
       <updateRate>1.0</updateRate>
       <cameraName>${camera_name}_ir</cameraName>
-      <imageTopicName>/${camera_name}/depth/image_raw</imageTopicName>
-      <cameraInfoTopicName>/${camera_name}/depth/camera_info</cameraInfoTopicName>
+      <imageTopicName>/${camera_name}/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/${camera_name}/color/camera_info</cameraInfoTopicName>
       <depthImageTopicName>/${camera_name}/depth/image_raw</depthImageTopicName>
       <depthImageInfoTopicName>/${camera_name}/depth/camera_info</depthImageInfoTopicName>
       <pointCloudTopicName>/${camera_name}/depth/points</pointCloudTopicName>
