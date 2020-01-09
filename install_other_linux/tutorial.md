@@ -1,21 +1,26 @@
 # Install Gazebo on Linux distributions (non Ubuntu)
 
-Gazebo is available to install on other Linux distributions different than Ubuntu 
+Gazebo is available to install on other Linux distributions different than Ubuntu
 ([Ubuntu install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install)
-are hosted in a different tutorial). Linux distributions providing gazebo packages: 
+are hosted in a different tutorial). Linux distributions providing gazebo packages:
 Debian, Fedora, Arch and Gentoo.
 
 ## Debian
 
 [Gazebo in Debian](https://packages.debian.org/source/sid/gazebo) is available
-as an official package in Debian Sid (the Gazebo team is the official
-maintainer in Debian) which usually hosts the latest gazebo release.
+as an official package since stretch. Debian Sid (the Gazebo team is the official
+maintainer in Debian) usually hosts the latest gazebo release. Depending on the
+Debian version the version of Gazebo available is different:
 
-1. Install Gazebo8
+ * Debian Sid is usually hosting one the latest releases
+ * Debian Buster: gazebo-9.6.0
+ * Debian Stretch: gazebo-7.3.1
 
-        sudo apt-get install gazebo8
+1. Install Gazebo9 (on Buster)
+
+        sudo apt-get install gazebo9
         # For developers that works on top of Gazebo, one extra package
-        sudo apt-get install libgazebo8-dev
+        sudo apt-get install libgazebo9-dev
 
 ## Fedora
 
@@ -24,9 +29,10 @@ as an official package (the maintainer is Rich Mattes). Depending on the Fedora
 version, the version of Gazebo available is different:
 
  * Rawhide is usually hosting one of the latest releases
+ * Fedora 31: gazebo-9.x
  * Fedora 30: gazebo-9.x
  * Fedora 29: gazebo-8.x
- 
+
 1. Install Gazebo
         sudo dnf install gazebo gazebo-ode
         # For developers that works on top of Gazebo, one extra package
@@ -35,7 +41,7 @@ version, the version of Gazebo available is different:
 ## Arch
 
 [Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
-Arch User Repository (racko is the maintainer). This means that it
+Arch User Repository (billypilgrim is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
 or packer:
@@ -43,7 +49,7 @@ or packer:
 1. Install Gazebo
 
         yaourt -S gazebo
-        # or 
+        # or
         sudo packer -S gazebo
 
 ## Gentooo
@@ -61,7 +67,7 @@ gentoolkit) to know more about the optional support:
       equery uses gazebo -a
 
 1. Install Gazebo on stable branch
-       
+
         echo "sci-electronics/gazebo" >> /etc/portage/package.accept_keywords
         emerge gazebo
 
