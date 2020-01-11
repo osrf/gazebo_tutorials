@@ -24,7 +24,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Make a directory to work in, e.g.:
 
-        mkdir gz-ws
+        md gz-ws
         cd gz-ws
 
 1. Download the following dependencies into that directory:
@@ -50,9 +50,13 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. [Qt 5.7.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/qt-opensource-windows-x86-msvc2015_64-5.7.0.zip)
 
-    1. [Freetype 2.4.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/freetype-2.4.0-vc12-x64-release-debug.zip)
-
     1. [QWT 6.1.22](https://s3.amazonaws.com/osrf-distributions/win32/deps/qwt_6.1.2~osrf_qt5.zip)
+    
+    1. [Eigen 3.3.4](https://s3.amazonaws.com/osrf-distributions/win32/deps/eigen3-3.3.4.zip)
+    
+    1. [libZMQ 4.2.3](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzmq-4.2.3_cppzmq-4.2.2_vc15-x64-dll-MD.zip)
+    
+    1. [JOM 1.1.3](http://ftp.fau.de/qtproject/official_releases/jom/jom_1_1_3.zip)
 
 1. Unzip each of them in gz-ws.
 
@@ -64,67 +68,127 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
 
-1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
+1. Clone Ignition CMake, Math, Msgs, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
+        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
+        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
         hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
         hg clone https://bitbucket.org/osrf/sdformat -r sdf6
         hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 
-        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
    or
-        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+   
+        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
+
+1. Still in gz-ws, set up the build process. Decide how many CPU cores to use for the build. Example for using 4 cores is:
+  
+        set PATH=%cd%\jom_1_1_3;%PATH%
+        set NMAKE=jom -j4
+        set CMAKE=cmake .. -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX="install\Release" -DCMAKE_BUILD_TYPE="Release" -DBUILD_TESTING:BOOL=False
+
+1. In a Windows shell, configure and build Ignition CMake
+
+        cd ign-cmake
+        md build
+        cd build
+        %CMAKE%
+        %NMAKE%
+        %NMAKE% install
+        set CMAKE_PREFIX_PATH=%cd%\install\Release\lib\cmake\ignition-cmake0
+
+    You should now have an installation of Ignition CMake in gz-ws/ign-cmake/build/install/Release.
 
 1. In a Windows shell, configure and build Ignition Math
 
-        cd ign-math
-        # if you want debug, run configure Debug
-        .\configure
-        nmake
-        nmake install
+        cd ..\..\ign-math
+        md build
+        cd build
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\..\..\eigen3-3.3.4\share\eigen3\cmake
+        %CMAKE%
+        %NMAKE%
+        %NMAKE% install
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\install\Release\lib\cmake\ignition-math4
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
+
+1. In a Windows shell, configure and build Ignition Msgs
+
+        cd ..\..\ign-msgs
+        md build
+        cd build
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\..\..\protobuf-3.4.1-vc15-x64-dll-MD\cmake
+        set PATH=%PATH%;%cd%\..\..\protobuf-3.4.1-vc15-x64-dll-MD\bin
+        %CMAKE%
+        %NMAKE%
+        %NMAKE% install
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\install\Release\lib\cmake\ignition-msgs1
+
+    You should now have an installation of Ignition Msgs in gz-ws/ign-math/build/install/Release.
 
 1. In the same Windows shell, configure and build Ignition Transport
 
         cd ..\..\ign-transport
-        mkdir build
+        md build
         cd build
-        # if you want debug, run ..\configure Debug
-        ..\configure
-        nmake
-        nmake install
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\..\..\libzmq-4.2.3_cppzmq-4.2.2_vc15-x64-dll-MD\CMake
+        set CMAKE=%CMAKE% -DCPPZMQ_HEADER_PATH=%cd%\..\..\libzmq-4.2.3_cppzmq-4.2.2_vc15-x64-dll-MD\include
+        %CMAKE%
+        %NMAKE%
+        %NMAKE% install
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\install\Release\lib\cmake\ignition-transport4
 
     You should now have an installation of Ignition Trasport in gz-ws/ign-transport/build/install/Release
 
 1. In the same Windows shell, configure and build Sdformat
 
         cd ..\..\sdformat
-        mkdir build
+        md build
         cd build
-        # if you want debug, run ..\configure Debug
-        ..\configure
-        nmake
-        nmake install
+        set BOOST_ROOT=%cd%\..\..\boost_1_67_0
+        %CMAKE%
+        %NMAKE%
+        %NMAKE% install
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\install\Release\lib\cmake\sdformat
 
-    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release or
-    gz-ws/sdformat/build/install/Debug.
+    You should now have an installation of Sdformat in gz-ws/sdformat/build/install/Release
 
 1. In the same Windows shell, configure and build Gazebo:
 
         cd ..\..\gazebo
-        mkdir build
+        md build
         cd build
-        # if you want debug, run ..\configure Debug
-        ..\configure
-        nmake gzclient
-        nmake gzserver
-        nmake install
+        set LD_LIBRARY_PATH=%cd%\..\..\tbb43_20141023oss\lib\intel64\vc12
+        set LIB=%LIB%;%cd%\..\..\boost_1_67_0\lib64-msvc-14.1
+        set CL=/I%cd%\..\..\dlfcn-win32-vc15-x64-dll-MD\include /I%cd%\..\..\tbb43_20141023oss\include /wd4251 /wd4275 /wd4146
+        set OGRE_PATH=%cd%\..\..\ogre-sdk-1.10.12-vc15-x64
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\..\..\ogre-sdk-1.10.12-vc15-x64\CMake
+        set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;%cd%\..\..\qt-opensource-windows-x86-msvc2015_64-5.7.0\lib\cmake\Qt5
+        
+        set CMAKE=%CMAKE% -Dfreeimage_LIBRARIES=%cd%\..\..\FreeImage\Dist\x64\FreeImage.lib -Dfreeimage_INCLUDE_DIRS=%cd%\..\..\FreeImage\Dist\x64\
+        set CMAKE=%CMAKE% -DQWT_WIN_INCLUDE_DIR=%cd%\..\..\qwt_6.1.2~osrf_qt5\include -DQWT_WIN_LIBRARY_DIR=%cd%\..\..\qwt_6.1.2~osrf_qt5\Release\qwt-6.1.2-vc12-x64
+        set CMAKE=%CMAKE% -DCURL_LIBRARY=%cd%\..\..\curl-7.57.0-vc15-x64-dll-MD\lib\libcurl_imp.lib -DCURL_INCLUDE_DIR=%cd%\..\..\curl-7.57.0-vc15-x64-dll-MD\include
+        set CMAKE=%CMAKE% -DOGRE_VERSION=1.10.12 -DOGRE_FOUND=1 -DOGRE-RTShaderSystem_FOUND=1 -DOGRE-Terrain_FOUND=1 -DOGRE-Overlay_FOUND=1
+        set CMAKE=%CMAKE% -DOGRE_PLUGINDIR=%OGRE_PATH%\bin -DOGRE_INCLUDE_DIRS=%OGRE_PATH%\include;%OGRE_PATH%\include\OGRE;%OGRE_PATH%\include\OGRE\RTShaderSystem;%OGRE_PATH%\include\OGRE\Terrain;%OGRE_PATH%\include\OGRE\Paging -DOGRE_LIBRARIES=%OGRE_PATH%\lib\OgreMain.lib;%OGRE_PATH%\lib\OgreRTShaderSystem.lib;%OGRE_PATH%\lib\OgreTerrain.lib;%OGRE_PATH%\lib\OgrePaging.lib;%OGRE_PATH%\lib\OgreOverlay.lib
+        set CMAKE=%CMAKE% -Dlibdl_include_dir=%cd%\..\..\dlfcn-win32-vc15-x64-dll-MD\include -Dlibdl_library=%cd%\..\..\dlfcn-win32-vc15-x64-dll-MD\lib\dl.lib
+        set CMAKE=%CMAKE% -DTBB_INCLUDEDIR=%cd%\..\..\tbb43_20141023oss\include
+        
+        %CMAKE%
+        %NMAKE%
+        
+1. If you want, you can run the `install` target to get all the required files in a nice filesystem structure and with working `setup.bat` scripts
+        
+        %NMAKE% install
+        
+    Sometimes, the install target copies only a few files (not hundreds). In that case, run
+    
+        cmake -P cmake_install.cmake
 
-    Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release or
-    gz-ws/gazebo/build/install/Debug.
+    Once this all works you should now have an installation of Gazebo in gz-ws/gazebo/build/install/Release
 
 ## Running
 
@@ -132,54 +196,21 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Adjust all paths to load dll
 
-    1. if in Debug
+         cd gz-ws\gazebo
+         win_addpath.bat
 
-         cd gz-ws\gazebo\build
-         ..\win_addpath.bat Debug
+1. If you want to run server-side rendering (e.g. cameras), start up some X server (e.g.  [Xming](https://sourceforge.net/projects/xming/)) and set the DISPLAY variable to the display it provides (e.g. `:0` in Xming default settings)
 
-    2. if in Release
-
-         cd gz-ws\gazebo\build
-         ..\win_addpath.bat Release
-
-1. Create an ogre plugins.cfg file
-
-    1. `cd gz-ws\gazebo\build\gazebo`
-
-    1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
-
-            # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre-sdk-1.10.12-vc15-x64\build\install\Debug\bin\Debug
-
-            # Define plugins
-            Plugin=RenderSystem_GL_d
-            Plugin=Plugin_ParticleFX_d
-            Plugin=Plugin_BSPSceneManager_d
-            Plugin=Plugin_PCZSceneManager_d
-            Plugin=Plugin_OctreeZone_d
-            Plugin=Plugin_OctreeSceneManager_d
-
-    1. If in Release: Copy in the following into `plugins.cfg`
-
-            # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre-sdk-1.10.12-vc15-x64\build\install\Release\bin\Release
-
-            # Define plugins
-            Plugin=RenderSystem_GL
-            Plugin=Plugin_ParticleFX
-            Plugin=Plugin_BSPSceneManager
-            Plugin=Plugin_PCZSceneManager
-            Plugin=Plugin_OctreeZone
-            Plugin=Plugin_OctreeSceneManager
-
-    1. Copy this file into the `gui` directory
-
-            copy plugins.cfg gui\
+         set DISPLAY=:0
 
 
 1. Run gzserver
 
-        gzserver.exe ..\..\worlds\empty.world
+        gzserver.exe empty.world
+        
+### gzclient
+
+1. The steps are the same as for gzserver. Setting the `DISPLAY` variable and running X server is required.
 
 ## Debugging
 
@@ -196,33 +227,3 @@ A known issue is that it does not run on VirtualBox 3.4, with Ubuntu 15.04 Host.
 The current theory is that it does not support off-screen frame buffering.
 It has been confirmed to work on VMWare Player with windws 7 guest and Ubuntu 14.04 Host.
 More details will be added as testing continues.
-
-
-### Building Ogre Examples
-
-1. Download OIS
-
-       http://sunet.dl.sourceforge.net/project/wgois/Source%20Release/1.3/ois-v1-3.zip
-
-1. Compile OIS in Visual Studio
-   Use the project in Win32/ folder
-
-1. Place OIS headers and libs into
-
-       ogre-...\Dependencies\include
-       ogre-...\Dependencies\lib
-       ogre-...\Dependencies\bin
-
-1. Patch configure.bat inside ogre-1.8 to use
-
-       `-DOGRE_BUILD_SAMPLES:BOOL=TRUE ..`
-
-1. Compile as usual
-
-        ..\configure.bat
-        nmake
-
-1. Run the demo browser using:
-
-       # copy OIS_*.dll into the bin directory
-       ogre-...\build\bin\SampleBrowser.exe
