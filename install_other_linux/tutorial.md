@@ -12,7 +12,7 @@ as an official package since stretch. Debian Sid (the Gazebo team is the officia
 maintainer in Debian) usually hosts the latest gazebo release. Depending on the
 Debian version the version of Gazebo available is different:
 
- * Debian Sid is usually hosting one the latest releases
+ * Debian Sid is usually hosting one of the latest releases
  * Debian Buster: gazebo-9.6.0
  * Debian Stretch: gazebo-7.3.1
 
