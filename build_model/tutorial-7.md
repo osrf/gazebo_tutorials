@@ -4,11 +4,11 @@ This tutorial describes the details of a _SDF Model Object_.
 
 SDF Models can range from simple shapes to complex robots. It refers to the `<model>` [SDF](http://gazebosim.org/sdf.html) tag, and is essentially a collection of links, joints, collision objects, visuals, and plugins. Generating a model file can be difficult depending on the complexity of the desired model. This page will offer some tips on how to build your models.
 
-# Components of a SDF Models
+# Components of SDF Models
 
 > **Links:** A link contains the physical properties of one body of the model. This can be a wheel, or a link in a joint chain. Each link may contain many collision and visual elements. Try to reduce the number of links in your models in order to improve performance and stability. For example, a table model could consist of 5 links (4 for the legs and 1 for the top) connected via joints. However, this is overly complex, especially since the joints will never move. Instead, create the table with 1 link and 5 collision elements.
 
->> **Collision:** A collision element encapsulates a geometry that is used to collision checking. This can be a simple shape (which is preferred), or a triangle mesh (which consumes greater resources). A link may contain many collision elements.
+>> **Collision:** A collision element encapsulates a geometry that is used for collision checking. This can be a simple shape (which is preferred), or a triangle mesh (which consumes greater resources). A link may contain many collision elements.
 
 >> **Visual:** A visual element is used to visualize parts of a link. A link may contain 0 or more visual elements.
 
