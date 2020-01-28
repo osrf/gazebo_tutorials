@@ -88,6 +88,7 @@
       <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
       <markdown version="9.0">install_ubuntu/tutorial_9-0.md</markdown>
+      <markdown version="11.0">install_ubuntu/tutorial_11-0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
