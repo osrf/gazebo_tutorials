@@ -204,7 +204,7 @@ gz topic -e /gazebo/default/cessna_c172/state
 ~~~
 
 In the Gazebo window, right click on the model and press `Follow`. The user
-camera will follow the plane during the flight and you will not loose it.
+camera will follow the plane during the flight and you will not lose it.
 
 Press '1' to start the preset for take-off. The propeller
 should start spinning and the model should gain speed along the landing strip.
@@ -215,4 +215,4 @@ on the air with the arrow keys.
 You can explore all the different control combinations detailed before while
 you are flying.
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/iMHGnEhOIhs" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/PkTrZhPtzXQ" frameborder="0" allowfullscreen></iframe>
