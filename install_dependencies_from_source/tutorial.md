@@ -10,9 +10,9 @@ These libraries are:
 * [SDFormat](http://sdformat.org/)
 * [ignition-cmake](http://ignitionrobotics.org/libs/cmake)
 * [ignition-common](http://ignitionrobotics.org/libs/common)
-* [ignition-fuel-tools](http://ignitionrobotics.org/libs/fuel-tools)
+* [ignition-fuel-tools](http://ignitionrobotics.org/libs/fuel_tools)
 * [ignition-math](http://ignitionrobotics.org/libs/math)
-* [ignition-msgs](http://ignitionrobotics.org/libs/messages)
+* [ignition-msgs](http://ignitionrobotics.org/libs/msgs)
 * [ignition-transport](http://ignitionrobotics.org/libs/transport)
 
 [[file:files/gazebo_dependency_tree.svg|400px]]
