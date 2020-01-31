@@ -28,7 +28,7 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
-    You can check to see if the file was written correctly. For example, in Ubuntu Bionic, you can type:
+    You can check to see if the file was written correctly. For example, in Ubuntu Bionic (18.04), you can type:
 
         cat /etc/apt/sources.list.d/gazebo-stable.list
 
@@ -50,11 +50,11 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
         $ sudo apt-get update
         ...
-        Hit http://ppa.launchpad.net xenial/main Translation-en
-        Ign http://us.archive.ubuntu.com xenial/main Translation-en_US
-        Ign http://us.archive.ubuntu.com xenial/multiverse Translation-en_US
-        Ign http://us.archive.ubuntu.com xenial/restricted Translation-en_US
-        Ign http://us.archive.ubuntu.com xenial/universe Translation-en_US
+        Hit http://ppa.launchpad.net bionic/main Translation-en
+        Ign http://us.archive.ubuntu.com bionic/main Translation-en_US
+        Ign http://us.archive.ubuntu.com bionic/multiverse Translation-en_US
+        Ign http://us.archive.ubuntu.com bionic/restricted Translation-en_US
+        Ign http://us.archive.ubuntu.com bionic/universe Translation-en_US
         Reading package lists... Done
 
     Next install gazebo-11 by:
