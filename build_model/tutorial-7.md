@@ -61,7 +61,7 @@ Note that the origin of the Box-geometry is at the geometric center of the box, 
 
 ### Step 3: Add to the model SDF file
 
-With a working `.sdf` file, slowly start adding in more complexity. With each new addition, load the model using the graphical client to make sure your model is correct.
+With a working `.sdf` file, slowly start adding in more complexity.
 
 Here is a good order in which to add features:
 
@@ -72,3 +72,6 @@ Here is a good order in which to add features:
 1. Go to #1 until all links have been added.
 1. Add all joints (if any).
 1. Add all plugins (if any).
+
+With each new addition, load the model using the graphical client to make sure your model is correct.
+However, the `box.sdf` file alone isn't enough to be able to load the model into the graphical client. You must also setup your model directory correctly, which you will learn in the next tutorial: [Make a Mobile Robot](http://gazebosim.org/tutorials?cat=build_robot).
