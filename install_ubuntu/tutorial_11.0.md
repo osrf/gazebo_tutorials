@@ -28,10 +28,13 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
-    You can check to see if the file was written correctly. For example, in Ubuntu Xenial, you can type:
+    You can check to see if the file was written correctly. For example, in Ubuntu Bionic, you can type:
 
-        $ cat /etc/apt/sources.list.d/gazebo-stable.list
-        deb http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial main
+        cat /etc/apt/sources.list.d/gazebo-stable.list
+
+    And if everything is correct, you should see:
+
+        deb http://packages.osrfoundation.org/gazebo/ubuntu-stable bionic main
 
 1. Setup keys
 
@@ -75,8 +78,6 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
 
 1. Check your installation
-
-    ***Note*** The first time `gazebo` is executed requires the download of some models and it could take some time, please be patient.
 
         gazebo
 
