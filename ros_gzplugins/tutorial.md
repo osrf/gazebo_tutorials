@@ -478,7 +478,7 @@ roslaunch rrbot_gazebo rrbot.launch
 roslaunch rrbot_description rrbot_rviz.launch
 ~~~
 
-In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to `/rrbot/camera1/image_raw`.
+In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to `/rrbot/laser/scan`.
 
 You should see a faint laser scan line in your Gazebo environment. While the pendulum is swinging, you should also see the laser scan swing. If the scan is too faint, you can up the size of the laser scan in the properties of the LaserScan display in Rviz. A size of 1m is very easy to see. In the following two pictures, a house and construction barrel was added to the environment for better visuals.
 
