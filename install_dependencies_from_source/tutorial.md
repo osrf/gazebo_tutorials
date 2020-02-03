@@ -8,12 +8,12 @@ these libraries.
 These libraries are:
 
 * [SDFormat](http://sdformat.org/)
-* [ignition-cmake](http://ignitionrobotics.org/libraries/cmake)
-* [ignition-common](http://ignitionrobotics.org/libraries/common)
-* [ignition-fuel-tools](http://ignitionrobotics.org/libraries/fuel-tools)
-* [ignition-math](http://ignitionrobotics.org/libraries/math)
-* [ignition-msgs](http://ignitionrobotics.org/libraries/messages)
-* [ignition-transport](http://ignitionrobotics.org/libraries/transport)
+* [ignition-cmake](http://ignitionrobotics.org/libs/cmake)
+* [ignition-common](http://ignitionrobotics.org/libs/common)
+* [ignition-fuel-tools](http://ignitionrobotics.org/libs/fuel_tools)
+* [ignition-math](http://ignitionrobotics.org/libs/math)
+* [ignition-msgs](http://ignitionrobotics.org/libs/msgs)
+* [ignition-transport](http://ignitionrobotics.org/libs/transport)
 
 [[file:files/gazebo_dependency_tree.svg|400px]]
 
@@ -22,7 +22,9 @@ These libraries are:
 All the libraries listed here are evolutions of libraries which were at some
 point built within the Gazebo project itself. In an effort to make these
 available for other projects and to make Gazebo more modular, they have been
-extracted from Gazebo.
+extracted from Gazebo. Since March 2019, the Gazebo team has also been releasing
+a [new simulator](https://ignitionrobotics.org/libs/gazebo) entirely based on
+Ignition libraries.
 
 ### SDFormat
 
@@ -33,7 +35,7 @@ aspect of simulation. The SDF protocol is based on XML, you can take a look at
 its specification [here](http://sdformat.org/spec). The protocol consists of a
 series of (*.sdf) files.
 
-Current protocol versions available are 1.4, 1.5 and 1.6.
+Current protocol versions available are 1.4, 1.5, 1.6 and 1.7.
 
 #### SDFormat C++ library
 
@@ -43,7 +45,7 @@ Gazebo uses the SDFormat C++ library to parse the SDF protocol.
 > repository and will be installed at the same time when performing an
 > installation from source.
 
-> Please note that SDFormat library versions follow a semantic versioning where
+> Please note that SDFormat library versions follow semantic versioning where
 > major versions correspond to changes in ABI. Its versioning scheme has nothing
 > to do with the SDF protocol supported.
 
@@ -62,16 +64,19 @@ the SDF protocol supported) since early versions:
 * Gazebo 8 - SDFormat 5.0 (SDF protocol <=  1.6)
 * Gazebo 9 - SDFormat 6.0 (SDF protocol <= 1.6)
 * Gazebo 10 - SDFormat > 6.0 and < 7.0 (SDF protocol <= 1.6)
+* Gazebo 11 - SDFormat 9 (SDF protocol <= 1.7)
 
 ### Ignition Common
 
 * Gazebo 9 - Ignition common 1
 * Gazebo 10 - Ignition common 1
+* Gazebo 11 - Ignition common 3
 
 ### Ignition Fuel Tools
 
 * Gazebo 9 - Ignition fuel tools 1
 * Gazebo 10 - Ignition fuel tools 1
+* Gazebo 11 - Ignition fuel tools 4
 
 ### Ignition Math
 
@@ -82,6 +87,7 @@ Gazebo has a dependency on Ignition Math from version 6.
 * Gazebo 8 - Ignition math 3 - The built-in gazebo::math library is completely deprecated.
 * Gazebo 9 - Ignition math 4 - The built-in gazebo::math library is completely removed.
 * Gazebo 10 - Ignition math 4
+* Gazebo 11 - Ignition math 6
 
 ### Ignition Transport
 
@@ -91,6 +97,7 @@ Gazebo has a dependency on Ignition Transport from version 7.
 * Gazebo 8 - Ignition transport 3
 * Gazebo 9 - Ignition transport 4
 * Gazebo 10 - Ignition transport 4
+* Gazebo 11 - Ignition transport 8
 
 ### Ignition Messages
 
@@ -99,6 +106,7 @@ Gazebo has a dependency on Ignition Messages from version 8.
 * Gazebo 8 - Ignition msgs 0.4
 * Gazebo 9 - Ignition msgs 1.0
 * Gazebo 10 - Ignition msgs 1.0
+* Gazebo 11 - Ignition msgs 5
 
 ## Remove packages to get a clean system
 
