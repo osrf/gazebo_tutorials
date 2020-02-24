@@ -64,9 +64,13 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
 
-1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
+1. Clone Ignition CMake, Common, Fuel Tools, Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
+        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
+        hg clone https://bitbucket.org/ignitionrobotics/ign-common -r ign-common1
+        hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools -r ign-fuel-tools1
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
+        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
         hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
         hg clone https://bitbucket.org/osrf/sdformat -r sdf6
         hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
@@ -76,6 +80,16 @@ Windows `cmd` for configuring and building.  You might also need to
         "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
    or
         "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+
+1. In a Windows shell, configure and build Ignition CMake
+
+        cd ign-cmake
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition CMake in gz-ws/ign-cmake/build/install/Release.
 
 1. In a Windows shell, configure and build Ignition Math
 
@@ -87,6 +101,39 @@ Windows `cmd` for configuring and building.  You might also need to
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
 
+1. In a Windows shell, configure and build Ignition Common
+
+        cd ign-common
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Common in gz-ws/ign-common/build/install/Release.
+
+1. In a Windows shell, configure and build Ignition Fuel Tools
+
+        cd ign-fuel-tools
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Fuel Tools in gz-ws/ign-fuel-tools/build/install/Release.
+
+1. In the same Windows shell, configure and build Ignition Msgs
+
+        cd ..\..\ign-msgs
+        mkdir build
+        cd build
+        # if you want debug, run ..\configure Debug
+        ..\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Msgs in gz-ws/ign-msgs/build/install/Release
+
+
 1. In the same Windows shell, configure and build Ignition Transport
 
         cd ..\..\ign-transport
@@ -97,7 +144,7 @@ Windows `cmd` for configuring and building.  You might also need to
         nmake
         nmake install
 
-    You should now have an installation of Ignition Trasport in gz-ws/ign-transport/build/install/Release
+    You should now have an installation of Ignition Transport in gz-ws/ign-transport/build/install/Release
 
 1. In the same Windows shell, configure and build Sdformat
 
