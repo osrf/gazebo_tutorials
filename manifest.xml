@@ -126,6 +126,7 @@
 
     <tutorial title="Windows" ref='install_on_windows'>
       <markdown version="9.0">install_on_windows/tutorial_9-0.md</markdown>
+      <markdown version="11.0">install_on_windows/tutorial_11-0.md</markdown>
       <description>Installation instructions for Windows.</description>
       <tags>
         <tag>install</tag>
