@@ -16,7 +16,7 @@ Run the publisher:
 
     cd node_modules/hydra_gzjs_pub
     sudo node hydra_pub.js
-    
+
 For publishing the hydra controller without root privileges please look at [this](http://www.gazebosim.org/tutorials?tut=hydra&cat=user_input) tutorial.
 
 Test that the publisher works:
@@ -28,9 +28,9 @@ Test that the publisher works:
 ### Code
 The publisher code is located in the hydra_pub.js file
 
-([hydra_pub.js](https://github.com/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js)):
+([hydra_pub.js](https://bitbucket.org/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js)):
 
-<include src='https://github.com/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js' />
+<include src='https://bitbucket.org/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js' />
 
 
 ### Code explained
@@ -38,7 +38,7 @@ The publisher code is located in the hydra_pub.js file
 The first lines load the Gazebo C++ and the node-sixense modules into the Node V8 script engine, and creates and instance of the Gazebo class.
 
 ~~~
-var hydra =  require('node-sixense');  
+var hydra =  require('node-sixense');
 var gazebojs = require('gazebojs');
 var gazebo = new gazebojs.Gazebo();
 ~~~
@@ -56,7 +56,7 @@ We then initialize sixense and for every new data we call the `sixenseGetAllNewe
 hydra.sixenseInit();
 hydra.sixenseSetActiveBase(0);
 hydra.sixenseGetAllNewestDataAsync(function (error, allData)
-{    
+{
     var msgS =
 ~~~
 

@@ -45,7 +45,7 @@ tutorial series.
 repository so that the source code has a central place to live.
 
 In order to contribute to Gazebo, you'll need to create an account there, by
-following [this link](https://github.com/account/signup/).
+following [this link](https://github.com/join/).
 
 # Where is the rest of the code?
 

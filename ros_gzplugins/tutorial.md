@@ -598,7 +598,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Prosilica Camera
 
-**Description:** simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://github.com/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
+**Description:** simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://bitbucket.org/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
 
 ## Bumper
 

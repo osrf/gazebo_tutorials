@@ -76,13 +76,13 @@ cd ${WS}/src/sdformat
 git checkout island_threads
 ~~~
 
-Next we download [package_gazebo.xml](https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
-and [package_sdformat.xml](https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
+Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
+and [package_sdformat.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
 copy them to the cloned `gazebo` and `sdformat` source folder as `package.xml`
 
 ~~~
-curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
-curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
+curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
 ~~~
 
 Gazebo can then be built using the `catkin_make_isolated` command:
