@@ -86,7 +86,7 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include lang='matlab' from='/counter =/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m'/>
+<include lang='matlab' from='/counter =/' src='http://github.com/osrf/haptix-comm/raw/default/matlab/hx_matlab_controller.m'/>
 
 The HAPTIX Matlab/Octave API is composed of five functions: `hx_connect()`, `hx_robot_info()`,
 `hx_update()`, `hx_read_sensors()` and `hx_close()`. `hx_connect()` and `hx_close()` are

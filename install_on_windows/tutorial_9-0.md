@@ -18,7 +18,7 @@ Patches for other versions are welcome.
 ## Installation
 
 This installation procedure uses pre-compiled binaries in a local workspace.  To
-make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/) with [Mercurial](http://tortoisehg.bitbucket.org/download/index.html)), and only use the
+make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/) with [Mercurial](http://tortoisehg.github.com/download/index.html)), and only use the
 Windows `cmd` for configuring and building.  You might also need to
 [disable the Windows firewall](http://windows.microsoft.com/en-us/windows/turn-windows-firewall-on-off#turn-windows-firewall-on-off=windows-7).
 
@@ -66,10 +66,10 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
-        hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
-        hg clone https://bitbucket.org/osrf/sdformat -r sdf6
-        hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
+        git clone https://github.com/ignitionrobotics/ign-math -r ign-math6
+        git clone https://github.com/ignitionrobotics/ign-transport -r ign-transport4
+        git clone https://github.com/osrf/sdformat -r sdf6
+        git clone https://github.com/osrf/gazebo -r gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 

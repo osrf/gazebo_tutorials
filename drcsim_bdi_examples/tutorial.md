@@ -1,6 +1,6 @@
 # Overview
 
-This tutorial demonstrates how to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior Library.  Assuming DRCSim 2.7 or above was installed on your system, Atlas simulation behavior library documentations can be found locally, simply point your browser [here](https://bitbucket.org/osrf/drcsim/src/default/drcsim_model_resources/AtlasSimInterface_1.1.1/doc/html/?at=default). See also the [Keyboard teleop walking](http://gazebosim.org/tutorials/?tut=drcsim_keyboard_teleop) tutorial.
+This tutorial demonstrates how to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior Library.  Assuming DRCSim 2.7 or above was installed on your system, Atlas simulation behavior library documentations can be found locally, simply point your browser [here](https://github.com/osrf/drcsim/src/default/drcsim_model_resources/AtlasSimInterface_1.1.1/doc/html/?at=default). See also the [Keyboard teleop walking](http://gazebosim.org/tutorials/?tut=drcsim_keyboard_teleop) tutorial.
 
 # Install DRC Simulator
 
@@ -8,7 +8,7 @@ This tutorial demonstrates how to start the 5-step behavior demo implemented in 
 
 # Launch the DRC Simulator
 
-Launch the simulator using the [atlas.launch](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas.launch)
+Launch the simulator using the [atlas.launch](https://github.com/osrf/drcsim/src/default/drcsim_gazebo/launch/atlas.launch)
 
 ~~~
 source /usr/share/drcsim/setup.sh
@@ -34,7 +34,7 @@ The robot will execute a simple 5 step behavior.
 
 # 5steps.py Explained
 
-Examining [5steps](https://bitbucket.org/osrf/drcsim/src/218ab5bd75c05f1dd31c28a714912a266f7c0acf/drcsim_gazebo/scripts/5steps.py?at=drcsim_4.2) (or [5steps.py](https://bitbucket.org/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2) for DRC v3.1 and below)
+Examining [5steps](https://github.com/osrf/drcsim/src/218ab5bd75c05f1dd31c28a714912a266f7c0acf/drcsim_gazebo/scripts/5steps.py?at=drcsim_4.2) (or [5steps.py](https://github.com/osrf/drcsim/src/948dd560cf6b/ros/atlas_utils/scripts/5steps.py?at=drcsim_2.2) for DRC v3.1 and below)
  
 ~~~
 mode.publish("harnessed")
@@ -47,7 +47,7 @@ rospy.sleep(1.0)
 control_mode.publish("walk")
 ~~~
 
-The core of it simply publishes over ros topic a set of string topics to perform mode switching in [VRC simulation world plugin](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/VRCPlugin.cpp?at=default#cl-200) and in [Atlas model plugin](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/AtlasPlugin.cpp?at=default#cl-1664).
+The core of it simply publishes over ros topic a set of string topics to perform mode switching in [VRC simulation world plugin](https://github.com/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/VRCPlugin.cpp?at=default#cl-200) and in [Atlas model plugin](https://github.com/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/AtlasPlugin.cpp?at=default#cl-1664).
 
 The basic sequence includes:
 

@@ -44,7 +44,7 @@ When the timer reaches 3 seconds, the second and third circular indicators turn 
 
 # Relevant Documentations
 
-In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world-4),
+In the [luke_hand.world](https://github.com/osrf/handsim/src/8fe03d4d113659c1cc04ea788792b1b7e995c267/worlds/luke_hand.world?at=default&fileviewer=file-view-default#luke_hand.world-4),
   a new `libSimEventsPlugin.so` plugin block has been added:
 
 ~~~
@@ -157,16 +157,16 @@ In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1
 (For reference, [here are the documentation for SDF format](http://www.sdformat.org/) and here are [some basic tutorials on using SDF to build simulation worlds and models](http://gazebosim.org/tutorials?cat=build_world)).
 
 And the accompanying source code blocks that interprets the results of the `SimEventsPlugin` data can be found in
-[HaptixGUIPlugin.cc](https://bitbucket.org/osrf/handsim/src/default/src/HaptixGUIPlugin.cc).
+[HaptixGUIPlugin.cc](https://github.com/osrf/handsim/src/default/src/HaptixGUIPlugin.cc).
 
 This block:
 
-<include lang='c' src='https://bitbucket.org/osrf/handsim/raw/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc' from='/void HaptixGUIPlugin::ScoringUpdate\(\)/' to='/void HaptixGUIPlugin::PollTracking/' /> 
+<include lang='c' src='https://github.com/osrf/handsim/raw/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc' from='/void HaptixGUIPlugin::ScoringUpdate\(\)/' to='/void HaptixGUIPlugin::PollTracking/' /> 
 
 updates the GUI visual to keep track of the task completion state by changing colors of three circles to the lower right hand
 side of the hand diagram used for contact sensor visualization.
-Note the `HaptixGUIPlugin::ScoringUpdate` function is spawned in its own thread [here](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-718).
-And the `HaptixGUIPlugin::OnSimEvents` function [referenced here](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-1560) [subscribes to state updates](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-463) published by the `SimEventsPlugin`.
+Note the `HaptixGUIPlugin::ScoringUpdate` function is spawned in its own thread [here](https://github.com/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-718).
+And the `HaptixGUIPlugin::OnSimEvents` function [referenced here](https://github.com/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-1560) [subscribes to state updates](https://github.com/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-463) published by the `SimEventsPlugin`.
 
 For reference, the Gazebo SimEvents API documentation can be found
 [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SimEventsPlugin.html).

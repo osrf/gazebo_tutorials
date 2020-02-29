@@ -22,7 +22,7 @@ from the right side window. Select an appropriate name for your project, for
 example `MyBasicController`. Click `OK`, and then, click on `Finish`.
 
 Replace the source code from your current project with our basic controller. Copy
-the code from [**here**](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c) and paste it in your current project.
+the code from [**here**](http://github.com/osrf/haptix-comm/raw/default/example/hx_controller.c) and paste it in your current project.
 
 Add the following line at the beginning of your source code:
 
@@ -75,12 +75,12 @@ example:
     cd ~/haptix_controller
     ~~~
 
-1. Download the [source code](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
-and the [cmake file](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt) for the controller:
+1. Download the [source code](http://github.com/osrf/haptix-comm/raw/default/example/hx_controller.c)
+and the [cmake file](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt) for the controller:
 
     ~~~
-    wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
+    wget http://github.com/osrf/haptix-comm/raw/default/example/hx_controller.c
+    wget http://github.com/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
     ~~~
 
 1. Create a build directory and compile the source code.
@@ -133,7 +133,7 @@ trajectory in Gazebo.
 
 # The code explained
 
-<include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c' />
+<include from='/int main/' to='/printDeviceInfo\(.deviceInfo\)/' src='http://github.com/osrf/haptix-comm/raw/default/example/hx_controller.c' />
 
 The HAPTIX C API is composed of five C function calls: `hx_connect()`, `hx_robot_info()`,
 `hx_update()`, `hx_read_sensors()`, and `hx_close()`. `hx_connect()` and `hx_close()` are

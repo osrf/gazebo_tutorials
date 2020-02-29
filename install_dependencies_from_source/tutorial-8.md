@@ -99,17 +99,17 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial
+                             git
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        git clone https://github.com/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
      **Note:** the `default` branch is the development branch where
      you'll find the bleeding edge code, your cloned repository should be on
      this branch by default but we recommend you switch to the `ign-math3`
-     branch if you desire more stability (with the `hg up ign-math3` command).
+     branch if you desire more stability (with the `git checkout ign-math3` command).
 
 1. Create a build directory and go there:
 
@@ -148,7 +148,7 @@ Gazebo depends on the SDFormat package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              python \
                              libboost-system-dev \
                              libboost-filesystem-dev \
@@ -162,7 +162,7 @@ Gazebo depends on the SDFormat package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
      **Note:** the `default` branch is the development branch where you'll find
@@ -207,14 +207,14 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              libprotoc-dev \
                              libprotobuf-dev \
                              protobuf-compiler
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
+        git clone https://github.com/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
      **Note:** Ignition messages hasn't released version 1.0 yet. You can use

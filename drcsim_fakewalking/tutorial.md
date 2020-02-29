@@ -99,7 +99,7 @@ Every `cmd_vel` sent has a lifetime associated. By default, the velocity command
 
 It's also possible to modify the value of the velocity command timeout:
 
-1. By adding a new ROS parameter in the [`atlas.launch`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_gazebo/launch/atlas.launch) file:
+1. By adding a new ROS parameter in the [`atlas.launch`](https://github.com/osrf/drcsim/raw/default/drcsim_gazebo/launch/atlas.launch) file:
 
     ~~~
     <param name="/atlas/cmd_vel_timeout" type="double" value="0.2"/>

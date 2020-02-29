@@ -6,9 +6,9 @@ Gazebo can automatically save camera images to disk.
 To do so, a `<save>` tag must be added to a camera sensor.
 
 ## Create a world with a camera
-Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world) as `camera_tutorial.world`
+Download and save [this world.](http://github.com/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world) as `camera_tutorial.world`
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world' />
+<include from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/default/camera_save/files/camera_tutorial.world' />
 
 
 The important parts are here.
@@ -69,4 +69,4 @@ avconv -framerate 30 -i /tmp/camera_save_tutorial/default_camera_link_my_camera\
 
 [[file:files/my_camera.gif|480px]]
 
-Download the video [here.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/camera_save/files/my_camera.mp4)
+Download the video [here.](http://github.com/osrf/gazebo_tutorials/raw/default/camera_save/files/my_camera.mp4)

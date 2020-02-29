@@ -26,10 +26,10 @@ To try it out:
     cd atlas_interface
     ~~~
 
-* Add exports to the [package.xml](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/package.xml) if we want to have other files depned on this package:
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
+* Add exports to the [package.xml](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/package.xml) if we want to have other files depned on this package:
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/package.xml' />
 
-* Create a `src` directory and add [src/atlas_interface.cpp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp).
+* Create a `src` directory and add [src/atlas_interface.cpp](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp).
 
     ~~~
     mkdir src
@@ -37,9 +37,9 @@ To try it out:
     ~~~
 
 * Populate it with content from below
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/src/atlas_interface.cpp' />
 
-* To use the library `libatlas_interface.so` we created here, create an `examples` directory and add [examples/example.cpp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp).
+* To use the library `libatlas_interface.so` we created here, create an `examples` directory and add [examples/example.cpp](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp).
 
     ~~~
     mkdir examples
@@ -47,19 +47,19 @@ To try it out:
     ~~~
 
 * Populate it with content from below:
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.cpp' />
 
-* Also create a launch file [examples/example.launch](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch)
+* Also create a launch file [examples/example.launch](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch)
 
     ~~~
     gedit examples/example.launch
     ~~~
 
 * Populate it with content from below:
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/examples/example.launch' />
 
-* Update the [CMakeLists.txt](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt) to look like below:
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt' />
+* Update the [CMakeLists.txt](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt) to look like below:
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_robot_interface/files/atlas_interface/CMakeLists.txt' />
 
 * Add this package's directory (`atlas_interface`) to your ROS_PACKAGE_PATH, e.g.:
 

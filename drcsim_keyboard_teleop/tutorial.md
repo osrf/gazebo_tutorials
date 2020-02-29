@@ -106,4 +106,4 @@ It is recommended to keep the forward stride length below 0.4 meters, and the la
 Press `Q` to exit `keyboard_teleop.py`, then Ctrl-C to kill `roslaunch`.
 
 ## Known Issues
- * Rotating in place with an Atlas model with hands is not very stable, use rotate around a point instead and plan your trajectories carefully. [Ticket](https://bitbucket.org/osrf/drcsim/issue/205/atlas-falls-while-rotating-in-place-using)
+ * Rotating in place with an Atlas model with hands is not very stable, use rotate around a point instead and plan your trajectories carefully. [Ticket](https://github.com/osrf/drcsim/issue/205/atlas-falls-while-rotating-in-place-using)

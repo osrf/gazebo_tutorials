@@ -18,9 +18,9 @@ $ sudo apt-get install gdal-bin libgdal-dev python-gdal
 
 There are several organizations that provide elevation data. As an example,
 let's download a DEM file of Mount St. Helens
-[before](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip)
+[before](https://github.com/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip)
 or
-[after](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_after.zip)
+[after](https://github.com/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_after.zip)
 its eruption back in the '80s. These files are in public domain and are
 distributed by [USGS](http://nationalmap.gov/elevation.html).
 
@@ -28,7 +28,7 @@ Unzip the file and rename it `mtsthelens.dem` as follows:
 
 ~~~
 cd ~/Downloads
-wget https://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip
+wget https://github.com/osrf/gazebo_tutorials/raw/default/dem/files/mtsthelens_before.zip
 unzip ~/Downloads/mtsthelens_before.zip -d /tmp
 mv /tmp/30.1.1.1282760.dem /tmp/mtsthelens.dem
 ~~~
@@ -42,7 +42,7 @@ $ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 
 A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in `/tmp`.
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/dem/files/volcano.world' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/default/dem/files/volcano.world' />
 
 The `<heightmap><size>` element in the code above tells Gazebo whether to load the DEM with the original dimensions (when `<size>` is not present) or to scale it (when `<size>` is present). In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate its size in all three dimensions. In our example, the DEM will be scaled to a square of 150 x 150 meters and a height of 50 meters. The minimum elevation for this particular DEM file is 685 meters, so in the `<pos>` element, we translate the entire DEM in negative z direction so that it sits at z=0 in the world.
 

@@ -31,7 +31,7 @@ roslaunch drcsim_gazebo atlas_robotiq_hands.launch
 ~~~
 
 If the initial hand configuration does not match your robot's configuration, you
-can edit the file [`atlas_robotiq_hands.urdf.xacro`](https://bitbucket.org/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
+can edit the file [`atlas_robotiq_hands.urdf.xacro`](https://github.com/osrf/drcsim/src/default/atlas_description/robots/atlas_robotiq_hands.urdf.xacro).
 Note that there are different versions of this file for Atlas V3 and Atlas V4.
 
 Once your configuration is correct you can look for ROS nodes controlling the RobotiQ hands by typing:
@@ -69,7 +69,7 @@ Subscribers:
 
 %%%
 
-  The message type is [atlas_msgs/SModelRobotOutput](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/SModelRobotOutput.msg) which contains all the different registers for controlling the behavior of the hand:
+  The message type is [atlas_msgs/SModelRobotOutput](https://github.com/osrf/drcsim/src/default/atlas_msgs/msg/SModelRobotOutput.msg) which contains all the different registers for controlling the behavior of the hand:
 
 ~~~
 rosmsg show SModelRobotOutput

@@ -58,7 +58,7 @@ Now that everything is installed, here's how to run it:
         source /opt/ros/[Your ROS Distro Name]/setup.bash   # this is necessary for drcsim 3.1.0 and later
         source /usr/share/drcsim/setup.sh
 
-    If you get "Warning: failed to find Gazebo's setup.sh.  You will need to source it manually.", do as described [here](https://bitbucket.org/osrf/drcsim/issue/51/drcsim-110-setupsh-wont-load-gazebo-13)
+    If you get "Warning: failed to find Gazebo's setup.sh.  You will need to source it manually.", do as described [here](https://github.com/osrf/drcsim/issue/51/drcsim-110-setupsh-wont-load-gazebo-13)
 
 1. To run the DRC Simulator, try the default [launch](http://ros.org/wiki/roslaunch) file:
 
@@ -169,9 +169,9 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
          # Download needed software
          git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
-         hg clone https://bitbucket.org/osrf/osrf-common
-         hg clone https://bitbucket.org/osrf/sandia-hand
-         hg clone https://bitbucket.org/osrf/drcsim
+         git clone https://github.com/osrf/osrf-common
+         git clone https://github.com/osrf/sandia-hand
+         git clone https://github.com/osrf/drcsim
 
          # Source ros distro's setup.bash
          source /opt/ros/hydro/setup.bash
@@ -271,9 +271,9 @@ Default branches of ros gazebo plugins, osrf-common, sandia-hand and drcsim will
 
          # Download needed software
          git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
-         hg clone https://bitbucket.org/osrf/osrf-common
-         hg clone https://bitbucket.org/osrf/sandia-hand
-         hg clone https://bitbucket.org/osrf/drcsim
+         git clone https://github.com/osrf/osrf-common
+         git clone https://github.com/osrf/sandia-hand
+         git clone https://github.com/osrf/drcsim
 
          # Change to the *indigo* branch in gazebo_ros_pkgs
          cd gazebo_ros_pkgs

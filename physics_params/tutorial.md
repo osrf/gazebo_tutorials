@@ -87,7 +87,7 @@ specifications this is an experimental parameter.
 
 1. `use_dynamic_moi_rescaling` Flag to enable dynamic rescaling of moment of inertia in constrained
 directions. The implementation of this feature is
-[here](https://bitbucket.org/osrf/gazebo/pull-requests/1114)
+[here](https://github.com/osrf/gazebo/pull-requests/1114)
 
 
 ## Constraints parameters
@@ -296,7 +296,7 @@ Valid values of the `friction_model` include:
     by choosing a friction direction parallel to the linear velocity
     at the contact point.
     Only the parameter `<mu>` is used.
-    See [gazebo pull request 1522](https://bitbucket.org/osrf/gazebo/pull-request/1522)
+    See [gazebo pull request 1522](https://github.com/osrf/gazebo/pull-request/1522)
     for the implementation of this feature.
 
 The names of the friction cone and friction pyramid models derives from a
@@ -314,14 +314,14 @@ The friction cone model is more physically realistic, but the pyramid model is
 useful in some circumstances when anisotropic behavior is desired,
 such as in modeling longitudinal and lateral wheel friction separately
 (see the WheelSlipPlugin added in
-[gazebo pull request 2950](https://bitbucket.org/osrf/gazebo/pull-requests/2950)).
+[gazebo pull request 2950](https://github.com/osrf/gazebo/pull-requests/2950)).
 
 The difference between the box and cone friction models is visualized using the
-[friction\_pyramid test world](https://bitbucket.org/osrf/gazebo/raw/c2315ca10a801/worlds/friction_pyramid.world),
+[friction\_pyramid test world](https://github.com/osrf/gazebo/raw/c2315ca10a801/worlds/friction_pyramid.world),
 which has an array of boxes arrayed in a circle with an initial velocity going
 away from the center of the circle.
 Specifying `cone_model` in that example world at
-[line 15](https://bitbucket.org/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
+[line 15](https://github.com/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
 results in boxes that travel out radially as one would expect.
 
 <iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -388,4 +388,4 @@ correct the portion of the penetration with a value of penetration depth minus
 `min_depth`. The remaining `min_depth` penetration would stay.
 
 
-All the world files to generate the demonstration videos are accessible [here](https://bitbucket.org/rosebudflyaway/physics_params_world/overview).
+All the world files to generate the demonstration videos are accessible [here](https://github.com/rosebudflyaway/physics_params_world/overview).

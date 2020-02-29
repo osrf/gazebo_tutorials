@@ -19,13 +19,13 @@ will not be merged. See more details on
 [this](http://gazebosim.org/tutorials?tut=model_contrib)
 tutorial on how to contribute your original creations.
 
-1. Fork the `gazebo_models` database by visiting [https://bitbucket.org/osrf/gazebo_models/fork](https://bitbucket.org/osrf/gazebo_models/fork).
+1. Fork the `gazebo_models` database from the website [https://github.com/osrf/gazebo_models](https://github.com/osrf/gazebo_models).
 
 1. Clone your fork of model database.
 
     ```
     cd
-    hg clone URL_OF_YOUR_FORK
+    git clone URL_OF_YOUR_FORK
     ```
 
 1. Look at the directories in your cloned repository to make sure your model
@@ -37,20 +37,21 @@ tutorial on how to contribute your original creations.
     cp -r ~/.gazebo/models/velodyne-hdl32 ~/gazebo_models
     ```
 
-1. Make a new branch, which will make the pull-request process a bit easier.
+1. Make a new branch and move to it, which will make the pull-request process a bit easier.
 
     ```
     cd ~/gazebo_models
-    hg branch velodyne_tutorial_do_not_merge
+    git branch velodyne_tutorial_do_not_merge
+    git checkout velodyne_tutorial_do_not_merge
     ```
 
 1. Add, commit, and push your model.
 
-    1. ```hg add velodyne*```
+    1. ```git add velodyne*```
 
-    1. ```hg commit -m "Added a Velodyne HDL-32 LiDAR"```
+    1. ```git commit -m "Added a Velodyne HDL-32 LiDAR"```
 
-    1. ```hg push --new-branch```
+    1. ```git push```
 
 1. Create a pull-request back to the main `gazebo_models` repository.
 

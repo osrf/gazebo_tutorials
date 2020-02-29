@@ -27,7 +27,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
  1. Next, install the dependencies from a terminal:
 
     ~~~
-    sudo apt-get install libjansson-dev nodejs npm libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+    sudo apt-get install libjansson-dev nodejs npm libboost-dev imagemagick libtinyxml-dev git cmake build-essential
     ~~~
 
 
@@ -36,7 +36,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
  1. Clone the repository into a directory in your home folder:
 
     ~~~
-    cd ~; hg clone https://bitbucket.org/osrf/gzweb
+    cd ~; git clone https://github.com/osrf/gzweb
     ~~~
 
  1. Enter the Gzweb repository and switch to a release branch:
@@ -44,7 +44,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     ~~~
     cd ~/gzweb
     # Note for Gazebo versions < 7, please use the gzweb_1.2.0 branch
-    hg up gzweb_1.3.0
+    git checkout gzweb_1.3.0
     ~~~
 
  1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:

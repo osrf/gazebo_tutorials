@@ -56,7 +56,7 @@ Type: sandia_hand_msgs/SimpleGraspSrv
 Args: grasp
 ~~~
 
-  The service type is [sandia\_hand\_msgs/SimpleGraspSrv](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
+  The service type is [sandia\_hand\_msgs/SimpleGraspSrv](https://github.com/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/srv/SimpleGraspSrv.srv) which contains a [SimpleGrasp message](https://github.com/osrf/sandia-hand/src/default/ros/sandia_hand_msgs/msg/SimpleGrasp.msg), to see what it is, do:
 
 ~~~
 rosmsg show SimpleGrasp
@@ -69,7 +69,7 @@ string name
 float64 closed_amount
 ~~~
 
-The `name` string may take the value of "cylindrical", "prismatic", or "spherical" and refers to the type of grasp. The `closed_amount` value should be between 0 and 1, with 0 being an open hand and 1 being a closed grasp. The source code for this controller is in [simple\_grasp.py in the sandia\_hand\_teleop package](https://bitbucket.org/osrf/sandia-hand/src/default/ros/sandia_hand_teleop/control_nodes/simple_grasp.py).
+The `name` string may take the value of "cylindrical", "prismatic", or "spherical" and refers to the type of grasp. The `closed_amount` value should be between 0 and 1, with 0 being an open hand and 1 being a closed grasp. The source code for this controller is in [simple\_grasp.py in the sandia\_hand\_teleop package](https://github.com/osrf/sandia-hand/src/default/ros/sandia_hand_teleop/control_nodes/simple_grasp.py).
 
 In a separate terminal, invoke the service call to close left hand half way by executing:
 

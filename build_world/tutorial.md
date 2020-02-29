@@ -26,7 +26,7 @@ Gazebo provides two mechanisms for adding objects to Gazebo.
 
     [[file:files/empty_world_simple_shapes_highlighted.png|640px]]
 
-1.  The second is via the [model database](https://bitbucket.org/osrf/gazebo_models), which is accessible by selecting the `Insert` tab in the upper left corner.
+1.  The second is via the [model database](https://github.com/osrf/gazebo_models), which is accessible by selecting the `Insert` tab in the upper left corner.
 
     [[file:files/empty_world_insert_highlighted.png|640px]]
 

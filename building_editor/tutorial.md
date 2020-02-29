@@ -32,7 +32,7 @@ The editor is composed of the following 3 areas:
 
 You may create a scene from scratch, or use an existing image as a template to trace over. This image can be, for example, a 2D laser scan of a building.
 
-Click [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
+Click [here](https://github.com/osrf/gazebo_tutorials/raw/default/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
 
 1. Click on the `Import` button. The `Import Image` dialog will come up.
 

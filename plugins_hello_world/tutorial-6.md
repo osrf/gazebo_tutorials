@@ -68,10 +68,10 @@ $ gedit hello_world.cc
 ~~~
 
 Copy the following into hello_world.cc:
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
+<include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello\_world/hello\_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world),
+[examples/plugins/hello\_world/hello\_world.cc](http://github.com/osrf/gazebo/src/gazebo6/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
@@ -83,7 +83,7 @@ namespace gazebo
 {
 ~~~
 
-The [gazebo/gazebo.hh](https://bitbucket.org/osrf/gazebo/src/gazebo6/gazebo/gazebo_core.hh)
+The [gazebo/gazebo.hh](https://github.com/osrf/gazebo/src/gazebo6/gazebo/gazebo_core.hh)
 file includes a core set of basic gazebo functions.
 It doesn't include `gazebo/physics/physics.hh`, `gazebo/rendering/rendering.hh`,
 or `gazebo/sensors/sensors.hh` as those should be included on a case by case basis.
@@ -134,7 +134,7 @@ $ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 ~~~
 
 Copy the following in CMakeLists.txt:
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
+<include src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
 
 New in `gazebo6`: c++11 flags are now required for all downstream software to compile against gazebo.
 This is done with the following line:
@@ -183,13 +183,13 @@ one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
 Create a world file and copy the code below into it. The example world file
 can also be found in
-[examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world/hello.world).
+[examples/plugins/hello_world/hello.world](https://github.com/osrf/gazebo/src/gazebo6/examples/plugins/hello_world/hello.world).
 
 ~~~
 $ gedit ~/gazebo_plugin_tutorial/hello.world
 ~~~
 
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
+<include src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
 
 Now open it with `gzserver`:
 

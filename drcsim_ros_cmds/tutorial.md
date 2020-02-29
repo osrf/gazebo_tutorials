@@ -2,7 +2,7 @@
 
 In this tutorial, we'll send target joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.
 
-The [DRCSim User Guide](https://bitbucket.org/osrf/drcsim/wiki/DRC/UserGuide) provides specifications of basic controller API over [ROS topics](http://www.ros.org/wiki/Topics).
+The [DRCSim User Guide](https://github.com/osrf/drcsim/wiki/DRC/UserGuide) provides specifications of basic controller API over [ROS topics](http://www.ros.org/wiki/Topics).
 
 In particular, we will make use of two ROS topics in this tutorial:
 
@@ -51,17 +51,17 @@ roscreate-pkg drcsim_joint_commands_tutorial roscpp trajectory_msgs osrf_msgs
 Copy and paste the following code as file
  `~/ros/drcsim_joint_commands_tutorial/src/publish_joint_commands.cpp`
  with any text editor (e.g. gedit, vi, emacs)
- or [download it here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp):
+ or [download it here](http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp):
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ### Compiling the ROS Node
 
 Edit `~/ros/drcsim_joint_commands_tutorial/CMakeLists.txt`
  so that it looks like below
- (or [download it here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt)):
+ (or [download it here](http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt)):
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/CMakeLists.txt' />
 
 
 To compile, type below in a terminal:
@@ -85,7 +85,7 @@ PKG_CONFIG_PATH=~/local/lib/pkgconfig make
 Below contains file license, various system and library dependency includes and
 a couple of global variables.
 
-<include to='/JointCommands jointcommands;/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include to='/JointCommands jointcommands;/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### ROS Topic Callback Function
@@ -96,33 +96,33 @@ header time stamp from the `JointState` message into `JointCommands` message
 for the purpose of measuring the age of the `JointCommands` message.
 This callback then populates target joint positions with some arbitrarily chosen values for purpose of demo, and publishes them over ROS topic `/atlas/joint_commands`.
 
-<include from='/void SetJointStates/' to='/publish\(jointcommands\);\n  \}\n}/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/void SetJointStates/' to='/publish\(jointcommands\);\n  \}\n}/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### Main Subroutine
 Initialize ros and creates a `ros::NodeHandle`.
 
-<include from='/int main/' to='/= new ros::NodeHandle\(\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/int main/' to='/= new ros::NodeHandle\(\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### Waits for Simulation Time Update
 Make sure simulation time has propagated to this node before running the rest of this demo code:
 
-<include from='/  // Waits/' to='\false;\n  }\' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/  // Waits/' to='\false;\n  }\' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### Hardcoded List of Joint Names
 
 List of joint names in the Atlas robot.  Note the order must not change for this function to work correctly.
 
-<include from='/  // must/' to='/r_arm_mwx"\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/  // must/' to='/r_arm_mwx"\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### Size JointCommands Variables
 
 Resize `JointCommands` based on the size of joint names list.
 
-<include from='/  unsigned int n/' to='i_effort_max.resize\(n\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/  unsigned int n/' to='i_effort_max.resize\(n\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 
 ### Fill in JointCommands Gains and Target Values
@@ -130,26 +130,26 @@ Resize `JointCommands` based on the size of joint names list.
 Retrieve JointCommands gains from ROS parameter server.
 Set target velocities and efforts to zero.
 
-<include from='/for \(unsigned int i = 0; i < n/' to='/jointcommands.kp_velocity\[i\]  = 0;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/for \(unsigned int i = 0; i < n/' to='/jointcommands.kp_velocity\[i\]  = 0;\n  }/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ### Subscribe to `/atlas/joint_states` Message
 
 Subscribe to the JointState message, but also set the subscriber option to use
 unreliable transport (i.e. UDP connection).
 
-<include from='/  // ros topic subscriptions/' to='/1000, SetJointStates\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/  // ros topic subscriptions/' to='/1000, SetJointStates\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ### Setup Publisher
 
 Initialize JointCommands publisher.
 
-<include from='/pub_joint_commands_ =/' to='/, 1, true\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/pub_joint_commands_ =/' to='/, 1, true\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ### Call `ros::spin()`
 
 to process messages in the ROS callback queue
 
-<include from='/ros::spin\(\);/' to='/return 0;\n  }/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
+<include from='/ros::spin\(\);/' to='/return 0;\n  }/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands.cpp' />
 
 ## Running the Simulation
 
@@ -203,9 +203,9 @@ rosrun drcsim_joint_commands_tutorial publish_joint_commands
 
 The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints.
 
-To control Atlas v4/v5, change lines 60-87 of `publish_joint_commands.cpp` to the following (or download a [modified version](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp) of the code):
+To control Atlas v4/v5, change lines 60-87 of `publish_joint_commands.cpp` to the following (or download a [modified version](http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp) of the code):
 
-<include from='/  jointcommands.name.push_back\("atlas::l_leg_hpz"\);/' to='/jointcommands.name.push_back\("atlas::back_bkx"\);/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp' />
+<include from='/  jointcommands.name.push_back\("atlas::l_leg_hpz"\);/' to='/jointcommands.name.push_back\("atlas::back_bkx"\);/' src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_ros_cmds/files/publish_joint_commands_v4v5.cpp' />
 
 Next, make the ROS package as above. Note that if you downloaded the source code, you will have to either rename the file from `publish_joint_commands_v4v5.cpp` to `publish_joint_commands.cpp`. Alternatively, you can build a new executable from `publish_joint_commands_v4v5.cpp` by modifying `CMakeLists.txt`.
 

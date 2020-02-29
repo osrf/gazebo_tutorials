@@ -30,9 +30,9 @@ The basic idea behind the tactor glove is to attach the 5 Lilypad boards to each
 
 We started with a full-fingered glove and sewed pockets on the lower third of each finger to put the Lilypads. The pockets were snug enough against the fabric that the Lilypads were in no danger of falling out. The USB board was put into a pocket on the back of the hand, and the USB cable was fed through a small hole near the bottom of the glove. Each pair of wires was twisted together and all of the pairs were bundled at the back of the hand to minimize trailing.
 
-![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/glove_back.jpg "The back of the finished tactor glove.")
+![alt text](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/glove_back.jpg "The back of the finished tactor glove.")
 
-![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/glove_front.jpg "The front of the finished tactor glove.")
+![alt text](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/glove_front.jpg "The front of the finished tactor glove.")
 
 # Assembling the Electronics
 
@@ -40,20 +40,20 @@ Measure out two wires for each Lilypad. The length of the wires depends on the f
 
 For each Lilypad, connect the negative (-) terminal to the GND pin of the Teensy board, and the positive (+) terminal to a unique numbered pin of your choice. We chose pins 4, 9, 10, 12, and 14. Make sure you take note of which pins you use, as it will effect the Arduino code in the next section.
 
-![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/teensy_pinout.png "Pinout for the Teensy USB Board.")
+![alt text](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/teensy_pinout.png "Pinout for the Teensy USB Board.")
 
 Connect the Mini-USB cable to the port on the Teensy board.
 
 Optional: We covered the Lilypad boards and the USB board in shrink wrap. This serves several purposes: it takes stress off the wires, it prevents electrostatic interference from the fabric, and it provides some protection in case somebody spills Mountain Dew on your lovingly crafted tactor glove.
 
-![alt text](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/tactors_soldered.jpg "The electronics components sans glove.")
+![alt text](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/tactors_soldered.jpg "The electronics components sans glove.")
 
 Now that everything is soldered up and connected, it's time to make the Lilypads buzz. 
 
 # Programming the Board
 Open the Arduino IDE and start a new sketch. Click on the 'Tools' drop-down menu and select 'USB Type: "Serial"'.
 
-Download the Arduino sketch code from [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/arduino_sketch.c) and copy it into the Arduino IDE.
+Download the Arduino sketch code from [here](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/arduino_sketch.c) and copy it into the Arduino IDE.
 
 What does the Arduino sketch do? When the USB board gets plugged into a Linux computer, it will create an ACM device (e.g. "/dev/ttyACM0"). It will listen for characters written to that device. When characters '1' through '5' are written to the device, the corresponding motor will buzz for 100 milliseconds.
 
@@ -137,7 +137,7 @@ Once you have confirmed that the electronics and the Arduino sketch are working,
 # Communicating with Gazebo
 We are going to write a haptix-comm client that reads contact sensor data from the simulation and translate it to motor clicks.
 
-Download the tactor glove [source code](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/tactors.cc) and the [CMakeLists.txt](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt) for this project. Copy these files into a new folder (e.g `tactors`).
+Download the tactor glove [source code](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/tactors.cc) and the [CMakeLists.txt](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/CMakeLists.txt) for this project. Copy these files into a new folder (e.g `tactors`).
 
 This C++ code opens `/dev/ttyACM0` and initializes a haptix-comm client by calling `hx_getdeviceinfo`. It establishes mappings between the characters that activate motor buzzes from the Lilypads and the sensor contact indices for the corresponding fingers. In an update loop running at 10 Hz, it reads sensor data from haptix-comm, and writes the corresponding character to `/dev/ttyACM0` when one of the contact sensors exceeds some constant minimum value.
 
@@ -219,4 +219,4 @@ gazebo worlds/arat.worlds
 
 Then in the folder with your C++ code, run the `tactors` executable. Put on the glove and try picking up items in the simulator.
 
-![](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/grasp_sim.png)
+![](http://github.com/osrf/gazebo_tutorials/raw/default/haptix_tactors/files/grasp_sim.png)

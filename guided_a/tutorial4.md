@@ -31,7 +31,7 @@ create a new test file, and write your test.
 
 1. **Regression tests**: tests which fix broken features go under `tests/regression`
 and are prefixed by the issue number on Gazebo's
-[issue tracker](https://bitbucket.org/osrf/gazebo/issues).
+[issue tracker](https://github.com/osrf/gazebo/issues).
 
 If you need any help writing tests, feel free to ask a question on
 [Gazebo Answers](http://answers.gazebosim.org).

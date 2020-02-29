@@ -17,9 +17,9 @@ Add a script script file in your project directory:
 
     gedit model.js
 
-And put the following code inside ([model.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/model.js))
+And put the following code inside ([model.js](https://github.com/osrf/gazebojs/raw/default/examples/model.js))
     
-<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/model.js' />
+<include src='https://github.com/osrf/gazebojs/raw/default/examples/model.js' />
 
 ### Code explained
 

@@ -32,9 +32,9 @@ Create a file
 
     gedit save_camera_frames.js
 
-and add the following content ([save_camera_frames.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js)):
+and add the following content ([save_camera_frames.js](https://github.com/osrf/gazebojs/raw/default/examples/save_camera_frames.js)):
 
-<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js' />
+<include src='https://github.com/osrf/gazebojs/raw/default/examples/save_camera_frames.js' />
 
 
 ### Code explained

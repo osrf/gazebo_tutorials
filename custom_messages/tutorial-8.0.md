@@ -17,15 +17,15 @@ collision map of a Gazebo World. The plug-in will rasterize a world in
 Gazebo use a RayShape to do ray intersection below this grid. It will
 publish the created image to a custom topic and output to a file. The source
 code for this plug-in lives at
-[BitBucket](https://bitbucket.org/osrf/collision_map_creator_plugin).
+[GitHub](https://github.com/osrf/collision_map_creator_plugin).
 
 Feel free to submit issues or pull-requests for improvements. The original
 author of the code is Stephen Brawner.
 
-You can download the source code using mercurial:
+You can download the source code using git:
 
 ~~~
-hg clone https://bitbucket.org/osrf/collision_map_creator_plugin
+git clone https://github.com/osrf/collision_map_creator_plugin
 ~~~
 
 or copy and paste the code into files as instructed below.
@@ -39,7 +39,7 @@ to make complicated messages. Gazebo contains a library of messages already.
 The installed messages can be found in
 /usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
 installs.  This tutorial makes use of the [vector2d.proto
-message](https://bitbucket.org/osrf/gazebo/src/gazebo8/gazebo/msgs/vector2d.proto?at=gazebo8).
+message](https://github.com/osrf/gazebo/src/gazebo8/gazebo/msgs/vector2d.proto?at=gazebo8).
 
 You can see how a custom message is declared by looking into
 `~/collision_map_creator_plugin/msgs/collision_map_request.proto`.
@@ -173,7 +173,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 This is the code for the custom Gazebo world plugin
 (`~/collision_map_creator_plugin/collision_map_creator.cc`).
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
+<include src='https://github.com/osrf/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
 
 
 ### Code Explained
@@ -347,7 +347,7 @@ built message type. There are some extra steps that must be taken that
 aren't explained in plugin tutorials. You can see the source code by opening
 the file `~/collision_map_creator_plugin/request_publisher.cc`:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/request_publisher.cc' />
+<include src='https://github.com/osrf/collision_map_creator_plugin/raw/default/request_publisher.cc' />
 
 ### Code Explained ###
 
@@ -524,7 +524,7 @@ Before exiting, the program must call `transport::fini()` to tear it all down.
 Below you can find the CMakeLists.txt file required to compile the plugin
 and executable:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
+<include src='https://github.com/osrf/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
 
 ### Code Explained
 
@@ -611,7 +611,7 @@ sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugin
 Assuming everything went fine, and that's probably a rough assumption
 (seriously this one was long), you need to run Gazebo with a custom wold file:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/map_creator.world' />
+<include src='https://github.com/osrf/collision_map_creator_plugin/raw/default/map_creator.world' />
 
 Run Gazebo with this world:
 

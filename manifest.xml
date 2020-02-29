@@ -986,19 +986,19 @@
 
     <tutorial title="HAPTIX C API" ref='haptix_comm'>
       <markdown version="6.0+">haptix_comm/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to use the C API, defined at <a href="/haptix/api">http://gazebosim.org/haptix/api</a> and implemented in the <a href="https://bitbucket.org/osrf/haptix-comm">haptix-comm</a> package, for creating a hand controller.]]></description>
+      <description><![CDATA[This tutorial describes how to use the C API, defined at <a href="/haptix/api">http://gazebosim.org/haptix/api</a> and implemented in the <a href="https://github.com/osrf/haptix-comm">haptix-comm</a> package, for creating a hand controller.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="HAPTIX software install and update" ref='haptix_install'>
       <markdown version="6.0+">haptix_install/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to install <a href="/">Gazebo</> and the HAPTIX client library, <a href='https://bitbucket.org/osrf/haptix-comm'>haptix-comm</a>. Also included are instructions for updating software after it has been installed.]]></description>
+      <description><![CDATA[This tutorial describes how to install <a href="/">Gazebo</> and the HAPTIX client library, <a href='https://github.com/osrf/haptix-comm'>haptix-comm</a>. Also included are instructions for updating software after it has been installed.]]></description>
       <skill>beginner</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Matlab and Octave API" ref='haptix_matlab'>
       <markdown version="6.0+">haptix_matlab/tutorial.md</markdown>
-      <description><![CDATA[This tutorial describes how to use the <a href="https://bitbucket.org/osrf/haptix-comm/src/default/matlab/">Matlab/Octave interface</a> for creating a hand controller. The Matlab/Octave interface is a wrapper around the <a href="/tutorials?cat=haptix&tut=haptix_comm">C-API</a>.]]></description>
+      <description><![CDATA[This tutorial describes how to use the <a href="https://github.com/osrf/haptix-comm/src/default/matlab/">Matlab/Octave interface</a> for creating a hand controller. The Matlab/Octave interface is a wrapper around the <a href="/tutorials?cat=haptix&tut=haptix_comm">C-API</a>.]]></description>
       <skill>beginner</skill>
     </tutorial>
 

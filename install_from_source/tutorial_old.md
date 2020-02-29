@@ -32,7 +32,7 @@ build.
 
 Install prerequisites.  A clean Ubuntu system will need:
 
-    wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+    wget https://github.com/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
     ROS_DISTRO=dummy . /tmp/dependencies.sh
     sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
 
@@ -82,13 +82,13 @@ SDFormat and Gazebo depend on the ignition math library.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        git clone https://github.com/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
      **Note:** the `default` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `ign-math2` branch if you
-desire more stability (with the `hg up ign-math2` command).
+desire more stability (with the `git checkout ign-math2` command).
 
 
 1. Create a build directory and go there:
@@ -109,7 +109,7 @@ Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
      **Note:** the `default` branch is the development branch where you'll find
@@ -132,7 +132,7 @@ stability
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        git clone https://github.com/osrf/gazebo /tmp/gazebo
         cd /tmp/gazebo
 
      **Note:** the `default` branch is the development branch where
@@ -255,8 +255,8 @@ cd ${WS}/src
 git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
-hg clone https://bitbucket.org/osrf/sdformat
-hg clone https://bitbucket.org/osrf/gazebo
+git clone https://github.com/osrf/sdformat
+git clone https://github.com/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
@@ -264,7 +264,7 @@ For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up default
+git checkout default
 cd ${WS}/src/dart
 git checkout release-5.0
 ~~~
@@ -273,10 +273,10 @@ Add [package.xml](http://wiki.ros.org/catkin/package.xml)
 files for the plain cmake packages:
 
 ~~~
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml    > ${WS}/src/bullet3/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml    > ${WS}/src/gazebo/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml  > ${WS}/src/sdformat/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml    > ${WS}/src/bullet3/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml    > ${WS}/src/gazebo/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml  > ${WS}/src/sdformat/package.xml
 ~~~
 
 Initialize the catkin workspace:

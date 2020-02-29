@@ -1,6 +1,6 @@
 # Overview
 
-The source code for Gzweb is located at the [osrf/gzweb](https://bitbucket.org/osrf/gzweb) Bitbucket repository. The source code is composed of two main parts: Javascript code inside `gzweb/gz3d`, responsible for visualization, and C++ code inside `gzweb/gzbridge`, responsible for communicating with `gzserver`. 
+The source code for Gzweb is located at the [osrf/gzweb](https://github.com/osrf/gzweb) GitHub repository. The source code is composed of two main parts: Javascript code inside `gzweb/gz3d`, responsible for visualization, and C++ code inside `gzweb/gzbridge`, responsible for communicating with `gzserver`. 
 
 # Javascript development
 
@@ -46,8 +46,8 @@ Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topic
 
 ## Bug reports and feature requests
 
-On Gzweb's [issue tracker](https://bitbucket.org/osrf/gzweb/issues?status=new&status=open), you're able to report bugs and ask for new features. Simply create an issue and categorize it accordingly.
+On Gzweb's [issue tracker](https://github.com/osrf/gzweb/issues?status=new&status=open), you're able to report bugs and ask for new features. Simply create an issue and categorize it accordingly.
 
 ## Pull requests
 
-If you've fixed a bug or added a feature and would like your changes to be integrated into Gzweb, you can make a [pull request](https://bitbucket.org/osrf/gzweb/pull-requests)  to the repository, and the changes will be reviewed and merged.
+If you've fixed a bug or added a feature and would like your changes to be integrated into Gzweb, you can make a [pull request](https://github.com/osrf/gzweb/pull-requests)  to the repository, and the changes will be reviewed and merged.

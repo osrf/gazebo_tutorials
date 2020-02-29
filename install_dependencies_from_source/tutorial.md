@@ -126,13 +126,13 @@ Many of the ignition packages are using the ignition cmake library.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake /tmp/ign-cmake
+        git clone https://github.com/ignitionrobotics/ign-cmake /tmp/ign-cmake
         cd /tmp/ign-cmake
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `ign-cmake0` for Gazebo 10)
 
-        hg up ign-cmake0
+        git checkout ign-cmake0
 
 1. Create a build directory and go there. Configure the build:
 
@@ -159,18 +159,18 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              python
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        git clone https://github.com/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `ign-math4` for Gazebo 10)
 
-        hg up ign-math4
+        git checkout ign-math4
 
 1. Create a build directory and go there:
 
@@ -223,13 +223,13 @@ Gazebo and Ignition Fuel Tools depend on the Ignition Common library.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common /tmp/ign-common
+        git clone https://github.com/ignitionrobotics/ign-common /tmp/ign-common
         cd /tmp/ign-common
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `ign-common1` for Gazebo 10)
 
-        hg up ign-common1
+        git checkout ign-common1
 
 1. Create a build directory and go there:
 
@@ -268,7 +268,7 @@ Gazebo depends on the SDFormat package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              python \
                              libboost-system-dev \
                              libtinyxml-dev \
@@ -278,13 +278,13 @@ Gazebo depends on the SDFormat package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `sdf6` for Gazebo 10)
 
-        hg up sdf6
+        git checkout sdf6
 
 1. Create a build directory and go there:
 
@@ -323,20 +323,20 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              libprotoc-dev \
                              libprotobuf-dev \
                              protobuf-compiler
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
+        git clone https://github.com/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `ign-msgs1` for Gazebo 10)
 
-        hg up ign-msgs1
+        git checkout ign-msgs1
 
 1. Create a build directory and go there:
 
@@ -382,13 +382,13 @@ Gazebo depends optionally in the Ignition Fuel Tools
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools /tmp/ign-fuel-tools
+        git clone https://github.com/ignitionrobotics/ign-fuel-tools /tmp/ign-fuel-tools
         cd /tmp/ign-fuel-tools
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `ign-fuel-tools1` for Gazebo 10)
 
-        hg up ign-fuel-tools1
+        git checkout ign-fuel-tools1
 
 1. Create a build directory and go there:
 

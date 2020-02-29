@@ -78,5 +78,5 @@ gentoolkit) to know more about the optional support:
 ## Other linux distributions?
 
 If you know of any other Linux distribution supporting Gazebo installation,
-feel free to [create an issue](https://bitbucket.org/osrf/gazebo_tutorials/issues)
+feel free to [create an issue](https://github.com/osrf/gazebo_tutorials/issues)
 to expand this tutorial.

@@ -4,7 +4,7 @@ GazeboJs provides a scripting interface to the Gazebo simulator. Specifically, i
 
 GazeboJs is a C++ addon to NodeJs that is loaded inside node process at runtime (using the `require` javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
 This is the same mechanism that the Gazebo simulation client (the gzclient process) uses to communicate with the simulation server.
-The source code for this project can be found here: <https://bitbucket.org/osrf/gazebojs>
+The source code for this project can be found here: <https://github.com/osrf/gazebojs>
 
 [[file:files/gazebojs_overview.png|640px]]
 

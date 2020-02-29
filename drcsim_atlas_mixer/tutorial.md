@@ -54,23 +54,23 @@ You'll see the robot at a table with a drill on it:
     cd scripts
     ~~~
 
-1. Download the [nanoKONTROL driver](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py) in your `atlas_teleop` package, and make it executable:
+1. Download the [nanoKONTROL driver](https://github.com/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py) in your `atlas_teleop` package, and make it executable:
 
     ~~~
-    wget https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py
+    wget https://github.com/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/nanokontrol.py
     chmod a+x nanokontrol.py
     ~~~
 
     This driver receives events from the mixer and publishes ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic.  I.e., it makes the mixer look like a big joystick, with many axes and many buttons.
 
-1. Download the Atlas teleop controller, [`atlas_teleop.py`](https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py) in your `atlas_teleop` package, and make it executable:
+1. Download the Atlas teleop controller, [`atlas_teleop.py`](https://github.com/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py) in your `atlas_teleop` package, and make it executable:
 
     ~~~
-    wget https://bitbucket.org/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py
+    wget https://github.com/osrf/drcsim/raw/default/drcsim_tutorials/atlas_teleop/atlas_teleop.py
     chmod a+x atlas_teleop.py
     ~~~
 
-    This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://bitbucket.org/osrf/osrf-common/src/default/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
+    This controller subscribes to ROS [sensor_msgs/Joy](http://ros.org/doc/api/sensor_msgs/html/msg/Joy.html) messages on the `/joy` topic and commands Atlas and the Sandia hands by publishing [osrf_msgs/JointCommands](https://github.com/osrf/osrf-common/src/default/osrf_msgs/msg/JointCommands.msg) messages on the `/atlas/joint_commands`, `/sandia_hands/l_hand/joint_commands`, and `/sandia_hands/r_hand/joint_commands` topics.  It requires as a command line argument a YAML configuration file that tells it how to map incoming `/joy` messages into commands for the robot and hands (more on this below).
 
 # Finding your mixer device
 
@@ -109,12 +109,12 @@ You'll see the robot at a table with a drill on it:
 
 The `atlas_teleop.py` controller is configured with a YAML file.  Here's an example:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml' />
 
-Download [`drill.yaml`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml).
+Download [`drill.yaml`](http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml).
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml
+wget http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml
 ~~~
 
 We'll explain the format below. First, let's try it:
@@ -136,7 +136,7 @@ With a bit of practice, you should be able to pick up the drill and drop it in t
 The configuration file for `atlas_teleop.py` is written in [YAML](http://www.yaml.org/), with the following structure:
 
 * Each line defines a robot pose:
-    * The first 28 numbers are joint values for the Atlas robot, given in the [usual order](https://bitbucket.org/osrf/drcsim/raw/default/atlas_msgs/msg/AtlasState.msg).
+    * The first 28 numbers are joint values for the Atlas robot, given in the [usual order](https://github.com/osrf/drcsim/raw/default/atlas_msgs/msg/AtlasState.msg).
     * The next two elements specify a grasp posture for the left hand (the following two elements do the same for the right hand), in two parts:
         * The string specifies the grasp type, which should be one of: `cyl` (cylindrical) or `sph` (spherical).
         * The number specifies a grasp position between fully open (0.0) and fully closed (1.0).

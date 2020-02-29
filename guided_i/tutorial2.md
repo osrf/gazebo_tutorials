@@ -88,9 +88,9 @@ file and then add it to our model.
 At this point You should have two collada files: `velodyne_base.dae` and `velodyne_top.dae`. These two files are also available from the following links:
 
 
-1.  [velodyne_base.dae](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_base.dae)
+1.  [velodyne_base.dae](https://github.com/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_base.dae)
 
-1.  [velodyne_top.dae](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_top.dae)
+1.  [velodyne_top.dae](https://github.com/osrf/gazebo_tutorials/raw/default/guided_i/files/velodyne_top.dae)
 
 In the next section, we will cover adding these meshes to the SDF model.
 

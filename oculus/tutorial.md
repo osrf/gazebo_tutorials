@@ -10,7 +10,7 @@ Follow the next instructions to install the Oculus SDK version that we prepared 
 
 ~~~
 sudo apt-get install libusb-dev libudev-dev libxinerama-dev libxrandr-dev
-hg clone https://bitbucket.org/osrf/oculussdk
+git clone https://github.com/osrf/oculussdk
 cd oculussdk
 mkdir build
 cd build

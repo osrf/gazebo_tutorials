@@ -5,7 +5,7 @@
 FlashLightPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with Gazebo that flashes and dims light objects on a model. By giving parameters to the plugin, you can choose which lights to blink and also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., turning the lights on/off.
 
 # Usage and Plugin Parameters
-Insert your plugin block with the `filename` attribute set to `libFlashLightPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
+Insert your plugin block with the `filename` attribute set to `libFlashLightPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://github.com/osrf/gazebo/raw/gazebo9/worlds/flash_light_plugin_demo.world)), the model has two links each of which has two light objects.
 
 ```XML
 <model name='light_model'>
@@ -139,7 +139,7 @@ Once the plugin is loaded, it reads the parameters given under the `<plugin>` el
 To flash/dim the light, `FlashLightSetting` class has two functions: `Flash()` and `Dim()`. It continuously checks the simulation time and finds the right timing to call those functions. Let's say the light to control is now flashing. When the duration time has been passed, it calls `Dim()`. Then, it waits until the interval time is passed. After that, it calls `Flash()`, and repeats these steps above. If the flashlight is given with multiple `<block>`, it switches to the next block so the light patterns are switched as described by the plugin parameters.
 
 ## ~/light/modify topic
-Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://bitbucket.org/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
+Gazebo advertises `~/light/modify` topic to update lights in the simulation. `Flash()` and `Dim()` store values in [msgs::Light](https://github.com/osrf/gazebo/src/gazebo9/gazebo/msgs/light.proto) and send it to this topic so a light appearance reflects to the specified values. Particularly, `Flash()` sets `range` to a non-zero value, and `Dim()` sets it to 0.
 
 # Extension of Plugin
 FlashLightPlugin class has member functions which are accessible to derived classes. These functions can dynamically turn the flashlights on and off, and can also update the duration and interval time. As the diagram below shows, a derived plugin calls member functions of FLashLightPlugin to control the flashlights. The plugin could let external entities control flashlights by reacting to external events or requests.

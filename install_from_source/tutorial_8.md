@@ -34,7 +34,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+    ***Note:*** there is a list of [available mirrors](https://github.com/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
@@ -47,7 +47,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
    (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
     kinetic...):
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        wget https://github.com/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy . /tmp/dependencies.sh
         sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 
@@ -119,7 +119,7 @@ tutorial and then come back here.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        git clone https://github.com/osrf/gazebo /tmp/gazebo
         cd /tmp/gazebo
 
      **Note:** the `default` branch is the development branch where
@@ -250,8 +250,8 @@ cd ${WS}/src
 git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
-hg clone https://bitbucket.org/osrf/sdformat
-hg clone https://bitbucket.org/osrf/gazebo
+git clone https://github.com/osrf/sdformat
+git clone https://github.com/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
@@ -259,7 +259,7 @@ For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up default
+git checkout default
 cd ${WS}/src/dart
 git checkout release-5.0
 ~~~
@@ -268,10 +268,10 @@ Add [package.xml](http://wiki.ros.org/catkin/package.xml)
 files for the plain cmake packages:
 
 ~~~
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml    > ${WS}/src/bullet3/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml    > ${WS}/src/gazebo/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml  > ${WS}/src/sdformat/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml    > ${WS}/src/bullet3/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml    > ${WS}/src/gazebo/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml  > ${WS}/src/sdformat/package.xml
 ~~~
 
 Initialize the catkin workspace:

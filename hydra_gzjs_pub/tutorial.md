@@ -28,9 +28,9 @@ Test that the publisher works:
 ### Code
 The publisher code is located in the hydra_pub.js file
 
-([hydra_pub.js](https://bitbucket.org/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js)):
+([hydra_pub.js](https://github.com/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js)):
 
-<include src='https://bitbucket.org/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js' />
+<include src='https://github.com/ahaidu/hydra_gzjs_pub/raw/master/hydra_pub.js' />
 
 
 ### Code explained

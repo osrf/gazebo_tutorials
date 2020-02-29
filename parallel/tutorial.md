@@ -63,26 +63,26 @@ export WS=${HOME}/ws/gazebo_parallel
 mkdir -p ${WS}/src
 cd ${WS}/src
 git clone https://github.com/ros/catkin.git
-hg clone https://bitbucket.org/osrf/gazebo
-hg clone https://bitbucket.org/osrf/sdformat
+git clone https://github.com/osrf/gazebo
+git clone https://github.com/osrf/sdformat
 ~~~
 
 Then we update gazebo and sdformat to the diagnostics related branch:
 
 ~~~
 cd ${WS}/src/gazebo
-hg update diagnostics_scpeters
+git checkout diagnostics_scpeters
 cd ${WS}/src/sdformat
-hg update island_threads
+git checkout island_threads
 ~~~
 
-Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
-and [package_sdformat.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
+Next we download [package_gazebo.xml](https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
+and [package_sdformat.xml](https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
 copy them to the cloned `gazebo` and `sdformat` source folder as `package.xml`
 
 ~~~
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
+curl https://github.com/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
 ~~~
 
 Gazebo can then be built using the `catkin_make_isolated` command:
@@ -104,7 +104,7 @@ cd ${WS}
 ## Run the code
 
 Threading is currently enabled using custom sdformat parameters
-on the [island_threads branch](https://bitbucket.org/osrf/sdformat/branches/compare/island_threads%0Ddefault#diff):
+on the [island_threads branch](https://github.com/osrf/sdformat/branches/compare/island_threads%0Ddefault#diff):
 
 * `island_threads`: integer number of threads to use for island threading
 * `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
@@ -112,9 +112,9 @@ on the [island_threads branch](https://bitbucket.org/osrf/sdformat/branches/comp
 These flags have been added to [physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
 in several world files on the `diagnostics_scpeters` branch of gazebo:
 
-* [test/worlds/revolute\_joint\_test.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
-* [worlds/pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/pr2.world#cl-12)
-* [worlds/dual_pr2.world](https://bitbucket.org/osrf/gazebo/src/diagnostics_scpeters/worlds/dual_pr2.world#cl-12)
+* [test/worlds/revolute\_joint\_test.world](https://github.com/osrf/gazebo/src/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
+* [worlds/pr2.world](https://github.com/osrf/gazebo/src/diagnostics_scpeters/worlds/pr2.world#cl-12)
+* [worlds/dual_pr2.world](https://github.com/osrf/gazebo/src/diagnostics_scpeters/worlds/dual_pr2.world#cl-12)
 
 Simulate two pr2 robots without threading:
 

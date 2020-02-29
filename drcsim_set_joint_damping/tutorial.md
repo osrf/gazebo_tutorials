@@ -27,16 +27,16 @@ Each service is described in detail below:
 
 * To get Atlas robot model's current joint damping coefficients,
  * ROS service: `/atlas/get_joint_damping`
- * message type: [atlas_msgs/srv/GetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/GetJointDamping.srv)
+ * message type: [atlas_msgs/srv/GetJointDamping](https://github.com/osrf/drcsim/src/default/atlas_msgs/srv/GetJointDamping.srv)
 * To set Atlas robot model's joint damping coefficients,
  * ROS service: `/atlas/set_joint_damping`
- * message type: [atlas_msgs/srv/SetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
+ * message type: [atlas_msgs/srv/SetJointDamping](https://github.com/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
 * To get Sandia hand model's current joint damping coefficients (right hand),
  * ROS service: `/sandia_hands/r_hand/get_joint_damping`
- * message type: [atlas_msgs/srv/GetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/GetJointDamping.srv)
+ * message type: [atlas_msgs/srv/GetJointDamping](https://github.com/osrf/drcsim/src/default/atlas_msgs/srv/GetJointDamping.srv)
 * To set Sandia hand model's joint damping coefficients,
  * ROS service: `/sandia_hands/r_hand/set_joint_damping`
- * message type: [atlas_msgs/srv/SetJointDamping](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
+ * message type: [atlas_msgs/srv/SetJointDamping](https://github.com/osrf/drcsim/src/default/atlas_msgs/srv/SetJointDamping.srv)
 
 # Running the Tutorial
 To run this tutorial, you'll need at least 2 separate terminals.  Don't forget to execute following setup commands in each new terminal you open.
@@ -67,7 +67,7 @@ success: True
 status_message: success
 ~~~
 
-Here, the array of `damping_coefficients` should have exactly 28 elements for DRCSim < 4.2 and 30 elements for DRCSim >= 4.2, with each element corresponds to one joint as listed in [atlas_msgs/AtlasState.msg](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasSimInterfaceState.msg).  In this example, all joints will have a damping coefficient of `0.1 N*m*sec/rad`, with the exception of `r_arm_uwy` with damping coefficient of `0.2 N*m*sec/rad`.
+Here, the array of `damping_coefficients` should have exactly 28 elements for DRCSim < 4.2 and 30 elements for DRCSim >= 4.2, with each element corresponds to one joint as listed in [atlas_msgs/AtlasState.msg](https://github.com/osrf/drcsim/src/default/atlas_msgs/msg/AtlasSimInterfaceState.msg).  In this example, all joints will have a damping coefficient of `0.1 N*m*sec/rad`, with the exception of `r_arm_uwy` with damping coefficient of `0.2 N*m*sec/rad`.
 
 To see the damping values for the Sandia hands, type the following:
 
@@ -85,7 +85,7 @@ success: True
 status_message: success
 ~~~
 
-Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 84 ~ 95](https://bitbucket.org/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/SandiaHandPlugin.cpp?at=default#cl-84).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
+Here, each element of the `damping_coefficients` array corresponds to a joint as listed in [SandiaHandPlugin.cc line 84 ~ 95](https://github.com/osrf/drcsim/src/default/drcsim_gazebo_ros_plugins/src/SandiaHandPlugin.cpp?at=default#cl-84).  So for example, above `rosservice` call will set all joint damping values to `30 N*m*sec/rad` with the exception of `f3_j0`, with damping coefficient of `5.0 N*m*sec/rad`.
 
 Change the Sandia hands model joint damping coefficients by typing:
 

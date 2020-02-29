@@ -21,7 +21,7 @@ sudo apt install gazebo7 libgazebo7-dev
 Run the following to install the rest of dependencies, including NodeJS:
 
 ~~~
-sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev git cmake build-essential
 ~~~
 
 > Ubuntu Trusty comes with NodeJS 0.10. You can follow
@@ -32,12 +32,12 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
 
 1. Clone the repository into a directory in your home folder for example:
 
-        cd ~; hg clone https://bitbucket.org/osrf/gzweb
+        cd ~; git clone https://github.com/osrf/gzweb
 
 1. Enter the GzWeb repository and switch to the 1.4.0 release branch:
 
         cd ~/gzweb
-        hg up gzweb_1.4.0
+        git checkout gzweb_1.4.0
 
 1. The first time you build, you'll need to gather all the Gazebo models which
    you want to simulate in the right directory ('http/client/assets') and prepare
@@ -60,7 +60,7 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
         npm run deploy --- -m
 
     > Note: the `-m` flag tells the deploy script to grab all the models from the
-     [model database](https://bitbucket.org/osrf/gazebo_models/) and any other
+     [model database](https://github.com/osrf/gazebo_models/) and any other
      models in your `GAZEBO_MODEL_PATH`. For all subsequent builds, the `-m` flag
      will not be needed.
 

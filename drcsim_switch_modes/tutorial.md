@@ -10,10 +10,10 @@ The robot offers two gross modes of control:
 
 * BDI mode: send a high-level goal, such as **stand** or **walk**, to BDI's behavior library
  * ROS topic: `/atlas/atlas_sim_interface_command`
- * message type: [atlas/AtlasSimInterfaceCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasSimInterfaceCommand.msg)
+ * message type: [atlas/AtlasSimInterfaceCommand](https://github.com/osrf/drcsim/src/default/atlas_msgs/msg/AtlasSimInterfaceCommand.msg)
 * user mode: send setpoints and gains to the PID controllers that are running on each joint.
  * ROS topic: `/atlas/atlas_command`
- * message type: [atlas/AtlasCommand](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg)
+ * message type: [atlas/AtlasCommand](https://github.com/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg)
 
 You can mix and match these modes on a per-joint basis.  Each message type has a `k_effort` array, with one element per joint.  To exert BDI-mode control for joint `i`, set `k_effort[i]` to 0; for user-mode control, set it to 255.  In this way, you can, for example, ask the BDI library to stand but then control the arms yourself.  Note that some (perhaps many) combinations don't make sense, e.g., asking the BDI library to walk but retaining user-mode control of one of the legs.
 
@@ -61,7 +61,7 @@ chmod +x demo.py
 ### The code 
 
 Here is the python demo script
- ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py))
+ ([downloadable here](https://github.com/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py))
  that implements the instructions detailed in this section:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py' />
