@@ -30,7 +30,7 @@ If this is your first time installing the simulator, there's some system configu
 1. Retrieve and install the keys for the ROS and DRC repositories.
 
         wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install the DRC Simulator.
 

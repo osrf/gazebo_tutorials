@@ -38,7 +38,7 @@ Gazebo3 is able to use different physics engines to perform the simulation. ODE 
 
 1. Retrieve and install the keys for the Gazebo repositories.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install Gazebo.
 
