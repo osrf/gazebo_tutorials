@@ -30,9 +30,13 @@ Windows `cmd` for configuring and building.  You might also need to
 1. Download the following dependencies into that directory:
     1. [libcurl HEAD](https://s3.amazonaws.com/osrf-distributions/win32/deps/curl-7.57.0-vc15-x64-dll-MD.zip)
 
+    1. [libyaml]( https://s3.amazonaws.com/osrf-distributions/win32/deps/libyaml-0.1.7-vc15-x64-md.zip)
+    
     1. [dlfcn-win32](https://s3.amazonaws.com/osrf-distributions/win32/deps/dlfcn-win32-vc15-x64-dll-MD.zip)
 
-    1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/protobuf-3.4.1-vc15-x64-dll-MD.zip)
+    1. [jsoncpp](https://s3.amazonaws.com/osrf-distributions/win32/deps/
+
+    1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/deps/protobuf-3.4.1-vc15-x64-dll-MD.zip)
 
     1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4_zlip-1.2.11_vc15-x64-dll-MD.zip)
 
@@ -49,8 +53,6 @@ Windows `cmd` for configuring and building.  You might also need to
     1. [TBB 4.3](https://s3.amazonaws.com/osrf-distributions/win32/deps/tbb43_20141023oss_win.zip)
 
     1. [Qt 5.7.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/qt-opensource-windows-x86-msvc2015_64-5.7.0.zip)
-
-    1. [Freetype 2.4.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/freetype-2.4.0-vc12-x64-release-debug.zip)
 
     1. [QWT 6.1.22](https://s3.amazonaws.com/osrf-distributions/win32/deps/qwt_6.1.2~osrf_qt5.zip)
 
