@@ -38,7 +38,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/deps/protobuf-3.4.1-vc15-x64-dll-MD.zip)
 
-    1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4_zlip-1.2.11_vc15-x64-dll-MD.zip)
+    1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4.0_zlip-1.2.11_vc15-x64-dll-MD.zip)
 
     1. [zziplib 0.13.62](https://s3.amazonaws.com/osrf-distributions/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
 
