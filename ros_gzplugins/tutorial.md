@@ -560,6 +560,7 @@ save, then launch the same launch files as for GPU Laser.
   - inheritance from SensorPlugin instead of ModelPlugin,
   - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
   - gravity is included in inertial measurements.
+  - set `initialOrientationAsReference` to `false` to comply with [REP 145](https://www.ros.org/reps/rep-0145.html).
 
 
 ~~~
@@ -578,6 +579,7 @@ save, then launch the same launch files as for GPU Laser.
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
         <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
