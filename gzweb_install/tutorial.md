@@ -7,7 +7,7 @@ on a web browser.
 # Dependencies
 
 The main dependencies for GzWeb are the Gazebo development libraries, version 7 or
-greater, and NodeJS version 4 or higher.
+greater, and NodeJS version 4 up to version 8.
 
 Take a look at
 [these tutorials](http://gazebosim.org/install) to choose the Gazebo
