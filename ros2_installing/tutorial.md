@@ -66,6 +66,8 @@ ROS 2 version you're using. The currently supported branches are:
   It works with the master
   [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
 
+You can switch branches after populating the `src` directory (as below) with: `vcs custom --args checkout crystal`
+
 The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`.
 
 1. Make sure `git` is installed on your Ubuntu machine:
