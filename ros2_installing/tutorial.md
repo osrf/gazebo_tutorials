@@ -6,7 +6,7 @@ See
 [ROS 2 Overview](http://gazebosim.org/tutorials/?tut=ros2_overview)
 for background information before continuing here.
 
-The packages support ROS 2 Eloquent and Gazebo 9, and can be installed from
+The packages support ROS 2 Crystal and later and Gazebo 9 and later, and can be installed from
 debian packages or from source.
 
 ## Prerequisites
@@ -60,6 +60,8 @@ access and control over the workflow.
 You'll need to choose the branch of `gazebo_ros_pkgs` according to the
 ROS 2 version you're using. The currently supported branches are:
 
+* `dashing`: works with Dashing debians or Dashing's
+  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/dashing/ros2.repos).
 * `eloquent`: works with Eloquent debians or Eloquent's
   [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/eloquent/ros2.repos).
 * `ros2`: points to the next unreleased ROS 2 turtle, currently Foxy.
