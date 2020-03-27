@@ -73,7 +73,7 @@ If there are some sections blank, it means that this author got tired of documen
 
 ## Camera
 
-**Description:** provides ROS interface for simulating cameras such as wge100_camera by publishing the CameraInfo and Image ROS messages as described in sensor_msgs.
+**Description:** provides ROS interface for simulating cameras such as `wge100_camera` by publishing the CameraInfo and Image ROS messages as described in `sensor_msgs`.
 
 ### RRBot Example
 
