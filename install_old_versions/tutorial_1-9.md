@@ -40,7 +40,7 @@ With the release of gazebo 2.0 version (as gazebo_current package) there are som
 
 1. Retrieve and install the keys for the Gazebo repositories.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install Gazebo.
 

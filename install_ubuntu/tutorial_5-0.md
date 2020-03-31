@@ -20,7 +20,7 @@
 
 1. Setup keys
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Install Gazebo.
 

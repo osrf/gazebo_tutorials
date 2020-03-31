@@ -111,7 +111,7 @@ your system.
     1. Modify the plugin's target link libraries.
 
         ```
-        target_link_libraries(velodyne_plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
+        target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
         ```
 
     1. Your `CMakeLists.txt` should now look like this.
@@ -132,7 +132,7 @@ your system.
 
         # Build our plugin
         add_library(velodyne_plugin SHARED velodyne_plugin.cc)
-        target_link_libraries(velodyne_plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
+        target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
         # Build the stand-alone test program
         add_executable(vel vel.cc)

@@ -66,13 +66,14 @@ markup inside the `<sensor>` tag, immediately after the closing `</camera>` tag:
             will control the frame rate. -->
           <updateRate>0.0</updateRate>
           <cameraName>camera_ir</cameraName>
-          <imageTopicName>/camera/depth/image_raw</imageTopicName>
-          <cameraInfoTopicName>/camera/depth/camera_info</cameraInfoTopicName>
+          <imageTopicName>/camera/color/image_raw</imageTopicName>
+          <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
           <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
-          <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+          <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
           <frameName>camera_link</frameName>
-          <pointCloudCutoff>0.05</pointCloudCutoff>
+          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
           <distortionK1>0</distortionK1>
           <distortionK2>0</distortionK2>
           <distortionK3>0</distortionK3>
@@ -100,7 +101,7 @@ the information is passed to ROS. A few points to note:
   * The `distortionX` parameters should match those in the `<distortion>` tag of
   the parent camera. If there is no `<distortion>` tag, then use 0 for all the
   `distortionX` values.
-  * `pointCloudCutoff` is the maximum distance for points. No points beyond
+  * `pointCloudCutoff` and `pointCloudCutoffMax` is the minimum and maximum distance for points, respectively. No points beyond
   this distance will be shown. This is an additional restriction to any
   clipping that has been set in the parent sensor.
 

@@ -7,19 +7,28 @@ Debian, Fedora, Arch and Gentoo.
 
 ## Debian
 
-[Gazebo in Debian](https://packages.debian.org/source/sid/gazebo) is available
-as an official package since stretch. Debian Sid (the Gazebo team is the official
-maintainer in Debian) usually hosts the latest gazebo release. Depending on the
-Debian version the version of Gazebo available is different:
+The one liner installation can be used in the Debian in the standard way:
 
- * Debian Sid is usually hosting one of the latest releases
- * Debian Buster: gazebo-9.6.0
- * Debian Stretch: gazebo-7.3.1
+        curl -ssL http://get.gazebosim.org | sh
 
-1. Install Gazebo9 (on Buster)
+If you prefer manual installations, [Gazebo in Debian
+Sid](https://packages.debian.org/source/sid/gazebo) is available as an official
+package in Debian Sid (the Gazebo team is the official maintainer in Debian)
+which usually hosts the latest gazebo release.
+
+1. Install Gazebo9
 
         sudo apt-get install gazebo9
         # For developers that works on top of Gazebo, one extra package
+        sudo apt-get install libgazebo9-dev
+
+Gazebo in Debian stretch is provided by the packages.osrfoundation.org repository.
+
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/debian-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install gazebo9
+        # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo9-dev
 
 ## Fedora
@@ -29,19 +38,18 @@ as an official package (the maintainer is Rich Mattes). Depending on the Fedora
 version, the version of Gazebo available is different:
 
  * Rawhide is usually hosting one of the latest releases
- * Fedora 31: gazebo-9.x
- * Fedora 30: gazebo-9.x
- * Fedora 29: gazebo-8.x
+ * Fedora 27: gazebo-8.1.1
+ * Fedora 26: gazebo-8.0.0
 
 1. Install Gazebo
-        sudo dnf install gazebo gazebo-ode
+        sudo yum install gazebo
         # For developers that works on top of Gazebo, one extra package
-        sudo dnf install gazebo-devel
+        sudo yum install gazebo-devel
 
 ## Arch
 
 [Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
-Arch User Repository (billypilgrim is the maintainer). This means that it
+Arch User Repository (racko is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
 or packer:

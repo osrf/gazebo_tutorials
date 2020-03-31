@@ -111,7 +111,7 @@ wget -O /tmp/haptix_sdk_install.sh https://osrf-distributions.s3.amazonaws.com/h
 
 1. Setup keys.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
         sudo apt-get update
 
 1. Install the SDK.

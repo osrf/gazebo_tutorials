@@ -403,7 +403,7 @@ The advantage of the model database method is that now you can include your robo
       <pose>-2.0 7.0 0 0 0 0</pose>
     </include>
     <include>
-      <uri>model://MYROBOT</uri>
+      <uri>model://MYROBOT_description</uri>
     </include>
   </world>
 </sdf>
@@ -423,6 +423,7 @@ on any new system before being able to use these ROS packages.
 The useful info would be the format for exporting model paths from a package.xml:
 
 ~~~
+<run_depend>gazebo_ros</run_depend>
 <export>
   <gazebo_ros gazebo_model_path="${prefix}/models"/>
   <gazebo_ros gazebo_media_path="${prefix}/models"/>

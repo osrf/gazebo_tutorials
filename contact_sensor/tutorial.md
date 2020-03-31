@@ -324,7 +324,7 @@ include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 add_library(contact SHARED ContactPlugin.cc)
-target_link_libraries(contact ${GAZEBO_libraries})
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 ~~~
 
 Next, create a build directory and make the plugin:

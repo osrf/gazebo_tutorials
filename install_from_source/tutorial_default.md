@@ -40,16 +40,15 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
-1. Install prerequisites. A clean Ubuntu system will need the following
-   (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
+1. Install prerequisites. A clean Ubuntu system will need the following (replace `version` with the major version of gazebo you intend to build, eg: 7, 8, 9. And if using ROS, replace `dummy` with your ROS version, eg: indigo, jade,
     kinetic...):
 
         wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
-        ROS_DISTRO=dummy . /tmp/dependencies.sh
-        sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
+        GAZEBO_MAJOR_VERSION=version ROS_DISTRO=dummy . /tmp/dependencies.sh
+        echo $BASE_DEPENDENCIES $GAZEBO_BASE_DEPENDENCIES | tr -d '\\' | xargs sudo apt-get -y install
 
 ### Optional Physics Engines
 

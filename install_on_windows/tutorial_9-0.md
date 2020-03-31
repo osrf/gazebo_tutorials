@@ -1,7 +1,8 @@
 # Install on Windows
 
 This documentation describes how to set up a workspace for trying to compile
-Gazebo on Windows.  *It does not actually work yet.*
+Gazebo on Windows. The support for the Gazebo Windows compilation has been
+completed since version 9.
 
 ## Important requirement: 30Gb free disk space
 
@@ -10,8 +11,8 @@ sources together with all the dependencies and compilation artifacts.
 
 ## Supported compilers
 
-At this moment, compilation has been tested on Windows 7 and 8.1 and is supported when
-using [Visual Studio 2013](https://www.visualstudio.com/downloads/).
+At this moment, compilation has been tested on Windows 8.1 and 10, supported when
+using [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 Patches for other versions are welcome.
 
 ## Installation
@@ -27,32 +28,33 @@ Windows `cmd` for configuring and building.  You might also need to
         cd gz-ws
 
 1. Download the following dependencies into that directory:
+    1. [libcurl HEAD](https://s3.amazonaws.com/osrf-distributions/win32/deps/curl-7.57.0-vc15-x64-dll-MD.zip)
 
-    1. [freeImage 3.x, slightly modified to build on VS2013](http://packages.osrfoundation.org/win32/deps/FreeImage-vc12-x64-release-debug.zip)
+    1. [dlfcn-win32](https://s3.amazonaws.com/osrf-distributions/win32/deps/dlfcn-win32-vc15-x64-dll-MD.zip)
 
-    1. [boost 1.56.0](http://packages.osrfoundation.org/win32/deps/boost_1_56_0.zip)
+    1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/protobuf-3.4.1-vc15-x64-dll-MD.zip)
 
-    1. [bzip2 1.0.6](http://packages.osrfoundation.org/win32/deps/bzip2-1.0.6-vc12-x64-release-debug.zip)
+    1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4_zlip-1.2.11_vc15-x64-dll-MD.zip)
 
-    1. [dlfcn-win32](http://packages.osrfoundation.org/win32/deps/dlfcn-win32-vc12-x64-release-debug.zip)
+    1. [zziplib 0.13.62](https://s3.amazonaws.com/osrf-distributions/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
 
-    1. [libcurl HEAD](http://packages.osrfoundation.org/win32/deps/libcurl-vc12-x64-release-debug-static-ipv6-sspi-winssl.zip)
+    1. [freeImage 3.x](https://s3.amazonaws.com/osrf-distributions/win32/deps/FreeImage3180Win32Win64.zip)
 
-    1. [OGRE 1.9.0 rc1](http://packages.osrfoundation.org/win32/deps/OGRE-SDK-1.9.0-vc120-x64-12.03.2016.zip)
+    1. [boost 1.67.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/boost_1_67_0.zip)
 
-    1. [protobuf 2.6.0](http://packages.osrfoundation.org/win32/deps/protobuf-2.6.0-win64-vc12.zip)
+    1. [OGRE 1.10.12 rc1](https://s3.amazonaws.com/osrf-distributions/win32/deps/ogre-sdk-1.10.12-vc15-x64.zip)
 
-    1. [TBB 4.3](http://packages.osrfoundation.org/win32/deps/tbb43_20141023oss_win.zip)
+    1. [bzip2 1.0.6](https://s3.amazonaws.com/osrf-distributions/win32/deps/bzip2-1.0.6-vc12-x64-release-debug.zip)
 
-    1. [zziplib 0.13.62](http://packages.osrfoundation.org/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
+    1. [TBB 4.3](https://s3.amazonaws.com/osrf-distributions/win32/deps/tbb43_20141023oss_win.zip)
 
-    1. [zlib](http://packages.osrfoundation.org/win32/deps/zlib-1.2.8-vc12-x64-release-debug.zip)
+    1. [Qt 5.7.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/qt-opensource-windows-x86-msvc2015_64-5.7.0.zip)
+
+    1. [Freetype 2.4.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/freetype-2.4.0-vc12-x64-release-debug.zip)
+
+    1. [QWT 6.1.22](https://s3.amazonaws.com/osrf-distributions/win32/deps/qwt_6.1.2~osrf_qt5.zip)
 
 1. Unzip each of them in gz-ws.
-
-1. Also download Qt 4.8, using the link below, and unzip it into `C:\Qt\4.8.6\x64\msvc2013`:
-
-    > [Qt 4.8.6](http://packages.osrfoundation.org/win32/deps/qt-4.8.6-x64-msvc2013-rev1.zip)
 
 1. Install cmake, make sure to select the "Add CMake to system path for all users" option in the install dialog box
 
@@ -62,26 +64,40 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
 
-1. Clone Ignition Math, Sdformat, and Gazebo:
+1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math
-        hg clone https://bitbucket.org/osrf/sdformat
-        hg clone https://bitbucket.org/osrf/gazebo
+        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
+        hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
+        hg clone https://bitbucket.org/osrf/sdformat -r sdf6
+        hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 
-        "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
+        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+   or
+        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
 1. In a Windows shell, configure and build Ignition Math
 
         cd ign-math
-        hg up ign-math3
         # if you want debug, run configure Debug
         .\configure
         nmake
         nmake install
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
+
+1. In the same Windows shell, configure and build Ignition Transport
+
+        cd ..\..\ign-transport
+        mkdir build
+        cd build
+        # if you want debug, run ..\configure Debug
+        ..\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Trasport in gz-ws/ign-transport/build/install/Release
 
 1. In the same Windows shell, configure and build Sdformat
 
@@ -133,7 +149,7 @@ Windows `cmd` for configuring and building.  You might also need to
     1. If in Debug: Copy in the following into `plugins.cfg and replace MYUSERNAME with your actual username`
 
             # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Debug\bin\Debug
+            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre-sdk-1.10.12-vc15-x64\build\install\Debug\bin\Debug
 
             # Define plugins
             Plugin=RenderSystem_GL_d
@@ -146,7 +162,7 @@ Windows `cmd` for configuring and building.  You might also need to
     1. If in Release: Copy in the following into `plugins.cfg`
 
             # Define plugin folder
-            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre_src_v1-8-1-vc12-x64-release-debug\build\install\Release\bin\Release
+            PluginFolder=C:\Users\MYUSERNAME\gz-ws\ogre-sdk-1.10.12-vc15-x64\build\install\Release\bin\Release
 
             # Define plugins
             Plugin=RenderSystem_GL

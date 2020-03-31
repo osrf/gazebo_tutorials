@@ -334,10 +334,10 @@ find_package(gazebo REQUIRED)
 
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
-list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 add_library(contact SHARED ContactPlugin.cc)
-target_link_libraries(contact ${GAZEBO_libraries})
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 ~~~
 
 Next, create a build directory and make the plugin:
