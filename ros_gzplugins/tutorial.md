@@ -640,7 +640,7 @@ save, then launch the same launch files as for GPU Laser.
     <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
     <wheelDiameter>0.2410</wheelDiameter>
 
-    <!-- Wheel acceleration, in m/s^2, defaults to 0.0 m/s^2 -->
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
     <wheelAcceleration>1.0</wheelAcceleration>
 
     <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
