@@ -35,7 +35,7 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
 1. Setup keys
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Install Gazebo.
 

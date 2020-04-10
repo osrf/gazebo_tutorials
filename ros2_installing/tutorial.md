@@ -6,7 +6,7 @@ See
 [ROS 2 Overview](http://gazebosim.org/tutorials/?tut=ros2_overview)
 for background information before continuing here.
 
-The packages support ROS 2 Crystal and Gazebo 9, and can be installed from
+The packages support ROS 2 Crystal and later and Gazebo 9 and later, and can be installed from
 debian packages or from source.
 
 ## Prerequisites
@@ -18,7 +18,7 @@ You should understand the basic concepts of ROS 2 and have gone through some
 
 ROS2 can be installed either through binary installation or source installation,
 see the [ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
-The current stable distribution is **Crystal**.
+The current stable distribution is **Eloquent**.
 
 > **Tip**: Don't forget to source `setup.bash` script as instructed
   on the ROS installation page. The exact command will be different according to
@@ -42,10 +42,10 @@ instructions to install from source.
 
 ### Install from debian packages (on Ubuntu)
 
-Assuming you already have some Crystal debian packages installed, install
+Assuming you already have some Eloquent debian packages installed, install
 `gazebo_ros_pkgs` as follows:
 
-    sudo apt install ros-crystal-gazebo-ros-pkgs
+    sudo apt install ros-eloquent-gazebo-ros-pkgs
 
 ### Install from source (on Ubuntu)
 
@@ -60,9 +60,11 @@ access and control over the workflow.
 You'll need to choose the branch of `gazebo_ros_pkgs` according to the
 ROS 2 version you're using. The currently supported branches are:
 
-* `crystal`: works with Crystal debians or Crystal's
-  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/crystal/ros2.repos).
-* `ros2`: points to the next unreleased ROS 2 turtle, currently Dashing.
+* `dashing`: works with Dashing debians or Dashing's
+  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/dashing/ros2.repos).
+* `eloquent`: works with Eloquent debians or Eloquent's
+  [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/eloquent/ros2.repos).
+* `ros2`: points to the next unreleased ROS 2 turtle, currently Foxy.
   It works with the master
   [ros2.repos](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
 
@@ -92,6 +94,10 @@ The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`
 
         cd ~/ws
         vcs import src < ros2.yaml
+
+1. Switch to the branch matching your ROS distro 
+        
+        vcs custom --args checkout eloquent
 
 1. Install all dependencies:
 
@@ -140,7 +146,7 @@ Let's try loading one of them now!
 
 1. Make sure you have some core tools installed:
 
-        sudo apt install ros-crystal-ros-core ros-crystal-geometry2
+        sudo apt install ros-eloquent-ros-core ros-eloquent-geometry2
 
 1. If you installed `gazebo_ros_pkgs` from source, source the workspace:
 
@@ -148,7 +154,7 @@ Let's try loading one of them now!
 
 1. Load the differential drive world with Gazebo:
 
-        gazebo --verbose /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+        gazebo --verbose /opt/ros/eloquent/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
 1. The Gazebo GUI should appear with a simple vehicle:
 
@@ -157,7 +163,7 @@ Let's try loading one of them now!
 1. On a new terminal (this is the 2nd one), run the following command to take a
    look at the world file.
 
-        gedit /opt/ros/crystal/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+        gedit /opt/ros/eloquent/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
 1. See how the block on the top has a few example commands? Let's open a 3rd
    terminal and, again, source ROS 2 and `gazebo_ros_pkgs` as described above.

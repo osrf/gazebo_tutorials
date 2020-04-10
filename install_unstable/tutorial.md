@@ -21,7 +21,7 @@ stable repository, both need to be installed.
 ```
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-prerelease `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-prerelease.list'
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install gazebo10 # (might not be released)
 ```
@@ -36,7 +36,7 @@ repository, both need to be installed.
 ```
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-nightly `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-nightly.list'
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install gazebo10 # (might not be released)
 ```
@@ -71,7 +71,7 @@ Prerelease versioning scheme: `{upcoming_version}~pre{prerelease_version}`
  * `upcoming_version:` upstream version target for current prerelease series
  * `prerelease_version`: prerelease version number in the series
 
-Nightly use the following versioning scheme: `{current_released_version}+hg{date}r{hash}-{nightly_revision}`
+Nightly use the following versioning scheme: `{current_released_version}+hg{date}+${nightly_revision}r{hash}-{nightly_revision}`
 
  * `current_released_version:` will be the latest version released available in
    the changelog file of the corresponding -release repo. If the nightly is
@@ -80,9 +80,11 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 
  * `date`: timestamp YYYY-MM-DD
 
- * `hash`: git hash corresponding to code HEAD used in the nightly build
+ * `hash`: git hash corresponding to code HEAD used in the nightly build.
+    Used for information proposes.
 
- * `nightly_revision`:  revision number to apply to the nightly
+ * `nightly_revision`:  revision number to apply to the nightly. It is also
+   used to generate a new nightly using the same same date timestamp.
 
 ### Versions when mixing repositories
 

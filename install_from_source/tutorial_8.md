@@ -40,7 +40,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
 1. Install prerequisites. A clean Ubuntu system will need the following
