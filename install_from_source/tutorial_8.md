@@ -47,7 +47,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
    (if using ROS, replace `dummy` with your ROS version, ex: indigo, jade,
     kinetic...):
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        wget https://raw.githubusercontent.com/ignition-tooling/release-tools/master/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy . /tmp/dependencies.sh
         sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 
