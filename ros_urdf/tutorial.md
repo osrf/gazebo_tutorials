@@ -452,6 +452,20 @@ This is a more stable numerical method for damping than the default damping tag.
 The cfmDamping element is deprecated and should be changed to implicitSpringDamper.
 </td>
 </tr>
+
+<tr>
+<td>springStiffness</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Spring stiffness in N/m.</td>
+</tr>
+
+<tr>
+<td>springReference</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Equilibrium position for the spring.
+</td>
+</tr>
+
 <tr>
 <td>cfmDamping</td>
 </tr>

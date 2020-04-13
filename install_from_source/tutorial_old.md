@@ -112,7 +112,7 @@ Gazebo depends on the SDFormat package. Let's build it, then build Gazebo off of
         git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
-     **Note:** the `default` branch is the development branch where you'll find
+     **Note:** the `master` branch is the development branch where you'll find
 the bleeding edge code, your cloned repository should be on this branch by
 default but we recommend you switch to branch `sdf3` if you desire more
 stability

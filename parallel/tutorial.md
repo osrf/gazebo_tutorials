@@ -103,8 +103,7 @@ cd ${WS}
 
 ## Run the code
 
-Threading is currently enabled using custom sdformat parameters
-on the [island_threads branch](https://github.com/osrf/sdformat/branches/compare/island_threads%0Ddefault#diff):
+Threading is enabled using SDFormat parameters:
 
 * `island_threads`: integer number of threads to use for island threading
 * `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
