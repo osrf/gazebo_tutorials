@@ -278,13 +278,13 @@ Gazebo depends on the SDFormat package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
 1. Checkout the corresponding branch for a target Gazebo version:
    (e.g. `sdf6` for Gazebo 10)
 
-        hg up sdf6
+        git checkout sdf6
 
 1. Create a build directory and go there:
 

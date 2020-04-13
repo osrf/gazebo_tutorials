@@ -64,7 +64,7 @@ mkdir -p ${WS}/src
 cd ${WS}/src
 git clone https://github.com/ros/catkin.git
 hg clone https://bitbucket.org/osrf/gazebo
-hg clone https://bitbucket.org/osrf/sdformat
+git clone https://bitbucket.org/osrf/sdformat
 ~~~
 
 Then we update gazebo and sdformat to the diagnostics related branch:
@@ -73,7 +73,7 @@ Then we update gazebo and sdformat to the diagnostics related branch:
 cd ${WS}/src/gazebo
 hg update diagnostics_scpeters
 cd ${WS}/src/sdformat
-hg update island_threads
+git checkout island_threads
 ~~~
 
 Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
@@ -103,8 +103,7 @@ cd ${WS}
 
 ## Run the code
 
-Threading is currently enabled using custom sdformat parameters
-on the [island_threads branch](https://bitbucket.org/osrf/sdformat/branches/compare/island_threads%0Ddefault#diff):
+Threading is enabled using SDFormat parameters:
 
 * `island_threads`: integer number of threads to use for island threading
 * `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
