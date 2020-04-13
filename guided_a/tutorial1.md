@@ -71,7 +71,7 @@ SDF is an XML file format that describes worlds used by simulators
 such as Gazebo. The SDF library is used to parse these files and provide a
 C++ interface.
 
-* Source code: [https://bitbucket.org/osrf/sdformat](https://bitbucket.org/osrf/sdformat)
+* Source code: [https://github.com/osrf/sdformat](https://github.com/osrf/sdformat)
 
 ## Ignition Math
 

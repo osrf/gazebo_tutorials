@@ -68,7 +68,7 @@ Windows `cmd` for configuring and building.  You might also need to
 
         hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
         hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
-        hg clone https://bitbucket.org/osrf/sdformat -r sdf6
+        git clone https://github.com/osrf/sdformat -b sdf6
         hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:

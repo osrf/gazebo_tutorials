@@ -17,7 +17,7 @@ requests for each repository. Here are the links to the issue lists
 for each Gazebo-related repository:
 
 * [All Gazebo issues](https://bitbucket.org/osrf/gazebo/issues)
-* [All SDFormat issues](https://bitbucket.org/osrf/sdformat/issues)
+* [All SDFormat issues](https://github.com/osrf/sdformat/issues)
 * [All Ignition Math issues](https://bitbucket.org/ignitionrobotics/ign-math/issues)
 * [All Ignition Transport issues](https://bitbucket.org/ignitionrobotics/ign-transport/issues)
 * [All Ignition Messages issues](https://bitbucket.org/ignitionrobotics/ign-msgs/issues)
@@ -30,7 +30,7 @@ issues for first time contributors like you ;) Take a look at the list and see
 if you find anything that's interesting to you.
 
 * [Gazebo issues for new developers](https://bitbucket.org/osrf/gazebo/issues?q=issuefornewdevelopers)
-* [SDFormat issues for new developers](https://bitbucket.org/osrf/sdformat/issues?q=issuefornewdevelopers)
+* [SDFormat issues for new developers](https://github.com/osrf/sdformat/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Math issues for new developers](https://bitbucket.org/ignitionrobotics/ign-math/issues?q=issuefornewdevelopers)
 * [Ignition Transport issues for new developers](https://bitbucket.org/ignitionrobotics/ign-transport/issues?q=issuefornewdevelopers)
 * [Ignition Messages issues for new developers](https://bitbucket.org/ignitionrobotics/ign-msgs/issues?q=issuefornewdevelopers)

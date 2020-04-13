@@ -250,7 +250,7 @@ cd ${WS}/src
 git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
-hg clone https://bitbucket.org/osrf/sdformat
+git clone https://github.com/osrf/sdformat
 hg clone https://bitbucket.org/osrf/gazebo
 ~~~
 

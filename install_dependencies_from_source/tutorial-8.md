@@ -162,10 +162,10 @@ Gazebo depends on the SDFormat package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
+        git clone https://github.com/osrf/sdformat /tmp/sdformat
         cd /tmp/sdformat
 
-     **Note:** the `default` branch is the development branch where you'll find
+     **Note:** the `master` branch is the development branch where you'll find
      the bleeding edge code, your cloned repository should be on this branch by
      default but we recommend you switch to branch `sdf4` if you desire more
      stability
