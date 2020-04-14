@@ -1,6 +1,6 @@
 # Tutorial: Using a URDF in Gazebo
 
-The [Universal Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
+The [Unified Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
 is an XML file format used in ROS to describe all elements of a robot.
 To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo.
 This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo,
