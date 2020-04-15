@@ -103,7 +103,7 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
+        git clone https://github.com/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
      **Note:** the `default` branch is the development branch where
@@ -214,11 +214,10 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs /tmp/ign-msgs
+        git clone https://github.com/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
-     **Note:** Ignition messages hasn't released version 1.0 yet. You can use
-     the `default` branch for version 0.
+     **Note:** You can use the `ign-msgs0` branch for version 0.
 
 1. Create a build directory and go there:
 

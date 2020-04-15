@@ -18,22 +18,22 @@ for each Gazebo-related repository:
 
 * [All Gazebo issues](https://bitbucket.org/osrf/gazebo/issues)
 * [All SDFormat issues](https://github.com/osrf/sdformat/issues)
-* [All Ignition Math issues](https://bitbucket.org/ignitionrobotics/ign-math/issues)
-* [All Ignition Transport issues](https://bitbucket.org/ignitionrobotics/ign-transport/issues)
-* [All Ignition Messages issues](https://bitbucket.org/ignitionrobotics/ign-msgs/issues)
+* [All Ignition Math issues](https://github.com/ignitionrobotics/ign-math/issues)
+* [All Ignition Transport issues](https://github.com/ignitionrobotics/ign-transport/issues)
+* [All Ignition Messages issues](https://github.com/ignitionrobotics/ign-msgs/issues)
 
 ### Issues for new developers
 
-Among these issues, the Gazebo core team marks some of them with the keyword
-`IssueForNewDevelopers`. These are issues which are considered good first
+Among these issues, the Gazebo core team marks some of them with the label
+`good first issue`. These are issues which are considered good first
 issues for first time contributors like you ;) Take a look at the list and see
 if you find anything that's interesting to you.
 
 * [Gazebo issues for new developers](https://bitbucket.org/osrf/gazebo/issues?q=issuefornewdevelopers)
 * [SDFormat issues for new developers](https://github.com/osrf/sdformat/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* [Ignition Math issues for new developers](https://bitbucket.org/ignitionrobotics/ign-math/issues?q=issuefornewdevelopers)
-* [Ignition Transport issues for new developers](https://bitbucket.org/ignitionrobotics/ign-transport/issues?q=issuefornewdevelopers)
-* [Ignition Messages issues for new developers](https://bitbucket.org/ignitionrobotics/ign-msgs/issues?q=issuefornewdevelopers)
+* [Ignition Math issues for new developers](https://github.com/ignitionrobotics/ign-math/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* [Ignition Transport issues for new developers](https://github.com/ignitionrobotics/ign-transport/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* [Ignition Messages issues for new developers](https://github.com/ignitionrobotics/ign-msgs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 Feel free to leave a comment on one of those issues saying that you're
 considering tackling it and asking for additional information as needed.
