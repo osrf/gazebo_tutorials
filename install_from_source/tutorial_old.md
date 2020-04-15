@@ -85,7 +85,7 @@ SDFormat and Gazebo depend on the ignition math library.
         git clone https://github.com/ignitionrobotics/ign-math /tmp/ign-math
         cd /tmp/ign-math
 
-     **Note:** the `default` branch is the development branch where
+     **Note:** the `master` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `ign-math2` branch if you
 desire more stability (with the `git checkout ign-math2` command).

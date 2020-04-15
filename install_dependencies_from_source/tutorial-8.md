@@ -217,8 +217,7 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
         git clone https://github.com/ignitionrobotics/ign-msgs /tmp/ign-msgs
         cd /tmp/ign-msgs
 
-     **Note:** Ignition messages hasn't released version 1.0 yet. You can use
-     the `default` branch for version 0.
+     **Note:** You can use the `ign-msgs0` branch for version 0.
 
 1. Create a build directory and go there:
 

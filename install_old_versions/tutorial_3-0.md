@@ -149,7 +149,7 @@ To install from source, you should first install the SDFormat package, then buil
         cd sdformat
         git checkout sdf_2.0
 
-   **Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
+   **Note: the `master` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
 
 1. Create a build directory and go there
 
