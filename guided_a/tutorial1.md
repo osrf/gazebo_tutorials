@@ -78,7 +78,7 @@ C++ interface.
 Ignition Math is a small, fast, and high performance math library. This library
 is a self-contained set of classes and functions suitable for robot applications.
 
-* Source code: [https://bitbucket.org/ignitionrobotics/ign-math/](https://bitbucket.org/ignitionrobotics/ign-math/)
+* Source code: [https://github.com/ignitionrobotics/ign-math/](https://github.com/ignitionrobotics/ign-math/)
 
 ## Ignition Transport
 
@@ -86,12 +86,12 @@ Ignition Transport combines ZeroMQ with Protobufs to create a fast and
 efficient message passing system. Asynchronous message publication and
 subscription is provided along with service calls and discovery.
 
-* Source code: [https://bitbucket.org/ignitionrobotics/ign-transport/](https://bitbucket.org/ignitionrobotics/ign-transport/)
+* Source code: [https://github.com/ignitionrobotics/ign-transport/](https://github.com/ignitionrobotics/ign-transport/)
 
 ## Ignition Messages
 
 Ignition Messages provides a standard set of message definitions, used by
 Ignition Transport, and other applications.
 
-* Source code: [https://bitbucket.org/ignitionrobotics/ign-msgs/](https://bitbucket.org/ignitionrobotics/ign-msgs/)
+* Source code: [https://github.com/ignitionrobotics/ign-msgs/](https://github.com/ignitionrobotics/ign-msgs/)
 

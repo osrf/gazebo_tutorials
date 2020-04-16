@@ -66,8 +66,8 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
-        hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
+        git clone https://github.com/ignitionrobotics/ign-math -b ign-math6
+        git clone https://github.com/ignitionrobotics/ign-transport -b ign-transport4
         git clone https://github.com/osrf/sdformat -b sdf6
         hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
 
