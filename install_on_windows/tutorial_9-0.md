@@ -70,13 +70,13 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Clone Ignition CMake, Common, Fuel Tools, Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common -r ign-common1
-        hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools -r ign-fuel-tools1
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
-        hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
-        hg clone https://bitbucket.org/osrf/sdformat -r sdf6
+        git clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
+        git clone https://bitbucket.org/ignitionrobotics/ign-common -r ign-common1
+        git clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools -r ign-fuel-tools1
+        git clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
+        git clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
+        git clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
+        git clone https://bitbucket.org/osrf/sdformat -r sdf6
         hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:

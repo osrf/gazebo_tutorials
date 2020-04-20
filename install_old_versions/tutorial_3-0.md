@@ -38,7 +38,7 @@ Gazebo3 is able to use different physics engines to perform the simulation. ODE 
 
 1. Retrieve and install the keys for the Gazebo repositories.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install Gazebo.
 
@@ -142,14 +142,14 @@ To install from source, you should first install the SDFormat package, then buil
 
         mkdir ~/gazebo_source
         cd ~/gazebo_source/
-        hg clone https://bitbucket.org/osrf/sdformat
+        git clone https://github.com/osrf/sdformat
 
 1. Change directory into the sdformat repository and switch to the 2.0 branch
 
         cd sdformat
-        hg up sdf_2.0
+        git checkout sdf_2.0
 
-   **Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
+   **Note: the `master` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
 
 1. Create a build directory and go there
 

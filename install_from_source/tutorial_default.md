@@ -40,13 +40,13 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
 1. Install prerequisites. A clean Ubuntu system will need the following (replace `version` with the major version of gazebo you intend to build, eg: 7, 8, 9. And if using ROS, replace `dummy` with your ROS version, eg: indigo, jade,
     kinetic...):
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        wget https://raw.githubusercontent.com/ignition-tooling/release-tools/master/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         GAZEBO_MAJOR_VERSION=version ROS_DISTRO=dummy . /tmp/dependencies.sh
         echo $BASE_DEPENDENCIES $GAZEBO_BASE_DEPENDENCIES | tr -d '\\' | xargs sudo apt-get -y install
 
@@ -252,7 +252,7 @@ cd ${WS}/src
 git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
-hg clone https://bitbucket.org/osrf/sdformat
+git clone https://github.com/osrf/sdformat
 hg clone https://bitbucket.org/osrf/gazebo
 ~~~
 

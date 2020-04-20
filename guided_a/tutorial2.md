@@ -112,12 +112,12 @@ some special configuration, check out the full
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
 1. Install dependencies
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        wget https://raw.githubusercontent.com/ignition-tooling/release-tools/master/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy . /tmp/dependencies.sh
         sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 

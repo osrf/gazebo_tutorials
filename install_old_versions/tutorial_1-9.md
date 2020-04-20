@@ -12,13 +12,13 @@
 
 # Gazebo/ROS integration
 
-With the release of gazebo 2.0 version (as gazebo_current package) there are some [important aspects of gazebo integration into ROS](http://gazebosim.org/tutorials?cat=connect_ros) that must be read before continue. 
+With the release of gazebo 2.0 version (as gazebo_current package) there are some [important aspects of gazebo integration into ROS](http://gazebosim.org/tutorials?cat=connect_ros) that must be read before continue.
 
 # Pre-compiled binaries
 
 ### Ubuntu Debians
 
-1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [Ubuntu guide](https://help.ubuntu.com/community/Repositories/Ubuntu) for instructions on doing this.  (Note: These are enabled by default In Ubuntu 9.04 (Jaunty) and later.) 
+1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the [Ubuntu guide](https://help.ubuntu.com/community/Repositories/Ubuntu) for instructions on doing this.  (Note: These are enabled by default In Ubuntu 9.04 (Jaunty) and later.)
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
@@ -40,7 +40,7 @@ With the release of gazebo 2.0 version (as gazebo_current package) there are som
 
 1. Retrieve and install the keys for the Gazebo repositories.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install Gazebo.
 
@@ -107,12 +107,12 @@ To install from source, you should first install the SDFormat package, then buil
 
         mkdir ~/gazebo_source
         cd ~/gazebo_source/
-        hg clone https://bitbucket.org/osrf/sdformat
+        git clone https://github.com/osrf/sdformat
 
 1. Change directory into the sdformat repository and switch to the 1.4 branch
 
         cd sdformat
-        hg up sdf_1.4
+        git checkout sdf_1.4
 
    *Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.4 branch if you desire more stability*
 
@@ -147,19 +147,19 @@ To install from source, you should first install the SDFormat package, then buil
         cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below)
-   
+
   > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
-  
+
   >        cmake ../
-  
+
   > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the development, you can use:
 
   >        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
-  
+
   > b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-  
+
   >        cmake -DCMAKE_BUILD_TYPE=Debug ../
-  
+
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look like:
@@ -203,7 +203,7 @@ To install from source, you should first install the SDFormat package, then buil
 
   , then `/usr/local/lib` is not in load path (default behavior for Ubuntu). Run the following commands and then try running gazebo again:
 
-        echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
+        echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf
         sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see (Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).

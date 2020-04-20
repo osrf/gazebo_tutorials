@@ -17,7 +17,7 @@ collision map of a Gazebo World. The plug-in will rasterize a world in
 Gazebo use a RayShape to do ray intersection below this grid. It will
 publish the created image to a custom topic and output to a file. The source
 code for this plug-in lives at
-[BitBucket](https://bitbucket.org/osrf/collision_map_creator_plugin).
+[GitHub](https://github.com/osrf/collision_map_creator_plugin).
 
 Feel free to submit issues or pull-requests for improvements. The original
 author of the code is Stephen Brawner.
@@ -25,7 +25,7 @@ author of the code is Stephen Brawner.
 You can download the source code using mercurial:
 
 ~~~
-hg clone https://bitbucket.org/osrf/collision_map_creator_plugin
+git clone https://github.com/osrf/collision_map_creator_plugin
 ~~~
 
 or copy and paste the code into files as instructed below.
@@ -173,7 +173,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 This is the code for the custom Gazebo world plugin
 (`~/collision_map_creator_plugin/collision_map_creator.cc`).
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/collision_map_creator.cc' />
+<include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/collision_map_creator.cc' />
 
 
 ### Code Explained
@@ -347,7 +347,7 @@ built message type. There are some extra steps that must be taken that
 aren't explained in plugin tutorials. You can see the source code by opening
 the file `~/collision_map_creator_plugin/request_publisher.cc`:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/request_publisher.cc' />
+<include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/request_publisher.cc' />
 
 ### Code Explained ###
 
@@ -524,7 +524,7 @@ Before exiting, the program must call `transport::fini()` to tear it all down.
 Below you can find the CMakeLists.txt file required to compile the plugin
 and executable:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/CMakeLists.txt' />
+<include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/CMakeLists.txt' />
 
 ### Code Explained
 
@@ -609,9 +609,9 @@ sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugin
 ## Running
 
 Assuming everything went fine, and that's probably a rough assumption
-(seriously this one was long), you need to run Gazebo with a custom wold file:
+(seriously this one was long), you need to run Gazebo with a custom world file:
 
-<include src='https://bitbucket.org/osrf/collision_map_creator_plugin/raw/default/map_creator.world' />
+<include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/map_creator.world' />
 
 Run Gazebo with this world:
 
