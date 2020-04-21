@@ -22,7 +22,7 @@ will always be visible.
 
 # Visualizing layers
 
-An example [world](https://github.com/osrf/gazebo/src/gazebo6/worlds/shapes_layers.world) is distributed with Gazebo. You can load this world using the following command:
+An example [world](https://github.com/osrf/gazebo/blob/gazebo6/worlds/shapes_layers.world) is distributed with Gazebo. You can load this world using the following command:
 
     gazebo worlds/shapes_layers.world
 

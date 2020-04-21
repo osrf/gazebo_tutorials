@@ -100,11 +100,11 @@ mkdir ~/clone_simulation
 cd ~/clone_simulation
 ~~~
 
-Download the files [`CMakeLists.txt`](http://github.com/osrf/gazebo/src/default/examples/stand_alone/clone_simulation/CMakeLists.txt) and [`cloner.cc`](http://github.com/osrf/gazebo/src/default/examples/stand_alone/clone_simulation/cloner.cc) into the previous folder.
+Download the files [`CMakeLists.txt`](http://github.com/osrf/gazebo/blob/master/examples/stand_alone/clone_simulation/CMakeLists.txt) and [`cloner.cc`](http://github.com/osrf/gazebo/blob/master/examples/stand_alone/clone_simulation/cloner.cc) into the previous folder.
 
 ~~~
-wget http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/CMakeLists.txt
-wget http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc
+wget http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/CMakeLists.txt
+wget http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc
 ~~~
 
 Compile the example:
@@ -167,15 +167,15 @@ spheres moving away.
 
 Let's take a look at the source code for our example:
 
-<include src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 ## The code explained
 
-<include from='/int main/' to='/RunServer\);/' src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/int main/' to='/RunServer\);/' src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 This fragment of the code spawns a new thread and executes a new server.
 
-<include from='/  gazebo::transport::NodePtr/' to='/simulation\\n\"(.*)$\n  getchar\(\);/' src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/  gazebo::transport::NodePtr/' to='/simulation\\n\"(.*)$\n  getchar\(\);/' src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 The simulation cloning is performed via the transport system. First, we have to
 initialize a transport node that will allow us to use the transport. We need a
@@ -183,7 +183,7 @@ topic publisher to send a new message with our cloning request. The topic is
 `/gazebo/server/control`. In addition, we need a subscriber on the topic `/gazebo/world/modify` for receiving the result of our
 clone request.
 
-<include from='/  gazebo::msgs::ServerControl/' to='/servers."(.*)$\n  getchar\(\);/' src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/  gazebo::msgs::ServerControl/' to='/servers."(.*)$\n  getchar\(\);/' src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 This is the part of the code where we prepare our `ServerControl` message for
 our cloning request. The field `save_world_name` specifies the name of the world that
@@ -194,7 +194,7 @@ be the port that we will use to connect our future gzclient to display the new
 simulation. Finally, the message is sent by calling the `Publish()` method with
 our custom message.
 
-<include from='/void OnWorldModify/' to='/  }\n}/' src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/void OnWorldModify/' to='/  }\n}/' src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 When the server processes our clone request, it sends us a response contained
 in a `WorldModify` message. This is the callback that we registered during the
@@ -202,6 +202,6 @@ subscription and it will be triggered when the response from the server is
 received. The field `cloned` will be true when a new server has been cloned.
 Also, the field `cloned_uri` will show us the *URI* of the new server.
 
-<include from='/^(.*)Make sure/' to='/gazebo::shutdown\(\);/' src='http://github.com/osrf/gazebo/raw/default/examples/stand_alone/clone_simulation/cloner.cc' />
+<include from='/^(.*)Make sure/' to='/gazebo::shutdown\(\);/' src='http://github.com/osrf/gazebo/raw/master/examples/stand_alone/clone_simulation/cloner.cc' />
 
 These commands will terminate all the servers running in our system.

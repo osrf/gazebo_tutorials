@@ -25,7 +25,7 @@ in your Gazebo source (use the path to your Gazebo source).
     ~~~
 
 3. You will observe code like this :
-[gazebo/worlds/random_velocity.world](https://github.com/osrf/gazebo/src/gazebo6/worlds/random_velocity.world)
+[gazebo/worlds/random_velocity.world](https://github.com/osrf/gazebo/blob/gazebo6/worlds/random_velocity.world)
 
 ## World File Explained
 
@@ -68,7 +68,7 @@ You can play with the values of ``initial_velocity``, ``velocity_factor``,
 ## Plugin Source
 
 The source code for this plugin is available on
-[GitHub](https://github.com/osrf/gazebo/src/gazebo6/plugins/).
+[GitHub](https://github.com/osrf/gazebo/blob/gazebo6/plugins/).
 
 If you have installed Gazebo from source then you can find this file where you
 downloaded the repository.
@@ -87,7 +87,7 @@ $ locate RandomVelocityPlugin.hh
 `RandomVelocityPlugin.hh` contains a commented example of usage (as included
 above) and function declarations of the functions defined in
 `RandomVelocityPlugin.cc`, which looks like
-[this](https://github.com/osrf/gazebo/src/gazebo6/plugins/RandomVelocityPlugin.cc).
+[this](https://github.com/osrf/gazebo/blob/gazebo6/plugins/RandomVelocityPlugin.cc).
 
 ## Understanding the source
 

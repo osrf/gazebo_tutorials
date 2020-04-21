@@ -321,7 +321,7 @@ The difference between the box and cone friction models is visualized using the
 which has an array of boxes arrayed in a circle with an initial velocity going
 away from the center of the circle.
 Specifying `cone_model` in that example world at
-[line 15](https://github.com/osrf/gazebo/src/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
+[line 15](https://github.com/osrf/gazebo/blob/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
 results in boxes that travel out radially as one would expect.
 
 <iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

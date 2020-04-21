@@ -70,7 +70,7 @@ Copy the following into hello_world.cc:
 <include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello\_world/hello\_world.cc](http://github.com/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world),
+[examples/plugins/hello\_world/hello\_world.cc](http://github.com/osrf/gazebo/blob/gazebo_2.2/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
@@ -82,7 +82,7 @@ namespace gazebo
 {
 ~~~
 
-The [gazebo/gazebo.hh](https://github.com/osrf/gazebo/src/gazebo_2.2/gazebo/gazebo_core.hh)
+The [gazebo/gazebo.hh](https://github.com/osrf/gazebo/blob/gazebo_2.2/gazebo/gazebo_core.hh)
 file includes a core set of basic gazebo functions.
 It doesn't include `gazebo/physics/physics.hh`, `gazebo/rendering/rendering.hh`,
 or `gazebo/sensors/sensors.hh` as those should be included on a case by case basis.
@@ -169,7 +169,7 @@ Either the full path to the plugin is specified, or the plugin exists in
 one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
 Example world file also found in
-[examples/plugins/hello_world/hello.world](https://github.com/osrf/gazebo/src/gazebo_2.2/examples/plugins/hello_world/hello.world).
+[examples/plugins/hello_world/hello.world](https://github.com/osrf/gazebo/blob/gazebo_2.2/examples/plugins/hello_world/hello.world).
 <include src='http://github.com/osrf/gazebo/raw/gazebo_2.2/examples/plugins/hello_world/hello.world' />
 
 Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`

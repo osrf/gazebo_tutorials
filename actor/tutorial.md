@@ -76,7 +76,7 @@ trajectory goes through four points in the world (`[-1, -1, 1]`, `[-1, 1, 1]`,
 ## World explained
 
 You can see the whole world description
-[here](http://github.com/osrf/gazebo/raw/actor_2/worlds/animated_box.world).
+[here](http://github.com/osrf/gazebo/raw/gazebo9/worlds/animated_box.world).
 Let's go through it by parts.
 
 We start by defining a world with a ground plane and a sun.
@@ -198,7 +198,7 @@ new world file:
     gedit walk.world
 
 And paste the following SDF, it has a sun and an actor using the
-[walk.dae](https://github.com/osrf/gazebo/src/default/media/models/walk.dae)
+[walk.dae](https://github.com/osrf/gazebo/blob/master/media/models/walk.dae)
 as the skin:
 
     <?xml version="1.0" ?>
@@ -411,7 +411,7 @@ Here's what it looks like:
 
 Just like for models, it's possible to write custom plugins for any actor and
 assign the plugin in the SDF description. Let's take a look at the part of
-[cafe.world](https://github.com/osrf/gazebo/raw/default/worlds/cafe.world)
+[cafe.world](https://github.com/osrf/gazebo/raw/master/worlds/cafe.world)
 which refers to one of the actors in the video:
 
     <actor name="actor1">
@@ -446,9 +446,9 @@ exposed, and the logic to determine the trajectory will be inside the plugin.
 ## Plugin C++ code
 
 The source code for the `ActorPlugin` can be found
-[here](https://github.com/osrf/gazebo/raw/default/plugins/ActorPlugin.cc).
+[here](https://github.com/osrf/gazebo/raw/master/plugins/ActorPlugin.cc).
 And
-[here](https://github.com/osrf/gazebo/raw/default/plugins/ActorPlugin.hh)
+[here](https://github.com/osrf/gazebo/raw/master/plugins/ActorPlugin.hh)
 is the header.
 
 The first trick is to listen to world update begin events like this:
