@@ -8,7 +8,7 @@ Gazebo and several of its dependencies can be compiled on OS X with
 Gazebo 6 is straightforward to install on Mac OS X 10.9 (Mavericks) or higher.
 Installation on older versions requires changing the default standard library
 and rebuilding dependencies due to the
-[use of c++11](https://bitbucket.org/osrf/gazebo/pull-request/1340/c-11-support-take-2/diff).
+[use of c++11](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1340/).
 For purposes of this tutorial, I will assume OS X 10.9 or greater is in use.
 Here are the instructions:
 

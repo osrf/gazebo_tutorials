@@ -159,7 +159,7 @@ SDFormat, Ignition Messages and Gazebo depend on the Ignition Math library.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              python
 
 1. Clone the repository into a directory and go into it:
@@ -268,7 +268,7 @@ Gazebo depends on the SDFormat package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              python \
                              libboost-system-dev \
                              libtinyxml-dev \
@@ -323,7 +323,7 @@ Gazebo and Ignition Transport depend on the Ignition Messages package.
 
         sudo apt-get install build-essential \
                              cmake \
-                             mercurial \
+                             git \
                              libprotoc-dev \
                              libprotobuf-dev \
                              protobuf-compiler

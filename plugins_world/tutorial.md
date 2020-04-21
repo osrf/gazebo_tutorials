@@ -5,7 +5,7 @@
 
 # Code:
 
-Source code: [gazebo/examples/plugins/factory](https://bitbucket.org/osrf/gazebo/src/gazebo9/examples/plugins/factory)
+Source code: [gazebo/examples/plugins/factory](https://github.com/osrf/gazebo/src/gazebo9/examples/plugins/factory)
 
 It can be useful to control what models exist in a running simulation, and when they should be inserted. This tutorial demonstrates how to insert predefined and custom models into Gazebo.
 
@@ -23,35 +23,35 @@ $ gedit factory.cc
 ~~~
 
 Copy the following code into the `factory.cc` file:
-<include from="/#include/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
+<include from="/#include/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
 ## The Code Explained
 
 The first part of the code creates a world plugin.
 
-<include from="/#include/" to="/_sdf\*\/\)/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
+<include from="/#include/" to="/_sdf\*\/\)/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
 Within the `Load` function are three different methods for model insertion.
 
 
 The first method uses a World method to load a model based on a file in the resource path defined by the `GAZEBO_MODEL_PATH` environment variable.
 
-<include from="/    \/\/ Option 1:/" to="/\/\/box"\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 1:/" to="/\/\/box"\);/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
 The second method uses a World method to load a model based on string data.
 
-<include from="/    \/\/ Option 2:/" to="/sphereSDF\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 2:/" to="/sphereSDF\);/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
 The third method uses the message passing mechanism to insert a model. This method is most useful for stand alone applications that communicate with Gazebo over a network connection.
 
-<include from="/    \/\/ Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
+<include from="/    \/\/ Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
 
 ## Compile
 
 Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/factory.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
-<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/CMakeLists.txt' />
+<include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/CMakeLists.txt' />
 
 Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libfactory.so`, that can be inserted in a Gazebo simulation.
 
@@ -211,7 +211,7 @@ $ gedit factory.world
 ~~~
 
 Copy the following into the world
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.world' />
+<include src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.world' />
 
 Run Gazebo
 

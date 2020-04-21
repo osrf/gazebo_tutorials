@@ -24,7 +24,7 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+    ***Note:*** there is a list of [available mirrors](https://github.com/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 

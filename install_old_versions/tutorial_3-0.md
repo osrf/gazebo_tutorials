@@ -22,7 +22,7 @@ Gazebo3 is able to use different physics engines to perform the simulation. ODE 
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
+***Note:*** there is a list of [available mirrors](https://github.com/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
 
   **Ubuntu Linux 12.04 (precise)**
 
@@ -88,7 +88,7 @@ When building Gazebo, we recommend you do not have your `/opt/ros/*/setup.sh` fi
 Install prerequisites.  A clean Ubuntu system will need:
 <!-- Ogre doesn't install on Ubuntu 13.10, so use ogre-1.8 which does -->
 
-        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config \
+        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake git pkg-config \
                      libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev \
                      libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev \
                      libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev \
@@ -112,7 +112,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
 
-   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://bitbucket.org/osrf/gazebo/pull-request/850/dart-physics-engine-support/diff)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/850)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
@@ -167,12 +167,12 @@ To install from source, you should first install the SDFormat package, then buil
 1. Clone the repository into a directory in your home folder:
 
         cd ~/gazebo_source/
-        hg clone https://bitbucket.org/osrf/gazebo
+        git clone https://github.com/osrf/gazebo
 
 1. Change directory in the Gazebo repository and switch to the 3.0 branch
 
         cd gazebo
-        hg up gazebo_3.0
+        git checkout gazebo_3.0
 
    **Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 3.0 branch if you desire more stability**
 

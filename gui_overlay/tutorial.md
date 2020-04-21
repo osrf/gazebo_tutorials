@@ -13,7 +13,7 @@ Gazebo and receive data from Gazebo.
 
 # Example 1: Spawn spheres
 
-The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_spawn).
+The source code for this example is found [here](https://github.com/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_spawn).
 
 1. Start by creating a working directory
 
@@ -25,9 +25,9 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 1. Download the source code for the GUI overlay plugin
 
     ~~~
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/CMakeLists.txt
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/CMakeLists.txt
     ~~~
 
 1. Take a look at the header file.
@@ -38,15 +38,15 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > A GUI overlay plugin must inherit from the GUIPlugin class, and use Qt's `Q_OBJECT` macro.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*class GAZEBO_VISIBLE/' to='/.*Q_OBJECT/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*class GAZEBO_VISIBLE/' to='/.*Q_OBJECT/' />
 
     > The rest of the plugin may contain any code that is required to make the plugin meet your needs. In this example, we will use a QT slot to receive button presses:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Callback trig/' to='OnButton\(\);' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Callback trig/' to='OnButton\(\);' />
 
     > We will also use Gazebo's factory functionality to send SDF spawn messages to gzserver:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Node used/' to='/factoryPub;/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.hh' from='/.*Node used/' to='/factoryPub;/' />
 
 1. Take a look at the source file.
 
@@ -56,19 +56,19 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > The constructor in this file uses QT to create a button and attach it to our `OnButton` callback:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a push/' to='/OnButton\(\)\)\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a push/' to='/OnButton\(\)\)\);/' />
 
     > The constructor also connects to Gazebo's transport mechanism and creates a factory publisher:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a node/' to='/factory\"\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*Create a node/' to='/factory\"\);/' />
 
     > The `OnButton` callback creates a new sphere SDF string:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*std::ostringstream/' to='/\/sdf>\";/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*std::ostringstream/' to='/\/sdf>\";/' />
 
     > and sends the string to Gazebo:
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*msgs::Factory msg/' to='/Publish\(msg\);/'/>
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/GUIExampleSpawnWidget.cc' from='/.*msgs::Factory msg/' to='/Publish\(msg\);/'/>
 
 1. Compile the plugin
 
@@ -99,13 +99,13 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
 
     1. **SDF world file:** Modify a world SDF file to contain the GUI plugin. For example:
 
-        <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world'/>
+        <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world'/>
 
         **Tip:** Download the world file above:
 
         ~~~
         cd ~/gazebo_gui_spawn
-        wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
+        wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
         ~~~
 
     1. **GUI INI file:** Modify the `~/.gazebo/gui.ini` file so the plugin is loaded every time Gazebo is run:
@@ -144,7 +144,7 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
 
 # Example 2: Display Simulation Time
 
-The source code for this example is found [here](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_time).
+The source code for this example is found [here](https://github.com/osrf/gazebo/src/gazebo5/examples/plugins/gui_overlay_plugin_time).
 
 1. Start by creating a working directory
 
@@ -156,9 +156,9 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 1. Download the source code for the GUI overlay plugin
 
     ~~~
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc
-    wget https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/CMakeLists.txt
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc
+    wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/CMakeLists.txt
     ~~~
 
 1. Take a look at the header file.
@@ -169,19 +169,19 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > Just as in the first example, this plugin inherits from the GUIPlugin class, and use Qt's `Q_OBJECT` macro.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*class GAZEBO_VISIBLE/' to='/.*Q_OBJECT/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*class GAZEBO_VISIBLE/' to='/.*Q_OBJECT/' />
 
     > We use `SetSimTime` signal as a thread safe mechanism to update the displayed simulation time.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*A signal used/' to='/.*_string\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*A signal used/' to='/.*_string\);/' />
 
     > An `OnStats` callback is used to receive information from Gazebo.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Callback that/' to='/_msg\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Callback that/' to='/_msg\);/' />
 
     > We will also use Gazebo's transport mechanism to receive messages from Gazebo.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Node used to/' to='/statsSub;/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.hh' from='/.*Node used to/' to='/statsSub;/' />
 
 1. Take a look at the source file.
 
@@ -191,15 +191,15 @@ The source code for this example is found [here](https://bitbucket.org/osrf/gaze
 
     > In the constructor, we create a QLabel to display the time, and connect it to the `SetSimeTime` signal.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a time label/' to='/QueuedConnection\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a time label/' to='/QueuedConnection\);/' />
 
     > The constructor also connects to Gazebo's `~/world_stats` topic.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a node for/' to='/this\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/.*Create a node for/' to='/this\);/' />
 
     > When a message is received, the `OnStats` function is called and the displayed time is updated.
 
-    > <include src='https://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/void GUIExampleTimeWidget::OnStats/' to='/\)\)\);/' />
+    > <include src='https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_time/GUIExampleTimeWidget.cc' from='/void GUIExampleTimeWidget::OnStats/' to='/\)\)\);/' />
 
 1. Follow the same steps as the previous tutorial to compile the plugin and add the `GAZEBO_PLUGIN_PATH`
 

@@ -7,7 +7,7 @@ The world description file contains all the elements in a simulation, including 
 The Gazebo server (`gzserver`) reads this file to generate and populate a world.
 
 A number of example worlds are shipped with Gazebo. These worlds are installed in `<install_path>/share/gazebo-<version>/worlds`;
-you can also see them in the [source code](https://bitbucket.org/osrf/gazebo/src/default/worlds/).
+you can also see them in the [source code](https://github.com/osrf/gazebo/src/default/worlds/).
 
 # Model Files
 
@@ -54,7 +54,7 @@ If you want to modify Gazebo's behavior, e.g., by extending the path it searches
 Parts of Gazebo transitioned to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
 library for inter-process communication instead of the built-in
 Gazebo Transport library. Some features such as
-[markers](https://bitbucket.org/osrf/gazebo/src/gazebo8/examples/stand_alone/marker/)
+[markers](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/marker/)
 and the plotting utility are using Ignition Transport and may be affected by
 the following environment variables:
 

@@ -22,14 +22,14 @@ cd ~/gazebo_animatebox_tutorial
 
 # Animate box code
 
-Copy [animated_box.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://bitbucket.org/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world) into the current directory.
+Copy [animated_box.cc](https://github.com/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://github.com/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://github.com/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://github.com/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://github.com/osrf/gazebo/src/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world) into the current directory.
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc
-wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc
-wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc
-wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt
-wget http://bitbucket.org/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world
+wget http://github.com/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.cc
+wget http://github.com/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/independent_listener.cc
+wget http://github.com/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/integrated_main.cc
+wget http://github.com/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/CMakeLists.txt
+wget http://github.com/osrf/gazebo/raw/gazebo_4.0/examples/stand_alone/animated_box/animated_box.world
 ~~~
 
 Build the plugin

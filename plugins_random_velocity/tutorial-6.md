@@ -25,7 +25,7 @@ in your Gazebo source (use the path to your Gazebo source).
     ~~~
 
 3. You will observe code like this :
-[gazebo/worlds/random_velocity.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/worlds/random_velocity.world)
+[gazebo/worlds/random_velocity.world](https://github.com/osrf/gazebo/src/gazebo6/worlds/random_velocity.world)
 
 ## World File Explained
 
@@ -34,10 +34,10 @@ The above code is just example usage of the Random Velocity Plugin.
 First, we create a model and a link. In this case, our model is a cube of unit
 dimensions. The cube's surface is frictionless, since the coefficient of
 friction (mu) is set to zero.
-<include from='/    <model/' to='/</link>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
+<include from='/    <model/' to='/</link>/' src='https://github.com/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 Now comes the actual usage of the plugin.
-<include from='/      <plugin name/' to='/</plugin>/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
+<include from='/      <plugin name/' to='/</plugin>/' src='https://github.com/osrf/gazebo/raw/gazebo6/worlds/random_velocity.world' />
 
 1. Plugin name is "random" and its corresponding shared object file (.so) is
 ``libRandomVelocityPlugin.so``. The `.so` (or `.dylib` on Mac OS) files are dynamically linked at runtime.
@@ -68,7 +68,7 @@ You can play with the values of ``initial_velocity``, ``velocity_factor``,
 ## Plugin Source
 
 The source code for this plugin is available on
-[bitbucket](https://bitbucket.org/osrf/gazebo/src/gazebo6/plugins/).
+[bitbucket](https://github.com/osrf/gazebo/src/gazebo6/plugins/).
 
 If you have installed Gazebo from source then you can find this file where you
 downloaded the repository.
@@ -87,11 +87,11 @@ $ locate RandomVelocityPlugin.hh
 `RandomVelocityPlugin.hh` contains a commented example of usage (as included
 above) and function declarations of the functions defined in
 `RandomVelocityPlugin.cc`, which looks like
-[this](https://bitbucket.org/osrf/gazebo/src/gazebo6/plugins/RandomVelocityPlugin.cc).
+[this](https://github.com/osrf/gazebo/src/gazebo6/plugins/RandomVelocityPlugin.cc).
 
 ## Understanding the source
 
-<include from='/#include/' to='/"RandomVelocityPlugin.hh"/' src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/#include/' to='/"RandomVelocityPlugin.hh"/' src='https://github.com/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 `RandomVelocityPluginPrivate.cc` contains the private data pointer, in accordance
 with the
@@ -139,7 +139,7 @@ using Private class `RandomVelocityPluginPrivate`.
 The second function is a destructor function that deletes the pointer pointing
 to this instance's data.
 
-<include from='/void RandomVelocityPlugin::Load\(physics::ModelPtr _model, sdf::ElementPtr _sdf\)/' to="/.*GZ_ASSERT.*/" src='https://bitbucket.org/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
+<include from='/void RandomVelocityPlugin::Load\(physics::ModelPtr _model, sdf::ElementPtr _sdf\)/' to="/.*GZ_ASSERT.*/" src='https://github.com/osrf/gazebo/raw/gazebo6/plugins/RandomVelocityPlugin.cc' />
 
 Similar to what we did in Hello World, we create function
 `RandomVelocityPlugin::Load()`

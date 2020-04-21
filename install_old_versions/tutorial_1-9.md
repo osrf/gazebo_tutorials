@@ -88,7 +88,7 @@ When building Gazebo, we recommend you do not have your `/opt/ros/*/setup.sh` fi
 
         sudo apt-get install build-essential libtinyxml-dev libtbb-dev libxml2-dev libqt4-dev pkg-config  libprotoc-dev libfreeimage-dev \
                              libprotobuf-dev protobuf-compiler libboost-all-dev freeglut3-dev cmake libogre-dev libtar-dev \
-                             libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev mercurial
+                             libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev git
 
    **Bullet Support** (Optional) Bullet version 2.81 is needed for this. In an Ubuntu system (precise or quantal) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [[1.9/install#Ubuntu_Debians |Ubuntu Debians section above]] to configure your computer to accept software from packages.osrfoundation.org
 
@@ -132,12 +132,12 @@ To install from source, you should first install the SDFormat package, then buil
 1. Clone the repository into a directory in your home folder:
 
         cd ~/gazebo_source/
-        hg clone https://bitbucket.org/osrf/gazebo
+        git clone https://github.com/osrf/gazebo
 
 1. Change directory in the Gazebo repository and switch to the 1.9 branch
 
         cd gazebo
-        hg up gazebo_1.9
+        git checkout gazebo_1.9
 
    *Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 1.9 branch if you desire more stability*
 
