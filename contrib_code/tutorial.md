@@ -301,7 +301,7 @@ In order to provide meaningful backtraces when using a debugger, such as GDB, Ga
 
 ## Code Check
 
-Code pushed into the Gazebo repository should pass a few simple tests. It is also helpful if patches submitted through bitbucket pass these tests. Passing these tests is defined as generating no error or warning messages for each of the following tests.
+Code pushed into the Gazebo repository should pass a few simple tests. It is also helpful if patches submitted through GitHub pass these tests. Passing these tests is defined as generating no error or warning messages for each of the following tests.
 
 ### Regression Tests
 

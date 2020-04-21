@@ -68,7 +68,7 @@ You can play with the values of ``initial_velocity``, ``velocity_factor``,
 ## Plugin Source
 
 The source code for this plugin is available on
-[bitbucket](https://github.com/osrf/gazebo/src/gazebo6/plugins/).
+[GitHub](https://github.com/osrf/gazebo/src/gazebo6/plugins/).
 
 If you have installed Gazebo from source then you can find this file where you
 downloaded the repository.

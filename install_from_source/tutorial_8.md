@@ -251,7 +251,7 @@ git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
 git clone https://github.com/osrf/sdformat
-git clone https://bitbucket.org/osrf/gazebo
+git clone https://github.com/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
