@@ -72,23 +72,22 @@ For this example, let's pretend that we want to change the label which says
 [[file:files/tut3_1.png|800px]]
 
 
-# TODO Update to git workflow
-
 1. Before making changes to the code, it's always a good idea to make sure you're
-running the latest Gazebo code. Move to the source code directory and "pull" the
-latest changes from the OSRF repository using the `git pull` command:
+running the latest Gazebo code. Let's move to the branch we want to target. Let's
+say we want our change to be available from Gazebo 9 onwards, so we target
+the `gazebo9` branch. Use the `git checkout` command to update your workspace to
+that branch:
 
         cd ~/code/gazebo
-        git pull https://github.com/osrf/gazebo
+        git checkout gazebo9
 
-1. Now your local branches are all in sync with the official repository. Let's
-move to the branch we want to target. Let's say we want our change to be available
-from the next Gazebo release, so we target the `default` branch. Use the `git checkout`
-command to update your workspace to that branch:
+1. Now let's "pull" the latest changes from the OSRF repository using the
+`git pull` command:
 
-        git checkout default
+        git pull https://bitbucket.org/osrf/gazebo
 
-1. Now let's build and install Gazebo before making any changes:
+1. Now your local branch is in sync with the official repository. Let's build
+and install Gazebo before making any changes:
 
         cd build
         cmake ..

@@ -32,7 +32,7 @@ interact with it through the browser. You want to have it in your computer.
 You will use the git command line tool to pull that code from the internet
 to your computer as follows:
 
-1. Make sure you have `git` installed:
+1. Make sure you have git installed:
 
         sudo apt update
         sudo apt install git
@@ -71,29 +71,24 @@ Gazebo's code is organized into different branches with different purposes.
 
 1. You'll see a long list which looks something like this:
 
-        remotes/origin/gazebo7
-        remotes/origin/harness_detach_race
-        remotes/origin/gazebo8
-        remotes/origin/default
-        remotes/origin/contact_sensor_active
-        remotes/origin/harness_attach_default
-        remotes/origin/ardupilot_merge_gazebo8
-        remotes/origin/collision_pose_noncanonical
-        remotes/origin/wind_patch_8a
-        remotes/origin/issue_2049_7
+        remotes/origin/2.1_abi_compat
+        remotes/origin/2014_copyright
+        remotes/origin/90_windows_patch_test
+        remotes/origin/DoNotLaunchMarkerManagerInServer
+        remotes/origin/FixODERevoluteJointInitialization
         ...
 
-1. The names after `remotes/origin` are branch names.
+1. Branches prefixed with `remotes/origin` come from the official OSRF repository.
 
 Most of the branches in Gazebo are branches where the core team is working
 on fixing bugs or adding new features. But a few branches have special meaning,
 these are:
 
-* `default`: This is the bleeding edge code where all new features are being
+* `master`: This is the bleeding edge code where all new features are being
 developed. You're automatically on this branch when you clone Gazebo. This
 is where new features and code that is incompatible with previous releases
 (i.e. breaks API/ABI) will go. Since Gazebo 11 was the last release, the
-`default` branch no longer exist.
+`master` branch no longer exists.
 
 * `gazebo<N>`: Here, `N` is a number representing a Gazebo release. For example,
 the code for the latest release of Gazebo 7 is found on branch `gazebo7`.

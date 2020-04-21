@@ -122,7 +122,7 @@ tutorial and then come back here.
         git clone https://github.com/osrf/gazebo /tmp/gazebo
         cd /tmp/gazebo
 
-     **Note:** the `default` branch is the development branch where
+     **Note:** the `master` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `gazebo6` branch if you
 desire more stability

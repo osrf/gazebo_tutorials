@@ -16,7 +16,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 ## Branches
 
-   1. ''default'': Contains all code that breaks ABI/API compatibility with the current released version
+   1. ''master'': Contains all code that breaks ABI/API compatibility with the current released version
 
    2. ''gazeboX'': Contains code for Gazebo version X, where X is the MAJOR version. Only bugs fixes and features that do not break ABI/API may be submitted to this branch.
 

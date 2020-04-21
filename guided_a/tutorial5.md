@@ -29,7 +29,7 @@ Among these issues, the Gazebo core team marks some of them with the label
 issues for first time contributors like you ;) Take a look at the list and see
 if you find anything that's interesting to you.
 
-* [Gazebo issues for new developers](https://github.com/osrf/gazebo/issues?q=issuefornewdevelopers)
+* [Gazebo issues for new developers](https://github.com/osrf/gazebo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [SDFormat issues for new developers](https://github.com/osrf/sdformat/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Math issues for new developers](https://github.com/ignitionrobotics/ign-math/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Transport issues for new developers](https://github.com/ignitionrobotics/ign-transport/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
@@ -102,11 +102,10 @@ branch for this code to live.
     Lines preceeded by `-` have been removed, and those preceeded by `+` have
     been added.
 
-## TODO update to git workflow
 1. We don't want that anymore, so let's clear our workspace with the following
 command:
 
-        git checkout -C
+        git reset --hard
 
     Beware that all your changes are lost when you do this!
 
@@ -117,7 +116,7 @@ branch we're currently at with the `git branch` command:
 
         git branch
 
-1. If you've been following the tutorials, you should now be at `default`.
+1. If you've been following the tutorials, you should now be at `gazebo9`.
 
 1. It was mentioned earlier that different Gazebo releases live in different
 branches.
@@ -127,7 +126,7 @@ branches.
     branch, make sure your changes won't break ABI or API.
 
  1. If you're adding a new feature, you probably want it to go into a future
-    release, so you can start from `default`.
+    release, so you can start from `master` (no longer available).
 
     You can change to the target branch with the `git checkout` command, for example:
 
@@ -138,6 +137,10 @@ This creates a new branch as a copy of the branch we're currently in. For
 example:
 
         git branch <yourname>_first_issue
+
+1. That created a branch but we're not at that branch yet. To move there do:
+
+        git checkout <yourname>_first_issue
 
 1. Check that you're on the new branch with `git branch` again:
 
@@ -155,7 +158,7 @@ to fix.
 doesn't get lost. You do this with the `git commit` command, and pass it a
 custom message, for example:
 
-        git commit -m "My first commit: started fixing a bug!"
+        git commit -am "My first commit: started fixing a bug!"
 
 1. Keep working on the issue and committing your progress until you're
 satisfied with the result. Remember the quality guidelines from previous
@@ -169,11 +172,7 @@ your code.
 1. Once you're done, push your commits to your online repository on GitHub
 as follows:
 
-        git push
-
-    > The `new` flag is needed because you created a new branch
-
-    > By default, git will push to the repository you cloned from
+        git push -u origin <yourname>_first_issue
 
 1. Fill in your username and password, then check on your GitHub repository
 that the new branch is there.
@@ -186,15 +185,15 @@ It's time to put your code through code review. You will request that the
 Gazebo team pull your changes into the official repository through a
 "pull request". Here is the list of pull requests currently open for Gazebo:
 
-[https://github.com/osrf/gazebo/pull-requests](https://github.com/osrf/gazebo/pull-requests)
+[https://github.com/osrf/gazebo/pulls](https://github.com/osrf/gazebo/pulls)
 
 It's a good idea to take a look at a couple of [pull requests which have
-been accepted](https://github.com/osrf/gazebo/pull-requests/?state=MERGED)
+been accepted](https://github.com/osrf/gazebo/pulls?q=is%3Apr+is%3Amerged)
 in the past so you get an idea of how the process works.
 
 You can create a pull request for Gazebo on this link:
 
-[https://github.com/osrf/gazebo/pull-requests/new](https://github.com/osrf/gazebo/pull-requests/new)
+[https://github.com/osrf/gazebo/pulls/new](https://github.com/osrf/gazebo/pulls/new)
 
 Be sure to describe what you did, refer the issue you're fixing, and add any
 images or other things which you think may help the reviewers get a good

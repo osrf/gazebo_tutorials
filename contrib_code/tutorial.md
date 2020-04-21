@@ -23,7 +23,7 @@ well to other repositories maintained by OSRF.
 >     Check [answers.gazebosim.org](http://answers.gazebosim.org) and the [issue tracker](https://github.com/osrf/gazebo/issues).
 >
 > 1. Get feedback from the Gazebo core team.
->     Send an email to the [mailing list](https://groups.google.com/a/osrfoundation.org/forum/#!forum/gazebo), post a question on [answers.gazebosim.org](http://answers.gazebosim.org), or use the [issue tracker](https://github.com/osrf/gazebo/issues) to get feedback from Gazebo developers.
+>     Post a topic on [community.gazebosim.org](https://community.gazebosim.org), post a question on [answers.gazebosim.org](http://answers.gazebosim.org), or use the [issue tracker](https://github.com/osrf/gazebo/issues) to get feedback from Gazebo developers.
 
 1. [Fork Gazebo](https://github.com/osrf/gazebo/fork)
 > This will create your own personal copy of Gazebo. All of your development should take place in your fork.
@@ -62,11 +62,11 @@ well to other repositories maintained by OSRF.
 1. Small pull requests
 > A large pull request is hard to review, and will take a long time. It is worth your time to split a large pull request into multiple smaller pull requests. For reference, here are a few examples:
 >
-> [Small, very nice](https://github.com/osrf/gazebo/pull-request/1732)
+> [Small, very nice](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1732)
 >
-> [Medium, still okay](https://github.com/osrf/gazebo/pull-request/1700/)
+> [Medium, still okay](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1700/)
 >
-> [Too large](https://github.com/osrf/gazebo/pull-request/30)
+> [Too large](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/30)
 
 1. [Pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
 > Submit a pull request from your GitHub fork when you are ready.

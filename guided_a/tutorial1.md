@@ -29,14 +29,14 @@ If none of that makes sense to you, let's go through some important concepts:
 
 ## Git
 
-[**Git**](https://www.git-scm.org/) is a version control software used to
+[**Git**](https://git-scm.org/) is a version control software used to
 keep track of changes made to source code.
 
 This tutorial series won't be going into detail about how git works, but
-each git command (`hg`) used will be explained.
+each `git` command used will be explained.
 
 > If you're completely new to version control, there's a lot of good information
-available online, such as [this](https://www.youtube.com/watch?v=idd2fmPRRlU)
+available online, such as [this](https://www.youtube.com/watch?v=SWYqp7iY_Tc)
 tutorial series.
 
 ## GitHub
@@ -45,7 +45,7 @@ tutorial series.
 repository so that the source code has a central place to live.
 
 In order to contribute to Gazebo, you'll need to create an account there, by
-following [this link](https://github.com/join/).
+following [this link](https://github.com/join).
 
 # Where is the rest of the code?
 

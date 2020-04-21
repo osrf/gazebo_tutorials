@@ -18,7 +18,7 @@ Patches for other versions are welcome.
 ## Installation
 
 This installation procedure uses pre-compiled binaries in a local workspace.  To
-make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/) with [Mercurial](http://tortoisehg.github.com/download/index.html)), and only use the
+make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/)), and only use the
 Windows `cmd` for configuring and building.  You might also need to
 [disable the Windows firewall](http://windows.microsoft.com/en-us/windows/turn-windows-firewall-on-off#turn-windows-firewall-on-off=windows-7).
 
@@ -30,11 +30,15 @@ Windows `cmd` for configuring and building.  You might also need to
 1. Download the following dependencies into that directory:
     1. [libcurl HEAD](https://s3.amazonaws.com/osrf-distributions/win32/deps/curl-7.57.0-vc15-x64-dll-MD.zip)
 
+    1. [libyaml]( https://s3.amazonaws.com/osrf-distributions/win32/deps/libyaml-0.1.7-vc15-x64-md.zip)
+
     1. [dlfcn-win32](https://s3.amazonaws.com/osrf-distributions/win32/deps/dlfcn-win32-vc15-x64-dll-MD.zip)
 
-    1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/protobuf-3.4.1-vc15-x64-dll-MD.zip)
+    1. [jsoncpp](https://s3.amazonaws.com/osrf-distributions/win32/deps/jsoncpp-1.8.4-vc15-x64-dll-MD.zip)
 
-    1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4_zlip-1.2.11_vc15-x64-dll-MD.zip)
+    1. [protobuf 3.4.1](https://s3.amazonaws.com/osrf-distributions/win32/deps/protobuf-3.4.1-vc15-x64-dll-MD.zip)
+
+    1. [zlib](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzip-1.4.0_zlip-1.2.11_vc15-x64-dll-MD.zip)
 
     1. [zziplib 0.13.62](https://s3.amazonaws.com/osrf-distributions/win32/deps/zziplib-0.13.62-vc12-x64-release-debug.zip)
 
@@ -50,9 +54,9 @@ Windows `cmd` for configuring and building.  You might also need to
 
     1. [Qt 5.7.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/qt-opensource-windows-x86-msvc2015_64-5.7.0.zip)
 
-    1. [Freetype 2.4.0](https://s3.amazonaws.com/osrf-distributions/win32/deps/freetype-2.4.0-vc12-x64-release-debug.zip)
-
     1. [QWT 6.1.22](https://s3.amazonaws.com/osrf-distributions/win32/deps/qwt_6.1.2~osrf_qt5.zip)
+
+    1. [ZeroMQ 4.2.3](https://s3.amazonaws.com/osrf-distributions/win32/deps/libzmq-4.2.3_cppzmq-4.2.2_vc15-x64-dll-MD.zip)
 
 1. Unzip each of them in gz-ws.
 
@@ -64,18 +68,32 @@ Windows `cmd` for configuring and building.  You might also need to
 
     > [Ruby](http://rubyinstaller.org/downloads/)
 
-1. Clone Ignition Math, Transport, Sdformat, and Gazebo:
+1. Clone Ignition CMake, Common, Fuel Tools, Math, Transport, Sdformat, and Gazebo:
 
-        git clone https://github.com/ignitionrobotics/ign-math -b ign-math6
+        git clone https://github.com/ignitionrobotics/ign-cmake -b ign-cmake0
+        git clone https://github.com/ignitionrobotics/ign-common -b ign-common1
+        git clone https://github.com/ignitionrobotics/ign-fuel-tools -b ign-fuel-tools1
+        git clone https://github.com/ignitionrobotics/ign-math -b ign-math4
+        git clone https://github.com/ignitionrobotics/ign-msgs -b ign-msgs1
         git clone https://github.com/ignitionrobotics/ign-transport -b ign-transport4
         git clone https://github.com/osrf/sdformat -b sdf6
-        git clone https://github.com/osrf/gazebo -r gazebo9
+        git clone https://github.com/osrf/gazebo -b gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 
-        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
    or
-        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
+1. In a Windows shell, configure and build Ignition CMake
+
+        cd ign-cmake
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition CMake in gz-ws/ign-cmake/build/install/Release.
 
 1. In a Windows shell, configure and build Ignition Math
 
@@ -87,6 +105,39 @@ Windows `cmd` for configuring and building.  You might also need to
 
     You should now have an installation of Ignition Math in gz-ws/ign-math/build/install/Release.
 
+1. In a Windows shell, configure and build Ignition Common
+
+        cd ign-common
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Common in gz-ws/ign-common/build/install/Release.
+
+1. In a Windows shell, configure and build Ignition Fuel Tools
+
+        cd ign-fuel-tools
+        # if you want debug, run configure Debug
+        .\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Fuel Tools in gz-ws/ign-fuel-tools/build/install/Release.
+
+1. In the same Windows shell, configure and build Ignition Msgs
+
+        cd ..\..\ign-msgs
+        mkdir build
+        cd build
+        # if you want debug, run ..\configure Debug
+        ..\configure
+        nmake
+        nmake install
+
+    You should now have an installation of Ignition Msgs in gz-ws/ign-msgs/build/install/Release
+
+
 1. In the same Windows shell, configure and build Ignition Transport
 
         cd ..\..\ign-transport
@@ -97,7 +148,7 @@ Windows `cmd` for configuring and building.  You might also need to
         nmake
         nmake install
 
-    You should now have an installation of Ignition Trasport in gz-ws/ign-transport/build/install/Release
+    You should now have an installation of Ignition Transport in gz-ws/ign-transport/build/install/Release
 
 1. In the same Windows shell, configure and build Sdformat
 
