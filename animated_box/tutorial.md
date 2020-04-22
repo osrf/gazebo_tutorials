@@ -22,7 +22,7 @@ cd ~/gazebo_animatedbox_tutorial
 
 # Animate box code
 
-Copy [animated_box.cc](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://github.com/osrf/gazebo/src/gazebo8/examples/stand_alone/animated_box/animated_box.world) into the current directory.
+Copy [animated_box.cc](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/animated_box/animated_box.cc), [independent_listener.cc](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/animated_box/independent_listener.cc), [integrated_main.cc](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/animated_box/integrated_main.cc), [CMakeLists.txt](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/animated_box/CMakeLists.txt), and [animated_box.world](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/animated_box/animated_box.world) into the current directory.
 
 On OS X, you can replace `wget` with `curl -OL`.
 

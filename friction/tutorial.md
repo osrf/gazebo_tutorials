@@ -63,4 +63,4 @@ The following example will specify a box with low friction:
 </model>
 ~~~
 
-This is a more exhaustive [example](https://github.com/osrf/gazebo/src/3bd08807f5d9997e9d51eed9276350bac523c4bf/sdf/worlds/test_friction.world?at=default).
+This is a more exhaustive [example](https://github.com/osrf/gazebo/blob/master/sdf/worlds/test_friction.world).

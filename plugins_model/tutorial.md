@@ -6,7 +6,7 @@
 
 #Code
 
-Source: [ gazebo/examples/plugins/model_push](https://github.com/osrf/gazebo/src/gazebo8/examples/plugins/model_push)
+Source: [ gazebo/examples/plugins/model_push](https://github.com/osrf/gazebo/blob/gazebo8/examples/plugins/model_push)
 
 Plugins allow complete access to the physical properties of models and their underlying elements (links, joints, collision objects). The following plugin will apply a linear velocity to its parent model.
 

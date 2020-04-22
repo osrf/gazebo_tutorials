@@ -4,7 +4,7 @@
 please visit their [website](http://playerstage.sourceforge.net) for more
 information.
 
-This tutorial covers connecting the laser Player interfaces to Gazebo. 
+This tutorial covers connecting the laser Player interfaces to Gazebo.
 
 Create a working directory
 
@@ -14,10 +14,10 @@ cd; mkdir gazebo_laser; cd gazebo_laser
 
 # Player Config
 
-Copy the config script below into a file called `laser.cfg`. The following script is also accessible via this [link](https://github.com/osrf/gazebo/raw/default/examples/player/laser/laser.cfg).
+Copy the config script below into a file called `laser.cfg`. The following script is also accessible via this [link](https://github.com/osrf/gazebo/raw/master/examples/player/laser/laser.cfg).
 
 <include
-src='https://github.com/osrf/gazebo/raw/default/examples/player/laser/laser.cfg'/>
+src='https://github.com/osrf/gazebo/raw/master/examples/player/laser/laser.cfg'/>
 
 # Run
 

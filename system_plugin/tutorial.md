@@ -4,7 +4,7 @@
 
 # Overview
 
-Source: [gazebo/examples/plugins/system\_gui\_plugin](https://github.com/osrf/gazebo/src/gazebo9/examples/plugins/system_gui_plugin)
+Source: [gazebo/examples/plugins/system\_gui\_plugin](https://github.com/osrf/gazebo/blob/gazebo9/examples/plugins/system_gui_plugin)
 
 This tutorial will create a source file that is a system plugin for gzclient
 designed to save images into the directory `/tmp/gazebo_frames`.

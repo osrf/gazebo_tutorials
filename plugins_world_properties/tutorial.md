@@ -7,7 +7,7 @@ This plugin example programmatically modifies gravity.
 
 # Setup:
 
-Source: [gazebo/examples/plugins/world_edit](https://github.com/osrf/gazebo/src/gazebo9/examples/plugins/world_edit)
+Source: [gazebo/examples/plugins/world_edit](https://github.com/osrf/gazebo/blob/gazebo9/examples/plugins/world_edit)
 
 Use the `gazebo_plugin_tutorial` from the previous plugin tutorials
 

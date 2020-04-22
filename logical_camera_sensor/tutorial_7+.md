@@ -109,7 +109,7 @@ The output of a logical camera may not include a model a normal camera would see
 
 # Getting Data
 There are two ways to get the data: directly from the sensor, or using gazebo transport.
-Both ways return a [LogicalCameraImage](https://github.com/osrf/gazebo/src/gazebo7/gazebo/msgs/logical_camera_image.proto).
+Both ways return a [LogicalCameraImage](https://github.com/osrf/gazebo/blob/gazebo7/gazebo/msgs/logical_camera_image.proto).
 
 ## Directly From The Sensor
 The data can be taken directly from the sensor.

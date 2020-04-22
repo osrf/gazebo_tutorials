@@ -171,5 +171,5 @@ together with the `model.sdf.erb` (this one only for reference).
 Examples of `sdf.erb` files are available in the
 [gazebo_models repository](https://github.com/osrf/gazebo_models/src)
 (some of them use the deprecated suffix `.rsdf`). An easy ERB file is the
-[flocking.world.erb](https://github.com/osrf/gazebo/src/b54961341ffb938a9f99c9976aed50a771c95216/worlds/flocking.world.erb?at=default)
+[flocking.world.erb](https://github.com/osrf/gazebo/blob/gazebo9/worlds/flocking.world.erb)
 which uses a simple loop.
