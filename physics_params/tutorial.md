@@ -317,11 +317,11 @@ such as in modeling longitudinal and lateral wheel friction separately
 [gazebo pull request 2950](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/2950)).
 
 The difference between the box and cone friction models is visualized using the
-[friction\_pyramid test world](https://github.com/osrf/gazebo/raw/c2315ca10a801/worlds/friction_pyramid.world),
+[friction\_pyramid test world](https://github.com/osrf/gazebo/raw/gazebo9/worlds/friction_pyramid.world),
 which has an array of boxes arrayed in a circle with an initial velocity going
 away from the center of the circle.
 Specifying `cone_model` in that example world at
-[line 15](https://github.com/osrf/gazebo/blob/c2315ca10a801/worlds/friction_pyramid.world#friction_pyramid.world-15)
+[line 15](https://github.com/osrf/gazebo/blob/gazebo9/worlds/friction_pyramid.world)
 results in boxes that travel out radially as one would expect.
 
 <iframe src="https://player.vimeo.com/video/327117996" width="640" height="594" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
