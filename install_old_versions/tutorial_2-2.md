@@ -101,7 +101,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
 
-   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/850/dart-physics-engine-support/diff)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/850)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs

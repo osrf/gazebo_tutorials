@@ -264,7 +264,7 @@ For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-git checkout default
+git checkout master
 cd ${WS}/src/dart
 git checkout release-5.0
 ~~~
