@@ -120,7 +120,7 @@ The `<distribution>` element sets how the objects are placed within the region.
 1. `linear-z`: Models evenly placed in a row along the global z-axis.
 
 For a more advanced example you can check the
-[population.world](http://bitbucket.org/osrf/gazebo/raw/default/worlds/population.world)
+[population.world](http://github.com/osrf/gazebo/raw/master/worlds/population.world)
 world file deployed with Gazebo.
 
 And of course, you can test it by typing:

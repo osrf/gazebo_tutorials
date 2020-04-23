@@ -7,8 +7,6 @@
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-***Note: ***there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
-
   **Ubuntu Linux 12.04 (precise)**
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu precise main" > /etc/apt/sources.list.d/gazebo-latest.list'
@@ -34,7 +32,7 @@
         sudo apt-get update
         # A) Ubuntu precise, quantal and raring (gazebo_current)
         sudo apt-get install gazebo-current
-        # B) Ubuntu saucy and trusty (gazebo2) 
+        # B) Ubuntu saucy and trusty (gazebo2)
         sudo apt-get install gazebo2
     **There is available the old gazebo version 1 under the package name of: gazebo**
 
@@ -78,7 +76,7 @@ When building Gazebo, we recommend you do not have your `/opt/ros/*/setup.sh` fi
 Install prerequisites.  A clean Ubuntu system will need:
 <!-- Ogre doesn't install on Ubuntu 13.10, so use ogre-1.8 which does -->
 
-        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config \
+        sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake git pkg-config \
                      libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev \
                      libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev \
                      libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev \
@@ -91,10 +89,10 @@ Gazebo supports multiple physics engines in addition to the modified version of 
    ***Bullet Support*** [Bullet](http://code.google.com/p/bullet/) version 2.81 is needed for Gazebo 1.9 - 2.2, while Gazebo 3.0 requires Bullet 2.82. In an Ubuntu system (precise - saucy) the OSRF repo can be used to install the proper package. Be sure to follow Step 2 in the [Ubuntu Debians section above](http://gazebosim.org/tutorials?tut=install_old_versions&ver=2.2&cat=install#Ubuntu) to configure your computer to accept software from packages.osrfoundation.org
 
         sudo apt-get update
-        
+
         # for bullet 2.81:
         sudo apt-get install libbullet-dev
-        
+
         # for bullet 2.82:
         sudo apt-get install libbullet2.82-dev
 
@@ -103,7 +101,7 @@ Gazebo supports multiple physics engines in addition to the modified version of 
         sudo apt-get update
         sudo apt-get install libsimbody-dev
 
-   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://bitbucket.org/osrf/gazebo/pull-request/850/dart-physics-engine-support/diff)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
+   ***DART Support*** Support for [DART](http://dartsim.github.io/) version 3.0 is being integrated into Gazebo version 2.2 (pending [pull request 850](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/850)). In an Ubuntu system (precise - saucy) several Personal Package Archives (PPA's) can be used to install the proper package and dependencies. Note that adding these PPA's may cause conflicts with ROS.
 
         sudo apt-add-repository ppa:libccd-debs
         sudo apt-add-repository ppa:fcl-debs
@@ -158,12 +156,12 @@ To install from source, you should first install the SDFormat package, then buil
 1. Clone the repository into a directory in your home folder:
 
         cd ~/gazebo_source/
-        hg clone https://bitbucket.org/osrf/gazebo
+        git clone https://github.com/osrf/gazebo
 
 1. Change directory in the Gazebo repository and switch to the 2.0 branch
 
         cd gazebo
-        hg up gazebo_2.0
+        git checkout gazebo_2.0
 
    **Note: the `default` branch is the development branch where you'll find the bleeding edge code, your cloned repository should be on this branch by default but we recommend you switch to the 2.0 branch if you desire more stability**
 
@@ -173,11 +171,11 @@ To install from source, you should first install the SDFormat package, then buil
         cd build
 
 1. Configure Gazebo (choose either method `a` or `b` below)
-   
+
   > a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
-  
+
   >        cmake ../
-  
+
   > Note: A big part of the compilation is the test suite. If it is useful to temporary disable it during the development, you can use:
 
   >        cmake ../ -DENABLE_TESTS_COMPILATION:BOOL=False
@@ -185,16 +183,16 @@ To install from source, you should first install the SDFormat package, then buil
   > Note: You can use a custom install path to make it easier to switch between source and debian installs:
 
   >        cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
-  
+
   > b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
-  
+
   >        cmake -DCMAKE_BUILD_TYPE=Debug ../
-  
+
 1. The output from `cmake ../` may generate a number of errors and warnings about missing packages. You must install the missing packages that have errors and re-run `cmake ../`. Make sure all the build errors are resolved before continuing (they should be there from the earlier step in which you installed prerequisites). Warnings alert of optional packages that are missing.
 
 1. Make note of your install path, which is output from `cmake` and should look something like:
 
-          -- Install path: /home/$USER/local     
+          -- Install path: /home/$USER/local
 
 1. Build Gazebo
 
@@ -225,7 +223,7 @@ To install from source, you should first install the SDFormat package, then buil
 
   , then `/usr/local/lib` is not in load path (default behavior for Ubuntu). Run the following commands and then try running gazebo again:
 
-        echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf 
+        echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf
         sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org), see [Installing gazebo_ros_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).

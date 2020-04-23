@@ -18,7 +18,7 @@ Patches for other versions are welcome.
 ## Installation
 
 This installation procedure uses pre-compiled binaries in a local workspace.  To
-make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/) with [Mercurial](http://tortoisehg.bitbucket.org/download/index.html)), and only use the
+make things easier, use a MinGW shell for your editing work (such as the [Git Bash Shell](https://msysgit.github.io/)), and only use the
 Windows `cmd` for configuring and building.  You might also need to
 [disable the Windows firewall](http://windows.microsoft.com/en-us/windows/turn-windows-firewall-on-off#turn-windows-firewall-on-off=windows-7).
 
@@ -70,14 +70,14 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Clone Ignition CMake, Common, Fuel Tools, Math, Transport, Sdformat, and Gazebo:
 
-        git clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
-        git clone https://bitbucket.org/ignitionrobotics/ign-common -r ign-common1
-        git clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools -r ign-fuel-tools1
-        git clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
-        git clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
-        git clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
-        git clone https://bitbucket.org/osrf/sdformat -r sdf6
-        hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
+        git clone https://github.com/ignitionrobotics/ign-cmake -b ign-cmake0
+        git clone https://github.com/ignitionrobotics/ign-common -b ign-common1
+        git clone https://github.com/ignitionrobotics/ign-fuel-tools -b ign-fuel-tools1
+        git clone https://github.com/ignitionrobotics/ign-math -b ign-math4
+        git clone https://github.com/ignitionrobotics/ign-msgs -b ign-msgs1
+        git clone https://github.com/ignitionrobotics/ign-transport -b ign-transport4
+        git clone https://github.com/osrf/sdformat -b sdf6
+        git clone https://github.com/osrf/gazebo -b gazebo9
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 

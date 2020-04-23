@@ -34,8 +34,6 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
-
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
 1. Setup keys and update
@@ -121,10 +119,10 @@ tutorial and then come back here.
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        git clone https://github.com/osrf/gazebo /tmp/gazebo
         cd /tmp/gazebo
 
-     **Note:** the `default` branch is the development branch where
+     **Note:** the `master` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `gazebo6` branch if you
 desire more stability
@@ -253,7 +251,7 @@ git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
 git clone https://github.com/osrf/sdformat
-hg clone https://bitbucket.org/osrf/gazebo
+git clone https://github.com/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
@@ -261,7 +259,7 @@ For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up default
+git checkout master
 cd ${WS}/src/dart
 git checkout release-6.2
 ~~~

@@ -66,17 +66,17 @@ When a ball rolls under a lamp post, the light will turn on.
 
 [[file:example_world.png|800px]]
 
-Download the [example world](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world), [plugin source code](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp), and [CMake file](https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/CMakeLists.txt).
+Download the [example world](https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world), [plugin source code](https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp), and [CMake file](https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/CMakeLists.txt).
 Build and run the plugin using [this tutorial](/tutorials?tut=plugins_hello_world&cat=write_plugin) as an example.
 Make sure to run `source <install_path>/share/gazebo/setup.sh` before extending `GAZEBO_PLUGIN_PATH`.
 `<install_path>` is `/usr` if you installed using `apt`.
 
 A ContainPlugin instance is configured to watch when a sphere enters a box below the lamp post.
 When the sphere rolls into or out of the box ContainPlugin will publish a message on the `contain` topic.
-<include lang='xml' from="/<plugin name='ContainPlugin'/" to="/    <\/pluign>/" src='https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world'/>
+<include lang='xml' from="/<plugin name='ContainPlugin'/" to="/    <\/plugin>/" src='https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world'/>
 
 This custom plugin receives messages from ContainPlugin, and turns the light on or off.
-<include lang='c++' from="/#include/" to="/}  // namespace gazebo/" src='https://bitbucket.org/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp'/>
+<include lang='c++' from="/#include/" to="/}  // namespace gazebo/" src='https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp'/>
 
 After building and running the world you should see the ball trigger the light to turn on.
 Hit `CTRL + R` to restart the world if you missed it.

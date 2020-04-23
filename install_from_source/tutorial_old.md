@@ -132,10 +132,10 @@ stability
 
 1. Clone the repository into a directory and go into it:
 
-        hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo
+        git clone https://github.com/osrf/gazebo /tmp/gazebo
         cd /tmp/gazebo
 
-     **Note:** the `default` branch is the development branch where
+     **Note:** the `master` branch is the development branch where
 you'll find the bleeding edge code, your cloned repository should be on this
 branch by default but we recommend you switch to the `gazebo6` branch if you
 desire more stability
@@ -256,7 +256,7 @@ git clone https://github.com/ros/catkin.git
 git clone https://github.com/bulletphysics/bullet3.git
 git clone https://github.com/dartsim/dart.git
 git clone https://github.com/osrf/sdformat
-hg clone https://bitbucket.org/osrf/gazebo
+git clone https://github.com/osrf/gazebo
 ~~~
 
 Checkout the appropriate branch for each repository.
@@ -264,7 +264,7 @@ For example, gazebo5 doesn't support dart5.
 
 ~~~
 cd ${WS}/src/gazebo
-hg up default
+git checkout master
 cd ${WS}/src/dart
 git checkout release-5.0
 ~~~

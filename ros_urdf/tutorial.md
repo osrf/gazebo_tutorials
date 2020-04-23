@@ -267,7 +267,7 @@ Gazebo-specific tag in a secondary file called
 You can find the `<link>` and `<material>` elements there.
 
 The default available materials in Gazebo can be found in the Gazebo source code at
-[gazebo/media/materials/scripts/gazebo.material](https://bitbucket.org/osrf/gazebo/src/default/media/materials/scripts/gazebo.material).
+[gazebo/media/materials/scripts/gazebo.material](https://github.com/osrf/gazebo/blob/master/media/materials/scripts/gazebo.material).
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
@@ -358,7 +358,7 @@ List of elements that are individually parsed:
 <td rowspan="2">Contact stiffness k_p and damping k_d for rigid body contacts as defined by ODE
   (<a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE uses erp and cfm</a>
   but there is a
-  <a href="https://bitbucket.org/osrf/gazebo/src/b4d836c3ab3b0a/gazebo/physics/ode/ODEJoint.cc#ODEJoint.cc-982">mapping between erp/cfm and stiffness/damping</a>)
+  <a href="https://github.com/osrf/gazebo/blob/gazebo9/gazebo/physics/ode/ODEJoint.cc">mapping between erp/cfm and stiffness/damping</a>)
 </td>
 </tr>
 <tr>

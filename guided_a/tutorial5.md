@@ -12,11 +12,11 @@ Before starting to write code, it's a good idea to find out if anyone is
 already working on that, whether anyone has tried it before but failed,
 or simply if it makes sense.
 
-On Bitbucket, there is a list of "issues", which may be bugs or feature
+On GitHub, there is a list of "issues", which may be bugs or feature
 requests for each repository. Here are the links to the issue lists
 for each Gazebo-related repository:
 
-* [All Gazebo issues](https://bitbucket.org/osrf/gazebo/issues)
+* [All Gazebo issues](https://github.com/osrf/gazebo/issues)
 * [All SDFormat issues](https://github.com/osrf/sdformat/issues)
 * [All Ignition Math issues](https://github.com/ignitionrobotics/ign-math/issues)
 * [All Ignition Transport issues](https://github.com/ignitionrobotics/ign-transport/issues)
@@ -29,7 +29,7 @@ Among these issues, the Gazebo core team marks some of them with the label
 issues for first time contributors like you ;) Take a look at the list and see
 if you find anything that's interesting to you.
 
-* [Gazebo issues for new developers](https://bitbucket.org/osrf/gazebo/issues?q=issuefornewdevelopers)
+* [Gazebo issues for new developers](https://github.com/osrf/gazebo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [SDFormat issues for new developers](https://github.com/osrf/sdformat/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Math issues for new developers](https://github.com/ignitionrobotics/ign-math/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Transport issues for new developers](https://github.com/ignitionrobotics/ign-transport/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
@@ -81,9 +81,9 @@ branch for this code to live.
         cd ~/code/gazebo
 
 1. We had previously made some changes to files, right? You can check with the
-`hg diff` command, which shows the "difference" in your workspace:
+`git diff` command, which shows the "difference" in your workspace:
 
-        hg diff
+        git diff
 
 1. If you've been following these tutorials, all you'll have is:
 
@@ -105,18 +105,18 @@ branch for this code to live.
 1. We don't want that anymore, so let's clear our workspace with the following
 command:
 
-        hg up -C
+        git reset --hard
 
     Beware that all your changes are lost when you do this!
 
 1. Now if you check the diff again, there will be nothing!
 
 1. Now we're ready to create our branch. First let's take a look at which
-branch we're currently at with the `hg branch` command:
+branch we're currently at with the `git branch` command:
 
-        hg branch
+        git branch
 
-1. If you've been following the tutorials, you should now be at `default`.
+1. If you've been following the tutorials, you should now be at `gazebo9`.
 
 1. It was mentioned earlier that different Gazebo releases live in different
 branches.
@@ -126,21 +126,21 @@ branches.
     branch, make sure your changes won't break ABI or API.
 
  1. If you're adding a new feature, you probably want it to go into a future
-    release, so you can start from `default`.
+    release, so you can start from `master` (no longer available).
 
-    You can change to the target branch with the `hg up` command, for example:
+    You can change to the target branch with the `git checkout` command, for example:
 
-        hg up gazebo7
+        git checkout gazebo7
 
-1. To create a new branch we pass the branch name to the `hg branch` command.
-This creates a new branch as a copy of the branch we're currently in. For
-example:
+1. To create a new branch we pass the branch name to the `git checkout` command
+using the `-b` flag. This creates a new branch as a copy of the branch we're
+currently in and moves the workspace to that branch. For example:
 
-        hg branch <yourname>_first_issue
+        git checkout -b <yourname>_first_issue
 
-1. Check that you're on the new branch with `hg branch` again:
+1. Check that you're on the new branch with `git branch` again:
 
-        hg branch
+        git branch
 
 1. Now this is the part of the tutorial you've been waiting for! Here's where you
 will do your magic! Use the tools you were introduced to in this series to fix
@@ -154,7 +154,7 @@ to fix.
 doesn't get lost. You do this with the `hg commit` command, and pass it a
 custom message, for example:
 
-        hg commit -m "My first commit: started fixing a bug!"
+        git commit -am "My first commit: started fixing a bug!"
 
 1. Keep working on the issue and committing your progress until you're
 satisfied with the result. Remember the quality guidelines from previous
@@ -165,19 +165,15 @@ guide.
 much faster if you make sure everything is perfect before other people look at
 your code.
 
-1. Once you're done, push your commits to your online repository on Bitbucket
+1. Once you're done, push your commits to your online repository on GitHub
 as follows:
 
-        hg push --new
+        git push -u origin <yourname>_first_issue
 
-    > The `new` flag is needed because you created a new branch
-
-    > By default, mercurial will push to the repository you cloned from
-
-1. Fill in your username and password, then check on your Bitbucket repository
+1. Fill in your username and password, then check on your GitHub repository
 that the new branch is there.
 
-        https://bitbucket.org/<yourname>/gazebo/branches
+        https://github.com/<yourname>/gazebo/branches
 
 ## Make a pull request
 
@@ -185,15 +181,15 @@ It's time to put your code through code review. You will request that the
 Gazebo team pull your changes into the official repository through a
 "pull request". Here is the list of pull requests currently open for Gazebo:
 
-[https://bitbucket.org/osrf/gazebo/pull-requests](https://bitbucket.org/osrf/gazebo/pull-requests)
+[https://github.com/osrf/gazebo/pulls](https://github.com/osrf/gazebo/pulls)
 
 It's a good idea to take a look at a couple of [pull requests which have
-been accepted](https://bitbucket.org/osrf/gazebo/pull-requests/?state=MERGED)
+been accepted](https://github.com/osrf/gazebo/pulls?q=is%3Apr+is%3Amerged)
 in the past so you get an idea of how the process works.
 
 You can create a pull request for Gazebo on this link:
 
-[https://bitbucket.org/osrf/gazebo/pull-requests/new](https://bitbucket.org/osrf/gazebo/pull-requests/new)
+[https://github.com/osrf/gazebo/pulls/new](https://github.com/osrf/gazebo/pulls/new)
 
 Be sure to describe what you did, refer the issue you're fixing, and add any
 images or other things which you think may help the reviewers get a good

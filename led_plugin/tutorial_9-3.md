@@ -5,7 +5,7 @@
 LedPlugin is a [model plugin](/tutorials?tut=plugins_model&cat=write_plugin) included with gazebo that synchronously flashes and dims light and visual objects on a model. By giving parameters to the plugin, you can choose which lights and visuals to blink, and you can also specify the duration and interval time of flashing for each of lights. By inheriting this plugin, you can also use internal features, e.g., dynamically turning the lights on/off.
 
 # Usage and Plugin Parameters
-Insert your plugin block with the `filename` attribute set to `libLedPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://bitbucket.org/osrf/gazebo/raw/gazebo9/worlds/led_plugin_demo.world)), the model has two links each of which has two light elements.
+Insert your plugin block with the `filename` attribute set to `libLedPlugin.so` within the `<model>` element. In the following example (the world file is available [here](https://github.com/osrf/gazebo/raw/gazebo9/worlds/led_plugin_demo.world)), the model has two links each of which has two light elements.
 
 This plugin inherits from [FlashLightPlugin](/tutorials?tut=flashlight_plugin&cat=plugins), so it takes the same parameters as the base plugin does. The difference is that, when you place a `<visual>` object with the name of the `<light>` object under the same `<link>` object, it will blink at the same timing.
 

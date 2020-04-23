@@ -4,7 +4,7 @@
 please visit their [website](http://playerstage.sourceforge.net) for more
 information.
 
-This tutorial covers connecting the position2d Player interfaces to Gazebo. 
+This tutorial covers connecting the position2d Player interfaces to Gazebo.
 
 Create a working directory
 
@@ -14,10 +14,10 @@ cd; mkdir gazebo_position2d; cd gazebo_position2d
 
 # Player Config
 
-Copy the config script below into a file called `position2d.cfg`. The following script is also accessible via this [link](https://bitbucket.org/osrf/gazebo/raw/default/examples/player/position2d/position2d.cfg).
+Copy the config script below into a file called `position2d.cfg`. The following script is also accessible via this [link](https://github.com/osrf/gazebo/raw/master/examples/player/position2d/position2d.cfg).
 
 <include
-src='https://bitbucket.org/osrf/gazebo/raw/default/examples/player/position2d/position2d.cfg'/>
+src='https://github.com/osrf/gazebo/raw/master/examples/player/position2d/position2d.cfg'/>
 
 # Run
 

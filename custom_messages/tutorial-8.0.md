@@ -22,7 +22,7 @@ code for this plug-in lives at
 Feel free to submit issues or pull-requests for improvements. The original
 author of the code is Stephen Brawner.
 
-You can download the source code using mercurial:
+You can download the source code using git:
 
 ~~~
 git clone https://github.com/osrf/collision_map_creator_plugin
@@ -39,7 +39,7 @@ to make complicated messages. Gazebo contains a library of messages already.
 The installed messages can be found in
 /usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
 installs.  This tutorial makes use of the [vector2d.proto
-message](https://bitbucket.org/osrf/gazebo/src/gazebo8/gazebo/msgs/vector2d.proto?at=gazebo8).
+message](https://github.com/osrf/gazebo/blob/gazebo8/gazebo/msgs/vector2d.proto).
 
 You can see how a custom message is declared by looking into
 `~/collision_map_creator_plugin/msgs/collision_map_request.proto`.

@@ -36,9 +36,9 @@ available the simulation will run in CPU mode).
 
     ~~~
     [...]
-    cd ~; hg clone https://bitbucket.org/osrf/gazebo
+    cd ~; git clone https://github.com/osrf/gazebo
     cd ~/gazebo
-    hg up fluid_sph
+    git checkout fluid_sph
     [...]
     ~~~
 

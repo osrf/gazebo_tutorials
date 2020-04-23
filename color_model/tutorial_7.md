@@ -79,7 +79,7 @@ Those tags are:
 * [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_diffuse)
 * [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_specular)
     * **Note:** Specular intensity via SDF is currently not functioning in gazebo.
-      See [issue #2120](https://bitbucket.org/osrf/gazebo/issues/2120/specular-material-not-working).
+      See [issue #2120](https://github.com/osrf/gazebo/issues/2120).
 * [&lt;emissive&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_emissive)
 
 #### Ogre Material Script
@@ -104,7 +104,7 @@ In gazebo 8+ it will be displayed with gray diffuse and ambient components, but 
 Wavefront obj color values are taken from the object's material: `Ka`, `Kd`, `Ks`, and `Ns`.
 See [this Wikipedia article](https://en.wikipedia.org/wiki/Wavefront_.obj_file) for more info about OBJ files.
 
-**Note:** OBJ materials may not [display correctly in versions earlier than gazebo 8](https://bitbucket.org/osrf/gazebo/issues/2455/wavefront-obj-wrong-normals-and-material).
+**Note:** OBJ materials may not [display correctly in versions earlier than gazebo 8](https://github.com/osrf/gazebo/issues/2455/).
 
 ## About Textures
 Textures map an image onto a shape.

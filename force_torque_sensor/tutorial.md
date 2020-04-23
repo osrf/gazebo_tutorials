@@ -72,7 +72,7 @@ torqueJoint01_x = r X R
                 = -147 Nm
 ```
 
-**Note: Measurements near joint limits may jump depending on physics engine parameters. See [issue #2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
+**Note: Measurements near joint limits may jump depending on physics engine parameters. See [issue #2209](https://github.com/osrf/gazebo/issues/2209)**
 
 # Understanding the Force/Torque Sensor
 

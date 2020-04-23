@@ -6,9 +6,9 @@ This tutorial shows how to use the Static Map world plugin, supplied by Gazebo, 
 
 # Example World
 
-To try out this plugin, download and save [this world file](https://bitbucket.org/osrf/gazebo/raw/462957509d71f7bf1dd0f981950a53a097cba9ae/worlds/static_map_plugin.world) as `static_map_plugin.world`:
+To try out this plugin, download and save [this world file](https://github.com/osrf/gazebo/raw/gazebo9/worlds/static_map_plugin.world) as `static_map_plugin.world`:
 
-<include lang='xml' src='https://bitbucket.org/osrf/gazebo/raw/462957509d71f7bf1dd0f981950a53a097cba9ae/worlds/static_map_plugin.world'/>
+<include lang='xml' src='https://github.com/osrf/gazebo/raw/gazebo9/worlds/static_map_plugin.world'/>
 
 The example world contains only a sun and the Static Map plugin. A `ground_plane` model is not needed as the plugin will be generating and inserting the map model into the world at run time. Before launching this world, you will need an API key. Since we are using the Google Static Map API service, you can get yourself a [Google API key](https://developers.google.com/maps/documentation/static-maps/get-api-key).
 

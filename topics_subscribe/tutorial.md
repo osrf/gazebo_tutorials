@@ -28,8 +28,8 @@ called `listener` at your home directory and then compile the example:
 ~~~
 mkdir ~/listener
 cd ~/listener
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
+wget https://github.com/osrf/gazebo/raw/master/examples/stand_alone/listener/listener.cc
+wget https://github.com/osrf/gazebo/raw/master/examples/stand_alone/listener/CMakeLists.txt
 mkdir build
 cd build
 cmake ..

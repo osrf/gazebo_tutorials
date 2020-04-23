@@ -53,7 +53,7 @@ for floor requests on the `~/elevator` topic.
 
 # Example
 
-A complete [example world](https://bitbucket.org/osrf/gazebo/src/default/worlds/elevator.world) is distributed with Gazebo. You can run this
+A complete [example world](https://github.com/osrf/gazebo/blob/master/worlds/elevator.world) is distributed with Gazebo. You can run this
 world using the following command:
 
 ~~~

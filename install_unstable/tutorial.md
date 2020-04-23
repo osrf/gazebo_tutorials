@@ -80,7 +80,7 @@ Nightly use the following versioning scheme: `{current_released_version}+hg{date
 
  * `date`: timestamp YYYY-MM-DD
 
- * `hash`: mercurial hash corresponding to code HEAD used in the nightly build.
+ * `hash`: git hash corresponding to code HEAD used in the nightly build.
     Used for information proposes.
 
  * `nightly_revision`:  revision number to apply to the nightly. It is also
