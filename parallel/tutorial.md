@@ -111,9 +111,9 @@ Threading is enabled using SDFormat parameters:
 These flags have been added to [physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
 in several world files on the `diagnostics_scpeters` branch of gazebo:
 
-* [test/worlds/revolute\_joint\_test.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/test/worlds/revolute_joint_test.world#cl-12)
-* [worlds/pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/pr2.world#cl-12)
-* [worlds/dual_pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/dual_pr2.world#cl-12)
+* [test/worlds/revolute\_joint\_test.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/test/worlds/revolute_joint_test.world#L12)
+* [worlds/pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/pr2.world#L12)
+* [worlds/dual_pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/dual_pr2.world#L12)
 
 Simulate two pr2 robots without threading:
 

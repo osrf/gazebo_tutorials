@@ -84,7 +84,7 @@ that branch:
 1. Now let's "pull" the latest changes from the OSRF repository using the
 `git pull` command:
 
-        git pull https://bitbucket.org/osrf/gazebo
+        git pull https://github.com/osrf/gazebo
 
 1. Now your local branch is in sync with the official repository. Let's build
 and install Gazebo before making any changes:

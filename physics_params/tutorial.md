@@ -296,7 +296,7 @@ Valid values of the `friction_model` include:
     by choosing a friction direction parallel to the linear velocity
     at the contact point.
     Only the parameter `<mu>` is used.
-    See [gazebo pull request 1522](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1522)
+    See [gazebo pull request 1522](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/1522)
     for the implementation of this feature.
 
 The names of the friction cone and friction pyramid models derives from a

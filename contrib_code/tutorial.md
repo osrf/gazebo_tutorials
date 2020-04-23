@@ -28,7 +28,7 @@ well to other repositories maintained by OSRF.
 1. [Fork Gazebo](https://github.com/osrf/gazebo/fork)
 > This will create your own personal copy of Gazebo. All of your development should take place in your fork.
 
-1. Work out of a branch: `git branch my_new_branch_name; git checkout my_new_branch_name`
+1. Work out of a branch: `git checkout -b my_new_branch_name`
 > Always work out of a new branch, never off of master. This is a good habit to get in, and will make your life easier.
 
 1. Choose a base branch.
@@ -62,11 +62,11 @@ well to other repositories maintained by OSRF.
 1. Small pull requests
 > A large pull request is hard to review, and will take a long time. It is worth your time to split a large pull request into multiple smaller pull requests. For reference, here are a few examples:
 >
-> [Small, very nice](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1732)
+> [Small, very nice](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/1732)
 >
-> [Medium, still okay](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/1700/)
+> [Medium, still okay](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/1700/)
 >
-> [Too large](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-request/30)
+> [Too large](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/30)
 
 1. [Pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
 > Submit a pull request from your GitHub fork when you are ready.
@@ -109,16 +109,16 @@ check must pass before continuing to the next step.
 In general, we follow [Google's style guide](https://google.github.io/styleguide/cppguide.html). However, we add in some extras.
 
 1. **This pointer**
-> All class attributes and member functions must be accessed using the `this->` pointer. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#cl-40).
+> All class attributes and member functions must be accessed using the `this->` pointer. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#L40).
 
 1. **Underscore function parameters**
-> All function parameters must start with an underscore. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#cl-77).
+> All function parameters must start with an underscore. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#L77).
 
 1. **Do not cuddle braces**
-> All braces must be on their own line. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#cl-131).
+> All braces must be on their own line. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#L131).
 
 1. **Multi-line code blocks**
-> If a block of code spans multiple lines and is part of a flow control statement, such as an `if`, then it must be wrapped in braces. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#cl-249)
+> If a block of code spans multiple lines and is part of a flow control statement, such as an `if`, then it must be wrapped in braces. Here is an [example](https://github.com/osrf/gazebo/blob/master/gazebo/physics/Base.cc#L249)
 
 1. **++ operator**
 > This occurs mostly in `for` loops. Prefix the `++` operator, which is [slightly more efficient than postfix in some cases](http://programmers.stackexchange.com/questions/59880/avoid-postfix-increment-operator).

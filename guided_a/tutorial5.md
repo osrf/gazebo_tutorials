@@ -132,15 +132,11 @@ branches.
 
         git checkout gazebo7
 
-1. To create a new branch we pass the branch name to the `git branch` command.
-This creates a new branch as a copy of the branch we're currently in. For
-example:
+1. To create a new branch we pass the branch name to the `git checkout` command
+using the `-b` flag. This creates a new branch as a copy of the branch we're
+currently in and moves the workspace to that branch. For example:
 
-        git branch <yourname>_first_issue
-
-1. That created a branch but we're not at that branch yet. To move there do:
-
-        git checkout <yourname>_first_issue
+        git checkout -b <yourname>_first_issue
 
 1. Check that you're on the new branch with `git branch` again:
 
