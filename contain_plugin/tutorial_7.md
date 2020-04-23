@@ -73,7 +73,7 @@ Make sure to run `source <install_path>/share/gazebo/setup.sh` before extending 
 
 A ContainPlugin instance is configured to watch when a sphere enters a box below the lamp post.
 When the sphere rolls into or out of the box ContainPlugin will publish a message on the `contain` topic.
-<include lang='xml' from="/<plugin name='ContainPlugin'/" to="/    <\/pluign>/" src='https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world'/>
+<include lang='xml' from="/<plugin name='ContainPlugin'/" to="/    <\/plugin>/" src='https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/contain_example.world'/>
 
 This custom plugin receives messages from ContainPlugin, and turns the light on or off.
 <include lang='c++' from="/#include/" to="/}  // namespace gazebo/" src='https://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/trigger_light/TurnOnLightPlugin.cpp'/>

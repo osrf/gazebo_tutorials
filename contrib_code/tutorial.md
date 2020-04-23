@@ -28,7 +28,7 @@ well to other repositories maintained by OSRF.
 1. [Fork Gazebo](https://github.com/osrf/gazebo/fork)
 > This will create your own personal copy of Gazebo. All of your development should take place in your fork.
 
-1. Work out of a branch: `git branch my_new_branch_name`
+1. Work out of a branch: `git branch my_new_branch_name; git checkout my_new_branch_name`
 > Always work out of a new branch, never off of master. This is a good habit to get in, and will make your life easier.
 
 1. Choose a base branch.
