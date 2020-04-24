@@ -221,7 +221,7 @@ Save this image as `head_texture.png`.
 
 [[file:files/head_texture.png|256]]
 
-[Download and save this Collada file as head.dae](http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/collada.dae).
+[Download and save this Collada file as head.dae](http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/head.dae).
 
 This collada file references an image to use as a texture.
 We need to double check that the paths are what we want them to be.

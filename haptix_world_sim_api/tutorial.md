@@ -64,9 +64,9 @@ it comes into contact with other objects:
 
 Download tutorial files:
 
- - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
+ - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/master/haptix_world_sim_api/files/custom_haptix.world)
 
- - [custom_world.m](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
+ - [custom_world.m](https://github.com/osrf/gazebo_tutorials/blob/master/haptix_world_sim_api/files/custom_world.m)
 
 # Haptix C-API Example
 
@@ -85,9 +85,9 @@ Build `custom_world.c` as you would with any Haptix C API code as shown in [Comp
 
 Download tutorial files:
 
- - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
+ - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/master/haptix_world_sim_api/files/custom_haptix.world)
 
- - [custom_world.c](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
+ - [custom_world.c](https://github.com/osrf/gazebo_tutorials/blob/master/haptix_world_sim_api/files/custom_world.c)
 
 # Start Gazebo handsim simulation
 
