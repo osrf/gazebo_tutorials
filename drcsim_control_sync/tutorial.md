@@ -36,16 +36,16 @@ export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 roscreate-pkg control_synchronization_tutorial drcsim_gazebo
 ~~~
 
-Copy the [launch file with control synchronization parameters](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch) into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
+Copy the [launch file with control synchronization parameters](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_control_sync/files/atlas_sync.launch) into a file named `~/ros/control_synchronization_tutorial/atlas_sync.launch`:
 
-<include lang="xml" src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/atlas_sync.launch' />
+<include lang="xml" src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_control_sync/files/atlas_sync.launch' />
 
 ## Mock-Controller Node Setup
 
 
-Download [my\_atlas\_controller.cpp](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp) into  `~/ros/control_synchronization_tutorial/my_atlas_controller.cpp`. This file contains the following code:
+Download [my\_atlas\_controller.cpp](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_control_sync/files/my_atlas_controller.cpp) into  `~/ros/control_synchronization_tutorial/my_atlas_controller.cpp`. This file contains the following code:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_control_sync/files/my_atlas_controller.cpp' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_control_sync/files/my_atlas_controller.cpp' />
 
 In this example, robot states are received by `SetAtlasState()` callback when new messages arrive over the wire (ROS topic `/atlas/atlas_state`).  A separate worker thread `Work()` is expected to independently update and publish [`AtlasCommand`](https://bitbucket.org/osrf/drcsim/src/default/atlas_msgs/msg/AtlasCommand.msg?at=default). The published command contains an arbitrarily defined joint trajectory with `desired_controller_period_ms` set to 5ms (to be enforced in simulation-time).  If executed successfully, the robot will thrash around on the ground, and the age of received joint command should never exceed 5ms (simulation-time) old.
 

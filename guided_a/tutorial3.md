@@ -48,7 +48,7 @@ distributed with Gazebo.
 * `worlds`: contains world files which are installed and distributed with
 Gazebo. Note that there isn't an equivalent directory for models, as models are
 hosted on a separate repository,
-[gazebo_models](https://bitbucket.org/osrf/gazebo_models/).
+[gazebo_models](https://github.com/osrf/gazebo_models/).
 
 * `examples`: contains example plugins and stand-alone programs which are not
 installed with Gazebo, but can be used as references in tutorials.

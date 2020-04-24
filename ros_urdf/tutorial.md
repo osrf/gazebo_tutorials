@@ -516,7 +516,7 @@ If you have a common robot that other's might want to use in Gazebo,
 you are encouraged to add your URDF to the
 [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
 It is an online server that Gazebo connects to to pull down models from the internet.
-Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models).
+Its Mercurial repository is located on [GitHub](https://github.com/osrf/gazebo_models).
 See [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
 documentation for how to submit a pull request to have your robot added to the database.
 

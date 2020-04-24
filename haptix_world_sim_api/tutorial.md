@@ -21,7 +21,7 @@ The documentation for building a Gazebo world using [SDF format](http://www.sdfo
 
 First, build a world using SDF:
 
-<include lang='xml' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/> 
+<include lang='xml' src='https://github.com/osrf/gazebo_tutorials/raw/c1710212bfcc1a11594a9280d4a7db01c3e5de15/haptix_world_sim_api/files/custom_haptix.world'/> 
 
 Note that this world file is very similar to the default [arat.world](https://bitbucket.org/osrf/handsim/src/62b1deba4ab2f82b7910beb959042212c3c9bfae/worlds/arat.world?at=default), with the main difference being the addition of the `sphere_visual_model`:
 
@@ -58,15 +58,15 @@ Next, write a simple Octave/Matlab to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-<include lang='matlab' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/>
+<include lang='matlab' src='https://github.com/osrf/gazebo_tutorials/raw/2d9132fe45f8b938ad94c3db871f1109db4bd40f/haptix_world_sim_api/files/custom_world.m'/>
 
 ## Get the code:
 
 Download tutorial files:
 
- - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
+ - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
 
- - [custom_world.m](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
+ - [custom_world.m](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.m)
 
 # Haptix C-API Example
 
@@ -77,7 +77,7 @@ and write a simple C code to sense contact state on the visual
 sphere model, and change the color of the sphere from green to red when
 it comes into contact with other objects:
 
-<include lang='c' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/3ae012b18a18195648635c412336d5f396bea426/haptix_world_sim_api/files/custom_world.c'/> 
+<include lang='c' src='https://github.com/osrf/gazebo_tutorials/raw/3ae012b18a18195648635c412336d5f396bea426/haptix_world_sim_api/files/custom_world.c'/> 
 
 Build `custom_world.c` as you would with any Haptix C API code as shown in [Compile section under the Haptix C API tutorial](http://gazebosim.org/tutorials?tut=haptix_comm&cat=haptix#Compileyourcontroller).
 
@@ -85,9 +85,9 @@ Build `custom_world.c` as you would with any Haptix C API code as shown in [Comp
 
 Download tutorial files:
 
- - [custom_haptix.world](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
+ - [custom_haptix.world](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_haptix.world)
 
- - [custom_world.c](https://bitbucket.org/osrf/gazebo_tutorials/src/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
+ - [custom_world.c](https://github.com/osrf/gazebo_tutorials/blob/haptix_world_sim_api/haptix_world_sim_api/files/custom_world.c)
 
 # Start Gazebo handsim simulation
 

@@ -60,7 +60,7 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
         npm run deploy --- -m
 
     > Note: the `-m` flag tells the deploy script to grab all the models from the
-     [model database](https://bitbucket.org/osrf/gazebo_models/) and any other
+     [model database](https://github.com/osrf/gazebo_models/) and any other
      models in your `GAZEBO_MODEL_PATH`. For all subsequent builds, the `-m` flag
      will not be needed.
 

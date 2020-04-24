@@ -13,11 +13,11 @@ please upload and maintain models that you create and use.
 
 ## The Model Database Repository
 
-The model database is a bitbucket repository found [here](https://bitbucket.org/osrf/gazebo_models).
+The model database is a GitHub repository found [here](https://github.com/osrf/gazebo_models).
 
 You can  clone the repository using:
 
-        hg clone https://bitbucket.org/osrf/gazebo_models
+        git clone https://github.com/osrf/gazebo_models
 
 
 ## Model Database Structure
@@ -169,7 +169,7 @@ model.sdf.erb > model.sdf`) and the final `model.sdf` file must be uploaded
 together with the `model.sdf.erb` (this one only for reference).
 
 Examples of `sdf.erb` files are available in the
-[gazebo_models repository](https://bitbucket.org/osrf/gazebo_models/src)
+[gazebo_models repository](https://github.com/osrf/gazebo_models)
 (some of them use the deprecated suffix `.rsdf`). An easy ERB file is the
 [flocking.world.erb](https://github.com/osrf/gazebo/blob/gazebo9/worlds/flocking.world.erb)
 which uses a simple loop.

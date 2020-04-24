@@ -22,9 +22,9 @@ Once the mesh has been properly prepared, export it as a Collada file. This form
 
 # Test the Mesh ###
 
-The easiest way to test a mesh is to create a simple world file [my_mesh.world](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/import_mesh/files/my_mesh.world) that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
+The easiest way to test a mesh is to create a simple world file [my_mesh.world](http://github.com/osrf/gazebo_tutorials/raw/master/import_mesh/files/my_mesh.world) that loads the mesh. Replace `my_mesh.dae` with the actual filename of the mesh.
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/import_mesh/files/my_mesh.world' />
+<include from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/master/import_mesh/files/my_mesh.world' />
 
 Then just launch Gazebo in the directory where is the file:
 

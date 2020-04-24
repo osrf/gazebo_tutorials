@@ -20,9 +20,9 @@ mkdir joint_event
 cd joint_event
 ~~~
 
-Copy the world code and save it as `joint_event.world` (or download it from [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world)):
+Copy the world code and save it as `joint_event.world` (or download it from [here](https://github.com/osrf/gazebo_tutorials/raw/master/joint_events/joint_event.world)):
 
-<include lang="sdf" src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world' />
+<include lang="sdf" src='https://github.com/osrf/gazebo_tutorials/raw/master/joint_events/joint_event.world' />
 
 The relevant parts are the following:
 

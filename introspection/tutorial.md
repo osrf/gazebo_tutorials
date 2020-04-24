@@ -57,9 +57,9 @@ cd ~/gazebo_introspection_tutorial
 Download the code for the plugin, the watcher program and a `CMakeLists.txt` file:
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/CMakeLists.txt
+wget http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/introspectable_plugin.cc
+wget http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc
+wget http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/CMakeLists.txt
 ~~~
 
 Let's compile the code:
@@ -79,7 +79,7 @@ Download a world file that will load your world plugin:
 
 ~~~
 cd ~/gazebo_introspection_tutorial
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/empty.world
+wget http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/empty.world
 ~~~
 
 Start gazebo:
@@ -130,7 +130,7 @@ time and the counter.
 
 First, let's take a look at the `introspectable_plugin`:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/introspectable_plugin.cc' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/introspectable_plugin.cc' />
 
 On `Load()`, we connect the world update event with our `OnUpdate()` function.
 The rest of the code in `Load()` is registering the counter in the
@@ -149,7 +149,7 @@ freedom to fill this function with any code that you need.
 
 Now, let's study the watcher program:
 
-<include from='/  \/\/ Use the introspection service/' to='/      std::chrono::seconds\(2\)\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  \/\/ Use the introspection service/' to='/      std::chrono::seconds\(2\)\);/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>
 
 This executable is in charge of the subscription to a specific set of items that
 are introspectable. We created the [`IntrospectionClient` class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionClient.html) to help all the
@@ -157,18 +157,18 @@ clients of the introspection service. As you can see, we instantiate one object
 of type `IntrospectionClient`, and then, we wait for the introspection manager to
 come online.
 
-<include from='/  \/\/ Pick up the first manager/' to='/managerIds.begin\(\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  \/\/ Pick up the first manager/' to='/managerIds.begin\(\);/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>
 
 In theory, we could have multiple introspection managers running, although in
 the case of Gazebo we will only have one. We're working under this assumption,
 so we'll save the Id of the first introspection manager detected.
 
-<include from='/  \/\/ sim_time is a pre-registered/' to='/  \/\/ The variables to watch are registered with the manager/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  \/\/ sim_time is a pre-registered/' to='/  \/\/ The variables to watch are registered with the manager/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>
 
 This code block performs a sanity check to make sure that both items are
 registered in the introspection manager.
 
-<include from='/  \/\/ Create a filter for watching the items/' to='/waitForShutdown\(\);/' src="http://bitbucket.org/osrf/gazebo_tutorials/raw/default/introspection/files/watcher.cc"/>
+<include from='/  \/\/ Create a filter for watching the items/' to='/waitForShutdown\(\);/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>
 
 This is the part where we notify our manager that we're interested in a set of
 items (`simTime` and `counter`). `filterId` and `topic` are output variables. After

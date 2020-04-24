@@ -5,14 +5,14 @@ This tutorial describes how to modify an existing tutorial or add a new tutorial
 ### Tutorial source code
 
 All tutorials exist in a Bitbucket repository:
-[https://bitbucket.org/osrf/gazebo_tutorials](https://bitbucket.org/osrf/gazebo_tutorials).
+[https://github.com/osrf/gazebo_tutorials](https://github.com/osrf/gazebo_tutorials).
 
 This repository contains a `manifest.xml` that holds meta-information about
 the tutorials, and a set of directories that hold the tutorial contents.
 
 All changes to the set of tutorials will use the
-[pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new)
-feature on the [Bitbucket](https://bitbucket.org/osrf/gazebo_tutorials) site.
+[pull-request](https://github.com/osrf/gazebo_tutorials/pull-request/new)
+feature on the [Bitbucket](https://github.com/osrf/gazebo_tutorials) site.
 
 ### Modify a tutorial
 
@@ -34,7 +34,7 @@ Follow these steps to change an existing tutorial.
 
 The steps for creating a new tutorial are similar to those for modifying a tutorial.
 
-1. [Fork](https://bitbucket.org/osrf/gazebo_tutorials/fork) the gazebo_tutorials repository.
+1. [Fork](https://github.com/osrf/gazebo_tutorials/fork) the gazebo_tutorials repository.
 
 1. Add a new top-level directory to hold the contents of your tutorial.
 
@@ -58,7 +58,7 @@ The steps for creating a new tutorial are similar to those for modifying a tutor
      
 1. Add the new tutorial to an existing `<category>`, located toward the bottom of the `manifest.xml` file. Create a new category if you tutorial does not belong in an existing category. 
 
-1. Create a [pull-request](https://bitbucket.org/osrf/gazebo_tutorials/pull-request/new) back to the gazebo_tutorials repository.
+1. Create a [pull-request](https://github.com/osrf/gazebo_tutorials/pull-request/new) back to the gazebo_tutorials repository.
 
 1. Your pull-request will be reviewed, during which time you may be asked to make changes.
 

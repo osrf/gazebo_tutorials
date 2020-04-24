@@ -20,12 +20,12 @@ If no default physics profile is set, Gazebo will choose the first one. If
 multiple default profiles are set, Gazebo will choose the first set as default.
 
 In the following world example
-([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world)),
+([downloadable here](https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/preset_example_sdf1_6.world)),
 the `ode_200iters` profile is set as the default, and the `ode_70iters` and `ode_500iters`
 profiles will be available via the C++ API or the `gz` command line tool.
 The following is an excerpt from the downloadable world example that shows the values for these profiles.
 
-<include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world'/>
+<include from=' <sdf version="1.6">' to='<!-- end physics presets, models and other world properties go here --> ' src='https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/preset_example_sdf1_6.world'/>
 
 ## C++ API
 If you are writing a plugin that switches between profiles, you can use the C++
@@ -116,12 +116,12 @@ gz physics -o ode_70iters
 # Example
 
 Download the
-[world file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/preset_example_sdf1_6.world)
+[world file](https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/preset_example_sdf1_6.world)
 `preset_example_sdf1_6.world` (same as the SDF example shown above) and the
-[bash script](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles_sdf1_6.sh)
+[bash script](https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/switch_profiles_sdf1_6.sh)
 `switch_profiles_sdf1_6.sh`.
 
-<include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/preset_manager/files/switch_profiles_sdf1_6.sh'/>
+<include src='https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/switch_profiles_sdf1_6.sh'/>
 
 The script launches Gazebo first with the `ode_200iters` profile,
 then switches to `ode_70iters` and the simulation goes unstable.
