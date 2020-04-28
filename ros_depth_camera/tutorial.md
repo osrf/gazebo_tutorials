@@ -32,7 +32,7 @@ same for other depth cameras on the list.
 
 First, acquire the depth camera and modify its name. We've packaged the Kinect
 sensor from `gazebo_models` repository for you, so all you have to do is
-[download](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/ros_depth_camera/files/kinect.zip)
+[download](http://github.com/osrf/gazebo_tutorials/raw/master/ros_depth_camera/files/kinect.zip)
 and unzip it.
 
 Alternatively, you can follow the

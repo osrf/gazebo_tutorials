@@ -4,7 +4,7 @@
 
 This tutorials demonstrates how the user can create composite models directly
 from other models in the
-[Gazebo Model Database](https://bitbucket.org/osrf/gazebo_models/src)
+[Gazebo Model Database](https://github.com/osrf/gazebo_models)
 by using the
 [\<include\>](http://sdformat.org/spec?ver=1.5&elem=world#world_include)
 tags and
@@ -46,12 +46,12 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
     hokuyo laser forward and above the robot.  The `<uri>` block tells gazebo
     where to find the model inside its model database (note, you can see a
     listing of the model database uri used by these tutorials
-    [here](http://models.gazebosim.org/), and at the corresponding [mercurial
-    repository](https://bitbucket.org/osrf/gazebo_models)).
+    [here](http://models.gazebosim.org/), and at the corresponding [git
+    repository](https://github.com/osrf/gazebo_models)).
 
     The new `<joint>` connects the inserted hokuyo laser onto the chassis of the robot. The joint has and `<upper>` and `<lower>` limit of zero to prevent it from moving.
 
-    The `<child>` name in the joint is derived from the [hokuyo model's SDF](https://bitbucket.org/osrf/gazebo_models/src/6cd587c0a30e/hokuyo/model.sdf?at=default), which begins with:
+    The `<child>` name in the joint is derived from the [hokuyo model's SDF](https://github.com/osrf/gazebo_models/blob/master/hokuyo/model.sdf), which begins with:
 
     %%%
         <?xml version="1.0" ?>

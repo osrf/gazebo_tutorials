@@ -151,7 +151,7 @@ the issue you chose to address.
 to fix.
 
 1. After you've made a few changes, be sure to "commit" your progress so it
-doesn't get lost. You do this with the `hg commit` command, and pass it a
+doesn't get lost. You do this with the `git commit` command, and pass it a
 custom message, for example:
 
         git commit -am "My first commit: started fixing a bug!"

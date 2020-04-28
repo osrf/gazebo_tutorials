@@ -24,7 +24,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     update the contents to make the model body larger and re-position the wheels accordingly:
 
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/model.sdf' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/master/attach_gripper/files/model.sdf' />
 
     [[file:files/Mobile_base_large.png|640px]]
 
@@ -40,7 +40,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     populate it with the following contents:
 
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/model.config' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/master/attach_gripper/files/model.config' />
 
 1. Next, create the model SDF file:
 
@@ -48,7 +48,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     and populate with following contents:
 
-    <include src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/attach_gripper/files/manipulator.sdf' />
+    <include src='https://github.com/osrf/gazebo_tutorials/raw/master/attach_gripper/files/manipulator.sdf' />
 
 1. Make sure the `model.config` and `manipulator.sdf` files above are saved, start Gazebo and spawn the model above by using the **insert** tab and choosing **Simple Mobile Manipulator** model.  You should see something similar to:
 

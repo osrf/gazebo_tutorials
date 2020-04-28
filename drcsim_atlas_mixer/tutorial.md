@@ -109,12 +109,12 @@ You'll see the robot at a table with a drill on it:
 
 The `atlas_teleop.py` controller is configured with a YAML file.  Here's an example:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_atlas_mixer/files/drill.yaml' />
 
-Download [`drill.yaml`](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml).
+Download [`drill.yaml`](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_atlas_mixer/files/drill.yaml).
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_atlas_mixer/files/drill.yaml
+wget http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_atlas_mixer/files/drill.yaml
 ~~~
 
 We'll explain the format below. First, let's try it:
