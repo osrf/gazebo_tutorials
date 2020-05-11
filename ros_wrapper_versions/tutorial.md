@@ -19,7 +19,7 @@ repositories could end up in conflicts or other integration problems with ROS pa
 
 Gazebo is an independent project like boost, ogre or
 any other project used by ROS. Usually, the latest major version of gazebo
-available at the beginning of every ROS release cycle (for example `gazebo7`
+available at the beginning of every ROS release cycle (for example `gazebo11`
 for ROS Kinetic) is selected as the official one to be fully integrated and
 supported and will be kept during the whole life of the ROS distribution.
 
@@ -29,8 +29,8 @@ sections cover how to use ROS with different versions of Gazebo.
 
 Note that Gazebo ABI stability policy follows the
 [semantic versioning](http://semver.org/) philosophy, in which all versions
-that have the same major number (`gazebo_7.0.0`, `gazebo_7.1.0`,
-`gazebo_7.0.1`, ...) are binary compatible and thus interchangeable when using
+that have the same major number (`gazebo_11.0.0`, `gazebo_11.1.0`,
+`gazebo_11.0.1`, ...) are binary compatible and thus interchangeable when using
 the same ROS distro.
 
 ## Installing Gazebo
@@ -40,14 +40,15 @@ the same ROS distro.
 The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
 
  * ***packages.ros.org***
-  *  ROS Indigo: Gazebo 2.x
   *  ROS Kinetic: Gazebo 7.x
-  *  ROS Lunar: Gazebo 7.x
   *  ROS Melodic: Gazebo 9.x
+  *  ROS2 Dashing: Gazebo 9.x
+  *  ROS2 Eloquent: Gazebo 9.x
  * ***packages.osrfoundation.org***
   * gazebo 7.x series (package name `gazebo7`)
-  * gazebo 8.x series (package name `gazebo8`)
   * gazebo 9.x series (package name `gazebo9`)
+  * gazebo 10.x series (package name `gazebo10`)
+  * gazebo 11.x series (package name `gazebo11`)
 
 This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
 It can be installed from the ros repository.
@@ -55,12 +56,12 @@ It can be installed from the ros repository.
 ### Gazebo built from source
 
 If you have compiled a gazebo version from source, note that depending on the
-repository branch used (`gazebo7`,`gazebo8`,...) your gazebo will be
+repository branch used (`gazebo7`,`gazebo9`,...) your gazebo will be
 binary compatible with the `gazebo_ros_pkgs` (and all other ROS packages compiled
 on top of gazebo) only if the major version matches your local branch
 repository and the gazebo version used in your ROS distro.  For example, if you
-are compiling from gazebo branch `gazebo7`, you can use the `gazebo_ros_pkgs`
-present in Kinetic (which uses gazebo7 series).
+are compiling from gazebo branch `gazebo9`, you can use the `gazebo_ros_pkgs`
+present in Melodic (which uses gazebo9 series).
 
 Note that if you are using `default` branch, you are probably not binary
 compatible with any of the packages released, so you will need a catkin
@@ -72,35 +73,34 @@ For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
 
-### Melodic
+### ROS2 Eloquent
+ROS2 Eloquent hosts or use the 9.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 9.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo9`) and do ***not*** use the osrfoundation
+repository.
+
+### ROS2 Dashing
+ROS2 Dashing hosts or use the 9.x version of Gazebo.
+For a fully-integrated ROS system, we recommend using the 9.x version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo9`) and do ***not*** use the osrfoundation
+repository.
+
+### ROS1 Melodic
 ROS Melodic hosts or use the 9.x version of Gazebo.
 For a fully-integrated ROS system, we recommend using the 9.x version of
 Gazebo.  The way to proceed is just to use the ROS repository (it will
 automatically install `gazebo9`) and do ***not*** use the osrfoundation
 repository.
 
-### Lunar
-
-ROS Lunar hosts or use the 7.x version of Gazebo.
-For a fully-integrated ROS system, we recommend using the 7.x version of
-Gazebo.  The way to proceed is just to use the ROS repository (it will
-automatically install `gazebo7`) and do ***not*** use the osrfoundation
-repository.
-
-### Kinetic
+### ROS1 Kinetic
 
 ROS Kinetic hosts or use the 7.x version of Gazebo.
 For a fully-integrated ROS system, we recommend using the 7.x version of
 Gazebo.  The way to proceed is just to use the ROS repository (it will
 automatically install `gazebo7`) and do ***not*** use the osrfoundation
 repository.
-
-### Indigo
-
-ROS Indigo hosts the 2.x version of Gazebo.
-For a fully-integrated ROS system, we recommend using the 2.x version of Gazebo.
-The way to proceed is just to use the ROS repository (it will automatically install `gazebo2`)
- and do ***not*** use the osrfoundation repository.
 
 ## Using a specific Gazebo version with ROS
 ***Warning!: Using this option, you won't be able to use any ROS Ubuntu package
@@ -112,9 +112,20 @@ this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
+### Gazebo 11.x series
+
+The OSRF repository provides `-gazebo11-` versions of ROS/Melodic, ROS2/Dashing
+or ROS2/Eloquent gazebo wrappers (`gazebo11_ros_pkgs`) which are built on top of
+the `gazebo11` package.  The steps to use them are:
+
+ * Add the osrfoundation repository to your sources list.
+ * Install `ros-$ROS_DISTRO-gazebo11-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo11-ros-control`
+   from the osrfoundation repository, which will install the `gazebo11` package.
+ * Use catkin workspaces to compile the rest of the software used from source.
+
 ### Gazebo 9.x series
 
-The OSRF repository provides `-gazebo9-` versions of ROS/Kinetic or ROS/Lunar gazebo
+The OSRF repository provides `-gazebo9-` versions of ROS/Kinetic gazebo
 wrappers (`gazebo9_ros_pkgs`) which are built on top of the `gazebo9` package.
 The steps to use them are:
 
@@ -123,27 +134,6 @@ The steps to use them are:
    from the osrfoundation repository, which will install the `gazebo9` package.
  * Use catkin workspaces to compile the rest of the software used from source.
 
-### Gazebo 8.x series
-
-The OSRF repository provides `-gazebo8-` versions of ROS/Kinetic or ROS/Lunar gazebo
-wrappers (`gazebo8_ros_pkgs`) which are built on top of the `gazebo8` package.
-The steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo8-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo8-ros-control`
-   from the osrfoundation repository, which will install the `gazebo8` package.
- * Use catkin workspaces to compile the rest of the software used from source.
-
-### Gazebo 7.x series
-
-The OSRF repository provides `-gazebo7-` versions of ROS/Indigo gazebo wrappers
-(`gazebo7_ros_pkgs`) which are built on top of the `gazebo7` package.  The
-steps to use them are:
-
- * Add the osrfoundation repository to your sources list.
- * Install `ros-$ROS_DISTRO-gazebo7-ros-pkgs` and/or `ros-$ROS_DISTRO-gazebo7-ros-control`
-   from the osrfoundation repository, which will install the `gazebo7` package.
- * Use catkin workspaces to compile the rest of the software used from source.
 
 ## FAQ
 
@@ -152,27 +142,20 @@ steps to use them are:
 If you don't need ROS support, the recommended version is the latest released version that can be
  [installed using the osrfoundation repo](http://gazebosim.org/install).
 
-#### I need to use gazebo8/gazebo9 and ROS Kinetic/Lunar, what can I do?
+#### I need to use gazebo11 and ROS Melodic/Dashing/Eloquent, what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Kinetic package
 related to Gazebo from ROS deb repository. The way to go is to build them from
 source. Thanks to catkin workspaces this is quite easy to do.***
 
-If you need some features only present in versions 8.x or 9.x of Gazebo, there
-is a way of installing `gazebo8` or `gazebo9` and ROS Kinetic/Lunar. Please
-follow the instructions about how to use ROS with gazebo8/gazebo9 package which
+If you need some features only present in the version 11.x of Gazebo, there
+is a way of installing `gazebo11`and ROS Melodic/Dashing/Eloquent. Please
+follow the instructions about how to use ROS with gazebo11 package which
 are in this same document.
-
-#### I need to use gazebo7 and ROS Indigo, what can I do?
-***Warning!: Using this option, you won't be able to use any ROS Indigo package related to Gazebo from ROS deb repository. The way to go is to build them from source. Thanks to catkin workspaces this is quite easy to do.***
-
-If you need some features only present in version 7.x of Gazebo, there is a way
-of installing `gazebo7` and ROS Indigo.  Please follow the instructions about
-how to use ROS with gazebo7 which are in this same document.
 
 #### Some ROS packages conflict with GazeboX ROS Wrappers!
 
 Note that each ROS distribution is designed to be used with an specific version
-of Gazebo (`gazebo7` in Kinetic). When someone chooses to use a different version
+of Gazebo (`gazebo9` in Melodic). When someone chooses to use a different version
 of Gazebo than the one recommended in the ROS distribution, problems may appear
 and some of them could be unsolvable.
 
