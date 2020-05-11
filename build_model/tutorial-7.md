@@ -4,11 +4,11 @@ This tutorial describes the details of a _SDF Model Object_.
 
 SDF Models can range from simple shapes to complex robots. It refers to the `<model>` [SDF](http://gazebosim.org/sdf.html) tag, and is essentially a collection of links, joints, collision objects, visuals, and plugins. Generating a model file can be difficult depending on the complexity of the desired model. This page will offer some tips on how to build your models.
 
-# Components of a SDF Models
+# Components of SDF Models
 
 > **Links:** A link contains the physical properties of one body of the model. This can be a wheel, or a link in a joint chain. Each link may contain many collision and visual elements. Try to reduce the number of links in your models in order to improve performance and stability. For example, a table model could consist of 5 links (4 for the legs and 1 for the top) connected via joints. However, this is overly complex, especially since the joints will never move. Instead, create the table with 1 link and 5 collision elements.
 
->> **Collision:** A collision element encapsulates a geometry that is used to collision checking. This can be a simple shape (which is preferred), or a triangle mesh (which consumes greater resources). A link may contain many collision elements.
+>> **Collision:** A collision element encapsulates a geometry that is used for collision checking. This can be a simple shape (which is preferred), or a triangle mesh (which consumes greater resources). A link may contain many collision elements.
 
 >> **Visual:** A visual element is used to visualize parts of a link. A link may contain 0 or more visual elements.
 
@@ -52,8 +52,8 @@ Create the `box.sdf` model file
 gedit box.sdf
 ~~~
 
-Copy the following contents into [box.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/build_model/files/box.sdf):
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/build_model/files/box.sdf' />
+Copy the following contents into [box.sdf](http://github.com/osrf/gazebo_tutorials/raw/master/build_model/files/box.sdf):
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/build_model/files/box.sdf' />
 
 Note that the origin of the Box-geometry is at the geometric center of the box, so in order to have the bottom of the box flush with the ground plane, an origin of `<pose>0 0 0.5 0 0 0</pose>` is added to raise the box above the ground plane.
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.
@@ -61,7 +61,7 @@ Note that the origin of the Box-geometry is at the geometric center of the box, 
 
 ### Step 3: Add to the model SDF file
 
-With a working `.sdf` file, slowly start adding in more complexity. With each new addition, load the model using the graphical client to make sure your model is correct.
+With a working `.sdf` file, slowly start adding in more complexity.
 
 Here is a good order in which to add features:
 
@@ -72,3 +72,6 @@ Here is a good order in which to add features:
 1. Go to #1 until all links have been added.
 1. Add all joints (if any).
 1. Add all plugins (if any).
+
+With each new addition, load the model using the graphical client to make sure your model is correct.
+However, the `box.sdf` file alone isn't enough to be able to load the model into the graphical client. You must also setup your model directory correctly, which you will learn in the next tutorial: [Make a Mobile Robot](http://gazebosim.org/tutorials?cat=build_robot).

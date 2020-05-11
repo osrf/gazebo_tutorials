@@ -9,9 +9,9 @@ This sensor publishes force and torque readings to a topic.
 
 ### Create a world with a force/torque sensor
 Save this world as
-[`force_torque_tutorial.world`](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world).
+[`force_torque_tutorial.world`](https://github.com/osrf/gazebo_tutorials/raw/master/force_torque_sensor/files/force_torque_tutorial.world).
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/force_torque_sensor/files/force_torque_tutorial.world' />
+<include from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/master/force_torque_sensor/files/force_torque_tutorial.world' />
 
 ### Launch the  world
 Open a terminal and run this command:
@@ -72,7 +72,7 @@ torqueJoint01_x = r X R
                 = -147 Nm
 ```
 
-**Note: Measurements near joint limits may jump depending on physics engine parameters. See [issue #2209](https://bitbucket.org/osrf/gazebo/issues/2209)**
+**Note: Measurements near joint limits may jump depending on physics engine parameters. See [issue #2209](https://github.com/osrf/gazebo/issues/2209)**
 
 # Understanding the Force/Torque Sensor
 

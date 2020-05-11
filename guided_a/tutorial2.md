@@ -8,46 +8,46 @@ code running.
 
 ## Fork it!
 
-We previously showed that Gazebo's source code lives on a mercurial
-[repository](https://bitbucket.org/osrf/gazebo) on Bitbucket. But even though
+We previously showed that Gazebo's source code lives on a git
+[repository](https://github.com/osrf/gazebo) on GitHub. But even though
 everyone in the world is able to see and copy that code, only the Gazebo core
 team has write access to it.
 
 In order to modify the code, you'll need to get your own copy, which is called
 a "fork". You can fork Gazebo as follows:
 
-1. Click on [this link](https://bitbucket.org/osrf/gazebo/fork)
+1. Click on [this link](https://github.com/osrf/gazebo/fork)
 1. You can choose a custom name for the repository, but here we will leave the
 default value `gazebo`.
 1. After you finish the fork process, you should have a copy of Gazebo on
-`https://bitbucket.org/<yourname>/gazebo`.
+`https://github.com/<yourname>/gazebo`.
 
 > **Note**: Throughout these tutorials, substitute `<yourname>` with your
-Bitbucket account username.
+GitHub account username.
 
 ## Clone
 
 Great, now you have a copy of the code, but it's not very convenient to
 interact with it through the browser. You want to have it in your computer.
-You will use the mercurial command line tool to pull that code from the internet
+You will use the git command line tool to pull that code from the internet
 to your computer as follows:
 
-1. Make sure you have mercurial (`hg`) installed:
+1. Make sure you have git installed:
 
         sudo apt update
-        sudo apt install mercurial
+        sudo apt install git
 
 1. It's a good idea to create a directory to hold the source code, so:
 
         mkdir ~/code
         cd ~/code
 
-1. Now we use mercurial to "clone" our fork. What the clone command does is
+1. Now we use git to "clone" our fork. What the clone command does is
 copy all the code across all branches from the internet to your computer.
 Gazebo has a large codebase, so this process may take a while depending on
 your internet connection:
 
-        hg clone https://bitbucket.org/<yourname>/gazebo
+        git clone https://github.com/<yourname>/gazebo
 
 1. Now you should have a local copy of Gazebo under `~/code/gazebo`. Let's
 move to that folder and list its contents:
@@ -63,37 +63,32 @@ move to that folder and list its contents:
 
 Gazebo's code is organized into different branches with different purposes.
 
-1. Let's take a look at all existing branches using the mercurial command
+1. Let's take a look at all existing branches using the git command
 "branches":
 
         cd ~/code/gazebo
-        hg branches
+        git branch -a
 
 1. You'll see a long list which looks something like this:
 
-        gazebo7                    34485:8a11f7f5192d
-        harness_detach_race        34483:61e3130bc8ac
-        gazebo8                    34480:bec999d7b4f5
-        default                    34478:33a2f98c192b
-        contact_sensor_active      34442:6f5bbf8258d0
-        harness_attach_default     34441:3316f27cf2c8
-        ardupilot_merge_gazebo8    34419:1df2ecb57e53
-        collision_pose_noncanonical 34393:57c8ae067a61
-        wind_patch_8a              34372:e6e53633700a
-        issue_2049_7               34319:cc19fc0a7894
+        remotes/origin/2.1_abi_compat
+        remotes/origin/2014_copyright
+        remotes/origin/90_windows_patch_test
+        remotes/origin/DoNotLaunchMarkerManagerInServer
+        remotes/origin/FixODERevoluteJointInitialization
         ...
 
-1. On the left you have branch names, and on the right the id of the latest
-commit on that branch.
+1. Branches prefixed with `remotes/origin` come from the official OSRF repository.
 
 Most of the branches in Gazebo are branches where the core team is working
 on fixing bugs or adding new features. But a few branches have special meaning,
 these are:
 
-* `default`: This is the bleeding edge code where all new features are being
+* `master`: This is the bleeding edge code where all new features are being
 developed. You're automatically on this branch when you clone Gazebo. This
 is where new features and code that is incompatible with previous releases
-(i.e. breaks API/ABI) will go.
+(i.e. breaks API/ABI) will go. Since Gazebo 11 was the last release, the
+`master` branch no longer exists.
 
 * `gazebo<N>`: Here, `N` is a number representing a Gazebo release. For example,
 the code for the latest release of Gazebo 7 is found on branch `gazebo7`.
@@ -112,12 +107,12 @@ some special configuration, check out the full
 
 1. Setup keys and update
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
         sudo apt-get update
 
 1. Install dependencies
 
-        wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+        wget https://raw.githubusercontent.com/ignition-tooling/release-tools/master/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
         ROS_DISTRO=dummy . /tmp/dependencies.sh
         sudo apt-get install $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES)
 

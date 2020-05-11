@@ -3,9 +3,9 @@ While a camera outputs an image, a logical camera outputs model names and poses.
 It shows which models might be visible to a camera in the same location.
 
 # Example of a Logical Camera
-1. Download and save [this world.](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world)
+1. Download and save [this world.](http://github.com/osrf/gazebo_tutorials/raw/master/logical_camera_sensor/files/tutorial_logical_camera.world)
     
-    <include lang='xml' from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/logical_camera_sensor/files/tutorial_logical_camera.world'/>
+    <include lang='xml' from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/master/logical_camera_sensor/files/tutorial_logical_camera.world'/>
 
 1. Launch the world
         
@@ -109,7 +109,7 @@ The output of a logical camera may not include a model a normal camera would see
 
 # Getting Data
 There are two ways to get the data: directly from the sensor, or using gazebo transport.
-Both ways return a [LogicalCameraImage](https://bitbucket.org/osrf/gazebo/src/gazebo7/gazebo/msgs/logical_camera_image.proto).
+Both ways return a [LogicalCameraImage](https://github.com/osrf/gazebo/blob/gazebo7/gazebo/msgs/logical_camera_image.proto).
 
 ## Directly From The Sensor
 The data can be taken directly from the sensor.

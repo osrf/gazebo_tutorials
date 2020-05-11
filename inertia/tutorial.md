@@ -133,7 +133,7 @@ ranging from [1.604,1.618], which is close to the expected value.
 One thing to keep in mind is that duplicate faces within a mesh will affect
 the calculation of volume and moment of inertia.
 For example, consider another spherical mesh:
-[ball.dae](https://bitbucket.org/osrf/gazebo_models/raw/9f0a80a06cf3/robocup_3Dsim_ball/meshes/ball.dae).
+[ball.dae](https://github.com/osrf/gazebo_models/raw/master/robocup_3Dsim_ball/meshes/ball.dae).
 Meshlab gives the following output for this mesh:
 
     Mesh Bounding Box Size 1.923457 1.990389 1.967965

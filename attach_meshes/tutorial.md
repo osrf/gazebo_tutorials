@@ -45,7 +45,7 @@ The most common use case for a mesh is to create a realistic looking visual.
 
         ls -l ~/.gazebo/models/pioneer2dx/meshes/chassis.dae
 
-    If the mesh file does not exist, make Gazebo pull the model from the [Model Database](https://bitbucket.org/osrf/gazebo_models) by spawning the `Pioneer 2DX` model at least once in gazebo (under `Insert->http://gazebosim.org/models`).
+    If the mesh file does not exist, make Gazebo pull the model from the [Model Database](https://github.com/osrf/gazebo_models) by spawning the `Pioneer 2DX` model at least once in gazebo (under `Insert->http://gazebosim.org/models`).
 
     Or manually download the model files to your local cache:
 

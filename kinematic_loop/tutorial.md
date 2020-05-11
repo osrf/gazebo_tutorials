@@ -19,44 +19,44 @@ This is an SDFormat example of a 4-bar linkage connected to the ground at each e
 It has 4 revolute joints labeled joint\_A, joint\_B, joint\_C, and joint\_D
 and 3 links named link\_AB, link\_BC, and link\_CD.
 
-![screenshot of four\_bar_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar.png)
+![screenshot of four\_bar_sdf model](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar.png)
 
-The model files are in the [four\_bar_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_sdf)
+The model files are in the [four\_bar_sdf](https://github.com/osrf/gazebo_tutorials/blob/master/kinematic_loop/four_bar_sdf)
 folder.
 To use this model, create a folder `~/.gazebo/models/four_bar_sdf` and copy the
-[model.config](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.config)
+[model.config](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.config)
 and
-[model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
+[model.sdf](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf)
 to that folder.
 You can then insert the model into a simulation using the `Insert` panel
 in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2).
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
-[model.sdf.erb](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb).
+[model.sdf.erb](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb).
 The model.sdf can be generated from the template using the `erb` command: `erb -T 1 model.sdf.erb > model.sdf`.
 
 This allows geometric parameters to be defined in one place
 along with a helper function for computing the moment of inertia of a uniform box.
 
-<include lang='ruby' from='/  # Box dimensions/' to='/  # Points/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Box dimensions/' to='/  # Points/' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 The link parameters are stored in a dictionary named `boxes`:
 
-<include lang='ruby' from='/  # Points/' to='/  # Revolute/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Points/' to='/  # Revolute/' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 and the joint parameters are stored in a dictionary named `joints`:
 
-<include lang='ruby' from='/  # Revolute/' to='/  # end first ruby code block/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='ruby' from='/  # Revolute/' to='/  # end first ruby code block/' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
 A model template is then included that references the computed parameters
 for each link and joint:
 
-<include lang='xml' from='/.sdf version/' to='@/sdf.@' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf.erb' />
+<include lang='xml' from='/.sdf version/' to='@/sdf.@' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb' />
 
-The full [model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf)
+The full [model.sdf](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf)
 is instantiated from this template, as you can see in the snippet below:
 
-<include lang='xml' from='/    .link name="link_CD"./' to='/joint_B. type=.revolute../' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_sdf/model.sdf' />
+<include lang='xml' from='/    .link name="link_CD"./' to='/joint_B. type=.revolute../' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf' />
 
 
 # Split 4-bar linkage with an extra fixed joint
@@ -72,17 +72,17 @@ It has the same 4 revolute joints joint\_A, joint\_B, joint\_C, and joint\_D
 but with 4 links link\_AB, link\_BE, link\_EC, link\_CD
 and a fixed joint joint\_E.
 
-![screenshot of four\_bar\_split\_fixed_sdf model](https://bytebucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split.png)
+![screenshot of four\_bar\_split\_fixed_sdf model](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split.png)
 
-The SDFormat model files are in the [four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf)
+The SDFormat model files are in the [four\_bar\_split\_fixed_sdf](https://github.com/osrf/gazebo_tutorials/blob/master/kinematic_loop/four_bar_split_fixed_sdf)
 folder.
 To use this model, create a folder `~/.gazebo/models/four_bar_split_fixed_sdf` and copy the
-[model.config](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.config)
+[model.config](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_sdf/model.config)
 and
-[model.sdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf)
+[model.sdf](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_sdf/model.sdf)
 to that folder.
 You can also examine the
-[model template](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb)
+[model template](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_sdf/model.sdf.erb)
 created with embedded ruby to see how the model is constructed.
 
 The difference between the `four_bar_sdf` and `four_bar_split_fixed_sdf`
@@ -99,10 +99,10 @@ model templates is shown below:
 +  # O--->      B-----E----C
    #
    boxes = {}
- 
+
    boxes["AB"] = box_inertia(t, Y, t);
    boxes["AB"][:offset] = Vector[-t/2, -Y/2, 0]
- 
+
 -  boxes["BC"] = box_inertia(X, t, t);
 -  boxes["BC"][:offset] = Vector[X/2, -(Y+t/2), 0]
 +  # boxes["BC"] = box_inertia(X, t, t);
@@ -113,7 +113,7 @@ model templates is shown below:
 +
 +  boxes["EC"] = box_inertia(X/2, t, t);
 +  boxes["EC"][:offset] = Vector[X*3/4, -(Y+t/2), 0]
- 
+
    boxes["CD"] = box_inertia(t, Y, t);
    boxes["CD"][:offset] = Vector[X+t/2, -Y/2, 0]
 @@ -61,8 +67,8 @@
@@ -125,7 +125,7 @@ model templates is shown below:
 +  joints["B"][:child] = "link_BE"
 +  joints["B"][:pose] = Vector[-X/4, t/2, 0, 0, 0, 0]
    joints["B"][:axis] = Vector[0, 0, 1]
- 
+
    joints["D"] = {}
 @@ -75,11 +81,15 @@
    joints["C"] = {}
@@ -136,7 +136,7 @@ model templates is shown below:
 +  joints["C"][:child] = "link_EC"
 +  joints["C"][:pose] = Vector[X/4, t/2, 0, 0, 0, 0]
    joints["C"][:axis] = Vector[0, 0, 1]
- 
+
 -  # end first ruby code block
 +  joints["E"] = {}
 +  joints["E"][:type] = "fixed"
@@ -169,21 +169,21 @@ model templates is shown below:
 The revolute joints in the split 4-bar linkage can be modeled in URDF
 with the fixed joint added using a `<gazebo>` extension tag.
 This URDF model is in the
-[four\_bar\_split\_fixed_urdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf)
+[four\_bar\_split\_fixed_urdf](https://github.com/osrf/gazebo_tutorials/blob/master/kinematic_loop/four_bar_split_fixed_urdf)
 folder with
-[model.config](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.config)
+[model.config](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_urdf/model.config)
 and
-[model.urdf](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf)
+[model.urdf](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_urdf/model.urdf)
 files and the embedded ruby
-[model template](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
+[model template](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_urdf/model.urdf.erb).
 The model.urdf can be generated from the template using the erb command: `erb -T 1 model.urdf.erb > model.urdf`.
 Comparing this model with the
-[four\_bar\_split\_fixed_sdf](https://bitbucket.org/osrf/gazebo_tutorials/src/kinematic_loop/kinematic_loop/four_bar_split_fixed_sdf)
+[four\_bar\_split\_fixed_sdf](https://github.com/osrf/gazebo_tutorials/blob/master/kinematic_loop/four_bar_split_fixed_sdf)
 model provides a useful comparison of how coordinate frames are defined in SDFormat and URDF.
 
 The SDFormat fixed joint is
-[specified in gazebo tags](https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:158):
+[specified in gazebo tags](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_urdf/model.urdf?at=kinematic_loop&fileviewer=file-view-default#model.urdf-149:158):
 
-<include lang='xml' from='/  .!-- SDFormat/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/kinematic_loop/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
+<include lang='xml' from='/  .!-- SDFormat/' src='https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_split_fixed_urdf/model.urdf' />
 
 

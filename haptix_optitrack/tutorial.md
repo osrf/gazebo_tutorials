@@ -56,7 +56,7 @@ These spheres will be attached to the corners of the monitor associated with the
 [[file:files/monitor.png]]
 
 ## Configuring the Motive Project File
-If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop of the Windows machine. We are going to make a small modification to calibrate each component.
+If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://github.com/osrf/gazebo_tutorials/raw/master/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop of the Windows machine. We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
 Make sure Gazebo is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
@@ -75,7 +75,7 @@ Select "Data Streaming" under "View" in the top toolbar and check the box next t
 
 [[file:files/data_streaming.PNG]]
 
-Now, select "File", "Open", and select the project file you downloaded, [haptix_osrf.ttp](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_optitrack/files/haptix_osrf.ttp).
+Now, select "File", "Open", and select the project file you downloaded, [haptix_osrf.ttp](https://github.com/osrf/gazebo_tutorials/raw/master/haptix_optitrack/files/haptix_osrf.ttp).
 
 **Known bug with Motive: While running Motive on the Virtual Machine, make sure to enable "Broadcast Frame Data" before opening a project file! If you try to open the project file directly, Motive will crash.**
 

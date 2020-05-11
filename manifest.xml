@@ -88,6 +88,7 @@
       <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
       <markdown version="9.0">install_ubuntu/tutorial_9-0.md</markdown>
+      <markdown version="11.0">install_ubuntu/tutorial_11.0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
       <tags>
         <tag>install</tag>
@@ -98,6 +99,7 @@
     <tutorial title="Debian, Fedora, Arch or Gentoo" ref='install_other_linux'>
       <markdown version="4.0">install_other_linux/tutorial.md</markdown>
       <markdown version="5.0">install_other_linux/tutorial.md</markdown>
+      <markdown version="9.0">install_other_linux/tutorial-9.0.md</markdown>
       <description>
 	Installation instructions for major linux distributions (non Ubuntu). Currently,
 	Debian, Fedora, Arch Linux and Gentoo.
@@ -115,6 +117,7 @@
       <markdown version="7.0">install_on_mac/tutorial_7-0.md</markdown>
       <markdown version="8.0">install_on_mac/tutorial_8-0.md</markdown>
       <markdown version="9.0">install_on_mac/tutorial_9-0.md</markdown>
+      <markdown version="11.0">install_on_mac/tutorial_11-0.md</markdown>
       <description>Installation instructions for Mac installations using homebrew</description>
       <tags>
         <tag>install</tag>
@@ -212,7 +215,8 @@
     <tutorial title="Programmatic World Control" ref='plugins_world_properties'>
       <markdown version="1.9">plugins_world_properties/tutorial_1-9.md</markdown>
       <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
-      <markdown version="7+">plugins_world_properties/tutorial.md</markdown>
+      <markdown version="7+">plugins_world_properties/tutorial_7.md</markdown>
+      <markdown version="9+">plugins_world_properties/tutorial.md</markdown>
       <description>Modify world properties, such as ambient color and the physics time step.</description>
       <tags>
         <tag>plugin</tag>

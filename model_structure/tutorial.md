@@ -5,7 +5,7 @@ Gazebo is able to dynamically load models into simulation either programmaticall
 Models in Gazebo define a physical entity with dynamic, kinematic, and
 visual properties. In addition, a model may have one or more plugins, which
 affect the model's behavior. A model can represent anything from a simple
-shape to a complex robot; even the ground is a model. 
+shape to a complex robot; even the ground is a model.
 
 Gazebo relies on a database to store and maintain models available for use
 within simulation. The model database is a community-supported resource, so
@@ -13,11 +13,11 @@ please upload and maintain models that you create and use.
 
 ## The Model Database Repository
 
-The model database is a bitbucket repository found [here](https://bitbucket.org/osrf/gazebo_models).
+The model database is a GitHub repository found [here](https://github.com/osrf/gazebo_models).
 
 You can  clone the repository using:
 
-        hg clone https://bitbucket.org/osrf/gazebo_models
+        git clone https://github.com/osrf/gazebo_models
 
 
 ## Model Database Structure
@@ -37,7 +37,7 @@ The structure is as follows (in this example the database has only one model cal
         * *model.config* : Meta-data about model_1
         * *model.sdf* : SDF description of the model
         * *model.sdf.erb* : Ruby embedded SDF model description
-        * *meshes* : A directory for all COLLADA and STL files 
+        * *meshes* : A directory for all COLLADA and STL files
         * *materials* : A directory which should only contain the `textures` and `scripts` subdirectories
             * *textures* : A directory for image files (jpg, png, etc).
             * *scripts* : A directory for OGRE material scripts
@@ -74,7 +74,7 @@ The format of this `database.config` is:
 
       The name of the database. This is used by the GUI and other tools.
 
-   *  <*license*> 
+   *  <*license*>
 
       The license for the models within the database. We highly recommend the[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
 
@@ -86,7 +86,7 @@ The format of this `database.config` is:
 
         The URI for a model, this should be `file://model_directory_name`
 
-### Model Config 
+### Model Config
 
 Each model must have a `model.config` file in the model's root directory that contains meta information about the model.
 
@@ -99,12 +99,12 @@ The format of this `model.config` is:
   <name>My Model Name</name>
   <version>1.0</version>
   <sdf version='1.5'>model.sdf</sdf>
-    
+
   <author>
     <name>My name</name>
     <email>name@email.address</email>
   </author>
-    
+
   <description>
     A description of the model
   </description>
@@ -117,7 +117,7 @@ The format of this `model.config` is:
 
    *  <*version*> *required*
 
-      Version of this model. 
+      Version of this model.
 
       *Note:* This is not the version of sdf that the model uses. That information
       is kept in the `model.sdf` file.
@@ -168,8 +168,8 @@ templates. Please note that the ruby conversion should be done manually (`erb
 model.sdf.erb > model.sdf`) and the final `model.sdf` file must be uploaded
 together with the `model.sdf.erb` (this one only for reference).
 
-Examples of `sdf.erb` files are available in the 
-[gazebo_models repository](https://bitbucket.org/osrf/gazebo_models/src) 
+Examples of `sdf.erb` files are available in the
+[gazebo_models repository](https://github.com/osrf/gazebo_models)
 (some of them use the deprecated suffix `.rsdf`). An easy ERB file is the
-[flocking.world.erb](https://bitbucket.org/osrf/gazebo/src/b54961341ffb938a9f99c9976aed50a771c95216/worlds/flocking.world.erb?at=default)
+[flocking.world.erb](https://github.com/osrf/gazebo/blob/gazebo9/worlds/flocking.world.erb)
 which uses a simple loop.

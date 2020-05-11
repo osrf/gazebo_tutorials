@@ -19,7 +19,7 @@ There are many SVG editors. For this tutorial, we will use the open source
 [installation instructions](https://inkscape.org/en/download) ).
 
  This is the wheel
-[SVG file](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/extrude_svg/files/wheel.svg) used in this tutorial.
+[SVG file](https://github.com/osrf/gazebo_tutorials/raw/master/extrude_svg/files/wheel.svg) used in this tutorial.
 
 
 [[file:files/wheel.svg|200px]]

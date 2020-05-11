@@ -7,7 +7,7 @@ The world description file contains all the elements in a simulation, including 
 The Gazebo server (`gzserver`) reads this file to generate and populate a world.
 
 A number of example worlds are shipped with Gazebo. These worlds are installed in `<install_path>/share/gazebo-<version>/worlds`;
-you can also see them in the [source code](https://bitbucket.org/osrf/gazebo/src/default/worlds/).
+you can also see them in the [source code](https://github.com/osrf/gazebo/blob/master/worlds/).
 
 # Model Files
 
@@ -19,7 +19,7 @@ A model file uses the same [SDF](http://gazebosim.org/sdf.html) format as world 
 </include>
 ~~~
 
-A number of models are provided in the [online model database](http://bitbucket.org/osrf/gazebo_models) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
+A number of models are provided in the [online model database](http://github.com/osrf/gazebo_models) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
 
 Read more about model files [here](http://gazebosim.org/tutorials?tut=build_model).
 
@@ -51,11 +51,12 @@ If you want to modify Gazebo's behavior, e.g., by extending the path it searches
 
 ## New in Gazebo 8
 
-Gazebo is transitioning to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
+Parts of Gazebo transitioned to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
 library for inter-process communication instead of the built-in
-Gazebo Transport library, which will eventually be deprecated.
-Some functionality already uses Ignition Transport and may be affected by the
-following environment variables:
+Gazebo Transport library. Some features such as
+[markers](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/marker/)
+and the plotting utility are using Ignition Transport and may be affected by
+the following environment variables:
 
 `IGN_PARTITION`: Partition name for all Ignition Transport nodes.
 
@@ -64,7 +65,7 @@ following environment variables:
 `IGN_VERBOSE`: Show debug information from Ignition Transport.
 
 Read more about Ignition Transport environment variables
-[here](http://ignition-transport.readthedocs.io/en/ign-transport3/environment_variables/env_variables.html).
+[here](https://ignitionrobotics.org/tutorials/transport/4.0/md__data_ignition_ign-transport_tutorials_20_env_variables.html).
 
 # Gazebo Server
 

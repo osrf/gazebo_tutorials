@@ -192,7 +192,7 @@ keys:
 We are using this plugin in some of the plane elements to generate lift and
 drag. The propeller will generate thrust according to its angular speed. The
 control surfaces will generate different forces according to their specific
-angles and speed.  The [LiftDragPlugin aerodynamic parameters](https://bitbucket.org/osrf/gazebo/src/70d6c88e2486367659420743b25f5592ce4569df/worlds/cessna_demo.world?at=default#cl-105)
+angles and speed.  The [LiftDragPlugin aerodynamic parameters](https://github.com/osrf/gazebo/blob/gazebo9/worlds/cessna_demo.world)
 were approximated using values from
 [jsbsim for Cessna 172P](https://github.com/tridge/jsbsim/blob/master/aircraft/c172p/c172p.xml).
 
@@ -204,7 +204,7 @@ gz topic -e /gazebo/default/cessna_c172/state
 ~~~
 
 In the Gazebo window, right click on the model and press `Follow`. The user
-camera will follow the plane during the flight and you will not loose it.
+camera will follow the plane during the flight and you will not lose it.
 
 Press '1' to start the preset for take-off. The propeller
 should start spinning and the model should gain speed along the landing strip.
@@ -215,4 +215,4 @@ on the air with the arrow keys.
 You can explore all the different control combinations detailed before while
 you are flying.
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/iMHGnEhOIhs" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/PkTrZhPtzXQ" frameborder="0" allowfullscreen></iframe>

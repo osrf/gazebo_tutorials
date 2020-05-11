@@ -79,7 +79,7 @@ Those tags are:
 * [&lt;diffuse&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_diffuse)
 * [&lt;specular&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_specular)
     * **Note:** Specular intensity via SDF is currently not functioning in gazebo.
-      See [issue #2120](https://bitbucket.org/osrf/gazebo/issues/2120/specular-material-not-working).
+      See [issue #2120](https://github.com/osrf/gazebo/issues/2120).
 * [&lt;emissive&gt;](http://sdformat.org/spec?ver=1.6&elem=material#material_emissive)
 
 #### Ogre Material Script
@@ -104,7 +104,7 @@ In gazebo 8+ it will be displayed with gray diffuse and ambient components, but 
 Wavefront obj color values are taken from the object's material: `Ka`, `Kd`, `Ks`, and `Ns`.
 See [this Wikipedia article](https://en.wikipedia.org/wiki/Wavefront_.obj_file) for more info about OBJ files.
 
-**Note:** OBJ materials may not [display correctly in versions earlier than gazebo 8](https://bitbucket.org/osrf/gazebo/issues/2455/wavefront-obj-wrong-normals-and-material).
+**Note:** OBJ materials may not [display correctly in versions earlier than gazebo 8](https://github.com/osrf/gazebo/issues/2455/).
 
 ## About Textures
 Textures map an image onto a shape.
@@ -151,7 +151,7 @@ Save the following as:
 
 It has a bright white directional light with some ambient light.
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/lit_world.world'/>
+<include lang='xml' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/lit_world.world'/>
 
 The next step is to create a model.
 Refer to this image to see where files below need to be saved.
@@ -176,11 +176,11 @@ mkdir -p ~/color_tutorial/models/example_model/meshes
 
 Save this file as `model.config`.
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.config'/>
+<include lang='xml' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/model.config'/>
 
 Save this file as `model.sdf`.
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.no_materials.sdf'/>
+<include lang='xml' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/model.no_materials.sdf'/>
 
 ### Color Wheels and Power LED Using SDF
 
@@ -188,14 +188,14 @@ The wheels and power LED of this model wil be single uniform color, so they'll b
 Here is an example material that makes the wheels dark blue.
 Add it to both of the wheel `<visual>` tags.
 
-<include lang='xml' from='/        <material> <!-- Wheel material -->/' to='/        </material> <!-- End wheel material -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/        <material> <!-- Wheel material -->/' to='/        </material> <!-- End wheel material -->/' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/model.sdf'/>
 
 [[file:files/dark_colored_wheels.png|200]]
 
 The power LED is the source of its own light, so the emissive component will be used.
 Add this to the `power_led` `<visual>` to make it always be fully green.
 
-<include lang='xml' from='/        <material> <!-- LED material -->/' to='/        </material> <!-- End LED material -->/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/model.sdf'/>
+<include lang='xml' from='/        <material> <!-- LED material -->/' to='/        </material> <!-- End LED material -->/' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/model.sdf'/>
 
 [[file:files/green_led.png|300]]
 
@@ -210,7 +210,7 @@ Save this image as `seamless_texture.png`
 Then save this file as `repeated.material`.
 It is an Ogre Material Script that repeats the texture over each face of the box.
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/repeated.material'/>
+<include lang='xml' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/repeated.material'/>
 
 The result is a cube with each face having four copies of the seamless texture.
 
@@ -221,14 +221,14 @@ Save this image as `head_texture.png`.
 
 [[file:files/head_texture.png|256]]
 
-[Download and save this Collada file as head.dae](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/collada.dae).
+[Download and save this Collada file as head.dae](http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/head.dae).
 
 This collada file references an image to use as a texture.
 We need to double check that the paths are what we want them to be.
 
 Open `head.dae` with your favorite text editor and look for `<library_images>`.
 
-<include lang='xml' from='/ <library_images>/' to='/  </library_images>/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/color_model/files/head.dae'/>
+<include lang='xml' from='/ <library_images>/' to='/  </library_images>/' src='http://github.com/osrf/gazebo_tutorials/raw/master/color_model/files/head.dae'/>
 
 The model is referencing an image without any path information.
 It expects the png file to be in the same folder as `head.dae`, but we want to store the texture in another folder.

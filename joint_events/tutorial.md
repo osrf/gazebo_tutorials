@@ -1,7 +1,7 @@
 # Overview
 
 The [SimEventsPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html) contains multiple components, one of which is the
-[JointEvent](https://bitbucket.org/osrf/gazebo/src/gazebo6/plugins/events/JointEventSource.hh) (see the
+[JointEvent](https://github.com/osrf/gazebo/blob/gazebo6/plugins/events/JointEventSource.hh) (see the
 [API](http://osrf-distributions.s3.amazonaws.com/gazebo/api/7.1.0/classgazebo_1_1JointEventSource.html)
 here).
 The JointEvent will send a message on the `sim_events` topic when a joint's position (or velocity, or applied force) enters or leaves a specified range.
@@ -20,15 +20,15 @@ mkdir joint_event
 cd joint_event
 ~~~
 
-Copy the world code and save it as `joint_event.world` (or download it from [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world)):
+Copy the world code and save it as `joint_event.world` (or download it from [here](https://github.com/osrf/gazebo_tutorials/raw/master/joint_events/joint_event.world)):
 
-<include lang="sdf" src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/joint_events/joint_event.world' />
+<include lang="sdf" src='https://github.com/osrf/gazebo_tutorials/raw/master/joint_events/joint_event.world' />
 
 The relevant parts are the following:
 
 ### Position
 
-As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/6.0.0/sim__event_8proto.html) is [published](https://bitbucket.org/osrf/gazebo/src/572e57088a6fe24e316ce8be15e3fac54057649b/plugins/events/SimEventsPlugin.cc?at=default&fileviewer=file-view-default#SimEventsPlugin.cc-74) over the topic `/gazebo/sim_events`.
+As the joint named `my_joint` enters or exits the position range between 1.55 and 1.70 radians, a [`gazebo::msgs::SimEvents` message](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/6.0.0/sim__event_8proto.html) is [published](https://github.com/osrf/gazebo/blob/master/plugins/events/SimEventsPlugin.cc) over the topic `/gazebo/sim_events`.
 
 ~~~
     <!-- Angle: must be in range -PI to PI  -->

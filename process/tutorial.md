@@ -12,11 +12,11 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 # Gazebo Branches and Pull-Requests
 
-   The [Gazebo repository](https://bitbucket.org/osrf/gazebo) is located on [Bitbucket](http://bitbucket.org). 
+   The [Gazebo repository](https://github.com/osrf/gazebo) is located on [GitHub](http://github.com). 
 
 ## Branches
 
-   1. ''default'': Contains all code that breaks ABI/API compatibility with the current released version
+   1. ''master'': Contains all code that breaks ABI/API compatibility with the current released version
 
    2. ''gazeboX'': Contains code for Gazebo version X, where X is the MAJOR version. Only bugs fixes and features that do not break ABI/API may be submitted to this branch.
 
@@ -51,7 +51,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 ## Step 2: Implementation and Review
 
-   This is the fun part. The features decided upon in Step 1 are implemented, documentation written, and tests created. All code must pass our tests, static code checking, and be submitted as a pull-request through Bitbucket.
+   This is the fun part. The features decided upon in Step 1 are implemented, documentation written, and tests created. All code must pass our tests, static code checking, and be submitted as a pull-request through GitHub.
 
 ## Step 3: Feature Freeze
 
@@ -59,7 +59,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 ## Step 4: Code Freeze
 
-   At this point almost all of the major bugs should be ironed out of the release. Other issues should be tracked on the Bitbucket issue tracker, and documented. Only very critical changes are allowed in the release branch at this time.
+   At this point almost all of the major bugs should be ironed out of the release. Other issues should be tracked on the GitHub issue tracker, and documented. Only very critical changes are allowed in the release branch at this time.
 
 ## Step 5: Release
 

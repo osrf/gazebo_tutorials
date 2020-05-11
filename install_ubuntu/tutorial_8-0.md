@@ -14,8 +14,6 @@
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 
-    ***Note:*** there is a list of [available mirrors](https://bitbucket.org/osrf/gazebo/wiki/gazebo_mirrors) for this repository which could improve the download speed.
-
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 
     You can check to see if the file was written correctly. For example, in Ubuntu Trusty, you can type:
@@ -25,7 +23,7 @@
 
 1. Setup keys
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Install Gazebo.
 

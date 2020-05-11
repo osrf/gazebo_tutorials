@@ -1,6 +1,6 @@
 # Tutorial: Using a URDF in Gazebo
 
-The [Universal Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
+The [Unified Robotic Description Format](http://www.ros.org/wiki/urdf) (URDF)
 is an XML file format used in ROS to describe all elements of a robot.
 To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo.
 This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo,
@@ -267,7 +267,7 @@ Gazebo-specific tag in a secondary file called
 You can find the `<link>` and `<material>` elements there.
 
 The default available materials in Gazebo can be found in the Gazebo source code at
-[gazebo/media/materials/scripts/gazebo.material](https://bitbucket.org/osrf/gazebo/src/default/media/materials/scripts/gazebo.material).
+[gazebo/media/materials/scripts/gazebo.material](https://github.com/osrf/gazebo/blob/master/media/materials/scripts/gazebo.material).
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
 
@@ -358,7 +358,7 @@ List of elements that are individually parsed:
 <td rowspan="2">Contact stiffness k_p and damping k_d for rigid body contacts as defined by ODE
   (<a href="http://www.ode.org/ode-latest-userguide.html#sec_7_3_7">ODE uses erp and cfm</a>
   but there is a
-  <a href="https://bitbucket.org/osrf/gazebo/src/b4d836c3ab3b0a/gazebo/physics/ode/ODEJoint.cc#ODEJoint.cc-982">mapping between erp/cfm and stiffness/damping</a>)
+  <a href="https://github.com/osrf/gazebo/blob/gazebo9/gazebo/physics/ode/ODEJoint.cc">mapping between erp/cfm and stiffness/damping</a>)
 </td>
 </tr>
 <tr>
@@ -452,6 +452,20 @@ This is a more stable numerical method for damping than the default damping tag.
 The cfmDamping element is deprecated and should be changed to implicitSpringDamper.
 </td>
 </tr>
+
+<tr>
+<td>springStiffness</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Spring stiffness in N/m.</td>
+</tr>
+
+<tr>
+<td>springReference</td>
+<td rowspan="2">double</td>
+<td rowspan="2">Equilibrium position for the spring.
+</td>
+</tr>
+
 <tr>
 <td>cfmDamping</td>
 </tr>
@@ -502,7 +516,7 @@ If you have a common robot that other's might want to use in Gazebo,
 you are encouraged to add your URDF to the
 [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
 It is an online server that Gazebo connects to to pull down models from the internet.
-Its Mercurial repository is located on [Bitbucket](https://bitbucket.org/osrf/gazebo_models).
+Its Mercurial repository is located on [GitHub](https://github.com/osrf/gazebo_models).
 See [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
 documentation for how to submit a pull request to have your robot added to the database.
 
