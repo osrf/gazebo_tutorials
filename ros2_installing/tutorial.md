@@ -170,7 +170,7 @@ Let's try loading one of them now!
 
 1. Then run one of the commands, for example:
 
-        ros2 topic pub /demo/cmd_demo geometry_msgs/Twist '{linear: {x: 1.0}}' -1
+        ros2 topic pub /demo/cmd_vel geometry_msgs/Twist '{linear: {x: 1.0}}' -1
 
 1. You'll see the vehicle moving forward:
 
