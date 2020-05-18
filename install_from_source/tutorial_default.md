@@ -337,10 +337,10 @@ Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](h
 4. Run the following commands:
 
         brew tap osrf/simulation
-        brew install default
+        brew install gazebo11
         gazebo
 
 ### Optional dependencies ###
 The gazebo formula has two optional dependencies: the [Bullet](https://code.google.com/p/bullet/) and [Simbody](https://github.com/simbody/simbody) physics engines. To install with these physics engines:
 
-    brew install default --with-bullet --with-simbody
+    brew install gazebo11 --with-bullet --with-simbody
