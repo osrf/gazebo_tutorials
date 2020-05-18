@@ -66,20 +66,20 @@ Windows `cmd` for configuring and building.  You might also need to
 
 1. Clone Ignition CMake, Common, Fuel Tools, Math, Transport, Sdformat, and Gazebo:
 
-        hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake2
-        hg clone https://bitbucket.org/ignitionrobotics/ign-common -r ign-common3
-        hg clone https://bitbucket.org/ignitionrobotics/ign-fuel-tools -r ign-fuel-tools4
-        hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math6
-        hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs5
-        hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport8
-        hg clone https://bitbucket.org/osrf/sdformat -r sdf9
-        hg clone https://bitbucket.org/osrf/gazebo -r gazebo11
+        git clone https://github.com/ignitionrobotics/ign-cmake -b ign-cmake2
+        git clone https://github.com/ignitionrobotics/ign-common -b ign-common3
+        git clone https://github.com/ignitionrobotics/ign-fuel-tools -b ign-fuel-tools4
+        git clone https://github.com/ignitionrobotics/ign-math -b ign-math6
+        git clone https://github.com/ignitionrobotics/ign-msgs -b ign-msgs5
+        git clone https://github.com/ignitionrobotics/ign-transport -b ign-transport8
+        git clone https://github.com/osrf/sdformat -b sdf9
+        git clone https://github.com/osrf/gazebo -b gazebo11
 
 1. Open a regular Windows shell (Start->Run->"cmd"->enter), and load your compiler setup by copying and pasting the following line:
 
-        "C:\Program Files\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+        "C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
    or
-        "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat"
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
 1. In a Windows shell, configure and build Ignition CMake
 
