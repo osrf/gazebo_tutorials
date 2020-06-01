@@ -222,7 +222,7 @@ bash run_dual_pr2_test.bash
 
 ##### Visualizing the data
 
-To visualize the data you need have installed in your system: Python and these three dependencies (matplotlib, pandas and numpy).
+To visualize the data, you need these dependencies in your system: Python and these three dependencies (matplotlib, pandas and numpy).
 
 ```
 pip install -U matplotlib pandas numpy
