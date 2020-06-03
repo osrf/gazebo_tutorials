@@ -129,20 +129,26 @@ contact, articulation constraints, and multiple *islands*.
 
 ### Some results: revolute_joint_test.world
 
-The effects of *threaded islands* were measured for the `revolute_joint_test.world` with 0 threads
-(control) as well as 1−6 threads. The distribution of average and best-case times for
-*ODEPhysics::UpdatePhysics* are shown in the following figure. The clear trend in these two plots is
-that using 1 island thread reduces performance by 20-30% relative to the control case of 0 island
-threads, while 2 or more threads increase average performance 50% or more. The best-case performance
-can be improved by up to 90%, which represents the potential for further performance improvement in
-the threading implementation.
+For these tests Gazebo is running as fast as possible because we want to track the improvement in the `real_time_factor` value.
+You can use some of the scripts described in the section below to run these tests locally. The scripts will subscribe to the topic:
+`/gazebo/default/diagnostics` and record the real_time_factor in a csv file.
 
+First we analize the effect of *threaded islands* for the `revolute_joint_test.world` with 0 threads
+(control) as well as 1−6 threads. For 1 to 4 threads the performance is increasing, but for 5, 6 and 7
+the performance is stuck in the same point which means that there is a point where adding more threads
+is **no** going to improve the performance anymore. This value may differ for other worlds. This value depends on the
+ world and models inside it.
 
-![](files/results_pendulums.png)
+![](files/revolute_joint_test_unthrottled.png)
 
-The figures above show the average and best-case simulation step time in `revolute_joint_test.world`
-without (left) and with (right) threaded position error correction enabled. Both tests are run with
-island threading enabled.
+When adding the *Position Error Correction Thread* we can see the increase of performance when there
+are more than 2 threads. As you can see the real time factor increase by a multiplier of 2 just adding
+2 threads. We can add more threads, but again, as the other example there is a point where adding
+more thread is **no** going to help the performance.
+
+![](files/revolute_joint_test_spit_unthrottled.png)
+
+**You can run locally the other two examples to see the effect of these parameters with one and two PR robots.**
 
 ### Running some experiments
 
