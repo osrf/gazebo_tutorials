@@ -110,7 +110,7 @@ The only other mandatory function is `Load` which receives an SDF element that
 contains the elements and attributes specified in loaded SDF file.
 
 ~~~
-  GZ_REGISTER_WORLD_PLUGIN(WorldPluginTutorial)
+  GZ_REGISTER_WORLD_PLUGIN(WorldPluginTutorial);
 ~~~
 
 Finally, the plugin must be registered with the simulator using the
