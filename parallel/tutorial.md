@@ -119,13 +119,16 @@ includes eight instances of the "double pendulum with base" model arrayed in a c
 consists of a base in contact with the ground that is connected to two links by revolute joints.
 The models are arranged in close proximity but do not contact each other. This scenario includes
 contact, articulation constraints, and multiple *islands*.
-![](files/pendulums.jpg)
+
+[[file:files/pendulums.jpg|600px]]
 
 * [pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/pr2.world#L12): The `pr2.world` file includes a PR2 robot on a flat ground plane. There are no other objects with which to interact. The PR2 is a complex robot with 48 rigid bodies and 58 articulation joints. This scenario includes contact and articulation constraints but with only one *island*.
-![](files/pr2.jpg)
+
+[[file:files/pr2.jpg|600px]]
 
 * [dual_pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/dual_pr2.world#L12). The `dual_pr2.world` file includes two PR2 robots on a flat ground plane. The robots do not interact with each other. This scenario is similar to `pr2.world`, but it includes two *islands*, so that the effect of each parallelization strategy can be compared with complex robots.
-![](files/dual_pr2.jpg)
+
+[[file:files/dual_pr2.jpg|600px]]
 
 ### Some results: revolute_joint_test.world
 
@@ -139,14 +142,14 @@ the performance is stuck in the same point which means that there is a point whe
 is **not** going to improve the performance anymore. This value may differ for other worlds. This value depends on the
  world and models inside it.
 
-![](files/revolute_joint_test_unthrottled.png)
+[[file:files/revolute_joint_test_unthrottled.png|400px]]
 
 When adding the *Position Error Correction Thread* we can see the increase of performance when there
 are more than 2 threads. As you can see the real time factor increase by a multiplier of 2 just adding
 2 threads. We can add more threads, but again, as shown in the other example, there is a point where adding
-more thread is **not** going to help the performance.
+more threads is **not** going to help the performance.
 
-![](files/revolute_joint_test_spit_unthrottled.png)
+[[file:files/revolute_joint_test_spit_unthrottled.png|400px]]
 
 **You can run locally the other two examples to see the effect of these parameters with one and two PR robots.**
 
