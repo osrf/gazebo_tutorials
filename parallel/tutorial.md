@@ -11,7 +11,12 @@ and environments in real-time.
 # Parallel Strategies
 Two strategies to parallelize physics have been implemented: island thread and
 position error correction thread. For more details about these two strategies results
-and analysis, please refer to the parallel physics reports on the Gazebo webpage.
+and analysis, please refer to the [parallel physics reports on the Gazebo webpage](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
+
+Threading is enabled using SDFormat parameters:
+
+* `island_threads`: integer number of threads to use for island threading
+* `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
 
 ## Island Thread
 The first strategy attempts to parallelize simulation of non-interacting entities.
@@ -37,112 +42,208 @@ equations can be solved in parallel, due to the independence between each other,
 threads can be used simultaneously to do the computation, which comprises the second
 parallelization strategy.
 
+### Examples
+
+The following snippet shows how to configure the physics engine with ode with one island thread and **no** thread position correction.
+
+```xml
+<physics type="ode" name="unthrottled1">
+  <real_time_update_rate>0.0</real_time_update_rate>
+  <ode>
+    <solver>
+      <thread_position_correction>0</thread_position_correction>
+      <island_threads>1</island_threads>
+    </solver>
+  </ode>
+</physics>
+```
+
+The following snippet shows how to configure the physics engine with ode with 3 island threads and thread position correction.
+
+```xml
+<physics type="ode" name="split_unthrottled3">
+  <real_time_update_rate>0.0</real_time_update_rate>
+  <ode>
+    <solver>
+      <thread_position_correction>1</thread_position_correction>
+      <island_threads>3</island_threads>
+    </solver>
+  </ode>
+</physics>
+```
+
+**NOTES**
+ - **The name assigned to the physics tag will allow us to change the physics
+ engine in runtime with the command `gz physics -o <name of the physics tag>`
+ ( for example: `gz physics -o unthrottled1`)**.
+ - **Visit the tutorial [Manage physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
+ for more details about Gazebo physics parameters. These parameters affect the
+ performance, accuracy, and general behavior of physics simulation. The
+ physics preset manager interface offers a way to easily switch between a set
+ of physics parameters and save them to SDF.**
+
 # Running the code
-Currently these parallelization strategies require building gazebo and sdformat from
-source.
-The following section provides instructions for doing this with a catkin workspace.
 
-## Set up catkin workspace
-Currently, the sdformat needs to be build using a specific branch, we have to set up a
-catkin workspace to build gazebo and sdformat againt system installs of dependencies.
+Gazebo is currently instrumented with high-resolution diagnostic timers at several parts of the inner
+loop. The timer resolution depends on the hardware in use and is approximately 100ns on our test
+machines. To prevent performance degradation during normal usage, the timers are disabled unless the
+`ENABLE_DIAGNOSTICS` symbol is defined during compilation. For each simulation step, the elapsed
+time is measured and used to compute the following statistics incrementally: mean, minimum,
+maximum, and variance of each diagnostic timer. The statistics are computed using the
+`math::SignalStats` class. This will output the diagnostic timing data to the `~/.gazebo/diagnostics`
+ folder.
 
-Using catkin requires the python `catkin-pkg` to be installed:
+```bash
+# clone gazebo9
+git clone https://github.com/osrf/gazebo -b gazebo9
+# or clone gazebo 11
+git clone https://github.com/osrf/gazebo -b gazebo11
+cd gazebo
+mkdir build
+cd build
+cmake .. -DENABLE_DIAGNOSTICS=1
+make
+sudo make install
+```
 
-~~~
-# Ubuntu
-sudo apt-get install python-catkin-pkg
-# Others
-sudo pip install catkin-pkg
-~~~
+**For a detailed version of the install instructions please visit the [install tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu).**
 
-Here we create a `ws` folder as workspace under `HOME` directory. Then we clone
-catkin, gazebo and sdformat into the `ws/src` folder.
+## Test Scenarios
 
-~~~
-export WS=${HOME}/ws/gazebo_parallel
-mkdir -p ${WS}/src
-cd ${WS}/src
-git clone https://github.com/ros/catkin.git
-git clone https://github.com/osrf/gazebo
-git clone https://github.com/osrf/sdformat
-~~~
+The effectiveness of the parallelization strategies described in this tutorial depends on the scenario that is being simulated. For example, the threaded islands strategy can parallelize simulation of multiple non-interacting robots, while the position error correction strategy can parallelize simulation of individual robot. The following test scenarios
+vary the number and complexity of simulated entities to show the performance of each parallelization strategy.
 
-Then we update gazebo and sdformat to the diagnostics related branch:
+* [revolute\_joint\_test.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/test/worlds/revolute_joint_test.world#L12).
+The `revolute_joint_test.world` file is used in Gazebo’s automated test system. The world file
+includes eight instances of the "double pendulum with base" model arrayed in a circle. The model
+consists of a base in contact with the ground that is connected to two links by revolute joints.
+The models are arranged in close proximity but do not contact each other. This scenario includes
+contact, articulation constraints, and multiple *islands*.
+![](files/pendulums.jpg)
 
-~~~
-cd ${WS}/src/gazebo
-git checkout diagnostics_scpeters
-cd ${WS}/src/sdformat
-git checkout island_threads
-~~~
+* [pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/pr2.world#L12): The `pr2.world` file includes a PR2 robot on a flat ground plane. There are no other objects with which to interact. The PR2 is a complex robot with 48 rigid bodies and 58 articulation joints. This scenario includes contact and articulation constraints but with only one *island*.
+![](files/pr2.jpg)
 
-Next we download [package_gazebo.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml)
-and [package_sdformat.xml](https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml),
-copy them to the cloned `gazebo` and `sdformat` source folder as `package.xml`
+* [dual_pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/dual_pr2.world#L12). The `dual_pr2.world` file includes two PR2 robots on a flat ground plane. The robots do not interact with each other. This scenario is similar to `pr2.world`, but it includes two *islands*, so that the effect of each parallelization strategy can be compared with complex robots.
+![](files/dual_pr2.jpg)
 
-~~~
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
-curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
-~~~
+### Some results: revolute_joint_test.world
 
-Gazebo can then be built using the `catkin_make_isolated` command:
+For these tests Gazebo is running as fast as possible because we want to track the improvement in the `real_time_factor` value.
+You can use some of the scripts described in the section below to run these tests locally. The scripts will subscribe to the topic:
+`/gazebo/default/diagnostics` and record the real_time_factor in a csv file.
 
-~~~
-cd ${WS}
-./src/catkin/bin/catkin_make_isolated
-~~~
+First we analize the effect of *threaded islands* for the `revolute_joint_test.world` with 0 threads
+(control) as well as 1−6 threads. For 1 to 4 threads the performance is increasing, but for 5, 6 and 7
+the performance is stuck in the same point which means that there is a point where adding more threads
+is **not** going to improve the performance anymore. This value may differ for other worlds. This value depends on the
+ world and models inside it.
 
-If you want to use diagnostic timers to evaluate performance,
-define the `ENABLE_DIAGNOSTICS` symbol during compilation.
-This will output the diagnostic timing data to the `~/.gazebo/diagnostics` folder.
+![](files/revolute_joint_test_unthrottled.png)
 
-~~~
-cd ${WS}
-./src/catkin/bin/catkin_make_isolated -DENABLE_DIAGNOSTICS=1
-~~~
+When adding the *Position Error Correction Thread* we can see the increase of performance when there
+are more than 2 threads. As you can see the real time factor increase by a multiplier of 2 just adding
+2 threads. We can add more threads, but again, as shown in the other example, there is a point where adding
+more thread is **not** going to help the performance.
 
-## Run the code
+![](files/revolute_joint_test_spit_unthrottled.png)
 
-Threading is enabled using SDFormat parameters:
+**You can run locally the other two examples to see the effect of these parameters with one and two PR robots.**
 
-* `island_threads`: integer number of threads to use for island threading
-* `thread_position_correction`: flag to turn threading on for ODE quickstep position error correction
+### Running some experiments
 
-These flags have been added to [physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
-in several world files on the `diagnostics_scpeters` branch of gazebo:
+For a quick review of how parallelization works in Gazebo we will run some experiments. For a deeper review of the experiments please refer to the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
 
-* [test/worlds/revolute\_joint\_test.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/test/worlds/revolute_joint_test.world#L12)
-* [worlds/pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/pr2.world#L12)
-* [worlds/dual_pr2.world](https://github.com/osrf/gazebo/blob/diagnostics_scpeters/worlds/dual_pr2.world#L12)
+The following results measure the real time factor, this is a simplification
+of the tests presented in the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) but if
+you have installed Gazebo from packages it's another way (less precise) to
+check the performance of these parameters. You only can access to the
+dianostics tools if you compile Gazebo from sources with the cmake flag
+`-DENABLE_DIAGNOSTICS` as explained above.
 
-Simulate two pr2 robots without threading:
-
-~~~
-. ${WS}/devel_isolated/setup.bash
-gazebo --verbose -o unthrottled0 \
-  ${WS}/src/gazebo/worlds/dual_pr2.world
-~~~
-
-Simulate two pr2 robots with island threading:
+To run the experiment:
 
 ~~~
-. ${WS}/devel_isolated/setup.bash
-gazebo --verbose -o unthrottled2 \
-  ${WS}/src/gazebo/worlds/dual_pr2.world
-~~~
+# to run the revolute joint test
+wget https://raw.githubusercontent.com/osrf/gazebo/diagnostics_scpeters/test/worlds/revolute_joint_test.world
+gazebo --verbose -o unthrottled0 revolute_joint_test.world
 
-Simulate two pr2 robots with threaded position error correction:
+# to run a simulation with a pr2
+wget https://raw.githubusercontent.com/osrf/gazebo/diagnostics_scpeters/worlds/pr2.world
+gazebo --verbose -o unthrottled0 pr2.world
 
-~~~
-. ${WS}/devel_isolated/setup.bash
-gazebo --verbose -o split_unthrottled0 \
-  ${WS}/src/gazebo/worlds/dual_pr2.world
-~~~
-
-Simulate two pr2 robots with both types of threading:
+# to run a simulation with two pr2
+https://raw.githubusercontent.com/osrf/gazebo/diagnostics_scpeters/worlds/dual_pr2.world
+gazebo --verbose -o unthrottled0 dual\_pr2.world
 
 ~~~
-. ${WS}/devel_isolated/setup.bash
-gazebo --verbose -o split_unthrottled2 \
-  ${WS}/src/gazebo/worlds/dual_pr2.world
-~~~
+
+Then you can change the physics running in another terminal:
+
+```bash
+gz physics -o unthrottled0
+# Simulate with island threading:
+gz physics -o unthrottled1
+# Simulate with island threading:
+gz physics -o unthrottled2
+...
+# Simulate with threaded position error correction:
+gz physics -o split_unthrottled0
+# Simulate with both types of threading
+gz physics -o split_unthrottled1
+gz physics -o split_unthrottled2
+...
+```
+
+#### Other resources
+
+We provide some scripts to run an experiments to track the `real time factor`.
+
+Create a new folder:
+
+```bash
+mkdir /tmp/gazebo_parallel
+cd /tmp/gazebo_parallel
+```
+
+##### Pendulums
+
+```bash
+wget https://raw.githubusercontent.com/osrf/gazebo_tutorials/master/parallel/files/run_pendulum_tests.bash
+bash run_pendulums_test.bash
+```
+
+##### PR2
+
+```bash
+wget https://raw.githubusercontent.com/osrf/gazebo_tutorials/master/parallel/files/run_pr2_tests.bash
+bash run_pr2_test.bash
+```
+##### Dual PR2
+
+```bash
+wget https://raw.githubusercontent.com/osrf/gazebo_tutorials/master/parallel/files/run_dual_pr2_tests.bash
+bash run_dual_pr2_test.bash
+```
+
+##### Visualizing the data
+
+To visualize the data, you need these dependencies in your system: Python and these three dependencies (matplotlib, pandas and numpy).
+
+```
+pip install -U matplotlib pandas numpy
+```
+
+Download the script and visualize the data in the different folders:
+
+```bash
+wget https://raw.githubusercontent.com/osrf/gazebo_tutorials/master/parallel/files/show_parallel_results.py
+python3 show_parallel_results.py revolute_joint_test/
+python3 show_parallel_results.py pr2/
+python3 show_parallel_results.py dual_pr2/
+```
+
+If you have a look to the results obtained for the pr2. You will see that threaded islands don’t help the single PR2 scenario since the complex PR2
+model cannot be partitioned and solved simultaneously over several threads.
+
+Launch the other experiments and try to understand what is happening. Then review the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) to compare your thoughts
