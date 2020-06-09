@@ -136,15 +136,15 @@ You can use some of the scripts described in the section below to run these test
 First we analize the effect of *threaded islands* for the `revolute_joint_test.world` with 0 threads
 (control) as well as 1−6 threads. For 1 to 4 threads the performance is increasing, but for 5, 6 and 7
 the performance is stuck in the same point which means that there is a point where adding more threads
-is **no** going to improve the performance anymore. This value may differ for other worlds. This value depends on the
+is **not** going to improve the performance anymore. This value may differ for other worlds. This value depends on the
  world and models inside it.
 
 ![](files/revolute_joint_test_unthrottled.png)
 
 When adding the *Position Error Correction Thread* we can see the increase of performance when there
 are more than 2 threads. As you can see the real time factor increase by a multiplier of 2 just adding
-2 threads. We can add more threads, but again, as the other example there is a point where adding
-more thread is **no** going to help the performance.
+2 threads. We can add more threads, but again, as shown in the other example, there is a point where adding
+more thread is **not** going to help the performance.
 
 ![](files/revolute_joint_test_spit_unthrottled.png)
 
