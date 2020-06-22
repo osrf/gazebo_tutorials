@@ -32,12 +32,12 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
 
 1. Clone the repository into a directory in your home folder for example:
 
-        cd ~; hg clone https://bitbucket.org/osrf/gzweb
+        cd ~; git clone https://github.com/osrf/gzweb
 
 1. Enter the GzWeb repository and switch to the 1.4.0 release branch:
 
         cd ~/gzweb
-        hg up gzweb_1.4.0
+        git checkout gzweb_1.4.0
 
 1. The first time you build, you'll need to gather all the Gazebo models which
    you want to simulate in the right directory ('http/client/assets') and prepare
