@@ -651,6 +651,11 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Profiler" ref=''>
+      <markdown version="9.0+">profiler/tutorial.md</markdown>
+      <description>TUsed to perform application-wide performance profiling.</description>
+      <skill>advanced</skill>
+    </tutorial>
 
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
