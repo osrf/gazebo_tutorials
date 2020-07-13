@@ -1,111 +1,59 @@
 # Profiler
 
-## Overview
+Gazebo 9 and 11 are using [Ignition Common Profiler](https://ignitionrobotics.org/api/common/3.5/profiler.html) to check and visualize the performance of the different threads, functions and methods inside Gazebo.
 
-This tutorial describes how to get started using the Ignition Common profiler to measure and visualize run-time performance of your software.
+You must need to compile Gazebo 9 or 11 with the CMake flag `-DENALE_PROFILER=1`. For example, if you are using `colcon` to compile Gazebo:
 
-The ignition::common::Profiler provides a common interface that can allow for multiple underlying profiler implementations. Currently, the only available implementation is [Remotery](https://github.com/Celtoys/Remotery).
+```bash
+colcon build --cmake-args -DENABLE_PROFILER=1
+```
 
-The goal of the profiler is to provide introspection and analysis when enabled at compile time, but to introduce no overhead when it is disabled at compile-time.
+## How can I add the profiler to my own Gazebo plugins?
 
-To control if the profiler is enabled, set the `IGN_PROFILER_ENABLE` flag using cmake on the targets or sources that you are interested in (described below).
+If you want to add the profiler to your own Gazebo plugins you need to follow this steps:
 
-## Enabling the Profiler
-
-In order to use the profiler, inspection points must be added to the source code, and the application or library must be linked to the `ignition-common::profiler` component.
-
-**Note**: In Gazebo 9 this library is part of `libgazebo_util.so`.
-
-To start, download the [profiler.cc](https://github.com/ignitionrobotics/ign-common/raw/master/examples/profiler.cc) example.
-
-The relevant corresponding C++ would be as follows:
-
+ - Include the header
+    - If you are using Gazebo 11
 ```cpp
-// Add the profiler header
-#include <ignition/common/Profiler.hh>
+ #include <ignition/common/Profiler.hh>
+```
+    - If you are using Gazebo 9
+```cpp
+ #include <gazebo/util/Profiler.hh>
+```
+
+ - Then in the update method or other periodic method add the MACROS:
+```cpp
+IGN_PROFILE("WindPlugin::OnUpdate");
+IGN_PROFILE_BEGIN("Update");
 ...
-void thread(const char *_thread_name)
-{
-  // Sets the name of the thread to appear in the UI
-  IGN_PROFILE_THREAD_NAME(_thread_name);
-  while (running)
-  {
-    // Add a profiling point to this scope.
-    IGN_PROFILE("Loop");
-    // Execute some arbitrary tasks
-    for (size_t ii = 0; ii < 10; ++ii)
-    {
-      task1();
-    }
-    task2();
-    task3();
-  }
-}
-```
-
-Update your `CMakeLists.txt` to the following. Note that the profiler must be enabled at compile time in order to function.
-
-```cmake
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-# Find the ignition-common library
-find_package(ignition-common3 QUIET REQUIRED COMPONENTS profiler)
-add_executable(profiler_example profiler.cc)
-target_link_libraries(profiler_example ignition-common3::profiler)
-# Enable the profiler for the example
-target_compile_definitions(profiler_example PUBLIC "IGN_PROFILER_ENABLE=1")
-```
-
-**Note**: In Gazebo 9 you need to link against `libgazebo_util.so` which is part of gazebo.
-
-## Using the Profiler
-
-The profiler is used through a series of macros.
-
-The two primary ways of profiling a section of code are to either use a matched pair of `IGN_PROFILE_BEGIN` and `IGN_PROFILE_END` macros, or to use a single RAII-style macro `IGN_PROFILE`. The RAII style will stop measuring once the scope that the macro was invoked in is left.
-
- - **Using begin/end:**
-
-```cpp
-// An example of using start/stop profiling.
-IGN_PROFILE_BEGIN("a");
-std::this_thread::sleep_for(std::chrono::milliseconds(2));
 IGN_PROFILE_END();
 ```
-
- - **Using RAII-style:**
-
+### Sensor classes
+Classes that inherit from `Sensor` should have the MACROS in the `UpdateImpl` method. This method is called periodically and it's in charge of generating the data and publish it in ignition transport.
+### Plugins
+Classes that inherit from `Plugins` and have some connection with the `WorldUpdate` method, for example like the `WindPlugin`, where you can find the folliwing call to `ConnectWorldUpdateBegin`. This will call the `OnUpdate` method when the world is updated periodically.
 ```cpp
-{
-  // An example of using scope-based profiling.
-  IGN_PROFILE("a");
-  std::this_thread::sleep_for(std::chrono::milliseconds(2));
-}
+this->dataPtr->updateConnection = event::Events::ConnectWorldUpdateBegin(
+        std::bind(&WindPlugin::OnUpdate, this));
+```
+ - Finally link againts the profiler library.
+    - If you are using Gazebo 11
+```cpp
+target_link_libraries(<your plugin name>
+    ...
+    ${IGNITION-COMMON_LIBRARIES}
+)
+```
+    - If you are using Gazebo 9
+```cpp
+target_link_libraries(<your plugin name>
+    ...
+    gazebo_util
+)
 ```
 
-Additionally, each thread can be given a name for easy reference in the UI:
-
-```cpp
-IGN_PROFILE_THREAD_NAME("main");
-IGN_PROFILE_THREAD_NAME("physics");
-IGN_PROFILE_THREAD_NAME("gui");
-```
-
-## Configuring the Profiler
-
-Specific profiler implementations may have further configuration options available.
-
-## Configuring Remotery
-
-Remotery can additionally be configured via environment variables. Most users should not need to change these for their applications.
-
-  - `RMT_PORT`: Port to listen for incoming connections on.
-  - `RMT_QUEUE_SIZE`: Size of the internal message queues
-  - `RMT_MSGS_PER_UPDATE`: Upper limit on messages consumed per loop
-  - `RMT_SLEEP_BETWEEN_UPDATES`: Controls profile server update rate.
-
-These directly set the corresponding parameters in the rmtSettings structure. For more information, consult the [Remotery source](https://github.com/Celtoys/Remotery/blob/8c3923a04493cd1cb3d21cfdb8ad6fb21b394b96/lib/Remotery.h#L354).
-
-### Remotery
+## How do I run and see the profiler results for Gazebo?
 
 Use a launcher script (Linux and macOS)
 
