@@ -704,6 +704,12 @@
       <skill>intermediate</skill>
     </tutorial>
 
+    <tutorial title="Lockstep of physics and sensors" ref='lockstep_physics_sensors'>
+      <markdown version="9+">lockstep_physics_sensors/tutorial.md</markdown>
+      <description>How to enable lockstep synchronization between physics and sensors.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
 
     <!-- ****************** -->
     <!-- Advanced tutorials -->
@@ -1169,6 +1175,7 @@
         <tutorial>camera_save</tutorial>
         <tutorial>force_torque_sensor</tutorial>
         <tutorial>logical_camera_sensor</tutorial>
+        <tutorial>lockstep_physics_sensors</tutorial>
       </tutorials>
     </category>
 
