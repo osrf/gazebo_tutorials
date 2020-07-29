@@ -79,14 +79,14 @@ Joints can also be created between links in nested models. Here is an example
 of a joint that can be added to the model SDF above:
 
 ~~~
-      <joint name="joint_00" type="revolute">
-        <parent>link_00</parent>
-        <child>model_01::link_01</child>
-        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
-        <axis>
-          <xyz>1.0 0.0 0.0</xyz>
-        </axis>
-      </joint>
+    <joint name="joint_00" type="revolute">
+      <parent>link_00</parent>
+      <child>model_01::link_01</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
 ~~~
 
 This joint SDF element can be added to either the top level or nested `<model>`
