@@ -99,11 +99,11 @@ lockstep feature.
 Ctrl-T) to bring up the Topic Selector.
 Select the first item under the Image type.
 
-[[file:files/topic_selector.png|640px]]
+   [[file:files/topic_selector.png|640px]]
 
 1. Examine the Hz field. It is likely unable to reach the specified 500 fps.
 
-[[file:files/no_lockstep.png|640px]]
+   [[file:files/no_lockstep.png|640px]]
 
 1. Take note of the real time factor at the bottom of the window. It should be
 close to 1.0.
@@ -122,22 +122,22 @@ update rate.
 1. Bring up the camera image visualization as before.
 The Hz field should show 500.
 
-[[file:files/lockstep_highres_camera.png|640px]]
+   [[file:files/lockstep_highres_camera.png|640px]]
 
-The real time factor is likely less than 1.0. The exact number depends on your
-computing power.
+   The real time factor is likely less than 1.0. The exact number depends on your
+   computing power.
 
-This shows that the sensor's update rate is strictly followed, and physics has
-slowed down in order to accommodate for the high update rate.
+   This shows that the sensor's update rate is strictly followed, and physics has
+   slowed down in order to accommodate for the high update rate.
 
 1. In the Topic drop-down list, we can switch to the low-frame-rate camera and
 observe the Hz and real time factor.
 
-[[file:files/lockstep_regular_camera.png|640px]]
+   [[file:files/lockstep_regular_camera.png|640px]]
 
-The Hz field shows around 30.
+   The Hz field shows around 30.
 
-However, the real time factor is still less than 1.0. This is a caveat with
+   However, the real time factor is still less than 1.0. This is a caveat with
 using the lockstep feature. When lockstep is enabled, poses in the scene are
 updated using function callbacks, which are slower than message transport used
 in the default setting (lockstep disabled). Therefore, overall simulation speed
