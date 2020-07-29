@@ -16,7 +16,11 @@ be in sync.
 
 We will use a high-resolution high-frame-rate camera for illustration.
 
-Create a `camera_strict_rate.world` file with the following content:
+Create a world file:
+
+        gedit camera_strict_rate.world
+
+Paste in the following content:
 
 ~~~
 <?xml version="1.0" ?>
