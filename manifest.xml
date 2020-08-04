@@ -653,7 +653,7 @@
 
     <tutorial title="Profiler" ref=''>
       <markdown version="9.0+">profiler/tutorial.md</markdown>
-      <description>TUsed to perform application-wide performance profiling.</description>
+      <description>Used to perform application-wide performance profiling.</description>
       <skill>advanced</skill>
     </tutorial>
 
