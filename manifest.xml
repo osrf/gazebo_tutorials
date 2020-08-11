@@ -651,7 +651,7 @@
       <skill>advanced</skill>
     </tutorial>
 
-    <tutorial title="Profiler" ref=''>
+    <tutorial title="Profiler" ref='profiler'>
       <markdown version="9.0+">profiler/tutorial.md</markdown>
       <description>Used to perform application-wide performance profiling.</description>
       <skill>advanced</skill>
