@@ -14,7 +14,7 @@ For the rendering-based sensor we are going to use the [camera_strict_rate.world
 
 ### Run the world without lockstep
 
-With the `lockstep` flag deactivated there is no guarantee that the camera sensor update happens in the same iteration as the physics simulation. This means the `sim_sensor_update_rate` could not correspond with the real value defined in the world. Inspect the `sim_sensor_update_rate` field, It is likely unable to reach the specified 500 fps. The other low-resolution camera is able to reach the specified value. Take note of the `real time factor` it should be close to 1.0.
+With the `lockstep` flag deactivated there is no guarantee that the camera sensor update happens in the same iteration as the physics simulation. This means the `sim_sensor_update_rate` could not correspond with the real value defined in the world. Inspect the `sim_sensor_update_rate` field, it is likely unable to reach the specified 500 fps. The other low-resolution camera is able to reach the specified value. Take note of the `real time factor` it should be close to 1.0.
 
 ```bash
 real_time_factor: 0.99798848700000009
@@ -49,8 +49,8 @@ sensor {
 ### Run the world with lockstep
 
 With the `lockstep` flag activated the `sim_sensor_update_rate` must correspond with the real value
-defined in the world. In this case we expect a `sim_sensor_update_rate` equals to 500 in the high resolution camera
-and 30 in the low resolution. Then the `fps` value means that Gazebo is able to generate 337 frames in a *real second*.
+defined in the world. In this case we expect the `sim_sensor_update_rate` to be equal to 500 for the high resolution camera
+and 30 for the low resolution camera. Then the `fps` value means that Gazebo is able to generate on average 337 frames in a *real second*.
 
 The real time factor is likely less than 1.0. The exact number depends on your computing power. This shows that
 the sensor's update rate is strictly followed, and physics has slowed down in order to accommodate for the high update rate.
@@ -102,9 +102,7 @@ sensor {
 
 ## Real time update rate
 
-We can modify the Real time update rate in the Physics Engine. As you may see the `sim_sensor_update_rate` in both cameras
-are the expected value 500 and 30. In this case the Real time update rate is equal to **10** which make the simulation slower. The fps
-are lower, it's able to generate almost 6 frames for the high speed camera and 2 for the regular camera each *real second*.
+We can modify the Real time update rate in the Physics Engine. In this case the Real time update rate is set to **10** which makes the simulation slower. As you may see the `sim_sensor_update_rate` in both cameras are the expected value 500 and 30. The `real_sensor_update_rate` and `fps` (average framerate per second in *real time*) are lower since the simulation is running slower than real time, and sometimes they are 0 if samples are taken during a period where no camera updates occurred.
 
 ### Run the world with lockstep
 
@@ -170,8 +168,7 @@ When you choose the `update rate` of a sensor you need to take in account if you
 defined in `max step size`. For example:
 
   - 1/250 = 0.004 it's fine using the default value.
-  - 1/400 = 0.0025. You will need to reduce the `max step size` to 0.0001, this will make the simulation slower. Change this
-  parameter has a side effect on the accuracy and speed of physics simulation, refer to this [tutorial](http://gazebosim.org/tutorials?tut=physics_params&cat=physics) for more information.
+  - 1/400 = 0.0025. You will need to reduce the `max step size` to a number that is a factor of 0.0025, e.g. 0.0001, this will make the simulation slower. Changing this parameter has a side effect on the accuracy and speed of physics simulation, refer to this [tutorial](http://gazebosim.org/tutorials?tut=physics_params&cat=physics) for more information.
 
 In the following traces we included a IMU sensor at 400Hz. You can see that the `sim_sensor_update_rate` does not correspond with the defined value
 because the `max step size` does not have enough precision.
