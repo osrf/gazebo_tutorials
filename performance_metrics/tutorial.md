@@ -109,40 +109,54 @@ are lower, it's able to generate almost 6 frames for the high speed camera and 2
 ### Run the world with lockstep
 
 ```bash
-real_time_factor: 0.969638674
+real_time_factor: 0.010068691000000001
 sensor {
-  sensor_name: "world_1::model_1::link_1::sensor_contact"
-  real_sensor_update_rate: 972.45520628206054
-  sim_sensor_update_rate: 1000
+  sensor_name: "default::camera_model::link::camera_sensor"
+  real_sensor_update_rate: 5.0011468129756835
+  sim_sensor_update_rate: 500
+  fps: 53.769622802734375
+}
+sensor {
+  sensor_name: "default::camera_model::link::camera_sensor_regular"
+  real_sensor_update_rate: 6.90647889204339e-310
+  sim_sensor_update_rate: 3.8230348098869816e-171
+  fps: 4.67267173345723e-310
 }
 
-real_time_factor: 1.008738703
+real_time_factor: 0.010036926
 sensor {
-  sensor_name: "world_1::model_1::link_1::sensor_contact"
-  real_sensor_update_rate: 1011.0170528246299
-  sim_sensor_update_rate: 1000
+  sensor_name: "default::camera_model::link::camera_sensor"
+  real_sensor_update_rate: 5.0083617102934195
+  sim_sensor_update_rate: 500
+  fps: 53.769622802734375
+}
+sensor {
+  sensor_name: "default::camera_model::link::camera_sensor_regular"
+  real_sensor_update_rate: 0.095422706503929658
+  sim_sensor_update_rate: 30.3030303030303
+  fps: 12.767441749572754
 }
 ```
 
 ### Run the world without lockstep
 
 Again in this case, where we run the world without `lockstep`, there is no guarantee that the camera sensor update happens
-in the same iteration as the physics simulation, and the `sim_sensor_update_rate` value is highly impacted, it should be
-close to 500 but in this case it's close to 0.
+in the same iteration as the physics simulation, the `real_sensor_update_rate` value is highly impacted, it should be
+close to 500 but in this case it's close to 5.
 
 ```bash
-real_time_factor: 1.061299604
+real_time_factor: 0
 sensor {
-  sensor_name: "world_1::model_1::link_1::sensor_contact"
-  real_sensor_update_rate: 1065.2213743060083
+  sensor_name: "default::camera_model::link::camera_sensor"
+  real_sensor_update_rate: 5.33382822725157
   sim_sensor_update_rate: 1000
+  fps: 52.516761779785156
 }
-
-real_time_factor: 1.047498835
 sensor {
-  sensor_name: "world_1::model_1::link_1::sensor_contact"
-  real_sensor_update_rate: 1048.5675518673938
-  sim_sensor_update_rate: 1000
+  sensor_name: "default::camera_model::link::camera_sensor_regular"
+  real_sensor_update_rate: 0.29837649072676692
+  sim_sensor_update_rate: 29.411764705882351
+  fps: 9.8744449615478516
 }
 ```
 
