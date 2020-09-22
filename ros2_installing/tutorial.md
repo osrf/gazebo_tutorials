@@ -79,24 +79,23 @@ The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`
         mkdir -p ~/ws/src
 
 1. Copy
-  [this file](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs),
+  [this file](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros_pkgs.repos),
   that gets `gazebo_ros_pkgs` and additional packages needed:
 
         cd ~/ws
-        wget https://bitbucket.org/api/2.0/snippets/chapulina/geRKyA/f02dcd15c2c3b83b2d6aac00afe281162800da74/files/ros2.yaml
+        wget https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_ros_pkgs.repos
 
     > **Note:** The `version` tag in the yaml file indicates the branch we are
       checking out for a particular repository e.g.
-      [version: ros2](https://bitbucket.org/snippets/chapulina/geRKyA/ros2repos-supplement-gazebo_ros_pkgs#ros2.yaml-5)
-      checks out the `ros2` branch.
+      `version: ros2` checks out the `ros2` branch.
 
 1. Get the packages into the `src` directory
 
         cd ~/ws
-        vcs import src < ros2.yaml
+        vcs import src < gazebo_ros_pkgs.repos
 
-1. Switch to the branch matching your ROS distro 
-        
+1. Switch to the branch matching your ROS distro
+
         vcs custom --args checkout eloquent
 
 1. Install all dependencies:
