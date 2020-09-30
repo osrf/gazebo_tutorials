@@ -41,10 +41,13 @@ There's a convenient launcher script (Linux and macOS) for starting Remotery.
 
 The script should open the profiler output in a browser.
 
-> Note: If you don't see any data, check the connection address on the top
-  of the page and see if the port number is correct, the default is `17815`.
+Profile data for each process goes to a different port, which can be chosen on
+the top of the page:
 
-You should see plots corresponding to different theads:
+* `gzserver` to port 1500
+* `gzclient` to port 1501
+
+You should see plots corresponding to different theads, for example:
 
 * `gzserver`
 * `[Ode,Bullet,Symbody,Dart]Physics`
