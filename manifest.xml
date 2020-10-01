@@ -657,6 +657,12 @@
       <skill>advanced</skill>
     </tutorial>
 
+    <tutorial title="Performance metrics" ref='performance_metrics'>
+      <markdown version="9.0+">performance_metrics/tutorial.md</markdown>
+      <description>Track simulation and sensor performance through a transport topic.</description>
+      <skill>advanced</skill>
+    </tutorial>
+
     <tutorial title="Visual Lightmap" ref='lightmap'>
       <markdown version="3.0+">lightmap/tutorial.md</markdown>
       <description>How to apply lightmaps to a model visual.</description>
@@ -1143,6 +1149,8 @@
         <tutorial>apply_force_torque</tutorial>
         <tutorial>instrument_hdf5_datasets</tutorial>
         <tutorial>introspection</tutorial>
+        <tutorial>profiler</tutorial>
+        <tutorial>performance_metrics</tutorial>
       </tutorials>
     </category>
 
