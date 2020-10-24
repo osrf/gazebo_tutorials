@@ -57,13 +57,14 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
 
     Next install gazebo-11 by:
 
+        sudo apt-get install libgazebo11
         sudo apt-get install gazebo11
         # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo11-dev
 
     If you see the error below:
 
-        $ sudo apt-get install gazebo11
+        $ sudo apt-get install libgazebo11
         Reading package lists... Done
         Building dependency tree
         Reading state information... Done
