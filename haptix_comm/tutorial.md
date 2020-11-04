@@ -76,11 +76,11 @@ example:
     ~~~
 
 1. Download the [source code](http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c)
-and the [cmake file](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt) for the controller:
+and the [cmake file](http://github.com/osrf/gazebo_tutorials/raw/master/haptix_comm/files/CMakeLists.txt) for the controller:
 
     ~~~
     wget http://bitbucket.org/osrf/haptix-comm/raw/default/example/hx_controller.c
-    wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/haptix_comm/files/CMakeLists.txt
+    wget http://github.com/osrf/gazebo_tutorials/raw/master/haptix_comm/files/CMakeLists.txt
     ~~~
 
 1. Create a build directory and compile the source code.

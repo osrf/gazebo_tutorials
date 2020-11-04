@@ -16,13 +16,20 @@ gz topic -l
 
 This example subscribes to a [WorldStatistics message](http://gazebosim.org/api/msgs/dev/world__stats_8proto.html) and assumes that you can link against Gazebo.
 
-Download listener.cc and CMakeLists.txt from the above link and put them into to a folder called listener at your home directory. Compile the example:
+First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. Replace X with whatever version number of Gazebo you have.
+
+~~~
+sudo apt-get install libgazeboX-dev
+~~~
+
+Download `listener.cc` and `CMakeLists.txt` and put them into to a folder
+called `listener` at your home directory and then compile the example:
 
 ~~~
 mkdir ~/listener
 cd ~/listener
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/listener.cc
-wget https://bitbucket.org/osrf/gazebo/raw/default/examples/stand_alone/listener/CMakeLists.txt
+wget https://github.com/osrf/gazebo/raw/master/examples/stand_alone/listener/listener.cc
+wget https://github.com/osrf/gazebo/raw/master/examples/stand_alone/listener/CMakeLists.txt
 mkdir build
 cd build
 cmake ..

@@ -53,7 +53,7 @@ for floor requests on the `~/elevator` topic.
 
 # Example
 
-A complete [example world](https://bitbucket.org/osrf/gazebo/src/default/worlds/elevator.world) is distributed with Gazebo. You can run this
+A complete [example world](https://github.com/osrf/gazebo/blob/master/worlds/elevator.world) is distributed with Gazebo. You can run this
 world using the following command:
 
 ~~~
@@ -68,4 +68,4 @@ request takes place thanks to the Occupied Region Event, described next.
 
 # Occupied Region Event
 
-The elevator plugin works well the [OccupiedEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1OccupiedEventSource.html) component of the [SimEventPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html). The OccupiedEvent sends a message whenever a 3D region becomes occupied with a model. Refer to the [OccupiedEvent tutorial](http://gazebosim.org/tutorials?tut=occupiedevent&cat=plugins) for more information.
+The elevator plugin works with the [OccupiedEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1OccupiedEventSource.html) component of the [SimEventPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html). The OccupiedEvent sends a message whenever a 3D region becomes occupied with a model. Refer to the [OccupiedEvent tutorial](http://gazebosim.org/tutorials?tut=occupiedevent&cat=plugins) for more information.

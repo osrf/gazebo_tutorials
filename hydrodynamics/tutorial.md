@@ -4,7 +4,8 @@ This tutorial describes how to use the [BuoyancyPlugin](http://gazebosim.org/api
 [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html) to simulate the behavior of underwater objects.
 
 # Prerequisites
-See [this tutorial](http://gazebosim.org/tutorials?tut=lift_drag&cat=physics)
+See [this
+tutorial](http://gazebosim.org/tutorials?tut=aerodynamics&cat=physics)
 for an overview of the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
 
 # Background
@@ -87,7 +88,7 @@ height if left undisturbed.
 
 Each submarine model has a propeller link. The yellow submarine has been designed to move forward when the propeller is spun.
 
-Drag out the left hand menu and select the yellow submarine model. Give the
+Drag out the right hand menu and select the yellow submarine model. Give the
 `spinning_joint` a small positive torque.
 
 [[file:files/leftmenu.png | 600px]]
@@ -112,7 +113,7 @@ equilibrium unless disturbed by other forces.
 
 The submarine propellers are constructed so that spinning the propeller
 joint generates drag forces in forward direction. The blades are tilted such
-that the angle of attack for the blades is always less 45 degrees. The
+that the angle of attack for the blades is always less than 45 degrees. The
 propeller blades spin in the plane orthogonal to the direction of forward
 motion. Because lift and drag are orthogonal, a lift force gets generated in
 the forward direction. The lift force on the propeller causes the entire

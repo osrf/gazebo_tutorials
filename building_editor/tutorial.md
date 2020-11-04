@@ -32,7 +32,7 @@ The editor is composed of the following 3 areas:
 
 You may create a scene from scratch, or use an existing image as a template to trace over. This image can be, for example, a 2D laser scan of a building.
 
-Click [here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
+Click [here](https://github.com/osrf/gazebo_tutorials/raw/master/building_editor/files/floorplan.png) to get an example floor plan, then proceed as follows:
 
 1. Click on the `Import` button. The `Import Image` dialog will come up.
 
@@ -120,7 +120,7 @@ When a new level is added, a floor is automatically inserted. If there are stair
 
 > **Tip:** Before adding a level, make sure you have walls on the current level to build on top of.
 
-> **Tip:** Currently, all the walls from the level below are copied to the new level, with default materials. No other features are copied. You can manually delete the walls you don't want. 
+> **Tip:** Currently, all the walls from the level below are copied to the new level, with default materials. No other features are copied. You can manually delete the walls you don't want.
 
 [[file:files/add_level.png|800px]]
 
@@ -170,7 +170,7 @@ We drew a lot of walls earlier, but maybe they didn't turn out exactly the way w
 
 ## Edit windows and doors
 
-Now let's play around with windows and doors. As we did for the walls, we can manipulate windows and doors more precisely in a few different ways. 
+Now let's play around with windows and doors. As we did for the walls, we can manipulate windows and doors more precisely in a few different ways.
 
 * In the 2D View, click on the feature to be edited.
 

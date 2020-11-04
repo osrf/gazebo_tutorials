@@ -64,7 +64,7 @@ Copy the following code into `contact.world`
 </sdf>
 ~~~
 
-The contact sensor is attaced to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
+The contact sensor is attached to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
 
 # Print Contact Values
 
@@ -129,12 +129,7 @@ Between the `</contact>` and `</sensor>` tags in order to get output on the term
 
 It is also possible to create a plugin for the contact sensor. This plugin can get the collision data, manipulate it, and output it to an arbitrary destination (for example a ROS topic).
 
-*    **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed. If you install Gazebo from source then you should already have the necessary files. If you install the Gazebo binary deb version, then you'll need to install a couple of additional packages.
-
-    ~~~
-    sudo apt-get install libgazebo4-dev libsdformat2-dev
-    ~~~
-
+*    **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed (something like `libgazebo*-dev`). Check the [installation tutorials](http://gazebosim.org/tutorials?cat=install) for further instructions.
 
 Start by modifying the `contact.world` SDF file. Add the following line directly below `<sensor name='my_contact' type='contact'>`:
 
@@ -181,7 +176,7 @@ namespace gazebo
     /// \param[in] _sdf SDF element that describes the plugin.
     public: virtual void Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf);
 
-    /// \brief Callback that recieves the contact sensor's update signal.
+    /// \brief Callback that receives the contact sensor's update signal.
     private: virtual void OnUpdate();
 
     /// \brief Pointer to the contact sensor
@@ -334,6 +329,8 @@ Copy in the following code and save the file:
 ~~~
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
+find_package(gazebo REQUIRED)
+
 include (FindPkgConfig)
 if (PKG_CONFIG_FOUND)
   pkg_check_modules(GAZEBO gazebo)
@@ -341,8 +338,10 @@ endif()
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
 add_library(contact SHARED ContactPlugin.cc)
-target_link_libraries(contact ${GAZEBO_libraries})
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 ~~~
 
 Next, create a build directory and make the plugin:

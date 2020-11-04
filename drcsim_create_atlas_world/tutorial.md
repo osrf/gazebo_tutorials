@@ -22,9 +22,9 @@ roscd world_create_tutorial
 mkdir worlds launch
 ~~~
 
-Next, copy and paste this launchfile into `~/ros/world_create_tutorial/launch/atlas.launch`, or download the file [here](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_create_atlas_world/files/atlas.launch):
+Next, copy and paste this launchfile into `~/ros/world_create_tutorial/launch/atlas.launch`, or download the file [here](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_create_atlas_world/files/atlas.launch):
 
-<include lang='xml' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_create_atlas_world/files/atlas.launch' />
+<include lang='xml' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_create_atlas_world/files/atlas.launch' />
 
 This launchfile is nearly identical of the `atlas.launch` file in `drcsim_gazebo`, except that the `gzworld` argument has been changed to a different file. This file doesn't exist yet, but we will create it in the next step.
 

@@ -25,7 +25,7 @@ where 0 equates to a friction-less contact
 and a large value approximates a surface with infinite friction.
 Tables of friction coefficient values for a variety of
 materials can be found in engineering handbooks
-or [online references](http://www.engineershandbook.com/Tables/frictioncoefficients.htm).
+or [online references](http://www.engineeringtoolbox.com/friction-coefficients-d_778.html).
 
 ## How to specify friction
 
@@ -63,4 +63,4 @@ The following example will specify a box with low friction:
 </model>
 ~~~
 
-This is a more exhaustive [example](https://bitbucket.org/osrf/gazebo/src/3bd08807f5d9997e9d51eed9276350bac523c4bf/sdf/worlds/test_friction.world?at=default).
+This is a more exhaustive [example](https://github.com/osrf/gazebo/blob/gazebo_1.9/sdf/worlds/test_friction.world).

@@ -16,25 +16,26 @@ include in their simulations.
 
 You should use a plugin when:
 
-*  you want to programmaticaly alter a simulation
+*  you want to programmatically alter a simulation
 
    Ex: move models, respond to events, insert new models given a set of preconditions
-   
+
 *  you want a fast interface to gazebo, without the overhead of the transport layer
 
    Ex: No serialization and deserialization of messages.
-   
+
 *  you have some code that could benefit others and want to share it
 
 # Plugin Types
 
-There are currently 5 types of plugins
+There are currently 6 types of plugins
 
 1.  World
 1.  Model
 1.  Sensor
-1.  System.
-1.  Visual.
+1.  System
+1.  Visual
+1.  GUI
 
 Each plugin type is managed by a different component of Gazebo.
 For example, a Model plugin is attached to and controls a specific model in Gazebo.
@@ -52,7 +53,7 @@ Use a Sensor plugin to acquire sensor information and control sensor properties.
 Plugins are designed to be simple.
 A bare bones world plugin contains a class with a few member functions.
 
-First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a lower release than gazebo6, replace 6 with whatever version number you have.
+First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a release other than gazebo6, replace 6 with whatever version number you have.
 
 ~~~
 sudo apt-get install libgazebo6-dev
@@ -67,10 +68,10 @@ $ gedit hello_world.cc
 ~~~
 
 Copy the following into hello_world.cc:
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
+<include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
 
 The above code is also located in the Gazebo sources:
-[examples/plugins/hello\_world/hello\_world.cc](http://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world),
+[examples/plugins/hello\_world/hello\_world.cc](http://github.com/osrf/gazebo/blob/gazebo6/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
 ## Code Explained
@@ -82,7 +83,7 @@ namespace gazebo
 {
 ~~~
 
-The [gazebo/gazebo.hh](https://bitbucket.org/osrf/gazebo/src/gazebo6/gazebo/gazebo_core.hh)
+The [gazebo/gazebo.hh](https://github.com/osrf/gazebo/blob/gazebo6/gazebo/gazebo_core.hh)
 file includes a core set of basic gazebo functions.
 It doesn't include `gazebo/physics/physics.hh`, `gazebo/rendering/rendering.hh`,
 or `gazebo/sensors/sensors.hh` as those should be included on a case by case basis.
@@ -117,13 +118,14 @@ Finally, the plugin must be registered with the simulator using the
 The only parameter to this macro is the name of the plugin class.
 There are matching register macros for each plugin type:
 `GZ_REGISTER_MODEL_PLUGIN`, `GZ_REGISTER_SENSOR_PLUGIN`,
+`GZ_REGISTER_GUI_PLUGIN`,
 `GZ_REGISTER_SYSTEM_PLUGIN` and `GZ_REGISTER_VISUAL_PLUGIN`.
 
 The following section contains instructions on how to compile this plugin.
 
 ## Compiling the Plugin
 
-Please make sure that gazebo has been properly [installed](http://gazebosim.org/#download).
+Please make sure that gazebo has been properly [installed](http://gazebosim.org/install).
 
 To compile the above plugin, create `~/gazebo_plugin_tutorial/CMakeLists.txt`:
 
@@ -132,7 +134,7 @@ $ gedit ~/gazebo_plugin_tutorial/CMakeLists.txt
 ~~~
 
 Copy the following in CMakeLists.txt:
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
+<include src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/CMakeLists.txt' />
 
 New in `gazebo6`: c++11 flags are now required for all downstream software to compile against gazebo.
 This is done with the following line:
@@ -165,6 +167,10 @@ Lastly, add your library path to the `GAZEBO_PLUGIN_PATH`:
 $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_plugin_tutorial/build
 ~~~
 
+> *Note*: This changes the path only for the current shell. If you want to use
+your plugin for every new temrinal you open, append the line above to the
+`~/.bashrc` file.
+
 # Using a Plugin
 
 Once you have a plugin compiled as a shared library (see above),
@@ -175,12 +181,17 @@ It is important that Gazebo is capable of finding the plugin.
 Either the full path to the plugin is specified, or the plugin exists in
 one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
-Example world file also found in
-[examples/plugins/hello_world/hello.world](https://bitbucket.org/osrf/gazebo/src/gazebo6/examples/plugins/hello_world/hello.world).
-<include src='http://bitbucket.org/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
+Create a world file and copy the code below into it. The example world file
+can also be found in
+[examples/plugins/hello_world/hello.world](https://github.com/osrf/gazebo/blob/gazebo6/examples/plugins/hello_world/hello.world).
 
-Make a copy of the file in `~/gazebo_plugin_tutorial/hello.world`
-and open it with `gzserver`:
+~~~
+$ gedit ~/gazebo_plugin_tutorial/hello.world
+~~~
+
+<include src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello.world' />
+
+Now open it with `gzserver`:
 
 ~~~
 $ gzserver ~/gazebo_plugin_tutorial/hello.world --verbose

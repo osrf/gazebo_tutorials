@@ -20,17 +20,17 @@ If this is your first time installing the simulator, there's some system configu
     **Ubuntu 12.04 (precise)**
 
         sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/drc/ubuntu precise main" > /etc/apt/sources.list.d/drc-latest.list'
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable precise main" > /etc/apt/sources.list.d/drc-latest.list'
 
     **Ubuntu 14.04 (trusty)** (since drcsim-4.0)
 
         sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
-        sudo sh -c 'echo "deb http://packages.osrfoundation.org/drc/ubuntu trusty main" > /etc/apt/sources.list.d/drc-latest.list'
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable trusty main" > /etc/apt/sources.list.d/drc-latest.list'
 
 1. Retrieve and install the keys for the ROS and DRC repositories.
 
         wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-        wget http://packages.osrfoundation.org/drc.key -O - | sudo apt-key add -
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 1. Update apt-get and install the DRC Simulator.
 

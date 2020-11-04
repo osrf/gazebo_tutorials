@@ -8,15 +8,33 @@ This method only works with 'gazebo.msgs.ImageStamped' topics, and accepts the f
 
 Png files are uncompressed (whereas jpeg are smaller). If you want to save the image to disk, use the binary encoding. The base64 encoding is useful if you want to send the image data to another client in a portable way (ex: to make a mjpg stream for web browsers).
 
+## Project setup
+
+Also, because the code tries to connect to the running simulation server, launch Gazebo in a separate terminal (if it is not already running) and verify that the simulation is running (and Sim Time is increasing):
+
+    gazebo
+
+Unlike software packages that are installed once per machine, NodeJs packages like Gazebojs are installed inside each node project. Create a NodeJS project for this tutorial, and install a local copy of the gazebojs package with npm:
+
+    mkdir gazeboJsCam
+    cd gazeboJsCam
+    npm init
+
+Just press enter to get the default values. This operation generates a package.json file. Add gazeboJs to your package file:
+
+    npm install gazebojs --save
+
+Now you can create javascript files and execute them by invoking node.
+
 ### Code
 
-Create a file 
+Create a file
 
-    gedit save_jpeg.js
+    gedit save_camera_frames.js
 
-and add the following content ([save_jpeg.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js)):
+and add the following content ([save_camera_frames.js](https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js)):
 
-<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_jpeg.js' />
+<include src='https://bitbucket.org/osrf/gazebojs/raw/default/examples/save_camera_frames.js' />
 
 
 ### Code explained
@@ -83,17 +101,17 @@ gazebo.subscribeToImageTopic(src_topic, function (err, img){
             console.log('bye');
             process.exit(0);
         }
-        
+
         // make a nice zero padded number (0003 instead of 3)
         var nb = pad(savedFrames, 4);
         var fname = dest_path + '_' + nb + '.jpeg' ;
         fs.writeFile(fname, img, {encoding:'binary'}, function (err) {
-            if(err) 
+            if(err)
                 console.log('ERROR: ' + err);
             else
                 console.log(fname + ' saved');
          });
-        
+
     }, options);
 
 ~~~
@@ -119,12 +137,12 @@ First, you must setup Gazebo. In an empty world, add a few items (the double pen
 
 Invoke the script
 
-    node save_jpeg.js camera frame 10
-    
+    node save_camera_frames.js camera frame 10
+
 You should see the following output:
 
 ~~~
-node save_jpeg.js camera frame 10
+node save_camera_frames.js camera frame 10
 saving [~/camera/link/camera/image] to  [frame] for 10 frames
 setup a loop with 5 sec interval tick
 frame_0001.jpeg saved

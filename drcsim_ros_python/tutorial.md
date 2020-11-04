@@ -35,11 +35,11 @@ Move to the directory `tutorial_atlas_control`
 roscd tutorial_atlas_control
 ~~~
 
-Copy the file [traj_yaml.py](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py) into it:
+Copy the file [traj_yaml.py](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py) into it:
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
-Then download the [Traj_data2.yaml](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/Traj_data2.yaml) YAML file of a few trajectories, and place it in the same directory (`~/ros/tutorial_atlas_control`).
+Then download the [Traj_data2.yaml](http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/Traj_data2.yaml) YAML file of a few trajectories, and place it in the same directory (`~/ros/tutorial_atlas_control`).
 
 ## Trying it out
 
@@ -84,36 +84,36 @@ To try it again, go to the Gazebo "Edit" menu and click on "Reset Model Poses" (
 
 ## The Code Explained
 
-<include to='/import ceil/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include to='/import ceil/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Specify the names of the joints in the correct order.
 
-<include from='/atlasJointNames/' to='/'atlas::r_arm_mwx'\]/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/atlasJointNames/' to='/'atlas::r_arm_mwx'\]/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Create a ROS callback for reading the `JointState` message published on `/atlas/joint_states`
 
-<include from='/currentJointState/' to='/currentJointState = msg/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/currentJointState/' to='/currentJointState = msg/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Import the files that we need.
 
-<include from='/if __name/' to='/traj_name\]\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/if __name/' to='/traj_name\]\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Set up the joint states subscriber.
 
-<include from='/  # Setup subscriber/' to='/, jointStatesCallback\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # Setup subscriber/' to='/, jointStatesCallback\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Initialize the joint command message.
 
-<include from='/  # initialize JointCommands/' to='/command.i_effort_max = zeros\(n\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # initialize JointCommands/' to='/command.i_effort_max = zeros\(n\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Get the current controller gains from the parameter server.
 
-<include from='/  # now get gains/' to='/-command.i_effort_max\[i\]/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # now get gains/' to='/-command.i_effort_max\[i\]/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Set up the joint command publisher.
 
-<include from='/  # set up the publisher/' to='/, queue_size=1\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # set up the publisher/' to='/, queue_size=1\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />
 
 Read in each line from the yaml file as a trajectory command, and the current joint states from the ROS topic. Publish trajectory commands that interpolate between the initial state and the desired position to generate a smooth motion.
 
-<include from='/  # for each trajectory/' to='/dt \/ float\(n\)\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_ros_python/files/traj_yaml.py' />
+<include from='/  # for each trajectory/' to='/dt \/ float\(n\)\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_ros_python/files/traj_yaml.py' />

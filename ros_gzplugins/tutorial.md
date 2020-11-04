@@ -1,53 +1,67 @@
 
 # Tutorial: Using Gazebo plugins with ROS
 
-Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input. In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
+Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input.
+In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
 
 ## Prerequisites
 
 Make sure you have the RRBot setup as described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf).
+Also make sure you have understood the use of the `<gazebo>` element within the URDF description, from that same tutorial.
 
-## Adding Plugins
+## Plugin Types
 
-Plugins can be added to any of the main elements of a URDF - a `<robot>`, `<link>`, or `<joint>` depending on what the scope and purpose of the plugin is. To accomplish adding a plugin to a particular element in your URDF, you must wrap your `<plugin>` tag within a `<gazebo>` element.
+Gazebo supports
+[several plugin types](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin),
+and all of them can be connected to ROS, but only a few types can be referenced through a URDF file:
 
-### Adding a plugin to the `<robot>` element
+  1. [ModelPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1ModelPlugin.html), to provide access to the [physics::Model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) API
+  1. [SensorPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SensorPlugin.html), to provide access to the [sensors::Sensor](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1sensors_1_1Sensor.html) API
+  1. [VisualPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1VisualPlugin.html), to provide access to the [rendering::Visual](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1rendering_1_1Visual.html) API
 
-The following is an example of a plugin for a `<robot>` element in a URDF:
+## Adding a `ModelPlugin`
 
-    <gazebo>
-      <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
-        ... plugin parameters ...
-      </plugin>
-    </gazebo>
+In short, the `ModelPlugin` is inserted in the URDF inside the `<robot>` element. It is wrapped with the `<gazebo>` pill, to indicate information passed to Gazebo. For example:
 
-In the above example the plugin was added to the `<robot>` element because, similar to other `<gazebo>` elements and properties, if no `reference="x"` is specified it is assumes the reference is the entire `<robot>`. In [SDF](http://gazebosim.org/sdf/) terminology, it assumes the reference is the `<model>`.
+    <robot>
+      ... robot description ...
+      <gazebo>
+        <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
+          ... plugin parameters ...
+        </plugin>
+      </gazebo>
+      ... robot description ...
+    </robot>
 
-**SDF Note:**
+Upon loading the [robot model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) within Gazebo,
+the `diffdrive_plugin` code will be given a reference to the model itself, allowing it to manipulate it.
+Also, it will be give a reference to the [SDF element](http://osrf-distributions.s3.amazonaws.com/sdformat/api/dev/classsdf_1_1Element.html) of itself, in order to read the plugin parameters passed to it.
 
-Delving a little deeper in the conversion process, your URDF is converted to a SDF before being parsed by Gazebo. Any elements inside the `<gazebo>` tags which are not in the element table described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf) are directly inserted into the `<model>` tag of the generated SDF. As an example, this feature can be used to introduce model specific plugins. The following is the converted SDF from the above URDF example:
+## Adding a `SensorPlugin`
 
-    <model name="your_robot_model">
-      <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
-        ... plugin parameters ...
-      </plugin>
-    </model>
+Specifying sensor plugins is slightly different. [Sensors](http://gazebosim.org/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
+so the `<gazebo>` element describing that sensor must be given a reference to that link.
+For example:
 
-Refer to the SDF documentation for more information on how this feature can be used.
+    <robot>
+      ... robot description ...
+      <link name="sensor_link">
+        ... link description ...
+      </link>
 
-### Adding a plugin to the `<link>` element
+      <gazebo reference="sensor_link">
+        <sensor type="camera" name="camera1">
+          ... sensor parameters ...
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            ... plugin parameters ..
+          </plugin>
+        </sensor>
+      </gazebo>
 
-Similar to `<plugin>` elements for`<robot>`, you can add a `<plugin>` element to a link by passing a `reference="your_link_name"` value.
+    </robot>
 
-    <gazebo reference="your_link_name">
-      <plugin name="your_link_laser_controller" filename="libgazebo_ros_laser.so">
-        ... plugin parameters ...
-      </plugin>
-    </gazebo>
-
-### Adding a plugin to the `<joint>` element
-
-This is accomplished in the same way as a `<link>` except the reference name is a joint name.
+Upon loading the robot model within Gazebo, the `camera_controller` code will be given a reference to the sensor, providing access to its API.
+Also, it will be give a reference to the SDF element of itself, in order to read the plugin parameters passed to it.
 
 # Plugins available in gazebo_plugins
 
@@ -59,7 +73,7 @@ If there are some sections blank, it means that this author got tired of documen
 
 ## Camera
 
-**Description:** provides ROS interface for simulating cameras such as wge100_camera by publishing the CameraInfo and Image ROS messages as described in sensor_msgs.
+**Description:** provides ROS interface for simulating cameras such as `wge100_camera` by publishing the CameraInfo and Image ROS messages as described in `sensor_msgs`.
 
 ### RRBot Example
 
@@ -192,7 +206,7 @@ Additionally, the near and far clips are simulation-specific parameters that giv
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 ~~~
 
-This is where the actual <tt>gazebo_ros/gazebo_ros_camera.cpp</tt> file is linked to, as a shared object.
+This is where the actual `gazebo_ros/gazebo_ros_camera.cpp` file is linked to, as a shared object.
 
 ~~~
         <cameraName>rrbot/camera1</cameraName>
@@ -215,14 +229,14 @@ The coordinate frame the image is published under in the tf tree.
 
 ### Running the RRBot Example
 
-After you have saved both <tt>rrbot.xacro</tt> and <tt>rrbot.gazebo</tt>, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot_world.launch
 roslaunch rrbot_description rrbot_rviz.launch
 ~~~
 
-In Rviz, add a ''Camera'' display and under ''Image Topic'' set it to <tt>/rrbot/camera1/image_raw</tt>.
+In Rviz, add a ''Camera'' display and under ''Image Topic'' set it to `/rrbot/camera1/image_raw`.
 
 You should see a camera view of your Gazebo environment. In the following two pictures, a soda can was added to the environment for better visuals.
 
@@ -237,9 +251,9 @@ The corresponding camera view after the pendulum has fallen:
 
 ## Multicamera
 
-**Description:** synchronizes multiple camera's shutters such that they publish their images together. Typically used for stereo cameras, uses a very similar interface as the plain <tt>Camera</tt> plugin
+**Description:** synchronizes multiple camera's shutters such that they publish their images together. Typically used for stereo cameras, uses a very similar interface as the plain `Camera` plugin
 
-**Note**: currently only supports stereo cameras. See [Github issue](https://github.com/osrf/gazebo_ros_pkgs/issues/13).
+**Note:** currently only supports stereo cameras. See [Github issue](https://github.com/osrf/gazebo_ros_pkgs/issues/13).
 
 ### Atlas Code Example
 
@@ -309,35 +323,53 @@ In this code example there is both a left and right camera:
 
 ## Openni Kinect
 
-'''Description:''' Simulates an Xbox-Kinect, publishes the same topics as the corresponding ROS drivers for the Xbox kinect as documented in the Fuerte documentation [here](http://www.ros.org/wiki/openni_camera).
+**Description:** simulates a Microsoft Kinect, publishes the same topics as the corresponding ROS drivers for the Microsoft kinect as documented in the Fuerte documentation [here](http://www.ros.org/wiki/openni_camera).
 
 ~~~
-<gazebo>
-  <plugin name="${link_name}_controller" filename="libgazebo_ros_openni_kinect.so">
-    <baseline>0.2</baseline>
-    <alwaysOn>true</alwaysOn>
-    <updateRate>1.0</updateRate>
-    <cameraName>${camera_name}_ir</cameraName>
-    <imageTopicName>/${camera_name}/depth/image_raw</imageTopicName>
-    <cameraInfoTopicName>/${camera_name}/depth/camera_info</cameraInfoTopicName>
-    <depthImageTopicName>/${camera_name}/depth/image_raw</depthImageTopicName>
-    <depthImageInfoTopicName>/${camera_name}/depth/camera_info</depthImageInfoTopicName>
-    <pointCloudTopicName>/${camera_name}/depth/points</pointCloudTopicName>
-    <frameName>${frame_name}</frameName>
-    <pointCloudCutoff>0.5</pointCloudCutoff>
-    <distortionK1>0.00000001</distortionK1>
-    <distortionK2>0.00000001</distortionK2>
-    <distortionK3>0.00000001</distortionK3>
-    <distortionT1>0.00000001</distortionT1>
-    <distortionT2>0.00000001</distortionT2>
-    <CxPrime>0</CxPrime>
-    <Cx>0</Cx>
-    <Cy>0</Cy>
-    <focalLength>0</focalLength>
-    <hackBaseline>0</hackBaseline>
-  </plugin>
+<gazebo reference="${link_name}">
+  <sensor name="${link_name}_camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="${link_name}_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>${camera_name}_ir</cameraName>
+      <imageTopicName>/${camera_name}/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/${camera_name}/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/${camera_name}/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/${camera_name}/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/${camera_name}/depth/points</pointCloudTopicName>
+      <frameName>${frame_name}</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
 </gazebo>
 ~~~
+
+You can find a more detailed description for configuring a depth camera in [Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials/?tut=ros_depth_camera).
 
 ## GPU Laser
 
@@ -379,7 +411,7 @@ See the RRBot Example for adding a Camera to RRBot before reviewing this example
   </link>
 ~~~
 
-Now we'll add the plugin information to <tt>rrbot.gazebo</tt>, again as we did for the camera example:
+Now we'll add the plugin information to `rrbot.gazebo`, again as we did for the camera example:
 
 ~~~
   <!-- hokuyo -->
@@ -428,7 +460,7 @@ Most of the properties are self-explanatory, but we'll review some below:
 
 When true, a semi-translucent laser ray is visualized within the scanning zone of the gpu laser. This can be an informative visualization, or an nuisance.
 
-More documentation on the <tt><sensor></tt> and <tt><ray></tt> elements can be found in the [SDF Documentation](http://gazebosim.org/sdf/dev.html#sensor225).
+More documentation on the `<sensor>` and `<ray>` elements can be found in the [SDF Documentation](http://gazebosim.org/sdf/dev.html#sensor225).
 
 ~~~
 <topicName>/rrbot/laser/scan</topicName>
@@ -439,14 +471,14 @@ Set these to the ROS topic name you would like to publish the laser scans to, an
 
 ### Running the RRBot Example
 
-After you have saved both <tt>rrbot.xacro</tt> and <tt>rrbot.gazebo</tt>, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot.launch
 roslaunch rrbot_description rrbot_rviz.launch
 ~~~
 
-In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to <tt>/rrbot/camera1/image_raw</tt>.
+In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to `/rrbot/laser/scan`.
 
 You should see a faint laser scan line in your Gazebo environment. While the pendulum is swinging, you should also see the laser scan swing. If the scan is too faint, you can up the size of the laser scan in the properties of the LaserScan display in Rviz. A size of 1m is very easy to see. In the following two pictures, a house and construction barrel was added to the environment for better visuals.
 
@@ -460,9 +492,9 @@ The corresponding laser view from Rviz:
 
 ## Laser
 
-**Description:** the non-GPU version of <tt>GPU Laser</tt>, but essentially uses the same code. See GPU Laser for documentation.
+**Description:** the non-GPU version of `GPU Laser`, but essentially uses the same code. See GPU Laser for documentation.
 
-To run with RRBot, open <tt>rrbot.gazebo</tt> and change the following two lines.
+To run with RRBot, open `rrbot.gazebo` and change the following two lines.
 
 replace
 
@@ -502,9 +534,57 @@ save, then launch the same launch files as for GPU Laser.
 
 **Description:** ROS interface for applying Wrench (geometry_msgs) on a body in simulation.
 
-## IMU
+## IMU (GazeboRosImu)
 
-**Description:** simulates [imu_node](http://ros.org/wiki/microstrain_3dmgx2_imu)
+**Description:** simulates IMU sensor. Measurements are computed by the ROS plugin, not by Gazebo. See usage snippet sample below for implementation.
+
+~~~
+<robot>
+:
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>base_footprint</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>20.0</updateRate>
+    </plugin>
+  </gazebo>
+</robot>
+~~~
+
+## IMU sensor (GazeboRosImuSensor)
+
+**Description:** simulates an Inertial Motion Unit sensor, the main differences from **IMU** (GazeboRosIMU) are:
+  - inheritance from SensorPlugin instead of ModelPlugin,
+  - measurements are given by gazebo ImuSensor instead of being computed by the ros plugin,
+  - gravity is included in inertial measurements.
+  - set `initialOrientationAsReference` to `false` to comply with [REP 145](https://www.ros.org/reps/rep-0145.html).
+
+
+~~~
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+~~~
 
 ## Joint Pose Trajectory
 
@@ -520,11 +600,11 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Prosilica Camera
 
-**Description:** Simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://bitbucket.org/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
+**Description:** simulates interfaces exposed by a [ROS Prosilica Camera](http://www.ros.org/wiki/prosilica_camera).  Here's an [example URDF Xacro macro](https://bitbucket.org/hsu/nasa_r2_simulator/src/5ee1de067038749dcc133ed7cf87b45715cc4457/r2_gazebo/urdf/sensors/grasshopper2.gazebo.xacro?at=hsu).
 
 ## Bumper
 
-**Description:** provides contact feedback via [ContactsState message](http://ros.org/doc/api/gazebo_plugins/html/msg/ContactsState.html).
+**Description:** provides contact feedback via [ContactsState message](http://docs.ros.org/api/gazebo_msgs/html/msg/ContactsState.html).
 
 ~~~
 <gazebo>
@@ -539,29 +619,66 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Differential Drive
 
-**Description** model plugin that provides a basic controller for differential drive robots in Gazebo. You need a well defined differential drive robot to use this plugin.
+**Description:** model plugin that provides a basic controller for differential drive robots in Gazebo. You need a well defined differential drive robot to use this plugin.
 
 ~~~
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-    <alwaysOn>true</alwaysOn>
+
+    <!-- Plugin update rate in Hz -->
     <updateRate>${update_rate}</updateRate>
-    <leftJoint>base_link_right_wheel_joint</leftJoint>
-    <rightJoint>base_link_left_wheel_joint</rightJoint>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>base_link_left_wheel_joint</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>base_link_right_wheel_joint</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
     <wheelSeparation>0.5380</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
     <wheelDiameter>0.2410</wheelDiameter>
-    <torque>20</torque>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
     <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
     <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
     <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
     <robotBaseFrame>base_footprint</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
   </plugin>
 </gazebo>
 ~~~
 
 ## Skid Steering Drive
 
-**Description** model plugin that provides a basic controller for skid steering drive robots in Gazebo (Pioneer 3AT for instance).
+**Description:** model plugin that provides a basic controller for skid steering drive robots in Gazebo (Pioneer 3AT for instance).
 
 ~~~
 <gazebo>
@@ -584,7 +701,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Video Plugin
 
-**Description** visual plugin that displays a ROS image stream on an OGRE Texture inside gazebo. This plugin does not modify the texture of one of the existing link surfaces, but creates a new texture on top of it. The texture will be created on the XY plane, visible from the +Z side. The plugin requires a pixel size while constructing the texture, and will resize incoming ROS image messages to match if they are a different size.
+**Description:** visual plugin that displays a ROS image stream on an OGRE Texture inside gazebo. This plugin does not modify the texture of one of the existing link surfaces, but creates a new texture on top of it. The texture will be created on the XY plane, visible from the +Z side. The plugin requires a pixel size while constructing the texture, and will resize incoming ROS image messages to match if they are a different size.
 
 ~~~
 <gazebo reference="display_screen_link">
@@ -600,7 +717,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Planar Move Plugin
 
-**Description** model plugin that allows arbitrary objects (for instance cubes, spheres and cylinders) to be moved along a horizontal plane using a geometry_msgs/Twist message. The plugin works by imparting a linear velocity (XY) and an angular velocity (Z) to the object every cycle.
+**Description:** model plugin that allows arbitrary objects (for instance cubes, spheres and cylinders) to be moved along a horizontal plane using a geometry_msgs/Twist message. The plugin works by imparting a linear velocity (XY) and an angular velocity (Z) to the object every cycle.
 
 Here is a full URDF example that demonstrates how to control a floating box inside gazebo using this plugin, using different visual and collision elements. Note: The object needs to have sufficient inertia to prevent undesirable motions - which can occur as a reaction to the supplied velocity. You can try increasing inertia until the object moves as desired. It is also good to have the center of mass close to the ground.
 
@@ -662,8 +779,16 @@ Here is a full URDF example that demonstrates how to control a floating box insi
 
 **Description:** an example c++ plugin template for anyone who wants to write their own plugin.
 
+# Issue report, contribution
+
+Gazebo-ROS plugins are stored in a ROS package. See [gazebo_plugins wiki page](http://wiki.ros.org/gazebo_plugins) about how you can contribute.
+
+# 3rd party plugins
+
+In addition to the plugins explained above, there are also a number of 3rd party Gazebo-ROS plugins. Some of them are found on ros.org ([example of search keyword](https://www.google.com/search?client=ubuntu&channel=fs&q=site%3Aros.org+*_gazebo_plugins&ie=utf-8&oe=utf-8)).
+If a 3rd party plugin is useful and generic enough, please consider pulling it into the official [gazebo_plugins package (wiki page)](http://wiki.ros.org/gazebo_plugins) by opening a suggestion at the issue tracker of each repository.
 
 # Next Steps
 
-Next we will analyze the <tt>ros_control</tt> packages integrated with Gazebo for tight controller/actuator/simulator integration
+Next we will analyze the `ros_control` packages integrated with Gazebo for tight controller/actuator/simulator integration
 [Actuators, controllers, and ros_control](http://gazebosim.org/tutorials/?tut=ros_control).

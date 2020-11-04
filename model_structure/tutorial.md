@@ -5,7 +5,7 @@ Gazebo is able to dynamically load models into simulation either programmaticall
 Models in Gazebo define a physical entity with dynamic, kinematic, and
 visual properties. In addition, a model may have one or more plugins, which
 affect the model's behavior. A model can represent anything from a simple
-shape to a complex robot; even the ground is a model. 
+shape to a complex robot; even the ground is a model.
 
 Gazebo relies on a database to store and maintain models available for use
 within simulation. The model database is a community-supported resource, so
@@ -13,11 +13,11 @@ please upload and maintain models that you create and use.
 
 ## The Model Database Repository
 
-The model database is a bitbucket repository found [here](https://bitbucket.org/osrf/gazebo_models).
+The model database is a GitHub repository found [here](https://github.com/osrf/gazebo_models).
 
 You can  clone the repository using:
 
-        hg clone https://bitbucket.org/osrf/gazebo_models
+        git clone https://github.com/osrf/gazebo_models
 
 
 ## Model Database Structure
@@ -36,7 +36,8 @@ The structure is as follows (in this example the database has only one model cal
     * *model_1* : A directory for model_1
         * *model.config* : Meta-data about model_1
         * *model.sdf* : SDF description of the model
-        * *meshes* : A directory for all COLLADA and STL files 
+        * *model.sdf.erb* : Ruby embedded SDF model description
+        * *meshes* : A directory for all COLLADA and STL files
         * *materials* : A directory which should only contain the `textures` and `scripts` subdirectories
             * *textures* : A directory for image files (jpg, png, etc).
             * *scripts* : A directory for OGRE material scripts
@@ -69,22 +70,23 @@ The format of this `database.config` is:
 </database>
 ~~~
 
-*  <*name*>
- 
-   The name of the database. This is used by the GUI and other tools.
-*  <*license*> 
+   *  <*name*>
 
-   The license for the models within the database. We highly recommend the
-[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
+      The name of the database. This is used by the GUI and other tools.
 
-*  <*models*>
+   *  <*license*>
 
-   A listing of all the model URIs within the database.
-   * <*uri*>
+      The license for the models within the database. We highly recommend the[Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0) license.
 
-     The URI for a model, this should be `file://model_directory_name`
+   *  <*models*>
 
-### Model Config 
+      A listing of all the model URIs within the database.
+
+      * <*uri*>
+
+        The URI for a model, this should be `file://model_directory_name`
+
+### Model Config
 
 Each model must have a `model.config` file in the model's root directory that contains meta information about the model.
 
@@ -97,58 +99,77 @@ The format of this `model.config` is:
   <name>My Model Name</name>
   <version>1.0</version>
   <sdf version='1.5'>model.sdf</sdf>
-    
+
   <author>
     <name>My name</name>
     <email>name@email.address</email>
   </author>
-    
+
   <description>
     A description of the model
   </description>
 </model>
 ~~~
 
-*  <*name*> *required*
-
-   Name of the model.
-*  <*version*> *required*
-
-   Version of this model. 
-
-   *Note:* This is not the version of [[sdf|SDF]] that the model uses. That information is kept in the `model.sdf` file.
-
-*  <*sdf*> *required*
-
-   The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
-
-*  <*author*> *required*
    *  <*name*> *required*
 
-      Name of the model author.
-   *  <*email*> *required*
+      Name of the model.
 
-      Email address of the author.
+   *  <*version*> *required*
 
-*  <*description*> *required*
+      Version of this model.
 
-   Description of the model should include:
-   >  * What the model is (e.g., robot, table, cup)
-   >  * What the plugins do (functionality of the model)
+      *Note:* This is not the version of sdf that the model uses. That information
+      is kept in the `model.sdf` file.
 
-*  <*depend*> *optional*
+   *  <*sdf*> *required*
 
-   All the dependencies for this model. This is typically other models.
+      The name of a SDF or URDF file that describes this model. The `version` attribute indicates what SDF version the file uses, and is not required for URDFs. Multiple <*sdf*> elements may be used in order to support multiple SDF versions.
 
-   *  <*model*> *optional*
+   *  <*author*> *required*
 
-      *  <*uri*> *required*
+      *  <*name*> *required*
 
-         URI of the model dependency.
-      *  <*version*> *required*
+         Name of the model author.
 
-         Version of the model.
+      *  <*email*> *required*
+
+         Email address of the author.
+
+   *  <*description*> *required*
+
+      Description of the model should include:
+      >  * What the model is (e.g., robot, table, cup)
+      >  * What the plugins do (functionality of the model)
+
+   *  <*depend*> *optional*
+
+      All the dependencies for this model. This is typically other models.
+
+      *  <*model*> *optional*
+
+         *  <*uri*> *required*
+
+            URI of the model dependency.
+
+         *  <*version*> *required*
+
+            Version of the model.
 
 ### Model SDF
 
 Each model requires a `model.sdf` file that contains the Simulator Description Format of the model. You can find more information on the [SDF website](http://sdformat.org).
+
+### Model SDF.ERB
+
+Standard SDF file which can contain ruby code embedded. This option is used to
+programatically generate SDF files using [Embedded Ruby code](http://www.stuartellis.eu/articles/erb/)
+templates. Please note that the ruby conversion should be done manually (`erb
+model.sdf.erb > model.sdf`) and the final `model.sdf` file must be uploaded
+together with the `model.sdf.erb` (this one only for reference).
+
+Examples of `sdf.erb` files are available in the
+[gazebo_models repository](https://github.com/osrf/gazebo_models)
+(some of them use the deprecated suffix `.rsdf`). An easy ERB file is the
+[flocking.world.erb](https://github.com/osrf/gazebo/blob/gazebo9/worlds/flocking.world.erb)
+which uses a simple loop.

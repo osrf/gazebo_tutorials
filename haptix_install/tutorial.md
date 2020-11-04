@@ -21,7 +21,7 @@ installed. Once your Linux machine is ready, open up a terminal and run the
 following command:
 
 ~~~
-wget -O /tmp/haptix_gazebo_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
+wget -O /tmp/haptix_gazebo_install.sh https://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
 ~~~
 
 You can test your Gazebo installation by running the next
@@ -50,7 +50,7 @@ etc.), as well as send new joint commands and receive the hand state.
 
 ## Installing on Windows
 
-We currently support Windows 7, Visual Studio 2013, and Matlab R2014b, all
+We currently support Windows 7, Visual Studio 2013, and Matlab R2014b or newer, all
 64-bit (you can determine the Matlab version by selecting `Help`->`About
 MATLAB` from the main menu).  We are working on 32-bit versions; they will be
 available soon.
@@ -60,7 +60,7 @@ Download the SDK by going to:
 * [Windows Client SDK Download](http://gazebosim.org/distributions/haptix)
 
 and selecting a version.  You probably want the latest version that is
-available (but check below for information on version compatibility).
+available (but check below for information on [version compatibility section near the bottom of this document](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix#Versioncompatiblity)).
 
 Unzip the zip file into your preferred HAPTIX folder. For example: `C:\Users\osrf\Desktop\haptix-ws`.
 
@@ -100,7 +100,7 @@ machine that you plan to use with this Gazebo instance.
 ###  One-line install
 
 ~~~
-wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/haptix/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
+wget -O /tmp/haptix_sdk_install.sh https://osrf-distributions.s3.amazonaws.com/haptix/haptix_sdk_install.sh; sudo sh /tmp/haptix_sdk_install.sh
 ~~~
 
 ### or Step-by-step install
@@ -111,7 +111,7 @@ wget -O /tmp/haptix_sdk_install.sh http://osrf-distributions.s3.amazonaws.com/ha
 
 1. Setup keys.
 
-        wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
+        wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -;
         sudo apt-get update
 
 1. Install the SDK.
@@ -235,7 +235,44 @@ two packages.  The following table summarizes compatible combinations:
 
 Simulator Version : Client SDK Version
 
-* 0.8.x : 0.7.y
-* 0.7.x : 0.6.y
-* 0.6.x : 0.5.y
+* 0.11.x : 0.8.y
+* 0.10.x : 0.8.y
+* 0.9.x  : 0.8.y
+* 0.8.x  : 0.7.y
+* 0.7.x  : 0.6.y
+* 0.6.x  : 0.5.y
 
+# HAPTIX CANbus driver
+
+The HAPTIX CANbus driver is needed to control the real DEKA Luke hand using the
+HAPTIX client library SDK. The installation process requires access to the
+DEKA webtransfer system. If you believe you should have received access but do
+not, please contact `haptix@osrfoundation.org` for help.
+
+A CANbus adapter is also required.
+We recommend the
+[PCAN-USB Adapter](http://www.phytools.com/PEAK_IPEH_002021_PCAN_USB_Adapter_p/ipeh-002021.htm)
+made by PEAK-System Technik.
+
+## Installing on Windows
+
+1. Download the zipped file `haptix-canbus-osrf.zip` from the DEKA webtransfer system.
+
+1. Unzip it in your preferred directory and you will find the `haptix.exe`
+file which will enable the communication with the hand via the HAPTIX
+protocol when executed.
+
+
+## Installing on Linux
+
+1. Install the CANbus dependencies.
+
+        sudo apt-get update
+        sudo apt-get install libpcan-dev libpcanbasic-dev
+
+1. Download the package `haptix-luke-proprietary_0.0.1-1~trusty_amd64.deb` from
+the DEKA webtransfer system.
+
+1. Install the HAPTIX CANbus driver.
+
+        sudo dpkg -i ~/Downloads/haptix-luke-proprietary_0.0.1-1~trusty_amd64.deb

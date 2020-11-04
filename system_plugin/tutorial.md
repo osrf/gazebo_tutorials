@@ -4,7 +4,7 @@
 
 # Overview
 
-Source: [gazebo/examples/plugins/system\_gui\_plugin](https://bitbucket.org/osrf/gazebo/src/gazebo5/examples/plugins/system_gui_plugin)
+Source: [gazebo/examples/plugins/system\_gui\_plugin](https://github.com/osrf/gazebo/blob/gazebo9/examples/plugins/system_gui_plugin)
 
 This tutorial will create a source file that is a system plugin for gzclient
 designed to save images into the directory `/tmp/gazebo_frames`.
@@ -20,7 +20,7 @@ $ gedit system_gui.cc
 
 Copy the following into `system_gui.cc`
 
-<include from='/#include/' src='http://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/system_gui_plugin/system_gui.cc' />
+<include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/system_gui_plugin/system_gui.cc' />
 
 Both the `Load` and `Init` functions must not block. The `Load` and `Init` functions are called at startup, before Gazebo is loaded.
 
@@ -42,7 +42,7 @@ On the first `Update`, we get a pointer to the user camera (the camera used in t
 
 Assuming the reader has gone through the [Hello WorldPlugin tutorial](http://gazebosim.org/tutorials?tut=plugins_hello_world) all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
-<include from="/add_library/" src='http://bitbucket.org/osrf/gazebo/raw/gazebo5/examples/plugins/system_gui_plugin/CMakeLists.txt' />
+<include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/system_gui_plugin/CMakeLists.txt' />
 
 Rebuild, and you should end up with a libsystem_gui.so library.
 
@@ -67,3 +67,16 @@ $ gzclient -g libsystem_gui.so
 ~~~
 
 Inside `/tmp/gazebo_frames` you should see many saved images from the current plugin.
+
+
+Note: Remember to also terminate the background server process after you quit the client. In the same terminal, bring the process to foreground:
+
+~~~
+$ fg
+~~~
+
+and press `Ctrl-C` to abort the process. Alternatively, just kill the `gzserver` process:
+
+~~~
+$ killall gzserver
+~~~

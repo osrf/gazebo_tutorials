@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="four_bar_sdf">
+    <pose>0 0 0.04  0 0 0</pose>
+    <self_collide>true</self_collide>
+    <link name="link_AB">
+      <pose>-0.01 -0.15000000000000002 0  0 0 0</pose>
+      <inertial>
+        <mass>0.07200000000000001</mass>
+        <inertia>
+          <ixx>0.0005424000000000002</ixx>
+          <iyy>4.800000000000001e-06</iyy>
+          <izz>0.0005424000000000002</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="boxABCollision">
+        <geometry>
+          <box>
+            <size>0.02 0.30000000000000004 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="boxABVisual">
+        <geometry>
+          <box>
+            <size>0.02 0.30000000000000004 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_BC">
+      <pose>0.1 -0.31000000000000005 0  0 0 0</pose>
+      <inertial>
+        <mass>0.048</mass>
+        <inertia>
+          <ixx>3.2000000000000003e-06</ixx>
+          <iyy>0.00016160000000000002</iyy>
+          <izz>0.00016160000000000002</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="boxBCCollision">
+        <geometry>
+          <box>
+            <size>0.2 0.02 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="boxBCVisual">
+        <geometry>
+          <box>
+            <size>0.2 0.02 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_CD">
+      <pose>0.21000000000000002 -0.15000000000000002 0  0 0 0</pose>
+      <inertial>
+        <mass>0.07200000000000001</mass>
+        <inertia>
+          <ixx>0.0005424000000000002</ixx>
+          <iyy>4.800000000000001e-06</iyy>
+          <izz>0.0005424000000000002</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="boxCDCollision">
+        <geometry>
+          <box>
+            <size>0.02 0.30000000000000004 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="boxCDVisual">
+        <geometry>
+          <box>
+            <size>0.02 0.30000000000000004 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="joint_A" type="revolute">
+      <pose>0.01 0.15000000000000002 0 0 0 0</pose>
+      <parent>world</parent>
+      <child>link_AB</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_B" type="revolute">
+      <pose>-0.1 0.01 0 0 0 0</pose>
+      <parent>link_AB</parent>
+      <child>link_BC</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_D" type="revolute">
+      <pose>-0.01 0.15000000000000002 0 0 0 0</pose>
+      <parent>world</parent>
+      <child>link_CD</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_C" type="revolute">
+      <pose>0.1 0.01 0 0 0 0</pose>
+      <parent>link_CD</parent>
+      <child>link_BC</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>

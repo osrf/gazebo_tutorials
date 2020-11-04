@@ -64,7 +64,7 @@ Copy the following code into `contact.world`
 </sdf>
 ~~~
 
-The contact sensor is attaced to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
+The contact sensor is attached to a link within the box model. It will report collisions between the `box_collision` object and any other object in the world.
 
 # Print Contact Values
 
@@ -169,7 +169,7 @@ namespace gazebo
     /// \param[in] _sdf SDF element that describes the plugin.
     public: virtual void Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf);
 
-    /// \brief Callback that recieves the contact sensor's update signal.
+    /// \brief Callback that receives the contact sensor's update signal.
     private: virtual void OnUpdate();
 
     /// \brief Pointer to the contact sensor
@@ -324,7 +324,7 @@ include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 add_library(contact SHARED ContactPlugin.cc)
-target_link_libraries(contact ${GAZEBO_libraries})
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 ~~~
 
 Next, create a build directory and make the plugin:

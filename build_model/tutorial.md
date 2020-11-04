@@ -26,7 +26,7 @@ SDF Models can range from simple shapes to complex robots. It refers to the `<mo
 
 This step involves gathering all the necessary 3D mesh files that are required to build your model. Gazebo provides a set of simple shapes: box, sphere, and cylinder. If your model needs something more complex, then continue reading.
 
-Meshes come from a number of places. [Google's 3D wharehouse](http://sketchup.google.com/3dwarehouse/) is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [Blender](http://blender.org) or [Sketchup](http://sketchup.google.com).
+Meshes come from a number of places. [Google's 3D warehouse](https://3dwarehouse.sketchup.com/index.html) is a good repository of 3D models. Alternatively, you may already have the necessary files. Finally, you can make your own meshes using a 3D modeler such as [Blender](http://blender.org) or [Sketchup](http://sketchup.google.com).
 
 Gazebo requires that mesh files be formatted as STL or Collada, with Collada being the preferred format.
 
@@ -49,8 +49,8 @@ Create the `box.sdf` model file
 gedit box.sdf
 ~~~
 
-Copy the following contents into [box.sdf](http://bitbucket.org/osrf/gazebo_tutorials/raw/default/build_model/files/box.sdf):
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/build_model/files/box.sdf' />
+Copy the following contents into [box.sdf](http://github.com/osrf/gazebo_tutorials/raw/master/build_model/files/box.sdf):
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/build_model/files/box.sdf' />
 
 Note that the origin of the Box-geometry is at the geometric center of the box, so in order to have the bottom of the box flush with the ground plane, an origin of `<pose>0 0 0.5 0 0 0</pose>` is added to raise the box above the ground plane.
 > **Tip:** The above example sets the simple box model to be static, which makes the model immovable. This feature is useful during model creation. Once you are done creating your model, set the `<static>` tag to false if you want your model to be movable.

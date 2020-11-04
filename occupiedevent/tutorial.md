@@ -41,4 +41,4 @@ a data value of "0"  is sent on the `~/elevator` topic.
 ~~~
 
 Multiple regions and events may be specified. See the
-[worlds/elevator.world](https://bitbucket.org/osrf/gazebo/src/default/worlds/elevator.world) for a longer example.
+[worlds/elevator.world](https://github.com/osrf/gazebo/blob/master/worlds/elevator.world) for a longer example.

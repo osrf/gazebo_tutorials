@@ -61,7 +61,7 @@ chmod +x demo.py
 ### The code 
 
 Here is the python demo script
- ([downloadable here](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py))
+ ([downloadable here](https://github.com/osrf/gazebo_tutorials/raw/master/drcsim_switch_modes/files/demo.py))
  that implements the instructions detailed in this section:
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_switch_modes/files/demo.py' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_switch_modes/files/demo.py' />

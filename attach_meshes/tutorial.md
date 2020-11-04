@@ -45,16 +45,16 @@ The most common use case for a mesh is to create a realistic looking visual.
 
         ls -l ~/.gazebo/models/pioneer2dx/meshes/chassis.dae
 
-    If the mesh file does not exist, make Gazebo pull the model from the [Model Database](https://bitbucket.org/osrf/gazebo_models) by spawning the `Pioneer 2DX` model at least once in gazebo (under `Insert->http://gazebosim.org/models`).
+    If the mesh file does not exist, make Gazebo pull the model from the [Model Database](https://github.com/osrf/gazebo_models) by spawning the `Pioneer 2DX` model at least once in gazebo (under `Insert->http://gazebosim.org/models`).
 
     Or manually download the model files to your local cache:
 
         cd ~/.gazebo/models
-        wget -R *index.html*,*.tar.gz --cut-dirs=1 --no-parent -r -x -nH http://gazebosim.org/models/pioneer2dx/
+        wget -q -R *index.html*,*.tar.gz --no-parent -r -x -nH http://models.gazebosim.org/pioneer2dx/
 
 1.  In Gazebo, drag the `My Robot` model in the world. The visual for the chassis will look like a pioneer2dx.
 
-[[file:files/Mobile_robot_chassis_1.png|640px]]
+    [[file:files/Mobile_robot_chassis_1.png|640px]]
 
 1.  The chassis is obviously too big for our robot, so we need to scale the visual.
 
@@ -77,7 +77,7 @@ The most common use case for a mesh is to create a realistic looking visual.
         </visual>
     %%%
 
-[[file:files/Mobile_robot_chassis_2.png|640px]]
+    [[file:files/Mobile_robot_chassis_2.png|640px]]
 
 1.  The visual is also a little too low (along the z-axis). Let's raise it up a little by specifying a pose for the visual:
 
@@ -99,7 +99,7 @@ The most common use case for a mesh is to create a realistic looking visual.
         </visual>
     %%%
 
-[[file:files/Mobile_robot_chassis_3.png|640px]]
+    [[file:files/Mobile_robot_chassis_3.png|640px]]
 
     Note that at this point we have simply modified the `<visual>` elements of the robot, so the robot will look like a scaled down version of the Pioneer 2DX model through the GUI and to GPU based sensors such as camera, depth camera and GPU Lasers.  Since we did not modify the `<collision>` elements in this model, the box geometry will still be used by the physics engine for collision dynamics and by CPU based ray sensors.
 

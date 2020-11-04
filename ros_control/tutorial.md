@@ -4,18 +4,18 @@ In this tutorial we will setup simulated controllers to actuate the joints of yo
 This will allow us to provide the correct ROS interfaces for planners like [MoveIt!](http://moveit.ros.org).
 We will be using the [ros_control](http://ros.org/wiki/ros_control) packages, a new standard in ROS for controller interfaces.
 
-## About ros_control 
+## About ros_control
 
 We encourage you to read an overview of the documentation on [ros_control](http://ros.org/wiki/ros_control) before proceeding.
 
-## Data flow of ros_control and Gazebo 
+## Data flow of ros_control and Gazebo
 
 Simulating a robot's controllers in Gazebo can be accomplished using ros_control and a simple Gazebo plugin adapter.
 An overview of the relationship between simulation, hardware, controllers and transmissions is shown below:
 
 [[file:Gazebo_ros_transmission.png|800px]]
 
-# Prerequisites 
+# Prerequisites
 
 This tutorial builds off of many of the concepts in the previous tutorials.
 We will again be using the RRBot that was setup in the
@@ -36,7 +36,10 @@ For the purposes of gazebo\_ros\_control in its current implementation, the only
 
  * `<joint name="">` - the name must correspond to a joint else where in your URDF
  * `<type>` - the type of transmission. Currently only "transmission_interface/SimpleTransmission" is implemented. (feel free to add more)
- * `<hardwareInterface>` - within the `<actuator>` tag, this tells the gazebo\_ros\_control plugin what hardware interface to load (position, velocity or effort interfaces). Currently only effort interfaces are implemented. (feel free to add more)
+ * `<hardwareInterface>` - within the `<actuator>` and `<joint>` tags,
+this tells the gazebo\_ros\_control plugin what hardware interface to load
+(position, velocity or effort interfaces).
+Currently only effort interfaces are implemented. (feel free to add more)
 
 The rest of the names and elements are currently ignored.
 
@@ -95,12 +98,17 @@ For example, the following XML will load the default plugin (same behavior as wh
 ## RRBot Example
 
 We add a `<transmission>` block similar to the following for every joint that we wish to have Gazebo actuate.
+Note that the `<hardwareInterface>` must be included in both the `<joint>`
+and `<actuator>` tags
+(see [ros\_control issue here](https://github.com/ros-controls/ros_control/issues/177)).
 Open your `rrbot.xacro` file and at the bottom of the file you should see:
 
 ~~~
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint1"/>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
     <actuator name="motor1">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
@@ -109,7 +117,9 @@ Open your `rrbot.xacro` file and at the bottom of the file you should see:
 
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint2"/>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
     <actuator name="motor2">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
@@ -136,16 +146,18 @@ We'll next need to create a configuration file and launch file for our ros_contr
 ~~~
 mkdir ~/catkin_ws
 cd ~/catkin_ws
-catkin_create_pkg MYROBOT_control ros_control ros_controllers
+catkin_create_pkg MYROBOT_control controller_manager joint_state_controller robot_state_publisher
 cd MYROBOT_control
 mkdir config
 mkdir launch
 ~~~
 
+[The complete working example of the package we're talking about in this section can be found as `rrbot_control`](https://github.com/ros-simulation/gazebo_ros_demos/tree/kinetic-devel/rrbot_control)).
+
 ### Create a .yaml config file
 
 The PID gains and controller settings must be saved in a yaml file that gets loaded to the param server via the roslaunch file.
-In the config folder of your <tt>MYROBOT\_control</tt> package, adapt the following RRBot example to your robot as
+In the config folder of your `MYROBOT\_control` package, adapt the following RRBot example to your robot as
 `MYROBOT_control/config/rrbot_control.yaml`:
 
 ~~~
@@ -154,7 +166,7 @@ rrbot:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50  
-  
+
   # Position Controllers ---------------------------------------
   joint1_position_controller:
     type: effort_controllers/JointPositionController
@@ -199,7 +211,7 @@ The first line, "rosparam", loads the controller settings to the parameter serve
 The controller\_spawner node starts the two joint position controllers for the RRBot by running a python script that makes a service call to the ros\_control controller manager.
 The service calls tell the controller manager which controllers you want.
 It also loads a third controller that publishes the joint states of all the joints with hardware\_interfaces and advertises the topic on /joint\_states.
-The spawner is just a helper script for use with roslaunch. 
+The spawner is just a helper script for use with roslaunch.
 
 The final line starts a robot\_state\_publisher node that simply listens to /joint\_states messages from the joint\_state_controller then publishes the transforms to /tf.
 This allows you to see your simulated robot in Rviz as well as do other tasks.
@@ -217,7 +229,7 @@ roslaunch rrbot_gazebo rrbot_world.launch
 Load the controllers for the two joints by running the second launch file:
 
 ~~~
-roslaunch rrbot_control rrbot_control.launch 
+roslaunch rrbot_control rrbot_control.launch
 ~~~
 
 ### Using service calls manually
@@ -276,7 +288,7 @@ For the RRBot, add the controller:
 Then press the green plus sign button at the top right.
 
 Enable the topic publisher by checking the check box on the left of the topic name.
-Set the rate column to 100 (the frequency we send it commands - 100hz in this case). 
+Set the rate column to 100 (the frequency we send it commands - 100hz in this case).
 
 Next, expand the topic so that you see the "data" row.
 In the expression column, on the data row, try different radian values between joint1's joint limits - in RRBot's case there are no limits because the joints are continuous, so any value works.
@@ -301,7 +313,7 @@ An explanation of variables:
  * rate - the frequency that this expression is evaluated. This should be the same number as in the rate column of the topic publisher. Recommended value is 100.
  * speed - how quick you want the join to actuate. Start off with just 1 for a slow speed
  * upper\_limit and lower\_limits - the joint limits of the hardware being controlled by this controller
- * diff = (upper\_limit - lower\_limit)/2 
+ * diff = (upper\_limit - lower\_limit)/2
  * offset = upper_limit-diff
 
 ### Visualize the controller's performance
@@ -315,14 +327,14 @@ Add a Plot plugin to RQT and add the same topic as the one you chose above for t
 Click the green add button.
 You should now see a sine wave being plotted on the screen.
 
-Add another topic to the Plot plugin that tracks the error between the commanded position and actual position of the actuator being controlled.
+Add another topic to the Plot plugin that tracks the actual position of the actuator being controlled.  You will want to the reduce the error between these two values by tuning the PID gains, as shown in the next step.
 For the RRBot:
 
 ~~~
-/rrbot/joint1_position_controller/state/error
+/rrbot/joint1_position_controller/state/process_value
 ~~~
 
-You screen should look something like this:
+Your screen should look something like this:
 
 [[file:rqt_controller_tuning.png|800px]]
 

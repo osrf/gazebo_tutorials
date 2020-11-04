@@ -1,0 +1,120 @@
+<sdf version="1.6">
+  <world name="preset_example">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <gravity>3.0 0 -9.81</gravity>
+
+    <physics name="ode_70iters" type="ode">
+      <real_time_update_rate>1500</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>70</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <physics name="ode_200iters" type="ode" default="true">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>200</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <physics name="ode_500iters" type="ode">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>500</iters>
+        </solver>
+      </ode>
+    </physics>
+    <!-- end physics presets, models and other world properties go here -->
+
+    <gui>
+      <camera name="user_camera">
+        <pose>1.25 -1.25 1.25 0 0.28 2.356194</pose>
+      </camera>
+    </gui>
+
+    <model name="inertia_ratio">
+        <pose>0 0 0.9  0.7853981633974483 0 0</pose>
+        <link name="upper_link">
+          <pose>0 0 -0.05  0 0 0</pose>
+          <inertial>
+            <mass>0.02700000000000001</mass>
+            <inertia>
+              <ixx>2.272500000000001e-05</ixx>
+              <iyy>2.272500000000001e-05</iyy>
+              <izz>4.5000000000000035e-07</izz>
+              <ixy>0.0</ixy>
+              <ixz>0.0</ixz>
+              <iyz>0.0</iyz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <geometry>
+              <box>
+                <size>0.010000000000000002 0.010000000000000002 0.1</size>
+              </box>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>0.010000000000000002 0.010000000000000002 0.1</size>
+              </box>
+            </geometry>
+          </visual>
+        </link>
+        <joint name="upper_joint" type="revolute">
+          <pose>0 0 0.05  0 0 0</pose>
+          <parent>world</parent>
+          <child>upper_link</child>
+          <axis>
+            <xyz>1 0 0</xyz>
+          </axis>
+        </joint>
+        <link name="lower_link">
+          <pose>0 0.17677669529663687 -0.2767766952966369  0.7853981633974483 0 0</pose>
+          <inertial>
+            <mass>3.375</mass>
+            <inertia>
+              <ixx>0.071015625</ixx>
+              <iyy>0.071015625</iyy>
+              <izz>0.0014062500000000004</izz>
+              <ixy>0.0</ixy>
+              <ixz>0.0</ixz>
+              <iyz>0.0</iyz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <geometry>
+              <box>
+                <size>0.05 0.05 0.5</size>
+              </box>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>0.05 0.05 0.5</size>
+              </box>
+            </geometry>
+          </visual>
+        </link>
+        <joint name="lower_joint" type="revolute">
+          <pose>0 0 0.25  0 0 0</pose>
+          <parent>upper_link</parent>
+          <child>lower_link</child>
+          <axis>
+            <xyz>1 0 0</xyz>
+          </axis>
+        </joint>
+    </model>
+  </world>
+</sdf>

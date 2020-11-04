@@ -1,14 +1,12 @@
 # Introduction
 
-Lightmaps which can be used to improve the rendering performance of complex scenes. Lightmaps can be thought of as texture maps with lighting information pre-baked into the texture. The resulting models appear as if they are shaded by lights in the environment but in fact they are just textures.
-
-Lightmaps are typically used for models that do not move with respect to the pose of the lights in the scene. For example, static buildings in an environment with a directional light.
+Lightmaps are commonly used to improve the rendering performance of complex scenes. Lightmaps can be thought of as texture maps with lighting information pre-baked into the texture. The resulting models appear as if they are shaded by lights in the environment. Since lighting is precomputed, lightmaps are suitable for models that do not move with respect to the pose of the lights in the scene. For example, static buildings, furniture, ground plane, and terrain in an environment with a directional light.
 
 # Create a model with lightmap
 
-Lightmaps can be created using popular 3D modeling tools. e.g. [Blender](http://wiki.blender.org/index.php/Doc:2.6/Manual/Textures/Mapping/UV/Unwrapping#Lightmap). In this tutorial, we'll save you the time by supplying a mesh and a pre-generated lightmap.
+Lightmaps can be created using popular 3D modeling tools. e.g. [Blender](https://www.blender.org/manual/render/blender_render/bake.html). In this tutorial, we'll save you the time by supplying a mesh and a pre-generated lightmap.
 
-In Gazebo, a lightmap is associated to a model as opposed to the whole scene because there is almost always the chance that something moves in a robot simulation.
+In Gazebo, a lightmap is applied to a visual of a model.
 
 ## Create Table Model
 
@@ -161,7 +159,7 @@ Locate the material SDF element in the model.sdf and set `lighting` to be `false
           </script>
 %%%
 ~~~
-            <lighting>false</lighting>
+          <lighting>false</lighting>
 ~~~
 %%%
         </material>

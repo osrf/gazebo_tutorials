@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='unit_box'>
+      <pose>0 0 2.5 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <light name='user_directional_light_0' type='directional'>
+      <pose>0 0 1 0 0 0</pose>
+    </light>
+    <model name='camera'>
+      <static>true</static>
+      <pose>-1 0 2 0 1 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='my_camera' type='camera'>
+          <camera>
+            <save enabled="true">
+              <path>/tmp/camera_save_tutorial</path>
+            </save>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>1920</width>
+              <height>1080</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+        </sensor>
+      </link>
+    </model>
+  </world>
+</sdf>

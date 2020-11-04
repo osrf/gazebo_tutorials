@@ -1,6 +1,6 @@
 # Introduction
 
-**IMPORTANT: This is experimental.**
+**IMPORTANT: This is experimental and outdated. Use with caution.**
 
 The package allows the simulation of fluids in Gazebo. The fluid particle
 interactions are computed on the GPU using the
@@ -36,9 +36,9 @@ available the simulation will run in CPU mode).
 
     ~~~
     [...]
-    cd ~; hg clone https://bitbucket.org/osrf/gazebo
+    cd ~; git clone https://github.com/osrf/gazebo
     cd ~/gazebo
-    hg up fluid_sph
+    git checkout fluid_sph
     [...]
     ~~~
 
@@ -46,7 +46,7 @@ available the simulation will run in CPU mode).
 
 The fluid simulation runs as a separate physics engine which interacts with
 the rigid body physics engine of Gazebo through an interface
-(`include/FluidEngine.hh`). 
+(`include/FluidEngine.hh`).
 
 The interaction includes:
  * collision detection
@@ -79,12 +79,12 @@ The package contains two plugins, one world plugin for updating the fluid and it
     <?xml version="1.0"?>
     <sdf version="1.5">
       <world name="fluid_world">
-    
+
         <!-- A global light source -->
         <include>
           <uri>model://sun</uri>
         </include>
-    
+
         <!-- A box (plane + fluid is not supported) -->
         <model name="box">
           <static>true</static>
@@ -106,8 +106,8 @@ The package contains two plugins, one world plugin for updating the fluid and it
             </visual>
           </link>
         </model>
-    
-    
+
+
         <plugin name="FluidWorldPlugin" filename="libFluidWorldPlugin.so">
           <world_position>0 0 1.01</world_position>
           <world_size>1.5 1 10</world_size>
@@ -115,17 +115,17 @@ The package contains two plugins, one world plugin for updating the fluid and it
           <fluid_volume>0.4 0.95 0.5</fluid_volume>
           <particle_nr>0</particle_nr>
         </plugin>
-    
+
       </world>
     </sdf>
     ~~~
-    
+
     Where:
       * `<world_position>` and `<world_size>` set the fluid world center position and its size
       * `<fluid_position>` and `<fluid_volume>` set the center position of the fluid and its volume to be filled with particles
       * `<particle_nr>` if set to `0`, the given volume will be filled with fluid particles, otherwise the given particle number will be spawned.
-    
-    
+
+
 1. Run gazebo client with the system plugin:
 
     ~~~
@@ -144,11 +144,11 @@ In order for the fluid simulation to detect collisions gazebo needs to use `.stl
 In CMakeLists.txt, the cuda compiler might need graphics card specific flags:
 
   `SET(CUDA_NVCC_FLAGS "-arch;sm_30 -use_fast_math -lm -ldl -lrt -Xcompiler \"-fPIC\"")`
-  
+
 ### Fluidix CMake include path
 
 For a default install the fluidix headers are located in `/opt/fluidix/include`, if the paths differ make sure to change them accordingly in the `src/CMakeLists.txt` file.
-  
+
 ### Some code explanation:
 
  * The world plugin `FluidWorldPlugin.cc`:

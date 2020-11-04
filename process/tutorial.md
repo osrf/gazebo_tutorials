@@ -8,29 +8,29 @@ As of Gazebo 2.0.0, each number is incremented according to:
   2. MINOR is increased when ABI/API compatible new features are introduced.
    3. PATCH is increased when ABI/API compatible bug fixes are introduced.
 
-   This means all 2.x.x versions will be [[abi_checker | ABI/API compatible]].
+   This means all 2.x.x versions will be ABI/API compatible.
 
 # Gazebo Branches and Pull-Requests
 
-   The [Gazebo repository](https://bitbucket.org/osrf/gazebo) is located on [Bitbucket](http://bitbucket.org). 
+   The [Gazebo repository](https://github.com/osrf/gazebo) is located on [GitHub](http://github.com). 
 
 ## Branches
 
-   1. ''default'': Contains all code that breaks [[abi_checker | ABI/API compatibility]] with the current released version
+   1. ''master'': Contains all code that breaks ABI/API compatibility with the current released version
 
-   2. ''gazebo_X.Y'': Contains code for the current released version of Gazebo. Only bugs fixes may be submitted to this branch.
+   2. ''gazeboX'': Contains code for Gazebo version X, where X is the MAJOR version. Only bugs fixes and features that do not break ABI/API may be submitted to this branch.
 
-   3. ''gazebo_X.Z'': Where Z=Y+1. This branch contains new features that are [[abi_checker | ABI/API compatible]] with gazebo_X.Y. This will be the next release, unless a new MAJOR is released.
+   3. All other branches are unstable development branches.
 
 ##Rules
 
-   1. All pull requests must contain an [[abi_checker | ABI/API compatibility report]].
+   1. All pull requests must contain an  ABI/API compatibility report.
 
-   2. All pull requests to 'gazebo_X.Y' must be associated with an issue that is a bug.
+   2. All pull requests to 'gazeboX' must be associated with an issue.
 
    3. 2 or more approvals are required for a pull request to be merged.
 
-   4. All pull requests must pass the [[developer_guide | code checker]], contain no build warnings, and [[developer_guide | pass all the tests]].
+   4. All pull requests must pass the [code checker](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#CodeCheck), contain no build warnings, and [pass all the tests](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#WriteTests).
      
 ##Distinction between bugs and features
 
@@ -42,7 +42,8 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 # OSRF Internal Development Process
 
-   The steps listed below detail how a Gazebo release is developed. This process is enforced by the core Gazebo team, which currently resides at [http://osrfoundation.org OSRF].
+   The steps listed below detail how a Gazebo release is developed.
+   This process is enforced by the core Gazebo team, which currently resides at [OSRF](http://osrfoundation.org).
 
 ## Step 1: New features and/or bug fixes
 
@@ -50,7 +51,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 ## Step 2: Implementation and Review
 
-   This is the fun part. The features decided upon in Step 1 are implemented, documentation written, and tests created. All code must pass our tests, static code checking, and be submitted as a pull-request through Bitbucket.
+   This is the fun part. The features decided upon in Step 1 are implemented, documentation written, and tests created. All code must pass our tests, static code checking, and be submitted as a pull-request through GitHub.
 
 ## Step 3: Feature Freeze
 
@@ -58,7 +59,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
 ## Step 4: Code Freeze
 
-   At this point almost all of the major bugs should be ironed out of the release. Other issues should be tracked on the Bitbucket issue tracker, and documented. Only very critical changes are allowed in the release branch at this time.
+   At this point almost all of the major bugs should be ironed out of the release. Other issues should be tracked on the GitHub issue tracker, and documented. Only very critical changes are allowed in the release branch at this time.
 
 ## Step 5: Release
 

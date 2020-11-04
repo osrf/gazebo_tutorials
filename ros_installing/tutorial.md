@@ -6,9 +6,10 @@ See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_ov
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Jade](http://www.ros.org/wiki/jade), ROS [Indigo](http://www.ros.org/wiki/indigo)
-and ROS [Hydro](http://www.ros.org/wiki/hydro), 
-It is recommended to first read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
+with ROS [Lunar](http://www.ros.org/wiki/lunar), ROS
+[Kinetic](http://www.ros.org/wiki/kinetic) and ROS
+[Indigo](http://www.ros.org/wiki/indigo).  It is recommended to first read
+[Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -19,8 +20,8 @@ You should understand the basic concepts of ROS and have gone through the [ROS T
 ### Install ROS
 
 We recommend for these ROS integration tutorials you install
-(`ros-jade-desktop-full`, `ros-indigo-desktop-full` or
-`ros-hydro-desktop-full`) so that you have all the necessary packages.
+(`ros-lunar-desktop-full`, `ros-kinetic-desktop-full` or
+`ros-indigo-desktop-full`) so that you have all the necessary packages.
 
 See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for more details. Be sure to source your ROS setup.bash script by following the instructions on the ROS installation page.
 
@@ -73,16 +74,17 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
-* [ROS Jade](http://ros.org/wiki/jade):
-
-Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
-released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
-to see the progress.
+* [ROS Lunar](http://ros.org/wiki/lunar):
 
 ~~~
-sudo apt-get install ros-jade-gazebo-ros-pkgs 
+sudo apt-get install ros-lunar-gazebo-ros-pkgs ros-lunar-gazebo-ros-control
 ~~~
 
+* [ROS Kinetic](http://ros.org/wiki/kinetic):
+
+~~~
+sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
+~~~
 
 * [ROS Indigo](http://ros.org/wiki/indigo):
 
@@ -90,13 +92,7 @@ sudo apt-get install ros-jade-gazebo-ros-pkgs
 sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 ~~~
 
-* [ROS Hydro](http://ros.org/wiki/hydro):
-
-~~~
-sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
-~~~
-
-If this installation method ends successfully for you, jump to [testing gazebo with ROS](#Testing_Gazebo_with_ROS_Integration).
+If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
 
 ### B. Install from Source (on Ubuntu)
 
@@ -118,7 +114,7 @@ cd ~/catkin_ws
 catkin_make
 ~~~
 
-Then add to your <tt>.bashrc</tt> file a source to the setup scripts:
+Then add to your `.bashrc` file a source to the setup scripts:
 
 ~~~
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
@@ -134,44 +130,65 @@ Make sure `git` is installed on your Ubuntu machine:
 sudo apt-get install git
 ~~~
 
-##### ROS Jade
+##### ROS Lunar
 
-Jade is using the gazebo 5.x series, start by installing it:
+Lunar is using the gazebo 7.x series, start by installing it:
 
 ~~~
-sudo apt-get install -y libgazebo5-dev
+sudo apt-get install -y libgazebo7-dev
 ~~~
 
 Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
 
 ~~~
 cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b jade-devel
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b lunar-devel
 ~~~
 
 Check for any missing dependencies using rosdep:
 
 ~~~
 rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro jade
+rosdep check --from-paths . --ignore-src --rosdistro lunar
 ~~~
 
 You can automatically install the missing dependencies using rosdep via debian install:
 
 ~~~
-rosdep install --from-paths . --ignore-src --rosdistro jade -y
-~~~
-
-Note: currently in ROS Jade there is no ros-jade-gazebo-ros-control package 
-released. Check [the issue in the gazebo\_ros\_control tracker](https://github.com/ros-controls/ros_control/issues/201)
-to see the progress. Meantime, we need to disable the gazebo-ros-control compilation:
-
-~~~
-touch gazebo_ros_pkgs/gazebo_ros_control/CATKIN_IGNORE
+rosdep install --from-paths . --ignore-src --rosdistro lunar -y
 ~~~
 
 Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
+##### ROS Kinetic
+
+Kinetic is using the gazebo 7.x series, start by installing it:
+
+~~~
+sudo apt-get install -y libgazebo7-dev
+~~~
+
+Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
+
+~~~
+cd ~/catkin_ws/src
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b kinetic-devel
+~~~
+
+Check for any missing dependencies using rosdep:
+
+~~~
+rosdep update
+rosdep check --from-paths . --ignore-src --rosdistro kinetic
+~~~
+
+You can automatically install the missing dependencies using rosdep via debian install:
+
+~~~
+rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
+~~~
+
+Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
 ##### ROS Indigo
 
@@ -204,36 +221,6 @@ rosdep install --from-paths . --ignore-src --rosdistro indigo -y
 Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
 
-##### ROS Hydro
-
-Hydro is using the gazebo 1.x series, start by installing it:
-
-~~~
-sudo apt-get install -y gazebo
-~~~
-
-Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
-
-~~~
-cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b hydro-devel
-~~~
-
-Check for any missing dependencies using rosdep:
-
-~~~
-rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro hydro
-~~~
-
-You can automatically install the missing dependencies using rosdep via debian install:
-
-~~~
-rosdep install --from-paths . --ignore-src --rosdistro hydro -y
-~~~
-
-Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
 #### Build the gazebo\_ros\_pkgs
 
 To build the Gazebo ROS integration packages, run the following commands:
@@ -247,10 +234,10 @@ See [answers.gazebosim.org](http://answers.gazebosim.org/questions/) for issues 
 
 ## Testing Gazebo with ROS Integration
 
-Be sure to always source the appropriate ROS setup file, which for Hydro is done like so:
+Be sure to always source the appropriate ROS setup file, which for Kinetic is done like so:
 
 ~~~
-source /opt/ros/hydro/setup.bash
+source /opt/ros/kinetic/setup.bash
 ~~~
 
 You might want to add that line to your `~/.bashrc`.

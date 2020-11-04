@@ -37,13 +37,13 @@ A [joint trajectory model plugin](https://bitbucket.org/osrf/drcsim/src/4dd60578
 
 ## Create a ROS Publisher
 
-Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://bitbucket.org/osrf/gazebo_tutorials/src/default/drcsim_animate_joints/files/joint_animation.py):
+Download into the current directory a python ROS node that publishes joint trajectory messages [`joint_animation.py`](http://github.com/osrf/gazebo_tutorials/blob/master/drcsim_animate_joints/files/joint_animation.py):
 
 ~~~
-wget http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py
+wget http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py
 ~~~
 
-<include src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Make the file executable:
 
@@ -53,44 +53,44 @@ chmod +x joint_animation.py
 
 ## The Code explained
 
-<include to='/tutorial.\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include to='/tutorial.\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Standard for every rospy node. This imports roslib and then loads the manifest.xml included in the package so those packages are importable as well.
 
-<include from='/import rospy/' to='/JointTrajectoryPoint/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/import rospy/' to='/JointTrajectoryPoint/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Import more modules, and import the message file for JointTrajectory and JointTrajectoryPoint.
 
-<include from='/def jointTrajectoryCommand/' to='/JointTrajectory\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/def jointTrajectoryCommand/' to='/queue_size=10\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 This initializes the node and creates a publisher for the /joint_trajectory topic.
 
-<include from='/    jt =/' to='/atlas::pelvis"/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/    jt =/' to='/atlas::pelvis"/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Create an instantiation of a JointTrajectory message and add the time stamp and frame_id to the header.
 
-<include from='/    jt\.joint/' to='/append\("atlas::r_arm_uwy"\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/    jt\.joint/' to='/append\("atlas::r_arm_uwy"\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Create the list of names of joints that will be controlled.
 
-<include from='/    n = 1500/' to='/1\*theta\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/    n = 1500/' to='/1\*theta\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Setup a for loop that runs for n=1500 times. It calculates joint angles at two different positions x1 and x2. There should be a position for each joint added above.
 
-<include from='/        p.positions.append\(x1\)/' to='/    jt.points.append\(p\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/        p.positions.append\(x1\)/' to='/    jt.points.append\(p\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Create a list of positions that the JointTrajectoryPoint will follow.
 Next, add the JointTrajectoryPoint to the JointTrajectory and proceed to the next point.
 
-<include from='/        # set duration/' to='/n,x1,x2\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/        # set duration/' to='/n,x1,x2\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 Log the point that was created.
 
-<include from='/    pub.publish/' to='/spin\(\)/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/    pub.publish/' to='/spin\(\)/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 This will publish the single JointTrajectory message, which the robot will execute. The node will then spin, which allows the node to continue running without blocking the CPU.
 
-<include from='/if __/' to='/: pass/' src='http://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation.py' />
+<include from='/if __/' to='/: pass/' src='http://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation.py' />
 
 The main method of the rospy node. It prevents the node from executing code if the thread has been shutdown.
 
@@ -125,17 +125,17 @@ The main method of the rospy node. It prevents the node from executing code if t
 
 # Atlas v4 and v5
 
-The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code. The modified script now contains updated joint names:
+The sample code given above will not work for Atlas v4 and v5 because these later models have different joint names and more joints. To animate Atlas v4/v5 joints, download a [modified version](https://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation_v4v5.py) of the code. The modified script now contains updated joint names:
 
-<include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/append\("atlas::r_arm_wry2"\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
+<include from='/    jt.joint_names.append\("atlas::back_bkz" \)/' to='/append\("atlas::r_arm_wry2"\)/' src='https://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
 Correspondingly, populate the joint angles:
 
-<include from='/        p.positions.append\(x2\)/' to='/jt.points.append\(p\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
+<include from='/        p.positions.append\(x2\)/' to='/jt.points.append\(p\)/' src='https://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
 **Note**: For Atlas v4/v5, we have to explicity turn off PID control as it interferes with joint trajectory control. In addition, Atlas is set to User mode:
 
-<include from='/    \# turn off/' to='/mode_pub.publish\(String\("User"\)\)/' src='https://bitbucket.org/osrf/gazebo_tutorials/raw/default/drcsim_animate_joints/files/joint_animation_v4v5.py' />
+<include from='/    \# turn off/' to='/mode_pub.publish\(String\("User"\)\)/' src='https://github.com/osrf/gazebo_tutorials/raw/master/drcsim_animate_joints/files/joint_animation_v4v5.py' />
 
 1. To run the new joint trajectory publisher, follow steps similar to above, but start DRCSim with the following command to launch Atlas v4:
 
