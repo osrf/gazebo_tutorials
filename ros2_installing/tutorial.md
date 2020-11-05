@@ -18,7 +18,7 @@ You should understand the basic concepts of ROS 2 and have gone through some
 
 ROS2 can be installed either through binary installation or source installation,
 see the [ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
-The current stable distribution is **Eloquent**.
+The current stable distribution is **Foxy**.
 
 > **Tip**: Don't forget to source `setup.bash` script as instructed
   on the ROS installation page. The exact command will be different according to
@@ -29,8 +29,8 @@ The current stable distribution is **Eloquent**.
 You can install Gazebo either from source or from pre-build packages. See
 [Install Gazebo](http://gazebosim.org/tutorials?cat=install).
 
-You should install Gazebo 9. If installing from source, be sure to build the
-`gazebo9` branch.
+You should install Gazebo 9 or later. If installing from source, be sure to build the
+appropriate branch, such as `gazebo11` for Gazebo 11.
 
 > **Tip**: You may need to source Gazebo's setup file if you're having difficulty
 finding plugins and other resources. For example: `source /usr/share/gazebo/setup.sh`.
@@ -42,10 +42,10 @@ instructions to install from source.
 
 ### Install from debian packages (on Ubuntu)
 
-Assuming you already have some Eloquent debian packages installed, install
+Assuming you already have some Foxy debian packages installed, install
 `gazebo_ros_pkgs` as follows:
 
-    sudo apt install ros-eloquent-gazebo-ros-pkgs
+    sudo apt install ros-foxy-gazebo-ros-pkgs
 
 ### Install from source (on Ubuntu)
 
@@ -96,7 +96,7 @@ The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`
 
 1. Switch to the branch matching your ROS distro
 
-        vcs custom --args checkout eloquent
+        vcs custom --args checkout foxy
 
 1. Install all dependencies:
 
@@ -145,7 +145,7 @@ Let's try loading one of them now!
 
 1. Make sure you have some core tools installed:
 
-        sudo apt install ros-eloquent-ros-core ros-eloquent-geometry2
+        sudo apt install ros-foxy-ros-core ros-foxy-geometry2
 
 1. If you installed `gazebo_ros_pkgs` from source, source the workspace:
 
@@ -153,7 +153,7 @@ Let's try loading one of them now!
 
 1. Load the differential drive world with Gazebo:
 
-        gazebo --verbose /opt/ros/eloquent/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+        gazebo --verbose /opt/ros/foxy/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
 1. The Gazebo GUI should appear with a simple vehicle:
 
@@ -162,7 +162,7 @@ Let's try loading one of them now!
 1. On a new terminal (this is the 2nd one), run the following command to take a
    look at the world file.
 
-        gedit /opt/ros/eloquent/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
+        gedit /opt/ros/foxy/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
 1. See how the block on the top has a few example commands? Let's open a 3rd
    terminal and, again, source ROS 2 and `gazebo_ros_pkgs` as described above.
