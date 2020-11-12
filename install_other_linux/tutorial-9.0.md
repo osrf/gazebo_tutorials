@@ -60,7 +60,7 @@ or packer:
         # or
         sudo packer -S gazebo
 
-## Gentooo
+## Gentoo
 
 [Gazebo in Gentoo](https://packages.gentoo.org/package/sci-electronics/gazebo)
 is available as an official package (the maintainer is Alexis Ballier). It is
