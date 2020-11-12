@@ -18,19 +18,13 @@ to install Gazebo 9 as follows:
 sudo apt install gazebo9 libgazebo9-dev
 ~~~
 
-Run the following to install the rest of dependencies, including NodeJS:
+Run the following to install dependencies:
 
 ~~~
 sudo apt install libjansson-dev libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
 ~~~
 
-Install nodejs
-
-~~~
-sudo apt install nodejs npm
-~~~
-
-If you run into issues with installing `npm`, another option is to install using node's version manager `nvm`. For example, here are the commands for installing nvm and node:
+Next install `nodejs` and `npm` using node's version manager `nvm`:
 
 ~~~
  # install nvm
@@ -42,6 +36,9 @@ If you run into issues with installing `npm`, another option is to install using
  # install node version 6 or above
  nvm install 6
 ~~~
+
+> You may run into conflict with the libssl version needed by Gazebo and nodejs when trying to install using `apt` on Ubuntu.
+So the recommended way of installation is to use `nvm`.
 
 # Build GzWeb
 
