@@ -6,39 +6,27 @@ on a web browser.
 
 # Dependencies
 
-The main dependencies for GzWeb are the Gazebo development libraries, version 9 or
-greater, and NodeJS version 6 or greater.
+The main dependencies for GzWeb are the Gazebo development libraries, version 7 or
+greater, and NodeJS version 4 up to version 8.
 
 Take a look at
 [these tutorials](http://gazebosim.org/install) to choose the Gazebo
 installation that best fits your case. The simplest approach would be
-to install Gazebo 9 as follows:
+to install Gazebo 7 as follows:
 
 ~~~
-sudo apt install gazebo9 libgazebo9-dev
+sudo apt install gazebo7 libgazebo7-dev
 ~~~
 
-Run the following to install dependencies:
+Run the following to install the rest of dependencies, including NodeJS:
 
 ~~~
-sudo apt install libjansson-dev libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
+sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagick libtinyxml-dev mercurial cmake build-essential
 ~~~
 
-Next install `nodejs` and `npm` using node's version manager `nvm`:
-
-~~~
- # install nvm
- curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-
- # source .bashrc so we can use the nvm cmd
- source ~/.bashrc
-
- # install node version 6 or above
- nvm install 6
-~~~
-
-> You may run into conflict with the libssl version needed by Gazebo and nodejs when trying to install using `apt` on Ubuntu.
-So the recommended way of installation is to use `nvm`.
+> Ubuntu Trusty comes with NodeJS 0.10. You can follow
+  [these](https://github.com/nodesource/distributions) instructions to upgrade
+  the Node version.
 
 # Build GzWeb
 
@@ -46,10 +34,10 @@ So the recommended way of installation is to use `nvm`.
 
         cd ~; git clone https://github.com/osrf/gzweb
 
-1. Enter the GzWeb repository and switch to the latest release branch:
+1. Enter the GzWeb repository and switch to the 1.4.0 release branch:
 
         cd ~/gzweb
-        git checkout gzweb_1.4.1
+        git checkout gzweb_1.4.0
 
 1. The first time you build, you'll need to gather all the Gazebo models which
    you want to simulate in the right directory ('http/client/assets') and prepare
