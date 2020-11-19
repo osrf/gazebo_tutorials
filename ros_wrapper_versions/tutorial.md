@@ -42,8 +42,10 @@ The easiest way of installing Gazebo is to use packages. There are two main repo
  * ***packages.ros.org***
   *  ROS Kinetic: Gazebo 7.x
   *  ROS Melodic: Gazebo 9.x
+  *  ROS Noetic:
   *  ROS2 Dashing: Gazebo 9.x
   *  ROS2 Eloquent: Gazebo 9.x
+  *  ROS2 Foxy:
  * ***packages.osrfoundation.org***
   * gazebo 7.x series (package name `gazebo7`)
   * gazebo 9.x series (package name `gazebo9`)
@@ -73,6 +75,13 @@ For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
  this is the recommended section:
 
+### ROS2 Foxy
+ROS2 Foxy hosts or use the ----- version of Gazebo.
+For a fully-integrated ROS system, we recommend using the ----- version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo----`) and do ***not*** use the osrfoundation
+repository.
+
 ### ROS2 Eloquent
 ROS2 Eloquent hosts or use the 9.x version of Gazebo.
 For a fully-integrated ROS system, we recommend using the 9.x version of
@@ -85,6 +94,13 @@ ROS2 Dashing hosts or use the 9.x version of Gazebo.
 For a fully-integrated ROS system, we recommend using the 9.x version of
 Gazebo.  The way to proceed is just to use the ROS repository (it will
 automatically install `gazebo9`) and do ***not*** use the osrfoundation
+repository.
+
+### ROS1 Noetic
+ROS Noetic hosts or use the ---- version of Gazebo.
+For a fully-integrated ROS system, we recommend using the ---- version of
+Gazebo.  The way to proceed is just to use the ROS repository (it will
+automatically install `gazebo----`) and do ***not*** use the osrfoundation
 repository.
 
 ### ROS1 Melodic
