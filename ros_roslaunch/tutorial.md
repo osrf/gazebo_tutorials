@@ -227,6 +227,8 @@ You should see the following world model (zoom out with the scroll wheel on your
 
 [[file:figs/GasStation.png|800px]]
 
+For the rest of the tutorial, your MYROBOT_gazebo empty world needs to be running.
+
 ### Editing the World File Within Gazebo
 
 You can insert additional models into your robot's world file and use the `File->Save` As command to export your edited world back into your ROS package.
