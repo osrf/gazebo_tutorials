@@ -92,6 +92,12 @@ sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
 sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 ~~~
 
+* [ROS Noetic](http://ros.org/wiki/noetic):
+
+~~~
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
+~~~
+
 If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
 
 ### B. Install from Source (on Ubuntu)
