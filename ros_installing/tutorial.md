@@ -74,22 +74,10 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
-* [ROS Lunar](http://ros.org/wiki/lunar):
-
-~~~
-sudo apt-get install ros-lunar-gazebo-ros-pkgs ros-lunar-gazebo-ros-control
-~~~
-
 * [ROS Kinetic](http://ros.org/wiki/kinetic):
 
 ~~~
 sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
-~~~
-
-* [ROS Indigo](http://ros.org/wiki/indigo):
-
-~~~
-sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 ~~~
 
 If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
@@ -130,36 +118,6 @@ Make sure `git` is installed on your Ubuntu machine:
 sudo apt-get install git
 ~~~
 
-##### ROS Lunar
-
-Lunar is using the gazebo 7.x series, start by installing it:
-
-~~~
-sudo apt-get install -y libgazebo7-dev
-~~~
-
-Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
-
-~~~
-cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b lunar-devel
-~~~
-
-Check for any missing dependencies using rosdep:
-
-~~~
-rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro lunar
-~~~
-
-You can automatically install the missing dependencies using rosdep via debian install:
-
-~~~
-rosdep install --from-paths . --ignore-src --rosdistro lunar -y
-~~~
-
-Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
 ##### ROS Kinetic
 
 Kinetic is using the gazebo 7.x series, start by installing it:
@@ -189,37 +147,6 @@ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ~~~
 
 Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
-##### ROS Indigo
-
-Indigo is using the gazebo 2.x series, start by installing it:
-
-~~~
-sudo apt-get install -y gazebo2
-~~~
-
-Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
-
-~~~
-cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b indigo-devel
-~~~
-
-Check for any missing dependencies using rosdep:
-
-~~~
-rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro indigo
-~~~
-
-You can automatically install the missing dependencies using rosdep via debian install:
-
-~~~
-rosdep install --from-paths . --ignore-src --rosdistro indigo -y
-~~~
-
-Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
-
 
 #### Build the gazebo\_ros\_pkgs
 
