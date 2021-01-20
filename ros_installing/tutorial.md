@@ -74,6 +74,18 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
+* [ROS Noetic](http://ros.org/wiki/noetic):
+
+~~~
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
+~~~
+
+* [ROS Melodic](http://ros.org/wiki/melodic):
+
+~~~
+sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
+~~~
+
 * [ROS Lunar](http://ros.org/wiki/lunar):
 
 ~~~
@@ -91,6 +103,7 @@ sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
 ~~~
 sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control
 ~~~
+
 
 If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
 
