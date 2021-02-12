@@ -236,11 +236,11 @@ then you'll need to install dev packages according to your Gazebo and sdformat v
 
     ~~~
     mkdir lens_control_plugin && cd lens_control_plugin
-    curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CMakeLists.txt
-    curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.hh
-    curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.cc
-    curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/example.world
-    curl -O https://bitbucket.org/0xb000/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/mainwindow.ui
+    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CMakeLists.txt
+    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.hh
+    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.cc
+    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/example.world
+    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/mainwindow.ui
     ~~~
 
 1.  Create a build directory
