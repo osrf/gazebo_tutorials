@@ -161,7 +161,7 @@ similar type. In general, fields with numeric or string values are placed
 on their own line of a multi-line string with as `name: value`, while
 container messages use curly braces `{}`. Recall the content of a
 [WorldStatics](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/9.0.0/world__stats_8proto.html)
-essage from the example for `gz topic --echo`:
+message from the example for `gz topic --echo`:
 
 ~~~
 sim_time {
