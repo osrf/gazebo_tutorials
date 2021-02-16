@@ -154,7 +154,36 @@ Total[185.02 B/s] Mean[33.40 B] Min[33 B] Max[34 B] Messages[10]
 
 Added in `gazebo10` by [Bitbucket pull request 2951](https://osrf-migration.github.io/gazebo-gh-pages/#!/osrf/gazebo/pull-requests/2951/page/1),
 a message can be published from the command-line by using the `--pub`
-or `-p` parameter.
+or `-p` parameter. This command requires encoding the message as a string
+argument to the `--msg` or `-m` parameter. An easy way to see the syntax
+for these messages is to use `gz topic --echo` to display a message of
+similar type. In general, fields with numeric or string values are placed
+on their own line of a multi-line string with as `name: value`, while
+container messages use curly braces `{}`. Recall the content of a
+[WorldStatics](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/9.0.0/world__stats_8proto.html)
+essage from the example for `gz topic --echo`:
+
+~~~
+sim_time {
+  sec: 656
+  nsec: 31000000
+}
+pause_time {
+  sec: 0
+  nsec: 0
+}
+real_time {
+  sec: 657
+  nsec: 883386244
+}
+paused: false
+iterations: 656031
+~~~
+
+The message type is automatically inferred from the topic, so a publisher
+or subscriber for that topic must already exist in order to use this command.
+
+Example of using this command are given in the following subsections.
 
 ## Pause and unpause
 
@@ -199,6 +228,28 @@ pose {
     y: 0.5
     z: 0.5
     w: 0.5
+  }
+}'
+~~~
+
+## Change the gzclient user camera pose
+
+~~~
+gz topic -p /gazebo/default/gui \
+         -m 'camera {
+  name: "this_is_required_but_not_parsed"
+  pose {
+    position {
+      x: 1.23
+      y: 2.34
+      z: 3.45
+    }
+    orientation {
+      x: 0.5
+      y: 0.5
+      z: 0.5
+      w: 0.5
+    }
   }
 }'
 ~~~
