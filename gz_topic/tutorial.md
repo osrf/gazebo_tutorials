@@ -72,7 +72,6 @@ Publishers:
 
 Subscribers:
 
-
 ~~~
 
 # `gz topic --echo`
@@ -115,7 +114,6 @@ real_time {
 }
 paused: false
 iterations: 656230
-
 ~~~
 
 # `gz topic --hz` and `gz topic --bw`
