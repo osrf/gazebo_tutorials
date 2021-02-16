@@ -90,6 +90,13 @@ Windows `cmd` for configuring and building.  You might also need to
    or
         "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
 
+Note:   Replace 2017 with 2019 in the path if running VS 2019
+
+        "C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
+   or
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
 1. In a Windows shell, configure and build Ignition CMake
 
         cd ign-cmake
