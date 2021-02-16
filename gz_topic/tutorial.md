@@ -202,7 +202,6 @@ terminal B:
 
 ~~~
 pause: true
-
 ~~~
 
 In terminal D: use `gz topic --pub` to unpause the simulation by publishing
