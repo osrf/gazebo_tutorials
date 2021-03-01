@@ -61,10 +61,6 @@ the default branch. In an Ubuntu system, several Personal Package Archives
 (PPA's) can be used to install the proper package and dependencies. Note that
 adding these PPA's may cause conflicts with ROS.
 
-    # Only needed on Trusty. Ubuntu packages since Utopic.
-    sudo apt-add-repository ppa:libccd-debs
-    sudo apt-add-repository ppa:fcl-debs
-
     # Main repository
     sudo apt-add-repository ppa:dartsim
     sudo apt-get update
