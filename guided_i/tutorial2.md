@@ -11,14 +11,14 @@ meshes available, however it can sometimes be difficult to find an existing
 mesh.  In these cases you can try your hand at mesh creation, work with an
 artist, or contact the manufacturer directly.
 
-Velodyne has a [STEP file](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) for the HDL-32 located on [their
+Velodyne has a [STEP file](https://velodynelidar.com/wp-content/uploads/2019/09/HDL32E_Outline_Model.step) for the HDL-32 located on [their
 website](http://velodynelidar.com).
 Gazebo can only use STL, OBJ or Collada files, so we'll have to convert this
 file and then add it to our model.
 
 # Step 1: Mesh Acquisition
 
-1. Download the STEP file. Right-click and save-as on this [link](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) to save the STEP file.
+1. Download the STEP file. Right-click and save-as on this [link](https://velodynelidar.com/wp-content/uploads/2019/09/HDL32E_Outline_Model.step) to save the STEP file.
 
 1. Open the STEP file in FreeCad. If you're using Ubuntu, you can install freecad using: ```sudo apt-get install freecad```
 
