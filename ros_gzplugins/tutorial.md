@@ -39,7 +39,7 @@ Also, it will be give a reference to the [SDF element](http://osrf-distributions
 
 ## Adding a `SensorPlugin`
 
-Specifying sensor plugins is slightly different. [Sensors](http://gazebosim.org/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
+Specifying sensor plugins is slightly different. [Sensors](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
 so the `<gazebo>` element describing that sensor must be given a reference to that link.
 For example:
 
