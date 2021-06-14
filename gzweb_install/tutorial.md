@@ -33,8 +33,8 @@ Next install `nodejs` and `npm` using node's version manager `nvm`:
  # source .bashrc so we can use the nvm cmd
  source ~/.bashrc
 
- # install node version 6 or above
- nvm install 6
+ # install node. Supported versions are 8 to 11. 
+ nvm install 8
 ~~~
 
 > You may run into conflict with the libssl version needed by Gazebo and nodejs when trying to install using `apt` on Ubuntu.
