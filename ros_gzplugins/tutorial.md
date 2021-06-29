@@ -428,6 +428,12 @@ Now we'll add the plugin information to `rrbot.gazebo`, again as we did for the 
             <min_angle>-1.570796</min_angle>
             <max_angle>1.570796</max_angle>
           </horizontal>
+	  <vertical>
+            <samples>2</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-0.001</min_angle>
+            <max_angle>0.001</max_angle>
+          </vertical>
         </scan>
         <range>
           <min>0.10</min>
