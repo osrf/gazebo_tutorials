@@ -6,7 +6,7 @@ See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_ov
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Lunar](http://www.ros.org/wiki/lunar), ROS
+with ROS [Noetic](http://www.ros.org/wiki/noetic), ROS [Lunar](http://www.ros.org/wiki/lunar), ROS
 [Kinetic](http://www.ros.org/wiki/kinetic) and ROS
 [Indigo](http://www.ros.org/wiki/indigo).  It is recommended to first read
 [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
@@ -20,7 +20,7 @@ You should understand the basic concepts of ROS and have gone through the [ROS T
 ### Install ROS
 
 We recommend for these ROS integration tutorials you install
-(`ros-lunar-desktop-full`, `ros-kinetic-desktop-full` or
+(`ros-noetic-desktop-full`, `ros-lunar-desktop-full`, `ros-kinetic-desktop-full` or
 `ros-indigo-desktop-full`) so that you have all the necessary packages.
 
 See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for more details. Be sure to source your ROS setup.bash script by following the instructions on the ROS installation page.
@@ -43,7 +43,13 @@ You should see the GUI open with an empty world. Also, test adding a model by cl
 
 #### Test that you have the right version of Gazebo
 
-To see where you install Gazebo, and if it is in the correct location, run:
+To check version of Gazebo run:
+
+~~~
+gazebo --version
+~~~
+
+To see where you installed Gazebo, and if it is in the correct location, run:
 
 ~~~
 which gzserver
@@ -57,7 +63,7 @@ If you installed from source to the default location it should say:
 /usr/local/bin/gzclient
 %%%
 
-If you installed from debian it should say:
+If you installed from debian/ubuntu binary packages it should say:
 
 %%%
 /usr/bin/gzserver
@@ -70,7 +76,7 @@ Choose the method you would prefer. The easier and faster is installing it from
 packages but installing from source means you can more easily debug and submit
 bug patches ;-)
 
-### A. Install Pre-Built Debians
+### A. Install Pre-Built Debian\Ubuntu binary packages
 
 The `gazebo_ros_pkgs` packages are available in:
 
