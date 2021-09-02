@@ -71,6 +71,8 @@ The names of each section is derived from the plugin class name. For example, "B
 
 If there are some sections blank, it means that this author got tired of documenting every plugin and you should fill in the area with your experience should you have knowledge and examples of how to use the particular plugin.
 
+**Note:** Tag naming convention was changed in ros2 foxy from camelCase to snake_case i.e instead of <rightJoint> use <right_joint> etc.
+
 ## Camera
 
 **Description:** provides ROS interface for simulating cameras such as `wge100_camera` by publishing the CameraInfo and Image ROS messages as described in `sensor_msgs`.
@@ -621,6 +623,8 @@ save, then launch the same launch files as for GPU Laser.
 
 **Description:** model plugin that provides a basic controller for differential drive robots in Gazebo. You need a well defined differential drive robot to use this plugin.
 
+**Note:** Tag naming convention was changed in ros2 foxy from camelCase to snake_case i.e instead of <rightJoint> use <right_joint> etc.
+
 ~~~
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
@@ -629,39 +633,49 @@ save, then launch the same launch files as for GPU Laser.
     <updateRate>${update_rate}</updateRate>
 
     <!-- Name of left joint, defaults to `left_joint` -->
+    <!-- In ROS2 foxy use <left_joint> instead -->
     <leftJoint>base_link_left_wheel_joint</leftJoint>
 
     <!-- Name of right joint, defaults to `right_joint` -->
+    <!-- In ROS2 foxy use <right_joint> instead -->
     <rightJoint>base_link_right_wheel_joint</rightJoint>
 
     <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <!-- In ROS2 foxy use <wheel_separation> instead -->
     <wheelSeparation>0.5380</wheelSeparation>
 
     <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <!-- In ROS2 foxy use <wheel_diameter> instead -->
     <wheelDiameter>0.2410</wheelDiameter>
 
     <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <!-- Doesnt exist in ros2 foxy -->
     <wheelAcceleration>1.0</wheelAcceleration>
 
     <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <!-- Doesnt exist in ros2 foxy -->
     <wheelTorque>20</wheelTorque>
 
     <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <!-- cant be changed in ros2 foxy -->
     <commandTopic>cmd_vel</commandTopic>
 
     <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
     <odometryTopic>odom</odometryTopic>
 
     <!-- Odometry frame, defaults to `odom` -->
+    <!-- In ROS2 foxy use <odometry_frame> instead -->
     <odometryFrame>odom</odometryFrame>
 
     <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <!-- In ROS2 foxy use <robot_base_frame> instead -->
     <robotBaseFrame>base_footprint</robotBaseFrame>
 
     <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
     <odometrySource>1</odometrySource>
 
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <!-- in ROS2 foxy use <publish_wheel_tf> instead -->
     <publishWheelTF>true</publishWheelTF>
 
     <!-- Set to true to publish transforms for the odometry, defaults to true -->
