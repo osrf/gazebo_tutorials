@@ -23,7 +23,7 @@ But if you need a camera with fisheye, or other type of wide-angle lens, whose f
 
 1.  Create a new text file in it named `model.config`
 
-        gedit ~/.gazebo/models/fisheye-camera/model.sdf
+        gedit ~/.gazebo/models/fisheye-camera/model.config
 
     And paste the following content:
 
@@ -134,14 +134,16 @@ Now you shold have something like this (except for the sky, if you don't enable 
 *   set `<horizontal_fov>` value to `6.2831`
 *   `<cutoff_angle>` to `3.1415`
 
-%%%
+~~~
 <sensor name="camera" type="wideanglecamera">
   <camera>
-%%%
+~~~
+
 ~~~
     <horizontal_fov>6.2831</horizontal_fov>
 ~~~
-%%%
+
+~~~
     <image>
       <width>320</width>
       <height>240</height>
@@ -151,7 +153,8 @@ Now you shold have something like this (except for the sky, if you don't enable 
       <far>100</far>
     </clip>
     <lens>
-%%%
+~~~
+
 ~~~
       <type>custom</type>
       <custom_function>
@@ -162,7 +165,8 @@ Now you shold have something like this (except for the sky, if you don't enable 
       </custom_function>
       <cutoff_angle>3.1415</cutoff_angle>
 ~~~
-%%%
+
+~~~
       <scale_to_hfov>true</scale_to_hfov>
       <env_texture_size>512</env_texture_size>
     </lens>
@@ -170,7 +174,7 @@ Now you shold have something like this (except for the sky, if you don't enable 
   <always_on>1</always_on>
   <update_rate>30</update_rate>
 </sensor>
-%%%
+~~~
 
 Add one more camera. In topic visualization for this camera you should now see a whole `360°` degree image of the world:
 
