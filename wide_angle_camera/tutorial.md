@@ -229,6 +229,8 @@ Add one more camera. In topic visualization for this camera you should now see a
 
 ## Plugin Example
 
+***This part of the tutorial only works with gazebo7***
+
 It is possible play a bit with different camera's `lens` settings with a plugin.
 The following section requires you to build a plugin from source.
 You will need Gazebo headers to build it.
@@ -240,11 +242,11 @@ then you'll need to install dev packages according to your Gazebo and sdformat v
 
     ~~~
     mkdir lens_control_plugin && cd lens_control_plugin
-    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CMakeLists.txt
-    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.hh
-    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/CameraLensControlExample.cc
-    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/example.world
-    wget https://github.com/osrf/gazebo/raw/camera_lens_example_isolated/examples/plugins/camera_lens_control/mainwindow.ui
+    wget https://github.com/osrf/gazebo/raw/wideangle_example_7.0.0/examples/plugins/camera_lens_control/CMakeLists.txt
+    wget https://github.com/osrf/gazebo/raw/wideangle_example_7.0.0/examples/plugins/camera_lens_control/CameraLensControlExample.hh
+    wget https://github.com/osrf/gazebo/raw/wideangle_example_7.0.0/examples/plugins/camera_lens_control/CameraLensControlExample.cc
+    wget https://github.com/osrf/gazebo/raw/wideangle_example_7.0.0/examples/plugins/camera_lens_control/example.world
+    wget https://github.com/osrf/gazebo/raw/wideangle_example_7.0.0/examples/plugins/camera_lens_control/mainwindow.ui
     ~~~
 
 1.  Create a build directory
