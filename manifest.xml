@@ -354,6 +354,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Topics on the commandline with gz topic" ref='gz_topic'>
+      <markdown version="10+">topics_subscribe/tutorial.md</markdown>
+      <description>How to introspect and publish on gazebo-transport topics from the command-line.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Custom messages" ref='custom_messages'>
       <markdown version="1.9-7">custom_messages/tutorial.md</markdown>
       <markdown version="8+">custom_messages/tutorial-8.0.md</markdown>
@@ -477,7 +483,8 @@
 
     <tutorial title="Gzweb installation" ref='gzweb_install'>
       <markdown version="1.9+">gzweb_install/tutorial_1.9.md</markdown>
-      <markdown version="7+">gzweb_install/tutorial.md</markdown>
+      <markdown version="7+">gzweb_install/tutorial_7.md</markdown>
+      <markdown version="9+">gzweb_install/tutorial.md</markdown>
       <description>Explains how to install and run the WebGL client for Gazebo.</description>
       <skill>beginner</skill>
     </tutorial>
