@@ -314,6 +314,12 @@
       <skill>beginner</skill>
     </tutorial>
 
+    <tutorial title="Wide-Angle Camera" ref='wide_angle_camera'>
+      <markdown version="6.1+">wide_angle_camera/tutorial.md</markdown>
+      <description>How to create and setup wide-angle cameras.</description>
+      <skill>beginner</skill>
+    </tutorial>
+
     <tutorial title="Create a Video with a Camera" ref='camera_save'>
       <markdown version="7.0+">camera_save/tutorial.md</markdown>
       <description>Shows how to create a video from a camera in the world.</description>
