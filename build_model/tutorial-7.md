@@ -74,4 +74,4 @@ Here is a good order in which to add features:
 1. Add all plugins (if any).
 
 With each new addition, load the model using the graphical client to make sure your model is correct.
-However, the `box.sdf` file alone isn't enough to be able to load the model into the graphical client. You must also setup your model directory correctly, which you will learn in the next tutorial: [Make a Mobile Robot](http://gazebosim.org/tutorials?cat=build_robot).
+However, the `box.sdf` file alone isn't enough to be able to load the model into the graphical client. You must also setup your model directory correctly, which you will learn in the next tutorial: [Make a Mobile Robot](http://gazebosim.org/tutorials?tut=build_robot&cat=build_robot).
