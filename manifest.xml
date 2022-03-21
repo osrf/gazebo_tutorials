@@ -82,11 +82,6 @@
     <!-- Beginner tutorials -->
 
     <tutorial title="Ubuntu" ref='install_ubuntu'>
-      <markdown version="4.0">install_ubuntu/tutorial_4-0.md</markdown>
-      <markdown version="5.0">install_ubuntu/tutorial_5-0.md</markdown>
-      <markdown version="6.0">install_ubuntu/tutorial_6-0.md</markdown>
-      <markdown version="7.0">install_ubuntu/tutorial_7-0.md</markdown>
-      <markdown version="8.0">install_ubuntu/tutorial_8-0.md</markdown>
       <markdown version="9.0">install_ubuntu/tutorial_9-0.md</markdown>
       <markdown version="11.0">install_ubuntu/tutorial_11.0.md</markdown>
       <description>Installation instructions for Ubuntu using packages (amd64, i386 or armhf)</description>
@@ -169,18 +164,6 @@
       <markdown version="5 - 8">install_dependencies_from_source/tutorial-8.md</markdown>
       <markdown version="9+">install_dependencies_from_source/tutorial.md</markdown>
       <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
-      <skill>beginner</skill>
-    </tutorial>
-
-    <tutorial title="Old versions (prior to gazebo4)" ref='install'>
-      <markdown version="1.9">install_old_versions/tutorial_1-9.md</markdown>
-      <markdown version="2.2">install_old_versions/tutorial_2-2.md</markdown>
-      <markdown version="3.0">install_old_versions/tutorial_3-0.md</markdown>
-      <markdown version="4.0">install_old_versions/tutorial_4-0.md</markdown>
-      <description>Installation instructions for version prior to 4.0 of Gazebo</description>
-      <tags>
-        <tag>install</tag>
-      </tags>
       <skill>beginner</skill>
     </tutorial>
 
