@@ -6,10 +6,9 @@ See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_ov
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
-with ROS [Noetic](http://www.ros.org/wiki/noetic), ROS [Lunar](http://www.ros.org/wiki/lunar), ROS
-[Kinetic](http://www.ros.org/wiki/kinetic) and ROS
-[Indigo](http://www.ros.org/wiki/indigo).  It is recommended to first read
-[Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
+with ROS [Noetic](http://www.ros.org/wiki/noetic),
+[Melodic](http://www.ros.org/wiki/melodic) and ROS.  It is recommended to first
+read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -20,8 +19,8 @@ You should understand the basic concepts of ROS and have gone through the [ROS T
 ### Install ROS
 
 We recommend for these ROS integration tutorials you install
-(`ros-noetic-desktop-full`, `ros-lunar-desktop-full`, `ros-kinetic-desktop-full` or
-`ros-indigo-desktop-full`) so that you have all the necessary packages.
+(`ros-noetic-desktop-full` or `ros-melodic-desktop-full`) so
+that you have all the necessary packages.
 
 See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for more details. Be sure to source your ROS setup.bash script by following the instructions on the ROS installation page.
 
@@ -80,7 +79,6 @@ bug patches ;-)
 
 The `gazebo_ros_pkgs` packages are available in:
 
-=======
 * [ROS Noetic](http://ros.org/wiki/noetic):
 
 ~~~
@@ -93,19 +91,7 @@ sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
 sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
 ~~~
 
-* [ROS Kinetic](http://ros.org/wiki/kinetic):
-
-~~~
-sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
-~~~
-
 If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
-
-### B. Install from Source (on Ubuntu)
-
-If you are running an earlier version of ROS (Groovy or earlier) you will need
-to install `gazebo_ros_pkgs` from source. Installing from source is also useful
-if you want to develop new plugins or submit patches.
 
 #### Setup A Catkin Workspace
 
@@ -137,32 +123,32 @@ Make sure `git` is installed on your Ubuntu machine:
 sudo apt-get install git
 ~~~
 
-##### ROS Kinetic
+##### ROS Noetic
 
-Kinetic is using the gazebo 7.x series, start by installing it:
+Noetic is using the gazebo 11.x series, start by installing it:
 
 ~~~
-sudo apt-get install -y libgazebo7-dev
+sudo apt-get install -y libgazebo11-dev
 ~~~
 
 Download the source code from the [`gazebo_ros_pkgs` github repository](https://github.com/ros-simulation/gazebo_ros_pkgs):
 
 ~~~
 cd ~/catkin_ws/src
-git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b kinetic-devel
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b noetic-devel
 ~~~
 
 Check for any missing dependencies using rosdep:
 
 ~~~
 rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro kinetic
+rosdep check --from-paths . --ignore-src --rosdistro noetic
 ~~~
 
 You can automatically install the missing dependencies using rosdep via debian install:
 
 ~~~
-rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
+rosdep install --from-paths . --ignore-src --rosdistro noetic -y
 ~~~
 
 Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
@@ -180,10 +166,10 @@ See [answers.gazebosim.org](http://answers.gazebosim.org/questions/) for issues 
 
 ## Testing Gazebo with ROS Integration
 
-Be sure to always source the appropriate ROS setup file, which for Kinetic is done like so:
+Be sure to always source the appropriate ROS setup file, which for Noetic is done like so:
 
 ~~~
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/noetic/setup.bash
 ~~~
 
 You might want to add that line to your `~/.bashrc`.
