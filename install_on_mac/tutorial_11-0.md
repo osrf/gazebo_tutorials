@@ -35,20 +35,9 @@ X11 support and is required by Gazebo and OGRE
         brew install gazebo11
         gazebo
 
-## Optional dependencies
-The Gazebo formula has an optional dependency on the
-[DART](http://dartsim.github.io) physics engine,
-which must be installed using the following procedure
-prior to installing Gazebo11 without using the precompiled binary:
-
-        brew tap dartsim/dart
-        brew install dartsim
-        # Gazebo will be built with DART (autodetected), bullet and simbody
-        brew install gazebo11 --build-from-source
-
 ## Versions
 The formula currently installs version 11.0 of Gazebo. Version 9 can be
-installed using the `gazebo9` formula and Gazebo 8
-using `gazebo8`. To install the latest version of Gazebo's default branch:
+installed using the `gazebo9`. To install the latest version of Gazebo11 from
+gazebo11 development branch:
 
         brew install gazebo11 --HEAD
