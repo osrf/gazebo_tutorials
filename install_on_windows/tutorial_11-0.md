@@ -44,7 +44,8 @@ For contributions or bug reports on using Gazebo with vcpkg the best place is th
 layer for running Linux binary executables on Windows 10 and newer.
 
 The [Project DAVE](https://github.com/Field-Robotics-Lab/dave/wiki) provides
-detailed instructions to setup WSL and install Gazebo together with ROS Noetic
-using Ubuntu Linux installed on Windows. ROS installation can be avoided and
-just follow instructions until the point of installing ROS Noetic packages and
+[detailed instructions](https://github.com/Field-Robotics-Lab/dave/wiki/Install-on-Windows-using-WSL2) 
+to setup WSL and install Gazebo together with ROS Noetic using Ubuntu Linux 
+installed on Windows. ROS installation can be avoided and just follow 
+instructions until the point of installing ROS Noetic packages and
 use apt to install `libgazebo11-dev`.
