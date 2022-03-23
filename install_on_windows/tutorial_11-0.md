@@ -21,7 +21,7 @@ is a quick overview of some of them.
 ### Gazebo on Windows via conda-forge
 
 [conda-forge](https://conda-forge.org/) is a collection of packages to be used
-with conda or miniconda installers.
+with the conda package manager.
 
 General feedback on using conda-forge is collected
 [in this Gazebo issue](https://github.com/osrf/gazebo/issues/2899).
