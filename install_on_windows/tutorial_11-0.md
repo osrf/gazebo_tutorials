@@ -35,6 +35,9 @@ For contributions or bug reports on using Gazebo with conda the best place is th
 and C++ libraries and tools managed by Microsoft. There is a port for
 [Gazebo](https://github.com/microsoft/vcpkg/tree/master/ports/gazebo).
 
+General feedback on using vcpkg is collected
+[in this Gazebo issue](https://github.com/osrf/gazebo/issues/3202).
+
 For contributions or bug reports on using Gazebo with vcpkg the best place is the
 [vcpkg issue tracker](https://github.com/microsoft/vcpkg/issues)
 
