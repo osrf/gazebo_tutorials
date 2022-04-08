@@ -67,7 +67,7 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
         E: Unable to locate package gazebo9
 
     It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
-    For example, installing gazebo9 on Ubuntu Trusty (14.04) will produce the error above.
+    For example, installing gazebo9 on Ubuntu Jammy (22.04) will produce the error above.
     Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status),
     next to each version is the supported ubuntu versions and ROS versions.
 
@@ -77,18 +77,3 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
     ***Note*** The first time `gazebo` is executed requires the download of some models and it could take some time, please be patient.
 
         gazebo
-
-## Gazebo in different deb packages
-
-Gazebo ships different Ubuntu debian packages following the [official packaging
-guidelines](https://www.debian.org/doc/manuals/maint-guide/):
-
- * Use Gazebo as an application: for the users that just run Gazebo simulator
-   with the provided plugins and models and do not plan on developing on top of
-   gazebo its own custom software. To use Gazebo 9 please install the package
-   called ***gazebo9***.
-
- * Use Gazebo to develop software using Gazebo libraries: for users that
-   develop plugins or any other kind of software that needs Gazebo headers and
-   libraries. In this case, together with gazebo9 package, please install
-   ***libgazebo9-dev***.

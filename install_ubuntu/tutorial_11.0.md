@@ -61,35 +61,6 @@ installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connec
         # For developers that work on top of Gazebo, one extra package
         sudo apt-get install libgazebo11-dev
 
-    If you see the error below:
-
-        $ sudo apt-get install gazebo11
-        Reading package lists... Done
-        Building dependency tree
-        Reading state information... Done
-        E: Unable to locate package gazebo11
-
-    It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
-    For example, installing gazebo11 on Ubuntu Xenial (16.04) will produce the error above.
-    Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status),
-    next to each version is the supported ubuntu versions and ROS versions.
-
-
 1. Check your installation
 
         gazebo
-
-## Gazebo in different deb packages
-
-Gazebo ships different Ubuntu debian packages following the [official packaging
-guidelines](https://www.debian.org/doc/manuals/maint-guide/):
-
- * Use Gazebo as an application: for the users that just run Gazebo simulator
-   with the provided plugins and models and do not plan on developing on top of
-   gazebo its own custom software. To use Gazebo 11 please install the package
-   called ***gazebo11***.
-
- * Use Gazebo to develop software using Gazebo libraries: for users that
-   develop plugins or any other kind of software that needs Gazebo headers and
-   libraries. In this case, together with gazebo11 package, please install
-   ***libgazebo11-dev***.
