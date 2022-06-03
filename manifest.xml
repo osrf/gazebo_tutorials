@@ -164,6 +164,9 @@
       <markdown version="5 - 8">install_dependencies_from_source/tutorial-8.md</markdown>
       <markdown version="9+">install_dependencies_from_source/tutorial.md</markdown>
       <description>Install some dependencies from source, such as SDFormat and Ignition libraries.</description>
+      <tags>
+        <tag>install</tag>
+      </tags>
       <skill>beginner</skill>
     </tutorial>
 
