@@ -74,7 +74,7 @@ Add dependency on the new `gazebo_ros` package:
 
 ~~~
 <build_depend>gazebo_ros</build_depend>
-<exec_depend>gazebo_ros</exec_depend>
+<depend>foo</depend>
 ~~~
 
 ### Running Gazebo
