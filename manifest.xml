@@ -1080,9 +1080,6 @@
         <tutorial>install_on_mac</tutorial>
         <tutorial>install_on_windows</tutorial>
 
-        <!-- keep name for historical reasons -->
-        <tutorial>install</tutorial>
-
         <tutorial>install_from_source</tutorial>
         <tutorial>install_dependencies_from_source</tutorial>
         <tutorial>install_unstable</tutorial>
