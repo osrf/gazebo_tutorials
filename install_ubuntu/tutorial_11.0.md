@@ -1,14 +1,25 @@
 # Install Gazebo using Ubuntu packages
 
-This tutorial covers the installation of Gazebo packages using the the
-`osrfoundation.org` repository, designed for those who want to follow the
+This tutorial covers the installation of Gazebo packages using the
+`packages.osrfoundation.org` repository, designed for those who want to follow the
 faster development path but still a stable one.
 
-Gazebo is also released as an Ubuntu official package: ([check which
-version](https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=gazebo&searchon=sourcenames)
-is available for every distribution. If you are a [ROS](http://ros.org) user, please
-read the tutorial about [ROS/Gazebo
-installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
+Some notes:
+
+  * Gazebo11 is also released as an **Ubuntu official package**:
+    [check which version](https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=gazebo&searchon=sourcenames)
+    is available for every distribution. The version in Ubuntu repositories
+    rarely change for stability reasons.
+
+  * Starting with Ubuntu Jammy (22.04) **Open Robotics won't be
+    releasing more binary packages of Gazebo11 in `packages.osrfoundation.org`**
+    for the new Ubuntu versions. ([migration to new Gz, formerly Ignition is recommended](https://community.gazebosim.org/t/a-new-era-for-gazebo/1356)).
+    Binaries coming directly from Ubuntu repositories can be used for these
+    new platforms. The upstream code will keep accepting patches for new
+    software versions so from-source installations will also be an option.
+
+  * If you are a [ROS](http://ros.org) user, please read the tutorial about the
+    [ROS/Gazebo installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
 ## Default installation: one-liner
 
