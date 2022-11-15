@@ -13,7 +13,7 @@ Some notes:
 
   * Starting with Ubuntu Jammy (22.04) **Open Robotics won't be
     releasing more binary packages of Gazebo11 in `packages.osrfoundation.org`**
-    for the new Ubuntu versions. ([migration to new Gz, formerly Ignition is recommended](https://community.gazebosim.org/t/a-new-era-for-gazebo/1356)).
+    for the new Ubuntu versions. [The migration to new Gz, formerly Ignition is recommended](https://community.gazebosim.org/t/a-new-era-for-gazebo/1356).
     Binaries coming directly from Ubuntu repositories can be used for these
     new platforms. The upstream code will keep accepting patches for new
     software versions so from-source installations will also be an option.
