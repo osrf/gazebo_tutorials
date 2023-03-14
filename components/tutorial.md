@@ -148,4 +148,4 @@ For example, to load the `TimerGUIPlugin`:
 gzclient --gui-client-plugin libTimerGUIPlugin.so
 ~~~
 
-For more information refer to the [plugins overview](http://gazebosim.org/tutorials/?tut=plugins_hello_world) page.
+For more information refer to the [plugins overview](http://classic.gazebosim.org/tutorials/?tut=plugins_hello_world) page.
