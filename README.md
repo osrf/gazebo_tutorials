@@ -1,6 +1,6 @@
 # Gazebo Tutorials #
 
-This repository contains the source for each gazebo tutorial found on [Gazebo Tutorials](http://gazebosim.org/tutorials).
+This repository contains the source for each gazebo tutorial found on [Gazebo Tutorials](http://classic.gazebosim.org/tutorials).
 
 ## Tips for creating tutorials
 
