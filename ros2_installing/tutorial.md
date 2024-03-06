@@ -3,7 +3,7 @@
 The set of ROS 2 packages for interfacing with Gazebo are contained within a
 meta package named `gazebo_ros_pkgs`.
 See
-[ROS 2 Overview](http://gazebosim.org/tutorials/?tut=ros2_overview)
+[ROS 2 Overview](/tutorials/?tut=ros2_overview)
 for background information before continuing here.
 
 The packages support ROS 2 Crystal and later and Gazebo 9 and later, and can be installed from
@@ -27,7 +27,7 @@ The current stable distribution is **Foxy**.
 ### Install Gazebo
 
 You can install Gazebo either from source or from pre-build packages. See
-[Install Gazebo](http://gazebosim.org/tutorials?cat=install).
+[Install Gazebo](/tutorials?cat=install).
 
 You should install Gazebo 9 or later. If installing from source, be sure to build the
 appropriate branch, such as `gazebo11` for Gazebo 11.

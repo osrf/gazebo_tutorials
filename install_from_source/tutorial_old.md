@@ -205,7 +205,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
-see [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
+see [Installing gazebo\_ros\_pkgs](/tutorials?cat=connect_ros).
 
 #### Install in a catkin workspace
 

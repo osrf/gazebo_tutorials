@@ -2,13 +2,13 @@
 
 This tutorial will demonstrate how to control the Atlas robot with a joint trajectory controller.  In the course of this tutorial we're going to make the Atlas robot try to take a step.  It will fall down, and that's OK, because our trajectory is incredibly simple and not at all reactive.  You're welcome to extend the example here to make the robot walk or go through other motions.
 
-We're using the ROS topics demonstrated in the [previous tutorial that used C++](http://gazebosim.org/tutorials/?tut=drcsim_ros_cmds&cat=drcsim).  This general-purpose controller can be used to make a set of joints follow a desired trajectory specified as joint angles.  The controller is executed as part of a Gazebo plugin.  This arrangement allows the controller to run in-line with the simulation, approximating the on-robot situation in which the controller runs in a real-time environment.
+We're using the ROS topics demonstrated in the [previous tutorial that used C++](/tutorials/?tut=drcsim_ros_cmds&cat=drcsim).  This general-purpose controller can be used to make a set of joints follow a desired trajectory specified as joint angles.  The controller is executed as part of a Gazebo plugin.  This arrangement allows the controller to run in-line with the simulation, approximating the on-robot situation in which the controller runs in a real-time environment.
 
 **Important note:** The approach to robot control described here is not the best or only way to control the Atlas robot. It is provided for demonstration purposes. DRC participants should be aware that we expect the control system in simulation to change substantially as more sophisticated controller become available.
 
 ## Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities.
+[Click to see the instructions](/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities.
 
 ## Create a new ROS package
 

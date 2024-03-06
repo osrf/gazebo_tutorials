@@ -4,7 +4,7 @@ This tutorial will explain how to change Atlas robot and Sandia hand joint visco
 
 # Background
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).
 
 In this tutorial, we'll demonstrate how to call ROS services in command-line using [rosservice](http://www.ros.org/wiki/rosservice).
 

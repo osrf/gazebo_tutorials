@@ -4,7 +4,7 @@ This tutorial introduces basic sensor stream visualization from simulated
 [MultiSense SL](http://files.carnegierobotics.com/products/MultiSense_SL/MultiSense_SL_brochure.pdf) sensor head using [rviz](http://ros.org/wiki/rviz).
 
 ## Setup
-If not done previously, [install DRCSim first](http://gazebosim.org/tutorials/?tut=drcsim_install).
+If not done previously, [install DRCSim first](/tutorials/?tut=drcsim_install).
 
 ## Starting Atlas Robot Simulation
 Source the environment setup script:
@@ -31,7 +31,7 @@ Next, start [rviz](http://ros.org/wiki/rviz)
     source /usr/share/drcsim/setup.sh
     rosrun rviz rviz
 
-and follow steps in [this tutorial](http://gazebosim.org/tutorials?tut=drcsim_visualization&cat=drcsim) to configure rviz properly.
+and follow steps in [this tutorial](/tutorials?tut=drcsim_visualization&cat=drcsim) to configure rviz properly.
 
 More importantly, repeat the steps to setup camera and laser visualization but substitute ROS topics in the original instructions with following ROS topics:
 

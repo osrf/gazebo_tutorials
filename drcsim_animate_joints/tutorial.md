@@ -4,7 +4,7 @@ In this tutorial, we'll move a robot in simulation without dynamics through the 
 
 # Setup
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 

@@ -13,7 +13,7 @@ catkin_create_pkg gazebo_tutorials gazebo_ros roscpp
 
 ## Create the Plugin
 
-Create a very simple plugin as described [here](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) and save the file as `gazebo_tutorials/src/simple_world_plugin.cpp`:
+Create a very simple plugin as described [here](/tutorials?tut=plugins_hello_world&cat=write_plugin) and save the file as `gazebo_tutorials/src/simple_world_plugin.cpp`:
 
 ~~~
 #include <gazebo/common/Plugin.hh>
@@ -168,7 +168,7 @@ A template is available to help you quickly get a Gazebo-ROS plugin working:
 
 ## Adding Functionality
 
-To make your plugin do something useful with Gazebo and ROS, we suggest you read the ROS-agnostic tutorials on [Plugins](http://gazebosim.org/tutorials/?cat=write_plugin).
+To make your plugin do something useful with Gazebo and ROS, we suggest you read the ROS-agnostic tutorials on [Plugins](/tutorials/?cat=write_plugin).
 
 ## ROS Node Note
 
@@ -182,4 +182,4 @@ or use the generic empty.world launch file. The `gazebo_ros/src/gazebo_ros_api_p
 
 ## Next Steps
 
-For miscellaneous Gazebo-ROS tricks see [Advanced ROS integration](http://gazebosim.org/tutorials/?tut=ros_advanced)
+For miscellaneous Gazebo-ROS tricks see [Advanced ROS integration](/tutorials/?tut=ros_advanced)

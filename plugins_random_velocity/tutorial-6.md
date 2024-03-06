@@ -12,7 +12,7 @@ Once you have set the velocity magnitude, the direction is set on its own
 
 
 # Prerequisites
-[Hello World Plugin](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin)
+[Hello World Plugin](/tutorials?tut=plugins_hello_world&cat=write_plugin)
 
 # Example
 1. Change your current working directory to the location of the worlds folder
@@ -95,7 +95,7 @@ above) and function declarations of the functions defined in
 
 `RandomVelocityPluginPrivate.cc` contains the private data pointer, in accordance
 with the
-[PIMPL idiom](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style)
+[PIMPL idiom](/tutorials?tut=contrib_code&cat=development#Style)
 implementation (opaque pointers).
 The default initial values of all variables are set in it only.
 All other `#include`s are necessary for various parts of code. For example:
@@ -117,7 +117,7 @@ GZ_REGISTER_MODEL_PLUGIN(RandomVelocityPlugin)
 ~~~
 
 In the
-[hello world](http://gazebosim.org/tutorials/?tut=plugins_hello_world#HelloWorldPlugin!)
+[hello world](/tutorials/?tut=plugins_hello_world#HelloWorldPlugin!)
 tutorial we learned that plugins must be registered with the simulator using
 the `GZ_REGISTER_WORLD_PLUGIN` macro.
 

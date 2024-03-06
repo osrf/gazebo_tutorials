@@ -70,7 +70,7 @@ cd ..
 catkin_make
 </pre>
 
-If any of this is unfamiliar, be sure you have read the previous [ROS Overview Tutorials](http://gazebosim.org/tutorials?tut=ros_overview).
+If any of this is unfamiliar, be sure you have read the previous [ROS Overview Tutorials](/tutorials?tut=ros_overview).
 
 ### View in Rviz
 To check if everything is working, launch RRBot in Rviz:
@@ -92,7 +92,7 @@ It is important that while converting your robot to work in Gazebo,
 you don't break Rviz or other ROS-application functionality,
 so its nice to occasionally test your robot in Rviz to make sure everything still works.
 
-The [gazebo\_ros\_control](http://gazebosim.org/tutorials?tut=ros_control)
+The [gazebo\_ros\_control](/tutorials?tut=ros_control)
 tutorial will explain how to use Rviz to monitor the state of your simulated
 robot by publishing `/joint_states` directly from Gazebo.
 In the previous example, the RRBot in Rviz is getting its `/joint_states`
@@ -169,7 +169,7 @@ td {padding: 5px;}
 </tr>
 </table>
 
-Elements within a `<gazebo>` tag that are not in the above table are directly inserted into the SDF `<model>` tag for the generated SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
+Elements within a `<gazebo>` tag that are not in the above table are directly inserted into the SDF `<model>` tag for the generated SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](/tutorials?tut=ros_gzplugins) tutorial.
 
 ## Rigidly Fixing A Model to the World
 If you would like your URDF model to be permanently attached to the world frame (the ground plane), you must create a "world" link and a joint that fixes it to the base of your model. RRBot accomplishes this with the following:
@@ -381,7 +381,7 @@ List of elements that are individually parsed:
 </tr>
 </table>
 
-Similar to `<gazebo>` elements for `<robot>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<link>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
+Similar to `<gazebo>` elements for `<robot>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<link>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](/tutorials?tut=ros_gzplugins) tutorial.
 
 ### RRBot Example of <gazebo> element
 
@@ -476,7 +476,7 @@ The cfmDamping element is deprecated and should be changed to implicitSpringDamp
 </tr>
 </table>
 
-Again, similar to `<gazebo>` elements for `<robot>` and `<link>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<joint>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins) tutorial.
+Again, similar to `<gazebo>` elements for `<robot>` and `<link>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<joint>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](/tutorials?tut=ros_gzplugins) tutorial.
 
 ## Verifying the Gazebo Model Works
 
@@ -496,7 +496,7 @@ Note: in Gazebo version 1.9 and greater, some of the debug info has been moved t
 
 ## Viewing the URDF In Gazebo
 
-Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
+Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
 
 From that tutorial you should have two ROS packages for your custom robot: `MYROBOT_description` and `MYROBOT_gazebo`. To view your robot and test it in Gazebo, you should be able to now run something like:
 
@@ -514,12 +514,12 @@ If your robot model behaves unexpectedly within Gazebo, it is likely because you
 
 If you have a common robot that other's might want to use in Gazebo,
 you are encouraged to add your URDF to the
-[Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
+[Gazebo Model Database](/tutorials?tut=model_structure&cat=build_robot).
 It is an online server that Gazebo connects to to pull down models from the internet.
 Its Mercurial repository is located on [GitHub](https://github.com/osrf/gazebo_models).
-See [Gazebo Model Database](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
+See [Gazebo Model Database](/tutorials?tut=model_contrib&cat=build_robot)
 documentation for how to submit a pull request to have your robot added to the database.
 
 ## Next steps
 
-You have now learned how to use ROS packages containing URDFs with Gazebo, and how to convert your custom URDF to work in Gazebo. You are now ready to learn about adding plugins to your URDF so that different aspects of your robot and the simulated environment can be controlled. See [ROS Motor and Sensor Plugins](http://gazebosim.org/tutorials?tut=ros_gzplugins).
+You have now learned how to use ROS packages containing URDFs with Gazebo, and how to convert your custom URDF to work in Gazebo. You are now ready to learn about adding plugins to your URDF so that different aspects of your robot and the simulated environment can be controlled. See [ROS Motor and Sensor Plugins](/tutorials?tut=ros_gzplugins).

@@ -141,7 +141,7 @@ Samples might be any number of iterations and seconds apart.
 
 As mentioned above, the `gz log` tool provides several options for introspecting
 your log file. Check out
-[this](http://gazebosim.org/tutorials?tut=log_filtering&cat=tools_utilities)
+[this](/tutorials?tut=log_filtering&cat=tools_utilities)
 tutorial for log filtering, for example.
 
 Here, let's quickly go over how you would take a look at the recorded states.

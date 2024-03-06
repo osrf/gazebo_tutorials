@@ -109,7 +109,7 @@ Running GzWeb involves the following pieces:
   http://127.0.0.1:11345)
 
 * GzWeb's NodeJS server which communicates with `gzserver` using
-  [Gazebo Transport](http://gazebosim.org/tutorials?tut=topics_subscribed&cat=transport).
+  [Gazebo Transport](/tutorials?tut=topics_subscribed&cat=transport).
   It works as a bridge between the Javascript and the C++ code.
 
 * An HTTP server which serves static content such as models and website assets

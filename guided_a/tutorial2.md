@@ -1,6 +1,6 @@
 # Run your own copy of Gazebo
 
-On the [previous tutorial](http://gazebosim.org/tutorials?tut=guided_a1)
+On the [previous tutorial](/tutorials?tut=guided_a1)
 we covered where to find the source code for Gazebo and other dependencies.
 
 This tutorial will go through the process of getting your own copy of the
@@ -99,7 +99,7 @@ Cool, now we have all the code, let's build our own copy of Gazebo!
 
 > **Note**: This tutorial goes over the most basic installation. If you need
 some special configuration, check out the full
-[install from source tutorial](http://gazebosim.org/tutorials?tut=install_from_source&cat=install).
+[install from source tutorial](/tutorials?tut=install_from_source&cat=install).
 
 1. Setup your computer to accept software from packages.osrfoundation.org.
 

@@ -1,6 +1,6 @@
 # Overview
 
-**Prerequisites:** [Attach a Mesh as Visual](http://gazebosim.org/tutorials/?tut=attach_meshes)
+**Prerequisites:** [Attach a Mesh as Visual](/tutorials/?tut=attach_meshes)
 
 This tutorials demonstrates how the user can create composite models directly
 from other models in the
@@ -68,4 +68,4 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
 
 ## Next
 
-[Next: Make a Simple Gripper](http://gazebosim.org/tutorials/?tut=simple_gripper)
+[Next: Make a Simple Gripper](/tutorials/?tut=simple_gripper)

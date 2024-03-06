@@ -15,7 +15,7 @@ quickly using computer vision in ROS and Gazebo.
 
 ### Prerequisites
 
-You should [install gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+You should [install gazebo\_ros\_pkgs](/tutorials?tut=ros_installing&cat=connect_ros)
 before doing this tutorial.
 
 ## Create a Gazebo Model with a Depth Camera Plugin
@@ -36,7 +36,7 @@ sensor from `gazebo_models` repository for you, so all you have to do is
 and unzip it.
 
 Alternatively, you can follow the
-[model contribution tutorial](http://gazebosim.org/tutorials?tut=model_contrib&cat=build_robot)
+[model contribution tutorial](/tutorials?tut=model_contrib&cat=build_robot)
 to make your own camera from scratch, or you can clone the `gazebo_models`
 repository and copy one of the sensors from there.
 
@@ -49,7 +49,7 @@ in the `model.sdf` file.
 Now you need to add the ROS plugin to publish depth camera information and
 output to ROS topics. A list of ROS plugins, with example code, can be found in
 the
-[plugins tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros).
+[plugins tutorial](/tutorials?tut=ros_gzplugins&cat=connect_ros).
 
 In this tutorial, you'll be using the generic "Openni Kinect" plugin. You can
 (and should) use this plugin for other types of depth cameras besides the Kinect

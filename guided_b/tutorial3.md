@@ -2,7 +2,7 @@
 
 Now we'll construct our simple robot. We'll make a wheeled vehicle and add a sensor that allows us to make the robot follow a blob (person).
 
-The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, and check out the tutorials on [building a robot](http://gazebosim.org/tutorials?cat=build_robot).
+The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, and check out the tutorials on [building a robot](/tutorials?cat=build_robot).
 But for now, we can do everything right in the Gazebo GUI!
 
 
@@ -39,7 +39,7 @@ The **Palette** has two tabs.
 
 #### Toolbar
 
-Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2) tutorial).
+Like in Simulation mode, the main Toolbar in the Model Editor includes tools for interacting with the objects in the Scene (see the [User Interface](/tutorials?cat=guided_b&tut=guided_b2) tutorial).
 
 The avaible tools are selection, translation, scaling, rotation, undo & redo, copy & paste, alignment, snapping, view adjustment, and joint creation.
 
@@ -207,7 +207,7 @@ The sensor we will add to the car is a depth camera sensor which is going to hel
 ### Adding a plugin
 
 The vehicle we have built so far is complete with all of the physical and sensor components. However, it will not really do much but stay still and generate depth data in simulation. Plugins are a great way to enhance the model with some autonomy by allowing it to perform computations such as sensor data
-   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code. See the [Plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin).
+   processing, path planning, and control. For simplicity, this tutorial will use an existing plugin for our vehicle. Note that it is possible to create your own plugins but it requires writing code. See the [Plugin tutorials](/tutorials?cat=write_plugin).
 
 1. Go to the left panel and select the `Model` tab to see the parts that make up the car model you built.
 

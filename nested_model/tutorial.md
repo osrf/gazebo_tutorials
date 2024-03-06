@@ -1,6 +1,6 @@
 # Overview
 
-**Prerequisites:** [Make a model](http://gazebosim.org/tutorials/?tut=build_model)
+**Prerequisites:** [Make a model](/tutorials/?tut=build_model)
 
 This tutorial describes how you can embed a model inside another to create an
 assembly of models.
@@ -8,7 +8,7 @@ assembly of models.
 # Nested Model
 
 It was seen in the
-[Make a model](http://gazebosim.org/tutorials/?tut=build_model) tutorial that a
+[Make a model](/tutorials/?tut=build_model) tutorial that a
 model SDF is composed of a collection of `links` and `joints`. As of SDF 1.5,
 the `<model>` SDF element has been extended to support self-referencing, which
 means allowing `<model>` elements to be nested. Support for loading nested
@@ -99,7 +99,7 @@ nested model links need to be scoped but minus the top level model name prefix.
 # Note on the include SDF element
 
 Another approach for nesting models is demonstrated in the
-[Add a Sensor to a Robot](http://gazebosim.org/tutorials?tut=add_laser) tutorial
+[Add a Sensor to a Robot](/tutorials?tut=add_laser) tutorial
 which introduces the use of the `<include>` element.
 
 The `<include>` element works by taking all the links from the included model

@@ -8,7 +8,7 @@ Gazebo is also released as an Ubuntu official package: ([check which
 version](https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=gazebo&searchon=sourcenames)
 is available for every distribution. If you are a [ROS](http://ros.org) user, please
 read the tutorial about [ROS/Gazebo
-installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
+installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
 ## Default installation: one-liner
 

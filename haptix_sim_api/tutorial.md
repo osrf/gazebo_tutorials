@@ -2,7 +2,7 @@
 This tutorial gives an overview of the haptix-comm simulation-specific API.
 
 We assume that you have already completed the
-[installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
+[installation step](/tutorials?tut=haptix_install&cat=haptix).
 
 # Documentation
 The full world API documentation can be found
@@ -219,8 +219,8 @@ to drop through the table. We then set it back to the original collide mode.
 You can also specify a new name for the model and an initial position and orientation.
 
 To learn how to create a model in SDF, refer to the
-[Gazebo model building tutorials](http://gazebosim.org/tutorials?cat=build_robot)
-or learn how to use the [model editor](http://gazebosim.org/tutorials?cat=model_editor_top).
+[Gazebo model building tutorials](/tutorials?cat=build_robot)
+or learn how to use the [model editor](/tutorials?cat=model_editor_top).
 
 `hxs_remove_model` removes the model with the matching name from the world. Note that
 `hxs_remove_model` will return an error if it tries to remove a model that does
@@ -242,7 +242,7 @@ based on the scalar inputs.
 In this example, we try to set the state of the robotic arm's wrist joint.
 The joint will snap back to its original position because the motors in the arm
 are actively controlling the joints. To properly set the wrist joint, use `hx_update`
-(described in [another tutorial](http://gazebosim.org/tutorials?tut=haptix_matlab&cat=haptix)).
+(described in [another tutorial](/tutorials?tut=haptix_matlab&cat=haptix)).
 
 ### `hxs_reset`
 Reset the world. If argument "0" is passed to reset, the robotic arm and the viewpoint

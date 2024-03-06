@@ -4,7 +4,7 @@ This tutorial will explain how to use Matlab in Windows or Octave in Linux for r
 description of the hand, sending new joint commands, and receiving state updates. The Matlab
 and Octave systems have the same API, but the steps to run each system differ slightly.
 
-We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
+We assume that you have already done the [installation step](/tutorials?tut=haptix_install&cat=haptix).
 
 # Start the Gazebo simulation
 

@@ -4,7 +4,7 @@ This tutorial describes how to configure the Optitrack motion tracking system fo
 ## What you'll need
 All of the necessary items, including all software components, will be provided to participating HAPTIX teams. We are also providing links for any participants or hobbyists who want to create their own kit.
 
-1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_install) for instructions).
+1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
 1. A Windows computer or a Windows virtual machine (VM) with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a Windows VM that initializes on startup. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 

@@ -2,7 +2,7 @@
 This tutorial will teach you how to create a Gazebo world and spawn Atlas into it.
 
 ## Setup
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 

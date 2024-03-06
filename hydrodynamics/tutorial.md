@@ -5,7 +5,7 @@ This tutorial describes how to use the [BuoyancyPlugin](http://gazebosim.org/api
 
 # Prerequisites
 See [this
-tutorial](http://gazebosim.org/tutorials?tut=aerodynamics&cat=physics)
+tutorial](/tutorials?tut=aerodynamics&cat=physics)
 for an overview of the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html).
 
 # Background

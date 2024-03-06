@@ -5,7 +5,7 @@
 This tutorial will explain how to use the C HAPTIX client library `haptix-comm` for
 requesting a description of the hand, sending new joint commands, and receiving state updates.
 
-We assume that you have already done the [installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
+We assume that you have already done the [installation step](/tutorials?tut=haptix_install&cat=haptix).
 
 
 # Compile your controller

@@ -11,7 +11,7 @@ In particular, we will make use of two ROS topics in this tutorial:
 
 ## Setup
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install).
 
 If you haven't done so, make sure to source the environment setup.sh files with every new terminal you open:
 

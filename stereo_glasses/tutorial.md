@@ -52,7 +52,7 @@ This tutorial assumes that you will be using Ubuntu.
     sudo apt-get install nvidia-settings
     ~~~
 
-1. Gazebo [compiled from source](http://gazebosim.org/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
+1. Gazebo [compiled from source](/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
 
 1. If you are using the Unity desktop environment, stereo probably won't work. Install Gnome Classic:
 

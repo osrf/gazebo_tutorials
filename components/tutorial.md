@@ -21,7 +21,7 @@ A model file uses the same [SDF](http://gazebosim.org/sdf.html) format as world 
 
 A number of models are provided in the [online model database](http://github.com/osrf/gazebo_models) (in previous versions, some example models were shipped with Gazebo).  Assuming that you have an Internet connection when running Gazebo, you can insert any model from the database and the necessary content will be downloaded at runtime.
 
-Read more about model files [here](http://gazebosim.org/tutorials?tut=build_model).
+Read more about model files [here](/tutorials?tut=build_model).
 
 # Environment Variables
 

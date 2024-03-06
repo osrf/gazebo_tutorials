@@ -3,7 +3,7 @@
 This tutorial will explain how to add a model to the
 [Gazebo Model Database](http://models.gazebosim.org/).
 You can read more about the database
-[here](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot).
+[here](/tutorials?tut=model_structure&cat=build_robot).
 
 This tutorial assumes you have created an original Gazebo model and you'd like
 to share it with the community.

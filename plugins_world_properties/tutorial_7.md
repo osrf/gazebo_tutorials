@@ -2,8 +2,8 @@ This plugin example programmatically modifies gravity.
 
 # Prerequisites:
 
- * [Model Manipulation](http://gazebosim.org/tutorials/?tut=plugins_model)
- * [Plugin Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world)
+ * [Model Manipulation](/tutorials/?tut=plugins_model)
+ * [Plugin Tutorial](/tutorials/?tut=plugins_hello_world)
 
 # Setup:
 
@@ -49,7 +49,7 @@ This message is then published to the "~/physics" topic.
 
 # Build
 
-Assuming the reader has gone through the [Plugin Overview Tutorial](http://gazebosim.org/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/world_edit.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the [Plugin Overview Tutorial](/tutorials/?tut=plugins_hello_world), all that needs to be done in addition is save the above code as `~/gazebo_plugin_tutorial/world_edit.cc` and add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/world_edit/CMakeLists.txt' />
 

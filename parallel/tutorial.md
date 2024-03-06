@@ -76,7 +76,7 @@ The following snippet shows how to configure the physics engine with ode with 3 
  - **The name assigned to the physics tag will allow us to change the physics
  engine in runtime with the command `gz physics -o <name of the physics tag>`
  ( for example: `gz physics -o unthrottled1`)**.
- - **Visit the tutorial [Manage physics profiles](http://gazebosim.org/tutorials?tut=preset_manager&cat=physics)
+ - **Visit the tutorial [Manage physics profiles](/tutorials?tut=preset_manager&cat=physics)
  for more details about Gazebo physics parameters. These parameters affect the
  performance, accuracy, and general behavior of physics simulation. The
  physics preset manager interface offers a way to easily switch between a set
@@ -106,7 +106,7 @@ make
 sudo make install
 ```
 
-**For a detailed version of the install instructions please visit the [install tutorial](http://gazebosim.org/tutorials?tut=install_ubuntu).**
+**For a detailed version of the install instructions please visit the [install tutorial](/tutorials?tut=install_ubuntu).**
 
 ## Test Scenarios
 

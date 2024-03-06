@@ -3,7 +3,7 @@
 This tutorial shows how to create use and setup wide-angle camera sensor.
 The difference between regular camera and wide-angle is in projection types:
 The regular camera sensor uses only [pinhole projection](https://en.wikipedia.org/wiki/Pinhole_camera), while wide-anglecamera have much more options.
-For moderate view angle lens distortion could be simulated, as described in [corresponding tutorial](http://gazebosim.org/tutorials?tut=camera_distortion).
+For moderate view angle lens distortion could be simulated, as described in [corresponding tutorial](/tutorials?tut=camera_distortion).
 But if you need a camera with fisheye, or other type of wide-angle lens, whose field of view is `120°`, `180°` or `270°` then you should use wide-angle camera sensor.
 
 

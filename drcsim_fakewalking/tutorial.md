@@ -4,7 +4,7 @@ This tutorial will explain how to drive simulated Atlas around as if it were a w
 
 ## Setup
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -15,7 +15,7 @@ source ~/.bashrc
 
 ## Background
 
-Note that this tutorial does not use the [walking controller](http://gazebosim.org/tutorials/?tut=drcsim_walking&cat=drcsim). It simply spawns Atlas with position controllers enabled that keep it standing upright, as shown in the following image:
+Note that this tutorial does not use the [walking controller](/tutorials/?tut=drcsim_walking&cat=drcsim). It simply spawns Atlas with position controllers enabled that keep it standing upright, as shown in the following image:
 
 [[file:files/Gazebo_with_drc_robot.png|640px]]
 

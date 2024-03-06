@@ -2,9 +2,9 @@
 
 **Prerequisites:**
 
-  [Make a Mobile Robot](http://gazebosim.org/tutorials/?tut=build_robot)
+  [Make a Mobile Robot](/tutorials/?tut=build_robot)
 
-  [Make a Simple Gripper](http://gazebosim.org/tutorials/?tut=simple_gripper)
+  [Make a Simple Gripper](/tutorials/?tut=simple_gripper)
 
 This tutorial explains how to create a composite robot from existing robot parts, i.e. mobile base, simple arm and simple gripper.
 
@@ -14,7 +14,7 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
 ## Mobile Base
 
-1. Per instructions in [Make a Mobile Robot](http://gazebosim.org/tutorials/?tut=build_robot) tutorial, you should have a mobile base robot at your disposal:
+1. Per instructions in [Make a Mobile Robot](/tutorials/?tut=build_robot) tutorial, you should have a mobile base robot at your disposal:
 
     [[file:files/Mobile_base.png|640px]]
 

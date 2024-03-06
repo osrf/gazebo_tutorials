@@ -5,7 +5,7 @@ Gzweb is installed on the server-side. Once the server is set up and running, cl
 # Dependencies
 
 Gzweb is a graphical interface which communicates with gzserver. To use
- gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](http://gazebosim.org/tutorials?tut=drcsim_install&cat=drcsim).
+ gzserver, install either [Gazebo](http://gazebosim.org/install) or [DRCSim](/tutorials?tut=drcsim_install&cat=drcsim).
 
  1. Make sure your system has the right NodeJS version (0.10.x). While this is
  not the latest version, it is the version that ships with Ubuntu Trusty.
@@ -160,7 +160,7 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
  * **Q: When running `./deploy.sh`, it is missing a file in `gz3d/build`:**
 
-    A: You will need to install Grunt and run it appropriately, as described in the [development](http://gazebosim.org/tutorials?tut=gzweb_development) section.
+    A: You will need to install Grunt and run it appropriately, as described in the [development](/tutorials?tut=gzweb_development) section.
 
  * **Q: When running `./deploy.sh`, I see errors along the lines of:**
 

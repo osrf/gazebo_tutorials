@@ -113,7 +113,7 @@ Both ways return a [LogicalCameraImage](https://github.com/osrf/gazebo/blob/gaze
 
 ## Directly From The Sensor
 The data can be taken directly from the sensor.
-You will need to write a [gazebo plugin](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin) to access it.
+You will need to write a [gazebo plugin](/tutorials?tut=plugins_hello_world&cat=write_plugin) to access it.
 Only the most recently generated message is available.
 
 1. Get a generic sensor pointer using the name of the sensor.

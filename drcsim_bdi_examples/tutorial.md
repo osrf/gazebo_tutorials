@@ -1,10 +1,10 @@
 # Overview
 
-This tutorial demonstrates how to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior Library.  Assuming DRCSim 2.7 or above was installed on your system, Atlas simulation behavior library documentations can be found locally, simply point your browser [here](https://bitbucket.org/osrf/drcsim/src/default/drcsim_model_resources/AtlasSimInterface_1.1.1/doc/html/?at=default). See also the [Keyboard teleop walking](http://gazebosim.org/tutorials/?tut=drcsim_keyboard_teleop) tutorial.
+This tutorial demonstrates how to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior Library.  Assuming DRCSim 2.7 or above was installed on your system, Atlas simulation behavior library documentations can be found locally, simply point your browser [here](https://bitbucket.org/osrf/drcsim/src/default/drcsim_model_resources/AtlasSimInterface_1.1.1/doc/html/?at=default). See also the [Keyboard teleop walking](/tutorials/?tut=drcsim_keyboard_teleop) tutorial.
 
 # Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-2.7 or later.
+[Click to see the instructions](/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-2.7 or later.
 
 # Launch the DRC Simulator
 

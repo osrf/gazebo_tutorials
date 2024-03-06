@@ -1,7 +1,7 @@
 # ROS 2 integration overview
 
 > For ROS 1, see
-  [ROS integration overview](http://gazebosim.org/tutorials?tut=ros_overview).
+  [ROS integration overview](/tutorials?tut=ros_overview).
 
 Gazebo is a stand-alone application which can be used independently of ROS or
 ROS 2. The integration of Gazebo with either ROS version is done through a set

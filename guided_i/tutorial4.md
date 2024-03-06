@@ -16,7 +16,7 @@ people can use your model.
 You're welcome to go through the whole process described here, but since
 you'll be uploading an example model from the tutorial, your pull request
 will not be merged. See more details on
-[this](http://gazebosim.org/tutorials?tut=model_contrib)
+[this](/tutorials?tut=model_contrib)
 tutorial on how to contribute your original creations.
 
 1. Fork the `gazebo_models` database by visiting [https://github.com/osrf/gazebo_models/fork](https://github.com/osrf/gazebo_models/fork).
@@ -70,4 +70,4 @@ tutorial on how to contribute your original creations.
 The next tutorial in this series will add a plugin to the Velodyne sensor.
 This plugin will control the rotation of the sensor's upper portion.
 
-[Control plugin](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i5)
+[Control plugin](/tutorials?cat=guided_i&tut=guided_i5)

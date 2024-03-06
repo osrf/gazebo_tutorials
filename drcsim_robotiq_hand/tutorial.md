@@ -5,7 +5,7 @@ as well as how to read its state and visualize it in rviz.
 
 # Setup
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, make sure to source the environment setup.sh files with every new terminal you open:
 
