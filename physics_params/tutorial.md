@@ -245,7 +245,7 @@ With this `min_depth` determined, penetration between the two entities is update
 ## Friction parameters
 
 For torsional friction in ODE, please refer to the tutorial
-[here](http://gazebosim.org/tutorials?tut=torsional_friction&cat=physics).
+[here](/tutorials?tut=torsional_friction&cat=physics).
 
 Contact friction parameters for each surface are specified in the SDFormat
 `friction` element nested under `collision->surface->friction`

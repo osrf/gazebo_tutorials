@@ -1,5 +1,5 @@
 This tutorial is about torsional friction. For translational friction, see
-[this](http://gazebosim.org/tutorials?tut=friction) tutorial.
+[this](/tutorials?tut=friction) tutorial.
 
 # Overview
 

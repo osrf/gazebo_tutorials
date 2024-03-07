@@ -159,7 +159,7 @@ See the [model structure tutorial](tutorials?tut=model_structure) for more infor
 
 [[file:files/model_files.png|256px]]
 
-The `models` folder itself must be in the environment variable [`GAZEBO_MODEL_PATH`](http://gazebosim.org/tutorials?tut=components#EnvironmentVariables).
+The `models` folder itself must be in the environment variable [`GAZEBO_MODEL_PATH`](/tutorials?tut=components#EnvironmentVariables).
 This tutorial will assume you use the folder `~/color_tutorial/models`.
 
 ```

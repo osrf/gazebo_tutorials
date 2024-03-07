@@ -5,7 +5,7 @@ saving your simulation episode on disk and being able to reproduce it
 afterwards.
 
 We assume that you have already done the
-[installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
+[installation step](/tutorials?tut=haptix_install&cat=haptix)
 and you are also familiar with the HAPTIX API.
 
 # A Gazebo log file
@@ -38,7 +38,7 @@ subdirectory and a `state.log` file. Here is an example:
 # Enable Gazebo logging from your C++ program
 
 Follow the steps described in the
-[HAPTIX C-API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_comm)
+[HAPTIX C-API tutorial](/tutorials?cat=haptix&tut=haptix_comm)
 for compiling a program using your favorite operating system.
 
 Uncomment the following blocks to enable logging:
@@ -63,7 +63,7 @@ When executed, this example should create a `/tmp/log/` directory containing a
 # Enable Gazebo logging from your MATLAB/Octave program
 
 Follow the
-[HAPTIX Matlab and Octave API tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_matlab)
+[HAPTIX Matlab and Octave API tutorial](/tutorials?cat=haptix&tut=haptix_matlab)
 and load the `hx_matlab_controller` in Octave or MATLAB.
 
 Uncomment the following blocks to enable logging:

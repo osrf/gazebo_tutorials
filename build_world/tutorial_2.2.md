@@ -8,7 +8,7 @@ This tutorial describes the process of creating a world with both static and dyn
 
 # Setup
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
+1.  Make sure Gazebo is [installed](/tutorials?cat=install).
 
 1.  Start up gazebo, and you should see a world with just a ground plane.
 
@@ -115,4 +115,4 @@ The filename must be in the current working directory, or you must specify the c
 
 # Next
 
-[Next: Modifying a world tutorial](http://gazebosim.org/tutorials/?tut=modifying_world)
+[Next: Modifying a world tutorial](/tutorials/?tut=modifying_world)

@@ -6,7 +6,7 @@ If you have no prior experience with ROS launch files, you can learn more on the
 
 # Setup
 
-We assume that you've already installed DRCSim 4.2 or higher via the [installation instructions](http://gazebosim.org/tutorials/?tut=drcsim_install). If you have not installed a version of DRCSim greater than or equal to 4.2, you must upgrade before you can complete this tutorial.
+We assume that you've already installed DRCSim 4.2 or higher via the [installation instructions](/tutorials/?tut=drcsim_install). If you have not installed a version of DRCSim greater than or equal to 4.2, you must upgrade before you can complete this tutorial.
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -40,7 +40,7 @@ Boston Dynamics has released four versions of the Atlas robot: version 1, versio
 [[file:files/versions.png|750px]]
 
 ## Hands
-There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the RobotiQ hand. There are related tutorials for controlling the [Sandia](http://gazebosim.org/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [RobotiQ](http://gazebosim.org/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
+There are three hand models supported in DRCSim: the Sandia hand, the iRobot hand, and the RobotiQ hand. There are related tutorials for controlling the [Sandia](/tutorials?tut=drcsim_grasp_sandia&cat=drcsim) hand and the [RobotiQ](/tutorials?tut=drcsim_robotiq_hand&cat=drcsim) hand.
 
 Sandia hands:
 

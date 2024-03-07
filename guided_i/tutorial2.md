@@ -98,7 +98,7 @@ In the next section, we will cover adding these meshes to the SDF model.
 
 Gazebo has defined a model directory structure that supports stand-alone
 models, and the ability to share models via an online model database. Review
-[this tutorial](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot) for more information.
+[this tutorial](/tutorials?tut=model_structure&cat=build_robot) for more information.
 
 Another benefit of Gazebo's model structure is that it conveniently
 organizes resources, such as mesh files, required by the model. In this
@@ -285,4 +285,4 @@ In the next tutorial we will add noise to the sensor reading. By default
 simulation will provide near-perfect data, and this does not match the data
 received in the real world.
 
-[Sensor Noise](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i3)
+[Sensor Noise](/tutorials?cat=guided_i&tut=guided_i3)

@@ -9,7 +9,7 @@ This tutorial will explain how to modify the simulated Atlas's environment, such
 
 ## Setup ##
 
-We assume that you've already done the [installation step](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim).
+We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).
 
 If you haven't done so, add the environment setup.sh files to your .bashrc.
 
@@ -104,7 +104,7 @@ Now we need to change `atlas_no_controllers.launch` to refer to the correct worl
 
         <node name="gazebo" pkg="drcsim_gazebo" type="run_$(arg gzname)" args="$(find world_modification_tutorial)/worlds/$(arg gzworld) $(arg extra_gazebo_args)" output="screen" />
 
-Now you're ready to make modifications to the world.  There are a variety of ways to do this; see the [building a world](http://gazebosim.org/tutorials/?tut=drcsim_build_world) tutorial to get started. For now, we'll make some simple edits via the simulator GUI. Launch the Simulator using your just-edited `atlas.launch` file:
+Now you're ready to make modifications to the world.  There are a variety of ways to do this; see the [building a world](/tutorials/?tut=drcsim_build_world) tutorial to get started. For now, we'll make some simple edits via the simulator GUI. Launch the Simulator using your just-edited `atlas.launch` file:
 
     roslaunch world_modification_tutorial atlas.launch
 

@@ -4,7 +4,7 @@ This tutorial will demonstrate how to automatically place the Atlas robot in the
 
 ## Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities.
+[Click to see the instructions](/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities.
 
 ## Launch the DRC Simulator
 
@@ -56,7 +56,7 @@ Please note that the VRC plugin uses a fixed joint to place Atlas in the car. If
 
 ## Test perception with Atlas in the vehicle
 
-With Atlas placed in the vehicle, you can use the methods described in [another tutorial](http://gazebosim.org/tutorials/?tut=drcsim_vehicle&cat=drcsim) to drive the vehicle using open-loop commands. This will allow testing of Atlas's perception systems while driving in the vehicle.
+With Atlas placed in the vehicle, you can use the methods described in [another tutorial](/tutorials/?tut=drcsim_vehicle&cat=drcsim) to drive the vehicle using open-loop commands. This will allow testing of Atlas's perception systems while driving in the vehicle.
 
 Disengage the hand brake:
 
@@ -76,7 +76,7 @@ Press the gas pedal:
 rostopic pub --once /drc_vehicle_xp900/gas_pedal/cmd std_msgs/Float64 '{ data : 1 }'
 ~~~
 
-Now the DRC Vehicle should be driving with Atlas in the passenger's seat. As described a [tutorial on using rviz](http://gazebosim.org/tutorials/?tut=drcsim_visualization&cat=drcsim) and a [tutorial on the MultiSense head](http://gazebosim.org/tutorials/?tut=drcsim_multisense&cat=drcsim), you can use rviz to view the camera or laser scan data while driving.
+Now the DRC Vehicle should be driving with Atlas in the passenger's seat. As described a [tutorial on using rviz](/tutorials/?tut=drcsim_visualization&cat=drcsim) and a [tutorial on the MultiSense head](/tutorials/?tut=drcsim_multisense&cat=drcsim), you can use rviz to view the camera or laser scan data while driving.
 
 ## Use Atlas robot's foot to press gas pedal
 

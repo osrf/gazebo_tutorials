@@ -19,7 +19,7 @@ Some notes:
     software versions so from-source installations will also be an option.
 
   * If you are a [ROS](http://ros.org) user, please read the tutorial about the
-    [ROS/Gazebo installation](http://gazebosim.org/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
+    [ROS/Gazebo installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
 ## Default installation: one-liner
 

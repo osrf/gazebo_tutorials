@@ -114,7 +114,7 @@ Continuing with our examination of the `mud_world.launch` file, we will now look
 
 In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
 
-You can learn more about world files in the [Build A World](http://gazebosim.org/tutorials?cat=build_world) tutorial.
+You can learn more about world files in the [Build A World](/tutorials?cat=build_world) tutorial.
 
 #### Finding World Files On Your Computer
 World files are found within the `/worlds` directory of your Gazebo resource path. The location of this path depends on how you installed Gazebo and the type of system your are on. To find the location of your Gazebo resources, use the following command:
@@ -448,4 +448,4 @@ To check the media path that will be picked up by gazebo.
 
 ## Next Steps
 
-Now that you know how to create `roslaunch` files that open Gazebo, world files and URDF models, you are now ready to create your own Gazebo-ready URDF model in the tutorial [Using A URDF In Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf)
+Now that you know how to create `roslaunch` files that open Gazebo, world files and URDF models, you are now ready to create your own Gazebo-ready URDF model in the tutorial [Using A URDF In Gazebo](/tutorials/?tut=ros_urdf)

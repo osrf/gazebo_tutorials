@@ -7,9 +7,9 @@ manipulation dexterity testing inspired by a paper titled
 written by Valero-Cuevas et. al. in 2003.
 
 For this tutorial, we assume that you have already completed the
-[HAPTIX handsim installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix)
+[HAPTIX handsim installation step](/tutorials?tut=haptix_install&cat=haptix)
 and we strongly recommend that you have completed the
-[simulation world API tutorials](http://gazebosim.org/tutorials?tut=haptix_sim_api&cat=haptix).
+[simulation world API tutorials](/tutorials?tut=haptix_sim_api&cat=haptix).
 
 # Running the Simulation Example
 
@@ -19,7 +19,7 @@ To start Gazebo handsim scoring plugin example, run gazebo in terminal:
 gazebo --verbose worlds/luke_hand.world
 ~~~
 
-By default it brings up the desktop world with the [Luke Hand model](http://gazebosim.org/tutorials?tut=haptix_luke_hand&cat=haptix).
+By default it brings up the desktop world with the [Luke Hand model](/tutorials?tut=haptix_luke_hand&cat=haptix).
 
 Integrated in this world is a spring compression test that uses
 the SimEventsPlugin to keep track of the status of aforementioned task completion.
@@ -154,7 +154,7 @@ In the [luke_hand.world](https://bitbucket.org/osrf/handsim/src/8fe03d4d113659c1
     </plugin>
 ~~~
 
-(For reference, [here are the documentation for SDF format](http://www.sdformat.org/) and here are [some basic tutorials on using SDF to build simulation worlds and models](http://gazebosim.org/tutorials?cat=build_world)).
+(For reference, [here are the documentation for SDF format](http://www.sdformat.org/) and here are [some basic tutorials on using SDF to build simulation worlds and models](/tutorials?cat=build_world)).
 
 And the accompanying source code blocks that interprets the results of the `SimEventsPlugin` data can be found in
 [HaptixGUIPlugin.cc](https://bitbucket.org/osrf/handsim/src/default/src/HaptixGUIPlugin.cc).

@@ -48,7 +48,7 @@ in the panel:
   
       This is an optional feature, so this tab will be empty in
       most cases. To learn more about Layers, check out the 
-      [Visibility Layers](http://gazebosim.org/tutorials?tut=visual_layers&cat=build_robot) 
+      [Visibility Layers](/tutorials?tut=visual_layers&cat=build_robot) 
       tutorial. 
 
 #### Right Panel (hidden by default)

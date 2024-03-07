@@ -4,7 +4,7 @@ This tutorial describes how to make a simple two-bar pinching gripper.
 
 # Setup your model directory
 
-Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot) and [SDF](http://gazebosim.org/sdf) documentation for this tutorial.
+Reference [Model Database documentation](/tutorials?tut=model_structure&cat=build_robot) and [SDF](http://gazebosim.org/sdf) documentation for this tutorial.
 
 # Make the model
 
@@ -139,4 +139,4 @@ Reference [Model Database documentation](http://gazebosim.org/tutorials?tut=mode
 
 # Next
 
-[Next: Attach Gripper to Robot](http://gazebosim.org/tutorials/?tut=attach_gripper)
+[Next: Attach Gripper to Robot](/tutorials/?tut=attach_gripper)

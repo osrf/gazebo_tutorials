@@ -30,7 +30,7 @@ As of Gazebo 2.0.0, each number is incremented according to:
 
    3. 2 or more approvals are required for a pull request to be merged.
 
-   4. All pull requests must pass the [code checker](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#CodeCheck), contain no build warnings, and [pass all the tests](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#WriteTests).
+   4. All pull requests must pass the [code checker](/tutorials?tut=contrib_code&cat=development#CodeCheck), contain no build warnings, and [pass all the tests](/tutorials?tut=contrib_code&cat=development#WriteTests).
      
 ##Distinction between bugs and features
 

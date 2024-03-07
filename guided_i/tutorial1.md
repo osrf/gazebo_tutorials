@@ -395,4 +395,4 @@ Now that we have a Velodyne LiDAR model, we can improve it in three ways:
 
 The first improvement will be addressed in the next tutorial.
 
-[Next Tutorial](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i2)
+[Next Tutorial](/tutorials?cat=guided_i&tut=guided_i2)

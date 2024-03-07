@@ -29,7 +29,7 @@ and
 [model.sdf](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf)
 to that folder.
 You can then insert the model into a simulation using the `Insert` panel
-in the [left side of the gazebo client](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2).
+in the [left side of the gazebo client](/tutorials?cat=guided_b&tut=guided_b2).
 
 For brevity, the model parameters are encoded in an embedded ruby template file named
 [model.sdf.erb](https://github.com/osrf/gazebo_tutorials/raw/master/kinematic_loop/four_bar_sdf/model.sdf.erb).

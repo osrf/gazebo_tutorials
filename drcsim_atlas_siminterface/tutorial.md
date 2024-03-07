@@ -4,7 +4,7 @@ This tutorial describes how to use the Atlas Sim Interface to command Atlas to w
 
 ## Setup
 
-We assume that you've already done the [DRCSim installation step](http://gazebosim.org/tutorials?tut=drcsim_install).
+We assume that you've already done the [DRCSim installation step](/tutorials?tut=drcsim_install).
 
 If you haven't done so, make sure to source the environment setup.sh files with every new terminal you open:
 

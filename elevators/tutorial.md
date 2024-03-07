@@ -68,4 +68,4 @@ request takes place thanks to the Occupied Region Event, described next.
 
 # Occupied Region Event
 
-The elevator plugin works with the [OccupiedEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1OccupiedEventSource.html) component of the [SimEventPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html). The OccupiedEvent sends a message whenever a 3D region becomes occupied with a model. Refer to the [OccupiedEvent tutorial](http://gazebosim.org/tutorials?tut=occupiedevent&cat=plugins) for more information.
+The elevator plugin works with the [OccupiedEvent](http://gazebosim.org/api/code/dev/classgazebo_1_1OccupiedEventSource.html) component of the [SimEventPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1SimEventsPlugin.html). The OccupiedEvent sends a message whenever a 3D region becomes occupied with a model. Refer to the [OccupiedEvent tutorial](/tutorials?tut=occupiedevent&cat=plugins) for more information.

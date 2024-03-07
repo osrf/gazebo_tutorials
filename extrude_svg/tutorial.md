@@ -5,7 +5,7 @@ This tutorial describes the process of extruding SVG files, which are 2D
  easier to design part of a model in a program like [Inkscape](https://inkscape.org/) or [Illustrator](www.adobe.com/Illustrator).
 
 Before starting, make sure you're familiar with the
- [Model Editor](http://gazebosim.org/tutorials?tut=model_editor).
+ [Model Editor](/tutorials?tut=model_editor).
 
 This tutorial will show you how to make a custom wheel as an .svg in Inkscape,
  and import it into Gazebo so that it can be attached to a robot.

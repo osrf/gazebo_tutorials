@@ -110,7 +110,7 @@ ask for guidance at [Gazebo Answers](https://answers.gazebosim.org), explaining
 your specific use case.
 
 To build these libraries from source, first go through the
-[Build dependencies from source](http://gazebosim.org/tutorials?tut=install_dependencies_from_source)
+[Build dependencies from source](/tutorials?tut=install_dependencies_from_source)
 tutorial and then come back here.
 
 ### Build And Install Gazebo
@@ -198,7 +198,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     sudo ldconfig
 
 1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
-see [Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?cat=connect_ros).
+see [Installing gazebo\_ros\_pkgs](/tutorials?cat=connect_ros).
 
 #### Install in a catkin workspace
 

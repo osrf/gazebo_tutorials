@@ -18,7 +18,7 @@ environment.
 # Actors
 
 In Gazebo, an animated model is called an `actor`. Actors extend
-[common models](http://gazebosim.org/tutorials?tut=build_model&cat=build_robot),
+[common models](/tutorials?tut=build_model&cat=build_robot),
 adding animation capabilities.
 
 There are two types of animations which can be used separately or combined
@@ -39,7 +39,7 @@ moves in the world:
     [[file:files/skel_traj_full.gif|300px]]
 
 Gazebo's actors are just like
-[models](http://gazebosim.org/tutorials?tut=build_model),
+[models](/tutorials?tut=build_model),
 so you can put links and joints inside them as usual. The main differences are:
 
 * Actors are always static (i.e. no forces are applied on them, be it from
@@ -180,7 +180,7 @@ fluid motion, but the exact poses contained in the waypoints might not be reache
 
 > **Tip**: Non-actor models can also follow scripted trajectories, but that
 requires the use of plugins. See
-[this](http://gazebosim.org/tutorials?tut=animated_box)
+[this](/tutorials?tut=animated_box)
 tutorial to learn how.
 
 Now it's your turn! Try out different trejctory descriptions before moving on to
@@ -225,7 +225,7 @@ The actor in the example above is really simple, all it loads is a COLLADA file
 described within the `<skin>` tag.
 
 > **Note**: If you've made
-[custom](http://gazebosim.org/tutorials?tut=import_mesh&cat=build_robot)
+[custom](/tutorials?tut=import_mesh&cat=build_robot)
 Gazebo models before, you might have used COLLADA files as visuals and
 collisions for your models. When used within *links*, COLLADA animations are
 ignored, but when used within *skins*, they are loaded!
@@ -236,7 +236,7 @@ The file specified in `<filename>` can be an absolute path, for example:
 
 You can also tell Gazebo to look for the mesh in all the directories contained in
 the environment variable
-[`GAZEBO_MODEL_PATH`](http://gazebosim.org/tutorials?tut=components),
+[`GAZEBO_MODEL_PATH`](/tutorials?tut=components),
 like this:
 
     model://skeketon_model/skeleton.dae
@@ -396,7 +396,7 @@ take a look at an example of how to change the trajectory dinamically using
 plugins.
 
 > **Tip**: If you're not familiar with Gazebo plugins, take a look at some
-[plugin tutorials](http://gazebosim.org/tutorials?cat=write_plugin) first.
+[plugin tutorials](/tutorials?cat=write_plugin) first.
 
 Gazebo has an example world with actors moving around while avoiding obstacles.
 Take a look at it running:

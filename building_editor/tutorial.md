@@ -4,7 +4,7 @@ This tutorial describes the process of creating a building using the Building Ed
 
 ## Open the Building Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/tutorials?cat=install).
+1.  Make sure Gazebo is [installed](/tutorials?cat=install).
 
 1.  Start up gazebo.
 
@@ -244,7 +244,7 @@ Colors and textures can be chosen from the Palette and assigned to items on your
 
 # Saving your building
 
-Saving will create a [directory, SDF and config files](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot) for your building.
+Saving will create a [directory, SDF and config files](/tutorials?tut=model_structure&cat=build_robot) for your building.
 
 Before saving, give your building a name on the Palette.
 

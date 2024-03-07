@@ -2,13 +2,13 @@
 
 The set of ROS packages for interfacing with Gazebo are contained within a
 new meta package (catkin's version of stacks) named `gazebo_ros_pkgs`.
-See [Overview of new ROS integration](http://gazebosim.org/tutorials/?tut=ros_overview)
+See [Overview of new ROS integration](/tutorials/?tut=ros_overview)
 for background information before continuing here.
 
 These instructions are for using the Gazebo versions that are fully integrated
 with ROS [Noetic](http://www.ros.org/wiki/noetic),
 [Melodic](http://www.ros.org/wiki/melodic) and ROS.  It is recommended to first
-read [Which combination of ROS/Gazebo version to use](http://gazebosim.org/tutorials/?tut=ros_wrapper_versions)
+read [Which combination of ROS/Gazebo version to use](/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -28,7 +28,7 @@ See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for mo
 
 You can install Gazebo either from source or from pre-build Ubuntu debians.
 
-See [Install Gazebo](http://gazebosim.org/tutorials?cat=install). If installing from source, be sure to build the `gazebo_X.Y` (X.Y being your desired version) branch.
+See [Install Gazebo](/tutorials?cat=install). If installing from source, be sure to build the `gazebo_X.Y` (X.Y being your desired version) branch.
 
 #### Test that stand-alone Gazebo works
 

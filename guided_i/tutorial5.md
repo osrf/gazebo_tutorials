@@ -14,7 +14,7 @@ tasks including moving objects, adding/removing objects, and accessing
 sensor data.
 
 More information on plugins is available in [these
-tutorials](http://gazebosim.org/tutorials?cat=write_plugin). It is highly
+tutorials](/tutorials?cat=write_plugin). It is highly
 recommended that you look over these tutorials before proceeding.
 
 # Install Gazebo headers
@@ -34,7 +34,7 @@ will include the plugin source code, and a CMake build script.
 
 We won't go into heavy detail about the various components of a plugin in
 order to keep this tutorial fairly short. Take a look at [these other
-tutorials](http://gazebosim.org/tutorials?cat=write_plugin) for more
+tutorials](/tutorials?cat=write_plugin) for more
 information.
 
 ## Step 1: Create a workspace
@@ -642,6 +642,6 @@ plugin.
 The final tutorial in this series discusses how to connect this plugin to
 ROS.
 
-[Connect to ROS](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i6)
+[Connect to ROS](/tutorials?cat=guided_i&tut=guided_i6)
 
 

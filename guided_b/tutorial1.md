@@ -46,7 +46,7 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 # Installation Instructions for Ubuntu #
 
-If you run into problems during the install, please see the [complete install instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install).
+If you run into problems during the install, please see the [complete install instructions](/tutorials?tut=install_ubuntu&cat=install).
 
 1. Download the installer. Right-clicking the [link to the installer](http://get.gazebosim.org) and choose 
 "Save Link As" to the Downloads directory of your disc.

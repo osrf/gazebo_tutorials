@@ -4,7 +4,7 @@ The tutorial demonstrates Gazebo's basic model management, and exercises familia
 
 ## Setup your model directory ##
 
-Read through the [Model Database documentation](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
+Read through the [Model Database documentation](/tutorials?tut=model_structure&cat=build_robot). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
 
 1.  Create a model directory:
 
@@ -110,7 +110,7 @@ It is important to start simple, and build up a model in steps. The first step i
     Here we have created a `box` with a size of `0.4 x 0.2 x 0.1` meters. The `collision` element specifies the shape used by the collision detection engine. The `visual` element specifies the shape used by the rendering engine. For most use cases the `collision` and `visual` elements are the same. The most common use for different `collision` and `visual` elements is to have a simplified `collision` element paired with a `visual` element that uses a complex mesh. This will help improve performance.
 
 1.  Try out your model by running gazebo, and importing your model through the
-    [Insert Model](http://gazebosim.org/tutorials?tut=build_world&cat=build_world#AddingModelfromtheModelDatabase)
+    [Insert Model](/tutorials?tut=build_world&cat=build_world#AddingModelfromtheModelDatabase)
     interface on the GUI.
 
         gazebo
@@ -520,4 +520,4 @@ It is important to start simple, and build up a model in steps. The first step i
     Idea: A six wheeled vehicle with a scoop front loading mechanism.
 
 ## Next ##
-[Next: Attach Meshes](http://gazebosim.org/tutorials/?tut=attach_meshes)
+[Next: Attach Meshes](/tutorials/?tut=attach_meshes)

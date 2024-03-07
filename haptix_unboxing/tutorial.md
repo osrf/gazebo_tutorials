@@ -1,7 +1,7 @@
 # Overview
 This document provides instructions for replicating the setup used by participating HAPTIX teams.
 
-Please note that you can install the full simulation environment on a standalone Linux machine by simply following the [installation tutorial](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix). This tutorial is for users who want to integrate 3D vision and motion capture for a full virtual reality experience.
+Please note that you can install the full simulation environment on a standalone Linux machine by simply following the [installation tutorial](/tutorials?tut=haptix_install&cat=haptix). This tutorial is for users who want to integrate 3D vision and motion capture for a full virtual reality experience.
 
 # Inventory
 
@@ -182,9 +182,9 @@ You will need to restart your computer for the new drivers to take effect.
 
 1. Put the glasses on. The Gazebo window should look 3D.
 
-1. You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the [teleop tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_teleop) for more information).
+1. You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the [teleop tutorial](/tutorials?cat=haptix&tut=haptix_teleop) for more information).
 
-1. Move to the [next tutorial](http://gazebosim.org/tutorials?cat=haptix&tut=haptix_optitrack) for instructions on configuring the OptiTrack 3D camera for viewpoint and arm pose control.
+1. Move to the [next tutorial](/tutorials?cat=haptix&tut=haptix_optitrack) for instructions on configuring the OptiTrack 3D camera for viewpoint and arm pose control.
 
 # Troubleshooting
 

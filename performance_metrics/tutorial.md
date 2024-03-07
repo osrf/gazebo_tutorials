@@ -168,7 +168,7 @@ When you choose the `update rate` of a sensor you need to take in account if you
 defined in `max step size`. For example:
 
   - 1/250 = 0.004 it's fine using the default value.
-  - 1/400 = 0.0025. You will need to reduce the `max step size` to a number that is a factor of 0.0025, e.g. 0.0001, this will make the simulation slower. Changing this parameter has a side effect on the accuracy and speed of physics simulation, refer to this [tutorial](http://gazebosim.org/tutorials?tut=physics_params&cat=physics) for more information.
+  - 1/400 = 0.0025. You will need to reduce the `max step size` to a number that is a factor of 0.0025, e.g. 0.0001, this will make the simulation slower. Changing this parameter has a side effect on the accuracy and speed of physics simulation, refer to this [tutorial](/tutorials?tut=physics_params&cat=physics) for more information.
 
 In the following traces we included a IMU sensor at 400Hz. You can see that the `sim_update_rate` does not correspond with the defined value
 because the `max step size` does not have enough precision.

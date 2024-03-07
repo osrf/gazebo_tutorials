@@ -4,7 +4,7 @@ Gazebo provides a set of ROS API's that allows users to modify and get informati
 
 ## Prerequisites
 
-If you would like to follow along with the examples make sure you have the RRBot setup as described in the [Using URDF in Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf). In this tutorial we'll have the RRBot "kick" a coke can using various techniques.
+If you would like to follow along with the examples make sure you have the RRBot setup as described in the [Using URDF in Gazebo](/tutorials/?tut=ros_urdf). In this tutorial we'll have the RRBot "kick" a coke can using various techniques.
 
 We'll assume you have Gazebo already launched using:
 
@@ -114,7 +114,7 @@ These services allow the user to spawn and destroy models dynamically in simulat
 
 ### Spawn Model
 
-A helper script called `spawn_model` is provided for calling the model spawning services offered by `gazebo_ros`. The most practical method for spawning a model using the service call method is with a `roslaunch` file. Details are provided in the tutorial [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials/?tut=ros_roslaunch). There are many ways to use spawn_model to add URDFs and SDFs to Gazebo. The following are a few of the examples:
+A helper script called `spawn_model` is provided for calling the model spawning services offered by `gazebo_ros`. The most practical method for spawning a model using the service call method is with a `roslaunch` file. Details are provided in the tutorial [Using roslaunch Files to Spawn Models](/tutorials/?tut=ros_roslaunch). There are many ways to use spawn_model to add URDFs and SDFs to Gazebo. The following are a few of the examples:
 
 Spawn a URDF from file - first convert .xacro file to .xml then spawn:
 
@@ -124,7 +124,7 @@ rosrun gazebo_ros spawn_model -file `rospack find rrbot_description`/urdf/rrbot.
 ~~~
 
 URDF from parameter server using roslaunch and xacro:
-See [Using roslaunch Files to Spawn Models](http://gazebosim.org/tutorials/?tut=ros_roslaunch)
+See [Using roslaunch Files to Spawn Models](/tutorials/?tut=ros_roslaunch)
 
 SDF from local model database:
 
@@ -412,4 +412,4 @@ rosservice call gazebo/unpause_physics
 ~~~
 
 ## Next Steps
-Learn how to create custom [ROS plugins for Gazebo](http://gazebosim.org/tutorials/?tut=ros_plugins).
+Learn how to create custom [ROS plugins for Gazebo](/tutorials/?tut=ros_plugins).

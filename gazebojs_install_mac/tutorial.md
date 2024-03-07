@@ -16,7 +16,7 @@ This page explains how to install the GazeboJs Node bindings to Gazebo.
 ### Mac OSX (using homebrew)
 
 This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo and its  development libraries are installed.
-Please refer to the [Install Gazebo on Mac (using homebrew)](http://gazebosim.org/tutorials?tut=install_on_mac&cat=install).
+Please refer to the [Install Gazebo on Mac (using homebrew)](/tutorials?tut=install_on_mac&cat=install).
 
 #### Setup
 

@@ -1,7 +1,7 @@
 # Tutorial: ROS integration overview
 
 > For ROS 2, see
-  [ROS 2 integration overview](http://gazebosim.org/tutorials?tut=ros2_overview).
+  [ROS 2 integration overview](/tutorials?tut=ros2_overview).
 
 To achieve ROS integration with stand-alone Gazebo, a set of ROS packages named
 [gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs) provides wrappers
@@ -29,7 +29,7 @@ The following guidelines will help you upgrade your Gazebo-dependent packages fr
 
 Some changes are required in previously created roslaunch files for starting Gazebo.
 The best way to update these packages is to review the
-[Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/tutorials?tut=ros_roslaunch&cat=connect_ros) tutorial.
+[Using roslaunch files to spawn models in Gazebo](/tutorials?tut=ros_roslaunch&cat=connect_ros) tutorial.
 In a nutshell:
 
 - Within roslaunch files, `pkg="gazebo"` needs to be now renamed to `pkg="gazebo_ros"`
@@ -97,6 +97,6 @@ rosrun gazebo_ros debug
 </pre>
 
 These nodes are better documented in the tutorial
-[Using roslaunch files to spawn models in Gazebo](http://gazebosim.org/tutorials?tut=ros_roslaunch&cat=connect_ros).
+[Using roslaunch files to spawn models in Gazebo](/tutorials?tut=ros_roslaunch&cat=connect_ros).
 
-Continue to [Installing gazebo_ros Packages](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros).
+Continue to [Installing gazebo_ros Packages](/tutorials?tut=ros_installing&cat=connect_ros).

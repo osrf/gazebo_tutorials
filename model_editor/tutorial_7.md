@@ -138,7 +138,7 @@ As an example, try changing the joint pose and joint type. Once you are done, cl
 
 # Saving your model
 
-Saving will create a [directory, SDF and config files](http://gazebosim.org/tutorials?tut=model_structure&cat=build_robot) for your model.
+Saving will create a [directory, SDF and config files](/tutorials?tut=model_structure&cat=build_robot) for your model.
 
 As an exercise, let's build a simple car and save it. The car will have a
 box chassis and four cylinder wheels. Each wheel will be connected to the

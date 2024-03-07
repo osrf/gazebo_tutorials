@@ -2,7 +2,7 @@
 
 This plugin example programmatically modifies the gravity.
 
-**Prerequisite**: See the [Plugins Overview](http://gazebosim.org/tutorials/?tut=plugins_hello_world) tutorial.
+**Prerequisite**: See the [Plugins Overview](/tutorials/?tut=plugins_hello_world) tutorial.
 
 ## Setup
 

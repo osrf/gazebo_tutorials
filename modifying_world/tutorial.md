@@ -44,4 +44,4 @@ See the [sdf physics documentation](http://osrf-distributions.s3.amazonaws.com/s
 
 # Next
 
-[Next: How to use DEMs in Gazebo](http://gazebosim.org/tutorials/?tut=dem)
+[Next: How to use DEMs in Gazebo](/tutorials/?tut=dem)

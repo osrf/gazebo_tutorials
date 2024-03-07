@@ -15,7 +15,7 @@ of sensors. While Gaussian noise may not be very realistic, it is better
 than nothing and serves as a good first-pass approximation of noise.
 Gaussian noise is also relatively easy to apply to data streams.
 
-For more information on Gazebo's sensor noise model, visit [this tutorial](http://gazebosim.org/tutorials?tut=sensor_noise&cat=sensors).
+For more information on Gazebo's sensor noise model, visit [this tutorial](/tutorials?tut=sensor_noise&cat=sensors).
 
 ## Step 1: Visualize the sensor data
 
@@ -107,4 +107,4 @@ Gazebo's noise model can be accessed using the `<noise>` tag. See
 In the next section we will modify the Velodyne model so that it can be
 easily shared and reused.
 
-[Next Section](http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i4)
+[Next Section](/tutorials?cat=guided_i&tut=guided_i4)

@@ -8,7 +8,7 @@ It is recommended to read it before installing the Gazebo ROS wrappers.
 
 If you are planning on using a specific version of ROS and don't have a reason
 to use a specific version of Gazebo, you should proceed with the
-[Installing gazebo\_ros\_pkgs](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+[Installing gazebo\_ros\_pkgs](/tutorials?tut=ros_installing&cat=connect_ros)
 tutorial which explains how to install the fully supported version of gazebo
 by ROS.
 

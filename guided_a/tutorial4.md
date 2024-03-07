@@ -143,7 +143,7 @@ looks like:
         Total errors found: 0
 
 The tool does not catch all style errors. Be sure to take a look at Gazebo's
-[style guide](http://gazebosim.org/tutorials?tut=contrib_code&cat=development#Style)
+[style guide](/tutorials?tut=contrib_code&cat=development#Style)
 and follow all the directions contained there too.
 
 ## Documentation

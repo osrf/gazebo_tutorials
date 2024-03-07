@@ -4,7 +4,7 @@ This tutorial will demonstrate how to control the the DRC Vehicle using ROS topi
 
 ## Install DRC Simulator
 
-[Click to see the instructions](http://gazebosim.org/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-3.1 or later.
+[Click to see the instructions](/tutorials/?tut=drcsim_install&cat=drcsim) for installing the DRC simulator and associated utilities. This tutorial requires drcsim-3.1 or later.
 
 ## Launch the DRC Simulator
 

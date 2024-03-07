@@ -244,7 +244,7 @@ the text output.
 # Filling in the tags in URDF or [SDF](http://sdformat.org)
 
 The next step is to record the computed values to the URDF or [SDF](http://sdformat.org) file containing your robot (it is assumed you already have the robot model; if not, follow the tutorial
-[Make a Model](http://gazebosim.org/tutorials?tut=build_model&cat=build_robot)).
+[Make a Model](/tutorials?tut=build_model&cat=build_robot)).
 
 In each link you should have the `<inertial>` tag.
 It should look like the following (in [SDF](http://sdformat.org)):

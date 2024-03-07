@@ -3,7 +3,7 @@ This tutorial describes how to install the DEKA Luke hand model and how to start
 the simulation environment with this limb.
 
 We assume that you have already completed the
-[installation step](http://gazebosim.org/tutorials?tut=haptix_install&cat=haptix).
+[installation step](/tutorials?tut=haptix_install&cat=haptix).
 
 ## Getting the DEKA Luke hand model and documentation
 

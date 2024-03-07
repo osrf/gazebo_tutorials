@@ -6,13 +6,13 @@ In this tutorial we explain both how to setup preexisting plugins and how to cre
 
 ## Prerequisites
 
-Make sure you have the RRBot setup as described in the [previous tutorial on URDFs](http://gazebosim.org/tutorials/?tut=ros_urdf).
+Make sure you have the RRBot setup as described in the [previous tutorial on URDFs](/tutorials/?tut=ros_urdf).
 Also make sure you have understood the use of the `<gazebo>` element within the URDF description, from that same tutorial.
 
 ## Plugin Types
 
 Gazebo supports
-[several plugin types](http://gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin),
+[several plugin types](/tutorials?tut=plugins_hello_world&cat=write_plugin),
 and all of them can be connected to ROS, but only a few types can be referenced through a URDF file:
 
   1. [ModelPlugins](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1ModelPlugin.html), to provide access to the [physics::Model](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1physics_1_1Model.html) API
@@ -369,7 +369,7 @@ In this code example there is both a left and right camera:
 </gazebo>
 ~~~
 
-You can find a more detailed description for configuring a depth camera in [Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials/?tut=ros_depth_camera).
+You can find a more detailed description for configuring a depth camera in [Use a Gazebo Depth Camera with ROS](/tutorials/?tut=ros_depth_camera).
 
 ## GPU Laser
 
@@ -791,4 +791,4 @@ If a 3rd party plugin is useful and generic enough, please consider pulling it i
 # Next Steps
 
 Next we will analyze the `ros_control` packages integrated with Gazebo for tight controller/actuator/simulator integration
-[Actuators, controllers, and ros_control](http://gazebosim.org/tutorials/?tut=ros_control).
+[Actuators, controllers, and ros_control](/tutorials/?tut=ros_control).

@@ -1,6 +1,6 @@
 #Prerequisites
 
-  [Overview / HelloWorld](http://gazebosim.org/tutorials?tut=plugins_hello_world) Plugin Tutorial
+  [Overview / HelloWorld](/tutorials?tut=plugins_hello_world) Plugin Tutorial
 
 # Overview
 
@@ -40,7 +40,7 @@ On the first `Update`, we get a pointer to the user camera (the camera used in t
 
 ## Compiling Camera Plugin
 
-Assuming the reader has gone through the [Hello WorldPlugin tutorial](http://gazebosim.org/tutorials?tut=plugins_hello_world) all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
+Assuming the reader has gone through the [Hello WorldPlugin tutorial](/tutorials?tut=plugins_hello_world) all that needs to be done is to add the following lines to `~/gazebo_plugin_tutorial/CMakeLists.txt`
 
 <include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/system_gui_plugin/CMakeLists.txt' />
 

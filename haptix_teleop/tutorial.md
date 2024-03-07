@@ -102,7 +102,7 @@ sudo spacenavd
 
 ## Razer Hydra
 
-Please follow the [hydra installation instructions](http://gazebosim.org/tutorials?tut=hydra&cat=user_input).
+Please follow the [hydra installation instructions](/tutorials?tut=hydra&cat=user_input).
 
 Once installed, the right paddle will perform the following actions:
 

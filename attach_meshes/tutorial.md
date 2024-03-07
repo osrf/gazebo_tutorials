@@ -1,6 +1,6 @@
 # Overview
 
-**Prerequisites:** [Make a mobile robot](http://gazebosim.org/tutorials/?tut=build_robot)
+**Prerequisites:** [Make a mobile robot](/tutorials/?tut=build_robot)
 
 Meshes can add realism to a model both visually and for sensors.  This tutorial demonstrates how the user can use custom meshes to define how their model will appear in simulation.
 
@@ -105,7 +105,7 @@ The most common use case for a mesh is to create a realistic looking visual.
 
 ##Further Reading##
 
-When creating a new robot, you'll likely want to use your own mesh file. The [import a mesh tutorial](http://gazebosim.org/tutorials/?tut=import_mesh) describes how to go about importing a mesh into a format suitable for Gazebo.
+When creating a new robot, you'll likely want to use your own mesh file. The [import a mesh tutorial](/tutorials/?tut=import_mesh) describes how to go about importing a mesh into a format suitable for Gazebo.
 
 ## Try for yourself ##
 
@@ -119,4 +119,4 @@ Note: Materials (texture files such with extension like .png or .jpg), should be
 
 ##Next##
 
-[Next: Add a Sensor to a Robot](http://gazebosim.org/tutorials/?tut=add_laser)
+[Next: Add a Sensor to a Robot](/tutorials/?tut=add_laser)

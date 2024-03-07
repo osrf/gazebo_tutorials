@@ -10,7 +10,7 @@ available the simulation will run in CPU mode).
 **Prerequisites:**
 
   * Nvidia graphics card
-  * Go through the basic Gazebo tutorials, especially through [world plugins](http://gazebosim.org/tutorials?tut=plugins_world), [system plugins](http://gazebosim.org/tutorials?tut=system_plugin), [transport library](http://gazebosim.org/tutorials?cat=transport) examples.
+  * Go through the basic Gazebo tutorials, especially through [world plugins](/tutorials?tut=plugins_world), [system plugins](/tutorials?tut=system_plugin), [transport library](/tutorials?cat=transport) examples.
  * For deeper understanding of the particle simulation look through some [Fluidix examples](http://onezero.ca/sample/?id=general_basic).
 
 # Install
@@ -32,7 +32,7 @@ available the simulation will run in CPU mode).
     sudo ./install.sh
     ~~~
 
-1. Install [gazebo](http://gazebosim.org/tutorials?cat=install) from source using the `fluid_sph` branch
+1. Install [gazebo](/tutorials?cat=install) from source using the `fluid_sph` branch
 
     ~~~
     [...]

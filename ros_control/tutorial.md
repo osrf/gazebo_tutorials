@@ -19,10 +19,10 @@ An overview of the relationship between simulation, hardware, controllers and tr
 
 This tutorial builds off of many of the concepts in the previous tutorials.
 We will again be using the RRBot that was setup in the
-[Using URDF in Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf) tutorial, as an example for the plugins covered here.
+[Using URDF in Gazebo](/tutorials/?tut=ros_urdf) tutorial, as an example for the plugins covered here.
 
 Make sure you have already installed ros\_control, ros\_controllers, and their dependencies as described in the
-[installation instructions](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros).
+[installation instructions](/tutorials?tut=ros_installing&cat=connect_ros).
 
 # Usage
 
@@ -386,4 +386,4 @@ The example code used for the RRBot in this tutorial is available in the reposit
 
 # Next Steps
 
-Learn about ROS message and service calls that are available for use with Gazebo in the tutorial [ROS Communication with Gazebo](http://gazebosim.org/tutorials/?tut=ros_comm).
+Learn about ROS message and service calls that are available for use with Gazebo in the tutorial [ROS Communication with Gazebo](/tutorials/?tut=ros_comm).
