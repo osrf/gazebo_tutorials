@@ -18,6 +18,13 @@ Some notes:
     new platforms. The upstream code will keep accepting patches for new
     software versions so from-source installations will also be an option.
 
+  * On Ubuntu Jammy (22.04) [Gazebo](https://packages.ubuntu.com/jammy/science/gazebo)
+    binaries are only available for amd64. ROS uses Ubuntu official packages for Gazebo
+    so there are only amd64 ROS packages. Packages for arm64. armhf and ppc64
+    were released for the same version in Jammy in a
+    [PPA https://launchpad.net/~openrobotics/+archive/ubuntu/gazebo11-non-amd64](https://launchpad.net/~openrobotics/+archive/ubuntu/gazebo11-non-amd64)
+    but there is no official support nor updates for these binaries.
+
   * If you are a [ROS](http://ros.org) user, please read the tutorial about the
     [ROS/Gazebo installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
