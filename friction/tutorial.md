@@ -34,7 +34,7 @@ to the normal vector and to each other (see the illustration from the ODE user
 manual below).
 The user can specify a desired value for the first friction direction, which
 may be adjusted to ensure that it is orthogonal to the normal vector, and the
-second friction will be computed automically.
+second friction will be computed automatically.
 
 ![Illustration of variable related to ODE contact constraint.](http://ode.org/wiki/images/b/b9/Contact.jpg)
 
@@ -50,7 +50,7 @@ Specifying different friction parameter values in different directions
 for example in modeling wheel contact with different behavior in the
 longitudinal and lateral wheel directions.
 Note however that the `pyramid_model` friction constraints are solved
-independently, which simplies the math but can introduce non-physical behavior
+independently, which simplifies the math but can introduce non-physical behavior
 in some situations.
 See the comparison of friction models in the
 [Physics Parameters tutorial](/tutorials?tut=physics_params#Frictionparameters)
@@ -121,7 +121,7 @@ from its parent link and model.
 For example, the following model contains two links with equivalent shape and
 surface properties. The first link has no pose rotation, while the second
 link has a 90-degree "roll" rotation about the body-fixed X axis, which
-requires the box dimensions and fdir1 specification to differ in order
+requires the box dimensions and `fdir1` specification to differ in order
 to account for the rotation and maintain the same net behavior.
 
 ~~~
