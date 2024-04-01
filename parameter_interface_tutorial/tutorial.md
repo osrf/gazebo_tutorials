@@ -1,8 +1,8 @@
-# Tutorial: Getting and Setting Parameters in Ignition Gazebo
+# Getting started with the Parameter interface in Ignition Gazebo
 
 ## Introduction
 
-The addition of a parameter declaration and manipulation interface to Ignition Gazebo enables more dynamic and configurable simulations. This tutorial explores the motivations behind these changes, outlines the setup process, and demonstrates why this functionality is helpful for advanced simulation applications.
+The parameter declaration and manipulation interface to Ignition Gazebo enables more dynamic and configurable simulations. This tutorial explores the motivations behind this feature, outlines the setup process, showcases an example, and demonstrates why this functionality is helpful for simulation applications.
 
 ### Motivations
 
@@ -19,7 +19,7 @@ The addition of a parameter declaration and manipulation interface to Ignition G
 #### Prerequisites
 
 1. Ignition Gazebo built from source (Fortress version or newer)- instructions can be found [here](https://gazebosim.org/docs/fortress/install_ubuntu_src). 
-2. 
+
 
 
 #### Steps
@@ -111,11 +111,7 @@ This adjusts the wheel slip parameters, demonstrating the dynamic reconfiguratio
 - Parameter types are protobuf messages.
 - A ign param command line tool is added. A simple CLI tool to interact with parameters. Though interacting with parameters using ign service is possible, it's not as easy as parameter values are serialized.
 
-### Further Reading
-
-- Ignition Gazebo Documentation
-- Ignition Transport Documentation
 
 ### Acknowledgments
 
-This feature was made possible by contributions from the community, particularly Ivan Pauno, who spearheaded the development and integration of the parameters interface into Ignition Gazebo. Details on this change can be found [here](https://github.com/gazebosim/gz-sim/pull/1431) and [here](https://github.com/gazebosim/gz-transport/pull/305).
+This feature was made possible by contributions from the community, particularly Ivan Pauno, who spearheaded the development and integration of the parameters interface into Ignition Gazebo. Details on this change can be found on the [gz-sim repo](https://github.com/gazebosim/gz-sim/pull/1431), [gz-msgs repo](https://github.com/gazebosim/gz-msgs/pull/241), and [gz-transport repo](https://github.com/gazebosim/gz-transport/pull/305).
