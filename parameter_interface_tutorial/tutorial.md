@@ -14,18 +14,17 @@ The addition of a parameter declaration and manipulation interface to Ignition G
 
 4. **Simplification of Experiments**: Researchers and developers can easily conduct a range of experiments under varying conditions without the need for multiple SDF files or complex reconfigurations.
 
-### Setting Up the Parameter Interface
+### Testing the Parameter Interface
 
 #### Prerequisites
 
-Ignition Gazebo built from source (Fortress version or newer)- instructions can be found [here](https://gazebosim.org/docs/fortress/install_ubuntu_src). 
+1. Ignition Gazebo built from source (Fortress version or newer)- instructions can be found [here](https://gazebosim.org/docs/fortress/install_ubuntu_src). 
+2. 
 
 
 #### Steps
 
-1. **Build from Source**: Clone and build Ignition Gazebo Fortress and the necessary branches that contain the new parameter interface.
-
-2. **Launch the Demo World**: Once built, you can launch the `trisphere_cycle_wheel_slip.sdf` demo to see the parameters in action with the following command (please source the gazebo fortress workspace which was built from source before proceeding):
+**Launch the Demo World**: Once built, you can launch the `trisphere_cycle_wheel_slip.sdf` demo to see the parameters in action with the following command (please source the gazebo fortress workspace which was built from source before proceeding):
 
    ```
    ign gazebo trisphere_cycle_wheel_slip.sdf
