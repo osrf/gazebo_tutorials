@@ -1,12 +1,12 @@
 # Overview
 
-Gazebo communicates on TCP/IP sockets, which allows separate programs to interface with Gazebo. [Boost ASIO](http://www.boost.org/doc/libs/1_53_0/doc/html/boost_asio.html) is used by Gazebo to manage the communication layer, and [Google Protobufs](https://code.google.com/p/protobuf/) are used as the message passing and serialization library. Messages are sent on named channels called **topics** via **publishers**. On the other side of a topic are **subscribers**, which receive callbacks when messages arrive. In summary, to send messages one must publish messages using a publisher on a named topic, and to receive messages one must subscribe to a named topic using a subscriber.
+Gazebo-classic communicates on TCP/IP sockets, which allows separate programs to interface with Gazebo. [Boost ASIO](http://www.boost.org/doc/libs/1_53_0/doc/html/boost_asio.html) is used by Gazebo-classic to manage the communication layer, and [Google Protobufs](https://code.google.com/p/protobuf/) are used as the message passing and serialization library. Messages are sent on named channels called **topics** via **publishers**. On the other side of a topic are **subscribers**, which receive callbacks when messages arrive. In summary, to send messages one must publish messages using a publisher on a named topic, and to receive messages one must subscribe to a named topic using a subscriber.
 
-The easiest way to communicate with Gazebo over TCP/IP sockets is to link against the Gazebo libraries, and use the provided functions.
+The easiest way to communicate with Gazebo-classic over TCP/IP sockets is to link against the Gazebo-classic libraries, and use the provided functions.
 
-The Gazebo transport system is documented [here](http://gazebosim.org/api/code/dev/group__gazebo__transport.html)  and messages are documented [here](http://gazebosim.org/api/msgs/dev).
+The Gazebo-classic transport system is documented [here](http://gazebosim.org/api/code/dev/group__gazebo__transport.html)  and messages are documented [here](http://gazebosim.org/api/msgs/dev).
 
-A list of all the topics in use on a running system can be found with the following command (make sure Gazebo is running first):
+A list of all the topics in use on a running system can be found with the following command (make sure Gazebo-classic is running first):
 
 ~~~
 gz topic -l
@@ -29,7 +29,7 @@ cmake ..
 make
 ~~~
 
-Run the listener program when an instance of Gazebo is already running.
+Run the listener program when an instance of Gazebo-classic is already running.
 
 ~~~
 cd ~/listener/build
@@ -84,7 +84,7 @@ gazebo::transport::NodePtr node(new gazebo::transport::Node());
 node->Init();
 ~~~
 
-Create a subscriber on the ''world_stats'' topic. Gazebo publishes a stream of stats on this topic.
+Create a subscriber on the ''world_stats'' topic. Gazebo-classic publishes a stream of stats on this topic.
 
 ~~~
 gazebo::transport::SubscriberPtr sub = node->Subscribe("~/world_stats", cb);

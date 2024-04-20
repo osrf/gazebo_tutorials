@@ -16,7 +16,7 @@ When a box is rotating on top of a plane, there's a large surface of contact
 between them. At each point of contact, translational friction acts to
 decelerate the box. You can try it by yourself:
 
-1. Open Gazebo with the default physics engine and insert a box
+1. Open Gazebo-classic with the default physics engine and insert a box
 
 1. Choose `View -> Transparent` and then `View -> Contacts`, so we can see the
 contact points.
@@ -31,7 +31,7 @@ never stops. Why is that?
 
 [[file:files/box_and_sphere.png|600px]]
 
-The different behaviours happen because Gazebo has translational friction
+The different behaviours happen because Gazebo-classic has translational friction
 enabled by default with default parameters, but torsional friction is disabled
 by default.
 
@@ -177,7 +177,7 @@ On SDF, the torsional friction for the sphere example would look as follows:
 
 # Example world
 
-Gazebo comes with a demo world which you can run as follows:
+Gazebo-classic comes with a demo world which you can run as follows:
 
     gazebo -u worlds/torsional_friction_demo.world
 

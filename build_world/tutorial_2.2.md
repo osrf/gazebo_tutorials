@@ -8,7 +8,7 @@ This tutorial describes the process of creating a world with both static and dyn
 
 # Setup
 
-1.  Make sure Gazebo is [installed](/tutorials?cat=install).
+1.  Make sure Gazebo-classic is [installed](/tutorials?cat=install).
 
 1.  Start up gazebo, and you should see a world with just a ground plane.
 
@@ -20,7 +20,7 @@ This tutorial describes the process of creating a world with both static and dyn
 
 # Adding Objects
 
-Gazebo provides two mechanisms for adding objects to Gazebo.
+Gazebo-classic provides two mechanisms for adding objects to Gazebo.
 
 1.  The first is a set of simple shapes, located above the render window.
 

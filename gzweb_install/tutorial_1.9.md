@@ -43,11 +43,11 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
     ~~~
     cd ~/gzweb
-    # Note for Gazebo versions < 7, please use the gzweb_1.2.0 branch
+    # Note for Gazebo-classic versions < 7, please use the gzweb_1.2.0 branch
     git checkout gzweb_1.3.0
     ~~~
 
- 1. The first time you build, you'll need to gather all the Gazebo models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo setup.sh file:
+ 1. The first time you build, you'll need to gather all the Gazebo-classic models in the right directory and prepare them for the web. Before running the deploy script, you'll need to source the Gazebo-classic setup.sh file:
 
     >If you installed gazebo via deb packages:
 
@@ -73,11 +73,11 @@ Gzweb is a graphical interface which communicates with gzserver. To use
     ./deploy.sh -m
     ~~~
 
-    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo paths. For all subsequent builds, the `-m` flag will not be needed. The process will also try to generate thumbnails, see note on thumbnails below.
+    >Note: the `-m` flag tells the deploy script to grab models from the model database and any other models in your Gazebo-classic paths. For all subsequent builds, the `-m` flag will not be needed. The process will also try to generate thumbnails, see note on thumbnails below.
 
 ## Options
 
-* To skip downloading models from the model database and grab only local models in your Gazebo model path, do:
+* To skip downloading models from the model database and grab only local models in your Gazebo-classic model path, do:
 
         ./deploy.sh -m local
 
@@ -174,6 +174,6 @@ Gzweb is a graphical interface which communicates with gzserver. To use
 
         ~/gzweb/tools/gzcoarse.cc:18:17: fatal error: gts.h : no such file or directory, #include <gts.h>
 
-    A: It seems that your Gazebo installation didn't install GTS headers. Try installing them manually:
+    A: It seems that your Gazebo-classic installation didn't install GTS headers. Try installing them manually:
 
         sudo apt-get install libgts-dev

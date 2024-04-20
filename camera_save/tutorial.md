@@ -2,7 +2,7 @@
 This tutorial shows how to create a video from a camera sensor in a gazebo world.
 
 # Save Camera Images
-Gazebo can automatically save camera images to disk.
+Gazebo-classic can automatically save camera images to disk.
 To do so, a `<save>` tag must be added to a camera sensor.
 
 ## Create a world with a camera

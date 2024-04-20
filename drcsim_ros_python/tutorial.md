@@ -2,7 +2,7 @@
 
 This tutorial will demonstrate how to control the Atlas robot with a joint trajectory controller.  In the course of this tutorial we're going to make the Atlas robot try to take a step.  It will fall down, and that's OK, because our trajectory is incredibly simple and not at all reactive.  You're welcome to extend the example here to make the robot walk or go through other motions.
 
-We're using the ROS topics demonstrated in the [previous tutorial that used C++](/tutorials/?tut=drcsim_ros_cmds&cat=drcsim).  This general-purpose controller can be used to make a set of joints follow a desired trajectory specified as joint angles.  The controller is executed as part of a Gazebo plugin.  This arrangement allows the controller to run in-line with the simulation, approximating the on-robot situation in which the controller runs in a real-time environment.
+We're using the ROS topics demonstrated in the [previous tutorial that used C++](/tutorials/?tut=drcsim_ros_cmds&cat=drcsim).  This general-purpose controller can be used to make a set of joints follow a desired trajectory specified as joint angles.  The controller is executed as part of a Gazebo-classic plugin.  This arrangement allows the controller to run in-line with the simulation, approximating the on-robot situation in which the controller runs in a real-time environment.
 
 **Important note:** The approach to robot control described here is not the best or only way to control the Atlas robot. It is provided for demonstration purposes. DRC participants should be aware that we expect the control system in simulation to change substantially as more sophisticated controller become available.
 
@@ -80,7 +80,7 @@ python traj_yaml.py Traj_data2.yaml touchdown_exhausted
 
 ### Restarting
 
-To try it again, go to the Gazebo "Edit" menu and click on "Reset Model Poses" (you might need to do this several times, use `Shift+Ctrl+R` for convenience).  That will teleport the robot back to its initial pose, from where you can run a trajectory again.  In this way, you can iterate, making changes to the program sending the trajectory and checking the effect in simulation, without shutting everything down.
+To try it again, go to the Gazebo-classic "Edit" menu and click on "Reset Model Poses" (you might need to do this several times, use `Shift+Ctrl+R` for convenience).  That will teleport the robot back to its initial pose, from where you can run a trajectory again.  In this way, you can iterate, making changes to the program sending the trajectory and checking the effect in simulation, without shutting everything down.
 
 ## The Code Explained
 

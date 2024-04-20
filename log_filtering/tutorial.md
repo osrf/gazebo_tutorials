@@ -2,7 +2,7 @@
 
 ## Introduction
 
-State logs are recordings of world state information from Gazebo. State includes pose, velocity, acceleration, and forces applied to all links of all models. Gazebo will only record state information for models that change over time. A state log file contains a header, the initial world description, and a time series of state.
+State logs are recordings of world state information from Gazebo. State includes pose, velocity, acceleration, and forces applied to all links of all models. Gazebo-classic will only record state information for models that change over time. A state log file contains a header, the initial world description, and a time series of state.
 
 ## Step 1: Create a state log file
 
@@ -14,7 +14,7 @@ rm -rf ~/.gazebo/log/*
 
 We will use the PR2 world to create a state log file.
 
-Start by running the Gazebo server with the `-r` command line option
+Start by running the Gazebo-classic server with the `-r` command line option
 
 ~~~
 gzserver -r worlds/pr2.world

@@ -6,13 +6,13 @@ on a web browser.
 
 # Dependencies
 
-The main dependencies for GzWeb are the Gazebo development libraries, version 7 or
+The main dependencies for GzWeb are the Gazebo-classic development libraries, version 7 or
 greater, and NodeJS version 4 up to version 8.
 
 Take a look at
 [these tutorials](http://gazebosim.org/install) to choose the Gazebo
 installation that best fits your case. The simplest approach would be
-to install Gazebo 7 as follows:
+to install Gazebo-classic 7 as follows:
 
 ~~~
 sudo apt install gazebo7 libgazebo7-dev
@@ -39,7 +39,7 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
         cd ~/gzweb
         git checkout gzweb_1.4.0
 
-1. The first time you build, you'll need to gather all the Gazebo models which
+1. The first time you build, you'll need to gather all the Gazebo-classic models which
    you want to simulate in the right directory ('http/client/assets') and prepare
    them for the web.
 
@@ -67,7 +67,7 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
 ## Options
 
 * To skip downloading models from the model database and grab only local models
-  in your Gazebo model path, do:
+  in your Gazebo-classic model path, do:
 
         npm run deploy --- -m local
 
@@ -105,11 +105,11 @@ sudo apt install libjansson-dev nodejs npm nodejs-legacy libboost-dev imagemagic
 
 Running GzWeb involves the following pieces:
 
-* `gzserver` running the headless Gazebo simulation (runs by default on
+* `gzserver` running the headless Gazebo-classic simulation (runs by default on
   http://127.0.0.1:11345)
 
 * GzWeb's NodeJS server which communicates with `gzserver` using
-  [Gazebo Transport](/tutorials?tut=topics_subscribed&cat=transport).
+  [Gazebo-classic Transport](/tutorials?tut=topics_subscribed&cat=transport).
   It works as a bridge between the Javascript and the C++ code.
 
 * An HTTP server which serves static content such as models and website assets
@@ -127,7 +127,7 @@ Start them as follows:
 
         gzserver --verbose
 
-    > **Tip**: see the port where the Gazebo master is communicating, such as
+    > **Tip**: see the port where the Gazebo-classic master is communicating, such as
       `[Msg] Connected to gazebo master @ http://127.0.0.1:11345`
 
 1. On another terminal, from your GzWeb directory, run the following command to
@@ -185,6 +185,6 @@ Start them as follows:
 
         ~/gzweb/tools/gzcoarse.cc:18:17: fatal error: gts.h : no such file or directory, #include <gts.h>
 
-    A: It seems that your Gazebo installation didn't install GTS headers. Try installing them manually:
+    A: It seems that your Gazebo-classic installation didn't install GTS headers. Try installing them manually:
 
         sudo apt-get install libgts-dev

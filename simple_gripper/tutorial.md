@@ -134,7 +134,7 @@ file:
             ...
     ~~~
 
-1. Start Gazebo again:
+1. Start Gazebo-classic again:
 
         gazebo ~/simple_gripper_tutorial/gripper.world
 

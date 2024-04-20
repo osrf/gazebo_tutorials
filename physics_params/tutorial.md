@@ -14,22 +14,22 @@ The parameters listed in this section are defined under the `<physics>` tag
 [here](http://sdformat.org/spec?ver=1.6&elem=physics). These are shared among
 all physics engines.
 
-1. `type`: The type of the dynamics engine. Currently Gazebo supports 4 physics
+1. `type`: The type of the dynamics engine. Currently Gazebo-classic supports 4 physics
 engines: `ode`, `bullet`, `simbody` and `dart`. The default physics engine is `ode`.
 
 1. `max_step_size`: The maximum time step size that can be taken by a
 variable time-step solver (such as simbody) during simulation.
 For physics engines with fixed-step solvers (like ODE), this is simply the time step size.
-The default value in Gazebo is `0.001` seconds.
+The default value in Gazebo-classic is `0.001` seconds.
 
 1. `real_time_factor`: `max_step_size x real_time_update_rate` sets an upper bound
 of `real_time_factor`. If `real_time_factor < 1` the simulation is slower than real
 time.
 
 1. `real_time_update_rate`: This is the frequency at which the simulation time steps
-are advanced. The default value in Gazebo is `1000` Hz. Multiplying with the default
+are advanced. The default value in Gazebo-classic is `1000` Hz. Multiplying with the default
 `max_step_size` of `0.001` seconds gives a `real_time_factor` of `1`. If `real_time_update_rate`
-is set to `0` the simulation will run as fast as it can. If Gazebo is not able to update
+is set to `0` the simulation will run as fast as it can. If Gazebo-classic is not able to update
 at the desired rate, it will update as fast as it can, based on the computing power.
 
 1. `max_contacts`: The maximum number of contacts to be generated between two entities.

@@ -67,7 +67,7 @@ specified by the `name` attribute. Within the `population` tag, you can see
 how to select a model by using the `<model>` tag. Each element of the population
 will be inserted into the simulation with a unique name that will be created by
 appending to the model name the suffix `_clone_i`, where `i` is the ith element
-of the population. You can see the list of models spawned in the Gazebo scene
+of the population. You can see the list of models spawned in the Gazebo-classic scene
 here:
 
 [[file:files/model_list_6-0.png|640px]]

@@ -57,7 +57,7 @@ GzWeb makes use of the
 
 # C++ development
 
-GzWeb communicates with `gzserver` by publishing and subscribing to Gazebo topics.
+GzWeb communicates with `gzserver` by publishing and subscribing to Gazebo-classic topics.
 
 ## Workflow
 

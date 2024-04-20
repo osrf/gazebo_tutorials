@@ -10,7 +10,7 @@ Png files are uncompressed (whereas jpeg are smaller). If you want to save the i
 
 ## Project setup
 
-Also, because the code tries to connect to the running simulation server, launch Gazebo in a separate terminal (if it is not already running) and verify that the simulation is running (and Sim Time is increasing):
+Also, because the code tries to connect to the running simulation server, launch Gazebo-classic in a separate terminal (if it is not already running) and verify that the simulation is running (and Sim Time is increasing):
 
     gazebo
 
@@ -116,7 +116,7 @@ gazebo.subscribeToImageTopic(src_topic, function (err, img){
 
 ~~~
 
-Because of the asynchronous nature of our script, we setup callbacks to keep the script alive until all the images have been processed. The Gazebo object is referenced to avoid premature garbage collection on older versions of NodeJs.
+Because of the asynchronous nature of our script, we setup callbacks to keep the script alive until all the images have been processed. The Gazebo-classic object is referenced to avoid premature garbage collection on older versions of NodeJs.
 
 ~~~
 

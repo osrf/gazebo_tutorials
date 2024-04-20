@@ -5,16 +5,16 @@
 ***Note:*** prereleases and nightlies are unsupported packages, they should
 only be used for development proposes.
 
-Gazebo nightly and prereleases repositories are extensions to the stable
+Gazebo-classic nightly and prereleases repositories are extensions to the stable
 repo which will add unstable builds to be installed by using `apt-get`
 in the same way as stable releases. These repositories rely on the
 presence of gazebo-stable repository in the system.
 
 ## Install and uninstall packages
 
-### Gazebo prerelease repo
+### Gazebo-classic prerelease repo
 
-Gazebo prerelease versions are those released to test an upcoming release.
+Gazebo-classic prerelease versions are those released to test an upcoming release.
 The prerelease packages repository is designed to work together with the
 stable repository, both need to be installed.
 
@@ -26,9 +26,9 @@ sudo apt-get update
 sudo apt-get install gazebo11
 ```
 
-### Gazebo nightly repo
+### Gazebo-classic nightly repo
 
-Gazebo nightlies are packages released every night which can be used for
+Gazebo-classic nightlies are packages released every night which can be used for
 different purposes like testing the last feature added to gazebo code. The
 nighly packages repository is designed to work together with the stable
 repository, both need to be installed.

@@ -10,7 +10,7 @@ We encourage you to read an overview of the documentation on [ros_control](http:
 
 ## Data flow of ros_control and Gazebo
 
-Simulating a robot's controllers in Gazebo can be accomplished using ros_control and a simple Gazebo plugin adapter.
+Simulating a robot's controllers in Gazebo-classic can be accomplished using ros_control and a simple Gazebo-classic plugin adapter.
 An overview of the relationship between simulation, hardware, controllers and transmissions is shown below:
 
 [[file:Gazebo_ros_transmission.png|800px]]
@@ -45,7 +45,7 @@ The rest of the names and elements are currently ignored.
 
 ## Add the gazebo\_ros\_control plugin
 
-In addition to the transmission tags, a Gazebo plugin needs to be added to your URDF that actually parses the transmission tags and loads the appropriate hardware interfaces and controller manager.
+In addition to the transmission tags, a Gazebo-classic plugin needs to be added to your URDF that actually parses the transmission tags and loads the appropriate hardware interfaces and controller manager.
 By default the gazebo\_ros\_control plugin is very simple, though it is also extensible via an additional plugin architecture to allow power users to create their own custom robot hardware interfaces between ros_control and Gazebo.
 
 The default plugin XML should be added to your URDF:
@@ -78,10 +78,10 @@ The default behavior provides the following ros_control interfaces:
 
 ### Advanced: custom gazebo\_ros\_control Simulation Plugins
 
-The gazebo\_ros\_control Gazebo plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo and ros_control for simulating more complex mechanisms (nonlinear springs, linkages, etc).
+The gazebo\_ros\_control Gazebo-classic plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo-classic and ros_control for simulating more complex mechanisms (nonlinear springs, linkages, etc).
 
 These plugins must inherit gazebo\_ros\_control::RobotHWSim which implements a simulated ros\_control hardware\_interface::RobotHW.
-RobotHWSim provides API-level access to read and command joint properties in the Gazebo simulator.
+RobotHWSim provides API-level access to read and command joint properties in the Gazebo-classic simulator.
 
 The respective RobotHWSim sub-class is specified in a URDF model and is loaded when the robot model is loaded.
 For example, the following XML will load the default plugin (same behavior as when using no `<robotSimType>` tag):
@@ -97,7 +97,7 @@ For example, the following XML will load the default plugin (same behavior as wh
 
 ## RRBot Example
 
-We add a `<transmission>` block similar to the following for every joint that we wish to have Gazebo actuate.
+We add a `<transmission>` block similar to the following for every joint that we wish to have Gazebo-classic actuate.
 Note that the `<hardwareInterface>` must be included in both the `<joint>`
 and `<actuator>` tags
 (see [ros\_control issue here](https://github.com/ros-controls/ros_control/issues/177)).
@@ -363,7 +363,7 @@ roslaunch rrbot_control rrbot_rqt.launch
 
 You can use that as a template for doing this with your own robot.
 
-## Connect Rviz to Gazebo Simulation
+## Connect Rviz to Gazebo-classic Simulation
 
 Now that you are using ros\_control to send commands to your robot in simulation, you can also use the ros\_control joint_state_controller to read the state of the robot from Gazebo.
 The idea behind a good simulator is that you should be able to use the same software on your real hardware as you do in simulation.
@@ -377,7 +377,7 @@ rosrun rviz rviz
 
 Under "Global Options" change your "Fixed Frame" to "world" to resolve any errors it might be giving you.
 
-Next, add a "RobotModel" display type to Rviz and you should then see your simulated robot in Gazebo being visualized in Rviz!
+Next, add a "RobotModel" display type to Rviz and you should then see your simulated robot in Gazebo-classic being visualized in Rviz!
 
 # Demo Code
 
@@ -386,4 +386,4 @@ The example code used for the RRBot in this tutorial is available in the reposit
 
 # Next Steps
 
-Learn about ROS message and service calls that are available for use with Gazebo in the tutorial [ROS Communication with Gazebo](/tutorials/?tut=ros_comm).
+Learn about ROS message and service calls that are available for use with Gazebo-classic in the tutorial [ROS Communication with Gazebo](/tutorials/?tut=ros_comm).

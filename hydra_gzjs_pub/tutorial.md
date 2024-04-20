@@ -35,7 +35,7 @@ The publisher code is located in the hydra_pub.js file
 
 ### Code explained
 
-The first lines load the Gazebo C++ and the node-sixense modules into the Node V8 script engine, and creates and instance of the Gazebo class.
+The first lines load the Gazebo-classic C++ and the node-sixense modules into the Node V8 script engine, and creates and instance of the Gazebo-classic class.
 
 ~~~
 var hydra =  require('node-sixense');  

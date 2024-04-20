@@ -5,7 +5,7 @@ is an XML file format used in ROS to describe all elements of a robot.
 To use a URDF file in Gazebo, some additional simulation-specific tags must be added to work properly with Gazebo.
 This tutorial explains the necessary steps to successfully use your URDF-based robot in Gazebo,
 saving you from having to create a separate SDF file from scratch and duplicating description formats.
-Under the hood, Gazebo will then convert the URDF to SDF automatically.
+Under the hood, Gazebo-classic will then convert the URDF to SDF automatically.
 
 ## Background
 
@@ -15,13 +15,13 @@ On the implementation side, the URDF syntax breaks proper formatting with heavy 
 
 To deal with this issue, a new format called the
 [Simulation Description Format](http://sdformat.org) (SDF)
-was created for use in Gazebo to solve the shortcomings of URDF.
+was created for use in Gazebo-classic to solve the shortcomings of URDF.
 SDF is a complete description for everything from the world level down to the robot level.
 It is scalable, and makes it easy to add and modify elements.
 The SDF format is itself described using XML, which facilitates a simple upgrade tool to migrate old versions to new versions.
 It is also self-descriptive.
 
-It is the intention of this author to make URDFs as fully documented and supported in Gazebo as possible, but it is relevant to the reader to understand why the two formats exist and the shortcomings of both. It would be nice if more work was put into URDFs to update them to the current needs of robotics.
+It is the intention of this author to make URDFs as fully documented and supported in Gazebo-classic as possible, but it is relevant to the reader to understand why the two formats exist and the shortcomings of both. It would be nice if more work was put into URDFs to update them to the current needs of robotics.
 
 ## Overview of Converting to Gazebo
 
@@ -34,7 +34,7 @@ There are several steps to get a URDF robot properly working in Gazebo. The foll
 ### Optional
 
 - Add a `<gazebo>` element for every `<link>`
- - Convert visual colors to Gazebo format
+ - Convert visual colors to Gazebo-classic format
  - Convert stl files to dae files for better textures
  - Add sensor plugins
 - Add a `<gazebo>` element for every `<joint>`
@@ -53,11 +53,11 @@ We will discuss the attributes and elements within each type of `<gazebo>` eleme
 
 ## Prerequisites
 
-The first step to getting your robot working in Gazebo is to have a working URDF file from the corresponding [ROS URDF Tutorials](http://www.ros.org/wiki/urdf/Tutorials). Test your URDF by viewing it in [Rviz](http://www.ros.org/wiki/rviz) before proceeding to configure your robot with Gazebo. In this tutorial, we'll use a simple demo robot named RRBot. Feel free to follow along with this robot or your own bot.
+The first step to getting your robot working in Gazebo-classic is to have a working URDF file from the corresponding [ROS URDF Tutorials](http://www.ros.org/wiki/urdf/Tutorials). Test your URDF by viewing it in [Rviz](http://www.ros.org/wiki/rviz) before proceeding to configure your robot with Gazebo. In this tutorial, we'll use a simple demo robot named RRBot. Feel free to follow along with this robot or your own bot.
 
 ### Getting RRBot
 
-RRBot, or ''Revolute-Revolute Manipulator Robot'', is a simple 3-linkage, 2-joint arm that we will use to demonstrate various features of Gazebo and URDFs. It essentially a [double inverted pendulum](http://en.wikipedia.org/wiki/Double_inverted_pendulum) and demonstrates some fun control concepts within a simulator.
+RRBot, or ''Revolute-Revolute Manipulator Robot'', is a simple 3-linkage, 2-joint arm that we will use to demonstrate various features of Gazebo-classic and URDFs. It essentially a [double inverted pendulum](http://en.wikipedia.org/wiki/Double_inverted_pendulum) and demonstrates some fun control concepts within a simulator.
 
 To get RRBot, clone the
 [gazebo\_ros\_demos Github repo](https://github.com/ros-simulation/gazebo_ros_demos.git)
@@ -112,7 +112,7 @@ rosed rrbot_description rrbot.xacro
 Note that we are using [Xacro](http://ros.org/wiki/xacro) to make some of the link and joint calculations easier. We are also including two additional files:
 
 - [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/kinetic-devel/rrbot_description/urdf/rrbot.gazebo)
-a Gazebo specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
+a Gazebo-classic specific file that includes most of our Gazebo-specific XML elements including the <gazebo> tags
 - [materials.xacro](https://github.com/ros-simulation/gazebo_ros_demos/blob/kinetic-devel/rrbot_description/urdf/materials.xacro)
 a simple Rviz colors file for storing rgba values, not really necessary but a nice convention
 
@@ -124,7 +124,7 @@ You should also be able to launch RRBot into Gazebo:
 roslaunch rrbot_gazebo rrbot_world.launch
 </pre>
 
-In the launched Gazebo window you should see the robot standing straight up. Despite there being no intentional disturbances in the physics simulator by default, numerical errors should start to build up and cause the double inverted pendulum to fall after a few seconds. The following is a mid-swing screenshot of the RRBot:
+In the launched Gazebo-classic window you should see the robot standing straight up. Despite there being no intentional disturbances in the physics simulator by default, numerical errors should start to build up and cause the double inverted pendulum to fall after a few seconds. The following is a mid-swing screenshot of the RRBot:
 
 [[file:figs/Swinging_Arm.png|700px]]
 
@@ -132,7 +132,7 @@ Eventually the arm should come to a complete stop. We encourage you to tweak and
 
 ## Header of a URDF File
 
-There have been many API changes in Gazebo and the required URDF format, one of which that Gazebo xml-schema namespaces are no longer needed. If your URDF has something like:
+There have been many API changes in Gazebo-classic and the required URDF format, one of which that Gazebo-classic xml-schema namespaces are no longer needed. If your URDF has something like:
 
 ~~~
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
@@ -223,14 +223,14 @@ The following is an example link from RRBot:
 
 ### Note On Units
 
-As per ROS [REP 103: Standard Units of measure and Coordinate Conventions](http://www.ros.org/reps/rep-0103.html), units in Gazebo should be specified in meters and kilograms. Gazebo could possibly be used with imperial units if the constants such as gravity were changed manually, but by default gravity is 9.81 m/s^2. When specifying mass, use units of kilograms.
+As per ROS [REP 103: Standard Units of measure and Coordinate Conventions](http://www.ros.org/reps/rep-0103.html), units in Gazebo-classic should be specified in meters and kilograms. Gazebo-classic could possibly be used with imperial units if the constants such as gravity were changed manually, but by default gravity is 9.81 m/s^2. When specifying mass, use units of kilograms.
 
 ### `<collision>` and `<visual>` elements
 
-These tags work essentially the same in Gazebo as in Rviz.
+These tags work essentially the same in Gazebo-classic as in Rviz.
 It is important that you specify both though, because unlike some ROS applications,
-Gazebo will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a `<collision>` element.
-Instead, Gazebo will treat your link as "invisible" to laser scanners and collision checking.
+Gazebo-classic will not use your `<visual>` elements as `<collision>` elements if you do not explicitly specify a `<collision>` element.
+Instead, Gazebo-classic will treat your link as "invisible" to laser scanners and collision checking.
 
 #### Simplify collision model
 
@@ -253,7 +253,7 @@ With the color orange defined separately such as in the file
   </material>
 ~~~
 
-Unfortunately, this method of specifying link colors does not work in Gazebo as it adopts OGRE's material scripts for coloring and texturing links. Instead, a Gazebo material tag must be specified for each link, such as:
+Unfortunately, this method of specifying link colors does not work in Gazebo-classic as it adopts OGRE's material scripts for coloring and texturing links. Instead, a Gazebo-classic material tag must be specified for each link, such as:
 
 ~~~
   <gazebo reference="link1">
@@ -266,7 +266,7 @@ Gazebo-specific tag in a secondary file called
 [rrbot.gazebo](https://github.com/ros-simulation/gazebo_ros_demos/blob/master/rrbot_description/urdf/rrbot.gazebo).
 You can find the `<link>` and `<material>` elements there.
 
-The default available materials in Gazebo can be found in the Gazebo source code at
+The default available materials in Gazebo-classic can be found in the Gazebo-classic source code at
 [gazebo/media/materials/scripts/gazebo.material](https://github.com/osrf/gazebo/blob/master/media/materials/scripts/gazebo.material).
 
 For more advanced or custom materials, you can create your own OGRE colors or textures. See:
@@ -276,11 +276,11 @@ For more advanced or custom materials, you can create your own OGRE colors or te
 
 #### STL and Collada files
 
-Like in Rviz, Gazebo can use both [STL](http://en.wikipedia.org/wiki/STL_(file_format)) and [Collada](http://en.wikipedia.org/wiki/Collada) files. It is generally recommended you use Collada (.dae) files because they support colors and textures, whereas with STL files you can only have a solidly colored link.
+Like in Rviz, Gazebo-classic can use both [STL](http://en.wikipedia.org/wiki/STL_(file_format)) and [Collada](http://en.wikipedia.org/wiki/Collada) files. It is generally recommended you use Collada (.dae) files because they support colors and textures, whereas with STL files you can only have a solidly colored link.
 
 ### `<inertial>` Element
 
-For the Gazebo physics engine to work properly, the `<inertial>` element must be provided as documented on the [URDF link element](http://www.ros.org/wiki/urdf/XML/link) page. For links to not be ignored in Gazebo, their mass must be greater than zero. Additionally, links with zero principal moment of inertia (ixx, iyy, izz) could lead to infinite acceleration under any finite torque application.
+For the Gazebo-classic physics engine to work properly, the `<inertial>` element must be provided as documented on the [URDF link element](http://www.ros.org/wiki/urdf/XML/link) page. For links to not be ignored in Gazebo, their mass must be greater than zero. Additionally, links with zero principal moment of inertia (ixx, iyy, izz) could lead to infinite acceleration under any finite torque application.
 
 Determining the correct values for each link is required to get accurate physics approximations in Gazebo. This can be performed by conducting various measurements of the robots parts, or by using CAD software like Solidworks that includes features for approximating these values. For beginners, you can also just make the values up.
 
@@ -297,7 +297,7 @@ An example inertia element from the RRBot first link:
     </inertial>
 ~~~
 
-The origin tag represents the center of mass of this link. By setting the center of mass to half the height of the RRBot's rectangular link, we center the mass in the middle. You can visually check if your center of mass is correct in your URDF within Gazebo by clicking on the ''View'' menu of Gazebo and selecting both ''Wireframe'' and ''Center of Mass''.
+The origin tag represents the center of mass of this link. By setting the center of mass to half the height of the RRBot's rectangular link, we center the mass in the middle. You can visually check if your center of mass is correct in your URDF within Gazebo-classic by clicking on the ''View'' menu of Gazebo-classic and selecting both ''Wireframe'' and ''Center of Mass''.
 
 In this example robot, both the mass and inertia matrix are made up values since this robot has no real-world counterpart.
 
@@ -478,9 +478,9 @@ The cfmDamping element is deprecated and should be changed to implicitSpringDamp
 
 Again, similar to `<gazebo>` elements for `<robot>` and `<link>`, any arbitrary blobs that are not parsed according to the table above are inserted into the the corresponding `<joint>` element in the SDF. This is particularly useful for plugins, as discussed in the [ROS Motor and Sensor Plugins](/tutorials?tut=ros_gzplugins) tutorial.
 
-## Verifying the Gazebo Model Works
+## Verifying the Gazebo-classic Model Works
 
-With Gazebo installed, an easy tool exists to check if your URDF can be properly converted into a SDF. Simply run the following command:
+With Gazebo-classic installed, an easy tool exists to check if your URDF can be properly converted into a SDF. Simply run the following command:
 
       # gazebo2 and below
       gzsdf print MODEL.urdf
@@ -489,14 +489,14 @@ With Gazebo installed, an easy tool exists to check if your URDF can be properly
 
 This will show you the SDF that has been generated from your input URDF as well as any warnings about missing information required to generate the SDF.
 
-Note: in Gazebo version 1.9 and greater, some of the debug info has been moved to a log file you can view with:
+Note: in Gazebo-classic version 1.9 and greater, some of the debug info has been moved to a log file you can view with:
 
       cat ~/.gazebo/gzsdf.log
 
 
 ## Viewing the URDF In Gazebo
 
-Viewing the RRBot in Gazebo was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
+Viewing the RRBot in Gazebo-classic was already covered at the beginning of this tutorial. For your own custom robot, we assume its URDF lives in a ROS package named `MYROBOT_description` in the subfolder `/urdf`. The method to open a URDF from that location into Gazebo-classic using ROS was covered in the previous tutorial, [Using roslaunch Files to Spawn Models](/tutorials?tut=ros_roslaunch). If you have not completed that tutorial, do so now.
 
 From that tutorial you should have two ROS packages for your custom robot: `MYROBOT_description` and `MYROBOT_gazebo`. To view your robot and test it in Gazebo, you should be able to now run something like:
 
@@ -504,7 +504,7 @@ From that tutorial you should have two ROS packages for your custom robot: `MYRO
 roslaunch MYROBOT_gazebo MYROBOT.launch
 </pre>
 
-This should launch both the Gazebo server and GUI client with your robot automatically launched spawned inside.
+This should launch both the Gazebo-classic server and GUI client with your robot automatically launched spawned inside.
 
 ## Tweaking your model
 
@@ -514,10 +514,10 @@ If your robot model behaves unexpectedly within Gazebo, it is likely because you
 
 If you have a common robot that other's might want to use in Gazebo,
 you are encouraged to add your URDF to the
-[Gazebo Model Database](/tutorials?tut=model_structure&cat=build_robot).
-It is an online server that Gazebo connects to to pull down models from the internet.
+[Gazebo-classic Model Database](/tutorials?tut=model_structure&cat=build_robot).
+It is an online server that Gazebo-classic connects to to pull down models from the internet.
 Its Mercurial repository is located on [GitHub](https://github.com/osrf/gazebo_models).
-See [Gazebo Model Database](/tutorials?tut=model_contrib&cat=build_robot)
+See [Gazebo-classic Model Database](/tutorials?tut=model_contrib&cat=build_robot)
 documentation for how to submit a pull request to have your robot added to the database.
 
 ## Next steps

@@ -1,6 +1,6 @@
 # Introduction
 
-This tutorial describes how to setup a machine and Gazebo for use with stereo glasses, such as those provided by [Nvidia 3D Vision](http://www.nvidia.com/object/3d-vision-main.html). 
+This tutorial describes how to setup a machine and Gazebo-classic for use with stereo glasses, such as those provided by [Nvidia 3D Vision](http://www.nvidia.com/object/3d-vision-main.html). 
 
 This tutorial assumes that you will be using Ubuntu.
 
@@ -52,7 +52,7 @@ This tutorial assumes that you will be using Ubuntu.
     sudo apt-get install nvidia-settings
     ~~~
 
-1. Gazebo [compiled from source](/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
+1. Gazebo-classic [compiled from source](/tutorials?tut=install_from_source&cat=install). You may use the Gazebo6 debians when they are made available on July 27, 2015.
 
 1. If you are using the Unity desktop environment, stereo probably won't work. Install Gnome Classic:
 

@@ -1,9 +1,9 @@
 # Overview
 
-GazeboJs provides a scripting interface to the Gazebo simulator. Specifically, it provides a javascript client for the simulator, using Node.js and built on Google's V8 script engine.
+GazeboJs provides a scripting interface to the Gazebo-classic simulator. Specifically, it provides a javascript client for the simulator, using Node.js and built on Google's V8 script engine.
 
-GazeboJs is a C++ addon to Node.js that is loaded inside node process at runtime (using the `require` javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo simultation server (the gzserver process) over the network, using the Gazebo transport library.
-This is the same mechanism that the Gazebo simulation client (the gzclient process) uses to communicate with the simulation server.
+GazeboJs is a C++ addon to Node.js that is loaded inside node process at runtime (using the `require` javascript function). Once loaded, it provides javascript functions that communicate with the Gazebo-classic simultation server (the gzserver process) over the network, using the Gazebo-classic transport library.
+This is the same mechanism that the Gazebo-classic simulation client (the gzclient process) uses to communicate with the simulation server.
 The source code for this project can be found here: <https://bitbucket.org/osrf/gazebojs>
 
 [[file:files/gazebojs_overview.png|640px]]
@@ -15,13 +15,13 @@ This page explains how to install the GazeboJs Node bindings to Gazebo.
 
 ### Mac OSX (using homebrew)
 
-This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo and its  development libraries are installed.
-Please refer to the [Install Gazebo on Mac (using homebrew)](/tutorials?tut=install_on_mac&cat=install).
+This tutorial shows how to download, install and compile Gazebojs on a computer where Gazebo-classic and its  development libraries are installed.
+Please refer to the [Install Gazebo-classic on Mac (using homebrew)](/tutorials?tut=install_on_mac&cat=install).
 
 #### Setup
 
-The homebrew install of Gazebo also install the corresponding development libraries (for example, libgazebo6-dev for Gazebo 6). The dev libraries also contain the Gazebo header files that are necessary for the gazebojs installation. This is because the Node.js Gazebo modules are automatically compiled on your machine when the `npm install gazebojs` is invoked (see below).
-Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
+The homebrew install of Gazebo-classic also install the corresponding development libraries (for example, libgazebo6-dev for Gazebo-classic 6). The dev libraries also contain the Gazebo-classic header files that are necessary for the gazebojs installation. This is because the Node.js Gazebo-classic modules are automatically compiled on your machine when the `npm install gazebojs` is invoked (see below).
+Like Gazebo, gazebojs module uses semantic versioning, so the major version of gazebojs should be the same as the major version of Gazebo-classic you are using. You can specify rules about the version of gazebojs you want to use in the `package.json` file (see https://www.npmjs.org/doc/files/package.json.html).
 
 **Install Node.js and npm**
 
@@ -36,7 +36,7 @@ This might give you the following results
     homebrew/versions/node04
     node nodebrew leafnode nodenv
 
-Gazebo 6 is compatible with node 0.10 (which is the version of node that is bundled with Ubuntu 14.04). The following versions have been found to work well together: node v0.10.40, npm 2.14.4 (node package manager), and Gazebo 6.4.
+Gazebo-classic 6 is compatible with node 0.10 (which is the version of node that is bundled with Ubuntu 14.04). The following versions have been found to work well together: node v0.10.40, npm 2.14.4 (node package manager), and Gazebo-classic 6.4.
 
 To install node:
 
@@ -85,7 +85,7 @@ compilation phase where a Node.js module is created. There should now be a
 
 **Test your installation**:
 
-Launch Gazebo in a separate terminal and verify that the simulation is running (when simulation is running, the `Sim Time` increases in the status bar in the bottom of the screen):
+Launch Gazebo-classic in a separate terminal and verify that the simulation is running (when simulation is running, the `Sim Time` increases in the status bar in the bottom of the screen):
 
     gazebo
 

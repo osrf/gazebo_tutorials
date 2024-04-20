@@ -20,7 +20,7 @@ Start the Atlas robot simulation:
 
     roslaunch atlas_utils atlas.launch
 
-the Gazebo gui should appear:
+the Gazebo-classic gui should appear:
 
 [[file:files/Atlas_launch.png|640px]]
 

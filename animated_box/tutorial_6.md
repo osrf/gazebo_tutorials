@@ -4,7 +4,7 @@ This tutorial creates a simulation world with a simple box that is animated
 in a 10 second repeating loop where it slides around on the ground.
 
 This tutorial also demonstrates several different ways of viewing,
-accessing, and interacting with simulation using the Gazebo executable
+accessing, and interacting with simulation using the Gazebo-classic executable
 or your own custom executable.
 
 The simulated box broadcasts its pose,
@@ -43,7 +43,7 @@ cmake ../
 make
 ~~~
 
-Make sure Gazebo can load the plugins later
+Make sure Gazebo-classic can load the plugins later
 
 ~~~
 export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
@@ -71,9 +71,9 @@ You should see a graphical interface that displays the pose of the box.
 
 # Connect to a simulation with your own executable
 
-Make sure Gazebo is not running.
+Make sure Gazebo-classic is not running.
 
-We will start Gazebo as above, and then run the independent listener
+We will start Gazebo-classic as above, and then run the independent listener
 executable that connects to Gazebo. The independent listener receives
 the location and timestamp of the box and prints it out.
 
@@ -84,7 +84,7 @@ gazebo animated_box.world & ./build/independent_listener
 
 # Run the simulation and connect with your own executable
 
-Make sure Gazebo is not running.
+Make sure Gazebo-classic is not running.
 
 The integrated_main example demonstrates the following:
 

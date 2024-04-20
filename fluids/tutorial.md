@@ -10,7 +10,7 @@ available the simulation will run in CPU mode).
 **Prerequisites:**
 
   * Nvidia graphics card
-  * Go through the basic Gazebo tutorials, especially through [world plugins](/tutorials?tut=plugins_world), [system plugins](/tutorials?tut=system_plugin), [transport library](/tutorials?cat=transport) examples.
+  * Go through the basic Gazebo-classic tutorials, especially through [world plugins](/tutorials?tut=plugins_world), [system plugins](/tutorials?tut=system_plugin), [transport library](/tutorials?cat=transport) examples.
  * For deeper understanding of the particle simulation look through some [Fluidix examples](http://onezero.ca/sample/?id=general_basic).
 
 # Install
@@ -45,7 +45,7 @@ available the simulation will run in CPU mode).
 # How the package works
 
 The fluid simulation runs as a separate physics engine which interacts with
-the rigid body physics engine of Gazebo through an interface
+the rigid body physics engine of Gazebo-classic through an interface
 (`include/FluidEngine.hh`).
 
 The interaction includes:

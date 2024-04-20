@@ -1,6 +1,6 @@
 # Introduction
 
-Gazebo 6 and above supports the [Oculus Rift VR headset](http://www.oculusvr.com/) DK1 and DK2.
+Gazebo-classic 6 and above supports the [Oculus Rift VR headset](http://www.oculusvr.com/) DK1 and DK2.
 
 After this tutorial, you will be able to attach a virtual Oculus Camera to one of the visual links of your model.
 
@@ -21,9 +21,9 @@ sudo cp ../LibOVR/90-oculus.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 ~~~
 
-# Gazebo compilation with OculusVR support.
+# Gazebo-classic compilation with OculusVR support.
 
-Once Oculus VR SDK is installed, you should be able to compile Gazebo from source with Oculus Rift support.
+Once Oculus VR SDK is installed, you should be able to compile Gazebo-classic from source with Oculus Rift support.
 
 Follow [these](/tutorials?tut=install_from_source&cat=install) instructions to compile Gazebo. During the execution of the `cmake` command, you should see this message confirming that the Oculus SDK is found:
 
@@ -51,7 +51,7 @@ positioned correctly:
 
     [[file:files/display_setup.png|640px]]
 
-1. We need to tell Gazebo where we put the Oculus screen, that is, on the
+1. We need to tell Gazebo-classic where we put the Oculus screen, that is, on the
 top-right of the main display. The horizontal coordinate will be the end of
 the main monitor (`x` = monitor width) and the vertical coordinate will be the
 top of the screen (`y` = 0).
@@ -106,7 +106,7 @@ top of the screen (`y` = 0).
     gazebo worlds/camera.world
     ~~~
 
-1. Once Gazebo is up and running, click on Window->Oculus Rift and you should be able to see the world from your Oculus headset.
+1. Once Gazebo-classic is up and running, click on Window->Oculus Rift and you should be able to see the world from your Oculus headset.
 
 It is also possible to enable the Oculus window by default when starting Gazebo. Modify the `gui.ini` file and set `autolaunch=1`. Now, start gazebo and your Oculus Rift should be working without any intervention:
 

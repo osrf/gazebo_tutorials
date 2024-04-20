@@ -134,7 +134,7 @@ Only the most recently generated message is available.
     gazebo::msgs::LogicalCameraImage sensorOutput = logicalCamera->Image();
     ~~~
 
-## Using Gazebo Transport
+## Using Gazebo-classic Transport
 Logical camera sensor data is published using gazebo transport.
 The data is published to subscribers immediately after it is generated.
 

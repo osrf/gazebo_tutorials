@@ -30,7 +30,7 @@ To install required Grunt packages:
 
 # C++ development
 
-Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo topics.
+Gzweb communicates with `gzserver` by publishing and subscribing to Gazebo-classic topics.
 
 ## Work Flow:
 

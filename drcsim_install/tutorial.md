@@ -84,7 +84,7 @@ There are several ways of getting a working gazebo installation to use with drcs
 1. Install using apt-get from the OSRF repository
 2. Install gazebo from source
 
-Both are very well documented in the [Gazebo Installation](/tutorials?cat=install) page.
+Both are very well documented in the [Gazebo-classic Installation](/tutorials?cat=install) page.
 
 ### Ubuntu and ROS Hydro
 

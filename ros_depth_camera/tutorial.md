@@ -1,16 +1,16 @@
-# Use a Gazebo Depth Camera with ROS
+# Use a Gazebo-classic Depth Camera with ROS
 
 ## Introduction
 
-In this tutorial, you'll learn how to connect a Gazebo depth camera to ROS. The
+In this tutorial, you'll learn how to connect a Gazebo-classic depth camera to ROS. The
 tutorial consists of 3 main steps:
 
-  1. Create a Gazebo model that includes a ROS depth camera plugin
+  1. Create a Gazebo-classic model that includes a ROS depth camera plugin
   2. Set up the depth camera in Gazebo
   3. View the depth camera's output in RViz.
 
 This is a self-contained tutorial; it does not use the RRBot that is developed
-in other Gazebo ROS tutorials. It is designed to help you get up and running
+in other Gazebo-classic ROS tutorials. It is designed to help you get up and running
 quickly using computer vision in ROS and Gazebo.
 
 ### Prerequisites
@@ -18,12 +18,12 @@ quickly using computer vision in ROS and Gazebo.
 You should [install gazebo\_ros\_pkgs](/tutorials?tut=ros_installing&cat=connect_ros)
 before doing this tutorial.
 
-## Create a Gazebo Model with a Depth Camera Plugin
+## Create a Gazebo-classic Model with a Depth Camera Plugin
 
-Because Gazebo and ROS are separate projects that do not depend on each other,
+Because Gazebo-classic and ROS are separate projects that do not depend on each other,
 sensors from the `gazebo_models` repository (such as depth cameras) do not
 include ROS plugins by default. This means you have to make a custom camera
-based on those in the Gazebo model repository, and then add your own `<plugin>`
+based on those in the Gazebo-classic model repository, and then add your own `<plugin>`
 tag to make the depth camera data publish point clouds and images to ROS topics.
 
 You should choose a depth camera to use from those available in Gazebo. This
@@ -110,7 +110,7 @@ saved your changes, you should be ready to roll!
 
 ## Set up the Depth Camera in Gazebo
 
-Open Gazebo with ROS support enabled (e.g.
+Open Gazebo-classic with ROS support enabled (e.g.
 `roslaunch gazebo_ros empty_world.launch`). Use the Insert panel to find your
 "Kinect ROS" model, and insert it into the world.
 
@@ -128,7 +128,7 @@ sensing setup using physically correct models.
 
 ## View Depth Camera Output in RViz
 
-Now that the camera is in the Gazebo scene, it should be publishing images and
+Now that the camera is in the Gazebo-classic scene, it should be publishing images and
 point clouds to ROS topics. You can check the topics that are being published
 by running `rostopic list` in a new terminal. You should see the topics you
 specified in the SDF plugin code listed.
@@ -149,17 +149,17 @@ similar to the following from the PointCloud2:
 [[file:depth_camera_rviz.png|600px]]
 
 An Image display will show a grayscale version of the depth camera results.
-If you have Gazebo 8 or newer, you can compare these RViz results to the depth
-image results available in the Gazebo Topic Visualizer.
+If you have Gazebo-classic 8 or newer, you can compare these RViz results to the depth
+image results available in the Gazebo-classic Topic Visualizer.
 
 ### Troubleshooting
 
 **Problem:** `rostopic list` shows no camera topics.
 
 **Solution:** Make sure you added the correct model in Gazebo. Make sure that
-the Gazebo simulation is running, not paused. Check the `model.sdf` file and
+the Gazebo-classic simulation is running, not paused. Check the `model.sdf` file and
 ensure that the `<plugin>` tag is in the correct location in the file. Try
-running Gazebo in verbose mode (`rosrun gazebo_ros gazebo --verbose`) and
+running Gazebo-classic in verbose mode (`rosrun gazebo_ros gazebo --verbose`) and
 see if there are any helpful warning or error messages that can help pinpoint
 the problem.
 

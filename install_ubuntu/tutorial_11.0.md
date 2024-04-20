@@ -1,6 +1,6 @@
-# Install Gazebo using Ubuntu packages
+# Install Gazebo-classic using Ubuntu packages
 
-This tutorial covers the installation of Gazebo packages using the
+This tutorial covers the installation of Gazebo-classic packages using the
 `packages.osrfoundation.org` repository, designed for those who want to follow the
 faster development path but still a stable one.
 
@@ -26,7 +26,7 @@ Some notes:
     but there is no official support nor updates for these binaries.
 
   * If you are a [ROS](http://ros.org) user, please read the tutorial about the
-    [ROS/Gazebo installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
+    [ROS/Gazebo-classic installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
 
 ## Default installation: one-liner
 

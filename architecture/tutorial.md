@@ -1,6 +1,6 @@
 # Introduction
 
-Gazebo uses a distributed architecture
+Gazebo-classic uses a distributed architecture
 with separate libraries for physics simulation,
 rendering, user interface, communication, and sensor generation.
 Additionally, gazebo provides two executable programs for running simulations:
@@ -27,7 +27,7 @@ of Gazebo.
 
 ## System
 
-### Gazebo Master
+### Gazebo-classic Master
 
 This is essentially a topic name server.
 It provides name lookup, and topic management.
@@ -37,7 +37,7 @@ sensor generators, and GUIs.
 ### Communication Library
 
  * **Dependencies:** Protobuf and boost::ASIO
- * **External API:** Support communication with Gazebo nodes over named topics
+ * **External API:** Support communication with Gazebo-classic nodes over named topics
  * **Internal API:** None
  * **Advertised Topics:** None
  * **Subscribed Topics:** None

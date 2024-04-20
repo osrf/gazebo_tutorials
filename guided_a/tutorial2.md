@@ -1,7 +1,7 @@
 # Run your own copy of Gazebo
 
 On the [previous tutorial](/tutorials?tut=guided_a1)
-we covered where to find the source code for Gazebo and other dependencies.
+we covered where to find the source code for Gazebo-classic and other dependencies.
 
 This tutorial will go through the process of getting your own copy of the
 code running.
@@ -10,16 +10,16 @@ code running.
 
 We previously showed that Gazebo's source code lives on a git
 [repository](https://github.com/osrf/gazebo) on GitHub. But even though
-everyone in the world is able to see and copy that code, only the Gazebo core
+everyone in the world is able to see and copy that code, only the Gazebo-classic core
 team has write access to it.
 
 In order to modify the code, you'll need to get your own copy, which is called
-a "fork". You can fork Gazebo as follows:
+a "fork". You can fork Gazebo-classic as follows:
 
 1. Click on [this link](https://github.com/osrf/gazebo/fork)
 1. You can choose a custom name for the repository, but here we will leave the
 default value `gazebo`.
-1. After you finish the fork process, you should have a copy of Gazebo on
+1. After you finish the fork process, you should have a copy of Gazebo-classic on
 `https://github.com/<yourname>/gazebo`.
 
 > **Note**: Throughout these tutorials, substitute `<yourname>` with your
@@ -44,12 +44,12 @@ to your computer as follows:
 
 1. Now we use git to "clone" our fork. What the clone command does is
 copy all the code across all branches from the internet to your computer.
-Gazebo has a large codebase, so this process may take a while depending on
+Gazebo-classic has a large codebase, so this process may take a while depending on
 your internet connection:
 
         git clone https://github.com/<yourname>/gazebo
 
-1. Now you should have a local copy of Gazebo under `~/code/gazebo`. Let's
+1. Now you should have a local copy of Gazebo-classic under `~/code/gazebo`. Let's
 move to that folder and list its contents:
 
         cd ~/code/gazebo
@@ -80,18 +80,18 @@ Gazebo's code is organized into different branches with different purposes.
 
 1. Branches prefixed with `remotes/origin` come from the official OSRF repository.
 
-Most of the branches in Gazebo are branches where the core team is working
+Most of the branches in Gazebo-classic are branches where the core team is working
 on fixing bugs or adding new features. But a few branches have special meaning,
 these are:
 
 * `master`: This is the bleeding edge code where all new features are being
 developed. You're automatically on this branch when you clone Gazebo. This
 is where new features and code that is incompatible with previous releases
-(i.e. breaks API/ABI) will go. Since Gazebo 11 was the last release, the
+(i.e. breaks API/ABI) will go. Since Gazebo-classic 11 was the last release, the
 `master` branch no longer exists.
 
-* `gazebo<N>`: Here, `N` is a number representing a Gazebo release. For example,
-the code for the latest release of Gazebo 7 is found on branch `gazebo7`.
+* `gazebo<N>`: Here, `N` is a number representing a Gazebo-classic release. For example,
+the code for the latest release of Gazebo-classic 7 is found on branch `gazebo7`.
 
 ## Build
 
@@ -127,7 +127,7 @@ some special configuration, check out the full
 
 1. Configure and build. This will take a while (easily more than one hour),
 leave it running and go watch some cool
-[Gazebo videos](https://www.youtube.com/results?search_query=gazebo+simulator).
+[Gazebo-classic videos](https://www.youtube.com/results?search_query=gazebo+simulator).
 
         cmake ..
         make -j4
@@ -142,11 +142,11 @@ leave it running and go watch some cool
 
 ## Check the installation
 
-If you've installed Gazebo on your system before, you might be asking
+If you've installed Gazebo-classic on your system before, you might be asking
 how do you know if you're running your own copy of Gazebo, or the one you
 had previously installed. A quick trick to figure that out is to:
 
-1. Check where you're running Gazebo from:
+1. Check where you're running Gazebo-classic from:
 
         which gazebo
 
@@ -154,7 +154,7 @@ had previously installed. A quick trick to figure that out is to:
 
         /usr/local/bin/gazebo
 
-1. Now check where you're installing Gazebo to. You can do this by re-running
+1. Now check where you're installing Gazebo-classic to. You can do this by re-running
 install and looking for the install location, for example:
 
         cd ~/code/gazebo/build

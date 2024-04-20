@@ -10,7 +10,7 @@ Every, or nearly every, sensor has noise in the output. Cameras can have
 chromatic aberrations, sonars multi-path effects, and lasers incorrect
 distance readings. We have to add noise to the data generated in simulation in order to more closely match the type of data a real sensor produces.
 
-Gazebo has a built in noise model that can apply Gaussian noise to a variety
+Gazebo-classic has a built in noise model that can apply Gaussian noise to a variety
 of sensors. While Gaussian noise may not be very realistic, it is better
 than nothing and serves as a good first-pass approximation of noise.
 Gaussian noise is also relatively easy to apply to data streams.

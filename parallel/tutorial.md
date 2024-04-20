@@ -1,7 +1,7 @@
 # Overview
 The complexity of simulated robots, spatial size of environments, and fidelity of
 sensor simulation all play a role in determining what can be simulated with the
-constraint of operating at or near real-time. The Gazebo physics update loop is
+constraint of operating at or near real-time. The Gazebo-classic physics update loop is
 one of the primary consumers of CPU cycles. With an limitation in the speed of
 solution algorithms to solve the underlying mathematical problem that represents
 those physical constraints, parallelization of the physics engine is the direction
@@ -11,7 +11,7 @@ and environments in real-time.
 # Parallel Strategies
 Two strategies to parallelize physics have been implemented: island thread and
 position error correction thread. For more details about these two strategies results
-and analysis, please refer to the [parallel physics reports on the Gazebo webpage](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
+and analysis, please refer to the [parallel physics reports on the Gazebo-classic webpage](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
 
 Threading is enabled using SDFormat parameters:
 
@@ -29,7 +29,7 @@ is recalculated.
 ## Position Error Correction Thread
 The second strategy attempts to speed up the constraint resolution algorithm within
 islands for the QuickStep solver. The ODE QuickStep solver is the default solver in
-Gazebo and solves constraints posed as a Linear Complementarity Problem (LCP). As an
+Gazebo-classic and solves constraints posed as a Linear Complementarity Problem (LCP). As an
 iterative, fixed time step solver, it is prone to position errors, such as
 interpenetration of objects.
 
@@ -77,14 +77,14 @@ The following snippet shows how to configure the physics engine with ode with 3 
  engine in runtime with the command `gz physics -o <name of the physics tag>`
  ( for example: `gz physics -o unthrottled1`)**.
  - **Visit the tutorial [Manage physics profiles](/tutorials?tut=preset_manager&cat=physics)
- for more details about Gazebo physics parameters. These parameters affect the
+ for more details about Gazebo-classic physics parameters. These parameters affect the
  performance, accuracy, and general behavior of physics simulation. The
  physics preset manager interface offers a way to easily switch between a set
  of physics parameters and save them to SDF.**
 
 # Running the code
 
-Gazebo is currently instrumented with high-resolution diagnostic timers at several parts of the inner
+Gazebo-classic is currently instrumented with high-resolution diagnostic timers at several parts of the inner
 loop. The timer resolution depends on the hardware in use and is approximately 100ns on our test
 machines. To prevent performance degradation during normal usage, the timers are disabled unless the
 `ENABLE_DIAGNOSTICS` symbol is defined during compilation. For each simulation step, the elapsed
@@ -132,7 +132,7 @@ contact, articulation constraints, and multiple *islands*.
 
 ### Some results: revolute_joint_test.world
 
-For these tests Gazebo is running as fast as possible because we want to track the improvement in the `real_time_factor` value.
+For these tests Gazebo-classic is running as fast as possible because we want to track the improvement in the `real_time_factor` value.
 You can use some of the scripts described in the section below to run these tests locally. The scripts will subscribe to the topic:
 `/gazebo/default/diagnostics` and record the real_time_factor in a csv file.
 
@@ -155,13 +155,13 @@ more threads is **not** going to help the performance.
 
 ### Running some experiments
 
-For a quick review of how parallelization works in Gazebo we will run some experiments. For a deeper review of the experiments please refer to the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
+For a quick review of how parallelization works in Gazebo-classic we will run some experiments. For a deeper review of the experiments please refer to the [Gazebo-classic parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf).
 
 The following results measure the real time factor, this is a simplification
-of the tests presented in the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) but if
-you have installed Gazebo from packages it's another way (less precise) to
+of the tests presented in the [Gazebo-classic parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) but if
+you have installed Gazebo-classic from packages it's another way (less precise) to
 check the performance of these parameters. You only can access to the
-dianostics tools if you compile Gazebo from sources with the cmake flag
+dianostics tools if you compile Gazebo-classic from sources with the cmake flag
 `-DENABLE_DIAGNOSTICS` as explained above.
 
 To run the experiment:
@@ -249,4 +249,4 @@ python3 show_parallel_results.py dual_pr2/
 If you have a look to the results obtained for the pr2. You will see that threaded islands don’t help the single PR2 scenario since the complex PR2
 model cannot be partitioned and solved simultaneously over several threads.
 
-Launch the other experiments and try to understand what is happening. Then review the [Gazebo parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) to compare your thoughts
+Launch the other experiments and try to understand what is happening. Then review the [Gazebo-classic parallel physics report](http://gazebosim.org/assets/parallel_physics-1f40fad62e6878895798c9cb3261d92164a083c2fdbdb18a09d0891fafdc5230.pdf) to compare your thoughts

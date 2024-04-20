@@ -2,7 +2,7 @@
 
 This document provides an overview about the options to use different versions of ROS
  in combination with different versions of Gazebo.
-It is recommended to read it before installing the Gazebo ROS wrappers.
+It is recommended to read it before installing the Gazebo-classic ROS wrappers.
 
 # Important! simple analysis for a quick and correct decision
 
@@ -15,19 +15,19 @@ by ROS.
 Warning: note that using a different gazebo version than the official version delivered from the ROS
 repositories could end up in conflicts or other integration problems with ROS packages.
 
-# Gazebo versions and ROS integration
+# Gazebo-classic versions and ROS integration
 
-Gazebo is an independent project like boost, ogre or
+Gazebo-classic is an independent project like boost, ogre or
 any other project used by ROS. Usually, the latest major version of gazebo
 available at the beginning of every ROS release cycle (for example `gazebo11`
 for ROS Noetic) is selected as the official one to be fully integrated and
 supported and will be kept during the whole life of the ROS distribution.
 
-Gazebo development is not synced with ROS, so each new major version of Gazebo
+Gazebo-classic development is not synced with ROS, so each new major version of Gazebo
 must be released before being used in a ROS distribution.  The following
 sections cover how to use ROS with different versions of Gazebo.
 
-Note that Gazebo ABI stability policy follows the
+Note that Gazebo-classic ABI stability policy follows the
 [semantic versioning](http://semver.org/) philosophy, in which all versions
 that have the same major number (`gazebo_11.0.0`, `gazebo_11.1.0`,
 `gazebo_11.0.1`, ...) are binary compatible and thus interchangeable when using
@@ -35,23 +35,23 @@ the same ROS distro.
 
 ## Installing Gazebo
 
-### Gazebo Ubuntu packages
+### Gazebo-classic Ubuntu packages
 
-The easiest way of installing Gazebo is to use packages. There are two main repositories which host Gazebo packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
+The easiest way of installing Gazebo-classic is to use packages. There are two main repositories which host Gazebo-classic packages: one is `packages.ros.org` and the other is `packages.osrfoundation.org`. At the time of writing:
 
  * ***packages.ros.org***
-  *  ROS Melodic: Gazebo 9.x
-  *  ROS Noetic: Gazebo 11.x
-  *  ROS2 Foxy: Gazebo 11.x
-  *  ROS2 Rolling: Gazebo 11.x
+  *  ROS Melodic: Gazebo-classic 9.x
+  *  ROS Noetic: Gazebo-classic 11.x
+  *  ROS2 Foxy: Gazebo-classic 11.x
+  *  ROS2 Rolling: Gazebo-classic 11.x
  * ***packages.osrfoundation.org***
   * gazebo 9.x series (package name `gazebo9`)
   * gazebo 11.x series (package name `gazebo11`)
 
-This means that including the osrfoundation repository is not strictly needed to get the Gazebo Ubuntu package.
+This means that including the osrfoundation repository is not strictly needed to get the Gazebo-classic Ubuntu package.
 It can be installed from the ros repository.
 
-### Gazebo built from source
+### Gazebo-classic built from source
 
 If you have compiled a gazebo version from source, note that depending on the
 repository branch used (`gazebo9` or `gazebo11`) your gazebo will be
@@ -65,7 +65,7 @@ Note that if you are using `default` branch, you are probably not binary
 compatible with any of the packages released, so you will need a catkin
 workspace for getting a valid `gazebo_ros_pkgs`.
 
-## Using the default Gazebo version for a ROS distribution
+## Using the default Gazebo-classic version for a ROS distribution
 
 For the users that need to run a specific version of ROS
  and want to use all the gazebo ROS related packages out-of-the-box,
@@ -92,9 +92,9 @@ Gazebo.  The way to proceed is just to use the ROS repository (it will
 automatically install `gazebo9`) and do ***not*** use the osrfoundation
 repository.
 
-## Using a specific Gazebo version with ROS
+## Using a specific Gazebo-classic version with ROS
 ***Warning!: Using this option, you won't be able to use any ROS Ubuntu package
-related to Gazebo from ROS deb repository.  The equivalent of `gazebo_ros_pkgs`
+related to Gazebo-classic from ROS deb repository.  The equivalent of `gazebo_ros_pkgs`
 can be installed from debian packages, but all other software (such as
 [turtlebot_gazebo](http://wiki.ros.org/turtlebot_gazebo)) must be built from
 source.  Thanks to [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
@@ -103,7 +103,7 @@ this is quite easy to do.***
 
 There is a way of using any specific version of gazebo and ROS if really needed:
 
-### Gazebo 11.x series
+### Gazebo-classic 11.x series
 
 The OSRF repository provides `-gazebo11-` versions of ROS/Melodic or
 ROS2/Eloquent gazebo wrappers (`gazebo11_ros_pkgs`) which are built on top of
@@ -123,7 +123,7 @@ If you don't need ROS support, the recommended version is the latest released ve
 
 #### I need to use gazebo11 and ROS Melodic what can I do?
 ***Warning!: Using this option, you won't be able to use any ROS Melodic package
-related to Gazebo from ROS deb repository. The way to go is to build them from
+related to Gazebo-classic from ROS deb repository. The way to go is to build them from
 source. Thanks to catkin workspaces this is quite easy to do.***
 
 If you need some features only present in the version 11.x of Gazebo, there
@@ -134,10 +134,10 @@ are in this same document.
 #### Some ROS packages conflict with GazeboX ROS Wrappers!
 
 Note that each ROS distribution is designed to be used with an specific version
-of Gazebo (`gazebo9` in Melodic). When someone chooses to use a different version
-of Gazebo than the one recommended in the ROS distribution, problems may appear
+of Gazebo-classic (`gazebo9` in Melodic). When someone chooses to use a different version
+of Gazebo-classic than the one recommended in the ROS distribution, problems may appear
 and some of them could be unsolvable.
 
 If you a find a dependency conflict (for example with RVIZ) after trying to
 install one of the versions described in this document, you will need to
-probably install ROS or Gazebo from source.
+probably install ROS or Gazebo-classic from source.

@@ -4,7 +4,7 @@ The tutorial demonstrates Gazebo's basic model management, and exercises familia
 
 ## Setup your model directory ##
 
-Read through the [Model Database documentation](/tutorials?tut=model_structure&cat=build_robot). You will be creating your own model, which must follow the formatting rules for the Gazebo Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
+Read through the [Model Database documentation](/tutorials?tut=model_structure&cat=build_robot). You will be creating your own model, which must follow the formatting rules for the Gazebo-classic Model Database directory structure.  Also, for details on model description formats, please refer to the [SDF reference](http://gazebosim.org/sdf).
 
 1.  Create a model directory:
 
@@ -50,7 +50,7 @@ Read through the [Model Database documentation](/tutorials?tut=model_structure&c
     </sdf>
     ~~~
 
-At this point we have the basic contents for a model. The `model.config` file describes the robot with some extra meta data. The `model.sdf` file contains the necessary tags to instantiate a model named `my_robot` using Gazebo linked against SDF version 1.4.
+At this point we have the basic contents for a model. The `model.config` file describes the robot with some extra meta data. The `model.sdf` file contains the necessary tags to instantiate a model named `my_robot` using Gazebo-classic linked against SDF version 1.4.
 
 ## Build the Model's Structure ##
 

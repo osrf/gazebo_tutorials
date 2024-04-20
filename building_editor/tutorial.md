@@ -4,7 +4,7 @@ This tutorial describes the process of creating a building using the Building Ed
 
 ## Open the Building Editor
 
-1.  Make sure Gazebo is [installed](/tutorials?cat=install).
+1.  Make sure Gazebo-classic is [installed](/tutorials?cat=install).
 
 1.  Start up gazebo.
 
@@ -234,7 +234,7 @@ Colors and textures can be chosen from the Palette and assigned to items on your
 
     [[file:files/color_texture_palette.png|800px]]
 
-    > **New in Gazebo 5.1:** To choose a custom color, click on `More` on the Palette. A dialog opens where you can specify custom colors.
+    > **New in Gazebo-classic 5.1:** To choose a custom color, click on `More` on the Palette. A dialog opens where you can specify custom colors.
 
     [[file:files/custom_color.png|640px]]
 

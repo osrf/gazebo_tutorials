@@ -4,7 +4,7 @@ You've come a long way. On previous tutorials you learned how to make
 changes to Gazebo's codebase locally in your computer.
 
 On this last tutorial of the series, you will learn how to integrate
-your code into the official Gazebo repository!
+your code into the official Gazebo-classic repository!
 
 ## Choosing an issue
 
@@ -16,7 +16,7 @@ On GitHub, there is a list of "issues", which may be bugs or feature
 requests for each repository. Here are the links to the issue lists
 for each Gazebo-related repository:
 
-* [All Gazebo issues](https://github.com/osrf/gazebo/issues)
+* [All Gazebo-classic issues](https://github.com/osrf/gazebo/issues)
 * [All SDFormat issues](https://github.com/osrf/sdformat/issues)
 * [All Ignition Math issues](https://github.com/ignitionrobotics/ign-math/issues)
 * [All Ignition Transport issues](https://github.com/ignitionrobotics/ign-transport/issues)
@@ -24,12 +24,12 @@ for each Gazebo-related repository:
 
 ### Issues for new developers
 
-Among these issues, the Gazebo core team marks some of them with the label
+Among these issues, the Gazebo-classic core team marks some of them with the label
 `good first issue`. These are issues which are considered good first
 issues for first time contributors like you ;) Take a look at the list and see
 if you find anything that's interesting to you.
 
-* [Gazebo issues for new developers](https://github.com/osrf/gazebo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+* [Gazebo-classic issues for new developers](https://github.com/osrf/gazebo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [SDFormat issues for new developers](https://github.com/osrf/sdformat/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Math issues for new developers](https://github.com/ignitionrobotics/ign-math/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 * [Ignition Transport issues for new developers](https://github.com/ignitionrobotics/ign-transport/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
@@ -66,7 +66,7 @@ results of your search are:
 
     In this case, it's recommended you create a new issue yourself, explaining
     why you think that's an issue and how you plan on fixing it. Someone from
-    the community or from the Gazebo core team might comment on it shortly,
+    the community or from the Gazebo-classic core team might comment on it shortly,
     with tips on how to proceed, or maybe pointing you to other related issues
     you might have missed.
 
@@ -118,7 +118,7 @@ branch we're currently at with the `git branch` command:
 
 1. If you've been following the tutorials, you should now be at `gazebo9`.
 
-1. It was mentioned earlier that different Gazebo releases live in different
+1. It was mentioned earlier that different Gazebo-classic releases live in different
 branches.
 
  1. If you're fixing a bug on an existing release, you'll want to start
@@ -147,7 +147,7 @@ will do your magic! Use the tools you were introduced to in this series to fix
 the issue you chose to address.
 
 1. If you get stuck at any time, you're welcome to ask questions on
-[Gazebo Answers](http://answers.gazebosim.org/) or on the issue you're trying
+[Gazebo-classic Answers](http://answers.gazebosim.org/) or on the issue you're trying
 to fix.
 
 1. After you've made a few changes, be sure to "commit" your progress so it
@@ -178,7 +178,7 @@ that the new branch is there.
 ## Make a pull request
 
 It's time to put your code through code review. You will request that the
-Gazebo team pull your changes into the official repository through a
+Gazebo-classic team pull your changes into the official repository through a
 "pull request". Here is the list of pull requests currently open for Gazebo:
 
 [https://github.com/osrf/gazebo/pulls](https://github.com/osrf/gazebo/pulls)
@@ -187,7 +187,7 @@ It's a good idea to take a look at a couple of [pull requests which have
 been accepted](https://github.com/osrf/gazebo/pulls?q=is%3Apr+is%3Amerged)
 in the past so you get an idea of how the process works.
 
-You can create a pull request for Gazebo on this link:
+You can create a pull request for Gazebo-classic on this link:
 
 [https://github.com/osrf/gazebo/pulls/new](https://github.com/osrf/gazebo/pulls/new)
 
@@ -200,6 +200,6 @@ pull request so we can give you extra guidance ;)
 At least two other people have to approve your pull request before it can be merged.
 Be responsive to any questions and comments and adapt your code accordingly.
 
-Once it is merged, you're done! You've contributed to Gazebo and your code will
+Once it is merged, you're done! You've contributed to Gazebo-classic and your code will
 be part of the next release! Congratulations!
 

@@ -40,7 +40,7 @@ programming languages, indicates to the simulation engine that collisions
 should be generated.  The result is that **boxC** will come to rest on top
 of **boxA** and **boxB**.
 
-This example is available as a run-able Gazebo demo.
+This example is available as a run-able Gazebo-classic demo.
 
   1. Run the demo world, and start in a paused state
 

@@ -1,7 +1,7 @@
 
 # Introduction
 
-This tutorial shows you how to fetch Gazebo information that is not available via the publishers and subscribers, like the model sdf information.
+This tutorial shows you how to fetch Gazebo-classic information that is not available via the publishers and subscribers, like the model sdf information.
 
 ## Getting SDF information for a model
 
@@ -23,7 +23,7 @@ And put the following code inside ([model.js](https://bitbucket.org/osrf/gazeboj
 
 ### Code explained
 
-First we load the Gazebo bindings into the script engine, and create a client for the running simulation.
+First we load the Gazebo-classic bindings into the script engine, and create a client for the running simulation.
 
 ~~~
 var gazebojs = require('gazebojs')
@@ -49,7 +49,7 @@ sim.model( model_uri, function (err, data) {
 
 ### Test your code:
 
-Start Gazebo in a separate terminal. Then you can invoke the script with a model uri as a parameter:
+Start Gazebo-classic in a separate terminal. Then you can invoke the script with a model uri as a parameter:
 
     node model.js model://bowl
 
@@ -96,7 +96,7 @@ You can access the materials using Gazebojs. This section shows you how to do it
 node
 ~~~
 
-You can use the Gazebo object to query materials and also the local path of models, using the internal sim object:
+You can use the Gazebo-classic object to query materials and also the local path of models, using the internal sim object:
 
 ~~~
 > g = new (require('gazebojs')).Gazebo()

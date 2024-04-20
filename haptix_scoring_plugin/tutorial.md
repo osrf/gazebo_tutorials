@@ -13,7 +13,7 @@ and we strongly recommend that you have completed the
 
 # Running the Simulation Example
 
-To start Gazebo handsim scoring plugin example, run gazebo in terminal:
+To start Gazebo-classic handsim scoring plugin example, run gazebo in terminal:
 
 ~~~
 gazebo --verbose worlds/luke_hand.world
@@ -168,7 +168,7 @@ side of the hand diagram used for contact sensor visualization.
 Note the `HaptixGUIPlugin::ScoringUpdate` function is spawned in its own thread [here](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-718).
 And the `HaptixGUIPlugin::OnSimEvents` function [referenced here](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-1560) [subscribes to state updates](https://bitbucket.org/osrf/handsim/src/d8e8f7e996266a85dc15e63687d1c8ee15e4bab7/src/HaptixGUIPlugin.cc?at=default&fileviewer=file-view-default#HaptixGUIPlugin.cc-463) published by the `SimEventsPlugin`.
 
-For reference, the Gazebo SimEvents API documentation can be found
+For reference, the Gazebo-classic SimEvents API documentation can be found
 [here](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1SimEventsPlugin.html).
 This plugin subscribes to gazebo topic `/gazebo/sim_events` to monitor for changes in the simulated spring joints.
 

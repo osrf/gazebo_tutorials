@@ -4,7 +4,7 @@ There are many ways to start Gazebo, open world models and spawn robot models in
 
 ## Using `roslaunch` to Open World Models
 
-The [roslaunch](http://www.ros.org/wiki/roslaunch) tool is the standard method for starting ROS nodes and bringing up robots in ROS. To start an empty Gazebo world similar to the `rosrun` command in the previous tutorial, simply run
+The [roslaunch](http://www.ros.org/wiki/roslaunch) tool is the standard method for starting ROS nodes and bringing up robots in ROS. To start an empty Gazebo-classic world similar to the `rosrun` command in the previous tutorial, simply run
 
 <pre>
 roslaunch gazebo_ros empty_world.launch
@@ -16,7 +16,7 @@ You can append the following arguments to the launch files to change the behavio
 
 **paused**
 
-  > Start Gazebo in a paused state (default false)
+  > Start Gazebo-classic in a paused state (default false)
 
 **use\_sim\_time**
 
@@ -24,7 +24,7 @@ You can append the following arguments to the launch files to change the behavio
 
 **gui**
 
-  > Launch the user interface window of Gazebo (default true)
+  > Launch the user interface window of Gazebo-classic (default true)
 
 **headless** (deprecated)
 **recording**  (previously called headless)
@@ -33,7 +33,7 @@ You can append the following arguments to the launch files to change the behavio
 
 **debug**
 
-  > Start gzserver (Gazebo Server) in debug mode using gdb (default false)
+  > Start gzserver (Gazebo-classic Server) in debug mode using gdb (default false)
 
 **verbose**
 
@@ -41,7 +41,7 @@ You can append the following arguments to the launch files to change the behavio
 
 **server\_required**
 
-  > Terminate launch script when gzserver (Gazebo Server) exits (default false)
+  > Terminate launch script when gzserver (Gazebo-classic Server) exits (default false)
 
 **gui\_required**
 
@@ -112,24 +112,24 @@ Continuing with our examination of the `mud_world.launch` file, we will now look
 
 **See the section below to view this full world file on your computer.**
 
-In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo Model Database. If not found there, they are automatically pulled from Gazebo's online database.
+In this world file snippet you can see that three models are referenced. The three models are searched for within your local Gazebo-classic Model Database. If not found there, they are automatically pulled from Gazebo's online database.
 
 You can learn more about world files in the [Build A World](/tutorials?cat=build_world) tutorial.
 
 #### Finding World Files On Your Computer
-World files are found within the `/worlds` directory of your Gazebo resource path. The location of this path depends on how you installed Gazebo and the type of system your are on. To find the location of your Gazebo resources, use the following command:
+World files are found within the `/worlds` directory of your Gazebo-classic resource path. The location of this path depends on how you installed Gazebo-classic and the type of system your are on. To find the location of your Gazebo-classic resources, use the following command:
 
 <pre>
 env | grep GAZEBO_RESOURCE_PATH
 </pre>
 
-An typical path might be something like `/usr/local/share/gazebo-1.9`. Add `/worlds` to the end of the path and you should have the directory containing the world files Gazebo uses, including the `mud.world` file.
+An typical path might be something like `/usr/local/share/gazebo-1.9`. Add `/worlds` to the end of the path and you should have the directory containing the world files Gazebo-classic uses, including the `mud.world` file.
 
-## Creating your own Gazebo ROS Package
+## Creating your own Gazebo-classic ROS Package
 
 Before continuing on how to spawn robots into Gazebo,
 we will first go over file hierarchy standards for using
-ROS with Gazebo so that we can make later assumptions.
+ROS with Gazebo-classic so that we can make later assumptions.
 
 For now, we will assume your catkin workspace is named `catkin_ws`,
 though you can name this to whatever you want.
@@ -141,7 +141,7 @@ Thus, your catkin workspace might be located on your computer at something like:
 
 Everything concerning your robot's model and description is located,
 as per ROS standards, in a package named `/MYROBOT_description`
-and all the world files and launch files used with Gazebo is located in a ROS package named
+and all the world files and launch files used with Gazebo-classic is located in a ROS package named
 `/MYROBOT_gazebo`. Replace 'MYROBOT' with the name of your bot in lower case letters.
 With these two packages, your hierarchy should be as follows:
 
@@ -216,7 +216,7 @@ You can create custom `.world` files within your own ROS packages that are speci
 </sdf>
 ~~~
 
-* You should now be able to launch your custom world (with a gas station) into Gazebo using the following command:
+* You should now be able to launch your custom world (with a gas station) into Gazebo-classic using the following command:
 
 ~~~
 . ~/catkin_ws/devel/setup.bash
@@ -235,7 +235,7 @@ You can insert additional models into your robot's world file and use the `File-
 
 ## Using `roslaunch` to Spawn URDF Robots
 
-There are two ways to launch your URDF-based robot into Gazebo using `roslaunch`:
+There are two ways to launch your URDF-based robot into Gazebo-classic using `roslaunch`:
 
 **ROS Service Call Spawn Method**
 
@@ -244,7 +244,7 @@ There are two ways to launch your URDF-based robot into Gazebo using `roslaunch`
 
 **Model Database Method**
 
-  > The second method allows you to include your robot within the `.world` file, which seems cleaner and more convenient but requires you to add your robot to the Gazebo model database by setting an environment variable.
+  > The second method allows you to include your robot within the `.world` file, which seems cleaner and more convenient but requires you to add your robot to the Gazebo-classic model database by setting an environment variable.
 
 We will go over both methods. Overall our recommended method is using the '''ROS Service Call Spawn Method'''
 
@@ -287,7 +287,7 @@ You should then see something similar to:
 To integrate this directly into a ROS launch file, reopen the file `MYROBOT_gazebo/launch/YOUROBOT.launch` and add the following before the `</launch>` tag:
 
 ~~~
-<!-- Spawn a robot into Gazebo -->
+<!-- Spawn a robot into Gazebo-classic -->
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find baxter_description)/urdf/baxter.urdf -urdf -z 1 -model baxter" />
 ~~~
 
@@ -307,7 +307,7 @@ Then adding this to your launch file created previously in this tutorial:
 <!-- Convert an xacro and put on parameter server -->
 <param name="robot_description" command="$(find xacro)/xacro.py $(find pr2_description)/robots/pr2.urdf.xacro" />
 
-<!-- Spawn a robot into Gazebo -->
+<!-- Spawn a robot into Gazebo-classic -->
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model pr2" />
 ~~~
 
@@ -315,16 +315,16 @@ Launching this file, you should see the PR2 in the gas station as pictured:
 
 [[file:figs/PR2_GasStation.png|800px]]
 
-Note: at this writing there are still a lot of errors and warnings from the console output that need to be fixed from the PR2's URDF due to Gazebo API changes.
+Note: at this writing there are still a lot of errors and warnings from the console output that need to be fixed from the PR2's URDF due to Gazebo-classic API changes.
 
 
 ----
 
 ### "Model Database" Robot Spawn Method
 
-The second method of spawning robots into Gazebo allows you to include your robot within the `.world` file, which seems cleaner and more convenient but also requires you to add your robot to the Gazebo model database by setting an environment variable. This environment variable is required because of the separation of ROS dependencies from Gazebo; URDF package paths cannot be used directly inside `.world` files because Gazebo does not have a notion of ROS packages.
+The second method of spawning robots into Gazebo-classic allows you to include your robot within the `.world` file, which seems cleaner and more convenient but also requires you to add your robot to the Gazebo-classic model database by setting an environment variable. This environment variable is required because of the separation of ROS dependencies from Gazebo; URDF package paths cannot be used directly inside `.world` files because Gazebo-classic does not have a notion of ROS packages.
 
-To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [Gazebo Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation to understand why these steps are required.
+To accomplish this method, you must make a new model database that contains just your single robot. This isn't the cleanest way to load your URDF into Gazebo-classic but accomplishes the goal of not having to keep two copies of your robot URDF on your computer. If the following instructions are confusing, refer back to the [Gazebo-classic Model Database](http://gazebosim.org/user_guide/started__models__database.html) documentation to understand why these steps are required.
 
 We will assume your ROS workspace file hierarchy is setup as described in the above sections. The only difference is that now a `model.config` file is added to your `MYROBOT_description` package like so:
 
@@ -345,11 +345,11 @@ We will assume your ROS workspace file hierarchy is setup as described in the ab
         /cad
 ~~~
 
-This hierarchy is specially adapted for use as a Gazebo model database by means of the following folders/files:
+This hierarchy is specially adapted for use as a Gazebo-classic model database by means of the following folders/files:
 
-* **/home/user/catkin_workspace/src** - this is treated as the location of a Gazebo Model Database
-* **/MYROBOT_description** - this directory is treated as a single Gazebo model folder
-* **model.config** - this is a required configuration file for Gazebo to find this model in its database
+* **/home/user/catkin_workspace/src** - this is treated as the location of a Gazebo-classic Model Database
+* **/MYROBOT_description** - this directory is treated as a single Gazebo-classic model folder
+* **model.config** - this is a required configuration file for Gazebo-classic to find this model in its database
 * **MYROBOT.urdf** - this is your robot description file, also used by Rviz, MoveIt!, etc
 * **/meshes** - put your .stl or .dae files in here, just as you would with regular URDFs
 
@@ -371,11 +371,11 @@ Each model must have a model.config file in the model's root directory that cont
         </description>
       </model>
 
-Unlike for SDFs, no version is required for the <sdf> tag when it is used for URDFs. See the Gazebo Model Database documentation for more info.
+Unlike for SDFs, no version is required for the <sdf> tag when it is used for URDFs. See the Gazebo-classic Model Database documentation for more info.
 
 #### Environment Variable
 
-Finally, you need to add an environment variable to your .bashrc file that tells Gazebo where to look for model databases.
+Finally, you need to add an environment variable to your .bashrc file that tells Gazebo-classic where to look for model databases.
 Using the editor of your choice edit "~/.bashrc".
 Check if you already have a `GAZEBO_MODEL_PATH` defined.
 If you already have one, append to it using a semi-colon, otherwise add the new export.
@@ -383,15 +383,15 @@ Assuming your Catkin workspace is in `~/catkin_ws/` Your path should look someth
 
       export GAZEBO_MODEL_PATH=/home/user/catkin_ws/src/
 
-#### Viewing In Gazebo - Manually
+#### Viewing In Gazebo-classic - Manually
 
-Now test to see if your new Gazebo Model Database is properly configured by launching Gazebo:
+Now test to see if your new Gazebo-classic Model Database is properly configured by launching Gazebo:
 
       gazebo
 
-And clicking the "Insert" tab on the left. You will probably see several different drop down lists that represent different model databases available on your system, including the online database. Find the database corresponding to your robot, open the sub menu, click on the name of your robot and then choose a location within Gazebo to place the robot, using your mouse.
+And clicking the "Insert" tab on the left. You will probably see several different drop down lists that represent different model databases available on your system, including the online database. Find the database corresponding to your robot, open the sub menu, click on the name of your robot and then choose a location within Gazebo-classic to place the robot, using your mouse.
 
-#### Viewing In Gazebo - `roslaunch` with the Model Database
+#### Viewing In Gazebo-classic - `roslaunch` with the Model Database
 
 The advantage of the model database method is that now you can include your robot directly within your world files, without using a ROS package path. We'll use the same setup from the section "Creating a world file" but modify the world file:
 
@@ -419,7 +419,7 @@ The advantage of the model database method is that now you can include your robo
 </sdf>
 ~~~
 
-* You should now be able to launch your custom world with both the gas station and robot into Gazebo using the following command:
+* You should now be able to launch your custom world with both the gas station and robot into Gazebo-classic using the following command:
 <pre>
 roslaunch MYROBOT_gazebo MYROBOT.launch
 </pre>

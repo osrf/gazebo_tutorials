@@ -1,20 +1,20 @@
 # Introduction
 
-Gazebo topics communicate through Google protobuf messages. There is an
+Gazebo-classic topics communicate through Google protobuf messages. There is an
 extensive
 [list](http://osrf-distributions.s3.amazonaws.com/gazebo/msg-api/dev/classes.html)
 of message types provided by Gazebo, for use with subscribing and publishing
-Gazebo topics. However, there are many situations where you want to build
+Gazebo-classic topics. However, there are many situations where you want to build
 your own.
 
 This tutorial is an example of how to create your own custom messages, and
-how to subscribe and publish them in a Gazebo plug-in.
+how to subscribe and publish them in a Gazebo-classic plug-in.
 
 ## About this code
 
 At the end of this project you should have a plug-in that can create a 2D
-collision map of a Gazebo World. The plug-in will rasterize a world in
-Gazebo use a RayShape to do ray intersection below this grid. It will
+collision map of a Gazebo-classic World. The plug-in will rasterize a world in
+Gazebo-classic use a RayShape to do ray intersection below this grid. It will
 publish the created image to a custom topic and output to a file. The source
 code for this plug-in lives at
 [GitHub](https://github.com/osrf/collision_map_creator_plugin).
@@ -35,7 +35,7 @@ or copy and paste the code into files as instructed below.
 Writing your own message is great if it's too difficult to cram the
 subscriber/publisher message into one of Gazebo's already available message
 types. Furthermore, you can combine many different message types if you want
-to make complicated messages. Gazebo contains a library of messages already.
+to make complicated messages. Gazebo-classic contains a library of messages already.
 The installed messages can be found in
 /usr/include/gazebo-<YOUR_GAZEBO_VERSION>/gazebo/msgs/proto for debian
 installs.  This tutorial makes use of the [vector2d.proto
@@ -170,7 +170,7 @@ target_link_libraries(collision_map_creator_msgs ${PROTOBUF_LIBRARY})
 
 ## Collision Map Creator Plugin
 
-This is the code for the custom Gazebo world plugin
+This is the code for the custom Gazebo-classic world plugin
 (`~/collision_map_creator_plugin/collision_map_creator.cc`).
 
 <include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/collision_map_creator.cc' />
@@ -187,7 +187,7 @@ The necessary system headers to include
 #include <boost/shared_ptr.hpp>
 ~~~
 
-These are the necessary Gazebo headers we'll need.
+These are the necessary Gazebo-classic headers we'll need.
 
 ~~~
 #include "gazebo/gazebo.hh"
@@ -227,7 +227,7 @@ to create a typedef for it.
 typedef const boost::shared_ptr<const collision_map_creator_msgs::msgs::CollisionMapRequest> CollisionMapRequestPtr;
 ~~~
 
-Creating a derived class of the Gazebo WorldPlugin. It needs to hold on to
+Creating a derived class of the Gazebo-classic WorldPlugin. It needs to hold on to
 the `NodePtr`, `PublisherPtr`, `SubcriberPtr` and `WorldPtr`, so they must be
 added as class variables.
 
@@ -342,7 +342,7 @@ GZ_REGISTER_WORLD_PLUGIN(CollisionMapCreator)
 ## Request Publisher Executable
 
 This executable lives outside of gazebo, but it shows how to pull in the
-required libraries from Gazebo and publish to gazebo topics with a custom
+required libraries from Gazebo-classic and publish to gazebo topics with a custom
 built message type. There are some extra steps that must be taken that
 aren't explained in plugin tutorials. You can see the source code by opening
 the file `~/collision_map_creator_plugin/request_publisher.cc`:
@@ -485,7 +485,7 @@ command arguments.
 ~~~
 
 This is a super important part of the main method. This initializes the
-gazebo transport system. For plugins, Gazebo already takes care of this, but
+gazebo transport system. For plugins, Gazebo-classic already takes care of this, but
 for our own executable we have to do it ourself. Also notice we're not using
 the gazebo namespace so we must be explicit.
 
@@ -609,11 +609,11 @@ sudo cp libcollision_map_creator.so /usr/lib/gazebo-<YOUR-GAZEBO_VERSION>/plugin
 ## Running
 
 Assuming everything went fine, and that's probably a rough assumption
-(seriously this one was long), you need to run Gazebo with a custom world file:
+(seriously this one was long), you need to run Gazebo-classic with a custom world file:
 
 <include src='https://raw.githubusercontent.com/osrf/collision_map_creator_plugin/master/map_creator.world' />
 
-Run Gazebo with this world:
+Run Gazebo-classic with this world:
 
 ~~~
 gazebo ~/collision_map_creator_plugin/map_creator.world
@@ -626,7 +626,7 @@ map with a 1cm resolution.
 ~/collision_map_creator_plugin/build/request_publisher "(-10,10)(10,10)(10,-10)(-10,-10)" 10 0.01 ~/map.png
 ~~~
 
-Your executable terminal should show it connecting to Gazebo and display the
+Your executable terminal should show it connecting to Gazebo-classic and display the
 request message. You should see your gazebo terminal display some messages
 and run a percent complete stat until it finishes. Your map.png should look
 like this below.

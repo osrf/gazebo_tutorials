@@ -61,7 +61,7 @@ from doxygen comments in C++ header files.
 
 ## Workflow example
 
-You've previously built and run Gazebo locally, but you've never made any changes
+You've previously built and run Gazebo-classic locally, but you've never made any changes
 to the source code. Let's go through a simple example of how you'd change something
 in the source code for the first time.
 
@@ -73,8 +73,8 @@ For this example, let's pretend that we want to change the label which says
 
 
 1. Before making changes to the code, it's always a good idea to make sure you're
-running the latest Gazebo code. Let's move to the branch we want to target. Let's
-say we want our change to be available from Gazebo 9 onwards, so we target
+running the latest Gazebo-classic code. Let's move to the branch we want to target. Let's
+say we want our change to be available from Gazebo-classic 9 onwards, so we target
 the `gazebo9` branch. Use the `git checkout` command to update your workspace to
 that branch:
 
@@ -87,14 +87,14 @@ that branch:
         git pull https://github.com/osrf/gazebo
 
 1. Now your local branch is in sync with the official repository. Let's build
-and install Gazebo before making any changes:
+and install Gazebo-classic before making any changes:
 
         cd build
         cmake ..
         make -j4
         sudo make install
 
-1. Check that Gazebo runs fine (it's a good idea to run Gazebo in verbose mode
+1. Check that Gazebo-classic runs fine (it's a good idea to run Gazebo-classic in verbose mode
    to check if any errors happened):
 
         gazebo --verbose
@@ -132,7 +132,7 @@ displayed within a widget that tells time. So let's open that file:
 
         sudo make install
 
-1. If everything went well, let's open Gazebo from any terminal and check that the
+1. If everything went well, let's open Gazebo-classic from any terminal and check that the
 label has been successfully changed:
 
         gazebo --verbose

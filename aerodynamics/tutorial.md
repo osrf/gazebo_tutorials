@@ -1,7 +1,7 @@
 # Overview
 
 This tutorial gives an overview of the physical phenomena of lift and drag
-and how they are implemented in Gazebo in the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html). After this
+and how they are implemented in Gazebo-classic in the [LiftDragPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1LiftDragPlugin.html). After this
 tutorial, you will be able to simulate aerodynamic robots.
 
 # Physics background
@@ -11,7 +11,7 @@ tutorial, you will be able to simulate aerodynamic robots.
 Fluid mechanics is the study of the forces on or due to liquids and gases.
 Solving fluid mechanics problems is complex, and a truly
 faithful simulation of fluid mechanics would be computationally prohibitive.
-Thus, Gazebo simulates the forces on an object immersed in a fluid and applies
+Thus, Gazebo-classic simulates the forces on an object immersed in a fluid and applies
 the forces to the object's links directly. In particular, the phenomena of lift
 and drag are instrumental to underwater and aerodynamic vehicles.
 
@@ -65,7 +65,7 @@ and drag coefficient.
 
 Note in this example, the airfoil has non-zero camber, and has a net
 positive lift at zero angle of attack.  To obtain equivalent representation
-using the current Gazebo `LiftDragPlugin` plugin parameters, shift the entire
+using the current Gazebo-classic `LiftDragPlugin` plugin parameters, shift the entire
 curve to the right such that the zero lift point corresponds to zero
 angle of attack. And we can label the original zero angle of attack
 location as `a0` in the shifted curve, i.e. `a0` is 5 degrees.
@@ -149,7 +149,7 @@ types:
 
 * [CessnaPlugin](http://gazebosim.org/api/code/dev/classgazebo_1_1CessnaPlugin.html):
 This model plugin exposes the topic `~/cessna_c172/control` for controlling the
-thrust and control surfaces via Gazebo messages. It also publishes the state of
+thrust and control surfaces via Gazebo-classic messages. It also publishes the state of
 the model into the topic `~/cessna_c172/state`. Please, read the documentation
 included in the header file of this plugin for a detailed explanation of its
 required and optional parameters. Here is the plugin block included in our
@@ -203,7 +203,7 @@ the Cessna:
 gz topic -e /gazebo/default/cessna_c172/state
 ~~~
 
-In the Gazebo window, right click on the model and press `Follow`. The user
+In the Gazebo-classic window, right click on the model and press `Follow`. The user
 camera will follow the plane during the flight and you will not lose it.
 
 Press '1' to start the preset for take-off. The propeller

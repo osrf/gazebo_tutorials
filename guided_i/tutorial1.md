@@ -4,7 +4,7 @@ Welcome to the Intermediate Module! This module will guide you through the
 process of creating a new simulation feature and contributing the feature to
 Gazebo.
 
-We assume you are familiar with using Gazebo and Linux. We also assume that
+We assume you are familiar with using Gazebo-classic and Linux. We also assume that
 you are an expert tutorial reader (read everything carefully, and
 completely).
 
@@ -16,7 +16,7 @@ walk through
 1. contributing the model to Gazebo's model database,
 1. improving the model's appearance and data output,
 1. controlling the model using a plugin, and
-1. visualizing the sensor data in Gazebo and RViz.
+1. visualizing the sensor data in Gazebo-classic and RViz.
 
 Each of the above topics will be covered in separate tutorials. The rest of
 this tutorial will focus on the creation of the Velodyne SDF model.
@@ -130,7 +130,7 @@ Based on the Velodyne documentation, we will create a sensor that has:
         ```
 
 1. When building a new model, it is a good idea to periodically try out small
-changes. Start Gazebo paused so that you can
+changes. Start Gazebo-classic paused so that you can
 view the model without the physics engine altering the model's pose. There
 are also a few other graphical tools that can assist the development process, which we will cover over the course of this tutorial.
 
@@ -157,7 +157,7 @@ as moments of inertia. The physics engine uses inertia information to
 calculate how a model will behave when forces act upon it. A model with
 incorrect, or no, inertia values will behave in a strange manner.
 
-1. Start by visualizing the current inertia values. With Gazebo running,
+1. Start by visualizing the current inertia values. With Gazebo-classic running,
    right-click on the Velodyne and select ```View->Inertia```. This will
    causes two purple boxes to appear.
 
@@ -232,7 +232,7 @@ list of joints can be found on the [SDF
 website](http://sdformat.org/spec?ver=1.6&elem=joint#joint_type).
 
 Of course, it is possible to visualize joints. With
-Gazebo running, Right click on a model, and choose ```View->Joints```.
+Gazebo-classic running, Right click on a model, and choose ```View->Joints```.
 Joints are often located within a model, so you may have to make a model
 transparent to see the joint visualization (Right click on the model and
 select ```View->Transparent```).
@@ -302,7 +302,7 @@ addition of the sensor.
 
 A sensor is used to generate data, from the environment or a model. In this
 section we'll add a `ray` sensor to the Velodyne model. A `ray` sensor in
-Gazebo consists of one or more beams that generate distance, and potentially
+Gazebo-classic consists of one or more beams that generate distance, and potentially
 intensity, data.
 
 A `ray` sensor consists of one `<scan>` and one `<range>` SDF element. The `<scan>` element defines the layout and number of beams, and the `<range>` element defines properties of an individual beam.

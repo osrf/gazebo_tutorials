@@ -8,7 +8,7 @@ We assume that you've already done the [installation step](/tutorials/?tut=drcsi
 
 In this tutorial, we'll demonstrate how to call ROS services in command-line using [rosservice](http://www.ros.org/wiki/rosservice).
 
-After running Gazebo with Atlas, `roslaunch drcsim_gazebo atlas_sandia_hands.launch`, you can then use `rosservice list` to look for existing services:
+After running Gazebo-classic with Atlas, `roslaunch drcsim_gazebo atlas_sandia_hands.launch`, you can then use `rosservice list` to look for existing services:
 
 ~~~
 rosservice list | grep damping

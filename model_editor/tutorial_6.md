@@ -4,7 +4,7 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 ## Open the Model Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/install).
+1.  Make sure Gazebo-classic is [installed](http://gazebosim.org/install).
 
 1.  Start up gazebo.
 
@@ -106,7 +106,7 @@ rotation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:** Gazebo 6 supports editing
+> **Note:** Gazebo-classic 6 supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 

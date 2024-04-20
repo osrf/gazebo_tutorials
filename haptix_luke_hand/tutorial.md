@@ -19,13 +19,13 @@ The model file will be provided in a zipped file that looks like
 Note that the generic haptix and simulation API documentation can be found
 [here](http://gazebosim.org/haptix/api).
 
-### Installing Gazebo DEKA Luke hand model for handsim
+### Installing Gazebo-classic DEKA Luke hand model for handsim
 
 ~~~
 unzip Luke_Hand_Gazebo_vX.X.zip -d ~/.gazebo/models/
 ~~~
 
-### Installing documentation for Gazebo DEKA Luke hand model
+### Installing documentation for Gazebo-classic DEKA Luke hand model
 
 ~~~
 unzip Luke_Hand_Gazebo_Doc_vX.X.zip -d /tmp/
@@ -37,7 +37,7 @@ To view documentation, open the following link in a browser:
 
 ## Running handsim with DEKA Luke hand model
 
-To start Gazebo with the DEKA Luke hand model, type the following command
+To start Gazebo-classic with the DEKA Luke hand model, type the following command
   in a terminal:
 
 ~~~

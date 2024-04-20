@@ -25,7 +25,7 @@ There are two options to replicate the HAPTIX setup. One requires two physical c
 
 ## Two-computer setup
 
-The two-computer HAPTIX system consists of both Linux computer and a Windows computer. Gazebo relies on Linux, while OptiTrack must run on Windows. A USB switch allows these two computers to share a single monitor, keyboard, and other peripherals. The following diagram depicts the connections between each component in the system.
+The two-computer HAPTIX system consists of both Linux computer and a Windows computer. Gazebo-classic relies on Linux, while OptiTrack must run on Windows. A USB switch allows these two computers to share a single monitor, keyboard, and other peripherals. The following diagram depicts the connections between each component in the system.
 
 [[file:files/haptix_setup_diagram_final.svg]]
 
@@ -73,7 +73,7 @@ For a one-computer setup, one Linux computer is required. A Windows virtual mach
 
 # Software setup
 
-## Gazebo installation
+## Gazebo-classic installation
 To install the full simulation environment, open a Terminal (under "Applications", "Accessories") and type:
 
 ~~~
@@ -89,7 +89,7 @@ sudo apt-get update
 sudo apt-get install handsim
 ~~~
 
-You can start Gazebo in the terminal by typing:
+You can start Gazebo-classic in the terminal by typing:
 
 ~~~
 gazebo --verbose worlds/arat.world
@@ -121,7 +121,7 @@ On the desktop, you should see three icons.
 
 [[file:files/desktop.png]]
 
-1. haptixStart: Double-click to launch the Gazebo prosthetic arm simulator.
+1. haptixStart: Double-click to launch the Gazebo-classic prosthetic arm simulator.
 
 1. haptixUpdate: Double-click to check for software updates and install them if found.
 
@@ -176,11 +176,11 @@ You will need to restart your computer for the new drivers to take effect.
 
 1. Make sure the stereo glasses are charged and turned on and the emitter is glowing dull green.
 
-1. Double click on the Gazebo icon. You should see the Gazebo window come up, displaying the simulated prosthetic arm and manipulation environment. You should also see the stereo emitter change to bright green, indicating that stereo has been turned out.
+1. Double click on the Gazebo-classic icon. You should see the Gazebo-classic window come up, displaying the simulated prosthetic arm and manipulation environment. You should also see the stereo emitter change to bright green, indicating that stereo has been turned out.
 
 1. The screen should appear "blurry", as if there are two images on top of each other.
 
-1. Put the glasses on. The Gazebo window should look 3D.
+1. Put the glasses on. The Gazebo-classic window should look 3D.
 
 1. You can use the keyboard to move the arm and the mouse to change the viewpoint. Or, you can use the Spacenav to control the arm and viewpoint position. Press the button on the Spacenav to toggle between arm and viewpoint. The number keys (1-5) will control pre-defined grasps (see the [teleop tutorial](/tutorials?cat=haptix&tut=haptix_teleop) for more information).
 
@@ -202,4 +202,4 @@ You will need to restart your computer for the new drivers to take effect.
 
     If the Spacenav does not glow blue even if it is connected, or the terminal command does not work, contact OSRF support.
 
-1. If Gazebo does not load or the arm is unresponsive to keyboard input, contact OSRF support.
+1. If Gazebo-classic does not load or the arm is unresponsive to keyboard input, contact OSRF support.

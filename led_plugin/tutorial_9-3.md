@@ -47,7 +47,7 @@ This plugin inherits from [FlashLightPlugin](/tutorials?tut=flashlight_plugin&ca
 
 # Implementation Details
 The diagram below shows an abstract structure of the plugin and its components.
-`LedPlugin` class holds `LedSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo transport topic. `LedPlugin` and `LedSetting` are child classes of `FlashLightPlugin` and `FlashLightSetting` respectively so they have the functionalities of the base classes.
+`LedPlugin` class holds `LedSetting` objects, each of which holds a unit of settings and maintains the corresponding light element by the Gazebo-classic transport topic. `LedPlugin` and `LedSetting` are child classes of `FlashLightPlugin` and `FlashLightSetting` respectively so they have the functionalities of the base classes.
 
 [[file:files/LED.png|640px]]
 

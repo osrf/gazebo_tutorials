@@ -140,7 +140,7 @@ Insert the `Lightmap Table` model into the scene:
 
 ## Apply Lightmap
 
-If you pay attention earlier, you will notice that we have not made use of `table_lightmap.png` yet. This is the lightmap to be applied. But first, we will need to tell Gazebo that dynamic lighting should not be applied to the model since we want to use lightmaps.
+If you pay attention earlier, you will notice that we have not made use of `table_lightmap.png` yet. This is the lightmap to be applied. But first, we will need to tell Gazebo-classic that dynamic lighting should not be applied to the model since we want to use lightmaps.
 
 Edit the `model.sdf` file:
 
@@ -201,6 +201,6 @@ material Table/Marble_Lightmap
 }
 %%%
 
-Finally, relaunch Gazebo and insert the table model:
+Finally, relaunch Gazebo-classic and insert the table model:
 
 [[file:table_lightmap.png | 640px]]

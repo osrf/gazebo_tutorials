@@ -1,12 +1,12 @@
 # Introduction
 
-The set of ROS 2 packages for interfacing with Gazebo are contained within a
+The set of ROS 2 packages for interfacing with Gazebo-classic are contained within a
 meta package named `gazebo_ros_pkgs`.
 See
 [ROS 2 Overview](/tutorials/?tut=ros2_overview)
 for background information before continuing here.
 
-The packages support ROS 2 Crystal and later and Gazebo 9 and later, and can be installed from
+The packages support ROS 2 Crystal and later and Gazebo-classic 9 and later, and can be installed from
 debian packages or from source.
 
 ## Prerequisites
@@ -26,11 +26,11 @@ The current stable distribution is **Foxy**.
 
 ### Install Gazebo
 
-You can install Gazebo either from source or from pre-build packages. See
+You can install Gazebo-classic either from source or from pre-build packages. See
 [Install Gazebo](/tutorials?cat=install).
 
-You should install Gazebo 9 or later. If installing from source, be sure to build the
-appropriate branch, such as `gazebo11` for Gazebo 11.
+You should install Gazebo-classic 9 or later. If installing from source, be sure to build the
+appropriate branch, such as `gazebo11` for Gazebo-classic 11.
 
 > **Tip**: You may need to source Gazebo's setup file if you're having difficulty
 finding plugins and other resources. For example: `source /usr/share/gazebo/setup.sh`.
@@ -122,13 +122,13 @@ The following setup assumes installation with `ros2` branch of `gazebo_ros_pkgs`
     > **Tip**: You can make this be automatically sourced for every new terminal
       by running this once: `echo "source ~/ws/install/setup.bash" >> ~/.bashrc`
 
-## Testing Gazebo and ROS 2 integration
+## Testing Gazebo-classic and ROS 2 integration
 
-Assuming your ROS 2 and Gazebo environments have been properly setup and built,
-you should now be able to load Gazebo worlds which contain ROS 2 plugins, and to
+Assuming your ROS 2 and Gazebo-classic environments have been properly setup and built,
+you should now be able to load Gazebo-classic worlds which contain ROS 2 plugins, and to
 insert models at runtime which have ROS 2 plugins in them.
 
-Gazebo ROS packages provides several demo worlds for you to get a quick start
+Gazebo-classic ROS packages provides several demo worlds for you to get a quick start
 with the plugins. The demo worlds can be found
 [here](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/worlds),
 and are installed by default under
@@ -155,7 +155,7 @@ Let's try loading one of them now!
 
         gazebo --verbose /opt/ros/foxy/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world
 
-1. The Gazebo GUI should appear with a simple vehicle:
+1. The Gazebo-classic GUI should appear with a simple vehicle:
 
     [[file:figs/gazebo_ros_diff_drive.png|600px]]
 

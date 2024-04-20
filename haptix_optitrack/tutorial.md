@@ -1,10 +1,10 @@
 # Overview
-This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo simulator. You will learn about each piece of equipment and how to calibrate the markers so that each component works properly.
+This tutorial describes how to configure the Optitrack motion tracking system for use with the HAPTIX Gazebo-classic simulator. You will learn about each piece of equipment and how to calibrate the markers so that each component works properly.
 
 ## What you'll need
 All of the necessary items, including all software components, will be provided to participating HAPTIX teams. We are also providing links for any participants or hobbyists who want to create their own kit.
 
-1. A Linux computer with the HAPTIX Gazebo simulator installed (see [here](/tutorials?cat=haptix&tut=haptix_install) for instructions).
+1. A Linux computer with the HAPTIX Gazebo-classic simulator installed (see [here](/tutorials?cat=haptix&tut=haptix_install) for instructions).
 
 1. A Windows computer or a Windows virtual machine (VM) with the Motive motion tracking software installed. HAPTIX team machines come pre-installed with a Windows VM that initializes on startup. (Motive software installation instructions are [here](https://www.naturalpoint.com/optitrack/downloads/motive.html)).
 
@@ -51,7 +51,7 @@ Participating HAPTIX teams are provided with three motion tracking spheres attac
 
 [[file:files/spheres.png]]
 
-These spheres will be attached to the corners of the monitor associated with the Gazebo machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the middle of the right side.
+These spheres will be attached to the corners of the monitor associated with the Gazebo-classic machine. Adhere one to the top right corner of the monitor, one to the top left corner, and another to the middle of the right side.
 
 [[file:files/monitor.png]]
 
@@ -59,7 +59,7 @@ These spheres will be attached to the corners of the monitor associated with the
 If you received a premade set of tracking targets, download the Motive project file, [haptix_osrf.ttp](https://github.com/osrf/gazebo_tutorials/raw/master/haptix_optitrack/files/haptix_osrf.ttp) to the Desktop of the Windows machine. We are going to make a small modification to calibrate each component.
 
 ### Tracking rigid bodies
-Make sure Gazebo is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
+Make sure Gazebo-classic is closed on Linux. On your Windows machine, make sure the Optitrack is plugged in via USB, and start the Motive software by clicking on the shortcut on your desktop.
 
 [[file:files/motive_icon.PNG]]
 
@@ -109,7 +109,7 @@ If you are using Nvidia 3D glasses, put the head tracker on and hold your head s
 
 Hold the tracker as still as possible and click on "Create from Selection". Rename the rigid body "HeadTracker".
 
-**Important: make sure the rigid body names are correct, otherwise Gazebo will not associate the motion tracking targets to the corresponding object in simulation!**
+**Important: make sure the rigid body names are correct, otherwise Gazebo-classic will not associate the motion tracking targets to the corresponding object in simulation!**
 
 You should be able to move around the arm and head trackers and watch the positions change in the 3D view in Motive!
 
@@ -122,7 +122,7 @@ Select "Save Project" under "File" in the top toolbar. Make sure it is saved to 
 You should not need to modify the configuration in the future unless you change the placement of the individual markers on a tracker or unless you move the angle of the camera significantly.
 
 ## Starting Gazebo
-Make sure the Optitrack is plugged in and then start Gazebo on the Linux machine
+Make sure the Optitrack is plugged in and then start Gazebo-classic on the Linux machine
 by double-clicking on the `haptixStart` desktop icon.
 
 Put on the arm tracker and head tracker. Hold up your arm like the robot arm in simulation, and hold your head upright and straight. Then using your other hand, press `v`, `b` or `n` to unpause simulation. Wave your arm around to control the simulated arm.

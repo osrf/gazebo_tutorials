@@ -8,7 +8,7 @@ In this section, we will learn how to contribute the model to the online databas
 # Contribute the model to the online-database
 
 Contributing our model to Gazebo's online-databse benefits you and every
-other user of Gazebo. When the model is hosted on the database, Gazebo will
+other user of Gazebo. When the model is hosted on the database, Gazebo-classic will
 automatically download it when requested. This means you don't have to
 manage which computers have the model and which do not. Additionally, other
 people can use your model.

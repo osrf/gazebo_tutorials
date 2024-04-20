@@ -12,7 +12,7 @@ applications that work).
 
 ### Steps to follow
 
-We will use the Gazebo repository as an example, but the step apply equally
+We will use the Gazebo-classic repository as an example, but the step apply equally
 well to other repositories maintained by OSRF.
 
 1. Are you sure?
@@ -22,8 +22,8 @@ well to other repositories maintained by OSRF.
 >
 >     Check [answers.gazebosim.org](http://answers.gazebosim.org) and the [issue tracker](https://github.com/osrf/gazebo/issues).
 >
-> 1. Get feedback from the Gazebo core team.
->     Post a topic on [community.gazebosim.org](https://community.gazebosim.org), post a question on [answers.gazebosim.org](http://answers.gazebosim.org), or use the [issue tracker](https://github.com/osrf/gazebo/issues) to get feedback from Gazebo developers.
+> 1. Get feedback from the Gazebo-classic core team.
+>     Post a topic on [community.gazebosim.org](https://community.gazebosim.org), post a question on [answers.gazebosim.org](http://answers.gazebosim.org), or use the [issue tracker](https://github.com/osrf/gazebo/issues) to get feedback from Gazebo-classic developers.
 
 1. [Fork Gazebo](https://github.com/osrf/gazebo/fork)
 > This will create your own personal copy of Gazebo. All of your development should take place in your fork.
@@ -44,7 +44,7 @@ well to other repositories maintained by OSRF.
 >  Code must have zero compile warnings. This currently only applies to Linux.
 
 1. Style
-> A tool is provided in Gazebo (and other repositories) to check for correct style. Your code must have no errors after running the following command from the root of the source tree:
+> A tool is provided in Gazebo-classic (and other repositories) to check for correct style. Your code must have no errors after running the following command from the root of the source tree:
 >
 > `sh tools/code_check.sh`
 >
@@ -190,12 +190,12 @@ In general, we follow [Google's style guide](https://google.github.io/styleguide
 
 Check to make sure someone else is not currently working on the same
 feature, before embarking on a project to add something to Gazebo. Simply
-send a quick email to the Gazebo mailing list expressing your interest and
+send a quick email to the Gazebo-classic mailing list expressing your interest and
 idea. Someone will get back to you shortly about your idea.
 
 # Write Tests
 
-All code should have a corresponding unit test. Gazebo uses [GTest](http://code.google.com/p/googletest) for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`.
+All code should have a corresponding unit test. Gazebo-classic uses [GTest](http://code.google.com/p/googletest) for unit testing. All regression test should be placed in `<gazebo_sources>/test/regresssion/`.
 
 Before creating a new regressions test file, check the current test files.
 If one closely matches the topic of your new code, simply add a new test
@@ -210,9 +210,9 @@ coverage, and time constraints. Try to write as complete of a test suite as
 possible, and use the coverage analysis tools as guide. If you have trouble
 writing a test please ask for help in your pull request.
 
-Gazebo has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
+Gazebo-classic has a build target called `make coverage` that will produce a code coverage report. You'll need [lcov](http://ltp.sourceforge.net/coverage/lcov.php) and [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) installed.
 
-1. In your `build` folder, compile Gazebo and the tests with `-DCMAKE_BUILD_TYPE=Coverage`
+1. In your `build` folder, compile Gazebo-classic and the tests with `-DCMAKE_BUILD_TYPE=Coverage`
 
     ~~~
     cmake -DCMAKE_BUILD_TYPE=Coverage ..\
@@ -239,7 +239,7 @@ Gazebo has a build target called `make coverage` that will produce a code covera
     ~~~
 
 
-## Gazebo assertions
+## Gazebo-classic assertions
 
 ### What is an assertion?
 
@@ -253,7 +253,7 @@ stop the program immediately.
      GZ_ASSERT(p != NULL, "Object from some_crazy_function should never point to NULL")
      p->run()
 
-### Gazebo runtime assertions: GZ_ASSERT
+### Gazebo-classic runtime assertions: GZ_ASSERT
 
 In Gazebo, the GZ_ASSERT macro is designed to handle all our runtime assertions
 
@@ -288,24 +288,24 @@ What could be an assertion and what would be an exception for our revolutionary 
 
 ### Meaningful backtraces
 
-In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most situations. There are three level of traces which can be obtained:
+In order to provide meaningful backtraces when using a debugger, such as GDB, Gazebo-classic should be compiled with debugging support enabled. When using the ubuntu packages, specially the ''-dbg'' package, this support is limited but could be enough in most situations. There are three level of traces which can be obtained:
 
 '''Maximum level of debugging support'''
-: This can only be obtained by compiling Gazebo from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up debugging symbols with no optimizations. It may be required by developers for problems that are especially difficult to track down.
+: This can only be obtained by compiling Gazebo-classic from source and setting the `CMAKE_BUILD_TYPE` to `DEBUG`. This will set up debugging symbols with no optimizations. It may be required by developers for problems that are especially difficult to track down.
 
 '''Medium level of debugging support'''
-: This can be obtained installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
+: This can be obtained installing the ''gazebo-dbg'' package (since 1.4 version) or compiling Gazebo-classic from source using the `RELWITHDEBINFO` `CMAKE_BUILD_TYPE` mode (which is the default if no mode is provided). This will set up ''-O2'' optimization level but provide debugging symbols. This should be the default when firing up gdb to explore errors and submit traces.
 
 '''Minimum level of debugging support'''
-: This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. These traces are particularly difficult to follow.
+: This one is present in package versions previous to 1.4 (no ''-dbg'' package present) or compiling Gazebo-classic from source using the `RELEASE` `CMAKE_BUILD_TYPE` option. This will set up the maximum level of optimizations and does not provide any debugging symbol information. These traces are particularly difficult to follow.
 
 ## Code Check
 
-Code pushed into the Gazebo repository should pass a few simple tests. It is also helpful if patches submitted through GitHub pass these tests. Passing these tests is defined as generating no error or warning messages for each of the following tests.
+Code pushed into the Gazebo-classic repository should pass a few simple tests. It is also helpful if patches submitted through GitHub pass these tests. Passing these tests is defined as generating no error or warning messages for each of the following tests.
 
 ### Regression Tests
 
-In your Gazebo build directory run `make test`:
+In your Gazebo-classic build directory run `make test`:
 
         make test
 
@@ -315,11 +315,11 @@ All the tests should pass. If they do not, you can run and debug the tests indiv
 
 ### Static Code Check
 
-Static code checking analyzes your code for bugs, such as potential memory leaks, and style. The Gazebo static code checker uses cppcheck, and a modified cpplint. You'll need to install cppcheck on your system. Ubuntu users can install via:
+Static code checking analyzes your code for bugs, such as potential memory leaks, and style. The Gazebo-classic static code checker uses cppcheck, and a modified cpplint. You'll need to install cppcheck on your system. Ubuntu users can install via:
 
         sudo apt-get install cppcheck
 
-To check your code, run the following script from the root of the Gazebo sources:
+To check your code, run the following script from the root of the Gazebo-classic sources:
 
         sh tools/code_check.sh
 
@@ -329,7 +329,7 @@ It takes a few minutes to run. Fix all errors and warnings until the output look
 
 ### `CMAKE_BUILD_TYPE=Check` compiles with no warnings
 
-This test compiles Gazebo with numerous warning flags enabled. The source code for Gazebo should compile cleanly. This does not include code in the `deps` directory. As a rule of thumb, start looking for compilation warnings after the proto messages are built which appear as a series of blue text:
+This test compiles Gazebo-classic with numerous warning flags enabled. The source code for Gazebo-classic should compile cleanly. This does not include code in the `deps` directory. As a rule of thumb, start looking for compilation warnings after the proto messages are built which appear as a series of blue text:
 
         Linking CXX executable gazebomsgs_out
         Running C++ protocol buffer compiler on axis.proto

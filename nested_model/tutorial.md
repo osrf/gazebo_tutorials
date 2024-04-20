@@ -12,7 +12,7 @@ It was seen in the
 model SDF is composed of a collection of `links` and `joints`. As of SDF 1.5,
 the `<model>` SDF element has been extended to support self-referencing, which
 means allowing `<model>` elements to be nested. Support for loading nested
-`<model>` elements has been added in Gazebo 7.
+`<model>` elements has been added in Gazebo-classic 7.
 
 Here is a basic example of a nested model SDF:
 
@@ -63,8 +63,8 @@ Here is a basic example of a nested model SDF:
 ~~~
 
 This model SDF is composed of a link (`link_00`), and a nested model
-(`model_01`) with another link (`link_01`). Since a model in Gazebo is just an
-abstract container for a group of objects, loading this model in Gazebo will
+(`model_01`) with another link (`link_01`). Since a model in Gazebo-classic is just an
+abstract container for a group of objects, loading this model in Gazebo-classic will
 result in just two rigid bodies being created in the physics engine; one for the
 sphere link and the other for the nested box link. By default, they will not
 self-collide just like other links within the same model. On the GUI client,

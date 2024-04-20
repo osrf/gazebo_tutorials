@@ -22,7 +22,7 @@ sudo apt-get install python-pygame
 
 # Simulation setup
 
-Start Gazebo with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
+Start Gazebo-classic with Atlas in a world where there's something to manipulate (be sure to do the usual `source /usr/share/drcsim/setup.sh` first):
 
 ~~~
 roslaunch drcsim_gazebo qual_task_2.launch

@@ -4,7 +4,7 @@ This tutorial will explain how to apply force and/or torque to models during sim
 
 # Applying force and torque examples
 
-Let's go through an example of applying force and torque to simple models. Open Gazebo and from the insert tab, insert a `Simple Arm` into the scene. Then, from the top toolbar, insert a box. Make sure the simulation is not paused.
+Let's go through an example of applying force and torque to simple models. Open Gazebo-classic and from the insert tab, insert a `Simple Arm` into the scene. Then, from the top toolbar, insert a box. Make sure the simulation is not paused.
 
 [[file:files/insert_models.png|800px]]
 

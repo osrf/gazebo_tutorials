@@ -1,14 +1,14 @@
 # Introduction
 
-The set of ROS packages for interfacing with Gazebo are contained within a
+The set of ROS packages for interfacing with Gazebo-classic are contained within a
 new meta package (catkin's version of stacks) named `gazebo_ros_pkgs`.
 See [Overview of new ROS integration](/tutorials/?tut=ros_overview)
 for background information before continuing here.
 
-These instructions are for using the Gazebo versions that are fully integrated
+These instructions are for using the Gazebo-classic versions that are fully integrated
 with ROS [Noetic](http://www.ros.org/wiki/noetic),
 [Melodic](http://www.ros.org/wiki/melodic) and ROS.  It is recommended to first
-read [Which combination of ROS/Gazebo version to use](/tutorials/?tut=ros_wrapper_versions)
+read [Which combination of ROS/Gazebo-classic version to use](/tutorials/?tut=ros_wrapper_versions)
 before going on with this tutorial. Depending on your needs, you could need an
 alternative installation.
 
@@ -26,13 +26,13 @@ See the [ROS installation page](http://www.ros.org/wiki/ROS/Installation) for mo
 
 ### Install Gazebo
 
-You can install Gazebo either from source or from pre-build Ubuntu debians.
+You can install Gazebo-classic either from source or from pre-build Ubuntu debians.
 
 See [Install Gazebo](/tutorials?cat=install). If installing from source, be sure to build the `gazebo_X.Y` (X.Y being your desired version) branch.
 
-#### Test that stand-alone Gazebo works
+#### Test that stand-alone Gazebo-classic works
 
-Before attempting to install the `gazebo_ros_pkgs`, make sure the stand-alone Gazebo works by running in terminal:
+Before attempting to install the `gazebo_ros_pkgs`, make sure the stand-alone Gazebo-classic works by running in terminal:
 
 ~~~
 gazebo
@@ -42,7 +42,7 @@ You should see the GUI open with an empty world. Also, test adding a model by cl
 
 #### Test that you have the right version of Gazebo
 
-To check version of Gazebo run:
+To check version of Gazebo-classic run:
 
 ~~~
 gazebo --version
@@ -91,7 +91,7 @@ sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
 sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
 ~~~
 
-If this installation method ends successfully for you, jump to the Testing Gazebo with ROS Integration section below.
+If this installation method ends successfully for you, jump to the Testing Gazebo-classic with ROS Integration section below.
 
 #### Setup A Catkin Workspace
 
@@ -155,7 +155,7 @@ Now jump to the [build the gazebo\_ros\_pkgs](#Buildthegazebo_ros_pkgs) section.
 
 #### Build the gazebo\_ros\_pkgs
 
-To build the Gazebo ROS integration packages, run the following commands:
+To build the Gazebo-classic ROS integration packages, run the following commands:
 
 ~~~
 cd ~/catkin_ws/
@@ -164,7 +164,7 @@ catkin_make
 
 See [answers.gazebosim.org](http://answers.gazebosim.org/questions/) for issues or questions with building these packages.
 
-## Testing Gazebo with ROS Integration
+## Testing Gazebo-classic with ROS Integration
 
 Be sure to always source the appropriate ROS setup file, which for Noetic is done like so:
 
@@ -174,7 +174,7 @@ source /opt/ros/noetic/setup.bash
 
 You might want to add that line to your `~/.bashrc`.
 
-Assuming your ROS and Gazebo environment have been properly setup and built, you should now be able to run Gazebo through a simple `rosrun` command, after launching `roscore` if needed:
+Assuming your ROS and Gazebo-classic environment have been properly setup and built, you should now be able to run Gazebo-classic through a simple `rosrun` command, after launching `roscore` if needed:
 
 Source the catkin setup.bash if it's not already in your .bashrc
 
@@ -187,7 +187,7 @@ roscore &
 rosrun gazebo_ros gazebo
 ~~~
 
-The Gazebo GUI should appear with nothing inside the viewing window.
+The Gazebo-classic GUI should appear with nothing inside the viewing window.
 
 [[file:figs/800px-EmptyGazebo.png|800px]]
 
@@ -208,7 +208,7 @@ You should see within the lists topics such as:
 /gazebo/set_model_state
 %%%
 
-You can also verify the Gazebo services exist:
+You can also verify the Gazebo-classic services exist:
 
 ~~~
 rosservice list
@@ -259,25 +259,25 @@ There are several `rosrun` commands for starting Gazebo:
     rosrun gazebo_ros gazebo
     ~~~
 
-* Launch the Gazebo server only
+* Launch the Gazebo-classic server only
 
     ~~~
     rosrun gazebo_ros gzserver
     ~~~
 
-* Launch the Gazebo client only
+* Launch the Gazebo-classic client only
 
     ~~~
     rosrun gazebo_ros gzclient
     ~~~
 
-* Launches the Gazebo server only, in debug mode using GDB
+* Launches the Gazebo-classic server only, in debug mode using GDB
 
     ~~~
     rosrun gazebo_ros debug
     ~~~
 
-* Additionally, you can start Gazebo using `roslaunch`
+* Additionally, you can start Gazebo-classic using `roslaunch`
 
     ~~~
     roslaunch gazebo_ros empty_world.launch

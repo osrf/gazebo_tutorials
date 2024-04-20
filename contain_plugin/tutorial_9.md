@@ -14,7 +14,7 @@ The `filename` attribute must be set to `libContainPlugin.so`.
     <!-- plugin parameters go here ... -->
 ```
 
-# Topics in Gazebo 9+
+# Topics in Gazebo-classic 9+
 This plugin uses two ignition transport topics: `contain` and `enable`. The ignition transport topics use a message of type `ignition.msgs.Boolean`.
 
 ## Plugin parameters
@@ -81,7 +81,7 @@ Hit `CTRL + R` to restart the world if you missed it.
 ## ContainPlugin tracking a Moving Volume
 The `<pose>` tag on this plugin can be given relative to another entity.
 This allows the volume to move with the entity as if it were connected by a fixed joint.
-Gazebo includes a world demonstrating this.
+Gazebo-classic includes a world demonstrating this.
 
 Start gazebo in paused mode with the moving geometry world.
 

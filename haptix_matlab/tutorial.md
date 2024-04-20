@@ -6,7 +6,7 @@ and Octave systems have the same API, but the steps to run each system differ sl
 
 We assume that you have already done the [installation step](/tutorials?tut=haptix_install&cat=haptix).
 
-# Start the Gazebo simulation
+# Start the Gazebo-classic simulation
 
 Double-click on the `haptixStart` desktop icon.
 
@@ -90,7 +90,7 @@ trajectory in Gazebo.
 
 The HAPTIX Matlab/Octave API is composed of five functions: `hx_connect()`, `hx_robot_info()`,
 `hx_update()`, `hx_read_sensors()` and `hx_close()`. `hx_connect()` and `hx_close()` are
-optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
+optional for the Gazebo-classic simulator, but are included for compatibility with MuJoCo.
 
 `hx_robot_info()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call

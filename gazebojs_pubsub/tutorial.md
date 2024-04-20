@@ -1,8 +1,8 @@
 # Introduction
 
-This page explains how to create publishers and subscribers to Gazebo topics
+This page explains how to create publishers and subscribers to Gazebo-classic topics
 in javascript using GazeboJs. Publish / Subscribe is the communication pattern
-used between the Gazebo server and its clients.
+used between the Gazebo-classic server and its clients.
 
 
 ## Project setup
@@ -26,9 +26,9 @@ Now you can create javascript files and execute them by invoking node.
 ## Publishers and subscribers
 
 Publishers allow clients and servers to initiate communication, using typed
-messages.The messages are defined in Gazebo using Protobuf, and they are
+messages.The messages are defined in Gazebo-classic using Protobuf, and they are
 accessed in javascript via a JSON representation. Publishers can be created
-in the Gazebo server or the Node client, and messages are sent to unique topics
+in the Gazebo-classic server or the Node client, and messages are sent to unique topics
 that subscribers can listen to. Messages can be published to existing topics,
 or new topics can be created for future subscribers.
 
@@ -36,7 +36,7 @@ or new topics can be created for future subscribers.
 ### Node session
 
 Because the code tries to connect to the running simulation server, launch
-Gazebo in a separate terminal (if it is not already running) and verify that
+Gazebo-classic in a separate terminal (if it is not already running) and verify that
 the simulation is running (and Sim Time is increasing):
 
     gazebo
@@ -47,8 +47,8 @@ interactive session:
     cd gazeboJsPubSub
     node
 
-And type in the following two lines to load the Gazebo C++ module into the
-Node V8 script engine, and crate an instance of the Gazebo class.
+And type in the following two lines to load the Gazebo-classic C++ module into the
+Node V8 script engine, and crate an instance of the Gazebo-classic class.
 
 ~~~
 var gazebojs = require("gazebojs")

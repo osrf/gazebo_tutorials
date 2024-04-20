@@ -6,7 +6,7 @@ For example, running a high-resolution camera sensor on a computer with limited
 computing power could result in the camera updates lagging behind physics,
 causing the camera frames to be out of sync with physics.
 
-The lockstep feature, enabled by passing `--lockstep` to Gazebo server, allows
+The lockstep feature, enabled by passing `--lockstep` to Gazebo-classic server, allows
 the sensor update rate to be strictly followed.
 This means that on computers with different computing resources, the specified
 update rate can always be respected, allowing for sensor updates and physics to

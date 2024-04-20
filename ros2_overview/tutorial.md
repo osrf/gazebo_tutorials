@@ -3,8 +3,8 @@
 > For ROS 1, see
   [ROS integration overview](/tutorials?tut=ros_overview).
 
-Gazebo is a stand-alone application which can be used independently of ROS or
-ROS 2. The integration of Gazebo with either ROS version is done through a set
+Gazebo-classic is a stand-alone application which can be used independently of ROS or
+ROS 2. The integration of Gazebo-classic with either ROS version is done through a set
 of packages called
 [gazebo\_ros\_pkgs](https://github.com/ros-simulation/gazebo_ros_pkgs).
 These packages provide a bridge between Gazebo's C++ API and transport system,
@@ -22,19 +22,19 @@ The ROS 2 package `gazebo_ros_pkgs` is a metapackage which contains the
 following packages:
 
 * `gazebo_dev`: Provides a cmake configuration for the default version of
-                Gazebo for the ROS distribution. So downstream packages can
+                Gazebo-classic for the ROS distribution. So downstream packages can
                 just depend on `gazebo_dev` instead of needing to find
-                Gazebo by themselves.
+                Gazebo-classic by themselves.
 
 * `gazebo_msgs`: Message and service data structures for interacting with
-                 Gazebo from ROS 2.
+                 Gazebo-classic from ROS 2.
 
 * `gazebo_ros`: Provides convenient C++ classes and functions which can be
                 used by other plugins, such as `gazebo_ros::Node`, conversion
                 and testing utilities. It also provides some generally useful
                 plugins.
 
-* `gazebo_plugins`: A series of Gazebo plugins exposing sensors and other
+* `gazebo_plugins`: A series of Gazebo-classic plugins exposing sensors and other
                     features to ROS 2. For example, `gazebo_ros_camera`
                     publishes ROS 2 images, and `gazebo_ros_diff_drive` provides
                     an interface for controlling and instrospecting differential
@@ -50,7 +50,7 @@ The code can also be built from source using the
 against
 [ROS 2 master branches](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos).
 
-Currently, the only supported Gazebo version is Gazebo 9.
+Currently, the only supported Gazebo-classic version is Gazebo-classic 9.
 
 ## Differences from ROS 1
 
@@ -63,7 +63,7 @@ Some goals of the refactoring were:
 * Remove code which duplicates functionality already present in Gazebo.
 * Reduce duplication by standardizing common functionality, such as how to set
   ROS namespaces, parameters and topic remapping.
-* Modernize the codebase, making use of the latest SDFormat, Gazebo and Ignition  APIs, as well as ROS 2's
+* Modernize the codebase, making use of the latest SDFormat, Gazebo-classic and Ignition  APIs, as well as ROS 2's
   [style guidelines](https://github.com/ros2/ros2/wiki/Developer-Guide#c-1)
   and linters.
 * Add tests and demos for all ported functionality.
@@ -74,10 +74,10 @@ See some general highlights below.
 
 ### Init
 
-The ROS 1 integration required that Gazebo be launched with the
+The ROS 1 integration required that Gazebo-classic be launched with the
 `gazebo_ros_api_plugin` system plugin, which would initialize ROS.
 
-There's no such requirement with ROS 2. Gazebo can be started without any
+There's no such requirement with ROS 2. Gazebo-classic can be started without any
 plugins and ROS-2-enabled plugins can be added at runtime.
 
 ### Node
@@ -92,7 +92,7 @@ keeping callback queues - `gazebo_ros` handles all that internally.
 
 ### SDF parsing
 
-There are several configurations which Gazebo ROS plugins commonly want to
+There are several configurations which Gazebo-classic ROS plugins commonly want to
 set through SDF, and in the ROS 1 implementation, there was a lot of duplicate
 code on plugins parsing the same things, sometimes following loose conventions.
 

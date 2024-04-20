@@ -45,13 +45,13 @@ this tutorial. If it was moved or deleted, you can download it
 If you need to redownload it, make sure to place the script into the folder
 containing the HAPTIX MATLAB SDK, or on your MATLAB path.
 
-To run the example, first make sure Gazebo is running (double-click on the desktop icon
+To run the example, first make sure Gazebo-classic is running (double-click on the desktop icon
 or use the terminal).
 
 Open MATLAB and navigate to the HAPTIX SDK folder. Then type `hxs_example` into the
 command prompt.
 
-Watch the Gazebo window as the script runs through each example API call.
+Watch the Gazebo-classic window as the script runs through each example API call.
 
 ## Run the code: Octave on Linux
 Installing the `haptix-comm` package on Linux will install an `octave` folder to
@@ -59,13 +59,13 @@ Installing the `haptix-comm` package on Linux will install an `octave` folder to
 used in this tutorial. If it was moved or deleted, you can download it
 [here](https://bitbucket.org/osrf/haptix-comm/raw/default/matlab/hxs_example.m)
 
-To run the example, first make sure Gazebo is running (double-click on the desktop icon
+To run the example, first make sure Gazebo-classic is running (double-click on the desktop icon
 or use the terminal).
 
 In a terminal, navigate to the aforementioned `haptix-comm/octave` folder and
 type `octave hxs_example.m`.
 
-Watch the Gazebo window as the script runs through each example API call.
+Watch the Gazebo-classic window as the script runs through each example API call.
 
 ## The code explained
 
@@ -219,7 +219,7 @@ to drop through the table. We then set it back to the original collide mode.
 You can also specify a new name for the model and an initial position and orientation.
 
 To learn how to create a model in SDF, refer to the
-[Gazebo model building tutorials](/tutorials?cat=build_robot)
+[Gazebo-classic model building tutorials](/tutorials?cat=build_robot)
 or learn how to use the [model editor](/tutorials?cat=model_editor_top).
 
 `hxs_remove_model` removes the model with the matching name from the world. Note that
