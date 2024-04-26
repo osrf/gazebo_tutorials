@@ -12,12 +12,12 @@ debian packages or from source.
 ## Prerequisites
 
 You should understand the basic concepts of ROS 2 and have gone through some
-[ROS 2 Tutorials](https://index.ros.org/doc/ros2/Tutorials).
+[ROS 2 Tutorials](https://docs.ros.org/en/foxy/Tutorials.html).
 
 ### Install ROS 2
 
 ROS2 can be installed either through binary installation or source installation,
-see the [ROS 2 installation page](https://index.ros.org/doc/ros2/Installation).
+see the [ROS 2 installation page](https://docs.ros.org/en/foxy/Installation.html).
 The current stable distribution is **Foxy**.
 
 > **Tip**: Don't forget to source `setup.bash` script as instructed
