@@ -96,8 +96,8 @@
       <markdown version="5.0">install_other_linux/tutorial.md</markdown>
       <markdown version="9.0">install_other_linux/tutorial-9.0.md</markdown>
       <description>
-	Installation instructions for major linux distributions (non Ubuntu). Currently,
-	Debian, Fedora, Arch Linux and Gentoo.
+        Installation instructions for major linux distributions (non Ubuntu). Currently,
+        Debian, Fedora, Arch Linux and Gentoo.
       </description>
       <tags>
         <tag>install</tag>
@@ -150,9 +150,9 @@
       <markdown version="8.0">install_from_source/tutorial_8.md</markdown>
       <markdown version="default">install_from_source/tutorial_default.md</markdown>
       <description>
-       Installation instructions for building a gazebo application using the
-       source code. For user who want to contribute with code patches or pull
-       requests.
+        Installation instructions for building a gazebo application using the
+        source code. For user who want to contribute with code patches or pull
+        requests.
       </description>
       <tags>
         <tag>install</tag>
@@ -256,14 +256,14 @@
       <skill>intermediate</skill>
     </tutorial>
 
-     <tutorial title="Make a model" ref='build_model'>
+    <tutorial title="Make a model" ref='build_model'>
       <markdown version="1.9+">build_model/tutorial.md</markdown>
       <markdown version="7+">build_model/tutorial-7.md</markdown>
       <description>Describes models, and how to create custom models.</description>
       <skill>beginner</skill>
     </tutorial>
 
-     <tutorial title="Make an animated model (actor)" ref='actor'>
+    <tutorial title="Make an animated model (actor)" ref='actor'>
       <markdown version="8+">actor/tutorial.md</markdown>
       <description>Describes how to create animated skeletons and scripted trajectories.</description>
       <skill>intermediate</skill>
@@ -271,7 +271,8 @@
 
     <tutorial title="Model structure and requirements" ref='model_structure'>
       <markdown version="1.9+">model_structure/tutorial.md</markdown>
-      <description>Describes how Gazebo finds and load models, and requirements for creating a model.</description>
+      <description>Describes how Gazebo finds and load models, and requirements for creating a
+        model.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -281,7 +282,7 @@
       <skill>beginner</skill>
     </tutorial>
 
-     <tutorial title="Nested model" ref='nested_model'>
+    <tutorial title="Nested model" ref='nested_model'>
       <markdown version="7+">nested_model/tutorial.md</markdown>
       <description>Describes how to create an assembly of models.</description>
       <skill>beginner</skill>
@@ -374,7 +375,8 @@
 
     <tutorial title="Collide bitmask" ref='collide_bitmask'>
       <markdown version="6.0+">collide_bitmask/tutorial.md</markdown>
-      <description>Learn how to control which geometries collide or do not collide with each other through the use of bitmasks.</description>
+      <description>Learn how to control which geometries collide or do not collide with each other
+        through the use of bitmasks.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -392,7 +394,8 @@
 
     <tutorial title="Hydrodynamics" ref='hydrodynamics'>
       <markdown version="6.0+">hydrodynamics/tutorial.md</markdown>
-      <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy forces.</description>
+      <description>Simulate self-propelling underwater submarines using lift, drag, and buoyancy
+        forces.</description>
       <skill>advanced</skill>
     </tutorial>
 
@@ -426,7 +429,6 @@
       <description>How to dump simulation data into HDF5 format for benchmark.</description>
       <skill>beginner</skill>
     </tutorial>
-
 
 
     <tutorial title="Gazebo Components" ref="components">
@@ -524,7 +526,8 @@
 
     <tutorial title="Occupied Event" ref='occupiedevent'>
       <markdown version="6.0+">occupiedevent/tutorial.md</markdown>
-      <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a model.</description>
+      <description>Use the OccupiedEvent plugin to send messages when a 3D region is occupied by a
+        model.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -548,9 +551,9 @@
       <skill>intermediate</skill>
     </tutorial>
     <tutorial title="Random Velocity Plugin" ref='plugins_random_velocity'>
-    	<markdown version="6.0">plugins_random_velocity/tutorial-6.md</markdown>
-    	<description>Use this for random walks of any link.</description>
-    	<skill>intermediate</skill>
+      <markdown version="6.0">plugins_random_velocity/tutorial-6.md</markdown>
+      <description>Use this for random walks of any link.</description>
+      <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="ROS overview" ref='ros_overview'>
@@ -646,7 +649,8 @@
 
     <tutorial title="Parallel physics" ref='parallel'>
       <markdown version="6.0+">parallel/tutorial.md</markdown>
-      <description>Take advantage of improved physics performance with two different threading options.</description>
+      <description>Take advantage of improved physics performance with two different threading
+        options.</description>
       <skill>advanced</skill>
     </tutorial>
 
@@ -686,7 +690,8 @@
 
     <tutorial title="Which combination of ROS/Gazebo versions to use" ref='ros_wrapper_versions'>
       <markdown version="1.9+">ros_wrapper_versions/tutorial.md</markdown>
-      <description>Details the reasons to pick an specific ROS or Gazebo version and provide instructions about how to install the different options</description>
+      <description>Details the reasons to pick an specific ROS or Gazebo version and provide
+        instructions about how to install the different options</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -759,6 +764,13 @@
       </tags>
     </tutorial>
 
+    <tutorial title="Getting and Setting Parameters in Ignition Gazebo"
+      ref='parameter_interface_tutorial'>
+      <markdown version="1.9+">parameter_interface_tutorial/tutorial.md</markdown>
+      <description>How to get and set parameters in Ignition Gazebo.</description>
+      <skill>intermediate</skill>
+    </tutorial>
+
     <tutorial title="Contribute Code" ref='contrib_code'>
       <markdown version="1.9+">contrib_code/tutorial.md</markdown>
       <description>How to create new code for inclusion into Gazebo.</description>
@@ -811,15 +823,18 @@
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="BDI Atlas Robot Interface 3.0.0 Stand-In Example" ref='drcsim_atlas_robot_interface'>
+    <tutorial title="BDI Atlas Robot Interface 3.0.0 Stand-In Example"
+      ref='drcsim_atlas_robot_interface'>
       <markdown version="4.2+">drcsim_atlas_robot_interface/tutorial.md</markdown>
-      <description>A guide to compiling a stand-in for the AtlasRobotInterface library version 3.0.0.</description>
+      <description>A guide to compiling a stand-in for the AtlasRobotInterface library version
+        3.0.0.</description>
       <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Launchfile options" ref='drcsim_launchfiles'>
       <markdown version="4.2+">drcsim_launchfiles/tutorial.md</markdown>
-      <description>A guide to launching DRCSim with different Atlas versions, hand options, and world files.</description>
+      <description>A guide to launching DRCSim with different Atlas versions, hand options, and
+        world files.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -837,7 +852,8 @@
 
     <tutorial title="Modify environment" ref='drcsim_modify_world'>
       <markdown version="2.0+">drcsim_modify_world/tutorial.md</markdown>
-      <description>How to modify the simulated Atlas' environment, such as adding objects to the world.</description>
+      <description>How to modify the simulated Atlas' environment, such as adding objects to the
+        world.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -861,37 +877,44 @@
 
     <tutorial title="Animate joints" ref='drcsim_animate_joints'>
       <markdown version="1.9+">drcsim_animate_joints/tutorial.md</markdown>
-      <description>How to move a robot in simulation without dynamics through the use of a model plugin and ROS.</description>
+      <description>How to move a robot in simulation without dynamics through the use of a model
+        plugin and ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Grasp with Sandia hands" ref='drcsim_grasp_sandia'>
       <markdown version="1.9+">drcsim_grasp_sandia/tutorial.md</markdown>
-      <description>How to send desired grasp pose to Sandia hands mounted on the Atlas robot through ROS.</description>
+      <description>How to send desired grasp pose to Sandia hands mounted on the Atlas robot through
+        ROS.</description>
       <skill>intermediate</skill>
     </tutorial>
 
     <tutorial title="Atlas Keyboard Teleoperation over ROS" ref='drcsim_keyboard_teleop'>
       <markdown version="1.9+">drcsim_keyboard_teleop/tutorial.md</markdown>
-      <description>DRCSim provides an interface to the Atlas Sim Interface and BDI Controller. It consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial explains how to use the teleop.</description>
+      <description>DRCSim provides an interface to the Atlas Sim Interface and BDI Controller. It
+        consists of an Actionlib server and a keyboard_teleop python ROS node. This tutorial
+        explains how to use the teleop.</description>
       <skill>advance</skill>
     </tutorial>
 
     <tutorial title="Atlas switching control modes" ref='drcsim_switch_modes'>
       <markdown version="1.9+">drcsim_switch_modes/tutorial.md</markdown>
-      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how to switch between behavior-library control and your own controller.</description>
+      <description>How to use the BDI-provided behavior library to control the Atlas robot, and how
+        to switch between behavior-library control and your own controller.</description>
       <skill>advance</skill>
     </tutorial>
 
     <tutorial title="How to use the Atlas Sim Interface" ref='drcsim_atlas_siminterface'>
       <markdown version="1.9+">drcsim_atlas_siminterface/tutorial.md</markdown>
-      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step statically.</description>
+      <description>How to use the Atlas Sim Interface to command Atlas to walk dynamically or step
+        statically.</description>
       <skill>advance</skill>
     </tutorial>
 
     <tutorial title="Atlas Controller Synchronization over ROS Topics" ref='drcsim_control_sync'>
       <markdown version="1.9+">drcsim_control_sync/tutorial.md</markdown>
-      <description>How to setup synchronized controller updates over ROS topics by using the built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
+      <description>How to setup synchronized controller updates over ROS topics by using the
+        built-in synchronization mechanism within Atlas simulation interface AtlasPlugin</description>
       <skill>advance</skill>
     </tutorial>
 
@@ -903,7 +926,8 @@
 
     <tutorial title="Sending joint commands with ROS" ref='drcsim_ros_cmds'>
       <markdown version="1.9+">drcsim_ros_cmds/tutorial.md</markdown>
-      <description>How to send joint positions to a robot in simulation through the use of a simple joint position command ROS topic publisher.</description>
+      <description>How to send joint positions to a robot in simulation through the use of a simple
+        joint position command ROS topic publisher.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -915,13 +939,17 @@
 
     <tutorial title="DRC vehicle tele-operation with Atlas" ref='drcsim_vehicle_atlas'>
       <markdown version="1.9+">drcsim_vehicle_atlas/tutorial.md</markdown>
-      <description>How to automatically place the Atlas robot in the driver's seat of the DRC vehicle using ROS topics provided by the VRC plugin. Note that this is a development aid provided for testing.</description>
+      <description>How to automatically place the Atlas robot in the driver's seat of the DRC
+        vehicle using ROS topics provided by the VRC plugin. Note that this is a development aid
+        provided for testing.</description>
       <skill>intermediate</skill>
     </tutorial>
 
-    <tutorial title="Changing Viscous Damping Coefficients Over ROS Service" ref='drcsim_set_joint_damping'>
+    <tutorial title="Changing Viscous Damping Coefficients Over ROS Service"
+      ref='drcsim_set_joint_damping'>
       <markdown version="1.9+">drcsim_set_joint_damping/tutorial.md</markdown>
-      <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS Service</description>
+      <description>Changing Atlas and Sandia Hand Joint Viscous Damping Coefficients Over ROS
+        Service</description>
       <skill>advance</skill>
     </tutorial>
 
@@ -933,7 +961,8 @@
 
     <tutorial title="Running BDI controller demo" ref='drcsim_bdi_examples'>
       <markdown version="1.9+">drcsim_bdi_examples/tutorial.md</markdown>
-      <description>How to start the 5-step behavior demo implemented in the Boston Dynamics Atlas Behavior library.</description>
+      <description>How to start the 5-step behavior demo implemented in the Boston Dynamics Atlas
+        Behavior library.</description>
       <skill>intermediate</skill>
     </tutorial>
 
@@ -947,46 +976,47 @@
 
     <tutorial title="Setting Velocity on Joints and Links" ref="set_velocity">
       <markdown version="7.0">set_velocity/tutorial_7.md</markdown>
-      <description> This tutorial describes how to programatically set velocities on links and joints</description>
+      <description> This tutorial describes how to programatically set velocities on links and
+        joints</description>
       <skill>advanced</skill>
     </tutorial>
 
     <!-- scripting  -->
     <tutorial title="GazeboJs installation" ref='gazebojs_install'>
-          <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
-          <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
-          <skill>advanced</skill>
+      <markdown version="4.0+">gazebojs_install/tutorial.md</markdown>
+      <description>Explains how to install the javascript NodeJs bindings to Gazebo.</description>
+      <skill>advanced</skill>
     </tutorial>
     <tutorial title="GazeboJs installation on Mac" ref='gazebojs_install_mac'>
-          <markdown version="6.0">gazebojs_install_mac/tutorial.md</markdown>
-          <description>Explains how to install the javascript NodeJs bindings to Gazebo on OSX.</description>
-          <skill>advanced</skill>
+      <markdown version="6.0">gazebojs_install_mac/tutorial.md</markdown>
+      <description>Explains how to install the javascript NodeJs bindings to Gazebo on OSX.</description>
+      <skill>advanced</skill>
     </tutorial>
 
 
     <tutorial title="GazeboJs publish and subscribe" ref='gazebojs_pubsub'>
-        <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
-        <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
-        <skill>advanced</skill>
+      <markdown version="4.0+">gazebojs_pubsub/tutorial.md</markdown>
+      <description>Explains how to write publishers and subscribers for Gazebo topics.</description>
+      <skill>advanced</skill>
     </tutorial>
 
 
     <tutorial title="GazeboJs camera topics" ref='gazebojs_camera_topics'>
-        <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
-        <description>Explains how to save images from Gazebo camera topics.</description>
-        <skill>advanced</skill>
+      <markdown version="4.0+">gazebojs_camera_topics/tutorial.md</markdown>
+      <description>Explains how to save images from Gazebo camera topics.</description>
+      <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="GazeboJs models" ref='gazebojs_models'>
-        <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
-        <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
-        <skill>advanced</skill>
+      <markdown version="4.0+">gazebojs_models/tutorial.md</markdown>
+      <description>Explains how to access the sdf and to get other information from Gazebo models.</description>
+      <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="GazeboJs hydra publisher" ref='hydra_gzjs_pub'>
-        <markdown version="4.0+">hydra_gzjs_pub/tutorial.md</markdown>
-        <description>Hydra publisher using node-sixense and GazeboJs </description>
-        <skill>beginner</skill>
+      <markdown version="4.0+">hydra_gzjs_pub/tutorial.md</markdown>
+      <description>Hydra publisher using node-sixense and GazeboJs </description>
+      <skill>beginner</skill>
     </tutorial>
 
     <!-- HAPTIX -->
@@ -1027,13 +1057,15 @@
 
     <tutorial title="HAPTIX Tactor Glove" ref='haptix_tactors'>
       <markdown version="6.0+">haptix_tactors/tutorial.md</markdown>
-      <description>This tutorial describes how to craft a DIY tactor glove for experiencing simulated sensor data with real tactile feedback.</description>
+      <description>This tutorial describes how to craft a DIY tactor glove for experiencing
+        simulated sensor data with real tactile feedback.</description>
       <skill>advanced</skill>
     </tutorial>
 
     <tutorial title="HAPTIX Teleoperation" ref='haptix_teleop'>
       <markdown version="6.0+">haptix_teleop/tutorial.md</markdown>
-      <description>This tutorial describes how to control arm position and grasps using a keyboard, SpaceNav, or Razer Hydra.</description>
+      <description>This tutorial describes how to control arm position and grasps using a keyboard,
+        SpaceNav, or Razer Hydra.</description>
       <skill>beginner</skill>
     </tutorial>
 
@@ -1043,7 +1075,8 @@
       <skill>beginner</skill>
     </tutorial>
 
-    <tutorial title="HAPTIX Simulation World API with Custom World Example" ref='haptix_world_sim_api'>
+    <tutorial title="HAPTIX Simulation World API with Custom World Example"
+      ref='haptix_world_sim_api'>
       <markdown version="6.0+">haptix_world_sim_api/tutorial.md</markdown>
       <description><![CDATA[This tutorial describes how to use the World API to manipulate the simulation state in a custom world.]]></description>
       <skill>intermediate</skill>
@@ -1073,7 +1106,8 @@
 
   <categories>
     <category title="Installation" skill="beginner" ref="install">
-      <description>Instructions to install Gazebo on all the plaforms supported: major linux distributions and Mac (windows is still under development).</description>
+      <description>Instructions to install Gazebo on all the plaforms supported: major linux
+        distributions and Mac (windows is still under development).</description>
       <tutorials>
         <tutorial>install_ubuntu</tutorial>
         <tutorial>install_other_linux</tutorial>
@@ -1087,7 +1121,9 @@
     </category>
 
     <category title="Get Started" skill="beginner" ref="get_started">
-      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if you're a new Gazebo user. Each category to the left presents a collection of relevant tutorials.</description>
+      <description>Welcome to the Gazebo tutorials! This is a great place to start, especially if
+        you're a new Gazebo user. Each category to the left presents a collection of relevant
+        tutorials.</description>
       <tutorials>
         <tutorial>quick_start</tutorial>
         <tutorial>components</tutorial>
@@ -1097,7 +1133,9 @@
     </category>
 
     <category title="Build a Robot" skill="beginner" ref="build_robot">
-      <description>The following tutorials describe how to build and modify a robot. Included are examples of building a wheeled robot, attaching sensors, attaching actuators, and animating a model.</description>
+      <description>The following tutorials describe how to build and modify a robot. Included are
+        examples of building a wheeled robot, attaching sensors, attaching actuators, and animating
+        a model.</description>
       <tutorials>
         <tutorial>model_structure</tutorial>
         <tutorial>model_contrib</tutorial>
@@ -1118,7 +1156,8 @@
     </category>
 
     <category title="Model Editor" skill="beginner" ref="model_editor_top">
-      <description>The following tutorials describe how to build and modify robots using the model editor.</description>
+      <description>The following tutorials describe how to build and modify robots using the model
+        editor.</description>
       <tutorials>
         <tutorial>model_editor</tutorial>
         <tutorial>extrude_svg</tutorial>
@@ -1126,7 +1165,8 @@
     </category>
 
     <category title="Build a World" skill="beginner" ref="build_world">
-      <description>These tutorials describe how to create an environment in which robots can be simulated.</description>
+      <description>These tutorials describe how to create an environment in which robots can be
+        simulated.</description>
       <tutorials>
         <tutorial>build_world</tutorial>
         <tutorial>modifying_world</tutorial>
@@ -1138,7 +1178,8 @@
     </category>
 
     <category title="Tools and utilities" skill="beginner" ref="tools_utilities">
-      <description>Gazebo ships with many tools and utilities. These tutorials describe the available tools, and how they are used.</description>
+      <description>Gazebo ships with many tools and utilities. These tutorials describe the
+        available tools, and how they are used.</description>
       <tutorials>
         <tutorial>logging_playback</tutorial>
         <tutorial>log_filtering</tutorial>
@@ -1147,11 +1188,14 @@
         <tutorial>introspection</tutorial>
         <tutorial>profiler</tutorial>
         <tutorial>performance_metrics</tutorial>
+        <tutorial>parameter_interface_tutorial</tutorial>
       </tutorials>
     </category>
 
     <category title="Write a plugin" skill="intermediate" ref="write_plugin">
-      <description>Plugins allow you to control models, sensors, world properties, and even the way Gazebo runs. The following tutorials describe how to create and load plugins for various purposes.</description>
+      <description>Plugins allow you to control models, sensors, world properties, and even the way
+        Gazebo runs. The following tutorials describe how to create and load plugins for various
+        purposes.</description>
       <tutorials>
         <tutorial>plugins_hello_world</tutorial>
         <tutorial>plugins_model</tutorial>
@@ -1176,7 +1220,9 @@
     </category>
 
     <category title="Sensors" skill="intermediate" ref="sensors">
-      <description>A simulated sensor analyzes the environment and produces a data stream that closely matches the sensor's physical counterpart. These tutorials describe how to use and modify sensors.</description>
+      <description>A simulated sensor analyzes the environment and produces a data stream that
+        closely matches the sensor's physical counterpart. These tutorials describe how to use and
+        modify sensors.</description>
       <tutorials>
         <tutorial>sensor_noise</tutorial>
         <tutorial>contact_sensor</tutorial>
@@ -1189,14 +1235,16 @@
     </category>
 
     <category title="Using Math" skill="intermediate" ref="math">
-      <description>Gazebo has a custom math library. These tutorials describe how to use these math functions.</description>
+      <description>Gazebo has a custom math library. These tutorials describe how to use these math
+        functions.</description>
       <tutorials>
         <tutorial>random_numbers</tutorial>
       </tutorials>
     </category>
 
     <category title="User input" skill="intermediate" ref="user_input">
-      <description>User input can take many forms, including interactions from the graphical interface and hardware devices such as joysticks.</description>
+      <description>User input can take many forms, including interactions from the graphical
+        interface and hardware devices such as joysticks.</description>
       <tutorials>
         <tutorial>hydra</tutorial>
         <tutorial>gui_overlay</tutorial>
@@ -1204,7 +1252,8 @@
     </category>
 
     <category title="Connect to Player" skill="intermediate" ref="connect_player">
-      <description>Player is a robot control framework. These tutorials describe how to interface Gazebo and Player.</description>
+      <description>Player is a robot control framework. These tutorials describe how to interface
+        Gazebo and Player.</description>
       <tutorials>
         <tutorial>player_position</tutorial>
         <tutorial>player_laser</tutorial>
@@ -1213,7 +1262,8 @@
     </category>
 
     <category title="Web client (Gzweb)" skill="intermediate" ref="gzweb">
-      <description>Gzweb is a WebGL client for Gazebo. It lets you interact with the simulation from the comfort of a web browser.</description>
+      <description>Gzweb is a WebGL client for Gazebo. It lets you interact with the simulation from
+        the comfort of a web browser.</description>
       <tutorials>
         <tutorial>gzweb_install</tutorial>
         <tutorial>gzweb_development</tutorial>
@@ -1221,7 +1271,8 @@
     </category>
 
     <category title="Connect to ROS" skill="advanced" ref="connect_ros">
-      <description>ROS is a robot control framework. These tutorials describe how to interface Gazebo and ROS.</description>
+      <description>ROS is a robot control framework. These tutorials describe how to interface
+        Gazebo and ROS.</description>
       <tutorials>
         <tutorial>ros_overview</tutorial>
         <tutorial>ros2_overview</tutorial>
@@ -1242,7 +1293,9 @@
     <category title="Transport Library" skill="advanced" ref="transport">
       <markdown version="2.2+">plugins_world_properties/tutorial_2-2.md</markdown>
       <markdown version="1.9-2.1">plugins_world_properties/tutorial.md</markdown>
-      <description>Communication between the simulation server and client tools uses an advanced message passing system. These tutorials describe how to use Gazebo's message passing infrastructure.</description>
+      <description>Communication between the simulation server and client tools uses an advanced
+        message passing system. These tutorials describe how to use Gazebo's message passing
+        infrastructure.</description>
       <tutorials>
         <tutorial>topics_subscribed</tutorial>
         <tutorial>custom_messages</tutorial>
@@ -1250,7 +1303,8 @@
     </category>
 
     <category title="Physics Library" skill="advanced" ref="physics">
-      <description>A core component of Gazebo are the physics engines. These tutorials describe how to use the physics engines in order to acheive desired behavior.</description>
+      <description>A core component of Gazebo are the physics engines. These tutorials describe how
+        to use the physics engines in order to acheive desired behavior.</description>
       <tutorials>
         <tutorial>friction</tutorial>
         <tutorial>torsional_friction</tutorial>
@@ -1266,7 +1320,8 @@
     </category>
 
     <category title="Rendering Library" skill="advanced" ref="rendering">
-      <description>Gazebo's rendering library is used to generate sensor data and provide user feedback by rendering the environment state.</description>
+      <description>Gazebo's rendering library is used to generate sensor data and provide user
+        feedback by rendering the environment state.</description>
       <tutorials>
         <tutorial>lightmap</tutorial>
         <tutorial>oculus</tutorial>
@@ -1275,7 +1330,9 @@
     </category>
 
     <category title="Development" skill="advanced" ref="development">
-      <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and online support. These tutorials describe how to contribute your modifications back to Gazebo.</description>
+      <description>Customizing Gazebo is easy thanks to extensive documentation, tutorials, and
+        online support. These tutorials describe how to contribute your modifications back to
+        Gazebo.</description>
       <tutorials>
         <tutorial>tutorial_contrib</tutorial>
         <tutorial>contrib_code</tutorial>
