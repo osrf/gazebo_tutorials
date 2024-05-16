@@ -137,7 +137,7 @@ trajectory in Gazebo.
 
 The HAPTIX C API is composed of five C function calls: `hx_connect()`, `hx_robot_info()`,
 `hx_update()`, `hx_read_sensors()`, and `hx_close()`. `hx_connect()` and `hx_close()` are
-optional for the Gazebo simulator, but are included for compatibility with MuJoCo.
+optional for the Gazebo-classic simulator, but are included for compatibility with MuJoCo.
 
 `hx_robot_info()` requests information from a given device.
 In this tutorial, our device is a hand simulated in Gazebo. Note that this call
@@ -171,11 +171,11 @@ state has been received.
 
 ## Troubleshooting
 
-### I can not connect the Windows client with Gazebo Linux Server
+### I can not connect the Windows client with Gazebo-classic Linux Server
 
 Usually you will receive a message from the command line launched by Visual
 Studio with an error message `hx_robot_info() Service call timed out`. This
-means that the communication to the Gazebo Linux server failed.
+means that the communication to the Gazebo-classic Linux server failed.
 
 **First check:** Are both machines in the same network and can reach each other?
 Simply using the ping command from both (windows command line and Linux shell),
@@ -183,7 +183,7 @@ should be enough to check connectivity. If it is not working, there is a problem
 in network configuration, be sure that both are connected to the same network.
 
 **Second check:** Is the communication layer using the right network interface?
-Double check that you have set the `IGN_IP` properly in **both** Gazebo Linux server
+Double check that you have set the `IGN_IP` properly in **both** Gazebo-classic Linux server
 and Windows. In Windows this can be done from the Windows command line `echo %IGN_IP%`.
 To be completely sure, logout from your user session, login again and open Visual Studio.
 

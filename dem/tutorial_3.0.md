@@ -1,14 +1,14 @@
 # DEM Compatibility
 
-Gazebo packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
+Gazebo-classic packages are not compiled with support for DEM. You will need to compile gazebo from source using the default branch after have installed the gdal packages (remember to run cmake after the packages installation) to get a version of gazebo with DEM support.
 
 #Overview
 
 A Digital Elevation Model (DEM) is a 3D representation of a terrain's surface that does not include any objects like buildings or vegetation. DEMs are frequently created by using a combination of sensors, such as LIDAR, radar, or cameras. The terrain elevations for ground positions are sampled at regularly-spaced horizontal intervals. [Wikipedia](http://en.wikipedia.org/wiki/Digital_elevation_model) is a good resource for getting more details about DEMs.
 
-The term DEM is just a generic denomination,  not a specific format. In fact, the DEMs can be represented as a grid of elevations (raster) or as a vector-based triangular irregular network (TIN). Currently, Gazebo only supports raster data in the supported formats available in [GDAL](http://www.gdal.org/).
+The term DEM is just a generic denomination,  not a specific format. In fact, the DEMs can be represented as a grid of elevations (raster) or as a vector-based triangular irregular network (TIN). Currently, Gazebo-classic only supports raster data in the supported formats available in [GDAL](http://www.gdal.org/).
 
-The main motivation to support DEMs in Gazebo is to be able to simulate a realistic terrain. Rescue or agriculture applications might be interested in testing their robot behaviors using a simulated terrain that matches the real world.
+The main motivation to support DEMs in Gazebo-classic is to be able to simulate a realistic terrain. Rescue or agriculture applications might be interested in testing their robot behaviors using a simulated terrain that matches the real world.
 
 # Bring DEM support to Gazebo
 
@@ -37,20 +37,20 @@ $ unzip ~/Downloads/mtsthelens_before.zip -d /tmp
 $ mv /tmp/30.1.1.1282760.dem /tmp/mtsthelens.dem
 ~~~
 
-Usually, DEM files have big resolutions and Gazebo cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo `media/dem/` directory.
+Usually, DEM files have big resolutions and Gazebo-classic cannot handle it, so it's a good idea to adjust the resolution of your DEM. The next command will scale the terrain to 129x129 and will copy into the Gazebo-classic `media/dem/` directory.
 
 ~~~
 $ mkdir -p /tmp/media/dem/
 $ gdalwarp -ts 129 129 /tmp/mtsthelens.dem /tmp/media/dem/mtsthelens_129.dem
 ~~~
 
-A DEM file in Gazebo is loaded in the same way that you load a heightmap image. Gazebo automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
+A DEM file in Gazebo-classic is loaded in the same way that you load a heightmap image. Gazebo-classic automatically detects if the file is a plain image or a DEM file. Create the file `volcano.world` and copy the next content. Save the file anywhere you want, for example, in /tmp.
 
 <include src='http://github.com/osrf/gazebo_tutorials/raw/master/dem/files/volcano.world' />
 
-The `<heightmap><size>` element in the code above tells Gazebo whether to load the DEM with the original dimensions (when `<size>` is not present) or to scale it (when `<size>` is present). In case you prefer to scale the DEM, the `<size>` element tells Gazebo the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
+The `<heightmap><size>` element in the code above tells Gazebo-classic whether to load the DEM with the original dimensions (when `<size>` is not present) or to scale it (when `<size>` is present). In case you prefer to scale the DEM, the `<size>` element tells Gazebo-classic the size in meters that the terrain will have in the simulation. If you want to maintain the correct aspect ratio, be sure to properly calculate the width, height and elevation (which is the third number in `<size>`). In our example, the DEM will be scaled to a square of 150 x 150 meters and a max elevation of 50 meters.
 
-Launch Gazebo with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
+Launch Gazebo-classic with the world containing your DEM file and you should see the volcano. In our case, the file is in the /tmp directory.
 
 ~~~
 # Be sure of sourcing gazebo setup.sh in your own installation path
@@ -93,12 +93,12 @@ Always try to download "finished" versions of DEM data sets, where the holes hav
 
 # Working with multiple DEMs in Gazebo
 
-Although Gazebo does not directly support multiple DEMs, GDAL has a set of utilities for merging a set of DEMs into a single one. The first step is to download the set of DEMs that you want to merge. Note that the patches can even overlap with one another; GDAL will merge them seamlessly. Assuming that your current directory contains a set of Geotiff files ready to be merged, run the next command.
+Although Gazebo-classic does not directly support multiple DEMs, GDAL has a set of utilities for merging a set of DEMs into a single one. The first step is to download the set of DEMs that you want to merge. Note that the patches can even overlap with one another; GDAL will merge them seamlessly. Assuming that your current directory contains a set of Geotiff files ready to be merged, run the next command.
 
 ~~~
 $ gdal_merge.py *.tif -o dem_merged.tif
 ~~~
 
-Now, you can just use `dem_merged.tif` in your world file and Gazebo will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
+Now, you can just use `dem_merged.tif` in your world file and Gazebo-classic will load the terrain with all the patches merged. In the next screenshot you can see the result of merging four terrain patches surrounding the Canary Islands.
 
 [[file:files/gazebo_dem_merged.png|640px]]

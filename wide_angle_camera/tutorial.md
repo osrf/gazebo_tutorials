@@ -233,10 +233,10 @@ Add one more camera. In topic visualization for this camera you should now see a
 
 It is possible play a bit with different camera's `lens` settings with a plugin.
 The following section requires you to build a plugin from source.
-You will need Gazebo headers to build it.
-If you install Gazebo from source then you should already have the necessary files.
-If you install the Gazebo binary deb version,
-then you'll need to install dev packages according to your Gazebo and sdformat versions.
+You will need Gazebo-classic headers to build it.
+If you install Gazebo-classic from source then you should already have the necessary files.
+If you install the Gazebo-classic binary deb version,
+then you'll need to install dev packages according to your Gazebo-classic and sdformat versions.
 
 1.  Create directory and pull source files:
 
@@ -269,11 +269,11 @@ then you'll need to install dev packages according to your Gazebo and sdformat v
     make
     ~~~
 
-1.  Tell Gazebo to search for plugins in current directory
+1.  Tell Gazebo-classic to search for plugins in current directory
 
         export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH
 
-1.  Start Gazebo with the example world
+1.  Start Gazebo-classic with the example world
 
         gazebo ../example.world
 

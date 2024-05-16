@@ -11,7 +11,7 @@ current simulation.
 
 # Clone the simulation using the GUI
 
-1. Start Gazebo by typing the following command at the command prompt:
+1. Start Gazebo-classic by typing the following command at the command prompt:
 
     ~~~
     gazebo
@@ -42,7 +42,7 @@ confirming that the world has been cloned.
     ~~~
 
     %%%
-    Gazebo multi-robot simulator, version 4.0.0
+    Gazebo-classic multi-robot simulator, version 4.0.0
     Copyright (C) 2012-2014 Open Source Robotics Foundation.
     Released under the Apache 2 License.
     http://gazebosim.org
@@ -91,7 +91,7 @@ you will need to kill it manually:
 
 It's also possible to clone a simulation programmatically using the Gazebo
 transport system. As an example, we'll describe the example code shipped with
-Gazebo in the folder `examples/stand_alone/clone_simulation`.
+Gazebo-classic in the folder `examples/stand_alone/clone_simulation`.
 
 Create a new directory named `clone_simulation` for this tutorial:
 

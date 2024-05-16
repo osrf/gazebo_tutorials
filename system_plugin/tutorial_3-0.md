@@ -46,7 +46,7 @@ namespace gazebo
 }
 ~~~
 
-Both the `Load` and `Init` functions must not block. The `Load` function is called at startup, before Gazebo is loaded. The `Init` function is called after Gazebo has been loaded.
+Both the `Load` and `Init` functions must not block. The `Load` function is called at startup, before Gazebo-classic is loaded. The `Init` function is called after Gazebo-classic has been loaded.
 
 In our `Init` function, we get a pointer to the user camera (the camera used in the graphical interface) and enable saving of frames.
 
@@ -79,7 +79,7 @@ add_library(system_gui SHARED system_gui.cc)
 target_link_libraries(system_gui ${GAZEBO_LIBRARIES} ${OGRE_LIBRARIES})
 ~~~
 
-Note for Gazebo 1.10 and later, you will need to depend on `OGRE-Terrain` as well by adding these lines to you `CMakeLists.txt`:
+Note for Gazebo-classic 1.10 and later, you will need to depend on `OGRE-Terrain` as well by adding these lines to you `CMakeLists.txt`:
 
 ~~~
 pkg_check_modules(OGRE-Terrain OGRE-Terrain)

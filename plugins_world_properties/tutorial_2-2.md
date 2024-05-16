@@ -53,7 +53,7 @@ Assuming the reader has gone through the [Plugin Overview Tutorial](/tutorials/?
 
 <include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo_2.2/examples/plugins/world_edit/CMakeLists.txt' />
 
-Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libworld_edit.so`, that can be inserted in a Gazebo simulation.
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libworld_edit.so`, that can be inserted in a Gazebo-classic simulation.
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial/build

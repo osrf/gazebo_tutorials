@@ -13,7 +13,7 @@ artist, or contact the manufacturer directly.
 
 Velodyne has a [STEP file](http://velodynelidar.com/docs/drawings/HDL32E_Outline_Model.STEP) for the HDL-32 located on [their
 website](http://velodynelidar.com).
-Gazebo can only use STL, OBJ or Collada files, so we'll have to convert this
+Gazebo-classic can only use STL, OBJ or Collada files, so we'll have to convert this
 file and then add it to our model.
 
 # Step 1: Mesh Acquisition
@@ -56,7 +56,7 @@ file and then add it to our model.
 
     [[file:files/blender_import.png|800px]]
 
-1. The units are currently in millimeters, and Gazebo requires meters. The
+1. The units are currently in millimeters, and Gazebo-classic requires meters. The
    model is also rotated so that the top is facing along the Y-axis, and we
    would like the top to face along the Z-axis.
 
@@ -96,7 +96,7 @@ In the next section, we will cover adding these meshes to the SDF model.
 
 # Step 2: Create the model structure
 
-Gazebo has defined a model directory structure that supports stand-alone
+Gazebo-classic has defined a model directory structure that supports stand-alone
 models, and the ability to share models via an online model database. Review
 [this tutorial](/tutorials?tut=model_structure&cat=build_robot) for more information.
 
@@ -106,7 +106,7 @@ section, we will create a Velodyne SDF model and add the two mesh files,
 `velodyne_base.dae` and `velodyne_top.dae`.
 
 1. Create a new directory to hold the Velodyne model. We will place the
-   directory in `~/.gazebo/models`, since Gazebo knows to look there for
+   directory in `~/.gazebo/models`, since Gazebo-classic knows to look there for
    models and this will speed the developement process.
 
     ```

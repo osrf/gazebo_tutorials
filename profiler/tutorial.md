@@ -1,12 +1,12 @@
 # Profiler
 
-Gazebo 11 uses the [Ignition Common Profiler](https://ignitionrobotics.org/api/common/3.5/profiler.html) to check and visualize the performance of the different threads, functions and methods.
+Gazebo-classic 11 uses the [Ignition Common Profiler](https://ignitionrobotics.org/api/common/3.5/profiler.html) to check and visualize the performance of the different threads, functions and methods.
 
-Gazebo 9 uses an internal fork of Ignition Common's profiler.
+Gazebo-classic 9 uses an internal fork of Ignition Common's profiler.
 
 ## How to run and see the profiler results for Gazebo?
 
-To use the compiler, Gazebo must be compiled from source with the CMake flag
+To use the compiler, Gazebo-classic must be compiled from source with the CMake flag
 `-DENALE_PROFILER=1`, for example:
 
 ```bash
@@ -27,13 +27,13 @@ gazebo profiler.world
 
 There's a convenient launcher script (Linux and macOS) for starting Remotery.
 
-* On Gazebo 11:
+* On Gazebo-classic 11:
 
     ```
     ign_remotery_vis
     ```
 
-* On Gazebo 9:
+* On Gazebo-classic 9:
 
     ```
     gz_remotery_vis
@@ -72,12 +72,12 @@ and `gzserver` loops.
 
 [[file:files/gzserverLoop.png|600px]]
 
-## How can I add the profiler to custom Gazebo plugins?
+## How can I add the profiler to custom Gazebo-classic plugins?
 
-Using Gazebo 11, you can add profiler points to any Gazebo plugin. This
-is not possible on Gazebo 9.
+Using Gazebo-classic 11, you can add profiler points to any Gazebo-classic plugin. This
+is not possible on Gazebo-classic 9.
 
-If you want to add the profiler to your own Gazebo plugins you need to
+If you want to add the profiler to your own Gazebo-classic plugins you need to
 follow these steps:
 
 * Include the header

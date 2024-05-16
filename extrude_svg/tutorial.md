@@ -8,7 +8,7 @@ Before starting, make sure you're familiar with the
  [Model Editor](/tutorials?tut=model_editor).
 
 This tutorial will show you how to make a custom wheel as an .svg in Inkscape,
- and import it into Gazebo so that it can be attached to a robot.
+ and import it into Gazebo-classic so that it can be attached to a robot.
 
 ### Using the Inkscape SVG editor
 
@@ -55,13 +55,13 @@ You can use the different tools (pen, text, stars and shapes, etc.) to create
  a proper thickness.
 
  **Note**: a stick figure or two circles that touch each other would not
- result in valid Gazebo models. The SVG paths must create an closed contour with
+ result in valid Gazebo-classic models. The SVG paths must create an closed contour with
  holes, where the holes cannot touch the contour or other holes. Holes inside
  holes are treated as solid parts (and they can have holes, too).
 
 [[file:files/inkscape-simple-wheel.png|400px]]
 
-Gazebo only imports `paths`, but it's easy with Inkscape to transform any shape
+Gazebo-classic only imports `paths`, but it's easy with Inkscape to transform any shape
  to a path. Select `Select All` from the `Edit` menu. Then select the
 `Path -> Object to Path` menu item. This will transform every object into
  separate paths and sub paths. This transformation is irreversible, so if you
@@ -69,7 +69,7 @@ Gazebo only imports `paths`, but it's easy with Inkscape to transform any shape
 
 [[file:files/inkscape-select-all.png|400px]]
 
-Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
+Gazebo-classic does not support grouping. Use the `Ungroup` from the `Object` menu to
  separate groups of paths.
 
 ### Save your drawing
@@ -77,14 +77,14 @@ Gazebo does not support grouping. Use the `Ungroup` from the `Object` menu to
 Save your drawing to an SVG file you can use later in Gazebo. Use the `Save`
  option from the `File` menu.
 
-### Create a Gazebo Model
+### Create a Gazebo-classic Model
 
 [SDFormat](http://sdformat.org) does not support SVG directly; it supports 2D
- poly lines. The Gazebo Model Editor has an import mechanism that extracts the
+ poly lines. The Gazebo-classic Model Editor has an import mechanism that extracts the
  poly lines from SVG files, and saves them as an SDF model file.
 
-Launch Gazebo and Select `Model Editor` from the `Edit` menu to enter the
- Gazebo Model Editor mode (as opposed to the simulation mode).
+Launch Gazebo-classic and Select `Model Editor` from the `Edit` menu to enter the
+ Gazebo-classic Model Editor mode (as opposed to the simulation mode).
 
 
 Then press the `Add` button in the `Custom Shapes` section of the `Insert` tab.
@@ -129,7 +129,7 @@ a copy of the generated 3D mesh.
 
 [[file:files/custom-wheel.png|400px]]
 
-Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
+Next, select `Exit Model Editor` from the `File` menu. Gazebo-classic will prompt you
  to save the new model to disk. Press the `Save and Exit` button on the Exit
  dialog, and the `Save Model` dialog will appear.
 
@@ -138,6 +138,6 @@ Next, select `Exit Model Editor` from the `File` menu. Gazebo will prompt you
 Set the name of the new model to "HollowWheel", and fill in the information under
  the `Advanced Options` section. Press the `Save` button.
 
-> Your new Gazebo model is now ready to roll ;-)
+> Your new Gazebo-classic model is now ready to roll ;-)
 
 

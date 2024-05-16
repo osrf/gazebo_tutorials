@@ -22,7 +22,7 @@ Copy the following into `system_gui.cc`
 
 <include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo7/examples/plugins/system_gui_plugin/system_gui.cc' />
 
-Both the `Load` and `Init` functions must not block. The `Load` and `Init` functions are called at startup, before Gazebo is loaded.
+Both the `Load` and `Init` functions must not block. The `Load` and `Init` functions are called at startup, before Gazebo-classic is loaded.
 
 On the first `Update`, we get a pointer to the user camera (the camera used in the graphical interface) and enable saving of frames.
 

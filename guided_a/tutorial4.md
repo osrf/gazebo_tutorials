@@ -13,7 +13,7 @@ features. If you're making changes to Gazebo, you should make sure it doesn't
 break any existing tests. If you're adding features, you should add tests
 to make sure other people don't break them in the future.
 
-Gazebo uses [GTest](http://code.google.com/p/googletest) for general testing
+Gazebo-classic uses [GTest](http://code.google.com/p/googletest) for general testing
 and [QTest](http://doc.qt.io/qt-5/qtest.html) for GUI tests. There are a few
 kinds of tests:
 
@@ -75,14 +75,14 @@ always possible due to complexity and time constraints. Try to write as
 complete of a test suite as possible, and use the coverage analysis tools as
 guide.
 
-Gazebo has a build target called `make coverage` that will produce a code
+Gazebo-classic has a build target called `make coverage` that will produce a code
 coverage report. Here are the steps to run coverage:
 
 1. Install [lcov](http://ltp.sourceforge.net/coverage/lcov.php):
 
         sudo apt install lcov
 
-1. In your `build` folder, compile Gazebo with `-DCMAKE_BUILD_TYPE=coverage`
+1. In your `build` folder, compile Gazebo-classic with `-DCMAKE_BUILD_TYPE=coverage`
 
         cd ~/code/gazebo/build
         cmake -DCMAKE_BUILD_TYPE=coverage ..
@@ -132,7 +132,7 @@ the style checker:
 
         sudo apt-get install cppcheck
 
-1. Run the following script from the root of the Gazebo sources:
+1. Run the following script from the root of the Gazebo-classic sources:
 
         cd ~/code/gazebo
         sh tools/code_check.sh

@@ -1,5 +1,5 @@
 # Overview
-This tutorial will teach you how to create a Gazebo world and spawn Atlas into it.
+This tutorial will teach you how to create a Gazebo-classic world and spawn Atlas into it.
 
 ## Setup
 We assume that you've already done the [installation step](/tutorials/?tut=drcsim_install&cat=drcsim).

@@ -1,7 +1,7 @@
 # Recap
 
 Our Velodyne sensor is fully functional, but we don't have any hooks to
-a robot middleware, like ROS. One of the benefits of using Gazebo with ROS
+a robot middleware, like ROS. One of the benefits of using Gazebo-classic with ROS
 is that it's easy to switch between the real-world and the simulated. In
 order to make this happen, we need to have our sensor play nicely with the
 ROS ecosystem.
@@ -9,7 +9,7 @@ ROS ecosystem.
 # Add ROS transport
 
 We will modify our current plugin to include the ROS transport mechanism,
-in a similar manner to how we add the Gazebo transport mechanism in the
+in a similar manner to how we add the Gazebo-classic transport mechanism in the
 previous tutorial.
 
 We are assuming that [ROS is currently installed](http://ros.org/install) on
@@ -162,7 +162,7 @@ your system.
 
 # Control Velodyne from ROS
 
-We can now load the Gazebo plugin as usual, and it will listen on ROS topic
+We can now load the Gazebo-classic plugin as usual, and it will listen on ROS topic
 for incoming float messages. These messages will then be used to set the
 Velodyne's rotational speed.
 

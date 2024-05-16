@@ -1,16 +1,16 @@
-# Install Gazebo on Linux distributions (non Ubuntu)
+# Install Gazebo-classic on Linux distributions (non Ubuntu)
 
-Gazebo is available to install on other Linux distributions different than Ubuntu
+Gazebo-classic is available to install on other Linux distributions different than Ubuntu
 ([Ubuntu install instructions](/tutorials?tut=install_ubuntu&cat=install)
 are hosted in a different tutorial). Linux distributions providing gazebo packages:
 Debian, Fedora, Arch and Gentoo.
 
 ## Debian
 
-[Gazebo in Debian](https://packages.debian.org/source/sid/gazebo) is available
-as an official package since Stretch. Debian Sid (the Gazebo team is the official
+[Gazebo-classic in Debian](https://packages.debian.org/source/sid/gazebo) is available
+as an official package since Stretch. Debian Sid (the Gazebo-classic team is the official
 maintainer in Debian) usually hosts the latest gazebo release. Depending on the
-Debian version the version of Gazebo available is different:
+Debian version the version of Gazebo-classic available is different:
 
  * Debian Sid is usually hosting one of the latest releases
  * Debian Buster: gazebo-9.6.0
@@ -24,7 +24,7 @@ Debian version the version of Gazebo available is different:
 
 ## Fedora
 
-[Gazebo in Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
+[Gazebo-classic in Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
 as an official package.
 
  * Rawhide: gazebo-10
@@ -38,7 +38,7 @@ as an official package.
 
 ## Arch
 
-[Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
+[Gazebo-classic in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
 Arch User Repository (billypilgrim is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
@@ -69,12 +69,12 @@ gentoolkit) to know more about the optional support:
         echo "sci-electronics/gazebo" >> /etc/portage/package.accept_keywords
         emerge gazebo
 
-1. Install Gazebo on testing branch
+1. Install Gazebo-classic on testing branch
 
         emerge gazebo
 
 ## Other linux distributions?
 
-There is a large list of Gazebo packages available in many different
+There is a large list of Gazebo-classic packages available in many different
 distributions, checking the great
 [repology](https://repology.org/project/gazebo/versions) project can help.

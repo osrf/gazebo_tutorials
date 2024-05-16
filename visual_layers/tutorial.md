@@ -1,6 +1,6 @@
 # Overview
 
-With Gazebo 6 it is possible to add meta data to the visuals in your
+With Gazebo-classic 6 it is possible to add meta data to the visuals in your
 simulation. This tutorial explains how to add layer meta data to visuals so
 you can control which layers are visible via the graphical interface.
 

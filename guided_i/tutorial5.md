@@ -8,7 +8,7 @@ If you skipped the previous tutorials then download the [model here.](https://gi
 
 # Plugin overview
 
-A plugin is a C++ library that is loaded by Gazebo at runtime. A plugin has
+A plugin is a C++ library that is loaded by Gazebo-classic at runtime. A plugin has
 access to Gazebo's API, which allows a plugin to perform a wide variety of
 tasks including moving objects, adding/removing objects, and accessing
 sensor data.
@@ -17,7 +17,7 @@ More information on plugins is available in [these
 tutorials](/tutorials?cat=write_plugin). It is highly
 recommended that you look over these tutorials before proceeding.
 
-# Install Gazebo headers
+# Install Gazebo-classic headers
 On some operating systems the development package must be installed prior to building a plugin.
 
 ```
@@ -70,7 +70,7 @@ namespace gazebo
     /// \brief Constructor
     public: VelodynePlugin() {}
 
-    /// \brief The load function is called by Gazebo when the plugin is
+    /// \brief The load function is called by Gazebo-classic when the plugin is
     /// inserted into simulation
     /// \param[in] _model A pointer to the model that this plugin is
     /// attached to.
@@ -83,7 +83,7 @@ namespace gazebo
     }
   };
 
-  // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
+  // Tell Gazebo-classic about this plugin, so that Gazebo-classic can call Load on this plugin.
   GZ_REGISTER_MODEL_PLUGIN(VelodynePlugin)
 }
 #endif
@@ -171,9 +171,9 @@ cmake ..
 make
 ```
 
-Run the world.  Note: It is important to run gazebo from within the `build` directory so that Gazebo can find the plugin library.
+Run the world.  Note: It is important to run gazebo from within the `build` directory so that Gazebo-classic can find the plugin library.
 
-1. Gazebo version < 6
+1. Gazebo-classic version < 6
 
     ```
     cd ~/velodyne_plugin/build
@@ -181,7 +181,7 @@ Run the world.  Note: It is important to run gazebo from within the `build` dire
     gazebo ../velodyne.world
     ```
 
-1. Gazebo version >= 6
+1. Gazebo-classic version >= 6
 
     ```
     cd ~/velodyne_plugin/build
@@ -339,9 +339,9 @@ communication.
 
 The function approach would create a new public function that adjusts the
 velocity. For this to work, a new plugin would inherit from our current
-plugin. The child plugin would be instantiated by Gazebo instead of our
+plugin. The child plugin would be instantiated by Gazebo-classic instead of our
 current plugin, and would control the velocity by calling our function. This
-type of approach is most often used when interfacing Gazebo to ROS.
+type of approach is most often used when interfacing Gazebo-classic to ROS.
 
 Due to the simplicity of our plugin, it's easy to implement both
 simultaneously.
@@ -521,7 +521,7 @@ simultaneously.
         private: common::PID pid;
       };
 
-      // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
+      // Tell Gazebo-classic about this plugin, so that Gazebo-classic can call Load on this plugin.
       GZ_REGISTER_MODEL_PLUGIN(VelodynePlugin)
     }
     #endif

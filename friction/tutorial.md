@@ -1,6 +1,6 @@
 # Introduction
 
-Each physics engine in Gazebo (for example ODE, Bullet, Simbody, DART) has
+Each physics engine in Gazebo-classic (for example ODE, Bullet, Simbody, DART) has
 different friction models. Please refer to the [SDF
 parameters](http://sdformat.org/spec?ver=1.5&elem=collision#surface_friction) for a complete
 listing of available friction parameters.
@@ -18,7 +18,7 @@ When two object collide, such as a ball rolling on a plane, a friction term is g
 
 ODE will automatically compute the first and second friction directions for us. Note, you can manually specify the [first friction direction in SDF](http://sdformat.org/spec?ver=1.5&elem=collision#ode_fdir1), but this capability is out of the scope of this tutorial.
 
-The two objects in collision each specify '''mu''' and '''mu2'''. Gazebo will choose the smallest '''mu''' and '''mu2''' from the two colliding objects.
+The two objects in collision each specify '''mu''' and '''mu2'''. Gazebo-classic will choose the smallest '''mu''' and '''mu2''' from the two colliding objects.
 
 The valid range of values for '''mu''' and '''mu2''' is any non-negative number,
 where 0 equates to a friction-less contact

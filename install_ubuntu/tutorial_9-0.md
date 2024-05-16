@@ -1,10 +1,10 @@
-# Install Gazebo using Ubuntu packages
+# Install Gazebo-classic using Ubuntu packages
 
-This tutorial covers the installation of Gazebo packages using the the
+This tutorial covers the installation of Gazebo-classic packages using the the
 `osrfoundation.org` repository, designed for those who want to follow the
 faster development path but still a stable one.
 
-Gazebo is also released as an Ubuntu official package: ([check which
+Gazebo-classic is also released as an Ubuntu official package: ([check which
 version](https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=gazebo&searchon=sourcenames)
 is available for every distribution. If you are a [ROS](http://ros.org) user, please
 read the tutorial about [ROS/Gazebo
@@ -66,7 +66,7 @@ installation](/tutorials?tut=ros_wrapper_versions&cat=connect_ros).
         Reading state information... Done
         E: Unable to locate package gazebo9
 
-    It's possible the version of Gazebo you are looking for is not supported on the version of OS you are using.
+    It's possible the version of Gazebo-classic you are looking for is not supported on the version of OS you are using.
     For example, installing gazebo9 on Ubuntu Jammy (22.04) will produce the error above.
     Hint: Take a look at "Project Status" section at [http://gazebosim.org/#status](http://gazebosim.org/#status),
     next to each version is the supported ubuntu versions and ROS versions.

@@ -73,7 +73,7 @@ Here is an example `BuoyancyPlugin` SDF:
 
 # Demo
 
-Open the `underwater.world` environment with Gazebo paused:
+Open the `underwater.world` environment with Gazebo-classic paused:
 
 ~~~
 gazebo --verbose worlds/underwater.world -u
@@ -81,7 +81,7 @@ gazebo --verbose worlds/underwater.world -u
 
 [[file:files/submarines.png | 600px]]
 
-This world contains three submarines. When Gazebo is unpaused, the white
+This world contains three submarines. When Gazebo-classic is unpaused, the white
 submarine will float to the top of the world, the black submarine will sink
 to the ground plane, and the yellow submarine will maintain a constant
 height if left undisturbed.

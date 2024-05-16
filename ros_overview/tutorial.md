@@ -6,7 +6,7 @@
 To achieve ROS integration with stand-alone Gazebo, a set of ROS packages named
 [gazebo\_ros\_pkgs](http://ros.org/wiki/gazebo_ros_pkgs) provides wrappers
 around the stand-alone Gazebo.  They provide the necessary interfaces to
-simulate a robot in Gazebo using ROS messages, services and dynamic reconfigure
+simulate a robot in Gazebo-classic using ROS messages, services and dynamic reconfigure
 Some features of `gazebo_ros_pkgs`:
 
 - Supports a stand alone system dependency of Gazebo, that has no ROS bindings on its own
@@ -35,12 +35,12 @@ In a nutshell:
 - Within roslaunch files, `pkg="gazebo"` needs to be now renamed to `pkg="gazebo_ros"`
 - `gazebo_worlds` package has been removed.
 Most of the world files were rarely used and were not maintained with changes in SDF XML formats.
-Thus, all worlds have been centralized within the Gazebo project itself, including `empty.world`.
-- The best way to use Gazebo launch files is to simply inherit/include the master `empty_world` launch file located in the `gazebo_ros` package.
+Thus, all worlds have been centralized within the Gazebo-classic project itself, including `empty.world`.
+- The best way to use Gazebo-classic launch files is to simply inherit/include the master `empty_world` launch file located in the `gazebo_ros` package.
 
 ### CMakeLists.txt
 
-The ROS-wrapped versiong of Gazebo was removed in favor of the system install of Gazebo. This may require reconfiguration of your
+The ROS-wrapped versiong of Gazebo-classic was removed in favor of the system install of Gazebo. This may require reconfiguration of your
 CMake file.  The following is an example CMakeLists.txt:
 
 ~~~
@@ -79,11 +79,11 @@ Add dependency on the new `gazebo_ros` package:
 
 ### Running Gazebo
 
-The names of the ROS nodes to launch Gazebo have changed slightly to coincide with the Gazebo executable names:
+The names of the ROS nodes to launch Gazebo-classic have changed slightly to coincide with the Gazebo-classic executable names:
 
- - `rosrun gazebo_ros gazebo` launch both the Gazebo server and GUI.
- - `rosrun gazebo_ros gzclient` launch the Gazebo GUI.
- - `rosrun gazebo_ros gzserver` launch the Gazebo server.
+ - `rosrun gazebo_ros gazebo` launch both the Gazebo-classic server and GUI.
+ - `rosrun gazebo_ros gzclient` launch the Gazebo-classic GUI.
+ - `rosrun gazebo_ros gzserver` launch the Gazebo-classic server.
 
 Available nodes to run:
 

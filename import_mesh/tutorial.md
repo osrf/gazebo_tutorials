@@ -2,7 +2,7 @@ This tutorial describes how to import 3D meshes into Gazebo.
 
 # Prepare the Mesh
 
-Gazebo uses a right-hand coordinate system where +Z is up (vertical), +X is forward (into the screen), and +Y is to the left.
+Gazebo-classic uses a right-hand coordinate system where +Z is up (vertical), +X is forward (into the screen), and +Y is to the left.
 
 **Reduce Complexity**
 
@@ -14,7 +14,7 @@ Gazebo uses a right-hand coordinate system where +Z is up (vertical), +X is forw
 
 **Scale the mesh**
 
- Gazebo uses the metric system. Many meshes (especially those from 3D warehouse), use English units. Use your favorite 3D editor to scale the mesh to a metric size.
+ Gazebo-classic uses the metric system. Many meshes (especially those from 3D warehouse), use English units. Use your favorite 3D editor to scale the mesh to a metric size.
 
 # Export the Mesh ###
 
@@ -26,7 +26,7 @@ The easiest way to test a mesh is to create a simple world file [my_mesh.world](
 
 <include from='/#include/' src='http://github.com/osrf/gazebo_tutorials/raw/master/import_mesh/files/my_mesh.world' />
 
-Then just launch Gazebo in the directory where is the file:
+Then just launch Gazebo-classic in the directory where is the file:
 
 ~~~
 gazebo my_mesh.world

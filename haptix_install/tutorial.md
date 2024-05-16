@@ -2,8 +2,8 @@
 
 The HAPTIX project simulates advanced robotic prosthetic limbs to allow
 researchers and developers to test their control software before running on the
-real hardware. The HAPTIX setup is composed of a Gazebo simulator, a client
-library and a client controller. The Gazebo simulator runs on a Linux machine,
+real hardware. The HAPTIX setup is composed of a Gazebo-classic simulator, a client
+library and a client controller. The Gazebo-classic simulator runs on a Linux machine,
 whereas the HAPTIX client library and the client controller can run on Linux and
 Windows hosts. This tutorial will guide your through the installation of Gazebo
 and the HAPTIX client library. Check out the rest of the HAPTIX tutorials for
@@ -11,10 +11,10 @@ instructions on how to create your own hand controller.
 
 [[file:files/haptix_overview.png|800px]]
 
-# Gazebo installation
+# Gazebo-classic installation
 
 **Note: This section is only required if you do not yet have a Linux server
-running Gazebo with the HAPTIX packages.**
+running Gazebo-classic with the HAPTIX packages.**
 
 Before installing Gazebo, you need a machine with Ubuntu 14.04 64-bit
 installed. Once your Linux machine is ready, open up a terminal and run the
@@ -24,14 +24,14 @@ following command:
 wget -O /tmp/haptix_gazebo_install.sh https://osrf-distributions.s3.amazonaws.com/haptix/haptix_gazebo_install.sh; sudo sh /tmp/haptix_gazebo_install.sh
 ~~~
 
-You can test your Gazebo installation by running the next
+You can test your Gazebo-classic installation by running the next
 command in your terminal:
 
 ~~~
 gazebo worlds/arat.world
 ~~~
 
-Gazebo will load a manipulation environment with a right Modular Prosthetic
+Gazebo-classic will load a manipulation environment with a right Modular Prosthetic
 Limb (MPL). Alternatively, you can load a left arm by typing:
 
 ~~~
@@ -86,14 +86,14 @@ Click on `Edit the system environment variables`, and then, click on the button
 section to create a new environment variable with name `IGN_IP`.
 **Enter the IPv4 Address mentioned above**.
 
-Now, we want to **create a partition** to group your Gazebo machine with all the
+Now, we want to **create a partition** to group your Gazebo-classic machine with all the
 related machines (e.g.: your MATLAB/Octave/Visual Studio development machine).
 This is important because if you decide to later run a second or third Gazebo
 instance on the same network, you will get crosstalk if there is no partition.
 
 Click on the `New` button again and create a new environment variable with name
 `IGN_PARTITION`. Enter a name like `gazebo1`. Repeat this process on any Windows
-machine that you plan to use with this Gazebo instance.
+machine that you plan to use with this Gazebo-classic instance.
 
 ## Installing on Linux
 
@@ -176,7 +176,7 @@ version of the simulator; the other is the version of the client SDK.
 
 ###Simulator version
 
-To check the simulator version: Run Gazebo by either double-clicking the
+To check the simulator version: Run Gazebo-classic by either double-clicking the
 `haptixStart` desktop icon, or running the following command in a terminal.
 
 ~~~
@@ -229,7 +229,7 @@ In this case, the client SDK version is 0.6.0.
 
 ##Version compatiblity
 
-To ensure correct behavior between the Gazebo simulator and the client
+To ensure correct behavior between the Gazebo-classic simulator and the client
 library SDK, you should check that you are using compatible versions of the
 two packages.  The following table summarizes compatible combinations:
 

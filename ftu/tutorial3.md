@@ -1,8 +1,8 @@
 # User Interface
 
-This is an introduction to the Gazebo Graphical User Interface, or GUI. We will learn interface basics like what the buttons do and how to navigate in the scene. 
+This is an introduction to the Gazebo-classic Graphical User Interface, or GUI. We will learn interface basics like what the buttons do and how to navigate in the scene. 
 
-Start by double-clicking on the Gazebo icon to open Gazebo. 
+Start by double-clicking on the Gazebo-classic icon to open Gazebo. 
 
 ## GUI
 
@@ -10,7 +10,7 @@ This is what you should see:
 
 [[file:files/ftu3-boot-screen.png|800px]]
 
-Note that the Gazebo interface consists of multiple sections, explained below. 
+Note that the Gazebo-classic interface consists of multiple sections, explained below. 
 
 ### The Scene
 
@@ -59,7 +59,7 @@ models selected in the Scene, the panel does not display any information.
 
 ### The Toolbars
 
-The Gazebo interface has two Toolbars. One is located just above the Scene, and
+The Gazebo-classic interface has two Toolbars. One is located just above the Scene, and
 the other is just below.
 
 #### Upper Toolbar
@@ -85,7 +85,7 @@ known as the "real time factor" (RTF). It's the ratio of simulation time to real
 time. The RTF is a measure of how fast or slow your simulation is running
 compared to real time. 
 
-The state of the world in Gazebo is calculated once per iteration. You can
+The state of the world in Gazebo-classic is calculated once per iteration. You can
 see the number of iterations on the right side of the bottom toolbar. Each
 iteration advances simulation by a fixed number of seconds, called the step
 size. By default, the step size is 1 ms. You can press
@@ -96,7 +96,7 @@ a time using the step button.
 
 ### The Menu 
 
-Like most applications, Gazebo has an application menu up top. Some of the menu
+Like most applications, Gazebo-classic has an application menu up top. Some of the menu
 options are duplicated in the Toolbars or as right-click context menu options
 in the Scene. Check out the various menus to familiarize yourself. 
 

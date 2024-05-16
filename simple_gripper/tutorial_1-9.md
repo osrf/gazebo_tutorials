@@ -118,7 +118,7 @@ Reference [Model Database documentation](/tutorials?tut=model_structure&cat=buil
             ...
     ~~~
 
-1. Start Gazebo again:
+1. Start Gazebo-classic again:
 
         gazebo ~/simple_gripper_tutorial/gripper.world
 

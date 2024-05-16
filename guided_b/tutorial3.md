@@ -3,14 +3,14 @@
 Now we'll construct our simple robot. We'll make a wheeled vehicle and add a sensor that allows us to make the robot follow a blob (person).
 
 The Model Editor lets us construct simple models right in the Graphical User Interface (GUI). For more complex models, you'll need to learn how to write [SDF](http://sdformat.org/) files, and check out the tutorials on [building a robot](/tutorials?cat=build_robot).
-But for now, we can do everything right in the Gazebo GUI!
+But for now, we can do everything right in the Gazebo-classic GUI!
 
 
 ## Model Editor User Interface
 
 To enter the Model Editor, click on `Edit` in the menu bar and select `Model Editor`. Or, use the hotkeys, Ctrl+M. **Physics and the simulation will be paused** as soon as you are in the Model Editor.
 
-The Model Editor interface looks similar to the main Gazebo UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
+The Model Editor interface looks similar to the main Gazebo-classic UI but with some subtle differences. The left panel and top Toolbar now contain only widgets for editing and creating parts of the model. The bottom Toolbar that displays simulation data is hidden since the simulation is now paused.
 
 [[file:files/gazebo8_model_editor_ui.png|800px]]
 
@@ -221,7 +221,7 @@ The vehicle we have built so far is complete with all of the physical and sensor
 
 
 1. The plugin we are going to use is called `libFollowerPlugin.so` so enter this in the `Filename` field. The filename corresponds to the actual filename of the plugin library stored on your local machine. It exists in the form of a dynamically linked shared object library, hence the naming convention and the
-   extension `.so` (on Linux). Do not worry if you are using Gazebo on other operating systems as the extension will be automatically replaced with the correct one.
+   extension `.so` (on Linux). Do not worry if you are using Gazebo-classic on other operating systems as the extension will be automatically replaced with the correct one.
 
     [[file:files/ftu4-model_plugin_inspector_done.png|400px]]
 
@@ -238,7 +238,7 @@ The vehicle we have built so far is complete with all of the physical and sensor
 
     [[file:files/ftu4-save_as.png|400px]]
 
-1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo should now switch back to normal simulation mode. Hit the Play button to run the simulation.
+1. Exit the Model Editor by going to `File` and selecting `Exit Model Editor`. Gazebo-classic should now switch back to normal simulation mode. Hit the Play button to run the simulation.
 
     [[file:files/ftu4-exit.png|600px]]
 

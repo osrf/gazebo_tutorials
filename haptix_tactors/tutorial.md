@@ -16,7 +16,7 @@ Hardware
 
 Software
 --------
-You will need a Linux machine with Gazebo and the handsim package. See [this tutorial](/tutorials?tut=haptix_install&cat=haptix) for installation instructions.
+You will need a Linux machine with Gazebo-classic and the handsim package. See [this tutorial](/tutorials?tut=haptix_install&cat=haptix) for installation instructions.
 
 To program the Teensy USB board, you will need to install the [Arduino IDE](http://arduino.cc/en/Main/Software) and the [Teensyduino add-on](https://www.pjrc.com/teensy/teensyduino.html) for Arduino.
 
@@ -211,7 +211,7 @@ cmake ..;
 make
 ~~~
 
-In a separate window, run the Gazebo HAPTIX simulator:
+In a separate window, run the Gazebo-classic HAPTIX simulator:
 
 ~~~
 gazebo worlds/arat.worlds

@@ -10,7 +10,7 @@
 
 # Overview
 
-This tutorial explains how to use a model plugin for gravity compensation in Gazebo as well as how it complements the built-in PID joint controllers.
+This tutorial explains how to use a model plugin for gravity compensation in Gazebo-classic as well as how it complements the built-in PID joint controllers.
 
 Gravity compensation is a technique used to mitigate the effects of gravity on a robot's behavior. A model of the robot and its current configuration are used to estimate the gravitational forces acting on the robot's links and the joint efforts necessary to balance them. Ideally, gravity compensation would cancel out accelerations due to gravity while allowing the robot to comply with other external forces.
 
@@ -19,7 +19,7 @@ We will begin by controlling a 0.1 kg mass on a linear actuator using PID feedba
 # PID Control
 ## P Control
 
-1. Start Gazebo with the simulation paused (-u option), and insert the `Mass on rails` model.
+1. Start Gazebo-classic with the simulation paused (-u option), and insert the `Mass on rails` model.
 
 [[file:files/mass_on_rails.png|800px]]
 
@@ -98,7 +98,7 @@ The PID controller now performs well for the `mass_on_rails` system. However, it
 ## Demonstration
 For the `mass_on_rails` system, gravity is the primary factor the controller must overcome. So, if we add gravity compensation (GC), we can reduce the PID gains and still have the mass settle near the target.
 
-1. Open the example world in Gazebo with the simulation paused.
+1. Open the example world in Gazebo-classic with the simulation paused.
 
 ~~~
 gazebo -u --verbose worlds/gravity_compensation.world
@@ -125,7 +125,7 @@ The following excerpt from `gravity_compensation.world` shows how it calls the  
 </include>
 ~~~
 
-The `<include>` block tells Gazebo to add a model to the world, and the URI indicates which model to add. The `<plugin>` block tells Gazebo to run the gravity compensation plugin for this model (the outer block). The `<plugin>` block requires a model URI of its own, which identifies the model to use when calculating the forces due to gravity and the compensating joint efforts.
+The `<include>` block tells Gazebo-classic to add a model to the world, and the URI indicates which model to add. The `<plugin>` block tells Gazebo-classic to run the gravity compensation plugin for this model (the outer block). The `<plugin>` block requires a model URI of its own, which identifies the model to use when calculating the forces due to gravity and the compensating joint efforts.
 
 > *Note 1*: A model could be defined directly in the world file by replacing the `<include>` block with a `<model>` block and adding the necessary attributes and elements.
 

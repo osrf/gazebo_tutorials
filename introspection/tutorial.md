@@ -1,6 +1,6 @@
 # Overview
 
-A new code introspection utility has been introduced in Gazebo 8. This new
+A new code introspection utility has been introduced in Gazebo-classic 8. This new
 service allows clients to receive updates with the value of some requested
 variables. The introspection service can be used to debug the state of internal
 variables within Gazebo, plugins, or even stand-alone applications.
@@ -20,7 +20,7 @@ position, velocity, and acceleration of models and links, among other items.
 [[file:files/introspection_registration.png|300px]]
 
 You can learn more about the introspection manager and its API by looking at the
-[Util/IntrospectionManager class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionManager.html) in the Gazebo source code.
+[Util/IntrospectionManager class](http://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1util_1_1IntrospectionManager.html) in the Gazebo-classic source code.
 
 # Subscribing for receiving item updates
 
@@ -90,7 +90,7 @@ GAZEBO_PLUGIN_PATH=`pwd` gazebo --verbose ../empty.world
 ~~~
 
 Note that we are setting the `GAZEBO_PLUGIN_PATH` with the path to our build
-directory in order to help Gazebo finding our plugin. Once Gazebo is ready,
+directory in order to help Gazebo-classic finding our plugin. Once Gazebo-classic is ready,
 execute the following command on a new terminal:
 
 ~~~
@@ -160,7 +160,7 @@ come online.
 <include from='/  \/\/ Pick up the first manager/' to='/managerIds.begin\(\);/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>
 
 In theory, we could have multiple introspection managers running, although in
-the case of Gazebo we will only have one. We're working under this assumption,
+the case of Gazebo-classic we will only have one. We're working under this assumption,
 so we'll save the Id of the first introspection manager detected.
 
 <include from='/  \/\/ sim_time is a pre-registered/' to='/  \/\/ The variables to watch are registered with the manager/' src="http://github.com/osrf/gazebo_tutorials/raw/master/introspection/files/watcher.cc"/>

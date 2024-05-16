@@ -1,7 +1,7 @@
 
-# Tutorial: Using Gazebo plugins with ROS
+# Tutorial: Using Gazebo-classic plugins with ROS
 
-Gazebo plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input.
+Gazebo-classic plugins give your URDF models greater functionality and can tie in ROS messages and service calls for sensor output and motor input.
 In this tutorial we explain both how to setup preexisting plugins and how to create your own custom plugins that can work with ROS.
 
 ## Prerequisites
@@ -11,7 +11,7 @@ Also make sure you have understood the use of the `<gazebo>` element within the 
 
 ## Plugin Types
 
-Gazebo supports
+Gazebo-classic supports
 [several plugin types](/tutorials?tut=plugins_hello_world&cat=write_plugin),
 and all of them can be connected to ROS, but only a few types can be referenced through a URDF file:
 
@@ -39,7 +39,7 @@ Also, it will be give a reference to the [SDF element](http://osrf-distributions
 
 ## Adding a `SensorPlugin`
 
-Specifying sensor plugins is slightly different. [Sensors](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/group__gazebo__sensors.html) in Gazebo are meant to be attached to links,
+Specifying sensor plugins is slightly different. [Sensors](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/group__gazebo__sensors.html) in Gazebo-classic are meant to be attached to links,
 so the `<gazebo>` element describing that sensor must be given a reference to that link.
 For example:
 
@@ -120,7 +120,7 @@ A Xacro property is also defined:
 
 You should be able to launch the RRBot and see a red box attached to the end of the arm.
 
-Next we will review the Gazebo plugin that gives us the camera functionality and publishes the image to a ROS message. In the RRBot we have been following the convention of putting Gazebo elements in the `rrbot.gazebo` file:
+Next we will review the Gazebo-classic plugin that gives us the camera functionality and publishes the image to a ROS message. In the RRBot we have been following the convention of putting Gazebo-classic elements in the `rrbot.gazebo` file:
 
 ~~~
   <!-- camera -->
@@ -177,7 +177,7 @@ The link name "camera_link" must match the name of the link we added to the Xacr
     <sensor type="camera" name="camera1">
 ~~~
 
-The sensor name "camera1" must be unique from all other sensor names. The name is not used many places except for within Gazebo plugins you can access
+The sensor name "camera1" must be unique from all other sensor names. The name is not used many places except for within Gazebo-classic plugins you can access
 
 ~~~
       <update_rate>30.0</update_rate>
@@ -229,7 +229,7 @@ The coordinate frame the image is published under in the tf tree.
 
 ### Running the RRBot Example
 
-After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo-classic in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot_world.launch
@@ -238,7 +238,7 @@ roslaunch rrbot_description rrbot_rviz.launch
 
 In Rviz, add a ''Camera'' display and under ''Image Topic'' set it to `/rrbot/camera1/image_raw`.
 
-You should see a camera view of your Gazebo environment. In the following two pictures, a soda can was added to the environment for better visuals.
+You should see a camera view of your Gazebo-classic environment. In the following two pictures, a soda can was added to the environment for better visuals.
 
 The coke can added:
 
@@ -369,7 +369,7 @@ In this code example there is both a left and right camera:
 </gazebo>
 ~~~
 
-You can find a more detailed description for configuring a depth camera in [Use a Gazebo Depth Camera with ROS](/tutorials/?tut=ros_depth_camera).
+You can find a more detailed description for configuring a depth camera in [Use a Gazebo-classic Depth Camera with ROS](/tutorials/?tut=ros_depth_camera).
 
 ## GPU Laser
 
@@ -471,7 +471,7 @@ Set these to the ROS topic name you would like to publish the laser scans to, an
 
 ### Running the RRBot Example
 
-After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo in separate terminals:
+After you have saved both `rrbot.xacro` and `rrbot.gazebo`, you should be able to launch both Rviz and Gazebo-classic in separate terminals:
 
 ~~~
 roslaunch rrbot_gazebo rrbot.launch
@@ -480,7 +480,7 @@ roslaunch rrbot_description rrbot_rviz.launch
 
 In Rviz, add a ''LaserScan'' display and under ''Topic'' set it to `/rrbot/laser/scan`.
 
-You should see a faint laser scan line in your Gazebo environment. While the pendulum is swinging, you should also see the laser scan swing. If the scan is too faint, you can up the size of the laser scan in the properties of the LaserScan display in Rviz. A size of 1m is very easy to see. In the following two pictures, a house and construction barrel was added to the environment for better visuals.
+You should see a faint laser scan line in your Gazebo-classic environment. While the pendulum is swinging, you should also see the laser scan swing. If the scan is too faint, you can up the size of the laser scan in the properties of the LaserScan display in Rviz. A size of 1m is very easy to see. In the following two pictures, a house and construction barrel was added to the environment for better visuals.
 
 View from Gazebo:
 
@@ -678,7 +678,7 @@ save, then launch the same launch files as for GPU Laser.
 
 ## Skid Steering Drive
 
-**Description:** model plugin that provides a basic controller for skid steering drive robots in Gazebo (Pioneer 3AT for instance).
+**Description:** model plugin that provides a basic controller for skid steering drive robots in Gazebo-classic (Pioneer 3AT for instance).
 
 ~~~
 <gazebo>
@@ -790,5 +790,5 @@ If a 3rd party plugin is useful and generic enough, please consider pulling it i
 
 # Next Steps
 
-Next we will analyze the `ros_control` packages integrated with Gazebo for tight controller/actuator/simulator integration
+Next we will analyze the `ros_control` packages integrated with Gazebo-classic for tight controller/actuator/simulator integration
 [Actuators, controllers, and ros_control](/tutorials/?tut=ros_control).

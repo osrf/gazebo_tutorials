@@ -1,15 +1,15 @@
 # Overview
 
-The Gazebo GUI overlay can be thought of as a transparent 2D layer that sits
+The Gazebo-classic GUI overlay can be thought of as a transparent 2D layer that sits
 on top of the render window. QT widgets can be added to this layer through
 a plugin interface. You can show or hide all GUI overlays by clicking on
-`View->GUI Overlays` on the main Gazebo menu bar. This tutorial describes how to
+`View->GUI Overlays` on the main Gazebo-classic menu bar. This tutorial describes how to
 create and use GUI overlay plugins to create custom interfaces for Gazebo.
 
 Two examples will be used to demonstrate the GUI Overlay functionality. The
 first example creates a button that spawns a sphere, and the second displays
 the current simulation time. These two examples show how to send data to
-Gazebo and receive data from Gazebo.
+Gazebo-classic and receive data from Gazebo.
 
 # Example 1: Spawn spheres
 
@@ -80,7 +80,7 @@ The source code for this example is found [here](https://github.com/osrf/gazebo/
     make
     ~~~
 
-1. Now we need to make sure Gazebo can find the plugin. You can do this by
+1. Now we need to make sure Gazebo-classic can find the plugin. You can do this by
 appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable:
 
     ~~~
@@ -93,7 +93,7 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
     common search path, such as `/usr/local/lib`, or into one of the paths
     specified by the `GAZEBO_PLUGIN_PATH` library.
 
-1. We also need to tell Gazebo that it should load the overlay plugin.
+1. We also need to tell Gazebo-classic that it should load the overlay plugin.
 
     There are two methods to accomplish this.
 
@@ -108,7 +108,7 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
         wget https://github.com/osrf/gazebo/raw/gazebo5/examples/plugins/gui_overlay_plugin_spawn/spawn_widget_example.world
         ~~~
 
-    1. **GUI INI file:** Modify the `~/.gazebo/gui.ini` file so the plugin is loaded every time Gazebo is run:
+    1. **GUI INI file:** Modify the `~/.gazebo/gui.ini` file so the plugin is loaded every time Gazebo-classic is run:
 
         ~~~
         gedit ~/.gazebo/gui.ini
@@ -121,7 +121,7 @@ appending the `build` directory to the `GAZEBO_PLUGIN_PATH` environment variable
         filenames=libgui_example_spawn_widget.so
         ~~~
 
-1. Now when Gazebo is run, a button should appear in the upper left of the render window.
+1. Now when Gazebo-classic is run, a button should appear in the upper left of the render window.
 
     If you created a custom SDF world file with with GUI plugin:
 
@@ -203,7 +203,7 @@ The source code for this example is found [here](https://github.com/osrf/gazebo/
 
 1. Follow the same steps as the previous tutorial to compile the plugin and add the `GAZEBO_PLUGIN_PATH`
 
-1. Tell Gazebo where to find it and load it via `gui.ini` or an SDF  world file.
+1. Tell Gazebo-classic where to find it and load it via `gui.ini` or an SDF  world file.
 
     > **Tip:** You can add both plugins to `gui.ini` as follows:
 
@@ -220,7 +220,7 @@ The source code for this example is found [here](https://github.com/osrf/gazebo/
 
     > This will load both the spawn sphere plugin from the previous example and the time plugin from this example.
 
-1. When Gazebo is run, a new text box to the right of the spawn button should show the simulation time.
+1. When Gazebo-classic is run, a new text box to the right of the spawn button should show the simulation time.
 
     ~~~
     gazebo

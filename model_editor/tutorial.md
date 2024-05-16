@@ -6,7 +6,7 @@ of creating a simple mobile base with the model editor.
 
 ## Open the Model Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/install).
+1.  Make sure Gazebo-classic is [installed](http://gazebosim.org/install).
 
 1.  Start up gazebo.
 
@@ -59,7 +59,7 @@ that lets you find the mesh you want to add.
 
 1. Click on `Browse` button and use the file browser to find the mesh file
 on your local machine. If you know the path of the mesh file, you can enter it
-directly in the text field box next to the `Browse` button. Gazebo 8 supports
+directly in the text field box next to the `Browse` button. Gazebo-classic 8 supports
 COLLADA (.dae), 3D Systems (.stl), Wavefront (.obj) and W3C SVG (.svg) files.
 
 1. Click `Import` to load the mesh file. Then, add it to the 3D view.
@@ -113,7 +113,7 @@ joint creation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:**  Gazebo 6+ supports editing
+> **Note:**  Gazebo-classic 6+ supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
@@ -175,7 +175,7 @@ you can also edit existing models that are already in the simulation.
 
 To edit an existing model:
 
-* Make sure you have saved the model you created, and you have exited the model editor. Alternatively, start from a fresh Gazebo instance.
+* Make sure you have saved the model you created, and you have exited the model editor. Alternatively, start from a fresh Gazebo-classic instance.
 
 * Insert a model from the `Insert` tab on the left. For example, let's
 insert a `Simple Arm`.

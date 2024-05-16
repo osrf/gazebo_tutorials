@@ -4,7 +4,7 @@
 
 This tutorials demonstrates how the user can create composite models directly
 from other models in the
-[Gazebo Model Database](https://github.com/osrf/gazebo_models)
+[Gazebo-classic Model Database](https://github.com/osrf/gazebo_models)
 by using the
 [\<include\>](http://sdformat.org/spec?ver=1.5&elem=world#world_include)
 tags and
@@ -41,7 +41,7 @@ Adding a laser to a robot, or any model, is simply a matter of including the sen
         </joint>
     ~~~
 
-    The `<include>` block tells Gazebo to find a model, and insert it at a
+    The `<include>` block tells Gazebo-classic to find a model, and insert it at a
     given `<pose>` relative to the parent model. In this case we place the
     hokuyo laser forward and above the robot.  The `<uri>` block tells gazebo
     where to find the model inside its model database (note, you can see a

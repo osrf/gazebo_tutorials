@@ -13,7 +13,7 @@ tutorials.
 The full world API documentation can be found
 [here](https://s3.amazonaws.com/osrf-distributions/haptix/api/0.7.1/haptix__sim_8h.html).
 
-The documentation for building a Gazebo world using [SDF format](http://www.sdformat.org/) can be found [here](/tutorials?cat=build_world).
+The documentation for building a Gazebo-classic world using [SDF format](http://www.sdformat.org/) can be found [here](/tutorials?cat=build_world).
 
 # Matlab Example
 
@@ -89,7 +89,7 @@ Download tutorial files:
 
  - [custom_world.c](https://github.com/osrf/gazebo_tutorials/blob/master/haptix_world_sim_api/files/custom_world.c)
 
-# Start Gazebo handsim simulation
+# Start Gazebo-classic handsim simulation
 
 To run the example, start gazebo in terminal:
 

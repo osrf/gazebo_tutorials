@@ -1,11 +1,11 @@
 # Overview
 
 This tutorial will explain how to add a model to the
-[Gazebo Model Database](http://models.gazebosim.org/).
+[Gazebo-classic Model Database](http://models.gazebosim.org/).
 You can read more about the database
 [here](/tutorials?tut=model_structure&cat=build_robot).
 
-This tutorial assumes you have created an original Gazebo model and you'd like
+This tutorial assumes you have created an original Gazebo-classic model and you'd like
 to share it with the community.
 
 This tutorial also assumes that you have an account on GitHub, and that you have a client for [Git](https://git-scm.com/).

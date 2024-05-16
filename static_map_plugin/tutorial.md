@@ -26,7 +26,7 @@ and you should see the following:
 
 In this example world, the plugin will generate a map model with a unique name and save the model SDF and image files in to a self-contained model folder with `map_` prefix in `<HOME>/.gazebo/models`. We are also telling the plugin that we don't want to use the image cache by setting `<use_cache>` to false so that subsequent launches will trigger the download of images (and recreate the model files) again. See the Plugin Parameters section below on how to specify you own model name or reuse image cache to prevent future image downloads.
 
-Now try inserting a few models from the gazebo model database into the world (Left: original Google map view. Right Gazebo window):
+Now try inserting a few models from the gazebo model database into the world (Left: original Google map view. Right Gazebo-classic window):
 
 [[file:files/static_map_models.png|800px]]
 
@@ -53,5 +53,5 @@ Optional parameters:
 The Static Map Plugin currently has few limitations:
 
 * It is only able to generate square-shaped map models based on `<world_size>` and does not support rectangular regions.
-* Downloading of images happen in the main thread and thus blocks Gazebo window until all images are downloaded. The number of image tiles to download depends on the `<world_size>` specified.
+* Downloading of images happen in the main thread and thus blocks Gazebo-classic window until all images are downloaded. The number of image tiles to download depends on the `<world_size>` specified.
 * Only the **Standard** Google Map API is supported, see [Usage Limits](https://developers.google.com/maps/documentation/static-maps/usage-limits) for more details.

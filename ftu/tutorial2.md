@@ -4,17 +4,17 @@ Welcome to the Beginner Module! This module will guide you through the most
 basic features of Gazebo, with each tutorial building upon the last. We
 recommend following the tutorials in order. 
 
-These tutorials are intended for those new to Gazebo and/or folks with **no programming or Linux experience**.
+These tutorials are intended for those new to Gazebo-classic and/or folks with **no programming or Linux experience**.
 
 # What is Gazebo? #
 
-Gazebo is a 3D dynamic simulator with the ability to accurately and
+Gazebo-classic is a 3D dynamic simulator with the ability to accurately and
 efficiently simulate populations of robots in complex indoor and outdoor
-environments. While similar to game engines, Gazebo offers physics
+environments. While similar to game engines, Gazebo-classic offers physics
 simulation at a much higher degree of fidelity, a suite of sensors, and
 interfaces for both users and programs.
 
-Typical uses of Gazebo include:
+Typical uses of Gazebo-classic include:
 
 * testing robotics algorithms,
 
@@ -22,7 +22,7 @@ Typical uses of Gazebo include:
 
 * performing regression testing with realistic scenarios
 
-A few key features of Gazebo include: 
+A few key features of Gazebo-classic include: 
 
 * multiple physics engines,
 
@@ -34,7 +34,7 @@ A few key features of Gazebo include:
 
 # System requirements #
 
-Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a flavor of [Linux](https://en.wikipedia.org/wiki/Linux). You will need a computer that has:
+Gazebo-classic is currently best used on [Ubuntu](http://www.ubuntu.com/download), a flavor of [Linux](https://en.wikipedia.org/wiki/Linux). You will need a computer that has:
 
 * A dedicated [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit),
  * Nvidia cards tend to work well in Ubuntu
@@ -74,7 +74,7 @@ Gazebo is currently best used on [Ubuntu](http://www.ubuntu.com/download), a fla
 
 1. Wait until the window disappears.
 
-# Run Gazebo #
+# Run Gazebo-classic #
 
 1. Press Alt-F2
 2. Type "gazebo", and press Enter.

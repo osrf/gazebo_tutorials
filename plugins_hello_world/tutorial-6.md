@@ -1,7 +1,7 @@
-# Overview of Gazebo Plugins
+# Overview of Gazebo-classic Plugins
 
 A plugin is a chunk of code that is compiled as a shared library and inserted into the simulation.
-The plugin has direct access to all the functionality of Gazebo through the standard C++ classes.
+The plugin has direct access to all the functionality of Gazebo-classic through the standard C++ classes.
 
 Plugins are useful because they:
 
@@ -9,7 +9,7 @@ Plugins are useful because they:
 * are self-contained routines that are easily shared
 * can be inserted and removed from a running system
 
-Previous versions of Gazebo utilized controllers.
+Previous versions of Gazebo-classic utilized controllers.
 These behaved in much the same way as plugins, but were statically compiled into Gazebo.
 Plugins are more flexible, and allow users to pick and choose what functionality to
 include in their simulations.
@@ -40,7 +40,7 @@ There are currently 6 types of plugins
 Each plugin type is managed by a different component of Gazebo.
 For example, a Model plugin is attached to and controls a specific model in Gazebo.
 Similarly, a World plugin is attached to a world, and a Sensor plugin to a specific sensor.
-The System plugin is specified on the command line, and loads first during a Gazebo startup.
+The System plugin is specified on the command line, and loads first during a Gazebo-classic startup.
 This plugin gives the user control over the startup process.
 
 A plugin type should be chosen based on the desired functionality.
@@ -53,7 +53,7 @@ Use a Sensor plugin to acquire sensor information and control sensor properties.
 Plugins are designed to be simple.
 A bare bones world plugin contains a class with a few member functions.
 
-First, if you installed Gazebo from debians, make sure you've installed the Gazebo development files. If you installed Gazebo from source, you can ignore this step. If you have a release other than gazebo6, replace 6 with whatever version number you have.
+First, if you installed Gazebo-classic from debians, make sure you've installed the Gazebo-classic development files. If you installed Gazebo-classic from source, you can ignore this step. If you have a release other than gazebo6, replace 6 with whatever version number you have.
 
 ~~~
 sudo apt-get install libgazebo6-dev
@@ -70,7 +70,7 @@ $ gedit hello_world.cc
 Copy the following into hello_world.cc:
 <include from='/#include/' src='http://github.com/osrf/gazebo/raw/gazebo6/examples/plugins/hello_world/hello_world.cc' />
 
-The above code is also located in the Gazebo sources:
+The above code is also located in the Gazebo-classic sources:
 [examples/plugins/hello\_world/hello\_world.cc](http://github.com/osrf/gazebo/blob/gazebo6/examples/plugins/hello_world),
 along with an appropriate CMakeLists.txt file.
 
@@ -159,7 +159,7 @@ $ make
 
 Compiling will result in a shared library,
 `~/gazebo_plugin_tutorial/build/libhello_world.so`,
-that can be inserted in a Gazebo simulation.
+that can be inserted in a Gazebo-classic simulation.
 
 Lastly, add your library path to the `GAZEBO_PLUGIN_PATH`:
 
@@ -176,8 +176,8 @@ your plugin for every new temrinal you open, append the line above to the
 Once you have a plugin compiled as a shared library (see above),
 you can attach it to a world or model in an SDF file
 (see [SDF documentation](http://gazebosim.org/sdf.html) for more info).
-On startup, Gazebo parses the SDF file, locates the plugin, and loads the code.
-It is important that Gazebo is capable of finding the plugin.
+On startup, Gazebo-classic parses the SDF file, locates the plugin, and loads the code.
+It is important that Gazebo-classic is capable of finding the plugin.
 Either the full path to the plugin is specified, or the plugin exists in
 one of the paths in the `GAZEBO_PLUGIN_PATH` environment variable.
 
@@ -200,7 +200,7 @@ $ gzserver ~/gazebo_plugin_tutorial/hello.world --verbose
 You should see output similar to:
 
 ~~~
-Gazebo multi-robot simulator, version 6.1.0
+Gazebo-classic multi-robot simulator, version 6.1.0
 Copyright (C) 2012-2015 Open Source Robotics Foundation.
 Released under the Apache 2 License.
 http://gazebosim.org

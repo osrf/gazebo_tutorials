@@ -46,7 +46,7 @@ Bring up the Atlas robot in Gazebo
 
         roslaunch atlas_utils atlas.launch
 
-When it comes time to bring down this process, press Control + C in the same terminal window. Closing Gazebo from the GUI will not kill the additional processes spawned with roslaunch.
+When it comes time to bring down this process, press Control + C in the same terminal window. Closing Gazebo-classic from the GUI will not kill the additional processes spawned with roslaunch.
 
 ## Visualizing Sensor Data with rviz
 

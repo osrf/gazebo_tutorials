@@ -1,6 +1,6 @@
 # Introduction
 
-Gazebo supports the [Razer Hydra
+Gazebo-classic supports the [Razer Hydra
 controller](http://en.wikipedia.org/wiki/Razer_Hydra). You will be able to
 use this motion and orientation detection controller to interact with your
 models in Gazebo.
@@ -22,7 +22,7 @@ sudo cp 90-hydra.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 ~~~
 
-# Gazebo compilation with Razer Hydra support.
+# Gazebo-classic compilation with Razer Hydra support.
 
 We need to install the optional `libusb` dependency.
 
@@ -30,7 +30,7 @@ We need to install the optional `libusb` dependency.
 sudo apt-get install libusb-1.0-0-dev
 ~~~
 
-Once Hydra is configured and the extra dependency satisfied, you should be able to compile Gazebo from source with Hydra support.
+Once Hydra is configured and the extra dependency satisfied, you should be able to compile Gazebo-classic from source with Hydra support.
 
 Follow [this](http://gazebosim.org/install) instructions to compile Gazebo. During the execution of the `cmake` command, you should see this message confirming that the SDK is found:
 
@@ -40,7 +40,7 @@ Follow [this](http://gazebosim.org/install) instructions to compile Gazebo. Duri
 
 # Using Hydra within Gazebo.
 
-Using Hydra in Gazebo requires two steps. The first step is to load the Hydra plugin in your world file.
+Using Hydra in Gazebo-classic requires two steps. The first step is to load the Hydra plugin in your world file.
 
 ~~~
 <!-- Load the plugin for Razer Hydra -->
@@ -50,7 +50,7 @@ Using Hydra in Gazebo requires two steps. The first step is to load the Hydra pl
 This plugin will automatically publish messages on the topic `~/hydra`.
 
 The second step is to write a plugin that subscribes to the hydra topic and make something interesting. For this
-tutorial, we are going to move a sphere by using the right joystick of Hydra. A `HydraDemoPlugin` is available in Gazebo in the `plugins/` directory.
+tutorial, we are going to move a sphere by using the right joystick of Hydra. A `HydraDemoPlugin` is available in Gazebo-classic in the `plugins/` directory.
 
 Plugin code:
 
@@ -175,7 +175,7 @@ Here is the complete world file of the tutorial (also available under
 </sdf>
 ~~~
 
-It is time to run Gazebo and use the Hydra's right joystick to move the sphere.
+It is time to run Gazebo-classic and use the Hydra's right joystick to move the sphere.
 Do not forget to plug your Hydra, and then:
 
 ~~~

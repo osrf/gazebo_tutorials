@@ -2,7 +2,7 @@ This tutorial describes how to use the Preset Manager interface to store
 physics parameter profiles and switch between them.
 
 # Motivation
-Gazebo has many parameters that affect the performance, accuracy, and general
+Gazebo-classic has many parameters that affect the performance, accuracy, and general
 behavior of physics simulation. Some are shared between the different physics
 engines supported by Gazebo, like maximum step size and target real time
 factor, and some are not. The physics preset manager interface offers a way to
@@ -15,9 +15,9 @@ In SDF, a physics profile is simply a `<physics>` element. As of SDF protocol ve
 which was introduced in SDFormat version 3,
 multiple physics elements are allowed in a world file, but they must be
 differentiated by the `name` attribute. When there are multiple physics elements
-specified, Gazebo will choose the one with the `default` attribute set to true.
-If no default physics profile is set, Gazebo will choose the first one. If
-multiple default profiles are set, Gazebo will choose the first set as default.
+specified, Gazebo-classic will choose the one with the `default` attribute set to true.
+If no default physics profile is set, Gazebo-classic will choose the first one. If
+multiple default profiles are set, Gazebo-classic will choose the first set as default.
 
 In the following world example
 ([downloadable here](https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/preset_example.world)),
@@ -102,10 +102,10 @@ For a shortcut, use `-o`:
 gazebo preset_world.world -o ode_70iters
 ```
 
-You can also substitute `gazebo` with `gzserver` to run Gazebo headless
+You can also substitute `gazebo` with `gzserver` to run Gazebo-classic headless
 (without the graphical client).
 
-While Gazebo is running, you can switch the profile in another terminal
+While Gazebo-classic is running, you can switch the profile in another terminal
 by using `gz physics`:
 
 ```
@@ -123,7 +123,7 @@ Download the
 
 <include src='https://github.com/osrf/gazebo_tutorials/raw/master/preset_manager/files/switch_profiles.sh'/>
 
-The script launches Gazebo first with the `ode_200iters` profile,
+The script launches Gazebo-classic first with the `ode_200iters` profile,
 then switches to `ode_70iters` and the simulation goes unstable.
 The script then switches back to `ode_200iters` and resets the world, then switches between
 the `ode_200iters` and `ode_500iters` profiles 5 times, pausing for 5 seconds between each switch.
@@ -164,5 +164,5 @@ will have to close and reopen the menu to refresh the GUI.
 
 [[file:files/worldtab.png|600px]]
 
-Use this script as a base for your own experimentation and profiling with the Gazebo physics
+Use this script as a base for your own experimentation and profiling with the Gazebo-classic physics
 library!

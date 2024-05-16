@@ -1,10 +1,10 @@
-This page describes each of the items involved in running a Gazebo simulation.
+This page describes each of the items involved in running a Gazebo-classic simulation.
 
 # World Files
 
 The world description file contains all the elements in a simulation, including robots, lights, sensors, and static objects. This file is formatted using [SDF (Simulation Description Format)](http://gazebosim.org/sdf.html), and typically has a `.world` extension.
 
-The Gazebo server (`gzserver`) reads this file to generate and populate a world.
+The Gazebo-classic server (`gzserver`) reads this file to generate and populate a world.
 
 A number of example worlds are shipped with Gazebo. These worlds are installed in `<install_path>/share/gazebo-<version>/worlds`;
 you can also see them in the [source code](https://github.com/osrf/gazebo/blob/master/worlds/).
@@ -25,21 +25,21 @@ Read more about model files [here](/tutorials?tut=build_model).
 
 # Environment Variables
 
-Gazebo uses a number of environment variables to locate files, and set up
+Gazebo-classic uses a number of environment variables to locate files, and set up
 communications between the server and clients.  Default values that work for
 most cases are compiled in. This means you don't need to set any variables.
 
 Here are the variables:
 
-`GAZEBO_MODEL_PATH`: colon-separated set of directories where Gazebo will search for models
+`GAZEBO_MODEL_PATH`: colon-separated set of directories where Gazebo-classic will search for models
 
-`GAZEBO_RESOURCE_PATH`: colon-separated set of directories where Gazebo will search for other resources such as world and media files.
+`GAZEBO_RESOURCE_PATH`: colon-separated set of directories where Gazebo-classic will search for other resources such as world and media files.
 
-`GAZEBO_MASTER_URI`: URI of the Gazebo master. This specifies the IP and port where the server will be started and tells the clients where to connect to.
+`GAZEBO_MASTER_URI`: URI of the Gazebo-classic master. This specifies the IP and port where the server will be started and tells the clients where to connect to.
 
-`GAZEBO_PLUGIN_PATH`: colon-separated set of directories where Gazebo will search for the plugin shared libraries at runtime.
+`GAZEBO_PLUGIN_PATH`: colon-separated set of directories where Gazebo-classic will search for the plugin shared libraries at runtime.
 
-`GAZEBO_MODEL_DATABASE_URI`: URI of the online model database where Gazebo will download models from.
+`GAZEBO_MODEL_DATABASE_URI`: URI of the online model database where Gazebo-classic will download models from.
 
 These defaults are also included in a shell script:
 
@@ -49,11 +49,11 @@ source <install_path>/share/gazebo/setup.sh
 
 If you want to modify Gazebo's behavior, e.g., by extending the path it searches for models, you should first source the shell script listed above, then modify the variables that it sets.
 
-## New in Gazebo 8
+## New in Gazebo-classic 8
 
-Parts of Gazebo transitioned to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
+Parts of Gazebo-classic transitioned to use the [Ignition Transport](https://ignitionrobotics.org/libs/transport)
 library for inter-process communication instead of the built-in
-Gazebo Transport library. Some features such as
+Gazebo-classic Transport library. Some features such as
 [markers](https://github.com/osrf/gazebo/blob/gazebo8/examples/stand_alone/marker/)
 and the plotting utility are using Ignition Transport and may be affected by
 the following environment variables:
@@ -67,7 +67,7 @@ the following environment variables:
 Read more about Ignition Transport environment variables
 [here](https://ignitionrobotics.org/tutorials/transport/4.0/md__data_ignition_ign-transport_tutorials_20_env_variables.html).
 
-# Gazebo Server
+# Gazebo-classic Server
 
 The server is the workhorse of Gazebo. It parses a world description file given on the command line, and then simulates the world using a physics and sensor engine.
 
@@ -139,8 +139,8 @@ gzserver --verbose -s libRestWebPlugin.so
 The same mechanism is used by the graphical client, the supported command line
 flags are the following:
 
-* Gazebo 7 and earlier: Use `-g` to load a GUI plugin
-* Gazebo 8 and later: Use `--gui-client-plugin` to load a GUI plugin
+* Gazebo-classic 7 and earlier: Use `-g` to load a GUI plugin
+* Gazebo-classic 8 and later: Use `--gui-client-plugin` to load a GUI plugin
 
 For example, to load the `TimerGUIPlugin`:
 

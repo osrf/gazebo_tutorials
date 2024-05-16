@@ -16,9 +16,9 @@ sudo apt-get install libhdf5-dev
 ~~~
 
 ## Build Gazebo
-This HDF5 instrument tool requires building Gazebo from source, with the cmake parameter
+This HDF5 instrument tool requires building Gazebo-classic from source, with the cmake parameter
 `HDF5_INSTRUMENT` [default False] as True.
-[Learn how to build Gazebo from source](/tutorials?tut=install_from_source&cat=install)
+[Learn how to build Gazebo-classic from source](/tutorials?tut=install_from_source&cat=install)
 
     cd ~/gazebo
     mkdir build

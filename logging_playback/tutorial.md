@@ -1,12 +1,12 @@
 # Overview
 
-This tutorial explains how to use the Gazebo logging capabilities to
+This tutorial explains how to use the Gazebo-classic logging capabilities to
 record your simulation and then reproduce it afterwards, using either the GUI
 or the command line.
 
-# Gazebo log files
+# Gazebo-classic log files
 
-Gazebo log files are compressed `.log` files which contain an initial full
+Gazebo-classic log files are compressed `.log` files which contain an initial full
 description of the whole world, followed by a series of "world states".
 
 The initial description contains complete information about everything in the
@@ -65,7 +65,7 @@ generated. It will be inside a time-stamped directory.
 ## Logging from the command line
 
 From the command line, it is possible to log the whole simulation from the
-moment Gazebo starts running until it stops, or to trigger logging from an
+moment Gazebo-classic starts running until it stops, or to trigger logging from an
 arbitary time.
 
 ### Logging the whole simulation
@@ -79,13 +79,13 @@ As an example, you can record the `random_velocity.world` as follows:
 
 > * **-p [--play] arg**: Play a log file.
 
-> * **-r [ --record ]**: Record a log from the moment Gazebo is opened until it
+> * **-r [ --record ]**: Record a log from the moment Gazebo-classic is opened until it
 is closed.
 
 > * **--record_encoding arg**: Compression encoding format for log data. The
 options are `zlib` (default), `bz2` and `txt`.
 
-The log file will only be terminated when Gazebo is closed. You can check the
+The log file will only be terminated when Gazebo-classic is closed. You can check the
 file was created by looking into the path given:
 
     $ ls ~/logs/random_velocity/
@@ -93,8 +93,8 @@ file was created by looking into the path given:
 
 ### Logging part of the simulation
 
-Gazebo also provides the `gz log` tool, which can be used to trigger logging at
-any moment. While Gazebo is running, open another terminal and run the following
+Gazebo-classic also provides the `gz log` tool, which can be used to trigger logging at
+any moment. While Gazebo-classic is running, open another terminal and run the following
 to start recording:
 
     gz log -d 1
@@ -113,14 +113,14 @@ ways.
 ## Visualize in GUI
 
 Currently, it is not possible to open a log file from the GUI, so playback must
-be started from the command line. Simply start Gazebo using the `-p` option
+be started from the command line. Simply start Gazebo-classic using the `-p` option
 to specify a log file, such as the one we recorded earlier:
 
     gazebo -u -p ~/logs/double_pendulum/2016-01-25T15\:09\:49.677400/gzserver/state.log
 
 > **Tip**: The `-u` option starts the log paused.
 
-Gazebo will open in playback mode. You can play, pause, rewind and step through
+Gazebo-classic will open in playback mode. You can play, pause, rewind and step through
 the playback.
 
 [[file:files/playback_gui.png|800px]]

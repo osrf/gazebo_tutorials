@@ -4,7 +4,7 @@ This tutorial describes the process of creating a model using the Model Editor.
 
 ## Open the Model Editor
 
-1.  Make sure Gazebo is [installed](http://gazebosim.org/install).
+1.  Make sure Gazebo-classic is [installed](http://gazebosim.org/install).
 
 1.  Start up gazebo.
 
@@ -110,7 +110,7 @@ joint creation.
 The model editor supports editing properties of a link which you would
 also find in its SDF.
 
-> **Note:**  Gazebo 6+ supports editing
+> **Note:**  Gazebo-classic 6+ supports editing
 links, visuals, and collisions. The ability to edit sensors and
 plugins are to be implemented in later versions.
 
@@ -172,7 +172,7 @@ you can also edit existing models that are already in the simulation.
 
 To edit an existing model:
 
-* Make sure you have saved the model you created, and you have exited the model editor. Alternatively, start from a fresh Gazebo instance.
+* Make sure you have saved the model you created, and you have exited the model editor. Alternatively, start from a fresh Gazebo-classic instance.
 
 * Insert a model from the `Insert` tab on the left. For example, let's
 insert a `Simple Arm`.

@@ -42,7 +42,7 @@ The second method uses a World method to load a model based on string data.
 
 <include from="/    \/\/ Option 2:/" to="/sphereSDF\);/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
-The third method uses the message passing mechanism to insert a model. This method is most useful for stand alone applications that communicate with Gazebo over a network connection.
+The third method uses the message passing mechanism to insert a model. This method is most useful for stand alone applications that communicate with Gazebo-classic over a network connection.
 
 <include from="/    \/\/ Option 3:!" to="/factoryPub.*Publish\(msg\);/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/factory.cc' />
 
@@ -53,7 +53,7 @@ Assuming the reader has gone through the [Plugin Overview Tutorial](/tutorials/?
 
 <include from="/add_library/" src='http://github.com/osrf/gazebo/raw/gazebo9/examples/plugins/factory/CMakeLists.txt' />
 
-Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libfactory.so`, that can be inserted in a Gazebo simulation.
+Compiling this code will result in a shared library, `~/gazebo_plugin_tutorial/build/libfactory.so`, that can be inserted in a Gazebo-classic simulation.
 
 ~~~
 $ mkdir ~/gazebo_plugin_tutorial/build
@@ -219,4 +219,4 @@ Run Gazebo
 $ gazebo ~/gazebo_plugin_tutorial/factory.world
 ~~~
 
-The Gazebo window should show an environment with a sphere, box, and cylinder arranged in a row.
+The Gazebo-classic window should show an environment with a sphere, box, and cylinder arranged in a row.

@@ -1,6 +1,6 @@
 # Performance metrics
 
-Gazebo 9 and Gazebo 11 publish a message called `/gazebo/performance_metrics` that allows to check the performance
+Gazebo-classic 9 and Gazebo-classic 11 publish a message called `/gazebo/performance_metrics` that allows to check the performance
 of each sensor in the world.
 
 # Learn how to read the measurements
@@ -50,7 +50,7 @@ sensor {
 
 With the `lockstep` flag activated the `sim_update_rate` must correspond with the real value
 defined in the world. In this case we expect the `sim_update_rate` to be equal to 500 for the high resolution camera
-and 30 for the low resolution camera. Then the `fps` value means that Gazebo is able to generate on average 337 frames in a *real second*.
+and 30 for the low resolution camera. Then the `fps` value means that Gazebo-classic is able to generate on average 337 frames in a *real second*.
 
 The real time factor is likely less than 1.0. The exact number depends on your computing power. This shows that
 the sensor's update rate is strictly followed, and physics has slowed down in order to accommodate for the high update rate.
@@ -162,7 +162,7 @@ sensor {
 
 The maximum time step size that can be taken by a variable time-step solver (such as simbody) during simulation.
 For physics engines with fixed-step solvers (like ODE), this is simply the time step size. The default value
-in Gazebo is 0.001 seconds.
+in Gazebo-classic is 0.001 seconds.
 
 When you choose the `update rate` of a sensor you need to take in account if you have enough precision
 defined in `max step size`. For example:

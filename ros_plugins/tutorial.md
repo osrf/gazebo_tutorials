@@ -1,6 +1,6 @@
 # Tutorial: Ros Plugins
 
-In this tutorial we'll walk through creating a very basic Gazebo plugin that is ROS-aware.
+In this tutorial we'll walk through creating a very basic Gazebo-classic plugin that is ROS-aware.
 
 ## Create a ROS Package
 
@@ -154,7 +154,7 @@ source devel/setup.bash
 roslaunch gazebo_tutorials hello.launch
 ~~~
 
-An empty Gazebo should open and in the terminal you should see it print out something like:
+An empty Gazebo-classic should open and in the terminal you should see it print out something like:
 
 ~~~
  INFO ros.gazebo_tutorials: Hello World!
@@ -168,7 +168,7 @@ A template is available to help you quickly get a Gazebo-ROS plugin working:
 
 ## Adding Functionality
 
-To make your plugin do something useful with Gazebo and ROS, we suggest you read the ROS-agnostic tutorials on [Plugins](/tutorials/?cat=write_plugin).
+To make your plugin do something useful with Gazebo-classic and ROS, we suggest you read the ROS-agnostic tutorials on [Plugins](/tutorials/?cat=write_plugin).
 
 ## ROS Node Note
 
@@ -178,7 +178,7 @@ All gazebo-ros plugins should check if the ROS node has already been initialized
 rosrun gazebo_ros gazebo
 ~~~
 
-or use the generic empty.world launch file. The `gazebo_ros/src/gazebo_ros_api_plugin.cpp` should be the only place in Gazebo that calls `ros::init()`.
+or use the generic empty.world launch file. The `gazebo_ros/src/gazebo_ros_api_plugin.cpp` should be the only place in Gazebo-classic that calls `ros::init()`.
 
 ## Next Steps
 

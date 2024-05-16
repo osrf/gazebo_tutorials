@@ -1,4 +1,4 @@
-#**This tutorial applies to Gazebo versions 8+**
+#**This tutorial applies to Gazebo-classic versions 8+**
 
 # Overview
 
@@ -58,7 +58,7 @@ meshes, links and joints.
 # Scripted trajectories
 
 This is the high level animation of actors, which consists of specifying
-a series of poses to be reached at specific times. Gazebo takes care of
+a series of poses to be reached at specific times. Gazebo-classic takes care of
 interpolating the motion between them so the movement is fluid.
 
 ## Example world
@@ -188,7 +188,7 @@ the next section!
 
 # Skeleton
 
-Gazebo supports two different skeleton animation file formats:
+Gazebo-classic supports two different skeleton animation file formats:
 [COLLADA (.dae)](https://www.khronos.org/collada/wiki/Main_page) and
 [Biovision Hierarchy (.bvh)](http://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html).
 
@@ -226,7 +226,7 @@ described within the `<skin>` tag.
 
 > **Note**: If you've made
 [custom](/tutorials?tut=import_mesh&cat=build_robot)
-Gazebo models before, you might have used COLLADA files as visuals and
+Gazebo-classic models before, you might have used COLLADA files as visuals and
 collisions for your models. When used within *links*, COLLADA animations are
 ignored, but when used within *skins*, they are loaded!
 
@@ -234,14 +234,14 @@ The file specified in `<filename>` can be an absolute path, for example:
 
     /home/<user>/my_gazebo_models/skeleton_model/skeleton.dae
 
-You can also tell Gazebo to look for the mesh in all the directories contained in
+You can also tell Gazebo-classic to look for the mesh in all the directories contained in
 the environment variable
 [`GAZEBO_MODEL_PATH`](/tutorials?tut=components),
 like this:
 
     model://skeketon_model/skeleton.dae
 
-Finally, you can use a few example meshes which are installed with Gazebo by
+Finally, you can use a few example meshes which are installed with Gazebo-classic by
 referencing directly to their filenames. Below is the list of the ones
 available. Take a look at some of them substituting into the `walk.world` above!
 
@@ -260,7 +260,7 @@ available. Take a look at some of them substituting into the `walk.world` above!
 ### Combining different skins and animations
 
 Sometimes, it is useful to combine different skins with different animations.
-Gazebo allows us to take the skin from one file, and the animation from
+Gazebo-classic allows us to take the skin from one file, and the animation from
 another file, as long as they have compatible skeletons.
 
 For example, the files `walk.dae` and `moonwalk.dae` are compatible so they can
@@ -353,7 +353,7 @@ and try that, I'll even give you an example:
     </sdf>
 
 Go ahead and load it and see what happens. That's not what yopu expected,
-right? The actor's legs are not moving at all. That's because Gazebo doesn't
+right? The actor's legs are not moving at all. That's because Gazebo-classic doesn't
 know which animation to match with which trajectory. So let's change the
 animation name to match the trajectory type like this:
 
@@ -395,10 +395,10 @@ that is, it is not taking any feedback from the environment. Now we're going to
 take a look at an example of how to change the trajectory dinamically using
 plugins.
 
-> **Tip**: If you're not familiar with Gazebo plugins, take a look at some
+> **Tip**: If you're not familiar with Gazebo-classic plugins, take a look at some
 [plugin tutorials](/tutorials?cat=write_plugin) first.
 
-Gazebo has an example world with actors moving around while avoiding obstacles.
+Gazebo-classic has an example world with actors moving around while avoiding obstacles.
 Take a look at it running:
 
     gazebo worlds/cafe.world

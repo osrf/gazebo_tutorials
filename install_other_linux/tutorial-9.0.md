@@ -1,6 +1,6 @@
-# Install Gazebo on Linux distributions (non Ubuntu)
+# Install Gazebo-classic on Linux distributions (non Ubuntu)
 
-Gazebo is available to install on other Linux distributions different than Ubuntu
+Gazebo-classic is available to install on other Linux distributions different than Ubuntu
 ([Ubuntu install instructions](/tutorials?tut=install_ubuntu&cat=install)
 are hosted in a different tutorial). Linux distributions providing gazebo packages:
 Debian, Fedora, Arch and Gentoo.
@@ -11,9 +11,9 @@ The one liner installation can be used in the Debian in the standard way:
 
         curl -ssL http://get.gazebosim.org | sh
 
-If you prefer manual installations, [Gazebo in Debian
+If you prefer manual installations, [Gazebo-classic in Debian
 Sid](https://packages.debian.org/source/sid/gazebo) is available as an official
-package in Debian Sid (the Gazebo team is the official maintainer in Debian)
+package in Debian Sid (the Gazebo-classic team is the official maintainer in Debian)
 which usually hosts the latest gazebo release.
 
 1. Install Gazebo9
@@ -22,7 +22,7 @@ which usually hosts the latest gazebo release.
         # For developers that works on top of Gazebo, one extra package
         sudo apt-get install libgazebo9-dev
 
-Gazebo in Debian stretch is provided by the packages.osrfoundation.org repository.
+Gazebo-classic in Debian stretch is provided by the packages.osrfoundation.org repository.
 
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/debian-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -33,9 +33,9 @@ Gazebo in Debian stretch is provided by the packages.osrfoundation.org repositor
 
 ## Fedora
 
-[Gazebo in Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
+[Gazebo-classic in Fedora](https://apps.fedoraproject.org/packages/gazebo) is available
 as an official package (the maintainer is Rich Mattes). Depending on the Fedora
-version, the version of Gazebo available is different:
+version, the version of Gazebo-classic available is different:
 
  * Rawhide is usually hosting one of the latest releases
  * Fedora 27: gazebo-8.1.1
@@ -48,7 +48,7 @@ version, the version of Gazebo available is different:
 
 ## Arch
 
-[Gazebo in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
+[Gazebo-classic in Arch](https://aur.archlinux.org/packages/gazebo/) is currently in the AUR:
 Arch User Repository (racko is the maintainer). This means that it
 is not in the official package repositories and users need to compile it from
 source. The easiest way to install it is to use an AUR helper, such as yaourt
@@ -62,7 +62,7 @@ or packer:
 
 ## Gentoo
 
-[Gazebo in Gentoo](https://packages.gentoo.org/package/sci-electronics/gazebo)
+[Gazebo-classic in Gentoo](https://packages.gentoo.org/package/sci-electronics/gazebo)
 is available as an official package (the maintainer is Alexis Ballier). It is
 currently masked as ~amd64 so please read about how to [mix software
 branches](https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Branches) if you
@@ -74,17 +74,17 @@ gentoolkit) to know more about the optional support:
       emerge --ask app-portage/gentoolkit
       equery uses gazebo -a
 
-1. Install Gazebo on stable branch
+1. Install Gazebo-classic on stable branch
 
         echo "sci-electronics/gazebo" >> /etc/portage/package.accept_keywords
         emerge gazebo
 
-1. Install Gazebo on testing branch
+1. Install Gazebo-classic on testing branch
 
         emerge gazebo
 
 ## Other linux distributions?
 
-If you know of any other Linux distribution supporting Gazebo installation,
+If you know of any other Linux distribution supporting Gazebo-classic installation,
 feel free to [create an issue](https://github.com/osrf/gazebo_tutorials/issues)
 to expand this tutorial.

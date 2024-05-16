@@ -118,7 +118,7 @@ You should see something like this:
 
 [[file:files/Gazebo_with_drc_robot_and_primitives.png|640px]]
 
-Now you can save your changes: in the Gazebo GUI, click "File->Save World As".  When prompted for where to save it, browse to `world_modification_tutorial/worlds/atlas.world` to overwrite our copy of Atlas's simulation world.
+Now you can save your changes: in the Gazebo-classic GUI, click "File->Save World As".  When prompted for where to save it, browse to `world_modification_tutorial/worlds/atlas.world` to overwrite our copy of Atlas's simulation world.
 
 Now, modify the world file to remove the Atlas model. This is because the robot is spawned automatically.
 

@@ -1,23 +1,23 @@
 # Tutorial: ROS Communication
 
-Gazebo provides a set of ROS API's that allows users to modify and get information about various aspects of the simulated world. In the following sections, we will demonstrate some of the utilities for manipulating the simulation world and objects. The complete list of ROS messages and services for gazebo can be found here also.
+Gazebo-classic provides a set of ROS API's that allows users to modify and get information about various aspects of the simulated world. In the following sections, we will demonstrate some of the utilities for manipulating the simulation world and objects. The complete list of ROS messages and services for gazebo can be found here also.
 
 ## Prerequisites
 
 If you would like to follow along with the examples make sure you have the RRBot setup as described in the [Using URDF in Gazebo](/tutorials/?tut=ros_urdf). In this tutorial we'll have the RRBot "kick" a coke can using various techniques.
 
-We'll assume you have Gazebo already launched using:
+We'll assume you have Gazebo-classic already launched using:
 
 ~~~
 roscore &
 rosrun gazebo_ros gazebo
 ~~~
 
-You may occasionally need to restart Gazebo after different commands listed below.
+You may occasionally need to restart Gazebo-classic after different commands listed below.
 
 ## Terminologies
 
-In the following context, the pose and twist of a rigid body object is referred to as its '''state''. An object also has intrinsic '''properties''', such as mass and friction coefficients. In Gazebo, a '''body''' refers to a rigid body, synonymous to '''link''' in the URDF context. A Gazebo '''model''' is a conglomeration of bodies connected by '''joints'''.
+In the following context, the pose and twist of a rigid body object is referred to as its '''state''. An object also has intrinsic '''properties''', such as mass and friction coefficients. In Gazebo, a '''body''' refers to a rigid body, synonymous to '''link''' in the URDF context. A Gazebo-classic '''model''' is a conglomeration of bodies connected by '''joints'''.
 
 ## About the gazebo\_ros\_api\_plugin
 
@@ -27,17 +27,17 @@ This plugin is only loaded with `gzserver`.
 
 ## About the gazebo\_ros\_paths_plugin
 
-A secondary plugin named `gazebo_ros_paths_plugin` is available in the `gazebo_ros` package that simply allows Gazebo to find ROS resources, i.e. resolving ROS package path names.
+A secondary plugin named `gazebo_ros_paths_plugin` is available in the `gazebo_ros` package that simply allows Gazebo-classic to find ROS resources, i.e. resolving ROS package path names.
 
 This plugin is loaded with both `gzserver` and `gzclient`.
 
-## Gazebo Published Parameters
+## Gazebo-classic Published Parameters
 
 Parameters:
 
 `/use_sim_time` : `Bool` - Notifies ROS to use published `/clock` topic for ROS time.
 
-Gazebo uses the ROS parameter server to notify other applications, particularly Rviz, if simulation time should be used via the `/use_sim_time` parameter. This should be set automatically by Gazebo as true when you start `gazebo_ros`
+Gazebo-classic uses the ROS parameter server to notify other applications, particularly Rviz, if simulation time should be used via the `/use_sim_time` parameter. This should be set automatically by Gazebo-classic as true when you start `gazebo_ros`
 
 `/use_sim_time` is true if gazebo_ros is publishing to the ROS `/clock` topic in order to provide a ROS system with simulation-synchronized time. For more info on simulation time, see [ROS C++ Time](http://www.ros.org/wiki/roscpp/Overview/Time).
 
@@ -49,7 +49,7 @@ To see what the parameter is set as run:
 rosparam get /use_sim_time
 ~~~
 
-## Gazebo Subscribed Topics
+## Gazebo-classic Subscribed Topics
 
 Topics:
 
@@ -76,7 +76,7 @@ You should see the coke can hovering in front of the RRBot, just asking to be hi
 [[file:HoverCoke.png|600px]]
 
 
-## Gazebo Published Topics
+## Gazebo-classic Published Topics
 
 Topics:
 
@@ -89,7 +89,7 @@ Topics:
 
 ### Retrieving Model and Link States Using Topics
 
-Gazebo publishes `/gazebo/link_states` and `/gazebo/model_states` topics, containing pose and twist information of objects in simulation with respect to the gazebo world frame. You can see these in action by running:
+Gazebo-classic publishes `/gazebo/link_states` and `/gazebo/model_states` topics, containing pose and twist information of objects in simulation with respect to the gazebo world frame. You can see these in action by running:
 
 ~~~
 rostopic echo -n 1 /gazebo/model_states
@@ -108,7 +108,7 @@ These services allow the user to spawn and destroy models dynamically in simulat
 
 `~/spawn_urdf_model` : `gazebo_msgs/SpawnModel` - Use this service to spawn a Universal Robotic Description Format (URDF)
 
-`~/spawn_sdf_model` : `gazebo_msgs/SpawnModel` - Use this service to spawn a model written in Gazebo Simulation Description Format (SDF)
+`~/spawn_sdf_model` : `gazebo_msgs/SpawnModel` - Use this service to spawn a model written in Gazebo-classic Simulation Description Format (SDF)
 
 `~/delete_model` : `gazebo_msgs/DeleteModel` - This service allows the user to delete a model from simulation.
 
@@ -146,7 +146,7 @@ rosrun gazebo_ros spawn_model -h
 
 ### Delete Model
 
-Deleting models that are already in Gazebo is easier as long as you know the model name you gave the object. If you spawned a rrbot named "rrbot1" as described in the previous section, you can remove it with:
+Deleting models that are already in Gazebo-classic is easier as long as you know the model name you gave the object. If you spawned a rrbot named "rrbot1" as described in the previous section, you can remove it with:
 
 ~~~
 rosservice call gazebo/delete_model '{model_name: rrbot1}'
@@ -181,7 +181,7 @@ If you have not already added a coke can to your simulation run
 rosrun gazebo_ros spawn_model -database coke_can -gazebo -model coke_can -y 1
 ~~~
 
-This should be prepackaged with Gazebo or available via the online model database (internet connection required). Place the coke can anywhere in the scene, it doesn't matter where. Now we'll call a service request to move the coke can into position of the RRBot:
+This should be prepackaged with Gazebo-classic or available via the online model database (internet connection required). Place the coke can anywhere in the scene, it doesn't matter where. Now we'll call a service request to move the coke can into position of the RRBot:
 
 ~~~
 rosservice call /gazebo/set_model_state '{model_state: { model_name: coke_can, pose: { position: { x: 0.3, y: 0.2 ,z: 0 }, orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , reference_frame: world } }'
@@ -310,7 +310,7 @@ These services allow the user to apply wrenches and forces to bodies and joints 
 
 ### Apply Wrenches to Links
 
-To demonstrate wrench applications on a Gazebo body, let's spawn an object with gravity turned off. Make sure the coke can has been added to the simulation:
+To demonstrate wrench applications on a Gazebo-classic body, let's spawn an object with gravity turned off. Make sure the coke can has been added to the simulation:
 
 ~~~
 rosrun gazebo_ros spawn_model -database coke_can -gazebo -model coke_can -y 1

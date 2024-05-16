@@ -50,6 +50,6 @@ Start up gazebo and make sure you can load the models from the two previous tuto
 
     <include src='https://github.com/osrf/gazebo_tutorials/raw/master/attach_gripper/files/manipulator.sdf' />
 
-1. Make sure the `model.config` and `manipulator.sdf` files above are saved, start Gazebo and spawn the model above by using the **insert** tab and choosing **Simple Mobile Manipulator** model.  You should see something similar to:
+1. Make sure the `model.config` and `manipulator.sdf` files above are saved, start Gazebo-classic and spawn the model above by using the **insert** tab and choosing **Simple Mobile Manipulator** model.  You should see something similar to:
 
     [[file:files/Simple_mobile_manipulator.png|640px]]

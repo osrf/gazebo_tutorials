@@ -16,7 +16,7 @@ Once you have set the velocity magnitude, the direction is set on its own
 
 # Example
 1. Change your current working directory to the location of the worlds folder
-in your Gazebo source (use the path to your Gazebo source).
+in your Gazebo-classic source (use the path to your Gazebo-classic source).
 2. Open `random_velocity.world` in your default editor.
 
     ~~~
@@ -70,7 +70,7 @@ You can play with the values of ``initial_velocity``, ``velocity_factor``,
 The source code for this plugin is available on
 [GitHub](https://github.com/osrf/gazebo/blob/gazebo6/plugins/).
 
-If you have installed Gazebo from source then you can find this file where you
+If you have installed Gazebo-classic from source then you can find this file where you
 downloaded the repository.
 
 ~~~
@@ -110,7 +110,7 @@ All other `#include`s are necessary for various parts of code. For example:
 using namespace gazebo;
 ~~~
 
-To avoid writing gazebo repeatedly, before using Gazebo routines, structures or object classes.
+To avoid writing gazebo repeatedly, before using Gazebo-classic routines, structures or object classes.
 
 ~~~
 GZ_REGISTER_MODEL_PLUGIN(RandomVelocityPlugin)

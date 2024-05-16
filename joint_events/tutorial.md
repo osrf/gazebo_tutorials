@@ -86,7 +86,7 @@ As the force applied by user on the joint named `my_joint` enters or exits the e
 
 # Running simulation with joint events plugin
 
-Launch Gazebo in a terminal with the following  command
+Launch Gazebo-classic in a terminal with the following  command
 
 ~~~
 gazebo --verbose joint_event.world

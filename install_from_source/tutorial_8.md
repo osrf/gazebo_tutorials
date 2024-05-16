@@ -1,6 +1,6 @@
-# Install Gazebo from source (Ubuntu and Mac)
+# Install Gazebo-classic from source (Ubuntu and Mac)
 
-## Install Gazebo from source on Ubuntu
+## Install Gazebo-classic from source on Ubuntu
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ In a clean Ubuntu installation you can install pre-compiled versions of all depe
 
 ### Optional Physics Engines
 
-**Release Note:** in order to use DART, a full compilation of Gazebo from
+**Release Note:** in order to use DART, a full compilation of Gazebo-classic from
 source is needed (as detailed in this document). The .deb packages are
 shipping the ODE, Bullet, and Simbody physics engines.
 
@@ -81,7 +81,7 @@ To correctly parse the results of GUI regression tests, the xsltproc package is 
 
 #### Man Page Support
 
-To generate man-pages for the Gazebo executables, the ruby-ronn package is needed.
+To generate man-pages for the Gazebo-classic executables, the ruby-ronn package is needed.
 
     sudo apt-get install ruby-ronn
 
@@ -92,7 +92,7 @@ To generate man-pages for the Gazebo executables, the ruby-ronn package is neede
 
 ### Dependencies managed by OSRF
 
-Gazebo development is tightly linked to the development of a few other libraries:
+Gazebo-classic development is tightly linked to the development of a few other libraries:
 
 * [SDFormat](http://sdformat.org/)
 * [ignition-math](http://ignitionrobotics.org/libraries/math)
@@ -130,7 +130,7 @@ desire more stability
         mkdir build
         cd build
 
-1. Configure Gazebo (choose either method `a` or `b` below):
+1. Configure Gazebo-classic (choose either method `a` or `b` below):
 
     a. Release mode: This will generate optimized code, but will not have debug symbols. Use this mode if you don't need to use GDB.
 
@@ -141,7 +141,7 @@ desire more stability
 
     >     cmake -DCMAKE_INSTALL_PREFIX=/home/$USER/local ../
 
-    b. Debug mode: This will generate code with debug symbols. Gazebo will run slower, but you'll be able to use GDB.
+    b. Debug mode: This will generate code with debug symbols. Gazebo-classic will run slower, but you'll be able to use GDB.
 
         cmake -DCMAKE_BUILD_TYPE=Debug ../
 
@@ -186,9 +186,9 @@ Now try running gazebo:
 
     gazebo
 
-***If Gazebo runs successfully, you're done!.***
+***If Gazebo-classic runs successfully, you're done!.***
 
-If Gazebo was installed to `/usr/local/` and running gazebo throws an error similar to:
+If Gazebo-classic was installed to `/usr/local/` and running gazebo throws an error similar to:
 
     gazebo: error while loading shared libraries: libgazebo_common.so.1: cannot open shared object file: No such file or directory
 
@@ -197,7 +197,7 @@ If Gazebo was installed to `/usr/local/` and running gazebo throws an error simi
     echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/gazebo.conf
     sudo ldconfig
 
-1. If you are interested in using Gazebo with [ROS](http://www.ros.org),
+1. If you are interested in using Gazebo-classic with [ROS](http://www.ros.org),
 see [Installing gazebo\_ros\_pkgs](/tutorials?cat=connect_ros).
 
 #### Install in a catkin workspace
@@ -283,7 +283,7 @@ Then build the workspace using `catkin build`.
 Note that bullet and DART have several important cmake options.
 Using bullet with gazebo requires `BUILD_SHARED_LIBS=ON`
 and has better accuracy if `USE_DOUBLE_PRECISION=ON`.
-Using DART with Gazebo is compatible with `BUILD_CORE_ONLY=ON`,
+Using DART with Gazebo-classic is compatible with `BUILD_CORE_ONLY=ON`,
 which requires many fewer dependencies to be installed.
 For now, these options do not overlap, so they can be sent to
 all the packages:
@@ -315,7 +315,7 @@ lists their dependencies.
 
 ### Uninstalling Source-based Install
 
-If you need to uninstall Gazebo or switch back to a debian-based install of Gazebo when you currently have installed Gazebo from source, navigate to your source code directory's build folders and run make uninstall:
+If you need to uninstall Gazebo-classic or switch back to a debian-based install of Gazebo-classic when you currently have installed Gazebo-classic from source, navigate to your source code directory's build folders and run make uninstall:
 
     cd ~/gazebo/build
     sudo make uninstall
@@ -324,11 +324,11 @@ If you need to uninstall Gazebo or switch back to a debian-based install of Gaze
 
 ## Compiling From Source (Mac OS X)
 
-Gazebo and several of its dependencies can be compiled on OS X with [Homebrew](http://brew.sh) using the [osrf/simulation tap](https://github.com/osrf/homebrew-simulation). Here are the instructions:
+Gazebo-classic and several of its dependencies can be compiled on OS X with [Homebrew](http://brew.sh) using the [osrf/simulation tap](https://github.com/osrf/homebrew-simulation). Here are the instructions:
 
 1. Install [homebrew](http://brew.sh): `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-2. Install [XQuartz](http://xquartz.macosforge.org/landing/), which provides X11 support and is required by Gazebo and OGRE
+2. Install [XQuartz](http://xquartz.macosforge.org/landing/), which provides X11 support and is required by Gazebo-classic and OGRE
 
 3. For 10.8 and earlier, install [Xcode command-line tools](http://stackoverflow.com/questions/9329243/xcode-4-4-and-later-install-command-line-tools) by downloading them from Apple. For 10.9 and later, they should prompt you to install them when you install Homebrew in step 1.
 

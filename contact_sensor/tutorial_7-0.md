@@ -130,7 +130,7 @@ Between the `</contact>` and `</sensor>` tags in order to get output on the term
 
 It is also possible to create a plugin for the contact sensor. This plugin can get the collision data, manipulate it, and output it to an arbitrary destination (for example a ROS topic).
 
-*    **Note** This section of the tutorial requires you to compile a Gazebo plugin. For Gazebo version 3.0 and above, you will need to have the Gazebo dev packages installed (something like `libgazebo*-dev`). Check the [installation tutorials](/tutorials?cat=install) for further instructions.
+*    **Note** This section of the tutorial requires you to compile a Gazebo-classic plugin. For Gazebo-classic version 3.0 and above, you will need to have the Gazebo-classic dev packages installed (something like `libgazebo*-dev`). Check the [installation tutorials](/tutorials?cat=install) for further instructions.
 
 Start by modifying the `contact.world` SDF file. Add the following line directly below `<sensor name='my_contact' type='contact'>`:
 
@@ -142,7 +142,7 @@ gedit contact.world
 <plugin name="my_plugin" filename="libcontact.so"/>
 ~~~
 
-This line tells Gazebo to load the `libcontact.so` sensor plugin. Which we will now define.
+This line tells Gazebo-classic to load the `libcontact.so` sensor plugin. Which we will now define.
 
 Create a header file for the plugin, call it `ContactPlugin.hh`:
 

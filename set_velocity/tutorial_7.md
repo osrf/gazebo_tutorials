@@ -1,5 +1,5 @@
 # Setting Velocity on Links And Joints
-This tutorial will describe how to programatically set velocities on Joints and Links in Gazebo 7.
+This tutorial will describe how to programatically set velocities on Joints and Links in Gazebo-classic 7.
 This is a common task done in a custom [plugin](tutorials?cat=plugins).
 
 # Examples
@@ -59,7 +59,7 @@ It must be set every time step to keep the object at a constant velocity forever
 * When using to set a link's velocity all other degrees of freedom are locked
 
 Joints motors can be used to reach a velocity by applying the exact required force to a joint.
-Gazebo only supports this method when using the ODE physics engine (the default engine).
+Gazebo-classic only supports this method when using the ODE physics engine (the default engine).
 It relies on the [ODE Joint Motor feature](https://www.ode-wiki.org/wiki/index.php?title=Manual:_Joint_Types_and_Functions#Stops_and_motor_parameters).
 
 ### Setting Velocity Using PID Controllers

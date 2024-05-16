@@ -15,12 +15,12 @@ Each tutorial builds upon the last, so we recommend following the tutorials in o
 These tutorials are intended for those with basic experience using Gazebo,
 Ubuntu Linux, and writing C++ code.
 
-> **Note**: It's possible to contribute to Gazebo if you're using a different
+> **Note**: It's possible to contribute to Gazebo-classic if you're using a different
 operating system, but for simplicity, this tutorial is focusing on Ubuntu users.
 
 # Where is Gazebo's source code?
 
-Gazebo is an open source project, and as such, its source code is publicly
+Gazebo-classic is an open source project, and as such, its source code is publicly
 available online. It is currently hosted on a git repository at GitHub:
 
 [https://github.com/osrf/gazebo/](https://github.com/osrf/gazebo/)
@@ -53,13 +53,13 @@ You might be asking, is this it, is that all the code needed to bring Gazebo
 to life? Well, not exactly. Gazebo, as most software, takes advantage of other
 existing libraries to perform specific tasks. These are called _dependencies_.
 
-For example, Gazebo uses [Ogre](http://www.ogre3d.org/) for rendering,
+For example, Gazebo-classic uses [Ogre](http://www.ogre3d.org/) for rendering,
 [Qt](https://www.qt.io/) for the graphical user interface and supports a few
 physics engines, such as [ODE](http://www.ode.org/) and
 [Bullet](http://bulletphysics.org/wordpress/). That's only to name a few.
 
 Among Gazebo's dependencies, there are some dependencies which are maintained
-by the Gazebo core team. Gazebo development is often tied to the development of
+by the Gazebo-classic core team. Gazebo-classic development is often tied to the development of
 these libraries, so everything that will be discussed on this series also
 applies to those libraries. All these libraries are hosted on GitHub using
 git. They are the following:
