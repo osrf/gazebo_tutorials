@@ -34,7 +34,7 @@ to the normal vector and to each other (see the illustration from the ODE user
 manual below).
 The user can specify a desired value for the first friction direction, which
 may be adjusted to ensure that it is orthogonal to the normal vector, and the
-second friction will be computed automatically.
+second friction direction will be computed automatically.
 
 ![Illustration of variable related to ODE contact constraint.](http://ode.org/wiki/images/b/b9/Contact.jpg)
 
@@ -43,7 +43,7 @@ direction, such as `mu` for the Coulomb friction coefficient in the
 first direction and `mu2` for the second direction,
 with the tangential force in each direction (`F1` and `F2`) constrained not
 to exceed the product of Coulomb friction coefficient and
-normal force magnitude (`N`) as `|F1| <= mu * N` and `|F2| <= mu2 * N`.
+normal force magnitude (`N >= 0`) as `|F1| <= mu * N` and `|F2| <= mu2 * N`.
 
 Specifying different friction parameter values in different directions
 (also known as anisotropic friction) can be useful,
