@@ -1,6 +1,6 @@
 # Profiler
 
-Gazebo 11 uses the [Ignition Common Profiler](https://ignitionrobotics.org/api/common/3.5/profiler.html) to check and visualize the performance of the different threads, functions and methods.
+Gazebo 11 uses the [gz-common Profiler](https://gazebosim.org/api/common/3/profiler.html) to check and visualize the performance of the different threads, functions and methods.
 
 Gazebo 9 uses an internal fork of Ignition Common's profiler.
 
