@@ -93,7 +93,7 @@ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 Update `gazebo_tutorials/package.xml` by adding the following line within the `<export></export>` tags (or add the `<export></export>` tags also).
 
 ~~~
-  <gazebo_ros plugin_path="${prefix}/../../lib" gazebo_media_path="${prefix}" />
+  <gazebo_ros plugin_path="$(dirname $(catkin_find --first-only libgazebo_tutorials.so))" gazebo_media_path="${prefix}" />
 ~~~
 
 ## Compiling the Plugin
